@@ -42,6 +42,7 @@
         "text_QEN6PR": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_1.png",
             "title": "Kym Douglas",
             "details": "",
             "url": ""
@@ -50,6 +51,7 @@
         "text_xF9UCe": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_2_1.png",
             "title": "Andrea Thompson",
             "details": "",
             "url": ""
