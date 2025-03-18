@@ -1,0 +1,503 @@
+{{ 'megamenu-header.css' | asset_url | stylesheet_tag }}
+
+<nav class="navbar navabar-desktop">
+  <ul class="navbar_list">
+    <li class="navbar_item dropdown">
+      <a href="#" class="navbar_link dropdown_toggle">
+        Cookware
+        <span class="chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1367 3.375L6.88672 8.625L1.63672 3.375" stroke="#0D0D0D" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+      <div class="dropdown_menu">
+      </div>
+    </li>
+    <li class="navbar_item dropdown">
+      <a href="#" class="navbar_link dropdown_toggle">
+        Bakeware
+        <span class="chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1367 3.375L6.88672 8.625L1.63672 3.375" stroke="#0D0D0D" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+      <div class="dropdown_menu">
+        <div class="dropdown_menu-inner">
+          <div class="megamenu-first-row">
+            <div class="megamenu-row-inner-first">
+              <div class="header-list-megamenu">
+                <div class="header-main-list-megamenu">
+                  
+                  <div class="header-list-megamenu-inner">
+                    <span class="header-header-text">Shop Bakeware</span>
+                    <div class="header-header-text-list">
+                      <ul>
+                        {% for link in linklists['bakeware'].links %}
+                          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="header-shop-right">
+                    <span>
+                      <a href="{{ section.settings.link_url }}">{{ section.settings.link_text }} {% render 'icon-menu-arrow-right' %}</a>
+                    </span>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="megamenu-row-inner-second">
+              <div class="megamenu-product-width-header-text">
+                <span class="header-header-text">{{ section.settings.header_text }}</span>
+                <div class="megamenu-product-category">
+                  <div class="megamenu-product-category-inner">
+                    <div class="product-main-page">
+                      <div class="product-main-image">
+                        <div class="image">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/product1.png?v=1722480080"
+                            height="auto"
+                            width="auto"
+                            class="desktop-img"
+                          >
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/product1.png?v=1722480080"
+                            height="auto"
+                            width="auto"
+                            class="mobile-img"
+                          >
+                        </div>
+                      </div>
+                      <div class="product-wrap">
+                        <div class="product-wrap-header-price">
+                          <div class="product-wrap-header-text">
+                            <p>3-in-1 Roasting Pan</p>
+                          </div>
+                          <div class="product-price">
+                            <span class="price-txt">$210.00</span>
+                            <span class="dull-price-txt">$210.00</span>
+                          </div>
+                        </div>
+                        <div class="review-start-product">
+                          <span class="review-text">4.9</span>
+                          <span class="review-start-icon">
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                          </span>
+                          <span class="review-count-number">(27)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-main-page">
+                      <div class="product-main-image">
+                        <div class="image">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/image_1.png?v=1722827794"
+                            height="auto"
+                            width="auto"
+                            class="desktop-img"
+                          >
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/image_1.png?v=1722827794"
+                            height="auto"
+                            width="auto"
+                            class="mobile-img"
+                          >
+                        </div>
+                      </div>
+                      <div class="product-wrap">
+                        <div class="product-wrap-header-price">
+                          <div class="product-wrap-header-text">
+                            <p>3-in-1 Roasting Pan2</p>
+                          </div>
+                          <div class="product-price">
+                            <span class="price-txt">$210.00</span>
+                            <span class="dull-price-txt">$210.00</span>
+                          </div>
+                        </div>
+                        <div class="review-start-product">
+                          <span class="review-text">4.9</span>
+                          <span class="review-start-icon">
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                          </span>
+                          <span class="review-count-number">(27)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-main-page">
+                      <div class="product-main-image">
+                        <div class="image">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/image_1_1.png?v=1722827794"
+                            height="auto"
+                            width="auto"
+                            class="desktop-img"
+                          >
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0622/1937/files/image_1_1.png?v=1722827794"
+                            height="auto"
+                            width="auto"
+                            class="mobile-img"
+                          >
+                        </div>
+                      </div>
+                      <div class="product-wrap">
+                        <div class="product-wrap-header-price">
+                          <div class="product-wrap-header-text">
+                            <p>3-in-1 Roasting Pan</p>
+                          </div>
+                          <div class="product-price">
+                            <span class="price-txt">$210.00</span>
+                            <span class="dull-price-txt">$210.00</span>
+                          </div>
+                        </div>
+                        <div class="review-start-product">
+                          <span class="review-text">4.9</span>
+                          <span class="review-start-icon">
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                            {% render 'icon-review-star' %}
+                          </span>
+                          <span class="review-count-number">(27)</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="megamenu-second-row">
+           <div class="megamenu-image-with-text-inner">
+              <div class="image-width-text-header">
+                <div class="product-360-category-main">
+      <div class="product-360-category-inner">
+        <div class="product-360-image">
+          <div class="image">
+            <img
+              src="{{ section.settings.desktop_image_1 | img_url: '720x' }}"
+              alt="Product Image"
+              class="desktop-img"
+            >
+            <img
+              src="{{ section.settings.mobile_image_1 | img_url: '360x' }}"
+              alt="Product Image"
+              class="mobile-img"
+            >
+          </div>
+        </div>
+        <div class="product-360-text-area">
+          <div class="product-360-header-main">
+            <div class="common-h5 product-360-header">
+              <h5>{{ section.settings.header_text_1 }}</h5>
+            </div>
+            <div class="product-360-para">
+              <p>{{ section.settings.paragraph_text_1 }}</p>
+            </div>
+          </div>
+          <div class="product-360-link">
+            <a href="{{ section.settings.cta_link_1 }}">{{ section.settings.cta_text_1 }} {% render 'icon-menu-arrow-right' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+              </div>
+
+              <div class="image-width-text-header">
+                <div class="product-360-category-main">
+                  <div class="product-360-category-inner">
+                    <div class="product-360-image">
+          <div class="image">
+            <img
+              src="{{ section.settings.desktop_image_2 | img_url: '720x' }}"
+              alt="Product Image"
+              class="desktop-img"
+            >
+            <img
+              src="{{ section.settings.mobile_image_2 | img_url: '360x' }}"
+              alt="Product Image"
+              class="mobile-img"
+            >
+          </div>
+        </div>
+                        <div class="product-360-text-area">
+                          <div class="product-360-header-main">
+            <div class="common-h5 product-360-header">
+              <h5>{{ section.settings.header_text_2 }}</h5>
+            </div>
+            <div class="product-360-para">
+              <p>{{ section.settings.paragraph_text_2 }}</p>
+            </div>
+          </div>
+                              <div class="product-360-link">
+            <a href="{{ section.settings.cta_link_2 }}">{{ section.settings.cta_text_2 }} {% render 'icon-menu-arrow-right' %}</a>
+          </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navbar_item dropdown">
+      <a href="#" class="navbar_link dropdown_toggle">
+        Tools & Accessories
+        <span class="chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1367 3.375L6.88672 8.625L1.63672 3.375" stroke="#0D0D0D" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+      <div class="dropdown_menu"></div>
+    </li>
+    <li class="navbar_item">
+      <a href="#" class="navbar_link">Sets & Bundles</a>
+    </li>
+    <li class="navbar_item dropdown">
+      <a href="#" class="navbar_link dropdown_toggle">
+        About Us
+        <span class="chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1367 3.375L6.88672 8.625L1.63672 3.375" stroke="#0D0D0D" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+      <div class="dropdown_menu">
+        <div class="megamenu-about-content-main">
+          <div class="megamenu-about-content">
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>360 Story</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Discover how it all started and what our journey has been like</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/Image_3.png?v=1722827795"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>Blog</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Articles for cookery enthusiasts updated every week</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/Image_4_e6a4d822-f7d0-4059-aa2b-feca6e31f029.png?v=1722827795"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>Recepies</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Get inspired and cook with you new 360 Cookware tools</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/Image_5.png?v=1722827794"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>Care Guides</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Tips & Tricks on how to make your kitchenware last forever</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/Image_6.png?v=1722827794"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>360 Difference</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="product-360-category-main">
+                <div class="product-360-category-inner">
+                  <div class="product-360-image">
+                    <div class="image">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/Image_13.png?v=1722827794"
+                        height="auto"
+                        width="auto"
+                        class="desktop-img"
+                      >
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0622/1937/files/header-product1.png?v=1722486150"
+                        height="auto"
+                        width="auto"
+                        class="mobile-img"
+                      >
+                    </div>
+                  </div>
+                  <div class="product-360-text-area">
+                    <div class="product-360-header-main">
+                      <div class="common-h5 product-360-header">
+                        <h5>360 TV</h5>
+                      </div>
+                      <div class="product-360-para">
+                        <p>Recepies, How-to’s and Usefull Guides from 360 Experts</p>
+                      </div>
+                    </div>
+                    <div class="product-360-link">
+                      <a href="#">Shop Now {% render 'icon-menu-arrow-right' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

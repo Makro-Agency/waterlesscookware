@@ -1,0 +1,52 @@
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    appendArrowinFlickty();
+  });
+  function appendArrowinFlickty(){
+    if( document.querySelector('#nosto-account-1 .container .nosto_carousel') != null ){
+      var _title = document.querySelector('#nosto-account-1 .container .title');
+      var _titleText =  _title.innerText;
+      var _div = document.createElement("div");
+      _div.setAttribute('class','mainArrowWrapper');
+      var arrowAppend = `
+        <div class="title">${ _titleText }</div>
+        <div class="arrowWrapper">
+          <div class="aw-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="14" viewBox="0 0 25 14" fill="none">
+              <path d="M6.56501 13L1 7M1 7L6.56501 0.999998M1 7L25 7" stroke="black"/>
+            </svg>
+          </div>
+          <div class="aw-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="14" viewBox="0 0 25 14" fill="none">
+              <path d="M18.435 1L24 7M24 7L18.435 13M24 7H0" stroke="black"/>
+            </svg>
+          </div>
+        </div>`;
+      _div.innerHTML =  arrowAppend;
+      _title.after(_div);
+      _title.remove();
+      setTimeout(function(){
+        var flkty = new Flickity('#nosto-account-1 .container .nosto_carousel');
+        flkty.resize();
+        document.querySelector('#nosto-account-1 .arrowWrapper .aw-left').addEventListener("click", function(){
+          flkty.previous( true );
+        });
+        document.querySelector('#nosto-account-1 .arrowWrapper .aw-right').addEventListener("click", function(){
+          flkty.next( true );
+        });
+      },1000);
+      document.querySelector('body').removeAttribute('append-arrow-count');
+    }else{
+      if( document.querySelector('body').hasAttribute('append-arrow-count') == false ){
+        document.querySelector('body').setAttribute('append-arrow-count','0');
+      }
+      setTimeout(function(){              
+        var count = Number(document.querySelector('body').getAttribute('append-arrow-count'));
+        if( count > 30 ) return;
+        count = count + 1;
+        document.querySelector('body').setAttribute('append-arrow-count',count);
+        appendArrowinFlickty();
+      },1500)
+    }
+  }
+</script>

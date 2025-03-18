@@ -1,0 +1,200 @@
+<div class="sticky-addcart-wrapper">
+    <div class="pro-image">
+      <figure>
+        <img src="{{ product.featured_image | image_url: width: 90 }}" class="lazyload" alt="{{ product.featured_image.alt | default: product.title | escape }}" height="60" width="50" />
+      </figure>
+    </div>
+    <div class="pro-content-wrap">
+      <div class="title-wrapper">
+        <h3 class="card__heading h5">  
+          <span href="#" class="full-unstyled-link">{{ product.title }}</span>
+          {% if product.metafields.LucVincent.product_type != blank %}
+            <span class="caption-large light">{{ product.metafields.LucVincent.product_type }}</span> 
+          {% endif %}
+        </h3>
+      </div>
+      <div class="price-cart-wrapper">
+  
+      {%- if product.selling_plan_groups != blank -%}
+        <subscription-widget class="subscription-wrapper" data-sub-widget-no>
+        {% render 'subscription-custom-dropdown', product: product, enable_oneTime: true %}
+        </subscription-widget>
+      {% endif %}
+        
+        {%- render 'price',
+          product: product,
+          currency_code_enabled: section.settings.currency_code_disable,
+          use_variant: true,
+          show_badges: false,
+          price_class: 'price--large price--sticky' -%}
+        {%- liquid
+          assign current_varaint = product.selected_or_first_available_variant
+          assign check_against_inventory = true
+          if current_varaint.inventory_management != 'shopify' or  current_varaint.inventory_policy == 'continue'
+            assign check_against_inventory = false
+          endif
+          if current_varaint.quantity_rule.min > current_varaint.inventory_quantity and check_against_inventory
+            assign quantity_rule_soldout = true
+          endif
+        -%}
+        <button class="add-cart-btn button button--secondary" type="button" {% if current_varaint.available == false or quantity_rule_soldout %}disabled{% endif %}>
+          <span>
+            {%- if current_varaint.available == false or quantity_rule_soldout -%}
+              {{ 'products.product.sold_out_label' | t }}
+            {%- else -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- endif -%}
+          </span>
+          <div class="loading-overlay__spinner hidden">
+            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" >
+              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <style>
+  .sticky-addcart-wrapper {
+    display: none;
+    gap: 15px;
+    padding: 10px 20px 10px 10px;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 2px 20px rgba(13, 27, 83, 0.12);
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 40px);
+    z-index: 9;
+    left: 20px;
+    right: 20px;
+  }
+  .sticky-addcart-wrapper.open {
+    display: flex;
+  }
+  .pro-image {
+    background: #FAF9F9;
+    border-radius: 10px;
+    width: 90px;
+     max-height: calc(100% - 30px);
+  }
+  .sticky-addcart-wrapper .pro-image figure {
+    position: relative;
+    padding-bottom: calc(100% - 30px);
+    width: 100%;
+    margin: 0;
+  } 
+  .pro-image img {
+    width: 100%;
+    height: 100%;
+    max-height: calc(100% - 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    mix-blend-mode: darken;
+    object-position: center;
+  }
+  .pro-content-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  .pro-content-wrap .title-wrapper {
+      margin: 0;
+  }
+  .pro-content-wrap .title-wrapper .card__heading.h5 {
+    margin: 0;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+  .pro-content-wrap .title-wrapper .card__heading.h5 .caption-large {
+    font-size: 14px;
+    color: #999;
+    font-family: inherit;
+    line-height: 150%;
+  }
+  .price-cart-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .price-cart-wrapper .price .price-item.price-item--regular {
+    color: #cccccc;
+    margin: 0 5px 0 0;
+    font-family: var(--font-heading-family);
+    font-size: 32px;
+    font-weight: normal;
+  }
+  .price-cart-wrapper .price-item--sale {
+    font-weight: normal;
+    font-family: var(--font-heading-family);
+    font-size: 32px;
+  }
+  button.add-cart-btn {
+    background: #FA255E;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  button.add-cart-btn::after,
+  button.add-cart-btn::before  {
+    display: none;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .pro-content-wrap subscription-widget+.price {
+      border-left: 1px solid #E6E6E6;
+      padding-left: 25px;
+      margin-left: 5px;
+    }
+    @media(max-width: 1199px){
+      .pro-content-wrap subscription-widget+.price { padding-left: 10px; margin-left: 0; }
+      .price-cart-wrapper { gap: 10px; }
+      .price-cart-wrapper .price-item--sale,
+      .price-cart-wrapper .price .price-item.price-item--regular { font-size: 25px; }
+      .pro-content-wrap .title-wrapper { padding-right: 1rem; }
+    }
+    @media(max-width: 989px){
+      .price-cart-wrapper .price-item--sale,
+      .price-cart-wrapper .price .price-item.price-item--regular { line-height: 1; }
+      .price-cart-wrapper subscription-widget { flex: 1 0 auto; }
+      .price-cart-wrapper .price .price-item.price-item--regular { margin-right: 0; font-size: 20px; }    
+      .price-cart-wrapper .add-cart-btn { min-width: 1px; padding: 15px; font-size: 14px; }
+    }
+  }
+    
+  @media only screen and (max-width: 767px) {
+    .sticky-addcart-wrapper { padding: 20px 10px 10px; }
+    .pro-image {
+      display: none;
+    }
+    .sticky-addcart-wrapper.open {
+      flex-wrap: wrap;
+    }
+    .pro-content-wrap {
+      display: block;
+      width: 100%;
+    }
+    .pro-content-wrap .title-wrapper { display: none; }
+    button.add-cart-btn { width: 100%; }
+    .price-cart-wrapper { gap: 15px; flex-wrap: wrap; justify-content: space-between; }
+    .price-cart-wrapper .price--on-sale .price__sale {
+      display: flex;
+      gap: 5px;
+    }
+    .price-cart-wrapper .price { order: -1; }
+    .price-cart-wrapper .price-item--sale {
+      order: -1;
+    }
+  }
+  </style>

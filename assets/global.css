@@ -1,0 +1,484 @@
+/* iter fonts */
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter18pt-Regular.woff2?v=1724311929') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter18pt-Regular.woff?v=1724311929') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter28pt-Regular.woff2?v=1724311929') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter28pt-Regular.woff?v=1724311929') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter24pt-Regular.woff2?v=1724311929') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter24pt-Regular.woff?v=1724311929') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* inter-fonts end */
+
+@font-face {
+font-family: "Cellofy";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Medium.woff2?v=1723444026")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Medium.woff?v=1723444027")
+    format("woff");
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: "Cellofy";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Regular.woff2?v=1723444027")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Regular.woff?v=1723444027")
+    format("woff");
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
+
+/* @font-face {
+font-family: "Cellofy";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-SemiBold.woff2?v=1723444027")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-SemiBold.woff?v=1723444027")
+    format("woff");
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+} */
+
+@font-face {
+font-family: "Cellofy";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/cellofy-semibold-webfont.woff2?v=1725961349")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/cellofy-semibold-webfont.woff?v=1725961349")
+    format("woff");
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+} 
+
+
+@font-face {
+font-family: "Cellofy";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Bold.woff2?v=1723444027")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-Bold.woff?v=1723444027")
+    format("woff");
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+
+@font-face {
+font-family: "Proxima Nova";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Regular.woff2?v=1723443636")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Regular.woff?v=1723443636")
+    format("woff");
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: "Proxima Nova";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Semibold.woff2?v=1723443636")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Semibold.woff?v=1723443636")
+    format("woff");
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: "Proxima Nova";
+src: url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Bold.woff2?v=1723443636")
+    format("woff2"),
+  url("https://cdn.shopify.com/s/files/1/0622/1937/files/ProximaNova-Bold.woff?v=1723443636")
+    format("woff");
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hurricane';
+  src: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Hurricane-Regular.woff2?v=1723095790') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0622/1937/files/Hurricane-Regular.woff?v=1723095790') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+scroll-behavior: smooth;
+}
+body,
+body .swym-ui-component *,
+body .swym-ui-component .swym-is-button,
+body .swym-ui-component .swym-is-anchor {
+font-family: "Proxima Nova";
+letter-spacing: 0;
+}
+a,
+button,
+.button,
+svg {
+transition: all 0.3s ease 0s;
+}
+
+.button:not(.button--secondary):hover,
+.button:not([disabled]):hover,
+.button--primary:hover {
+background: #fff;
+color: #000;
+}
+
+.button:not(.button--secondary):hover:after,
+.button:not([disabled]):hover:after,
+.button--primary:hover:after {
+/* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+    rgba(var(--color-button-text), var(--border-opacity)),
+  0 0 0 calc(var(--buttons-border-width) + 0px)
+    rgba(var(--color-button), var(--alpha-button-background)); */
+}
+
+.button.cart-remove-button:not(.button--secondary):hover, .button.cart-remove-button:not([disabled]):hover{
+    background: transparent;
+}
+
+.button--secondary:not(.button--primary):hover {
+  background: #A6BB3A;
+  color: #fff;
+}
+.button--secondary:not(.button--primary):hover:after {
+--border-offset: 0px;
+/* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+    rgba(var(--color-button-text), var(--border-opacity)),
+  0 0 0 calc(var(--buttons-border-width) + 0px)
+    rgba(var(--color-button), var(--alpha-button-background)); */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+body .swym-ui-component .swym-title,
+body .swym-ui-component .swym-heading,
+body .swym-ui-component .swym-label,
+.heading-font {
+font-family: Cellofy;
+font-weight: 600;
+}
+.pt-0 {
+padding-top: 0 !important;
+}
+.pb-0 {
+padding-bottom: 0 !important;
+}
+.mt-0 {
+margin-top: 0 !important;
+}
+.mb-0 {
+margin-bottom: 0 !important;
+}
+.sim-link,
+.home-multicolumn .multicolumn-card__info .sim-link,
+.li-view-all .header__menu-item {
+display: inline-flex;
+align-items: center;
+color: #000;
+font-size: 12px;
+font-weight: 500;
+line-height: 100%;
+letter-spacing: 0.6px;
+text-transform: uppercase;
+gap: 10px;
+text-decoration: none;
+}
+body .swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-title,
+body
+.swym-ui-component
+.swym-wishlist-grid
+.swym-wishlist-item
+.swym-product-price {
+font-weight: 400;
+font-size: 14px;
+}
+.lookbook-pastel-prairies #MainContent .page-width {
+max-width: 1190px;
+}
+.section-padding {
+padding-top: 100px;
+padding-bottom: 100px;
+}
+/* template-page gift-guide */
+.template-page.gift-guide .section-padding {
+padding-top: 130px;
+padding-bottom: 130px;
+}
+/* template-page gift-guide */
+body .swym-ui-components .swym-bg-2,
+body .swym-ui-component .swym-bg-2 {
+background: #000;
+}
+body .swym-ui-component .swym-wishlist-detail-header .swym-wishlist-main-title,
+body .swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-title,
+body
+.swym-ui-component
+.swym-wishlist-grid
+.swym-wishlist-item
+.swym-product-price,
+body
+.swym-ui-component
+.swym-clear-wishlist-modal
+.swym-clear-wishlist-modal-dialog
+.swym-text-heading,
+body .swym-ui-components .swym-color-2,
+body .swym-ui-component .swym-color-2,
+body .swym-notification-wishlist .swym-details {
+color: #000;
+}
+.btn-no-pseudo:after,
+.btn-no-pseudo:before {
+display: none;
+}
+body .wlo-holder.wlo-active {
+z-index: 20000000000;
+}
+.template-index .page-width,
+.template-product .page-width,
+.announcement-bar.page-width {
+/* max-width: 100%; */
+}
+.section-instagram {
+overflow: hidden;
+}
+.button.button--secondary.loading:hover > .loading-overlay__spinner .path {
+stroke: #000;
+}
+
+/*global loader - start*/
+body.fetch--progress {
+overflow: hidden;
+pointer-events: none;
+position: relative;
+height: 100vh;
+width: 100%;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+body.fetch--progress:after {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.95);
+z-index: 6;
+opacity: 1;
+visibility: visible;
+}
+.fetch--progress .global-loader {
+width: 48px;
+height: 48px;
+border: 3px dotted #000;
+border-style: solid solid dotted dotted;
+border-radius: 50%;
+display: inline-block !important;
+position: fixed;
+left: 50%;
+top: 50%;
+animation: rotation 2s linear infinite;
+z-index: 7;
+margin: -24px 0 0 -24px;
+}
+
+@keyframes rotation {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+@keyframes rotationBack {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(-360deg);
+}
+}
+/*global loader - end*/
+
+/* global css start */
+
+.why-video-header-text-inner-second{
+  z-index: 0;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+max-width: 100%;
+width: 100%;
+object-fit: cover;
+height: auto;
+}
+
+.mobile-img {
+display: none;
+}
+
+.localization-form__select span img {
+display: none;
+}
+
+body.gradient.template-collection.category.largeScaleF {
+background: #fcfbf7;
+}
+.container-fluid {
+width: 100%;
+max-width: 1360px;
+margin: auto;
+}
+.main_heading {
+/* font-size: 60px; */
+line-height: 100%;
+font-weight: 600;
+color: #000000;
+letter-spacing: -1.2px;
+margin: 0 0 10px;
+}
+.shopify-section .heading {
+font-size: 24px;
+line-height: 120%;
+letter-spacing: -0.48px;
+font-weight: 600;
+color: #000000;
+margin: 0 0 5px;
+}
+p.desc, .desc {
+font-weight: 400;
+color: #090909;
+font-size: 16px;
+line-height: 150%;
+margin: 0;
+}
+
+/* .link.makro--link {
+font-weight: 600;
+line-height: 100%;
+margin-top: 30px;
+border: none;
+font-size: 16px;
+display: flex;
+align-items: center;
+gap: 5px;
+text-decoration: none;
+} */
+
+ .shopify-section {
+background-color: #FCFBF7;
+} 
+.advantag-inner-icon-header-text-main .advantage-image-with-txt .image{
+      width: 80px !important;
+}
+.advantag-inner-icon-header-text-main .advantage-image-with-txt .image img{
+      height: 100%;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 1440px) {
+.container-fluid {
+  padding: 0px 40px;
+}
+}
+@media only screen and (max-width: 768px) {
+.mobile-img {
+  display: block !important;
+}
+.desktop-img {
+  display: none;
+}
+}
+
+/* global css end */
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+.xl-medium-hide {
+  display: none !important;
+}
+}
+
+@media screen and (min-width: 1200px) {
+.xl-large-up-hide {
+  display: none !important;
+}
+}
+
+@media screen and (min-width: 990px) {
+.template-page.gift-guide .msd-image-banner + .section-padding {
+  padding-top: 80px;
+}
+}
+
+@media screen and (max-width: 1199px) {
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+}
+@media screen and (max-width: 989px) {
+.main_heading {
+  font-size: 48px;
+  letter-spacing: -0.96px;
+}
+.section-padding {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* template-page gift-guide */
+.template-page.gift-guide .section-padding {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+/* template-page gift-guide */
+}
+@media screen and (max-width: 749px) {
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.button.cta_button {
+  width: 100%;
+}
+}

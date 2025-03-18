@@ -1,0 +1,81 @@
+.home-collection-list .collection-list-title{
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+.home-collection-list .collection-list-title.h2{
+  font-size: 12px;
+}
+.home-collection-list .title, .home-collection-list .title-wrapper-with-link{
+  margin-bottom: 20px;
+}
+.home-collection-list .card__heading{
+      font-size: 14px;
+    line-height: 160%;
+}
+.home-collection-list .card__information {
+  padding: 15px 0 0;
+}
+.home-collection-list .icon-wrap{
+  display: none;
+}
+.home-collection-list .slider-buttons{
+  display: none;
+}
+.home-collection-list .page-width {
+  max-width: 100%;
+}
+
+
+@media screen and (min-width: 750px){
+  .home-collection-list .grid__item {
+    width: calc(12.5% - 10px);
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .home-collection-list .collection-list{
+    column-gap: 10px;
+    row-gap: 0;
+    margin-bottom: -30px;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 990px){
+  .home-collection-list .grid__item {
+    width: calc(25% - 10px);
+  }
+}
+@media screen and (max-width: 989px) and (min-width: 750px){
+  .home-collection-list :not(.slider) .grid__item {
+    width: calc(25% - 10px);
+  }
+}
+@media screen and (max-width: 989px){
+  .home-collection-list .collection-list.slider{
+    margin-bottom: 0;
+  }
+  .home-collection-list .collection-list:not(.slider) .grid__item{
+    margin-bottom: 30px;
+  }
+  .home-collection-list .collection-list:not(.slider){
+    margin-bottom: -30px;
+  }
+  .home-collection-list .card__information {
+    padding-top: 10px;
+  }
+  .home-collection-list .slider.slider--tablet.contains-card--standard .slider__slide:not(.collection-list__item--no-media) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .home-collection-list .card__heading{
+    letter-spacing: normal;
+  }
+}
+@media screen and (max-width: 749px){
+  .home-collection-list .grid{
+    column-gap: 10px;
+  }
+  .home-collection-list .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item, .grid--peek .grid__item {
+    width: calc(50% - 10px - 3rem);
+  }
+}

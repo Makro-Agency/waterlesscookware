@@ -1,0 +1,89 @@
+{{ 'policy.css' | asset_url | stylesheet_tag }}
+
+<style>
+  @font-face {
+  font-family: Cellofy-MedExtExpIta;
+  src: url(https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-MedExtExpIta.woff?v=1722574026format('woff');
+  }
+  @font-face {
+  font-family: Cellofy-Regular;
+  src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/Cellofy-Regular.woff?v=1722476825) format('woff');
+  }
+  
+  @font-face {
+  font-family: ProximaNova-Regular;
+  src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/ProximaNova-Regular.woff?v=1722476969) format('woff');
+  }
+</style>
+
+    <section class="Terms-condition-container">
+        <h1 class="main-heading heading-font">{{ section.settings.title }}</h1>
+        {%- for block in section.blocks -%}
+        <div class="section-main-content">
+          {% if block.settings.title != blank %}
+            <h2 class="section-heading">{{ block.settings.title }}</h2>
+          {% endif %}
+            {{ block.settings.details }}
+        </div>
+        {% endfor %}
+    </section>
+
+{% schema %}
+{
+"name": "terms and conditions",
+"settings": [    
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+],
+    "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details"
+        }
+      ]
+    }
+  ],
+"presets": [
+{
+"name": "terms and conditions"
+}
+]
+}
+{% endschema %}

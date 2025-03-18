@@ -1,0 +1,228 @@
+<style>
+  .get-started-360 {
+    padding: 40px 0 60px 0;
+    text-align: center;
+  }
+
+  .get-started-360 h2 {
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+    margin-bottom: 0;
+  }
+
+  .get-started-360 p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .get-started-360 .custom-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .get-started-360 .grid-item {
+    max-width: calc(25% - 20px);
+    text-align: left;
+  }
+  
+  .get-started-360 .grid-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .get-started-360 .grid-item h3 {
+    margin: 15px 0 10px;
+    font-family: Cellofy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .get-started-360 .grid-item p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+  }
+  
+  .get-started-360 .shop-link {
+    /* display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    display:flex;
+    align-items:center; */
+  }
+  
+  .get-started-360 .shop-link:hover {
+    text-decoration: unset;
+  }
+  .arrow360{
+    margin-left:10px;
+    display:block;
+  }
+  .arrow360 svg {
+    vertical-align: middle;
+  }
+  .get-started-360 .grid-item a:hover h3{
+    color:#c3d957;
+  }
+  
+
+  @media only screen and (max-width: 989px) {
+
+ .get-started-360 .custom-grid {
+    justify-content: space-between;
+    gap: 30px 20px;
+  }
+  .get-started-360 .custom-grid {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .get-started-360 .grid-item img{
+    height:400px;
+  }
+  
+    
+  }
+  
+  @media only screen and (max-width: 768px) {
+   .get-started-360 .grid-item img{
+      height: 260px;
+    }
+  .get-started-360 .grid-item {
+    max-width: calc(50% - 5px);
+  }
+   .get-started-360 .grid-item:nth-child(1),.get-started-360 .grid-item:nth-child(2){
+     margin-bottom:20px;
+   }
+ .get-started-360 h2 {
+    font-size: 36px;
+  }
+}
+</style>
+
+<!-- sections/get-started-360.liquid -->
+<section class="get-started-360">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+    <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+     {% if section.settings.description != blank %}
+    <p>{{ section.settings.description }}</p>
+     {% endif %}
+    <div class="custom-grid">
+      {%- liquid                          
+        assign widths = '320, 375, 420, 550, 750'
+      -%}
+      {% capture sizes %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 140 | divided_by: 4 }}px, (min-width: 750px) calc((100vw - 124px) / 2), calc((100vw - 40px) / 2){% endcapture %}
+      {% for block in section.blocks %}
+        <div class="grid-item">
+          <div href="{{ block.settings.link }}">
+            {% if block.settings.image != blank %}
+              <a href="{{ block.settings.link }}">
+              {%- liquid
+                assign dek_img = block.settings.image
+                assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+              -%}
+              {{
+                dek_img
+                | image_url: width: 750
+                | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths
+              }}
+              {% assign assign dek_img = blank %}{% comment %}
+              <img src="{{ block.settings.image | img_url: '500x500' }}" alt="{{ block.settings.title }}">
+              {% endcomment %}
+              </a>
+            {% endif %}
+            {% if block.settings.title != blank %}
+            <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+            <p>{{ block.settings.text }}</p>
+            {% endif %}
+           {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="link makro--link">{{ block.settings.link_text }} 
+              {% if settings.arrowsvg != blank %}
+                <span class="arrow360">
+                  {{ settings.arrowsvg }}
+                </span>  
+              {% endif %}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Get Started with 360",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get Started with 360"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    }
+    
+  ],
+  "blocks": [
+    {
+      "type": "image-with-text",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Cookware"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Shop Now"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Get Started with 360",
+    "category": "Custom Sections"
+  }]
+}
+{% endschema %}

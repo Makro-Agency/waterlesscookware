@@ -1,0 +1,113 @@
+<!-- Navidium script start -->
+<style>
+  .appearance-right-previw-ld .d-flexCstm-ld p strong {position: absolute;top: 0;right: 40px;color: #000000 !important;}
+  .nvd-slide-reduced .appearance-right-previw-ld .img svg{display:none;}
+  .rebuy-cart__flyout-item:has([href*="/products/navidium"]),
+  body .rebuy-cart__flyout-item[class*="-navidium"]{display: none;}
+  
+
+  .nvd-slide-reduced .appearance-right-previw-ld {
+    background: #F5F4F2 !important;
+    padding: 16px !important;
+    margin-top:20px !important;
+}
+
+.nvd-slide-reduced .appearance-right-previw-ld .img {
+    width: 41px;
+    height: 41px;
+    max-width: 41px;
+    background: #fff;
+    text-align: center;
+    line-height: 41px;
+}
+
+.nvd-slide-reduced .appearance-right-previw-ld .img img {
+    max-width: 23px;
+    max-height: 23px;
+    vertical-align: middle;
+    /* line-height: 41px; */
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .flex-shrink-0Cstm-ld {
+    padding-right: 14px;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld h4 {
+    font-size: 14px;
+    color: #000 !important;
+    padding-bottom: 6px;
+}
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld p {
+    color: #73716E;
+    font-size: 12px;
+    padding: 0;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld .form-switchCstm-ld input {
+    width: 40px;
+    height: 18px;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld {
+    padding-right: 90px;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld p strong {
+    right: 55px;
+    top: 3px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .flex-grow-1Cstm-ld {
+    padding-top: 3px;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld h4 a {
+    display: none;
+}
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld {
+    margin: 0;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .d-flexCstm-ld .form-switchCstm-ld input {
+    background-color: #C9C8C5 !important;
+}
+
+  .nvd-slide-reduced .appearance-right-previw-ld .form-switchCstm-ld .forms-check-inputCstm-ld:checked {
+    background-color: #000000 !important;
+}
+</style>
+    <script>
+      const nvdShop = 'thesareeroom.myshopify.com';
+      const nvdShopCurrency = '{{ shop.money_format | strip_html }}';
+      const nvdControls = {
+        cartCounter: '.cart-count-bubble', //cart item count
+        subtotal: 'subtotal_class', // cart subtotal amount
+        lineAttribute: 'data-index', // cart item line
+        cartItemNodes: 'cart_nodes', // Cart items loop
+        quantityMinus: 'qty_minus', // Quantity decrase button
+        quantityPlus: 'qty_plus', // Quantity incrase button
+        removeItem: 'cart_remove_class', // Cart item remove btn class
+        qtybtnAttribute: 'data-href', // Cart item btn line update
+        qtyrmvAttribute: 'href', // Cart item remove line update
+        clickTriggers: '#cart-icon-bubble, #cart-icon-bubble *', // Onclick widget update
+        changeTrigger: 'onchange_input_class_here', // Onchange widget update
+  	    cursorControl: '.nvd-mini', // Disabled/Enabled cursor pointer event
+        onLoadTrigger: false, // window.onload nvd_init function call
+        cartReload: false, // Cart reload for /cart page
+        showConsoleMessage:false, // Console message show/hide
+        trackWidget:false, // Track widget on realtime
+        forceClick: true, // forceclick for onclickTrigger event
+        autoHide: false, // Hide by JS according to cartItemNodes
+        initiateTime: 2000, //milisecond
+        nvdInject:{
+          status:false, // Inject nvd-mini div
+          parent:'parent_class', // parent class for nvd-mini div
+          container:'checkout_button_div' // nvd-mini will added before this div/button
+        }
+      }      
+    </script>
+   <script src="https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/js/nvd-widget-stable-1.js" defer></script>
+  <!-- End of Navidium script -->

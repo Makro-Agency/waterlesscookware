@@ -1,0 +1,83 @@
+{%- if section.settings.left_title != blank or section.settings.right_title != blank or section.settings.center_title != blank -%}
+
+  <link rel="stylesheet" href="{{ 'lookbook-page-navigation.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ 'lookbook-page-navigation.css' | asset_url }}"></noscript>
+
+  <div class="lookbook-nav-wrap">
+    {%- if section.settings.left_title != blank -%}
+      <div class="left-nav-wrap">
+        <a 
+          {% if section.settings.left_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.left_link }}"
+          {% endif %}
+          class="sim-link left-nav-title">
+          {%- render 'left-arrow' -%}{{- section.settings.left_title -}}
+        </a>
+      </div>
+    {%- endif -%}
+  
+    {%- if section.settings.center_title != blank -%}
+      <div class="center-nav">{{ section.settings.center_title }}</div>
+    {%- endif -%}
+  
+    {%- if section.settings.right_title != blank -%}
+      <div class="right-nav-wrap">
+        <a 
+          {% if section.settings.right_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.right_link }}"
+          {% endif %}
+          class="sim-link right-nav-title">
+          {{- section.settings.right_title -}}{%- render 'right-arrow' -%}
+        </a>
+        
+      </div>
+    {%- endif -%}
+  </div>
+  
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "Navigation",
+  "tag": "section",
+  "class": "lookbook-page-navigation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left navigation title"
+    },
+    {
+      "type": "url",
+      "id": "left_link",
+      "label": "Left navigation link"
+    },
+    {
+      "type": "text",
+      "id": "center_title",
+      "label": "Center navigation title"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right navigation title"
+    },
+    {
+      "type": "url",
+      "id": "right_link",
+      "label": "Right navigation link"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

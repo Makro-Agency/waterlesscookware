@@ -1,0 +1,244 @@
+<style>
+  #icons-statements {
+      width: 100%;
+      margin: auto;
+  }
+
+  .icons-statements {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 32px;
+  }
+
+  .icons-statements-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .catalog-icons-text-statements {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content:center;
+  }
+
+  .catalog-icons-text-statements h5 {
+      margin: 0;
+      font-family: Cellofy;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      color: #0D0D0D;
+
+  }
+
+  .catalog-icons-text-statements p {
+      margin: 0;
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+
+  }
+
+  .catalog-icons-statements {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 100px;
+  }
+
+  .bg-color-green {
+      background: #606D22;
+  }
+
+  .bg-color-gold {
+      background: #E6A817;
+  }
+
+  .bg-color-light-green {
+      background: #C3D957;
+
+  }
+
+  @media only screen and (max-width: 1440px) {
+      #icons-statements {
+          padding: 40px 40px;
+      }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+      #icons-statements {
+          background: #FAF5EB;
+          padding: 20px 7px;
+          overflow-x: scroll;
+        scrollbar-width: none; 
+          margin-top:-7px;
+      }
+
+      .icons-statements-inner {
+          gap: 10px;
+          flex-direction: row;
+      }
+
+      .catalog-icons-text-statements h5 {
+          font-size: 16px;
+          line-height: 19.2px;
+          white-space: nowrap;
+      }
+
+      .catalog-icons-text-statements p {
+          display: none;
+      }
+
+      .icons-statements {
+          gap: 20px;
+
+      }
+
+      .catalog-icons-statements {
+          padding: 0px;
+          width: 24px;
+          height: 24px;
+      }
+
+      .catalog-icons-statements svg {
+          width: 12px;
+          height: 12px;
+      }
+  }
+</style>
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  
+    @media screen and (max-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+    }
+  {%- endstyle -%}
+<div class="section-{{ section.id }}-padding">
+  <div id="icons-statements" class="page-width">
+      <div class="icons-statements">
+        {%- for block in section.blocks -%}
+            <div class="icons-statements-inner">
+             <div class="catalog-icons-statements" style="background:{{ block.settings.color }};">
+              {% if  block.settings.svg != blank  %}
+                {{ block.settings.svg }}
+              {% else %}
+                <img src="{{ block.settings.image | img_url:'' }}" alt="{{ block.settings.title }}">
+              {% endif %}
+            </div>
+             <div class="catalog-icons-text-statements">
+                <h5>{{ block.settings.title }}</h5>
+                <p>{{ block.settings.details }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Catalog Icons",
+  "settings": [
+     {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Mobile Space"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon-text",
+      "name": "Icon & Text",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Icon Background color"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "svg",
+          "label": "Svg Code"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "details",
+          "label": "Details"
+        }
+      ]
+    }
+  ],
+"presets": [
+  {
+    "name" : "Catalog Icons",
+    "settings": {}
+  }
+]
+}
+{% endschema %}

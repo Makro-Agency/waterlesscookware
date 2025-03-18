@@ -1,0 +1,395 @@
+<style>
+  .title_video_wrapper {
+    padding: 150px 80px;
+  }
+  .title_video_wrapper:not(.right_video) .video_group {
+    margin-bottom: 60px;
+    display: block;
+  }
+  .cover-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+  }
+  button.play-button {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    padding: 0;
+  }
+  .video_title .main_heading {
+    margin-bottom: 10px;
+  }
+  .video_title .cta_button {
+    margin-top: 40px;
+  }
+  .img-mobile {
+    display: none;
+  }
+  custom-deferred-media.video_group {
+    display: block;
+  }
+  .video_group {
+    position: relative;
+  }
+  .video_group[loaded="true"] .cover-image,
+  .video_group iframe, .video_group video {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .video_group iframe, .video_group video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-width: 0;
+    transition: all 0.5s 0.2s ease, visibility 0.2s;
+  }
+  .video_group[loaded="true"] iframe, .video_group[loaded="true"] video {
+    visibility: visible;
+    opacity: 1;
+  }
+  @media screen and (min-width: 990px){
+    .title_video_wrapper.right_video {
+      display: flex;
+      justify-content: space-between;
+    }
+    .title_video_wrapper.right_video > * {
+      flex: 1;
+    }
+    .title_video_wrapper.right_video .video_title {
+      max-width: 550px;
+    }
+    .title_video_wrapper.right_video .video_group {
+      order: 1;
+      max-width: 1160px;
+    }
+    .title_video_wrapper:not(.right_video) .video_title {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .title_video_wrapper:not(.right_video) .video_title > * {
+      flex: 1;
+    }
+  }
+  @media screen and (max-width: 989px){
+    .video_group {
+      margin-bottom: 40px;
+    }
+    .title_video_wrapper {
+      padding: 60px 20px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .img-mobile {
+      display: block;
+    }
+    .img-desktop {
+      display: none;
+    }
+    .play-button svg {
+      height: 70px;
+      width: 70px;
+    }
+    .video_title .cta_button {
+      width: 100%;
+    }
+  }
+</style>
+{% comment %}
+<div class="title_video_wrapper right_video">
+  <div class="video_group">
+    <div class="cover-image">
+      <img src="https://cdn.shopify.com/s/files/1/0531/9773/4053/files/video_poster.png?v=1719289436" height="auto" width="auto" class="img-desktop" />
+      <img src="https://cdn.shopify.com/s/files/1/0531/9773/4053/files/video_poster_mbl.png?v=1719292754" height="auto" width="auto" class="img-mobile" />
+      <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM42.9412 64.2639L65.8824 51.0189C66.6667 50.566 66.6667 49.434 65.8824 48.9812L42.9412 35.7361C42.1569 35.2832 41.1765 35.8493 41.1765 36.7549V63.2451C41.1765 64.1507 42.1569 64.7168 42.9412 64.2639Z" fill="white"/></path>
+        </svg>
+      </button>     
+    </div>
+  </div>
+  <div class="video_title">
+    <h2 class="main_heading h2">SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME</h2>
+    <div class="description-wrapper"> 
+      <p class="desc">Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p>
+      <a href="#" class="button cta_button">SHOP NOW</a>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+
+
+{%- liquid  
+  assign video_id = section.settings.video.id | default: section.settings.video_url.id
+  assign video_id_mobile = section.settings.video_moible.id | default: section.settings.video_url_mobile.id
+  
+  assign video_alt = section.settings.video.alt | default: section.settings.description
+  assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+  
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+  assign posterMobile = section.settings.video_moible.preview_image | default: section.settings.cover_image_mobile
+
+  assign enable_video_looping = section.settings.enable_video_looping
+
+  if section.settings.video != null
+    assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+      assign fix_ratio = true
+    endif
+  endif
+  if section.settings.video_mobile != null
+    assign ratio_diff_mobile = section.settings.video_video_mobile.aspect_ratio | minus: posterMobile.aspect_ratio | abs
+    if ratio_diff_mobile < 0.01 and ratio_diff_mobile > 0
+      assign fix_ratio_mobile = true
+    endif
+  endif
+-%}
+
+
+<div class="title_video_wrapper {{ section.settings.videoLayout }}"> 
+  <custom-deferred-media class="video_group">
+    <div class="cover-image">
+      {% if posterMobile != blank %}
+        {% assign pclass = 'img-desktop' %}
+      {% endif %}
+      {%- if poster != null -%}
+        {{ poster
+          | image_url: width: 3840
+          | image_tag: loading: 'lazy', sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt, class: pclass
+        }}
+      {%- else -%}
+        {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+      {%- endif -%}
+      {%- if posterMobile != null -%}
+        {{ posterMobile
+          | image_url: width: 750
+          | image_tag: loading: 'lazy', sizes: sizes, widths: '375, 750, 1100', alt: alt, class: 'img-mobile'
+        }}      
+      {%- endif -%}      
+      <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM42.9412 64.2639L65.8824 51.0189C66.6667 50.566 66.6667 49.434 65.8824 48.9812L42.9412 35.7361C42.1569 35.2832 41.1765 35.8493 41.1765 36.7549V63.2451C41.1765 64.1507 42.1569 64.7168 42.9412 64.2639Z" fill="white"/></path>
+        </svg>
+      </button>      
+    </div>    
+    <template>
+      {%- if section.settings.video == null and section.settings.video_url != null -%}
+        {%- liquid
+          assign loop = ''          
+          if enable_video_looping
+            assign loop = '&loop=1&playlist=' | append: video_id
+          endif
+        -%}
+        {%- if section.settings.video_url.type == 'youtube' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}&rel=0&enablejsapi=1"
+            class="js-youtube"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- else -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}&muted=0"
+            class="js-vimeo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- endif -%}
+      {%- else -%}
+        {{
+          section.settings.video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: true,
+            loop: enable_video_looping,
+            controls: true,
+            muted: false
+        }}
+      {%- endif -%}
+      
+      {%- if section.settings.video_mobile == null and section.settings.video_url_mobile != blank -%}
+        {%- liquid
+          assign loop = ''
+          if enable_video_looping
+            assign loop = '&loop=1&playlist=' | append: video_id_mobile
+          endif
+        -%}
+        {%- if section.settings.video_url_mobile.type == 'youtube' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id_mobile }}?enablejsapi=1&autoplay=1{{ loop }}&rel=0&enablejsapi=1"
+            class="js-youtube js-mobile-video"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- else -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id_mobile }}?autoplay=1{{ loop }}&muted=0"
+            class="js-vimeo js-mobile-video"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- endif -%}
+      {% else %}
+        {{
+          section.settings.video_mobile
+          | video_tag:
+            image_size: '750x',
+            autoplay: true,
+            loop: enable_video_looping,
+            controls: true,
+            muted: true,
+            class: 'js-mobile-video'
+        }}
+      {%- endif -%}
+    </template>
+  </custom-deferred-media>
+  <div class="video_title">
+    {%- if section.settings.title != blank -%}
+      <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    <div class="description-wrapper"> 
+      {%- if section.settings.detail != blank -%}
+        <p class="desc">{{ section.settings.detail }}</p>
+      {%- endif -%}
+      {%- if section.settings.btn_text != blank -%}
+        <a href="{{ section.settings.url | default: '#' }}" class="button cta_button">{{ section.settings.btn_text }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+      
+{% schema %}
+  {
+    "name": "Title Video",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+    {
+      "type": "select",
+      "label": "Select video layout",
+      "id": "videoLayout",
+      "options": [
+        {
+          "label": "Layout 1",
+          "value": ""
+        },
+        {
+          "label": "Layout 2",
+          "value": "right_video"
+        }
+      ],
+      "default":""
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Play video on loop",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Shopify-hosted video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Mobile video"
+    },
+    {
+      "type": "header",
+      "content": "Or embed video from URL"
+    },
+    {
+      "type": "paragraph",
+      "content": "Shows when no Shopify-hosted video is selected."
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "URL",
+      "info": "Use a YouTube or Vimeo URL"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url_mobile",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "Mobile URL",
+      "info": "Use a YouTube or Vimeo URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Cover image"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image_mobile",
+      "label": "Cover image for mobile"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "detail",
+      "label": "Detail",
+      "default": "Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus."
+    },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "label": "Button text",
+        "id": "btn_text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "label": "Button link",
+        "id": "url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title Video"
+      }
+    ]
+  }
+{% endschema %}

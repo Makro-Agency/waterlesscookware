@@ -1,0 +1,138 @@
+{%- if section.settings.collection != blank -%}
+  {{ 'component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'multiple-collections.css' | asset_url | stylesheet_tag }}
+  {{ 'card-product-new.css' | asset_url | stylesheet_tag }}
+
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+    <div class="collection-detail{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="collection__title title-wrapper title-wrapper--no-top-margin">
+        <h2 class="title inline-richtext h2">{{ section.settings.title }}</h2>
+        {% if section.settings.description != blank %}
+          <div class="collection__description body rte">
+            <p>{{ section.settings.description }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.collection.url != blank %}
+          <a class="collection-btn-label sim-link" href="{{ section.settings.collection.url }}">
+            {{- section.settings.btn_label }}
+            {% render 'right-arrow' -%}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    
+    <div class="swiper multi-coll-main{% if section.settings.hover_effect == false %} disable-hover{% endif %}" data-multi-collections-slider>
+      <div class="swiper-wrapper grid grid--4-col-desktop grid--2-col-tablet-down">
+        {% for product in section.settings.collection.products limit: 12 %}
+          <div class="grid__item swiper-slide{% if forloop.index >= 5 %} small-hide medium-hide{% endif %}">
+            {% render 'card-product-new',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              show_secondary_image: true,
+              show_vendor: false,
+              show_rating: section.settings.show_rating,
+              show_quick_add: false,
+              section_id: section.id,
+              override_title: section.settings.override_title,
+              override_image: section.settings.override_image
+            %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="swiper-btn-wrap{% if section.settings.collection.products_count <= 4 %} hidden{% endif %} small-hide medium-hide">
+        <div class="swiper-button-prev swiper-btn">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Vector" d="M7 13L1 7L7 1" stroke="black"/>
+          </svg>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-btn">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Vector" d="M1 1L7 7L1 13" stroke="black"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    {% if section.settings.collection.products_count > 4 %}
+      <div class="multi-coll-loadmore large-up-hide">
+        <button class="button button--secondary" data-load-more>Load More</button>
+      </div>
+    {% endif %}
+  </div>
+
+{% endif %}
+
+<script>
+  var loadmores = document.querySelectorAll('.multiple-collections [data-load-more]') || null;
+  if(loadmores.length){
+    loadmores.forEach(loadmore => {
+      loadmore.addEventListener('click',function(e){
+        e.preventDefault();
+        this.classList.add("hidden");
+        /*console.log("clicked loadmore");*/
+        var parent = this.closest('.multiple-collections') || null;
+        /*console.log("parent",parent);*/
+        if(parent){
+          var cards = parent.querySelectorAll(".multi-coll-main .grid__item.small-hide") || null;
+          if(cards.length){
+            /*console.log("cards",cards);*/
+            cards.forEach(card => {
+              card.classList.remove("medium-hide","small-hide");
+            });
+          }
+        }
+      });
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Collection product slider",
+  "class": "multiple-collections section-padding",
+  "tag":"section",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Reference a collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "The Maison de Fleurs collection",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "Describe",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "default": "Explore collection",
+      "label": "Button Label"
+    },
+    {
+      "type": "checkbox",
+      "id": "hover_effect",
+      "label": "Enable Hover Effect",
+      "info":"Settings for Product card hover effect"
+    }
+  ],
+  "presets": [
+      {
+        "name": "Collection product slider",
+        "category": "Custome"
+      }
+    ]
+}
+{% endschema %}

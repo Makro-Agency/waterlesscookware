@@ -1,0 +1,238 @@
+{% if collection.metafields.accentuate.category_icon or collection.metafields.accentuate.category_text != blank %}
+<style>
+  .category-image-statment {
+    background: #fcfbf7;
+  }
+  #category-icon-statement {
+    width: 100%;
+    /* max-width: 1360px; */
+    margin: auto;
+    padding-top: 120px;
+  }
+  
+  .category-icon-statement {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 40px 32px;
+    justify-content: space-between;
+  }
+  
+  .category-image-text-link {
+    display: flex;
+    gap: 20px;
+    color: #000000;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  
+  .category-image-text-link .category-image-product {
+    line-height: 0;
+    max-width: 80px;
+    flex: 1 0 auto;
+  }
+  .category-image-text-link .category-image-product img {
+    width: 100%;
+  }
+  
+  .category-text-product p {
+    margin: 0;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  
+  .category-change-color {
+    color: #ce1b03;
+    text-transform: uppercase;
+  }
+  
+  #category-header-text {
+    display: none;
+  }
+  
+  #category-header-text .full-blend-hero-section-container-box-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+  
+  #category-header-text
+    .full-blend-hero-section-container-box-heading-container
+    h2 {
+    font-family: Cellofy;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  
+  #category-header-text .full-blend-hero-section-container-box-text-container p {
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+  }
+  
+  @media only screen and (max-width: 1440px) {
+    .category-icon-statement {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 1199px) {
+    .category-icon-statement {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .category-icon-statement {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #category-header-text {
+      display: block;
+    }
+  
+    #category-icon-statement {
+      padding-top: 40px;
+    }
+  
+    .category-icon-statement {
+      gap: 10px;
+    }
+  
+    .category-text-product p {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  @media only screen and (max-width: 749px) {
+    .full-blend-hero-section-container .full-blend-hero-section-container-box { display: none !important; }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .category-image-product img {
+      display: none;
+    }
+  
+    .category-image-text-link {
+      gap: 0;
+      padding:0;
+    }
+  
+    .category-text-product {
+      padding: 10px 15px;
+      border-radius: 100px;
+      border: 1px solid #0000001a;
+    }
+  
+    .category-icon-statement {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  main .custom-product-grids { padding-block-start: 80px; }
+  @media only screen and (max-width: 989px) {
+    main .custom-product-grids { padding-block-start: 40px; }
+  }
+</style>
+  <div id="category-icon-statement" class="page-width" >
+    <div id="category-header-text" class="large-up-hide medium-hide">
+      <div class="full-blend-hero-section-container-box-content-container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{ routes.home_url }}">Home</a>
+            </li>
+            {% if template == 'collection' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ collection.title }}</li>
+            {% elsif page.handle == 'catalog' %}
+              <li class="breadcrumb-item">
+                <a href="/catalog">360 Catalog</a>
+              </li>
+              mk{{ page.handle }}
+            {% elsif template == 'product' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="{{ collection.url }}">{{ collection.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+            {% elsif template == 'page' %}
+              <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            {% elsif template == 'article' %}
+              <li class="breadcrumb-item">
+                <a href="/blogs/{{ article.blog.handle }}">{{ article.blog.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+            {% endif %}
+          </ol>
+        </nav>
+        <div class="full-blend-hero-section-container-box-heading-container">
+          <h2>{{ collection.title }}</h2>
+        </div>
+        <div class="full-blend-hero-section-container-box-text-container">
+          <p>{{ collection.description }}</p>
+        </div>
+      </div>
+    </div>
+    {% if collection.metafields.accentuate.category_text != blank %}
+      <div class="category-icon-statement">
+        {% for i in (0..25) %}
+          {% assign text = collection.metafields.accentuate.category_text[i] %}
+          {% assign cat_icon = collection.metafields.accentuate.category_icon[i] %}
+          {% assign url = collection.metafields.accentuate.category_url[i] %}
+          
+          {% if text or cat_icon or url %}
+            <div class="category-image-text">
+              <a href="{{ url }}" class="category-image-text-link">
+                {% if cat_icon %}
+                  <div class="category-image-product">
+                    <img src="{{ cat_icon | image_url: '' }}" alt="collection icon" />
+                  </div>
+                {% endif %}
+                {% if text %}
+                  <div class="category-text-product">
+                    <p>{{ text }}</p>
+                  </div>
+                {% endif %}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  {% style %}
+    #shopify-section-{{ section.id }} { display: none; }
+  {% endstyle %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "category-image-statment",
+  "class": "category-image-statment",
+  "settings":[],
+  "presets": [
+    {
+      "name" : "category-image-statment"
+    }
+  ]
+}
+{% endschema %}

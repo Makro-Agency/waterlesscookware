@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+{% unless template.name == "product" %}
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
+{% endunless %}
+<link rel="stylesheet" href="{{ 'card-product-new.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'recently-viewed-products.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'makro-title-product-carousel.css' | asset_url | stylesheet_tag }}
+
+<script>
+  (() => {
+    let items = JSON.parse(localStorage.getItem('recentlyViewedProducts') || '[]');
+    // If the product already exists we first remove it
+    if (items.includes({{product.id | json}})) {
+      items.splice(items.indexOf({{ product.id | json }}), 1);
+    }
+    items.unshift({{ product.id | json }});
+
+    // Then, we save the current product into the local storage, by keeping only the 18 most recent
+    try {
+      localStorage.setItem('recentlyViewedProducts', JSON.stringify(items.slice(0, 18)));
+    } catch (error) {
+      console.log('error >>',error);
+    }
+  })();
+</script>
+
+{%- capture section_settings -%}
+{
+  "currentProductId": {{ product.id | json }},
+  "searchUrl": {{ routes.search_url | json }}
+}
+{%- endcapture -%}
+
+<recently-viewed-products
+  class="color-{{ section.settings.color_scheme }} isolate gradient"
+  data-section-id="{{ section.id }}"
+  data-section-settings='{{ section_settings }}'
+mk >
+  <div class="collection hidden page-width">
+    <div class="">
+      <div class="collection__title title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="main_heading h2 {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="makro-product-carousel-wrapper  recently-viewed-products-placeholder">
+      {%- if request.page_type == 'search' -%}
+        <div class="makro-product-carousel product-carousel-slider swiper" data-recently-view-slider>
+          <ul
+            class="swiper-wrapper makro-PC-grid grid"
+            role="list"
+            aria-label="{{ 'general.slider.name' | t }}"
+          >
+            {%- assign parsed_terms = search.terms | split: ' OR ' -%}
+            {%- for parsed_term in parsed_terms -%}
+              {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
+              {%- for product in search.results -%}
+                  {%- if product.id == id -%}
+                    <li class="swiper-slide makro-PC-grid__item grid__item" {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+                       <div class="makro-product--card">
+                         {% render 'card-product',
+                        card_product: product,
+                        media_aspect_ratio: section.settings.image_ratio,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        show_vendor: false,
+                        show_description: true,
+                         show_rating: section.settings.show_rating,
+                        lazy_load: true,
+                        show_badge: false,
+                        show_variant: false,
+                        show_quick_add: false,
+                        section_id: section.id
+                        override_title: section.settings.override_title,
+                        override_image: section.settings.override_image,
+                        placeholder_image: placeholder_image,
+                        hideVariant: true
+                      %}
+                       </div>
+                    </li>
+                    {%- break -%}
+                  {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="slide-nav small-hide medium-hide">
+          <div class="nav-btn fea-col-slide-prev prevprev">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+            </svg>
+          </div>
+          <div class="nav-btn fea-col-slide-next nextnext">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+            </svg>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+                
+  </div>
+</recently-viewed-products>
+
+                
+{% schema %}
+{
+  "name": "Recently viewed products",
+  "tag": "section",
+  "class": "recently-viewed-products",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Only be visible if at least one product has been viewed."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Recently viewed"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Recently viewed products"
+    }
+  ]
+}
+{% endschema %}

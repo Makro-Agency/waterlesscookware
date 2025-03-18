@@ -1,0 +1,211 @@
+{%- style -%}
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  background-color:{{ section.settings.bgcolor }};
+}
+
+@media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .service-block{
+    flex-direction:column; 
+  } 
+  .contact-block{ 
+    max-width:100%; 
+  }
+}
+{%- endstyle -%}
+{{ 'resources-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="section-{{ section.id }}-padding" >
+<div class="service-block page-width  ">
+  {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'service' -%}
+          <div class="service-list">
+            {% if block.settings.icon_svg != blank %}
+              <div class="service-icon">
+                {{ block.settings.icon_svg  }}
+              </div>
+            {% endif %}
+        
+              <div class="service-content">
+               {% if block.settings.title != blank %}
+                <h2 class="main_heading h2">{{ block.settings.title }}</h2>
+               {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="desc">{{ block.settings.description }}</p>
+               {% endif %}
+               {% if block.settings.link_text != blank %}
+                <a href="{{ block.settings.link }}" class="link makro--link">{{ block.settings.link_text }} {% render 'btn-arrow-right' %}</a>
+               {% endif %}
+              </div>
+          </div>
+     {%- when 'help' -%}
+    <div class="resources-guide-section-pdp">
+      <div class="contact-block "> 
+        {% if block.settings.title != blank %}
+        <h2 class="main_heading h2">{{ block.settings.title }}</h2>
+          {% endif %}
+         {% if block.settings.description != blank %}
+            <p class="desc">{{ block.settings.description }}</p>
+        {% endif %}
+         {% if block.settings.link_text != blank %}
+        <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="button cta_button btn-light">{{ block.settings.link_text }} </a>
+         {% endif %}
+      </div>
+    </div>
+   {% endcase %}
+  {% endfor %}
+</div>
+</div>
+<style>
+.resources-guide-section-pdp{
+      width: 65%;
+}
+.resources-guide-section-pdp .main_heading{
+   font-size: 32px;
+  color: #fcfbf7;
+  margin-bottom: 5px;
+}
+.resources-guide-section-pdp p.desc{
+  color: #fcfbf7;
+}
+ .resources-guide-section-pdp .cta_button.btn-light{
+      background: #fcfbf7;
+  color: #606d22;
+  margin-top: 30px;
+}
+.resources-guide-section-pdp .cta_button.btn-light:hover{
+  background: #c3d957;
+}
+</style>
+
+{% schema %}
+{
+"name": "Pdp Guide",
+"settings": [
+  {
+    "type": "color",
+    "id": "bgcolor",
+    "label": "Background color"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.all.padding.section_padding_heading"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 36
+  }
+],
+"blocks": [
+  {
+    "type": "service",
+    "name": "Service",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "icon_svg",
+        "label": "Icon SVG",
+        "default": "<svg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='50' height='50' rx='25' fill='#606D22'/></rect><path d='M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625' stroke='#FCFBF7' stroke-width='1.5' stroke-linecap='round'/></path></svg>"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Product Care Guide"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link URL",
+        "default": "/"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "default": "Explore Now"
+      }
+    ]
+  },
+   {
+    "type": "help",
+    "name": "help",
+    "settings": [
+     
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Product Care Guide"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link URL",
+        "default": "/"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "default": "Explore Now"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "Pdp Guide",
+    "category": "Custom",
+    "blocks": [
+      {
+        "type": "service"
+      },
+      {
+        "type": "service"
+      },
+      {
+        "type": "service"
+      }
+    ]
+  }
+]
+}
+{% endschema %}
+

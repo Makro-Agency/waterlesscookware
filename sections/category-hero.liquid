@@ -1,0 +1,86 @@
+{{ 'category-collection.css' | asset_url | stylesheet_tag }}
+
+<div id="full-blend-hero-section-catalog" style="background-image: url('{{ collection.metafields.accentuate.collection_hero_image }}');">
+  <div class="full-blend-hero-sectiong-bg-overlay"></div>
+  <div class="full-blend-hero-section-container page-width">
+    <div class="full-blend-hero-section-container-relative">
+      <div class="full-blend-hero-section-container-mobile-image">
+        <img
+          src="{{ collection.metafields.accentuate.mobile_image }}"
+          alt="catalog-hero-mobile"
+        >
+      </div>
+      {% comment %}<div class="full-blend-hero-section-container-box">
+        <div class="full-blend-hero-section-container-box-content-container">
+          <div class="full-blend-hero-section-container-box-text-container">
+            <p>
+              Just like the over 60,000 kitchens we've already transformed, we believe in the power of quality tools to
+              turn your home into the best seat in town.
+            </p>
+          </div>
+          <img src="{{ collection.metafields.accentuate.collection_hero_image }}" alt="Collection Hero Image">
+        </div>
+      </div>{% endcomment %}
+      <div class="full-blend-hero-section-container-box">
+        <div class="full-blend-hero-section-container-box-content-container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{{ routes.home_url }}">Home</a>
+              </li>
+              {% if template == 'collection' %}
+                <li class="breadcrumb-item">
+                  <a href="/collections">360 Catalog</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ collection.title }}</li>
+              {% elsif page.handle == 'catalog' %}
+                <li class="breadcrumb-item">
+                  <a href="/catalog">360 Catalog</a>
+                </li>
+                {{ page.handle }}
+              {% elsif template == 'product' %}
+                <li class="breadcrumb-item">
+                  <a href="/collections">360 Catalog</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="{{ collection.url }}">{{ collection.title }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+              {% elsif template == 'page' %}
+                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+              {% elsif template == 'article' %}
+                <li class="breadcrumb-item">
+                  <a href="/blogs/{{ article.blog.handle }}">{{ article.blog.title }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+              {% endif %}
+            </ol>
+          </nav>
+          <div class="full-blend-hero-section-container-box-heading-container">
+            <h1>{{ collection.title }}</h1>
+          </div>
+          {% if collection.description != blank %}
+          <div class="full-blend-hero-section-container-box-text-container">
+            <p>{{ collection.description }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "category-hero",
+  "settings": [],
+  "presets": [
+    {
+      "name" : "category-hero",
+      "settings": {}
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,76 @@
+{% assign products = product.metafields.Sareeroom.StyleWith | split:'|' %}
+
+{% assign count = 0 %}
+
+{% for pro in products %}
+  {% assign prod_1 = all_products[pro] %}
+  {% if prod_1.title != blank %}
+    {% assign count = count | plus:1 %}
+    {% capture pro_html %}
+      {{ pro_html }}
+      <div class="styled-item swiper-slide">
+        <a href="{{ prod_1.url }}">
+         <div class="pro-media">
+           <figure><img src="{{ prod_1.featured_image | img_url:'master' }}" height="" width="" /></figure>
+         </div>         
+         <div class="pro-content">
+            <h3 class="pro-title">{{ prod_1.title }}</h3>
+            <div class="price-wrapper">
+              <span class="regular-price">{{ prod_1.price | money }}</span>
+              {% if prod_1.compare_at_price > prod_1.price %}<span class="sale-price">{{ prod_1.compare_at_price | money }}</span>{% endif %}
+            </div>
+           {% if prod_1.compare_at_price > prod_1.price %}
+                {% assign discount = prod_1.compare_at_price | minus:prod_1.price | times:100 | divided_by:prod_1.compare_at_price %}
+                <div class="pro-offers">{{discount}}% Off</div>
+            {% endif %}
+      
+           {% if prod_1.selected_or_first_available_variant.inventory_quantity == 0 %}
+                <div class="pro-offers">Sold out</div>
+           {% else %}
+             
+              {% for tag in prod_1.tags %}
+                
+                {% if tag == 'lastchance' %}
+                  <div class="pro-offers">LAST CHANCE</div>
+                {% endif %}
+                
+                {% if tag == 'new' %}
+                  <div class="pro-offers">Just Dropped</div>
+                {% endif %}
+                
+                {% if tag == 'couture' %}
+                  <div class="pro-offers">Couture</div>
+                {% endif %}
+                
+              {% endfor %}  
+             
+           {% endif %}
+           
+         </div>
+        </a>
+      </div>
+    {% endcapture %}
+  {% endif %}
+{% endfor %}
+
+{% if count > 0 %}
+<div class="style-with-main-wrapper">
+
+    {% if block.settings.title != blank %}
+    <div class="sec-head">
+       <h2 class="sec-title">{{ block.settings.title }}</h2>
+      {% if count > 2 %}
+       <div class="slider-nav">          
+          <div class="nav-btn slide-button-prev">{% render 'left-arrow-2' %}</div>
+          <div class="nav-btn slide-button-next">{% render 'right-arrow-2' %}</div>
+       </div> 
+      {% endif %}
+    </div>
+    {% endif %}
+
+
+    <div class="style-with-list swiper" data-style-with-slider >
+      <div class="swiper-wrapper">{{ pro_html }}</div>
+  </div>
+</div>
+{% endif %}

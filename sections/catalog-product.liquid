@@ -1,0 +1,422 @@
+<style>
+  #catalog-product-dishes {
+      width: 100%;
+      margin: auto;
+  }
+
+  .catalog-product-dishes {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+  }
+
+  .catalog-product-dishes-text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  .catalog-product-img {
+    position:relative;
+  }
+  .catalog-product-dishes-text h2 {
+      margin: 0;
+      font-family: Cellofy;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: -0.02em;
+  }
+
+  .catalog-product-dishes-text p {
+      margin: 0;
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      width:432px;
+      color: #090909;
+
+  }
+
+   .swiper:not(.swiper-initialized) .catalog-product-dishes-categary {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 32px;
+  }
+
+  .catalog-product-grid-main,
+  .catalog-prduct-text-down {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .catalog-prduct-text-down-header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .catalog-prduct-text-down-header h4 {
+      margin: 0;
+      font-family: Cellofy;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 28.8px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color:#090909;
+        margin-top: 10px;
+  }
+
+  .catalog-prduct-text-down-header p {
+      margin: 0;
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      width:276px;
+      color: #090909;
+  }
+
+  .catalog-prduct-text-down-icon a {
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+      display: flex;
+      gap: 5px;
+      color: #0D0D0D;
+  }
+
+ .catalog-product-dishes .icon-per{
+    width: fit-content;
+    background: #FAF5EB;
+    padding: 11px;
+    display: flex !important;
+    border-radius: 100px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+  .mobile-view{
+    display:none;
+  }
+  .catalog-product-main-wrapper { width: 100%; }
+
+  @media only screen and (max-width: 991px) {
+      .catalog-product-dishes-categary {
+          grid-template-columns: 1fr 1fr;
+      }
+    .catalog-prduct-text-down-header p{
+      width:100%;
+    }
+  }
+    .catalog-mobile-breadcrumb{
+      display:none;
+    }
+  @media only screen and (max-width: 768px) {
+    .desktop-view{
+      display:none;
+    }
+    .mobile-view{
+      display:block;
+    }
+      .catalog-product-dishes-categary {
+          gap: 10px;
+      }
+    .desktop_none{
+      display:none;
+    }
+    .catalog-product-dishes-text p{
+      width:100%;
+    }
+
+    .catalog-product-dishes{
+      gap:0px;
+    }
+
+     .catalog-product-dishes {
+        padding: 0px;
+      }
+    .catalog-product-grid-main{
+      padding-top:40px;
+    }
+   .swiper:not(.swiper-initialized) .catalog-product-dishes-categary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .catalog-product-grid-main, .catalog-prduct-text-down {
+      gap: 10px;
+    }
+    .catalog-mobile-breadcrumb{
+      display:block;
+    }
+  }
+
+
+</style>
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.4 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-padding .catalog-product-dishes-text{
+      padding-top: 30px;
+    }
+  }
+{%- endstyle -%}
+
+<div id="catalog-product-dishes" class="page-width section-{{ section.id }}-padding">
+<div class="catalog-product-dishes">
+  <div class="catalog-mobile-breadcrumb">
+       <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{ routes.home_url }}">Home</a>
+            </li>
+            {% if template == 'collection' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+            <li class="breadcrumb-item active" aria-current="page">{{ collection.title }}</li>
+            {% elsif page.handle == 'catalog' %}
+              <li class="breadcrumb-item">
+                <a href="/catalog">360 Catalog</a>
+              </li>
+            {% elsif template == 'product' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="{{ collection.url }}">{{ collection.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+            {% elsif template == 'page' %}
+              <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            {% elsif template == 'article' %}
+              <li class="breadcrumb-item">
+                <a href="/blogs/{{ article.blog.handle }}">{{ article.blog.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+            {% endif %}
+          </ol>
+        </nav>
+  </div>
+  <div class="catalog-product-dishes-text">
+    <h2 class="main-heading heading-font">{{ section.settings.title }}</h2>
+    <p>
+     {{ section.settings.details }}
+    </p>
+  </div>
+<div class="swiper catalog-product-main-wrapper">
+  <div class="catalog-product-dishes-categary swiper-wrapper">
+ {%- for block in section.blocks -%}
+   {%- liquid
+      assign product = block.settings.product
+      if section.settings.media_size == 'large'
+        assign media_width = 0.65
+      elsif section.settings.media_size == 'medium'
+        assign media_width = 0.55
+      elsif section.settings.media_size == 'small'
+        assign media_width = 0.45
+      endif
+  -%}
+   {%- assign tagSale = false -%}
+    {%- for tag in product.tags -%}
+   
+      {%- if tag == 'sale' -%}
+        {%- assign tagSale = tag -%}
+      {%- endif -%}
+    {%- endfor -%}
+    <div class="catalog-product-grid-main swiper-slide">
+      <div class="catalog-product-img">
+        <a href="{{ block.settings.link }}">
+         <img src="{{ block.settings.image | img_url:'' }}" alt="{{ block.settings.title }}"  class="desktop-img">
+         <img src="{{ block.settings.mobileimage | img_url:'' }}" alt="{{ block.settings.title }}"  class="mobile-img">
+          {% if tagSale == 'sale' %}
+           <div class="icon-per">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.44619 8.768C1.92619 8.768 0.294188 7.016 0.294188 4.784C0.294188 2.528 1.92619 0.751999 4.44619 0.751999C7.01419 0.751999 8.67019 2.528 8.67019 4.784C8.67019 7.016 7.01419 8.768 4.44619 8.768ZM4.92619 17H2.86219L13.0862 0.991999H15.1742L4.92619 17ZM13.4942 17.288C10.9742 17.288 9.34219 15.536 9.34219 13.304C9.34219 11.048 10.9742 9.272 13.4942 9.272C16.0382 9.272 17.6942 11.048 17.6942 13.304C17.6942 15.536 16.0382 17.288 13.4942 17.288ZM4.44619 6.56C5.38219 6.56 6.10219 5.936 6.10219 4.784C6.10219 3.584 5.38219 2.96 4.44619 2.96C3.53419 2.96 2.83819 3.584 2.83819 4.784C2.83819 5.936 3.53419 6.56 4.44619 6.56ZM13.4942 15.08C14.4302 15.08 15.1502 14.48 15.1502 13.304C15.1502 12.104 14.4302 11.48 13.4942 11.48C12.5582 11.48 11.8862 12.104 11.8862 13.304C11.8862 14.48 12.5582 15.08 13.4942 15.08Z" fill="#606D22"/>
+                </svg>
+              </div>
+          {% endif %}
+                    
+        </a>
+          <div class="product-swatches">
+            {% for option in product.options_with_values %}
+              {% if option.name == 'size' %}
+                <div class="swatch-wrapper">
+                  {% for value in option.values %}
+                    <div class="swatch size-swatch" title="{{ value }}">
+                      <span class="swatch-label">{{ value }}</span>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+      </div>
+      <div class="catalog-prduct-text-down">
+        <div class="catalog-prduct-text-down-header">
+          <a href="{{ block.settings.link }}">
+            <h4>{{ block.settings.title }}</h4>
+            <p>{{ block.settings.details }}</p>
+          </a>
+        </div>
+        <div class="catalog-prduct-text-down-icon desktop-view">
+          <a href="{{ block.settings.link }}"  class="link makro--link">
+            {{ block.settings.buttondesktop }}
+                {% if settings.arrowsvg != blank %}
+                  {{ settings.arrowsvg }}
+              {% endif %}
+          </a>
+        </div>
+        <div class="catalog-prduct-text-down-icon mobile-view">
+          <a href="{{ block.settings.link }}"  class="link makro--link">
+             {{ block.settings.buttonmobile }}
+            {% if settings.arrowsvg != blank %}
+                  {{ settings.arrowsvg }}
+              {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+   {% endfor %}
+  </div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  {% if section.blocks.size > 4 %}
+  var swiper = new Swiper(".catalog-product-main-wrapper", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    breakpoints: {
+        530: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+        },
+    },
+  });
+  {% endif %}
+});
+</script>
+{% schema %}
+{
+"name": "Explore 360",
+"settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+],
+"blocks": [
+  {
+    "type": "image-text",
+    "name": "Image & Text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobileimage",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "details",
+        "label": "Details"
+      },
+       {
+        "type": "textarea",
+        "id": "buttondesktop",
+        "label": "Button desktop text"
+      },
+      {
+        "type": "textarea",
+        "id": "buttonmobile",
+        "label": "Button Mobile text"
+      },
+       {
+        "type": "product",
+        "id": "product",
+        "label": "t:sections.featured-product.settings.product.label"
+      },
+       {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      }
+  
+    ]
+  }
+],
+"presets": [
+  {
+    "name" : "Explore 360",
+    "settings": {}
+  }
+]
+}
+{% endschema %}

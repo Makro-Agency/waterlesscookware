@@ -1,0 +1,72 @@
+{{ 'custom-testimonial.css' | asset_url | stylesheet_tag }}
+{% style %}
+
+{% endstyle %}
+<div class="testimonial">
+<div class="testimonial-container">
+  {% if section.settings.testimonial_quote != blank %}
+  <blockquote class="testimonial-quote">
+    {{ section.settings.testimonial_quote }}
+  </blockquote>
+   {% endif %}
+  <div class="testimonial-details">
+    <div class="author-details">
+       {% if section.settings.author_image != blank %}
+      <img src="{{ section.settings.author_image | img_url: '' }}" alt="Author" class="author-image">
+      {% endif %}
+      <div class="author-text">
+      {% if section.settings.author_name != blank %}
+        <p class="author-name">{{ section.settings.author_name }}</p>
+      {% endif %}
+      {% if section.settings.author_title != blank %}
+        <p class="author-title">{{ section.settings.author_title }}</p>
+       {% endif %}
+      </div>
+    </div>
+    {% if section.settings.author_sign != blank %}
+   <p class="author-sign">{{ section.settings.author_sign }}</p>
+    {% endif %}
+  </div>
+</div>
+</div>
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "testimonial_quote",
+      "label": "Testimonial Quote",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author Image"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Name Here"
+    },
+    {
+      "type": "text",
+      "id": "author_title",
+      "label": "Author Title",
+      "default": "Founder"
+    },
+    {
+      "type": "textarea",
+      "id": "author_sign",
+      "label": "Author Signature"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Testimonial",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

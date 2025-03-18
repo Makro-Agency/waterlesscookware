@@ -1,0 +1,81 @@
+.return-image-text{
+  overflow: hidden;
+}
+.return-image-text .image-with-text__media-item.grid__item{
+    width: 50vw;
+    margin-right: -50vw;
+    max-width: initial;
+    flex-grow: initial;
+    flex-shrink: initial;
+}
+.return-image-text .image-with-text__text-item{
+  max-width: 50%;
+  width: 50%;
+}
+.return-image-text .image-with-text__content, .return-image-text .image-with-text__grid:not(.image-with-text__grid--reverse) .image-with-text__content{
+  padding-left: 0;
+}
+.return-image-text .image-with-text__text--caption{
+      font-family: Jost;
+}
+.return-image-text .image-with-text__content .image-with-text__heading.h2{
+  margin-bottom: 15px;
+}
+.return-image-text .image-with-text__heading, .return-image-text .image-with-text__text{
+  max-width: 535px;
+}
+.return-image-text .global-media-settings{
+  border: none;
+}
+.return-image-text{
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1199px){
+  .image-with-text__content .image-with-text__heading.h2{
+    font-size: 32px;
+  }
+  .return-image-text{
+    padding-bottom: 60px;
+  }
+}
+@media screen and (max-width: 989px){
+  .image-with-text__content .image-with-text__heading.h2{
+    font-size: 26px;
+  }
+  .return-image-text .image-with-text__text--caption {
+    margin-bottom: 25px;
+  }
+  .return-image-text{
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 749px){
+  .return-image-text .image-with-text__text-item, .return-image-text .image-with-text__media-item.grid__item{
+    max-width: 100%;
+    width: 100%;
+  }
+  .return-image-text .image-with-text__media-item.grid__item{
+    margin-right: 0;
+  }
+  .return-image-text .image-with-text__content, .return-image-text .image-with-text__grid:not(.image-with-text__grid--reverse) .image-with-text__content{
+    padding: 0 0 40px;
+    margin-top: 40px;
+  }
+  .return-image-text .image-with-text__heading, .return-image-text .image-with-text__text {
+    max-width: 100%;
+  }
+  .return-image-text .image-with-text__media{
+    width: 101vw;
+    margin-left: -16px;
+  }
+  .return-image-text .image-with-text__grid{
+    flex-direction: column-reverse;
+  }
+  .return-image-text{
+    padding-bottom: 0;
+  }
+  .image-with-text__content .image-with-text__heading.h2{
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,1102 @@
+<link rel="stylesheet" href="{{ 'megamenu-header.css' | asset_url }}" media="all" onload="this.media='all'" />
+<noscript>{{ 'megamenu-header.css' | asset_url | stylesheet_tag }}</noscript>
+<div class="navbar navabar-desktop">
+  <nav class="navbar">
+    <ul class="navbar_list">
+      {% for menu_item in menu.links %}
+      <li class="navbar_item dropdown">
+        
+        {% assign images_block = false %} {% assign images_block_with_product =
+        false %} {% assign submenu_block = false %} {% for block in
+        section.blocks %} {% assign menu_title = menu_item.title | handleize %}
+        {% assign menu_block_title = block.settings.menu | handleize %} {% if
+        menu_block_title == menu_title %} {% if block.type == 'promotion-images'
+        %} {% assign images_block = true %} {% if menu_item.links != blank %}
+        <a href="{{ menu_item.url }}" class="navbar_link dropdown_toggle"
+          >{{ menu_item.title }}
+          <span class="chevron">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 13 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.1367 3.375L6.88672 8.625L1.63672 3.375"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
+        <noscript class="noscript_dropdown_menu">
+        <div class="dropdown_menu">
+          <div class="">
+            <div class="">
+              <div class="dropdown_menu-inner animate__animated animate__fadeInDown">
+                <div class="megamenu-first-row">
+                  <div class="megamenu-row-inner-first">
+                    <div class="header-list-megamenu">
+                      <div class="header-main-list-megamenu">
+                        <div class="header-list-megamenu-inner">
+                          <span class="header-header-text">{{ block.settings.menu_heading }}</span>
+                          <div class="header-header-text-list">
+                            <ul class="cust-inner-menu">
+                              {% for link in linklists[block.settings.inner_menu].links %}
+                                <li>
+                                  <a href="{{ link.url }}">{{ link.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="header-shop-right">
+                          <span>
+                            <a href="{{ block.settings.link_url_1 }}"  class="link makro--link">
+                              {{ block.settings.link_text_1 }} 
+                               {% if settings.arrowsvg != blank %}
+                                  {{ settings.arrowsvg }}
+                              {% endif %}
+                            </a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="megamenu-row-inner-second">
+                    <div class="megamenu-product-width-header-text">
+
+                  {%- liquid                  
+                    assign sizes = '(min-width: 1200px) 100px, (min-width: 391px) calc((100vw - 4rem) / 3), 220px'
+                    assign widths = '180, 420, 375, 550, 750'
+                  -%}
+                  <div class="megamenu-product-category">
+                    <div class="megamenu-product-category-inner">
+                      <div class="mega-head-new">
+                        <div class="header-header-text">{{ block.settings.header-text_new }}</div>
+                      </div>
+                       {% if block.settings.prod1 != blank %}
+                        <div class="cmn-menu-product">
+                         {% assign prod1 = block.settings.prod1 %}
+                         
+                        <div class="megameu-product">
+                          <a href="{{ block.settings.prod1.url }}" class="boxhover-bg custom-menu-products">
+                            <div class="mega-image">
+                              {%- liquid
+                                assign dek_img = block.settings.prod1.featured_image
+                                assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                              -%}
+                              {{
+                                dek_img
+                                | image_url: width: 200
+                                | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                              }}
+                              {% assign assign dek_img = blank %}{% comment %}
+                              <img src="{{ block.settings.prod1.featured_image | image_url }}" alt="{{ block.settings.prod1.title }}" class="" >{% endcomment %}
+                            </div>
+                        
+                            <div class="mega-descc">
+                              <div class="header-wrap-title">
+                                <p>{{ block.settings.prod1.title }}</p>
+                              </div>
+                        
+                              <div class="mega-price">
+                                <span class="price_root">{{ block.settings.prod1.price | money }}</span>
+                                {% comment %}
+                                {% if block.settings.prod1.compare_at_price %}
+                                  <span class="price_no_active">{{ block.settings.prod1.compare_at_price | money }}</span>
+                                {% endif %}
+                                 {% endcomment %}
+                              </div>
+                        
+                              <div class="mega-rating-flex">
+                                <div class="review-start-align">
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                </div>
+                                <div class="mega-count_reviews">
+                                  <span class="count-start">{{ block.settings.prod1.metafields.reviews.rating.value }}</span>
+                                  <span class="count-reviews-number">{{ block.settings.prod1.metafields.reviews.rating_count }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+
+                         
+                      </div>
+                      {% endif %}
+
+                      {% if block.settings.prod2 != blank %}
+                        <div class="cmn-menu-product">
+                         {% assign prod2 = block.settings.prod2 %}
+                         
+                         <div class="megameu-product">
+                          <a href="{{ block.settings.prod2.url }}" class="boxhover-bg  custom-menu-products">
+                            <div class="mega-image">
+                              {%- liquid
+                                assign dek_img = block.settings.prod2.featured_image
+                                assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                              -%}
+                              {{
+                                dek_img
+                                | image_url: width: 200
+                                | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                              }}
+                              {% assign assign dek_img = blank %}{% comment %}
+                              <img src="{{ block.settings.prod2.featured_image | image_url }}" alt="{{ block.settings.prod2.title }}" class="">{% endcomment %}
+                            </div>
+                        
+                            <div class="mega-descc">
+                              <div class="header-wrap-title">
+                                <p>{{ block.settings.prod2.title }}</p>
+                              </div>
+                        
+                              <div class="mega-price">
+                                <span class="price_root">{{ block.settings.prod2.price | money }}</span>
+                                {% if block.settings.prod2.compare_at_price %}
+                                  <span class="price_no_active">{{ block.settings.prod2.compare_at_price | money }}</span>
+                                {% endif %}
+                              </div>
+                        
+                              <div class="mega-rating-flex">
+                                <div class="review-start-align">
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                </div>
+                                <div class="mega-count_reviews">
+                                  <span class="count-start">{{ block.settings.prod2.metafields.reviews.rating.value }}</span>
+                                  <span class="count-reviews-number">{{ block.settings.prod2.metafields.reviews.rating_count }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      {% endif %}
+
+                      {% if block.settings.prod3 != blank %}
+                        <div class="cmn-menu-product">
+                         {% assign prod1 = block.settings.prod3 %}
+                         
+                         <div class="megameu-product">
+                          <a href="{{ block.settings.prod3.url }}" class="boxhover-bg  custom-menu-products">
+                            <div class="mega-image">
+                              {%- liquid
+                                assign dek_img = block.settings.prod3.featured_image
+                                assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                              -%}
+                              {{
+                                dek_img
+                                | image_url: width: 200
+                                | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                              }}
+                              {% assign assign dek_img = blank %}{% comment %}
+                              <img src="{{ block.settings.prod3.featured_image | image_url }}" alt="{{ block.settings.prod3.title }}" class="">{% endcomment %}
+                            </div>
+                        
+                            <div class="mega-descc">
+                              <div class="header-wrap-title">
+                                <p>{{ block.settings.prod3.title }}</p>
+                              </div>
+                        
+                              <div class="mega-price">
+                                <span class="price_root">{{ block.settings.prod3.price | money }}</span>
+                                {% if block.settings.prod3.compare_at_price %}
+                                  <span class="price_no_active">{{ block.settings.prod3.compare_at_price | money }}</span>
+                                {% endif %}
+                              </div>
+                        
+                              <div class="mega-rating-flex">
+                                <div class="review-start-align">
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                  {% render 'icon-star' %}
+                                </div>
+                                <div class="mega-count_reviews">
+                                  <span class="count-start">{{ block.settings.prod3.metafields.reviews.rating.value }}</span>
+                                  <span class="count-reviews-number">{{ block.settings.prod3.metafields.reviews.rating_count }}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      {% endif %}
+
+                     
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {%- liquid                  
+                  assign sizes = '(min-width: 1441px) 12.395833vw, (min-width: 1200px)  15.138889vw, (min-width: 391px) 50vw, 220px'
+                  assign widths = '375, 550, 750'
+                -%}
+                <div class="megamenu-second-row">
+                  <div class="megamenu-image-with-text-inner">
+                    <div class="image-width-text-header">
+                      <div class="product-360-category-main">
+                          <a href="{{ block.settings.cta_link_1 }}" class="product-360-category-inner">
+                            <div class="product-360-image">
+                              <div class="image">
+                                {%- liquid
+                                   assign dek_class = ''
+                                   if block.settings.mobile_image_1 != blank
+                                   assign dek_class = 'desktop-img'
+                                   endif
+                                  assign dek_img = block.settings.desktop_image_1
+                                  assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                                -%}
+                                {{
+                                  dek_img
+                                  | image_url: width: 750
+                                  | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                                }}                         
+                                {%- liquid                                   
+                                  assign mob_img = block.settings.mobile_image_1
+                                  assign height = mob_img.width | divided_by: mob_img.aspect_ratio | round
+                                -%}
+                                {{
+                                  mob_img
+                                  | image_url: width: 750
+                                  | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                                }}                             
+                                {%- liquid
+                                  assign dek_img = blank
+                                  assign mob_img = blank
+                                -%}
+                              </div>
+                            </div>
+                            <div class="product-360-text-area">
+                              <div class="product-360-header-main">
+                                <div class="common-h5 product-360-header">
+                                  <h5>{{ block.settings.header_text_1 }}</h5>
+                                </div>
+                                <div class="product-360-para">
+                                  <p>{{ block.settings.paragraph_text_1 }}</p>
+                                </div>
+                              </div>
+                              <div class="link makro--link product-360-link ">
+                                {{ block.settings.cta_text_1 }} 
+                                 {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+
+                    </div>
+
+                    <div class="image-width-text-header">
+                      <div class="product-360-category-main">
+                          <a href="{{ block.settings.cta_link_2 }}" class="product-360-category-inner">
+                            <div class="product-360-image">
+                              <div class="image">
+                                {%- liquid
+                                   assign dek_class = ''
+                                   if block.settings.mobile_image_2 != blank
+                                   assign dek_class = 'desktop-img'
+                                   endif
+                                  assign dek_img = block.settings.desktop_image_2
+                                  assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                                -%}
+                                {{
+                                  dek_img
+                                  | image_url: width: 750
+                                  | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                                }}                         
+                                {%- liquid                                   
+                                  assign mob_img = block.settings.mobile_image_2
+                                  assign height = mob_img.width | divided_by: mob_img.aspect_ratio | round
+                                -%}
+                                {{
+                                  mob_img
+                                  | image_url: width: 750
+                                  | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                                }}                             
+                                {%- liquid
+                                  assign dek_img = blank
+                                  assign mob_img = blank
+                                -%}
+                                {% comment %}
+                                <img
+                                  src="{{ block.settings.desktop_image_2 | img_url: 'master' }}"
+                                  alt="Product Image"
+                                  class="desktop-img"
+                                />
+                                <img
+                                  src="{{ block.settings.mobile_image_2 | img_url: 'master' }}"
+                                  alt="Product Image"
+                                  class="mobile-img"
+                                />
+                                {% endcomment %}
+                              </div>
+                            </div>
+                            <div class="product-360-text-area">
+                              <div class="product-360-header-main">
+                                <div class="common-h5 product-360-header">
+                                  <h5>{{ block.settings.header_text_2 }}</h5>
+                                </div>
+                                <div class="product-360-para">
+                                  <p>{{ block.settings.paragraph_text_2 }}</p>
+                                </div>
+                              </div>
+                              <div class="link makro--link product-360-link">
+                                {{ block.settings.cta_text_2 }} 
+                                {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </noscript>
+        {% else %}
+        <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+        {% endif %} {% elsif block.type == 'about' %} {% assign
+        images_block_with_product = true %} {% if menu_item.links != blank and
+        images_block_with_product == true %}
+        <div href="{{ menu_item.url }}" class="navbar_link dropdown_toggle_"
+          >{{ menu_item.title }}
+        <span class="chevron">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 13 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.1367 3.375L6.88672 8.625L1.63672 3.375"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </div
+        >
+        {%- liquid                  
+          assign sizes = '(min-width: 1360px) 200px, (min-width: 1200px) calc((100vw - 8rem) / 6), (min-width: 769px) calc((100vw - 4rem) / 3), calc(100vw - 4rem)'
+          assign widths = '280, 420, 375, 550, 750'
+        -%}
+        <noscript class="noscript_dropdown_menu">
+        <div class="dropdown_menu dropdown-content">
+          <div class="megamenu-about-content-main animate__animated animate__fadeInDown">
+              <div class="megamenu-about-content">
+                <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_1 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_1
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_1 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_1 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_1
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_1 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_1 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                            <a href="{{ block.settings.cta_link_1 }}">
+                              <h5>{{ block.settings.header_text_1 }}</h5>
+                            </a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_1 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_1 }}"
+                            >{{ block.settings.cta_text_1 }}
+                             {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_2 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_2
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_2 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_2 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_2
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_2 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_2 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                             <a href="{{ block.settings.cta_link_2 }}">
+                              <h5>{{ block.settings.header_text_2 }}</h5>
+                             </a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_2 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_2 }}"
+                            >{{ block.settings.cta_text_2 }} 
+                            {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_3 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_3
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_3 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_3 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_3
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_3 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_3 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                             <a href="{{ block.settings.cta_link_3 }}"><h5>{{ block.settings.header_text_3 }}</h5></a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_3 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_3 }}"
+                            >{{ block.settings.cta_text_3 }} 
+                            {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_4 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_4
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_4 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_4 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_4
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_4 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_4 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                             <a href="{{ block.settings.cta_link_4 }}"><h5>{{ block.settings.header_text_4 }}</h5></a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_4 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_4 }}"
+                            >{{ block.settings.cta_text_4 }} 
+                            {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_5 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_5
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_5 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_5 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_5
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_5 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_5 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                             <a href="{{ block.settings.cta_link_5 }}"><h5>{{ block.settings.header_text_5 }}</h5></a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_5 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_5 }}"
+                            >{{ block.settings.cta_text_5 }} {% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="image-width-text-header">
+                  <div class="product-360-category-main">
+                    <div class="product-360-category-inner">
+                      <div class="product-360-image">
+                        <div class="image">
+                           <a href="{{ block.settings.cta_link_6 }}">
+                          {%- liquid
+                            assign dek_img = block.settings.desktop_images_6
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                            assign dek_class = ''
+                            if block.settings.mobile_images_6 != blank
+                              assign dek_class = 'desktop-img'
+                            endif
+                          -%}
+                          {{
+                            dek_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths, class: dek_class
+                          }}
+                         {% if block.settings.mobile_images_6 != blank %}
+                          {%- liquid
+                            assign mob_img = block.settings.mobile_images_6
+                            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+                          -%}
+                          {{
+                            mob_img
+                            | image_url: width: 750
+                            | image_tag: loading: 'lazy', width: mob_img.width, height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+                          }}
+                         {% endif %}
+                          {% assign assign dek_img = blank %}
+                          {% assign assign mob_img = blank %}{% comment %}
+                          <img
+                            src="{{ block.settings.desktop_images_6 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="desktop-img"
+                          />
+                          <img
+                            src="{{ block.settings.mobile_images_6 | img_url: 'master' }}"
+                            alt="Product Image"
+                            class="mobile-img"
+                          />{% endcomment %}
+                           </a>
+                        </div>
+                      </div>
+                      <div class="product-360-text-area">
+                        <div class="product-360-header-main">
+                          <div class="common-h5 product-360-header">
+                             <a href="{{ block.settings.cta_link_6 }}">
+                            <h5>{{ block.settings.header_text_6 }}</h5>
+                             </a>
+                          </div>
+                          <div class="product-360-para">
+                            <p>{{ block.settings.paragraph_text_6 }}</p>
+                          </div>
+                        </div>
+                        <div class="link makro--link product-360-link">
+                          <a href="{{ block.settings.cta_link_6 }}"
+                            >{{ block.settings.cta_text_6 }}{% if settings.arrowsvg != blank %}
+                                    {{ settings.arrowsvg }}
+                                {% endif %}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+           
+          </div>
+        </div>
+        </noscript>
+        {% else %}
+        <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+        {% endif %} {% elsif block.type == 'sub-menu' %} {% assign submenu_block
+        = true %}
+        <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+        <div class="dropdown-content">
+          <div class="megamenu_first megamenu_common">
+            <div class="megamenu_first_inner">
+              {% if block.settings.img1 != blank %}
+              <div class="col-25 card-items-main">
+                <div class="card_items">
+                  <div class="image">
+                     <a href="{{ block.settings.link1 }}">
+                    <img
+                      src="{{ block.settings.img1 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="desktop-img"
+                    />
+                    {% if block.settings.mob-img1 != blank %}
+                    <img
+                      src="{{ block.settings.mob-img1 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                     
+                    {% else %}
+                    <img
+                      src="{{ block.settings.img1 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% endif %}
+                    </a>
+                  </div>
+                  <div class="card_content">
+                    <a href="{{ block.settings.link1 }}">
+                    <h3 class="main_heading h3 text-uppercase">
+                      {{ block.settings.title1 }}
+                    </h3>
+                    </a>
+                    <a href="{{ block.settings.link1 }}">
+                    <p class="desc">{{ block.settings.des1 }}</p></a>
+                    <a
+                      href="{{ block.settings.link1 | default:'#' }}"
+                      class="link makro--link"
+                      >{{ block.settings.btn1 }}
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 8H14M14 8L8 2M14 8L8 14"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endif %} {% if block.settings.img2 != blank %}
+              <div class="col-25 card-items-main">
+                <div class="card_items">
+                  <div class="image">
+                    <a href="{{ block.settings.link2 }}">
+                    <img
+                      src="{{ block.settings.img2 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="desktop-img"
+                    />
+                    {% if block.settings.mob-img2 != blank %}
+                    <img
+                      src="{{ block.settings.mob-img2 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% else %}
+                    <img
+                      src="{{ block.settings.img2 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% endif %}
+                    </a>
+                  </div>
+                  <div class="card_content">
+                    <a href="{{ block.settings.link2 }}">
+                    <h3 class="main_heading h3 text-uppercase">
+                      {{ block.settings.title2 }}
+                    </h3>
+                    </a>
+                    <a href="{{ block.settings.link2 }}">
+                      <p class="desc">{{ block.settings.des2 }}</p>
+                    </a>
+                    <a
+                      href="{{ block.settings.link2 | default:'#' }}"
+                      class="link makro--link"
+                      >{{ block.settings.btn2 }}
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 8H14M14 8L8 2M14 8L8 14"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endif %} {% if block.settings.img3 != blank %}
+              <div class="col-25 card-items-main">
+                <div class="card_items">
+                  <div class="image">
+                    <a href="{{ block.settings.link3 }}">
+                    <img
+                      src="{{ block.settings.img3 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="desktop-img"
+                    />
+                    {% if block.settings.mob-img3 != blank %}
+                    <img
+                      src="{{ block.settings.mob-img3 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% else %}
+                    <img
+                      src="{{ block.settings.img3 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% endif %}
+                    </a>
+                  </div>
+                  <div class="card_content">
+                    <a href="{{ block.settings.link3 }}">
+                    <h3 class="main_heading h3 text-uppercase">
+                      {{ block.settings.title3 }}
+                    </h3>
+                    </a>
+                    <a href="{{ block.settings.link2 }}"> <p class="desc">{{ block.settings.des3 }}</p></a>
+                    <a
+                      href="{{ block.settings.link3 | default:'#' }}"
+                      class="link makro--link"
+                      >{{ block.settings.btn3 }}
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 8H14M14 8L8 2M14 8L8 14"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endif %} {% if block.settings.img4 != blank %}
+              <div class="col-25 card-items-main">
+                <div class="card_items">
+                  <div class="image">
+                    <img
+                      src="{{ block.settings.img4 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="desktop-img"
+                    />
+                    {% if block.settings.mob-img4 != blank %}
+                    <img
+                      src="{{ block.settings.mob-img4 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% else %}
+                    <img
+                      src="{{ block.settings.img4 | image_url }}"
+                      height="auto"
+                      width="auto"
+                      class="mobile-img"
+                    />
+                    {% endif %}
+                  </div>
+                  <div class="card_content">
+                    <h3 class="main_heading h3 text-uppercase">
+                      {{ block.settings.title4 }}
+                    </h3>
+                    <p class="desc">{{ block.settings.des4 }}</p>
+                    <a
+                      href="{{ block.settings.link4 | default:'#' }}"
+                      class="link makro--link"
+                      >{{ block.settings.btn4 }}
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 8H14M14 8L8 2M14 8L8 14"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endif %} {% break %} {% endif %} {% endfor %} {% if images_block ==
+        false and images_block_with_product == false and submenu_block == false
+        %}
+        <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+{% comment %}                
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.navbar_list li');
+    menuItems.forEach(item => {
+        if(item.querySelector('.navbar_link')){
+            item.querySelector('.navbar_link').addEventListener('click', function() {
+                if(item.closest('.navbar_list').querySelector('.navbar_item.active')){
+                    if(item.closest('.navbar_list').querySelector('.navbar_item.active') != item){
+                        item.closest('.navbar_list').querySelector('.navbar_item.active').classList.remove('active');    
+                    }
+                }
+                item.classList.toggle('active');
+            });
+        }
+    });
+  });
+  document.onclick = function(e){
+    if(!e.target.closest('.navabar-desktop')){
+      console.log('inin');
+      if(document.querySelectorAll('.navbar_item.active').length > 0){
+      	document.querySelector('.navbar_item.active').classList.remove('active');
+      }
+    }
+  };
+</script>
+{% endcomment %}

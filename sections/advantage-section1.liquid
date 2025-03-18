@@ -1,0 +1,237 @@
+{{ 'advatange-section.css' | asset_url | stylesheet_tag }}
+{% style %}
+ .advantage-inner-section-first-div p{     width: fit-content;
+    color: var(--Green, #606D22);
+    font-family: Hurricane;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    transform: rotate(-5deg);}
+
+  {% endstyle %}
+<div id="advatage-section">
+  <div class="advantag-inner-section">
+    {% if section.settings.title != blank %}
+    <div class="advantage-inner-section-first-div">
+      <p>{{ section.settings.description }}</p>
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+   {% endif %}
+    <div class="advantage-inner-section-second-div">
+      {% for block in section.blocks %}
+        <div class="advantage-icon-text">
+          {% if block.settings.icon != blank %}
+          <div class="advantage-icon back_color_{{ block.settings.icon_background }}">
+            {{ block.settings.icon }}
+          </div>
+            {% endif %}
+          <div class="advantag-inner-icon-header-text-main">
+             {% if block.settings.title != blank %}
+            <div class="advantag-inner-icon-header-text">
+              <h4>{{ block.settings.title }}</h4>
+              <p>{{ block.settings.description }}</p>
+            </div>
+              {% endif %}
+            <div class="advantag-hidden-text">
+               {% if block.settings.hidden_title_1 != blank %}
+              <div class="advantag-inner-icon-header-text">
+                <h4>{{ block.settings.hidden_title_1 }}</h4>
+                <p>{{ block.settings.hidden_description_1 }}</p>
+              </div>
+              {% endif %}
+              {% if block.settings.hidden_title_2 != blank %}
+              <div class="advantag-inner-icon-header-text">
+                <h4>{{ block.settings.hidden_title_2 }}</h4>
+                <p>{{ block.settings.hidden_description_2 }}</p>
+              </div>
+              {% endif %}
+              <div class="advantage-image-with-txt">
+                <a href="{{ block.settings.product_link }}" class="click-btn"></a>
+                {% if block.settings.product_image != blank %}
+                <div class="image">
+                  <img src="{{ block.settings.product_image | img_url: 'master' }}" alt="{{ block.settings.product_title }}" width="auto" height="auto">
+                </div>
+                {% endif %}
+                {% if block.settings.product_title != blank %}
+                <div class="advantag-right-arrow-text">
+                  <div class="advantag-right-arrow-text_inner">
+                    <p>{{ block.settings.product_title }}</p>
+                    <div class="product-price">
+                      <span class="price-txt">{{ block.settings.product_price | money }}</span>
+                      <span class="dull-price-txt">{{ block.settings.product_compare_price | money }}</span>
+                    </div>
+                  </div>
+                  <a href="{{ block.settings.product_link }}" class="advantag_arrow_link">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.81515 8.625L11.25 5.99866M11.25 5.99866L8.81764 3.375M11.25 5.99866H0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+               {% endif %}
+              </div>
+            </div>
+            {% if block.settings.learn_more_text != blank  %}
+              <div class="learn_link_advantage">
+                {{ block.settings.learn_more_text }}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4.5L8 11.5L1 4.5" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var learnMoreLinks = document.querySelectorAll('.learn_link_advantage');
+
+    learnMoreLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        var parent = this.closest('.advantage-icon-text');
+        var hiddenText = parent.querySelector('.advantag-hidden-text');
+
+        if (hiddenText) {
+          hiddenText.classList.toggle('show');
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Advantage Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "The 360 Advantage consectetur adipisc"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "advantage",
+      "name": "Advantage Item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon SVG"
+        },
+        {
+          "type": "select",
+          "id": "icon_background",
+          "label": "Icon Background Color",
+          "options": [
+            { "value": "green", "label": "Green" },
+            { "value": "gold", "label": "Gold" },
+            { "value": "light-green", "label": "Light Green" }
+          ],
+          "default": "green"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem Dolor Consectetur Adipiscing"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti"
+        },
+        {
+          "type": "text",
+          "id": "hidden_title_1",
+          "label": "Hidden Title 1",
+          "default": "Nunc Vulputate Libero Et Velit Interdum"
+        },
+        {
+          "type": "textarea",
+          "id": "hidden_description_1",
+          "label": "Hidden Description 1",
+          "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+        },
+        {
+          "type": "text",
+          "id": "hidden_title_2",
+          "label": "Hidden Title 2",
+          "default": "Nunc Vulputate Libero Et Velit"
+        },
+        {
+          "type": "textarea",
+          "id": "hidden_description_2",
+          "label": "Hidden Description 2",
+          "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product Title",
+          "default": "1.75 Quart Saucepan with Cover"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "default": "210.00"
+        },
+        {
+          "type": "text",
+          "id": "product_compare_price",
+          "label": "Product Compare Price",
+          "default": "210.00"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "learn_more_text",
+          "label": "Learn More Text",
+          "default": "Learn More"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advantage Section1",
+      "blocks": [
+        {
+          "type": "advantage"
+        },
+        {
+          "type": "advantage"
+        },
+        {
+          "type": "advantage"
+        },
+        {
+          "type": "advantage"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

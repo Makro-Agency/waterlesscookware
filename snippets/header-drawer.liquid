@@ -1,0 +1,21 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+{{ 'megamenu-header.css' | asset_url | stylesheet_tag }}
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <span>
+        {% render 'icon-hamburger' %} <span class="icon-hamburger">Menu</span> </span>
+       <span > {% render 'icon-close' %} <span class="icon-close">Close</span>   </span>
+    </summary>
+    {% if section.settings.menu != blank %}
+      {% render 'header-megamenu-mobile', menu:section.settings.menu %}
+    {% endif %}
+  </details>
+</header-drawer>

@@ -1,0 +1,102 @@
+{{ 'policy.css' | asset_url | stylesheet_tag }}
+
+<style>
+    @font-face {
+        font-family: Cellofy-Regular;
+        src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/Cellofy-Regular.woff?v=1722476825) format('woff');
+    }
+
+    @font-face {
+        font-family: ProximaNova-Regular;
+        src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/ProximaNova-Regular.woff?v=1722476969) format('woff');
+    }
+  .Influencer-page-container a{
+    color:#000;
+  }
+  .Influencer-page-container a:hover{
+    color:#c3d957;
+  }
+</style>
+
+<section class="Influencer-page-container">
+  <div class="influencer-text-center main-heading heading-font">
+      <h1>{{ section.settings.title }}</h1>
+      <p class="section-para">{{ section.settings.details }}
+      </p>
+   <a href="{{ section.settings.link }}" class="readmore-underline">
+     <span>{{ section.settings.linktext }}</span>
+   </a>
+</div>
+  <div class="container margin-top">
+     {%- for block in section.blocks -%}
+       <a href="{{ block.settings.url }}">
+        <div class="item">
+            <img src="{{ block.settings.image | img_url:'' }}" alt="{{ block.settings.title }}">
+            <h3>{{ block.settings.title }}</h3>
+        </div>
+       </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Influencer page",
+"settings": [ 
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "type": "text",
+      "id": "linktext",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+],
+   "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+          {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details"
+        },
+         {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        }
+      ]
+    }
+  ],
+"presets": [
+{
+"name":"Influencer page"
+}
+]
+}
+{% endschema %}

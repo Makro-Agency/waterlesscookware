@@ -1,0 +1,50 @@
+{% if block.settings.enable_dates %}
+<div class="model-and-delv-wrapper">
+  {% if product.metafields.SareeRoom.ModelSize != blank %}<div class="model-box">Model is {{ product.metafields.SareeRoom.ModelSize }}</div>{% endif %}
+    
+    <div class="delv-box hidden canada">
+      {% render 'Ship-icon' %}
+      {% assign canada_in_days = 2 | times: 86400 %}
+      {% assign canada_out_days = 5 | times: 86400 %}
+      Get it by: {{ "now" | date: "%s" | plus: canada_in_days | date: "%-d %b" }} — {{ "now" | date: "%s" | plus: canada_out_days | date: "%-d %b" }}
+    </div>
+    <div class="delv-box hidden us">
+      {% render 'Ship-icon' %}
+      {% assign canada_in_days = 2 | times: 86400 %}
+      {% assign canada_out_days = 5 | times: 86400 %}
+      Get it by: {{ "now" | date: "%s" | plus: canada_in_days | date: "%-d %b" }} — {{ "now" | date: "%s" | plus: canada_out_days | date: "%-d %b" }}
+    </div>
+  <div class="delv-box hidden uk">
+      {% render 'Ship-icon' %}
+      {% assign canada_in_days = 4 | times: 86400 %}
+      {% assign canada_out_days = 6 | times: 86400 %}
+      Get it by: {{ "now" | date: "%s" | plus: canada_in_days | date: "%-d %b" }} — {{ "now" | date: "%s" | plus: canada_out_days | date: "%-d %b" }}
+    </div>
+    <div class="delv-box hidden other">
+      {% render 'Ship-icon' %}
+      {% assign canada_in_days = 6 | times: 86400 %}
+      {% assign canada_out_days = 10 | times: 86400 %}
+      Get it by: {{ "now" | date: "%s" | plus: canada_in_days | date: "%-d %b" }} — {{ "now" | date: "%s" | plus: canada_out_days | date: "%-d %b" }}
+    </div>
+</div>
+
+<script>
+  //geo location js
+  fetch('//get.geojs.io/v1/ip/country.json',{ 
+    method:'GET'
+  }).then((response) =>{ 
+      return response.json();
+  }).then(data =>{ 
+      var countryCode = data.country; 
+      if(countryCode == 'CA'){
+        document.querySelector('.delv-box.canada').classList.remove('hidden');
+      }
+      else if(countryCode == 'US'){
+        document.querySelector('.delv-box.us').classList.remove('hidden');
+      }
+      else{
+        document.querySelector('.delv-box.other').classList.remove('hidden');
+      }
+  });
+</script>
+{% endif %}

@@ -1,0 +1,240 @@
+{{ 'blog-posts.css' | asset_url | stylesheet_tag }}
+{% style %}
+  @media only screen and (max-width: 767px) {
+.side-item{ margin-bottom:40px;} 
+ .article-card-item.side-item .image img{ height:140px; border-radius:15px; } 
+  }
+  {% endstyle %}
+<div class="blog-posts page-width section-padding">
+  <div class="title-wrapper-with-link">
+    {% if section.settings.title != blank %}
+      <div class="title-description-wrapper">
+        <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+        <p class="desc">{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+  
+    {% if section.settings.link_text != blank %}
+      <div class="article-tab">
+        <ul>
+          <li class="tab-item active">
+            <a href="#" data-tab="articles">{{ section.settings.link_text }}</a>
+          </li>
+          <li class="tab-item">
+            <a href="#" data-tab="recipes">{{ section.settings.recipe_link_text }}</a>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="article-content">
+    <!-- Articles Section -->
+    <div class="article-grid articles-content">
+    
+     
+      <!-- Dynamic Blog Article Cards -->
+     <div class="article-card-list">
+  <div class="article-cards">
+    {% for block in section.blocks %}
+      {% if block.type == 'article_card' %}
+        <div class="article-card-item{% if forloop.first %} main-content{% else %} side-item{% endif %}">
+          <div class="image">
+            {% if block.settings.desktop_image != blank %}
+              <a href="{{ block.settings.link }}" class="img-link">
+              <img src="{{ block.settings.desktop_image | img_url: 'original' }}" height="auto" width="auto" class="desktop-img"> 
+              </a>
+            {% endif %}
+            {% if block.settings.mobile_image != blank %}
+              <a href="{{ block.settings.link }}" class="img-link">
+              <img src="{{ block.settings.mobile_image | img_url: 'original' }}" height="auto" width="auto" class="mobile-img"> 
+              </a>
+            {% endif %}
+          </div>
+          <div class="card-content">
+            <h3 class="heading h3"><a href="{{ block.settings.link }}">{{ block.settings.heading }}</a></h3>
+            <p class="desc">{{ block.settings.description }}</p>
+            <a href="{{ block.settings.link }}" class="link makro--link">Read More {% render 'btn-arrow-right' %}</a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+    </div>
+
+    <!-- Recipes Section -->
+    <div class="recipes-content" style="display: none;">
+      <div class="article-card-list">
+  <div class="article-cards">
+    {% for block in section.blocks %}
+      {% if block.type == 'recipe_card' %}
+        <div class="article-card-item{% if forloop.index == 5 %} main-content{% else %} side-item{% endif %}">
+          <div class="image">
+            {% if block.settings.desktop_image != blank %}
+              <img src="{{ block.settings.desktop_image | img_url: 'original' }}" class="desktop-img"> 
+            {% endif %}
+            {% if block.settings.mobile_image != blank %}
+              <img src="{{ block.settings.mobile_image | img_url: 'original' }}" class="mobile-img"> 
+            {% endif %}
+          </div>
+          <div class="card-content">
+            <h3 class="heading h3">{{ block.settings.heading }}</h3>
+            <p class="desc">{{ block.settings.description }}</p>
+            <a href="{{ block.settings.link }}" class="link makro--link">Read More {% render 'btn-arrow-right' %}</a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Blog Posts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Articles & Recipes"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Blog Articles"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "recipe_link_text",
+      "label": "Recipe Link Text",
+      "default": "Selected Recipes"
+    },
+    {
+      "type": "url",
+      "id": "recipe_link_url",
+      "label": "Recipe Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Spotlight: Transforming Kitchens with 360 Cookware"
+    },
+    {
+      "type": "textarea",
+      "id": "description_blog",
+      "label": "Description",
+      "default": "Norem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Read More Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_card",
+      "name": "Article Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Default Article Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Default article description."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Read More Link"
+        }
+      ]
+    },
+    {
+      "type": "recipe_card",
+      "name": "Recipe Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Default Recipe Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Default recipe description."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Read More Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Posts"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,126 @@
+
+<div class="future-goals-section">
+  <h2 class="main_heading h2">Future goals</h2>
+  <div class="goals-container">
+    {% for block in section.blocks %}
+      <div class="goal-item">
+        <div class="goal-number">{{ block.settings.number }}</div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .future-goals-section h2{ margin-bottom:4rem; }
+.future-goals-section {
+    padding: 15rem 0 10rem 0;
+}
+.goal-item h3{ margin-top:0;}
+/* .future-goals-section h2 {
+  margin-bottom: 1.5rem;
+} */
+
+.goals-container {
+  display: grid;
+  gap:2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.future-goals-section{ max-width:1360px; margin:0 auto; }
+.goal-item {
+  background-color: #f7f6f2;
+  border-radius: 15px;
+  padding: 4rem 3rem;
+  flex: 1 1 calc(25% - 1rem);
+  text-align: left;
+}
+
+.goal-number {
+  color: #000000;
+  opacity:0.4;
+/* Body Text Standard/Bold */
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 21px */
+  margin-bottom: 7rem;
+}
+
+.goal-item h3 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  color: var(--Black, #0D0D0D);
+/* Header 04 */
+font-family: Cellofy;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.48px;
+}
+
+.goal-item p {
+  font-size: 16px;
+  color: #666;
+}
+  @media(max-width:991px){
+    .goals-container {
+      display: grid;
+      gap:2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media(max-width:767px){
+    .main_heading{ font-size:36px; }
+    .future-goals-section{ padding-bottom:60px; padding-top:60px; }
+    .goal-item{ padding:30px 20px; }
+    .goal-number{ margin-bottom:3rem; }
+    .goal-item h3{ font-size:20px; }
+    .goals-container {
+      display: grid;
+      gap:2rem;
+      grid-template-columns:1fr;
+    }
+  }
+@media screen and (max-width:1439px) {
+    .future-goals-section{ padding-left:20px; padding-right:20px; }
+}
+.future-goals-section h2{ margin-bottom:3rem; }
+</style>
+{% schema %}
+{
+  "name": "Future Goals",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "goal",
+      "name": "Goal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Future Goals",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

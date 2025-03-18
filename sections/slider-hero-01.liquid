@@ -1,0 +1,203 @@
+{{ 'common_second.css' | asset_url | stylesheet_tag }}
+{{ 'slider-hero-01.css' | asset_url | stylesheet_tag }}
+
+<style>
+</style>
+
+{% assign heroSlides = section.blocks | where:'type','image' %}
+
+<section class="slider-hero-first">
+  <div class="swiper hero-section">
+    <div class="swiper-wrapper">
+      {%- for block in heroSlides -%}
+        {%- capture content -%}          
+          {%- if block.settings.title != blank -%}
+            <h2 class="slideHeading h1">{{ block.settings.title }}</h2>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <div class="common_txt_div">{{ block.settings.description }}</div>       
+          {%- endif -%}
+          {%- if block.settings.btn_text != blank -%}
+            <div class="common_btn">
+              <a href="{{ block.settings.url | default: '#' }}">{{ block.settings.btn_text }}</a>
+            </div>       
+          {%- endif -%}
+        {%- endcapture -%}
+      <div class="swiper-slide">
+        <div class="inner-slider-hero-first" {{ block.shopify_attributes }}>
+          <div class="image_hero_first">
+          {% if block.settings.image != blank %}            
+            {%- liquid
+              assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+              assign mobileHeight = block.settings.image_mobile.width | divided_by: block.settings.image_mobile.aspect_ratio | round
+              assign sizes = 'calc(100vw - 20px)'
+              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'              
+            -%}
+            {% assign imageClass = 'slide-image' %}
+            {% if block.settings.image_mobile != blank %}
+              {{
+                block.settings.image_mobile
+                | image_url: width: 750
+                | image_tag: loading: 'lazy', height: mobileHeight, sizes: sizes, widths: widths, class: 'large-up-hide medium-hide slide-image'
+              }}
+              {% assign imageClass = imageClass | append: ' small-hide' %}
+            {% endif %}
+            {{
+              block.settings.image
+              | image_url: width: 3840
+              | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: imageClass
+            }}
+          {%- else -%}
+            {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
+            {%- if placeholder_slide == 1 -%}
+              {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- else -%}
+              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          {%- endif -%}
+          </div>          
+          {% if content != blank %}
+          <div class="text_hero_first bottom-left" {{ block.shopify_attributes }}>            
+            <div class="color_white hero_inner_text common_h1">{{ content }}</div>            
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% comment %}
+      <div class="swiper-slide">
+        <div class="inner-slider-hero-first">
+          <div class="text_hero_first">
+            <div class="common_h1 color_white hero_inner_text">
+              <h1>save up to 50% on sets & Bundles</h1>
+              <div class="common_txt_div">
+                Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet odio mattis.
+              </div>
+            </div>
+            <div class="common_btn">
+              <a href="#">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endcomment %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    var swiper = new Swiper("#shopify-section-{{ section.id }} .hero-section", {
+      {% if section.settings.slideAutoPlay %}
+      autoplay: {
+         delay: {{ section.settings.slideAutoPlaySpeed | times: 1000 }},
+       },
+      {% endif %}
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slider-hero-first",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+  "settings":[
+    {
+      "type": "header",
+      "content": "Slider option"
+    },
+    {
+      "type": "checkbox",
+      "id": "slideAutoPlay",
+      "label": "Enable auto play",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slideAutoPlaySpeed",
+      "label": "Auto play speed",
+      "default": 3,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s"      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Upload an Image",
+          "id": "image"
+        },
+        {
+          "type": "image_picker",
+          "label": "Upload a mobile Image",
+          "id": "image_mobile"
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default":"save up to 50% on sets & Bundles"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description",
+          "default": "<p>Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.<\/p>"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "label": "Button text",
+          "id": "btn_text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "label": "Button link",
+          "id": "url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name" : "Slider-hero-first",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,359 @@
+/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> */
+
+.hello{
+  display:none;
+}
+
+.client-slider-header-main-box {
+  /* overflow: hidden; */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
+
+.client_box_section-slider {
+  background: #faf5eb;
+  overflow: hidden;
+}
+#client-slider-with-text .swiper{
+  /* overflow:visible; */
+}
+#client-slider-with-text  {
+    margin-left: 14%;
+  padding: 150px 0px;
+  /* overflow: hidden; */
+}
+
+.client-slider-with-text {
+  display: grid;
+  grid-template-columns: 548px 100%;
+  grid-template-columns: 548px auto;
+  width: 100%;
+}
+
+.client-slider-header-main-box .mySwiper-product {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.client-slider-header-main-box .mySwiper-product .swiper-slide {
+  width: 50%;
+}
+
+.header-one_pan-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 432px;
+}
+
+.header-one_pan-main h2 {
+  margin: 0;
+  font-family: Cellofy;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #0d0d0d;
+}
+
+.header-one_pan-main p {
+  margin: 0;
+  color: #0d0d0d;
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+#client-slider-with-text .catalog-icon-with-text {
+  display: flex;
+  gap: 24px;
+}
+
+.banner-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#client-slider-with-text .health-section-header-review-box-inner h4 {
+  margin: 0;
+  color: #0d0d0d;
+  font-family: Cellofy;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.8px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+#client-slider-with-text .health-section-header-review-box-inner {
+  /* max-width: 432px; */
+  background: #fcfbf7;
+  height: fit-content;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 15px;
+  opacity: 0px;
+}
+
+#client-slider-with-text .health-client-img-width-text {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+#client-slider-with-text .health-client-img img {
+  max-width: 50px;
+}
+
+#client-slider-with-text .health-client-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#client-slider-with-text .health-client-info-header {
+  color: #090909;
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+#client-slider-with-text .health-client-info-true-icon {
+  display: flex;
+  gap: 5px;
+  color: #606d22;
+}
+
+#client-slider-with-text .health-client-info-true-icon span {
+  color: #606d22;
+  font-family: Proxima Nova;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+#client-slider-with-text .true-icon-why-health svg {
+  padding: 3px;
+  background-color: #606d22;
+  border-radius: 100px;
+  display: inline-flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+#client-slider-with-text .swiper-slide {
+  /* width: auto !important; */
+}
+
+/* slider */
+
+#client-slider-with-text .swiper-button-next,
+#client-slider-with-text .swiper-button-prev {
+  /* color: #000; */
+}
+
+#client-slider-with-text .swiper-button-next:after,
+#client-slider-with-text .swiper-button-prev:after {
+  font-size: 20px;
+}
+
+#client-slider-with-text .swiper-button-next,
+#client-slider-with-text .swiper-button-prev {
+  /* color: #fcfbf7;
+  background: #606d22;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px; */
+}
+
+#client-slider-with-text .swiper-button-next {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: 0;
+}
+
+#client-slider-with-text .swiper-button-prev {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: 0;
+}
+
+.swiper-button-div {
+  display: inline-flex;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.client-slider-with-text {
+  position: relative;
+}
+
+.catalog-banner-icon-text {
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #0d0d0d;
+}
+
+.client-box-slider-main-slider {
+  /* overflow: hidden; */
+}
+
+.health-star-icon {
+  display: flex;
+  gap: 2px;
+}
+.with-quotes{
+  display:none;
+}
+#client-slider-with-text .banner-icon-text img{
+  width:20px;
+}
+.why-video-btn-eye:hover{
+    background: #c3d957;
+    color: #fff;
+}
+.why-video-btn-eye:hover svg path{
+    stroke: #ffffff;
+}
+
+.client-slider-with-text { display: flex; flex-wrap: nowrap; flex-direction: row; }
+.client-slider-with-text .header-one_pan-main { flex: 1 1 auto; max-width: 432px; width: 100%; }
+.client-slider-with-text  .client-slider-header-main-box { flex: 1 1 auto; width: calc(100% - (14% + 432px + 116px)); padding-left: 116px; }
+.client-slider-header-main-box .mySwiper-product .swiper-wrapper { justify-content: flex-start; }
+
+
+
+@media only screen and (max-width: 1440px) {
+  .header-one_pan-main{ max-width:432px;}
+  .client-slider-with-text{
+    padding-inline:40px;
+  }
+  #client-slider-with-text{
+    max-width:100%;
+    margin-left: auto;
+  }
+  .client-slider-with-text  .client-slider-header-main-box { width: calc(100% - (432px + 116px)); padding-left: 116px; }
+}
+
+@media only screen and (max-width: 1199px) {
+  .client-slider-with-text {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* #client-slider-with-text .swiper-slide {
+    width: 380px !important;
+  } */  
+  
+  .client-slider-with-text { flex-direction: column; }
+  .client-slider-with-text .header-one_pan-main { max-width: 100%; }
+  .client-slider-with-text .client-slider-header-main-box { width: 100%; padding-left: 0; }
+}
+
+@media only screen and (max-width: 1024px) {
+  .client-slider-with-text {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .header-one_pan-main {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* #client-slider-with-text .swiper-slide {
+    width: 320px !important;
+  } */
+}
+
+@media only screen and (max-width: 991px) {
+  .swiper-button-div {
+    display: none;
+  }
+.header-one_pan-main {
+margin-bottom: 30px;  
+}
+  #client-slider-with-text {
+    padding: 80px 30px;
+    padding-right: 0px;
+  }
+  .client-slider-with-text {
+    display: block;
+    padding-right: 0px;
+  }
+  #client-slider-with-text{
+    margin-left: 0%;
+  }
+  .client-slider-with-text .client-slider-header-main-box { width: 100%; padding-left: 0; }
+  .client-slider-with-text .header-one_pan-main { max-width: 100%; width: 100%; }
+}
+
+@media only screen and (max-width: 768px) {
+  .client-slider-with-text{
+    padding-inline:0;
+  }
+  #client-slider-with-text {
+    padding: 60px 20px;
+    padding-right: 0px;
+  }
+
+  #client-slider-with-text .health-section-header-review-box-inner {
+    padding: 20px;
+  }
+
+  #client-slider-with-text .health-section-header-review-box-inner h4 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  #client-slider-with-text .health-client-img img {
+    max-width: 40px;
+  }
+  .without-quotes{
+  display:none;
+}
+  .with-quotes{
+  display:block;
+}
+}
+@media only screen and (max-width: 576px) {
+
+  .header-one_pan-main p{ max-width:350px; }
+  .banner-icon-text svg{ width:20px; height:20px;}
+  #client-slider-with-text .catalog-icon-with-text{ gap:15px; }
+  .header-one_pan-main h2{ font-size:36px; max-width: 92%; }
+}
+@media only screen and (max-width: 480px) {
+  .header-one_pan-main h2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .header-one_pan-main p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .banner-icon-text svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .catalog-banner-icon-text {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.swiper-button-disabled{      background: var(--gray-tones-black-10, rgba(0, 0, 0, 0.10)) !Important; border-radius:100px; }

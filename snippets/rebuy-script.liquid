@@ -1,0 +1,47 @@
+<script>
+function rebuyLoad() {
+  if( document.querySelectorAll('.rebuy-cart__flyout-recommendations .rebuy-widget .rebuy-product-grid .splide__arrows').length > 0 ){
+    document.querySelectorAll('.rebuy-cart__flyout-recommendations .rebuy-widget .rebuy-product-grid .splide__arrows:not(.appended)').forEach(function (ele, eleIndex, eleArray) {            
+      ele.querySelector('.rebuy-carousel__arrow--prev').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="17" height="9" viewBox="0 0 17 9" fill="none"><path id="Vector" d="M4.71001 8.50003L1 4.50003M1 4.50003L4.71001 0.500029M1 4.50003L17 4.50003" stroke="black"/></svg>`;
+      ele.querySelector('.rebuy-carousel__arrow--next').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="17" height="9" viewBox="0 0 17 9" fill="none"><path d="M12.29 0.500031L16 4.50003M16 4.50003L12.29 8.50003M16 4.50003H0" stroke="black"/></svg>`;
+      ele.classList.add('appended');
+    });
+    document.querySelector('body').removeAttribute('rebuy-arrow-count');
+    return true;
+  }else{
+    if( document.querySelector('body').hasAttribute('rebuy-arrow-count') == false ){
+      document.querySelector('body').setAttribute('rebuy-arrow-count','0');
+    }
+    setTimeout(function(){
+      var count = Number(document.querySelector('body').getAttribute('rebuy-arrow-count'));
+      if( count > 30 ){ document.querySelector('body').removeAttribute('rebuy-arrow-count'); return; } 
+      count = count + 1;
+      document.querySelector('body').setAttribute('rebuy-arrow-count',count);
+      rebuyLoad();
+    },1500);
+  }
+}
+document.addEventListener('rebuy:smartcart.show', function(event){
+  if( document.querySelector('#SmartCart_title .SmartCart_count') == null ){    
+    var _text = document.querySelector('#SmartCart_title').innerText;
+    _text = _text || 'YOUR CART';
+    document.querySelector('#SmartCart_title').innerHTML = _text + `<span class="SmartCart_count">${ event.detail.smartcart.cart.item_count }</span>`;
+  }
+  if( document.querySelectorAll('.rebuy-cart__flyout-recommendations .rebuy-widget .rebuy-product-grid .splide__arrows').length > 0 ){
+    setTimeout(function(){
+      rebuyLoad();
+    },2500);
+  }
+});
+document.addEventListener('rebuy:cart.change', function(event){
+  console.log('event',event);
+  if( document.querySelector('#SmartCart_title .SmartCart_count') != null ){
+    document.querySelector('#SmartCart_title .SmartCart_count').innerText = event.detail.cart.cart.item_count;
+  }
+  if( document.querySelectorAll('.rebuy-cart__flyout-recommendations .rebuy-widget .rebuy-product-grid .splide__arrows').length > 0 ){
+    setTimeout(function(){
+      rebuyLoad();
+    },1500);
+  }
+});
+</script>

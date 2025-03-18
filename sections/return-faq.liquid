@@ -1,0 +1,250 @@
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+{{ 'return-faq.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.title != blank -%}
+<div class="page-width faq-head">
+  {% comment %}
+  <div class="faq-breadcrumb">
+    {% render 'breadcrumb' %}
+  </div>
+  {% endcomment %}
+  <h2>{{ section.settings.title }}</h2>
+</div>
+{% endif %}
+
+{%- if section.blocks.size > 0 -%}
+<div class="page-width faq-wrapper{% if section.settings.sidebar == false %} no-sidebar{% endif %}">
+
+    <div class="faq-left-wrap">    
+      <div id="sidebar-faq">
+        <div class="sidebar-search-wrapper hidden">
+          <input type="text" placeholder="Search keywords" name="q" value="{{ search.terms | escape }}" id="sidebar-faq-search" />
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"></path></svg>
+        </div>
+  
+        <div class="sidebar-faq-topics">
+          <h3 class="browse-by">Browse by topic</h3>
+          {% if section.blocks.size > 0 %}
+            <ul class="faq-cat-list">
+          {% endif %}
+          {%- for block in section.blocks -%}
+            {% if block.type == 'rich-text' and block.settings.title != blank %}
+              <li><a href="#faq-{{ block.id }}" class="faq-category" data-category="{{ block.settings.title | handleize }}" data-faq-category>{{ block.settings.title | escape | capitalize }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if section.blocks.size > 0 %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+  
+      {% if section.settings.contact_bar_enable == true %}
+      <div id="page-faq-contact-bar">
+        <div class="page-faq-contact-bar-content">
+          <h4>{{ section.settings.contact_title }}</h4>
+
+          {% if section.settings.btnlabel != blank and section.settings.btnurl != blank %}
+          <div class="button-wrapper">
+            <a class="btn" href="{{ section.settings.btnurl }}">{{ section.settings.btnlabel }}</a>
+          </div>
+          {% endif %}
+    
+          <div class="rte text-center text-main">
+            {{ section.settings.contact_text }}
+          </div>
+          
+          <div class="rte text-left text-misc">
+            <ul class="sales-points">
+              <li class="sales-point">
+                <span class="icon icon--inventory"></span>
+                {{ section.settings.contact_text_misc }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="faq-content-wrapper">
+      <div class="faq-search-wrapper">
+        <label>Search by keyworlds:</label>
+        <div class="faq-search-inner">
+        <input type="text" placeholder="Search keywords" name="q" value="{{ search.terms | escape }}" id="sidebar-faq-search" />
+        {% render 'icon-faq-search' %}
+        </div>
+      </div>
+    {%- if section.blocks.size > 0 -%}
+    <div class="faq-content-inner">
+    {%- for block in section.blocks -%}
+
+      {% assign forloopIndex = forloop.index %}
+      {% if block.type == 'rich-text' and block.settings.title != blank %}
+        {% assign this_category = block.settings.title | handle %}
+        <div id="faq-{{ block.id }}" class="faq-row active" data-category="{{ this_category }}" data-faq-row>
+  
+            <div class="faq-title" data-content="{{ block.settings.title | strip_html | downcase }}" data-faq-title1>
+              <div class="title-wrap">
+                <h2 class="h2">{{ block.settings.title | escape }}</h2>
+                {% comment %}<span class="icon-wrap">{% render 'icon-faq-chevron' %}</span>{% endcomment %}
+              </div>
+              {%- if block.settings.text != blank -%}
+                <div class="rte">
+                    {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="faq-qa-list" data-faq-qa-list>
+            {%- for block in section.blocks -%}
+              {% if forloop.index > forloopIndex %}
+                {% if block.type == 'question' %}
+                  <div class="faq-qa-wrap" data-category="{{ this_category }}" data-content="{{ block.settings.text | strip_html | downcase }}" data-faq-question-wrap>
+                    <button type="button" class="faq-qa-btn" data-content="{{ block.settings.title | strip_html | downcase }}" data-faq-question>
+                      <span class="faq-qa-icon faq-plus">{% render 'icon-faq-plus' %}</span>
+                      <span class="faq-qa-icon faq-minus">{% render 'icon-faq-minus' %}</span>
+                      <span>{{ block.settings.title }}</span>
+                    </button>
+                    <div class="faq-ans" data-faq-ans>
+                      <div class="faq-ans-inner rte">
+                        {{ block.settings.text }}
+                      </div>
+                    </div>
+                  </div>
+                {% elsif block.type == 'url' %}
+                  <div class="faq-qa-wrap faq-redirect" data-category="{{ this_category }}" data-content="{{ block.settings.text | strip_html | downcase }}" data-faq-question-wrap>
+                    <a href="{{ block.settings.url }}" class="faq-link button button--secondary">
+                      <span>{{ block.settings.text }}</span>
+                      <span class="faq-qa-icon right-arr">{% render 'icon-right-arrow' %}</span>
+                    </a>
+                    
+                  </div>
+                {% else %}
+                  {% break %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+      {% endif %}
+      
+           
+    {%- endfor -%}
+    </div>
+    {% endif %}
+  </div>
+  
+</div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "index-section section-faq return-faq",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "sidebar",
+        "label": "Enable sidebar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "FAQs"
+      },
+      {
+        "type": "header",
+        "content": "Contact Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "contact_bar_enable",
+        "label": "Enable contact bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "contact_title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "contact_text",
+        "label": "Text",
+        "default": "<p>Text</p>"
+      },
+      {
+        "type": "text",
+        "id": "contact_text_misc",
+        "label": "Misc text"
+      },
+      {
+        "type": "text",
+        "id": "btnlabel",
+        "label": "Button Label",
+        "default":"Contact Us"
+      },
+      {
+        "type": "url",
+        "id": "btnurl",
+        "label": "Url to navigate"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "rich-text",
+        "name": "Rich text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Rich text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.</p>"
+          }
+        ]
+      },
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question",
+            "default": "Frequently asked question"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        ]
+      },
+      {
+        "type": "url",
+        "name": "Text with Url",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Url"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

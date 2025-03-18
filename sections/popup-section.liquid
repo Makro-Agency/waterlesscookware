@@ -1,0 +1,372 @@
+{% if section.settings.turn-on-popup %}
+    {{ 'popup-section.css' | asset_url | stylesheet_tag }}
+    
+    {% if section.settings.lyt == 'lyt1' %}
+      <div class="section-popup popup_1">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+          {% if section.settings.img != blank and section.settings.with-img %}
+          <div class="popup-image">
+            <img src="{{ section.settings.img | image_url }}" loading="lazy" height="auto" width="auto" class="desktop-img" />
+            {% if section.settings.mob-img != blank %}
+              <img src="{{ section.settings.mob-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% else %}
+              <img src="{{ section.settings.with-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="popup-contain">
+            <div class="close-icon">{% render 'icon-popup-close' %}</div>
+            <h3 class="heading h3 text-uppercase">{{ section.settings.title }}</h3>
+            <p class="desc">{{ section.settings.des }}</p>
+            <div class="popup-newsletter-form_field-wrapper"> 
+              <input id="email" type="email" name="email" class="field_input" placeholder="{{ section.settings.descount-text }}"> 
+              <button type="button" class="submit-form__button" id="Subscribe">
+                {% render 'icon-popup-submit' %}
+                <span>copied!</span>
+                <input class="inputCopyText hidden" value="{{ section.settings.descount-text }}" type="text">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif section.settings.lyt == 'lyt2' %}
+      <div class="section-popup popup_2">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">       
+          {%- liquid                
+            assign sizes = '(min-width: 768px) 180px, (min-width: 521px) 520px, 100vw'
+            assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+          -%} 
+          {% if section.settings.img != blank and section.settings.with-img %}
+          <div class="popup-image">          
+            {%- liquid
+              assign img = section.settings.img 
+              assign height = img.width | divided_by: img.aspect_ratio | round
+            -%} 
+            {{
+              img
+              | image_url: width: 180
+              | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'desktop-img'
+            }}{% comment %}
+            <img src="{{ section.settings.img | image_url }}" loading="lazy" height="auto" width="auto" class="desktop-img" />{% endcomment %}
+            {% if section.settings.mob-img != blank %} 
+            {%- liquid
+              assign mob-img = section.settings.mob-img
+              assign height = mob-img.width | divided_by: mob-img.aspect_ratio | round
+            -%} 
+            {{
+              mob-img
+              | image_url: width: 520
+              | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+            }}{% comment %}
+              <img src="{{ section.settings.mob-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />{% endcomment %}
+            {% else %} 
+            {%- liquid
+              assign with-img =  section.settings.with-img
+              assign height = with-img.width | divided_by: with-img.aspect_ratio | round
+            -%} 
+            {{
+              with-img
+              | image_url: width: 520
+              | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'mobile-img'
+            }}{% comment %}
+              <img src="{{ section.settings.with-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />{% endcomment %}
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="popup-contain">
+            <div class="close-icon">{% render 'icon-popup-close' %}</div>
+            <h3 class="heading h3 text-uppercase">{{ section.settings.title }}</h3>
+            <p class="desc">{{ section.settings.des }}</p>
+            <div class="popup-newsletter-form_field-wrapper">
+              {% assign klaviyoListId = section.settings.klaviyoListId2 %}
+                <form id="promotional_mails" class="_klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }}" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+                  <input type="hidden" name="g" value="{{ klaviyoListId }}">
+                  <input type="hidden" name="$fields" value="language">
+                  <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
+                  <div class="klaviyo_field_group kgrid">
+                    <div class="klaviyo_field _email">
+                      <input class="input-item field_input" type="email" value="" name="email" id="k_id_email" placeholder="Enter Your E-mail" required="required" autocomplete="off">
+                    </div>
+                  </div>
+                  <div class="klaviyo_messages">
+                    <div class="success_message" style="display:none;"></div>
+                    <div class="error_message" style="display:none;"></div>
+                  </div>
+                  <div class="klaviyo_form_actions btn-actions">
+                    <button type="submit" id="Subscribe" class="newsletter-form__button submit-form__button klaviyo_submit_button">Subscribe</button>
+                  </div>
+                </form> 
+              {% comment %}
+              <input id="email" type="email" name="email" class="field_input" placeholder="Enter Your E-mail"> 
+              <button type="submit" class="submit-form__button" id="Subscribe">SUBSCRIBE</button> 
+              {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif section.settings.lyt == 'lyt3' %}
+      <div class="section-popup popup_3">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+          {% if section.settings.img != blank and section.settings.with-img %}
+          <div class="popup-image">
+            <img src="{{ section.settings.img | image_url }}" loading="lazy" height="auto" width="auto" class="desktop-img" />
+            {% if section.settings.mob-img != blank %}
+              <img src="{{ section.settings.mob-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% else %}
+              <img src="{{ section.settings.with-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="popup-contain">
+            <div class="close-icon">{% render 'icon-popup-close' %}</div>
+            <h3 class="heading h3 text-uppercase">{{ section.settings.title }}</h3>
+            <p class="desc">{{ section.settings.des }}</p>
+            <a href="{{ section.settings.btn-text-link | default:'#' }}" class="button cta_button">{{ section.settings.btn-text }}</a>
+          </div>
+        </div>
+      </div>
+    {% elsif section.settings.lyt == 'lyt4' %}
+      <div class="section-popup popup_4">
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+          {% if section.settings.img != blank and section.settings.with-img %}
+          <div class="popup-image">
+            <img src="{{ section.settings.img | image_url }}" loading="lazy" height="auto" width="auto" class="desktop-img" />
+            {% if section.settings.mob-img != blank %}
+              <img src="{{ section.settings.mob-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% else %}
+              <img src="{{ section.settings.with-img | image_url }}" loading="lazy" height="auto" width="auto" class="mobile-img" />
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="popup-contain">
+            <div class="close-icon">{% render 'icon-popup-close' %}</div>
+            <h3 class="heading h3 text-uppercase">{{ section.settings.title }}</h3>
+            <p class="desc">{{ section.settings.des }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    
+    
+    
+    <script>
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "; expires=" + date.toUTCString();
+        document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+      }
+      
+      function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+        return null;
+      }
+      
+      function checkNewsletterPopup() {
+        const popupStatus = getCookie("PromotionPopup");
+        if (!popupStatus) {
+          setTimeout(function(){
+            if(document.querySelector('.section-popup:not(.popup_5)')){
+              document.querySelector('.section-popup:not(.popup_5)').classList.add('active');  
+            }else{
+              document.querySelector('.section-popup.popup_5').classList.add('active');  
+            }
+            
+          },{{section.settings.delay-time}});
+            
+        }
+      }
+      
+      if(document.querySelectorAll(".section-popup .cta_button").length > 0){
+        document.querySelector(".cta_button").addEventListener("click", function() {
+          setCookie("PromotionPopup", "subscribed", {{section.settings.days-store}}); 
+          document.querySelector('.section-popup:not(.popup_5)').classList.remove('active');
+        });  
+      }
+      
+      if(document.querySelectorAll(".section-popup .close-icon").length > 0){
+        document.querySelectorAll('.close-icon').forEach((pop_close_btn) => {
+          pop_close_btn.addEventListener("click", function() {
+            setCookie("PromotionPopup", "dismissed", {{section.settings.days-store}}); 
+            document.querySelector('.section-popup').classList.remove('active');
+          });
+        });
+      }
+    
+      if(document.querySelector('.popup_1 .submit-form__button')){
+        document.querySelector('.popup_1 .submit-form__button').addEventListener('click',function(e){
+          var copyText = this.querySelector(".inputCopyText");
+          var _promoText = this;
+          
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+          
+          
+          navigator.clipboard.writeText(copyText.value);
+          _promoText.classList.add('copied');
+          _promoText.closest('.popup-newsletter-form_field-wrapper').classList.add('active');
+          setTimeout(function(){
+            _promoText.classList.remove('copied');
+            _promoText.closest('.popup-newsletter-form_field-wrapper').classList.remove('active');
+            setCookie("PromotionPopup", "dismissed", {{section.settings.days-store}}); 
+            document.querySelector('.section-popup:not(.popup_5)').classList.remove('active');
+          },1500);
+        });
+      }
+    
+      if(document.querySelector('.section-popup .popup-overlay')){
+        document.querySelector('.section-popup .popup-overlay').addEventListener("click", function() {
+          setCookie("PromotionPopup", "dismissed", {{section.settings.days-store}}); 
+          document.querySelector('.section-popup:not(.popup_5)').classList.remove('active');
+        });
+      }
+  
+      document.addEventListener("DOMContentLoaded", (event) => {
+      {% if section.settings.lyt == 'lyt2' %}
+        
+          let crLocation = window.location.href;
+          KlaviyoSubscribe.attachToForms('#promotional_mails', {
+            hide_form_on_success: true,
+            success_message: "Thanks for subscribing!",
+            extra_properties: {
+              $source: crLocation,
+              $method_type: "Klaviyo Form",
+              $method_id: 'embed'
+            },
+            success: function ($form) {
+              setCookie("PromotionPopup", "dismissed", {{section.settings.days-store}}); 
+              $form.addClass('success-true');
+              document.querySelector('.section-popup:not(.popup_5)').classList.remove('active');
+            },error : function(){
+              console.log('error');
+            }
+          }); 
+      {% endif %}
+  
+      });
+      
+      /* Check if the popup needs to be shown when the page loads */
+      window.onload = function() {
+        {% unless request.design_mode %}
+        checkNewsletterPopup();
+        {% endunless %}
+      };
+    
+    </script>
+  {% endif %}
+  
+  {% schema %}
+    {
+      "name": "Popup Section",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Promotion Popup Laoyut"
+        },
+        {
+          "type": "checkbox",
+          "id": "turn-on-popup",
+          "label": "Turn on Promotion popup"
+        },
+        {
+          "type": "text",
+          "id": "delay-time",
+          "label": "Add Delay Time",
+          "info": "Add Seconds To display the popup (Ex. 1000 -> 1sec)"
+        },
+        {
+          "type": "text",
+          "id": "days-store",
+          "label": "Add Days to Not visible again"
+        },
+        {
+          "type": "select",
+          "default": "lyt1",
+          "id": "lyt",
+          "label": "Layout",
+          "options": [
+            {
+              "label": "Layout 1",
+              "value": "lyt1"
+            },
+            {
+              "label": "Layout 2",
+              "value": "lyt2"
+            },
+            {
+              "label": "Layout 3",
+              "value": "lyt3"
+            },
+            {
+              "label": "Layout 4",
+              "value": "lyt4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "klaviyoListId2",
+          "label": "klaviyoListId layout 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mob-img",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "with-img",
+          "label": "With Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "des",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "descount-text",
+          "label": "Discount Text For layout 1"
+        },
+        {
+          "type": "text",
+          "id": "btn-text",
+          "label": "Button Text For layout 3"
+        },
+        {
+          "type": "url",
+          "id": "btn-text-link",
+          "label": "Button Link For layout 3"
+        },
+        {
+          "type": "header",
+          "content": "Exit intent pop up setting"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Popup Section"
+        }
+      ]
+    }
+  {% endschema %}

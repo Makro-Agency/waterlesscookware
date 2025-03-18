@@ -1,0 +1,239 @@
+{% if section.settings.title != blank
+  or section.settings.des != blank
+  or section.settings['title-1'] != blank
+  or section.settings['des-1'] != blank
+  or section.settings['title-2'] != blank
+  or section.settings['des-2'] != blank
+  or section.blocks.size > 0
+%}
+  {{ 'resources-guide.css' | asset_url | stylesheet_tag }}
+  <style>
+    .accordion-content {
+       max-height: 0;
+       overflow: hidden;
+       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+       opacity: 0;
+     }
+     .accordion-item .accordion-content {
+       margin: 0;
+       padding:20px 40px 20px 0;
+       max-height: 500px;
+       display: none;
+     }
+     .accordion-item.open .accordion-content {
+       display: block;
+     }
+
+     .accordion-item {
+       transition: all 0.3s ease-in-out;
+     }
+     .resources-guide-section .accordion-item {
+         border-top: 1px solid rgba(0, 0, 0, 0.10);
+         padding: 25px 0;
+     }
+     .accordion-button svg {
+         vertical-align: -webkit-baseline-middle;
+     }
+  </style>
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      background-color:{{ section.settings.bgcolor }};
+    }
+  
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  {%- assign meta_faq_cap = blank -%}
+  {%- assign user_language = request.locale.iso_code -%}
+  {%- assign questions = product.metafields.CW360_faq.question -%}
+  {%- assign answeres = product.metafields.CW360_faq.answer -%}
+  {%- assign counter = 0 -%}
+  {%- for question in questions -%}
+    {%- assign index0 = forloop.index0 -%}
+    {%- assign temp_que = question[user_language] -%}
+    {%- assign answer = answeres[index0][user_language] -%}
+    {%- capture meta_faq_cap -%}{{ meta_faq_cap }}
+    {%- if temp_que != blank and answer != blank -%}
+      <div class="accordion-item {% if counter == 0 %}open{% endif %}">
+        <button class="accordion-button">
+          <h3 class="heading h3">{{ temp_que }}</h3>
+          <span class="plus-icon">{% render 'icon-down' %}</span>
+          <span class="minus-icon">{% render 'icon-top' %}</span>
+        </button>
+        <div class="accordion-content">
+          {{ answer }}
+        </div>
+      </div>
+      {%- assign counter = counter | plus: 1 -%}
+    {%- endif -%}{% endcapture %}
+  {%- endfor -%}
+
+  <div class="section-{{ section.id }}-padding pdp-faq-section-{{ section.id }}">
+    <div class="resources-guide-section page-width">
+      {% if section.settings.title != blank
+        or section.settings.des != blank
+        or section.settings['title-1'] != blank
+        or section.settings['des-1'] != blank
+        or section.settings['title-2'] != blank
+        or section.settings['des-2'] != blank
+      %}
+        <div class="resources-guide-wrapper">
+          {% if section.settings.title != blank or section.settings.des != blank %}
+            <div class="title-wrapper">
+              {% if section.settings.title != blank %}
+                <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+              {% endif %}
+              {% if section.settings.des != blank %}
+                <p class="desc">{{ section.settings.des }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="collapsible-content-wrapper collapsible-content-wrapper-second">
+          {% assign counter = 0 %}
+
+          {%- if meta_faq_cap != blank -%}
+            {{ meta_faq_cap }}
+          {%- else -%}
+            {% for block in section.blocks %}
+              {%- case block.type -%}
+                {%- when 'faq' -%}
+                  {% if block.settings.que != blank and block.settings.ans != blank %}
+                    {% assign counter = counter | plus: 1 %}
+                    <div class="accordion-item {% if counter == 1 %}open{% endif %}">
+                      <button class="accordion-button">
+                        <h3 class="heading h3">{{ block.settings.que }}</h3>
+                        <span class="plus-icon">{% render 'icon-down' %}</span>
+                        <span class="minus-icon">{% render 'icon-top' %}</span>
+                      </button>
+                      <div
+                        class="accordion-content"
+                        {% comment %}{% if counter == 1 %}style="display: block;" {% else %} style="display: none;" {% endif %}{% endcomment %}
+                      >
+                        {{ block.settings.ans }}
+                      </div>
+                    </div>
+                  {% endif %}
+              {% endcase %}
+            {% endfor %}
+          {%- endif -%}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.pdp-faq-section-{{ section.id }} .accordion-item').forEach((accordionItem) => {
+      const content = accordionItem.querySelector('.accordion-content');
+
+      accordionItem.addEventListener('click', function() {
+        if (accordionItem.classList.contains('open')) {
+          accordionItem.classList.remove('open');
+          content.style.maxHeight = null;
+        } else {
+          accordionItem.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+    {% comment %}
+    if(document.querySelectorAll('.collapsible-content-wrapper-second .accordion-item').length > 0){
+      document.querySelectorAll('.collapsible-content-wrapper-second .accordion-item').forEach((accordian_item) => {
+        accordian_item.addEventListener('click',function(e){
+            if(accordian_item.classList.contains('open')){
+               accordian_item.classList.remove('open');
+               accordian_item.querySelector('.accordion-content').style.display = 'none';
+            }else{
+                if(accordian_item.closest('.collapsible-content-wrapper-second').querySelectorAll('.accordion-item.open').length > 0){
+                  accordian_item.closest('.collapsible-content-wrapper-second').querySelector('.accordion-item.open .accordion-content').style.display = 'none';
+                  accordian_item.closest('.collapsible-content-wrapper-second').querySelector('.accordion-item.open').classList.remove('open');
+                }
+                accordian_item.classList.add('open');
+                accordian_item.querySelector('.accordion-content').style.display = 'block';
+            }
+        })
+      })
+    }
+    {% endcomment %}
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Pdp Second faq",
+  "settings": [
+      {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background color"
+      },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "faq",
+      "settings": [
+        {
+          "type": "text",
+          "id": "que",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "ans",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pdp Second faq"
+    }
+  ]
+}
+{% endschema %}

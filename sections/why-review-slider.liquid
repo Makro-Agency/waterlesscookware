@@ -1,0 +1,201 @@
+{{ 'why-review-slider.css' | asset_url | stylesheet_tag }}
+{% comment %}{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}{% endcomment %}
+
+<div class="client_box_section-slider">
+  <div id="client-slider-with-text">
+    <div class="client-slider-with-text">
+      <div class="header-one_pan-main">
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <div class="catalog-icon-with-text">
+          {% for block in section.blocks %}
+            {% if block.type == 'icon_text' %}
+              <div class="banner-icon-text">
+                <img src="{{ block.settings.icon  | img_url: '20x' }}" alt="{{  section.settings.heading }}">
+                <span class="catalog-banner-icon-text">{{ block.settings.text }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-button-div ">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <div class="client-slider-header-main-box">
+        <div id="client-box-slider-main-slider">
+          <div class="swiper mySwiper-product">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% if block.type == 'review' %}
+                  <div class="swiper-slide">
+                    <div class="health-section-header-review-box-inner">
+                      <div class="health-star-icon">
+                            <img src="{{ block.settings.stars | img_url: '' }}" alt="{{ block.settings.client_name }}" style="width: auto;">
+                      </div>
+                      <h4>
+                        <span class="without-quotes">{{ block.settings.review_text }}</span>
+                        <span class="with-quotes">"{{ block.settings.review_text }}"</span>
+                      </h4>
+                      <div class="health-client-img-width-text">
+                        <div class="health-client-img">
+                          <img src="{{ block.settings.client_image | img_url: 'master' }}" alt="{{ block.settings.client_name }}">
+                        </div>
+                        <div class="health-client-info">
+                          <span class="health-client-info-header">{{ block.settings.client_name }}</span>
+                          <div class="health-client-info-true-icon">
+                            <div class="true-icon-why-health">
+                              <img src="{{ block.settings.reviewbyicon | img_url: '' }}" alt="{{ block.settings.client_name }}">
+                            </div>
+                            <span>{{ block.settings.reviewby }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  var swiper = new Swiper(".mySwiper-product", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    speed: 500,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    }, 
+    navigation: {
+      nextEl: '#shopify-section-{{ section.id }} .swiper-button-next',
+      prevEl: '#shopify-section-{{ section.id }} .swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2.1,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 2.1,
+        spaceBetween: 10,
+      },
+      1536: {
+        slidesPerView: 2.5,
+        spaceBetween: 32,
+      },
+    },
+  });
+});
+</script>
+{% schema %}
+{
+  "name": "Review Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One pan for the rest of your life"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text",
+      "name": "Icon with Text",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "icon",
+         "label": "Icon SVG"
+
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+          {
+          "type": "image_picker",
+          "id": "stars",
+          "label": "Star Rating SVG"
+        },
+     
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "client_image",
+          "label": "Client Image"
+        },
+        {
+          "type": "text",
+          "id": "client_name",
+          "label": "Client Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewbyicon",
+          "label": "Review By Icon"
+        },
+        {
+          "type": "text",
+          "id": "reviewby",
+          "label": "Review buy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review Slider",
+      "blocks": [
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

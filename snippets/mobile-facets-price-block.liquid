@@ -1,0 +1,115 @@
+{%- if uses_comma_decimals -%}
+  {%- assign maxRangeValue = filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' | plus: 0 -%}
+{%- else -%}
+  {%- assign maxRangeValue = filter.range_max | money_without_currency | replace: ',', '' | plus: 0 | round -%}
+{% endif %}
+
+{%- assign cartCurrencySymbol = cart.currency.symbol -%}
+{%- assign minFilterPrice = filter.min_value.value | divided_by: 100 -%}
+{%- assign maxFilterPrice = filter.max_value.value | divided_by: 100 -%}
+{%- assign priceMax = maxRangeValue -%}
+
+{%- assign priceStart = 50 -%}
+{%- if priceMax <= priceStart -%}
+  {%- assign priceStart = priceMax -%}
+{%- endif -%}
+{%- assign prevValue = priceStart -%}
+
+
+<custom-price-blocks>
+  <ul class="list-unstyled no-js-hidden price-facets__list mobile-facets__list" role="list">
+  
+    {%- for i in (1..10) -%}
+      
+      {%- if priceMax > priceStart -%}
+        
+        {%- if prevValue == priceStart -%}
+          <li class="list-menu__item facets__item mobile-facets__item">
+            <label for="PriceBlocks-m-{{ i }}" class="mobile-facets__label">
+              <input class="mobile-facets__checkbox"
+                type="checkbox"
+                data-min="0"
+                data-max="{{ prevValue }}"
+                id="PriceBlocks-m-{{ i }}"
+                {% if minFilterPrice == 0 and maxFilterPrice >= prevValue %}checked{% endif %}
+              >
+              <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+              </svg>
+              <svg aria-hidden="true" class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span aria-hidden="true">Under {{ cartCurrencySymbol }}{{ priceStart }}</span>
+            </label>
+          </li>
+        {%- else -%}
+          <li class="list-menu__item facets__item mobile-facets__item">
+            <label for="PriceBlocks-m-{{ i }}" class="mobile-facets__label">
+              <input class="mobile-facets__checkbox"
+                type="checkbox"
+                data-min="{{ prevValue }}"
+                data-max="{{ priceStart }}"
+                id="PriceBlocks-m-{{ i }}"
+                {% if prevValue >= minFilterPrice and maxFilterPrice >= priceStart %}checked{% endif %}
+              >
+              <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+              </svg>
+              <svg aria-hidden="true" class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span aria-hidden="true">{{ cartCurrencySymbol }}{{ prevValue }} - {{ cartCurrencySymbol }}{{ priceStart }}</span>
+            </label>
+          </li>
+        {%- endif -%}
+        
+        {%- assign prevValue = priceStart -%}
+        {%- assign priceStart = priceStart | times: 2 -%}
+        
+      {%- else -%}
+        {%- if prevValue == priceStart -%}
+          <li class="list-menu__item facets__item mobile-facets__item">
+            <label for="PriceBlocks-m-{{ i }}" class="mobile-facets__label">
+              <input class="mobile-facets__checkbox"
+                type="checkbox"
+                data-min="0"
+                data-max="{{ prevValue }}"
+                id="PriceBlocks-m-{{ i }}"
+                {% if minFilterPrice == 0 and maxFilterPrice >= prevValue %}checked{% endif %}
+              >
+              <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+              </svg>
+              <svg aria-hidden="true" class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span aria-hidden="true">Under {{ cartCurrencySymbol }}{{ priceStart }}</span>
+            </label>
+          </li>
+        {%- else -%}
+          <li class="list-menu__item facets__item mobile-facets__item">
+            <label for="PriceBlocks-m-{{ i }}" class="mobile-facets__label">
+              <input class="mobile-facets__checkbox"
+                type="checkbox"
+                data-min="{{ prevValue }}"
+                data-max="{{ priceMax }}"
+                id="PriceBlocks-m-{{ i }}"
+                {% if maxFilterPrice >= priceMax %}checked{% endif %}
+              >
+              <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+              </svg>
+              <svg aria-hidden="true" class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span aria-hidden="true">{{ cartCurrencySymbol }}{{ prevValue }}+</span>
+            </label>
+          </li>
+        {%- endif -%}
+        {%- break -%}
+      {%- endif -%}
+      
+    {%- endfor -%}
+    
+  </ul>
+</custom-price-blocks>

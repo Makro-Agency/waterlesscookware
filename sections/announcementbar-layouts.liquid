@@ -1,0 +1,532 @@
+<style>
+  .announcement{
+    text-align:center;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .announcement_sliers{
+    position:relative;
+  }
+  .swiper-ann-btn-prev{
+   position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -40%);
+  }
+   .swiper-ann-btn-next{
+    position:absolute;
+    right:0;
+    top: 50%;
+    transform: translate(0, -40%);
+  }
+  .announcement-button,.custom-countdown{
+    margin-left:20px;
+  }
+  div#countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  div#countdown-timer>span{
+    border-radius: 2px;
+    background: var(--White, #FCFBF7);
+    color: #606D22;
+    padding: 2px 8px;
+    min-width:26px;
+    font-weight:600;
+  }
+  .ann-grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+ .ann-grid .announcement-msg {
+    flex: 1;
+    width: 33.3%;
+    border-right: 1px solid #8f9964;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+   .ann-grid .announcement-msg.grid-3{
+     padding-right:0;
+     border-right:unset;
+   }
+   .announcement.slides{
+     padding:10px 0;
+     width:100% !important;
+     justify-content:center;
+     display:flex !important;
+   }
+ .ann_bar_main .swiper-slide{
+   display:flex !important;
+  }
+  .ann-grid.desktop-only-ann svg {
+    margin-left: 20px;
+  }
+  .announcement-msg span,.announcement-button a{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .custom-page-width{
+    padding:0 60px;
+    max-height:48px;
+  }
+  .swiper-wrapper{
+    align-items:center;
+  }
+  .announcement-button svg{
+    margin-left:10px;
+  }
+  .countdown-ann{
+    padding:10px 0;
+  }
+  .mobile-only-ann{
+    display:none;
+  }
+  
+@media only screen and (max-width: 989px) {
+  .custom-page-width {
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .custom-page-width {
+    padding: 0 10px;
+    max-height:88px;
+  }
+  .countdown-ann{
+    display:block;
+  }
+  .custom-countdown{
+    margin:10px 0;
+  }
+  .mobile-only-ann{
+    display:block;
+  }
+  .desktop-only-ann{
+    display:none;
+  }
+}
+</style>
+
+
+<div class="ann_bar_main" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  <div class="page-width_">
+    <div class="">
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == "simple" -%}
+          <div class="custom-page-width">
+          <div class="swiper announcement_sliers">
+            <div class="swiper-wrapper">
+              {% if block.settings.announcement_message != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text }}
+                      {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+              {% if block.settings.announcement_message_2 != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message_2 }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link_2 }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text_2 }}
+                      {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+              {% if block.settings.announcement_message_3 != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message_3 }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link_3 }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text_3 }}
+                     {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="slide-nav small-hide medium-hide">
+              <div class="nav-btn swiper-ann-btn-prev prevprev">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.625 11.25L3.375 6L8.625 0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="nav-btn swiper-ann-btn-next nextnext">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.375 11.25L8.625 6L3.375 0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          </div>
+        {% endif %}
+
+        {%- if block.type == "countdown" -%}
+          {% if block.settings.announcement_message != blank %}
+            <div class="announcement countdown-ann">
+              <div class="announcement-msg cmmn-count">
+                <span>{{ block.settings.announcement_message }}</span>
+              </div>
+              {% assign countdownEndDate = block.settings.countdown_end_date %}
+              <div class="custom-countdown cmmn-count">
+                <div id="countdown-timer"></div>
+              </div>
+              <div class="announcement-button cmmn-count">
+                <a href="{{ block.settings.cta_link }}" style="color: {{ block.settings.cta_color }};">
+                  {{ block.settings.cta_text }}
+                  {% if settings.arrowsvg != blank %}
+                   {{ settings.arrowsvg }}
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {%- if block.type == "ann_grid" -%}
+          <div class="ann-grid desktop-only-ann">
+            {% if block.settings.announcement_message != blank %}
+              <div class="announcement-msg grid-1">
+                <span>{{ block.settings.announcement_message }}{% render 'arrow-btns' %}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.announcement_message_2 != blank %}
+              <div class="announcement-msg grid-2">
+                <span>{{ block.settings.announcement_message_2 }}{% render 'arrow-btns' %}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.announcement_message_3 != blank %}
+              <div class="announcement-msg grid-3">
+                <span>{{ block.settings.announcement_message_3 }}{% render 'arrow-btns' %}</span>
+              </div>
+            {% endif %}
+          </div>
+          <div class="mobile-only-ann">
+            <div class="custom-page-width">
+          <div class="swiper announcement_sliers">
+            <div class="swiper-wrapper">
+              {% if block.settings.announcement_message != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text }}
+                     {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+              {% if block.settings.announcement_message_2 != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message_2 }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link_2 }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text_2 }}
+                     {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+              {% if block.settings.announcement_message_3 != blank %}
+                <div class="announcement slides swiper-slide">
+                  <div class="announcement-msg">
+                    <span>{{ block.settings.announcement_message_3 }}</span>
+                  </div>
+                  <div class="announcement-button">
+                    <a href="{{ block.settings.cta_link_3 }}" style="color: {{ block.settings.cta_color }};">
+                      {{ block.settings.cta_text_3 }}
+                      {% if settings.arrowsvg != blank %}
+                       {{ settings.arrowsvg }}
+                      {% endif %}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="slide-nav">
+              <div class="nav-btn swiper-ann-btn-prev prevprev">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.625 11.25L3.375 6L8.625 0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="nav-btn swiper-ann-btn-next nextnext">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.375 11.25L8.625 6L3.375 0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  if(document.getElementById("countdown-timer")){
+    // Get the countdown end date from Shopify theme settings
+    var countdownEndDate = new Date("{{ countdownEndDate }}").getTime();
+  
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+  
+      // Get the current date and time
+      var now = new Date().getTime();
+  
+      // Calculate the time remaining
+      var distance = countdownEndDate - now;
+  
+      // Calculate days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      // Display the countdown
+      document.getElementById("countdown-timer").innerHTML = 
+      "<span>" + days + "d</span>: " + 
+      "<span>" + hours + "h</span>:" + 
+      "<span>" + minutes + "m</span>:" + 
+      "<span>" + seconds + "s</span>";
+  
+      
+  
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "announcement layout",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#606d22"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#FCFBF7",
+      "label": "Text Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "simple",
+      "name": "simple",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_message",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+        "type": "color",
+        "id": "cta_color",
+        "default": "#ffffff",
+        "label": "button Color"
+        },
+        {
+          "type": "text",
+          "id": "announcement_message_2",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text_2",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link_2",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "announcement_message_3",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text_3",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link_3",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "countdown",
+      "name": "countdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_message",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+      {
+        "type": "text",
+        "id": "countdown_end_date",
+        "label": "enddate",
+        "info": "sept 26, 2024 22:15:10"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+        "type": "color",
+        "id": "cta_color",
+        "default": "#ffffff",
+        "label": "button Color"
+        },
+      ]
+    },
+    {
+      "type": "ann_grid",
+      "name": "ann_grid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_message",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+        "type": "color",
+        "id": "cta_color",
+        "default": "#ffffff",
+        "label": "button Color"
+        },
+        {
+          "type": "text",
+          "id": "announcement_message_2",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text_2",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link_2",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "announcement_message_3",
+          "default": "Welcome to our Store",
+          "label": "Enter Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text_3",
+          "default": "Shop now",
+          "label": "Enter button text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link_3",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "announcement layout",
+      "blocks": [
+        {
+          "type": "simple"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

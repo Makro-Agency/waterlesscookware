@@ -1,0 +1,110 @@
+.products-carousel {
+  overflow: hidden;
+}
+.home-featured-collection .nav-btn {
+  height: 13px;
+  width: 26px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 11;
+  cursor: pointer;
+  transform: translate(0, -50%);
+}
+.home-featured-collection .nav-btn.fea-col-slide-prev {
+  right: 72px;
+}
+.nav-btn.swiper-button-disabled{
+  opacity: 0.5;
+}
+.home-featured-collection .slider_hide-arrow .slide-nav{
+  display: none;
+}
+.home-featured-collection .slide-nav svg{
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+}
+.home-featured-collection .nav-btn path{
+  stroke: black;
+}
+.home-featured-collection .title{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.home-featured-collection .collection__title.title-wrapper {
+  margin-bottom: 30px;
+  position: relative;
+  padding-right: 130px;
+}
+.home-featured-collection .collection__description{
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.div-gift-guide-suffix .collection .page-width { max-width: calc(149.715rem + 10rem); }
+
+@media screen and (min-width: 990px){
+  
+  .product-carousel-slider.disable-hover .underline-links-hover:hover a{
+    text-decoration:none;
+  }
+  .product-carousel-slider{
+    display: none;
+  }
+  .product-carousel-slider.swiper-container-initialized, .product-carousel-slider.swiper-initialized{
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 989px){
+  .home-featured-collection .slide-nav{
+    display: none;
+  }
+  .product-carousel-slider .swiper-wrapper{
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    overflow-x: auto;
+    overflow-y: hidden;
+    column-gap: 4px;
+  }
+  .product-carousel-slider .swiper-slide{
+    width: 35%;
+  }
+  .product-carousel-slider .swiper-wrapper::-webkit-scrollbar{
+    display: none;
+  }
+  .slider-page-width{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .product-carousel-slider .swiper-slide:first-child {
+    padding-left: 3.5rem;
+  }
+  .product-carousel-slider .swiper-slide:last-child {
+    padding-right: 3.5rem;
+  }
+}
+@media screen and (max-width: 749px){
+  .product-carousel-slider .swiper-slide:first-child{
+    padding-left: 1.5rem;
+  }
+  .product-carousel-slider .swiper-slide:last-child{
+    padding-right: 1.5rem;
+  }
+  .product-carousel-slider .swiper-slide{
+    width: 75%;
+  }
+  .home-featured-collection .title{
+    font-size: 16px;
+  }
+  .home-featured-collection .collection__title.title-wrapper {
+    margin-bottom: 20px;
+    padding-right: 0;
+  }
+}

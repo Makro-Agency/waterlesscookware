@@ -1,0 +1,354 @@
+{{ 'hotspot-section.css' | asset_url | stylesheet_tag }}
+{%  style  %}
+   #tooltip-title{ margin-top:0; margin-bottom:5px; }
+  .hotspot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color:#606d22;
+    border-radius: 50%;
+    cursor: pointer;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+   #hotspot-section .advantage-icon-text1{ border-top:none;}
+  #hotspot-section .advantage-inner-section-first-div p{ transform:rotate(0deg); }
+.hotspot:before{
+      content: '';
+    border: 1px solid #606d22;
+    position: absolute;
+    top: -11px;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    left: -11px;
+    border-radius: 30px;
+
+}
+   /* .hotspot:before{ transition:all 0.3s linear;  }
+  .hotspot:hover:before{ background-color:#ffffff; border:1px solid #ffffff;  } */
+.tooltip {
+    position: absolute;
+    border-radius: 15px;
+background: var(--White, #FCFBF7);
+box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.10);
+    color: #000;
+    padding: 16px;
+    border-radius: 15px;
+    display: none;
+    transform: translate(-49%, 128%);
+    max-width: 288px;
+    z-index: 10;
+    width:100%; 
+}
+ 
+#hotspot-section .advantage-inner-section-first-div p{ max-width:30rem; }
+/* .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Arrow positioning */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+} */
+   h3#tooltip-title{     margin-top: 0;
+    margin-bottom: 5px; color: var(--Black, #0D0D0D);
+/* Header 05 */
+font-family: Cellofy;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 24px */ } 
+  .image-container {
+    position: relative;
+    display: inline-block;
+}
+#hotspot-section .cta-button.desktop{  background: #606d22;
+    color: #fcfbf7;
+    font-size: 16px;
+    line-height: 100%;
+    border: none;
+    font-weight: 400;
+    border-radius: 100px;
+    padding: 15px 27px;
+    letter-spacing: 0;
+    height: 50px; }
+ #hotspot-section  .button-group{ margin-top:40px;}
+@media screen and (max-width:576px){
+
+   #hotspot-section .tooltip{     transform: translate(-45%, 126%); padding:14px; 
+    max-width: 250px; } }
+@media screen and (max-width:767px){
+    #hotspot-section .advantage-inner-section-first-div{ overflow:hidden;}
+  #hotspot-section .advantage-icon-text1{ gap:20px; }
+  #hotspot-section .advantage-icon svg{ width:40px; height:40px;}
+  #hotspot-section .advantag-inner-section1{ gap:30px; }
+  #hotspot-section{ padding-top:8rem; padding-bottom:7rem;        padding-left: 20px;
+        padding-right: 20px; }
+  #hotspot-section .cta-button.desktop{     align-items: center;
+    justify-content: center; display:flex; width:100%;}
+    h3#tooltip-title{ font-size:16px; }
+  #hotspot-section .advantage-inner-section-first-div p{ font-size:12px; line-height:15px; }
+}
+  @media screen and (min-width:1200px) and (max-width:1539px){
+    #hotspot-section .advantage-inner-section-second-div{ max-width:616px; }
+    #hotspot-section .advantage-inner-section-first-div img{ max-height:555px; }
+#hotspot-section .advantage-inner-section-first-div{ max-width:664px; max-height:555px;} }
+@media screen and (max-width:989px){
+  #hotspot-section .advantag-inner-section1{ flex-direction:column;} }
+@media screen and (max-width:767px){
+  .img-desktop.interactive-image{ display:none;} }
+  @media screen and (min-width:768px){
+  .img-mobile.interactive-image{ display:none;} }
+  .hotspot:hover:before{ border:11px solid #ffffff;}
+.hotspot:before , .hotspot{ transition:all 0.3s linear; }
+  /* .hotspot:hover{ width:30px; height:30px; background:#ffffff; }
+  .hotspot:hover:before{
+    background-color: #606d22;
+    width:8px;
+    height:8px;
+    left:11px;
+    top:11px;
+    border-color: transparent;
+  } */
+  {% endstyle %}
+<div id="hotspot-section">
+  <div class="advantag-inner-section1">
+    {% if section.settings.title != blank %}
+    <div class="advantage-inner-section-first-div image-container">
+    {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url:'' }}" class="img-desktop interactive-image" alt="{{ block.settings.title }}">
+           <img src="{{ section.settings.image_mobile | img_url:'' }}" class="img-mobile interactive-image" alt="{{ block.settings.title }}">
+        <div id="hotspots">
+        {% for block in section.blocks %}
+        {% if block.type == 'hotspot' %}
+          <div class="hotspot" style="top: {{ block.settings.top }}%; left: {{ block.settings.left }}%;" data-title="{{ block.settings.title }}" data-description="{{ block.settings.description }}"></div>
+        {% endif %}
+        {% endfor %}
+        </div>
+         <div class="tooltip">
+            <h3 id="tooltip-title"></h3>
+            <p id="tooltip-description"></p>
+        </div>
+      {% endif %}
+    </div>
+   {% endif %}
+    <div class="advantage-inner-section-second-div">
+        <h2>{{ section.settings.title }}</h2>
+      {% for block in section.blocks %}
+        {% if block.type == 'advantage' %}
+        <div class="advantage-icon-text1">
+          {% if block.settings.icon != blank %}
+          <div class="advantage-icon back_color_{{ block.settings.icon_background }}">
+            {{ block.settings.icon }}
+          </div>
+            {% endif %}
+          <div class="advantag-inner-icon-header-text-main">
+             {% if block.settings.title != blank %}
+            <div class="advantag-inner-icon-header-text">
+              <h4>{{ block.settings.title }}</h4>
+              <p>{{ block.settings.description }}</p>
+            </div>
+              {% endif %}
+            <div class="advantag-hidden-text">
+               {% if block.settings.hidden_title_1 != blank %}
+              <div class="advantag-inner-icon-header-text">
+                <h4>{{ block.settings.hidden_title_1 }}</h4>
+                <p>{{ block.settings.hidden_description_1 }}</p>
+              </div>
+              {% endif %}
+              {% if block.settings.hidden_title_2 != blank %}
+              <div class="advantag-inner-icon-header-text">
+                <h4>{{ block.settings.hidden_title_2 }}</h4>
+                <p>{{ block.settings.hidden_description_2 }}</p>
+              </div>
+              {% endif %}
+              <div class="advantage-image-with-txt">
+                {% if block.settings.product_image != blank %}
+                <div class="image">
+                  <img src="{{ block.settings.product_image | img_url: '' }}" alt="{{ block.settings.product_title }}" width="auto" height="auto">
+                </div>
+                {% endif %}
+                {% if block.settings.product_title != blank %}
+                <div class="advantag-right-arrow-text">
+                  <div class="advantag-right-arrow-text_inner">
+                    <p>{{ block.settings.product_title }}</p>
+                    <div class="product-price">
+                      <span class="price-txt">{{ block.settings.product_price | money }}</span>
+                      <span class="dull-price-txt">{{ block.settings.product_compare_price | money }}</span>
+                    </div>
+                  </div>
+                  <a href="{{ block.settings.product_link }}" class="advantag_arrow_link">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.81515 8.625L11.25 5.99866M11.25 5.99866L8.81764 3.375M11.25 5.99866H0.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+               {% endif %}
+              </div>
+            </div>
+            {% if block.settings.learn_more_text != blank  %}
+              <div class="learn_link_advantage">
+                {{ block.settings.learn_more_text }}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4.5L8 11.5L1 4.5" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+          {% endif %}
+      {% endfor %}
+              {% if section.settings.url != blank %}
+                    <div class="button-group">
+                  <a href="{{ section.settings.url  }}" class="button cta_button">{{ section.settings.urltext  }}</a>  
+                    </div>
+              {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+const hotspots = document.querySelectorAll('.hotspot');
+const tooltip = document.querySelector('.tooltip');
+const tooltipTitle = document.getElementById('tooltip-title');
+const tooltipDescription = document.getElementById('tooltip-description');
+
+hotspots.forEach(hotspot => {
+    hotspot.addEventListener('mouseover', () => {
+        const title = hotspot.getAttribute('data-title');
+        const description = hotspot.getAttribute('data-description');
+
+        tooltipTitle.textContent = title;
+        tooltipDescription.textContent = description;
+
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${hotspot.offsetTop - tooltip.offsetHeight}px`;
+        tooltip.style.left = `${hotspot.offsetLeft}px`;
+    });
+
+    hotspot.addEventListener('mouseout', () => {
+        tooltip.style.display = 'none';
+    });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Hotspot Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+       {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Section image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "The 360 Advantage consectetur adipisc"
+    },
+     {
+      "type": "text",
+      "id": "urltext",
+      "label": "Button Text"
+    },
+       {
+      "type": "url",
+      "id": "url",
+      "label": "Section Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "advantage",
+      "name": "Hotspot Item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon SVG"
+        },
+        {
+          "type": "select",
+          "id": "icon_background",
+          "label": "Icon Background Color",
+          "options": [
+            { "value": "green", "label": "Green" },
+            { "value": "gold", "label": "Gold" },
+            { "value": "light-green", "label": "Light Green" }
+          ],
+          "default": "green"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem Dolor Consectetur Adipiscing"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti"
+        }
+      ]
+    },
+    {
+      "type": "hotspot",
+      "name": "Hotspot",
+      "settings": [
+        {
+          "type": "number",
+          "id": "top",
+          "label": "Top Position (%)",
+          "default": 50
+        },
+        {
+          "type": "number",
+          "id": "left",
+          "label": "Left Position (%)",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Layer Benefit"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "hotsopt",
+      "blocks": [
+        {
+          "type": "advantage"
+        },
+        {
+          "type": "advantage"
+        },
+        {
+          "type": "advantage"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

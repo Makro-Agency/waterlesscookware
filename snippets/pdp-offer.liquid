@@ -1,0 +1,223 @@
+{% unless has_cart_item %}{{ 'pdp-offer.css' | asset_url | stylesheet_tag }}{% endunless %}
+{%- liquid
+  assign user_language = request.locale.iso_code
+  if user_language == 'fr'
+    assign static_text = 'Économies totales,Afficher tout,Inclus dans les ensemble,Cadeau GRATUIT,GRATUIT,Ce qui est inclus' | split:','
+  else
+    assign static_text = 'Total Savings,Show All,Included in Set,FREE Gift,FREE,Whats included' | split:','
+    comment              '0            ,1       ,2              ,3        ,4   ,5             ' 
+    endcomment
+  endif
+  assign inCluProducts = product.metafields.CW360SetInclude.setInclude_product
+  assign inCluProducts = inCluProducts | split:'|'
+  assign product_size = inCluProducts | size
+  assign temp_product_size = inCluProducts | size
+   
+  assign bundle_free = product.metafields.CW360SetInclude.bundle_free | split:'|'
+  assign has_bandle = false
+  assign temp_bundle_count = 0
+  if bundle_free != blank
+   assign b_size = bundle_free | size
+   assign temp_product_size = product_size | plus: b_size
+   assign has_bandle = true
+  endif
+
+  assign has_new_set_value = false
+  assign new_set_products = product.metafields.CW360BundleSet.product
+  assign new_has_bundle_frees = product.metafields.CW360BundleSet.free_in_bundle
+  assign new_qtys = product.metafields.CW360BundleSet.qty
+  assign new_set_products_size = product.metafields.CW360BundleSet.product | size
+  if new_set_products != blank
+   assign temp_product_size = new_set_products_size
+   assign has_new_set_value = true
+  endif
+   
+  assign proPrice = product.price
+  assign metaPPrices = 0
+  assign count = 0 
+  assign pieces_count = 0
+-%}
+
+{%- for i in (1..temp_product_size) -%}
+{%- assign temp = inCProduct | strip -%}
+{%- unless has_new_set_value -%}  
+  {%- if i <= product_size -%}
+    {%- assign temp_product = all_products[inCluProducts[forloop.index0]] -%}
+  {%- else -%}
+    {%- assign indx0 = temp_bundle_count -%}
+    {%- assign temp_product = all_products[bundle_free[indx0]] -%}
+    {%- assign temp_bundle_count = temp_bundle_count | plus: 1 -%}
+  {%- endif -%}
+{%- else -%}    
+  {%- assign temp_product = all_products[new_set_products[forloop.index0]] -%}  
+{%- endunless -%}
+{% capture product_card %}{{ product_card }}
+{%- if temp_product.available != blank -%}
+  {%- liquid     
+     assign qty = 1 
+     assign bundleFree = false
+     
+     unless has_new_set_value     
+       if has_bandle and temp_product.handle == bundle_free[indx0]
+         assign bundleFree = true
+       endif
+     else
+       assign qty = new_qtys[forloop.index0] | default: 1
+       assign bundleFree = new_has_bundle_frees[forloop.index0] | default: false       
+     endunless
+     
+    assign count = count | plus: qty
+    unless bundleFree  
+      assign pieces_count = pieces_count | plus: qty
+    endunless
+    assign target = temp_product.selected_or_first_available_variant
+    assign compare_at_price = target.compare_at_price | times: qty
+    assign price = target.price | times: qty
+    assign money_price = price | money
+    unless bundleFree     
+      assign metaPPrices = metaPPrices | plus: price
+    endunless      
+  -%}
+
+  {% if has_cart_item %}
+    {% if forloop.length > 1 and forloop.index > 1 %}{% unless forloop.first %}<br />{% endunless %}{% endif %}{{ temp_product.title }} x{{ qty }}
+  {% elsif accordion %}
+    <li class="included-item">
+      <div class="media-wrapper">
+        <img src="{{ temp_product.featured_image | image_url: width: 100 }}" alt="{{ temp_product.featured_image.alt }}" width="60" height="60" loading="lazy" />
+      </div>
+      <div class="content-wrapper">
+        <h5 class="pro-title"><a href="{{ temp_product.url }}">{{ temp_product.title }}</a></h5>
+        <div class="price__sale">
+          {% if bundleFree %}
+            <span class="price-item price-item--sale price-item--last">{{ static_text[4] }}</span>
+            <span class="price-item price-item--regular">{{ money_price }}</span>
+          {% else %}
+            <span class="price-item price-item--sale price-item--last">{{ money_price }}</span>
+            {% if compare_at_price > price %}
+              <span class="price-item price-item--regular">{{ compare_at_price | money }}</span>
+            {% endif %}
+          {% endif %}
+          <span class="count"> × {{ qty }}</span>
+        </div>
+      </div>
+    </li>
+  {% else %}
+    <li class="{% if count > 4 %}hidden{% endif %}">
+      <div class="media-wrapper">
+        <img src="{{ temp_product.featured_image | image_url: width: 100 }}" alt="{{ temp_product.featured_image.alt }}" width="60" height="60" loading="lazy" />
+      </div>
+      <div class="content-wrapper">
+        <h5 class="pro-title"><a href="{{ temp_product.url }}">{{ temp_product.title }} × {{ qty }}</a></h5>
+        <div class="price__sale">
+          {% if bundleFree %}
+            <span class="price-item price-item--sale price-item--last">{{ static_text[4] }}</span>
+            <span class="price-item price-item--regular">{{ money_price }}</span>
+          {% else %}
+            <span class="price-item price-item--sale price-item--last">{{ money_price }}</span>
+            {% if compare_at_price > price %}
+              <span class="price-item price-item--regular">{{ compare_at_price | money }}</span>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endif %}
+{%- endif -%}{% endcapture %}
+{%- endfor -%}
+{% if count > 0 %}
+  
+{% if has_cart_item %}
+  <div class="product-option product-option_set-inc"><dd>{{ product_card }}</dd></div>
+{% elsif accordion %}
+  <div class="accordion-item open">
+    <button class="accordion-button">
+      {% if template.suffix == 'set-product' %}
+      <h3 class="heading h3">What's in set</h3>
+      {% else %}
+      <h3 class="heading h3">{{ static_text[5] }}</h3>
+      {% endif %}
+      <span class="plus-icon">{% render 'icon-down' %}</span>
+      <span class="minus-icon">{% render 'icon-top' %}</span>
+    </button>
+    <div class="accordion-content">
+      <ul class="acc-product-included-lists list-unstyled">
+      {{ product_card }}
+      </ul>
+    </div>
+  </div>  
+{% else %}
+{%- assign tempPrice = proPrice | minus: metaPPrices | abs -%}
+<div class="products-included-wrapper">
+  <div class="total-price-tag">    
+    {{ static_text[0] }} = <span data-price="{{ proPrice }}" data-meta-price="{{ metaPPrices }}"> {{ tempPrice | money }}</span>
+  </div>
+  <div class="set-pro-title-wrapper">
+    <h5 class="set-pro-title">
+      {% comment %}{{ pieces_count }}{% endcomment %} 
+      {{ static_text[2] }}{% if bundleFree %} + {{ static_text[3] }}{% endif %}</h5>
+  </div>
+  <ul class="product-included-lists">
+    {{ product_card }}
+    {% if count > 4 %}
+    {% if settings.showmore %}
+    <span class="show-more-button"> <p class="btn-text" data-more-text="{{ static_text[1] }}">{{ static_text[1] }}</p> {% render 'icon-down'%}</span>
+      {% endif %}
+    {% endif %}
+  </ul>
+</div>
+
+<script>
+(function () {
+  var listItems = document.querySelectorAll('.product-included-lists li');
+  var showMoreButton = document.querySelector('.show-more-button');
+  var btnText = document.querySelector('.btn-text');
+  var svgIcon = showMoreButton.querySelector('svg'); // Assuming the icon is rendered here
+  var itemsToShow = 4;
+
+  // Get "Show More" text from the data attribute
+  var showMoreText = btnText.getAttribute('data-more-text');
+  var showLessText = 'Show Less'; // You can customize this text or get it dynamically if needed
+
+  // Initially hide items beyond the limit
+  if (listItems.length > itemsToShow) {
+    for (var i = itemsToShow; i < listItems.length; i++) {
+      listItems[i].classList.add('hidden');
+    }
+  } else {
+    showMoreButton.style.display = 'none';
+  }
+
+  showMoreButton.addEventListener('click', function () {
+    if (!showMoreButton.classList.contains('clicked')) {
+      // Show hidden items
+      for (var i = itemsToShow; i < listItems.length; i++) {
+        listItems[i].classList.remove('hidden');
+      }
+
+      // Change button text to "Show Less" and rotate the icon
+      btnText.textContent = showLessText;
+      svgIcon.style.transform = 'rotate(180deg)';
+
+      // Add clicked class
+      showMoreButton.classList.add('clicked');
+    } else {
+      // Hide the items again
+      for (var i = itemsToShow; i < listItems.length; i++) {
+        listItems[i].classList.add('hidden');
+      }
+
+      // Change button text back to "Show More" (using the data attribute)
+      btnText.textContent = showMoreText;
+      svgIcon.style.transform = 'rotate(0deg)';
+
+      // Remove clicked class
+      showMoreButton.classList.remove('clicked');
+    }
+  });
+})();
+</script>
+
+
+{% endif %}
+{% endif %}

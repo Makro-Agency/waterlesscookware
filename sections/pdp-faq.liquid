@@ -1,0 +1,350 @@
+{% if section.settings.title != blank or section.settings.des != blank or section.settings.title-1 != blank or section.settings.des-1 != blank or section.settings.title-2 != blank or section.settings.des-2 != blank or section.blocks.size > 0 %}
+  {{ 'resources-guide.css' | asset_url | stylesheet_tag }}
+  <style>
+   .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+  
+    .accordion-item.open .accordion-content {
+      max-height: 500px; /* Adjust this value based on your content size */
+      opacity: 1;
+      padding:20px 0 20px 0;
+    }
+  
+    .accordion-item {
+      transition: all 0.3s ease-in-out;
+    }
+    .accordion-content table {box-shadow: none;border-top: 1px solid #0000000D;}
+
+    .accordion-content table td {
+        border: none;
+        padding-left: 0;
+        font-weight: 400;
+    }
+    
+    .accordion-content table tr {
+        border-top: 1px solid #0000000D;
+    }
+    
+    .accordion-content table td+td {
+        text-align: right;
+        padding-right: 0;
+        font-weight: 600;
+    }
+     @media screen and (max-width: 749px) {
+       .resources-guide-section .collapsible-content-wrapper button.accordion-button .heading { font-size: 24px; letter-spacing: -0.48px; }
+     }
+  </style>
+  {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+  
+  <div class="section-{{ section.id }}-padding pdp-faq-section-{{ section.id }}{% if template.name == "product" %} pdp-faq--padding pdp-faq{% endif %}">
+    <div class="resources-guide-section page-width{% if template.name == "product" %} pdp-faq--resources-guide{% endif %}">
+    
+      {% if section.settings.title != blank or section.settings.des != blank or section.settings.title-1 != blank or section.settings.des-1 != blank or section.settings.title-2 != blank or section.settings.des-2 != blank %}
+      <div class="resources-guide-wrapper">
+        
+        {% if section.settings.title != blank or section.settings.des != blank %}
+        <div class="title-wrapper">
+          {% if section.settings.title != blank %}
+            <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+          {% endif %}
+          {% if section.settings.des != blank %}
+            <p class="desc">{{ section.settings.des }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if section.blocks.size > 0 %}
+        {% assign counter = 0 %}
+        <div class="collapsible-content-wrapper">        
+          {%- capture pdp_offer_cap -%}
+          {%- if template.suffix == "set-product" -%}
+            {% render 'pdp-offer', product: product, accordion:true %}
+          {%- endif -%}
+          {%- endcapture -%}{% assign pdp_offer_cap = pdp_offer_cap | strip_newlines | strip %}
+          {% if pdp_offer_cap != blank %}
+            {{ pdp_offer_cap }}
+            {% assign counter = counter | plus: 1 %}
+          {% endif %}
+    
+          {% assign split_content = product.description | split: 'Product Features:' %}
+          {% assign part1 = split_content[0] %}
+          {% assign split_content_first = split_content[1] %}
+          {%- if template.suffix == "set-product" -%}
+            {% assign split_content_first = product.description %}
+          {% endif %}
+          
+          {% if split_content_first contains 'This Set Includes:' %}
+            {% assign part2 = split_content_first | split: 'This Set Includes:' %}
+          {% else %}
+            {% assign part2 = split_content_first | split: '<strong>This Item Includes:</strong>' %}
+          {% endif %}
+          {% assign part2_1 = part2[0] %}
+          {% assign part2_2 = part2[1] %}
+
+          
+  
+          {% if product.metafields.accentuate.ingredients != blank %}
+            <div class="accordion-item{% if pdp_offer_cap == blank %} open{% endif %} faq-features">
+              <button class="accordion-button">
+                <h3 class="heading h3">{{ section.settings.faq_title_1 }}</h3>
+                <span class="plus-icon">{% render 'icon-down' %}</span>
+                <span class="minus-icon">{% render 'icon-top' %}</span>
+              </button>
+              <div class="accordion-content">
+                  {{ product.metafields.accentuate.ingredients }}
+              </div>
+            </div>
+            {% assign counter = counter | plus: 1 %}
+          {% else %}
+            {%- if template.suffix != "set-product" and part2_1 != blank -%}
+            <div class="accordion-item{% if pdp_offer_cap == blank %} open{% endif %} faq-features">
+              <button class="accordion-button">
+                <h3 class="heading h3">{{ section.settings.faq_title_1 }}</h3>
+                <span class="plus-icon">{% render 'icon-down' %}</span>
+                <span class="minus-icon">{% render 'icon-top' %}</span>
+              </button>
+              <div class="accordion-content">
+                  {{ part2_1 }}
+              </div>
+            </div>
+            {% assign counter = counter | plus: 1 %}
+            {%- endif -%}
+          
+          {% endif %}
+
+          {% if product.metafields.accentuate.includes != blank %}
+            {% if section.settings.faq_title_2 != blank %}
+            <div class="accordion-item{% if counter == 0 %} open{% endif %}">
+              <button class="accordion-button">
+                <h3 class="heading h3">{{  section.settings.faq_title_2 }}</h3>
+                <span class="plus-icon">{% render 'icon-down' %}</span>
+                <span class="minus-icon">{% render 'icon-top' %}</span>
+              </button>
+              <div class="accordion-content">
+                  {{ product.metafields.accentuate.includes }}
+              </div>
+            </div>
+            {% assign counter = counter | plus: 1 %}
+            {% endif %}
+          {% endif %}
+              {% comment %}
+          {% if product.metafields.accentuate.includes != blank %}
+            <div class="accordion-item">
+              <button class="accordion-button">
+                <h3 class="heading h3">This Item Includes:</h3>
+                <span class="plus-icon">{% render 'icon-down' %}</span>
+                <span class="minus-icon">{% render 'icon-top' %}</span>
+              </button>
+              <div class="accordion-content">
+                {{ product.metafields.accentuate.includes }}
+              </div>
+            </div>
+          {% else %}
+          <div class="accordion-item">
+            <button class="accordion-button">
+              <h3 class="heading h3">This Item Includes:</h3>
+              <span class="plus-icon">{% render 'icon-down' %}</span>
+              <span class="minus-icon">{% render 'icon-top' %}</span>
+            </button>
+            <div class="accordion-content" style="display: none;">
+              {{ part2_2 }}
+            </div>
+          </div>
+          {% endif %}
+          {% endcomment %}
+          
+    
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when 'faq' -%}
+                {%- liquid                   
+                   assign hide_faq = false 
+                   if block.settings.hide_tab != blank 
+                     assign hide_tab = block.settings.hide_tab | strip 
+                     for tag in product.tags 
+                       if tag == hide_tab 
+                       assign hide_faq = true 
+                       break 
+                       endif 
+                     endfor 
+                   endif 
+                -%}
+                {% if block.settings.que != blank and block.settings.ans != blank and hide_faq == false %}
+                  <div class="accordion-item{% if counter == 0 %} open{% endif %}">
+                      <button class="accordion-button">
+                        <h3 class="heading h3">{{ block.settings.que }}</h3>
+                        <span class="plus-icon">{% render 'icon-down' %}</span>
+                        <span class="minus-icon">{% render 'icon-top' %}</span>
+                      </button>
+                      <div class="accordion-content" {% comment %}style="display: none;"{% endcomment %}>
+                        {%- assign metafiled = block.settings.metafiled | strip -%}
+                        {% if block.settings.enable_metafiled and metafiled != blank %}
+                          {{ metafiled }}
+                        {% else %}
+                          {{ block.settings.ans }}
+                        {% endif %}
+                      </div>
+                  </div>
+                  {% assign counter = counter | plus: 1 %}
+                {% endif %}
+            {%- endcase -%}
+          {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.pdp-faq-section-{{ section.id }} .accordion-item').forEach((accordionItem) => {
+      const content = accordionItem.querySelector('.accordion-content');
+      
+      accordionItem.addEventListener('click', function() {
+        if (accordionItem.classList.contains('open')) {
+          accordionItem.classList.remove('open');
+          content.style.maxHeight = null;
+        } else {
+          accordionItem.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+
+  {% comment %}
+  <script>
+    if(document.querySelectorAll('.collapsible-content-wrapper .accordion-item').length > 0){
+      document.querySelectorAll('.collapsible-content-wrapper .accordion-item').forEach((accordian_item) => {
+        accordian_item.addEventListener('click',function(e){
+            if(accordian_item.classList.contains('open')){
+               accordian_item.classList.remove('open');
+               accordian_item.querySelector('.accordion-content').style.display = 'none';
+            }else{
+                if(accordian_item.closest('.collapsible-content-wrapper').querySelectorAll('.accordion-item.open').length > 0){
+                  accordian_item.closest('.collapsible-content-wrapper').querySelector('.accordion-item.open .accordion-content').style.display = 'none';
+                  accordian_item.closest('.collapsible-content-wrapper').querySelector('.accordion-item.open').classList.remove('open');  
+                }
+                accordian_item.classList.add('open');
+                accordian_item.querySelector('.accordion-content').style.display = 'block';
+            }
+        })
+      })  
+    }
+  </script>
+  {% endcomment %}
+  
+  {% endif %}
+
+  {% if counter == 0 %}
+    <script>
+      document.getElementById('shopify-section-{{ section.id }}').classList.add('hidden');
+    </script>
+  {% endif %}
+  
+  {% schema %}
+    {
+      "name": "Pdp faq",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "des",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "faq_title_1",
+          "label": "FAQ Title 1"
+        },
+         {
+          "type": "text",
+          "id": "faq_title_2",
+          "label": "FAQ Title 2"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 36
+        }
+      ],
+      "blocks": [
+        {
+          "type": "faq",
+          "name": "faq",
+          "settings": [
+            {
+              "type": "text",
+              "id": "que",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "ans",
+              "label": "Description"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_metafiled",
+              "label": "Enable metafiled"
+            },
+            {
+              "type": "liquid",
+              "id": "metafiled",
+              "label": "Put metafiled here"
+            },
+            {
+              "type": "text",
+              "id": "hide_tab",
+              "label": "Enter tag to hide tab",
+              "info": "If provide tag matched with the current product, it will hide this faq. Only add single tag."
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Pdp faq"
+        }
+      ]
+    }
+  {% endschema %}

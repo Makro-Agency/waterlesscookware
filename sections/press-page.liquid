@@ -1,0 +1,410 @@
+
+    <style>
+ 
+        .press-page-container{
+          background:#fcfbf7;
+          width: calc(100% - 20%);
+          margin: 0px auto;
+          padding: 60px 20px;
+        }
+        .press-page-container .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Three columns */
+            gap: 60px 20px;
+            width: 100%;
+            margin: 0px auto;
+            padding: 0px 0px 40px 0px !important;       
+        }
+
+        .press-page-container .heading-font {
+          font-size: 60px;
+          margin-bottom: 10px;
+          margin-top: 0;
+
+        }
+
+        .press-page-container .press-item-image {
+            /* overflow: hidden; */
+            text-align: left;
+
+        }
+        .press-item-image:hover .readmore-underline::after {
+            content: "";
+            background: #A6BB3A;
+        }
+        .press-page-container .press-item-image img {
+            border-radius: 10px;
+            width: 100%;
+            height: 378px;
+        }
+
+        .press-page-container .press-item-image h3 {
+             margin: 10px 0;
+              font-size: 24px;
+              color: #0D0D0D;
+        }
+
+        .press-page-container .press-item-image p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #0D0D0D;
+        }
+
+        .influencer-text-center {
+            text-align: center;
+        }
+
+        .press-page-container .arrow-read {
+            position: relative;
+            width: 14px !important;
+            height: 7px !important;
+            top: -2px;
+        }
+
+        .readmore-underline {
+            font-weight: 600;
+            color: #0D0D0D;
+            text-decoration: none;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            text-transform: capitalize;
+            font-size: 16px;
+            width: fit-content;
+            font-size: 16px;
+        }
+
+        .readmore-underline::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: #606D22;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+        }
+        .press-item-image svg {
+            vertical-align: text-bottom;
+        }
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+.arrow {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    user-select: none;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 0;
+}
+.left-arrow::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.375 11.25L8.625 6L3.375 0.75" stroke="%230D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.right-arrow::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.375 11.25L8.625 6L3.375 0.75" stroke="%230D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.paginate-box{
+ display: flex;
+ flex-wrap: wrap; 
+}
+.page-number {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #0D0D0D;
+    line-height: 100%;
+    cursor: pointer;
+}
+span#currentPage {
+    background: #606D22;
+    color: #fff;
+}
+
+.left-arrow {
+    margin-right: 20px;
+  transform: rotate(180deg);
+}
+.disable-arrow {
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.right-arrow {
+    margin-left: 20px;
+}
+      
+        @media (max-width: 1024px) {
+            .press-page-container .container {
+                grid-template-columns: repeat(2, 1fr);
+                /* Two columns responsive */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .press-text-center {
+                text-align: left;
+            }
+      .press-page-container .heading-font {
+          font-size: 48px;
+
+        }
+            .press-page-container .container {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 40px 0;
+            }
+
+            .press-page-container .press-item-image h3 {
+                font-size: 16px;
+            }
+           .press-page-container .press-item-image img{
+             height:auto;
+           }
+        }
+
+        @media (max-width: 480px) {
+            .press-page-container .press-item-image h3 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 767px) {
+            .press-page-container .press-item-image h3 {
+                font-size: 24px;
+            }
+          .press-page-container{
+             background:#fcfbf7;
+              width:100%;
+              margin: 60px auto; 
+              padding: 0;       
+          }
+          .press-page-container .container{
+            padding: 0px 20px 40px 20px !important;     
+          }
+          .press-page-container .heading-font {
+            padding: 0 20px;
+          }
+      }
+
+    </style>
+    <section class="press-page-container">
+      <h1 class="main-heading heading-font">{{ section.settings.title }}</h1>
+        <div class="container">
+             {%- for block in section.blocks -%}
+              <div class="press-item-image">
+                <a href="{{ block.settings.link }}">
+                  <img src="{{ block.settings.image | img_url:'' }}" alt="{{ block.settings.title }}">
+                </a>
+                  <h3>{{ block.settings.title }}</h3>
+                  <p>{{ block.settings.details }}</p>
+                   <a href="{{ block.settings.link }}" class="readmore-underline">
+                    <span>Read More </span> 
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M11.7535 11.5L15 7.99821M15 7.99821L11.7569 4.5M15 7.99821H1" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </a>
+              </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="arrow left-arrow disable-arrow" id="prevPage" onclick="prevPage(this)">&lt;</span>
+            <div class="paginate-box"></div>
+            <span class="arrow right-arrow" id="nextPage" onclick="nextPage(this)">&gt;</span>
+        </div>
+    </section>
+<script>
+  const pressItems = document.querySelectorAll('.press-item-image');
+  const itemsPerPage = parseInt('{{ section.settings.itemPerPage }}');
+  var get_pageNo = Math.ceil(pressItems.length / itemsPerPage);
+  let currentPage = 1;
+  document.addEventListener("DOMContentLoaded", function() {
+    
+      for(var i=1;i<=get_pageNo;i++){
+        if(i==1){
+          document.querySelector('.paginate-box').innerHTML += `<span data-id="${i}" class="page-number" id="currentPage" onclick="changePage(this)">${i}</span>`;  
+        }else{
+          document.querySelector('.paginate-box').innerHTML += `<span data-id="${i}" class="page-number" onclick="changePage(this)">${i}</span>`;
+        }
+        
+      }
+
+      /*function nextPage() {
+          const totalPages = Math.ceil(pressItems.length / itemsPerPage);
+          if (currentPage < totalPages) {
+              currentPage++;
+              showPage(currentPage);
+          }
+      }
+
+      function prevPage() {
+          if (currentPage > 1) {
+              currentPage--;
+              showPage(currentPage);
+          }
+      }
+
+      document.getElementById('nextPage').addEventListener('click', nextPage);
+      document.getElementById('prevPage').addEventListener('click', prevPage);*/
+
+      showPage(currentPage);
+  });
+
+  function changePage(targetE){
+    targetE.closest('.paginate-box').querySelector('#currentPage').removeAttribute('id');
+    targetE.setAttribute('id','currentPage');
+    if(document.querySelectorAll('.paginate-box span').length == parseInt(targetE.getAttribute('data-id'))){
+      document.querySelector('.press-page-container .pagination .right-arrow').classList.add('disable-arrow');
+    }
+  
+    if(parseInt(document.querySelector('#currentPage').getAttribute('data-id')) == 1){
+      document.querySelector('.press-page-container .pagination .left-arrow').classList.add('disable-arrow');
+      if(document.querySelector('.press-page-container .pagination .right-arrow.disable-arrow')){
+        document.querySelector('.press-page-container .pagination .right-arrow').classList.remove('disable-arrow');  
+      }
+    }else{
+      if(document.querySelector('.press-page-container .pagination .left-arrow.disable-arrow')){
+        document.querySelector('.press-page-container .pagination .left-arrow').classList.remove('disable-arrow');  
+      }
+    }
+    showPage(parseInt(document.querySelector('#currentPage').getAttribute('data-id')));
+  }
+
+  function showPage(page) {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    pressItems.forEach((item, index) => {
+        if (index >= start && index < end) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    /*document.getElementById('currentPage').innerText = page;*/
+  }
+
+  function nextPage(targetE){
+    var get_current = document.querySelector('#currentPage');
+    if(get_current.nextSibling){
+      get_current.removeAttribute('id');
+      get_current.nextSibling.setAttribute('id','currentPage');
+      if(document.querySelectorAll('.paginate-box span').length == parseInt(document.querySelector('#currentPage').getAttribute('data-id'))){
+        document.querySelector('.press-page-container .pagination .right-arrow').classList.add('disable-arrow');
+      }
+    
+      if(parseInt(document.querySelector('#currentPage').getAttribute('data-id')) == 1){
+        document.querySelector('.press-page-container .pagination .left-arrow').classList.add('disable-arrow');
+        if(document.querySelector('.press-page-container .pagination .right-arrow.disable-arrow')){
+          document.querySelector('.press-page-container .pagination .right-arrow').classList.remove('disable-arrow');  
+        }
+      }else{
+        if(document.querySelector('.press-page-container .pagination .left-arrow.disable-arrow')){
+          document.querySelector('.press-page-container .pagination .left-arrow').classList.remove('disable-arrow');  
+        }
+      }
+      showPage(parseInt(document.querySelector('#currentPage').getAttribute('data-id')));
+    }
+  }
+
+  function prevPage(targetE){
+    var get_current = document.querySelector('#currentPage');
+    if(get_current.previousSibling){
+      get_current.removeAttribute('id');
+      get_current.previousSibling.setAttribute('id','currentPage');
+      if(document.querySelectorAll('.paginate-box span').length == parseInt(document.querySelector('#currentPage').getAttribute('data-id'))){
+        document.querySelector('.press-page-container .pagination .right-arrow').classList.add('disable-arrow');
+      }
+    
+      if(parseInt(document.querySelector('#currentPage').getAttribute('data-id')) == 1){
+        document.querySelector('.press-page-container .pagination .left-arrow').classList.add('disable-arrow');
+        if(document.querySelector('.press-page-container .pagination .right-arrow.disable-arrow')){
+          document.querySelector('.press-page-container .pagination .right-arrow').classList.remove('disable-arrow');  
+        }
+      }else{
+        if(document.querySelector('.press-page-container .pagination .left-arrow.disable-arrow')){
+          document.querySelector('.press-page-container .pagination .left-arrow').classList.remove('disable-arrow');  
+        }
+      }
+      showPage(parseInt(document.querySelector('#currentPage').getAttribute('data-id')));
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "press",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "itemPerPage",
+      "label": "Item Per Page"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+          {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"press"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,206 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'makro-title-product-carousel.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+   assign metaTags = shop.metafields.productSet.tags
+   assign metaTagSzie = metaTags | size
+
+   assign metaProRef = shop.metafields.productSet.product
+
+   assign refProducts = blank
+
+   for mTags in metaTags
+     assign temp_mTags = mTags | split:','
+     assign index0 = forloop.index0
+     assign loopBreak = false
+     for mTag in temp_mTags
+       assign temp_mTag = mTag | downcase | strip
+       for tag in product.tags
+         assign temp_tag = tag | downcase | strip
+         if temp_tag == temp_mTag
+           if refProducts == blank
+             assign refProducts = metaProRef[index0]
+           else
+             assign refProducts = refProducts | append: '|' | append: metaProRef[index0]
+           endif
+           break
+           assign loopBreak = true
+         endif
+       endfor
+       if loopBreak
+         break
+       endif
+     endfor
+   endfor
+   assign refProducts = refProducts | split:'|' | uniq
+   assign refProductCount = 0
+   assign hasProductTemp = false
+-%}
+
+<div class="container page-width">
+  <div class="sectio-header has-slider-nav">
+    {% if section.settings.title != blank %}
+      <h2 class="main_heading h2 text-uppercase">{{ section.settings.title }}</h2>
+    {% endif %}
+    
+  </div>
+  {% if template.name == "product" and refProducts.size > 0 %}
+  {%- assign hasProductTemp = true -%}
+  <div class="makro-product-carousel product-carousel-slider related-product swiper">
+    <ul class="swiper-wrapper makro-PC-grid grid" role="list">
+    {%- for refPro in refProducts -%}
+      {%- assign temp_refPro = all_products[refPro] -%}
+      {%- if temp_refPro.available != blank -%}
+      {%- assign refProductCount = refProductCount | plus: 1 -%}
+      {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+      {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+      <li class="swiper-slide makro-PC-grid__item grid__item" {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+        <div class="makro-product--card">
+          {% render 'card-product-new',
+            card_product: temp_refPro,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: false,
+            show_rating: section.settings.show_rating,
+            show_quick_add: true,
+            section_id: section.id,
+            override_title: section.settings.override_title,
+            override_image: section.settings.override_image,
+            placeholder_image: placeholder_image,
+            hideVariant: true
+          %}
+        </div>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign temp_refPro = blank -%}
+    </ul>
+    <div class="slide-nav small-hide medium-hide">
+      <div class="nav-btn fea-col-slide-prev prevprev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+          <path d="M21.75 27.5L14.25 20L21.75 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="nav-btn fea-col-slide-next nextnext">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+          <path d="M18.25 27.5L25.75 20L18.25 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  {%- liquid
+     assign collection = section.settings.collection
+     assign noOfProduct = section.settings.noOfProduct
+  -%}
+  <div class="makro-product-carousel product-carousel-slider related-product swiper">
+    <ul class="swiper-wrapper makro-PC-grid grid" role="list">
+    {%- for product in collection.products limit: noOfProduct -%}
+      {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+      {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+      <li class="swiper-slide makro-PC-grid__item grid__item" {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+        <div class="makro-product--card">
+          {% render 'card-product-new',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: false,
+            show_rating: section.settings.show_rating,
+            show_quick_add: section.settings.enable_quick_add,
+            section_id: section.id,
+            override_title: section.settings.override_title,
+            override_image: section.settings.override_image,
+            placeholder_image: placeholder_image,
+            hideVariant: true
+          %}
+        </div>
+      </li>
+    {%- endfor -%}    
+    </ul>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    {%- if hasProductTemp -%}
+      let productCount = parseInt('{{ refProductCount }}');
+      if( productCount <= 4 && window.innerWidth > 1199 ){
+        let slideNav = document.querySelector('#shopify-section-{{ section.id }} .slide-nav');
+        slideNav != null ? slideNav.classList.add('hidden'): '';
+      }
+    {% endif %}
+    if ( window.innerWidth > 989 ){
+    var mySwiper = new Swiper("#shopify-section-{{ section.id }} .makro-product-carousel", {
+      slidesPerView: 2.33,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      speed: 900,      
+      navigation: {
+        nextEl: ".fea-col-slide-next",
+        prevEl: ".fea-col-slide-prev",
+      },
+        breakpoints: {
+        1200: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 40,
+        },
+        990: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 30,
+        },
+        750: {          
+          slidesPerView: 2.33,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+      },
+    });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Related Product",
+    "class":"makro-proCarousel-section m-section",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "Luc Vincent Bestsellers"
+      },
+      {
+        "type": "collection",
+        "label": "Select collection",
+        "id": "collection"
+      },
+      {
+        "type": "range",
+        "label": "Select no. of product to show",
+        "id": "noOfProduct",
+        "default": 10,
+        "min": 4,
+        "max": 25,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_quick_add",
+        "default": false,
+        "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Related Product"
+      }
+    ]
+  }
+{% endschema %}

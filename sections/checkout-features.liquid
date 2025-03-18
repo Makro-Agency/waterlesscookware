@@ -1,0 +1,90 @@
+{% if section.settings.enable == true %}
+<div class="page-width custom">
+  {%- if section.settings.title != blank -%}
+  <h2>{{ section.settings.title | escape }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="grid">
+      {%- for block in section.blocks -%}
+        {% if block.settings.text_small == true %}
+        <style>
+          #shopify-section-{{ section.id }} .feature-{{ forloop.index }} .rte {
+            font-size: 10px;
+          }
+        </style>
+        {% endif %}
+
+        <div class="grid__item feature-{{ forloop.index }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | img_url: '70x' }}" alt="{{ block.settings.image.alt }}">
+          {%- endif -%}
+          
+          {% if block.settings.text != blank or block.settings.title != blank %}
+          <div class="rte">
+            {% if block.settings.title != blank %}
+            <strong>{{ block.settings.title }}</strong>
+            {% endif %}
+            
+            {% if block.settings.text != blank %}
+            {{ block.settings.text }}
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "checkout-features",
+    "class": "index-section checkout-features",
+    "max_blocks": 10,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Text</p>"
+          },
+          {
+            "type": "checkbox",
+            "id": "text_small",
+            "label": "Small text",
+            "default": false
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

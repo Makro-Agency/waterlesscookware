@@ -1,0 +1,85 @@
+<style>
+  .insta-heading.text-center{
+    text-align:center;
+  }
+  .insta-heading.text-left{
+    text-align:left;
+  }
+  .insta-heading p{
+    font-family: Cellofy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin-top:0;
+  }
+  .insta-heading strong{
+   color: #606D22;
+  }
+  .instafeed-section .main_heading {
+    margin-bottom: 30px;
+    font-size:40px; 
+  }
+  @media only screen and (max-width: 989px) {
+  .instafeed-section .main_heading {
+    font-size:40px;
+  }
+}
+  
+</style>
+
+<div class="instafeed-section">
+   <div class="page-width">
+     {% if section.settings.heading != blank %}
+       <div class="insta-heading text-{{ section.settings.text_alignment }}">
+          <h2 class="main_heading h2">{{ section.settings.heading }}</h2>
+         {{ section.settings.description }}
+       </div>
+     {% endif %}
+   </div>
+</div>
+<covet-pics-widget gallery-embed-id="242018"></covet-pics-widget><script src="https://app.covet.pics/covet-pics-widget-inject.js"></script>
+
+{% schema %}
+  {
+    "name": "Instafeed",
+    "settings": [
+      {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Join 360 Chefs Community"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>Tag @360cookware to be featured</p>"
+      }
+    ],
+     "presets": [
+    {
+      "name": "Instafeed"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,592 @@
+<style>
+  .cart-switch-set{
+    margin-top: 16px;
+  }
+  .cart-switch-set h3{
+    color: var(--Black, #0D0D0D);
+    font-family: Cellofy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.48px;
+    text-transform:unset;
+    margin:0;
+  }
+  .custom-switch-set{
+    border-radius: 15px;
+    background: var(--Secondary-Beige, #FAF5EB);
+  }
+  .cart-switch-set .cart-product-image img {
+    border-radius: 10px;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    margin-bottom:0;
+  }
+  .cart-switch-set .cart-product-image {
+    max-width: 160px;
+    height: 160px;
+  }
+ .cart-switch-set .custom-label{
+    border-radius: 0px 0px 0px 15px;
+    background: #606D22;
+    color: #fff;
+    padding: 4px 12px 4px 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .switch-set-title{
+    color: var(--Black, #0D0D0D);
+    font-family: Cellofy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0;
+  }
+  .cart-switch-set .price_root{
+   color: var(--Black, #0D0D0D);
+    font-family: "Proxima Nova";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  .cart-switch-set .price-wrapper{
+    margin:10px 0;
+  }
+  .switch-btn,.add-btn-inner{
+   display: inline-block;
+    padding: 0px 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid var(--Black, #0D0D0D);
+    color: #000;
+    margin-top: 5px;
+    font-weight: 600;
+    background: transparent !important;
+    font-size: 14px;
+  }
+  .switch-btn:hover, .add-btn-inner:hover{
+    background: #c3d957 !important;
+    color: #fcfbf7 !important;
+    border: 1px solid #c3d957;
+  }
+  .switch-img-txt {
+    border-radius: 10px;
+    padding: 15px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+  }
+
+  /* rs css  */
+  a.switch-btn:not([href]) {
+    cursor: pointer !important;
+}
+</style>
+
+{% capture product_items %}
+  {% for item in cart.items %}
+    {% assign chk_prod = item.product.metafields.buy_set_save.product.value %}
+    {% assign user_language = request.locale.iso_code %}
+    {% assign label = item.product.metafields.buy_set_save.label[user_language] %}
+  
+    {% assign found_item = false %}
+    {% for item_inner in cart.items %}  
+      {% if item_inner.handle == chk_prod.handle %}
+        {% assign found_item = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% unless found_item %}
+      {% if chk_prod.available == true %}
+      <div class="swiper-slide routine-product cart-product-product cart-product-third">
+        
+        {% assign user_language = request.locale.iso_code %}
+        {% unless product.metafields.buy_set_save.label[user_language] == blank %}
+        <span class="custom-label new-label">{{ product.metafields.buy_set_save.label[user_language] }}</span>
+       {% endunless %}
+        <div class="switch-img-txt routine-product-image-txt">          
+          <div class="routine-product-image cart-product-image">
+            <div class="image">
+              <a href="{{ chk_prod.url }}">
+              <img src="{{ chk_prod.featured_image | image_url: width: 200 }}" height="110" width="100">
+              </a>
+            </div>
+          </div>
+          <div class="routine-product-text cart-product-text">
+            <div class="routine-product-text-inner cart-product-text-inner">
+              <div class="card-header-switch">
+                <div>
+                  <div class="header-wrap-title">
+                   <a href="{{ chk_prod.url }}">
+                    <h4 class="switch-set-title">{{ chk_prod.title }}</h4>
+                   </a>
+                  </div>
+                </div>
+                {% capture price_warpper %}
+                <div class="price-wrapper">
+                  {%- liquid
+                    assign target = chk_prod.selected_or_first_available_variant
+                    assign compare_at_price = target.compare_at_price
+                    assign price = target.price     
+                    assign money_price = price | money
+                  -%}
+                  <div class="cart-price-product">
+                    <div class="price">
+                      {%- if compare_at_price > price -%}
+                        <span class="price_no_active">{{ compare_at_price | money }}</span>
+                      {%- endif -%}
+                      <span class="price_root">{{ money_price }}</span>
+                    </div>
+                  </div>
+                </div>{% endcapture %}{%- unless hasCartTemplate %}{{ price_warpper }}{% endunless -%}
+
+              <div class="desktop-switchset">
+                {% capture product_form_id %}form_cart_{{ chk_prod.id }}{% endcapture %}
+                <product-form>
+                    {%- form 'product',
+                      chk_prod,
+                      id: product_form_id,
+                      class: 'form add-btn',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ chk_prod.selected_or_first_available_variant.id }}"
+                        disabled
+                      >
+                      <button
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="add-btn-inner switch-btn quick-add__submit button {% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-Cart-{{ chk_prod.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if chk_prod.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if chk_prod.selected_or_first_available_variant.available -%}
+                            Upgrade to Set
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        {%- if horizontal_quick_add -%}
+                          <span class="icon-wrap">{% render 'icon-plus' %}</span>
+                        {%- endif -%}
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                        {% comment %}<span class="plus-icon">{% render 'icon-plus-white' %}</span>{% endcomment %}
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                {% comment %}<div class="loading-overlay__spinner hidden">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="spinner"
+                        viewBox="0 0 66 66"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                      </svg>
+                    </div>{% endcomment %}
+            </div>
+
+
+
+              </div>
+              {% if hasCartTemplate %}
+              <div class="cart-button-price">
+                {{ price_warpper }}
+              </div>
+              {% assign price_warpper = blank %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="mobile-switchset">
+          {% capture product_form_id %}form_cart_{{ product.id }}{% endcapture %}
+          <product-form>
+              {%- form 'product',
+                chk_prod,
+                id: product_form_id,
+                class: 'form add-btn',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ chk_prod.selected_or_first_available_variant.id }}"
+                  disabled
+                >
+                <button
+                  id="{{ product_form_id }}-submit"
+                  type="submit"
+                  name="add"
+                  class="add-btn-inner switch-btn quick-add__submit button {% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                  aria-haspopup="dialog"
+                  aria-labelledby="{{ product_form_id }}-submit title-Cart-{{ chk_prod.id }}"
+                  aria-live="polite"
+                  data-sold-out-message="true"
+                  {% if chk_prod.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                  <span>
+                    {%- if chk_prod.selected_or_first_available_variant.available -%}
+                      Upgrade to Set
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  <span class="sold-out-message hidden">
+                    {{ 'products.product.sold_out' | t }}
+                  </span>
+                  {%- if horizontal_quick_add -%}
+                    <span class="icon-wrap">{% render 'icon-plus' %}</span>
+                  {%- endif -%}
+                  <div class="loading-overlay__spinner hidden">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      class="spinner"
+                      viewBox="0 0 66 66"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                  </div>
+                  {% comment %}<span class="plus-icon">{% render 'icon-plus-white' %}</span>{% endcomment %}
+                </button>
+              {%- endform -%}
+            </product-form>
+        </div>
+      </div>
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign product_items = product_items | strip_newlines | strip %}
+{% if product_items != blank %}
+<div class="routine-drawer-wrap cart-drawer-heading-wrap cart-switch-set">
+    <div class="heading-wrap-cart-product common_h3">
+      <h3>Switch to a Set</h3>
+    </div>
+    <div class="swiper custom-switch-set">
+      <div class="swiper-wrapper">
+        {{ product_items }}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% comment %}
+<script>
+ 
+  document.addEventListener('DOMContentLoaded', function() {
+    var upgradeButton = document.querySelector('.switch-btn');
+
+    if (upgradeButton) {
+        upgradeButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var productId = this.getAttribute('data-product-id');
+
+            if (!productId) {
+                console.error('Product ID is missing');
+                return;
+            }
+
+            fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: productId,  
+                    quantity: 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status && data.status === 422) {
+                    throw new Error(data.description);
+                }
+                console.log('Product added to cart:', data);
+
+                location.reload();  
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Failed to add product to cart: ' + error.message);
+            });
+        });
+    }
+});
+
+</script>
+{% endcomment %}
+
+{% comment %}
+{%- liquid
+    assign completeRoutines = completeRoutinePros | split:'|' | uniq
+    assign count = 0
+    assign hasCartTemplate = false
+    if template.name == "cart"
+      assign hasCartTemplate = true
+    endif
+  -%}
+  
+  <div class="cart-drawer-heading-wrap">
+    <div class="heading-wrap-cart-product common_h3">
+    <h3>Switch to a Set</h3>
+    </div>
+    {% if completeRoutines.size == 1 %}    
+      {%- liquid       
+         assign productInCart = false
+         for item in cart.items
+           assign item_product_handle = item.product.handle
+           if item_product_handle == completeRoutines
+             assign productInCart = true
+             break
+           endif
+         endfor
+      -%}
+      {% if productInCart == false %}
+        {% assign product_obj = all_products[completeRoutines] %}  
+        {% if product_obj %}
+        <div class="cart-product-product cart-product-third">
+          <div class="cart-main-product-image-txt">          
+            <a href="{{ product.url }}" class="absolute-full-link"></a>
+            <div class="cart-product-image">
+              <div class="image">
+                <img src="{{ product.featured_image | image_url: width: 200 }}" height="110" width="100">
+              </div>
+            </div>
+            <div class="cart-product-text">
+              <div class="cart-product-text-inner">
+                <div class="card-header">
+                  <div>
+                    <div class="header-wrap-title">
+                      <p>{{ product.title }}</p>
+                    </div>
+                    {% if product.metafields.LucVincent.product_type != blank %}
+                    <div class="header-wrap-para">
+                      <p>{{ product.metafields.LucVincent.product_type }}</p>
+                    </div>
+                    {% endif %}
+                  </div>
+                  {% capture price_warpper %}
+                  <div class="price-wrapper">
+                    {%- liquid
+                      assign target = product.selected_or_first_available_variant
+                      assign compare_at_price = target.compare_at_price
+                      assign price = target.price     
+                      assign money_price = price | money
+                    -%}
+                    <div class="cart-price-product">
+                      <div class="price">
+                        {%- if compare_at_price > price -%}
+                          <span class="price_no_active">{{ compare_at_price | money }}</span>
+                        {%- endif -%}
+                        <span class="price_root">{{ money_price }}</span>
+                      </div>
+                    </div>
+                  </div>{% endcapture %}{%- unless hasCartTemplate %}{{ price_warpper }}{% endunless -%}
+                </div>
+                {% if hasCartTemplate %}
+                <div class="cart-button-price">
+                  {{ price_warpper }}
+                </div>
+                {% assign price_warpper = blank %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      {% endif %}
+    {% else %}
+      {%- assign collection = collections['all'] -%}
+      {%- paginate collection.products by collection.products_count -%}    
+        {%- for product in collection.products -%}
+          {%- assign found = false -%}
+          {%- assign product_handle = product.handle -%}
+          {%- if product.available -%}
+          {%- liquid 
+             for cR in completeRoutines
+               if cR == blank
+                 break 
+               endif
+               if product_handle == cR and found == false
+                 assign found = true
+                 break
+               endif
+             endfor
+             if found             
+               for item in cart.items
+                 assign item_product_handle = item.product.handle
+                 if item_product_handle == product_handle
+                   assign found = false
+                   break
+                 endif
+               endfor
+             endif
+          -%}
+          {%- if found -%}
+            {%- capture productCard -%}{{ productCard }}{%- assign count = count  | plus: 1 -%}
+            <div class="RRR">
+            <div class="cart-main-product-image-txt">
+              <a href="{{ product.url }}" class="absolute-full-link"></a>
+              <div class="cart-product-image">
+                <div class="image">
+                  <img src="{{ product.featured_image | image_url: width: 200 }}" height="110" width="100">
+                </div>
+              </div>
+              <div class="cart-product-text">
+                <div class="cart-product-text-inner">
+                  <div class="card-header">
+                    <div>
+                      <div class="header-wrap-title">
+                        <p>{{ product.title }}</p>
+                      </div>
+                      {% if product.metafields.LucVincent.product_type != blank %}
+                      <div class="header-wrap-para">
+                        <p>{{ product.metafields.LucVincent.product_type }}</p>
+                      </div>
+                      {% endif %}
+                           
+                    </div>
+                    
+                    
+                  </div>
+                   {% capture price_warpper %}
+                    <div class="price-wrapper">
+                      {%- liquid
+                        assign target = product.selected_or_first_available_variant
+                        assign compare_at_price = target.compare_at_price
+                        assign price = target.price     
+                        assign money_price = price | money
+                      -%}
+                      <div class="cart-price-product">
+                        <div class="price">
+                          {%- if compare_at_price > price -%}
+                            <span class="price_no_active">{{ compare_at_price | money }}</span>
+                          {%- endif -%}
+                          <span class="price_root">{{ money_price }}</span>
+                        </div>
+                      </div>
+                    </div>{% endcapture %}{%- unless hasCartTemplate %}{{ price_warpper }}{% endunless -%}
+                  <div class="seperate-block">
+                  {% if hasCartTemplate %}
+                  <div class="cart-button-price">
+                    {{ price_warpper }}
+                  </div>
+                  {% assign price_warpper = blank %}
+                  {% endif %}
+               {% capture product_form_id %}form_cart_{{ product.id }}{% endcapture %}
+                  <div class="cart-button-price ">
+                    
+                    <product-form>
+                    {%- form 'product',
+                      product,
+                      id: product_form_id,
+                      class: 'form add-btn',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        disabled
+                      >
+                      <button
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="add-btn-inner quick-add__submit button {% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-Cart-{{ product.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        {%- if horizontal_quick_add -%}
+                          <span class="icon-wrap">{% render 'icon-plus' %}</span>
+                        {%- endif -%}
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                        <span class="plus-icon">{% render 'icon-plus-white' %}</span>
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            {%- endcapture -%}
+          {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endpaginate -%}
+    {% endif %}
+    {%- if count > 1 -%}
+      <div class="swiper completeRoutine--swiper"><div class="swiper-wrapper">{{ productCard | replace:'RRR','swiper-slide' }}</div>
+        <div class="swiper-button-prev cart-drawer-swiper--button cart-drawer-swiper-prev">{% render 'icon-chevron-left-round' %}</div>
+        <div class="swiper-button-next cart-drawer-swiper--button cart-drawer-swiper-next">{% render 'icon-chevron-right-round' %}</div></div>
+    {%- else -%}
+      {{ productCard | replace:'RRR','' }}
+    {%- endif -%}
+    {%- assign productCard = blank -%}
+  </div>
+{% endcomment %}

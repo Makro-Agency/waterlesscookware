@@ -1,0 +1,74 @@
+{% schema %}
+{
+  "name": "Video Feature",
+  "settings": [
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail",
+      "label": "Thumbnail Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "See it in Action"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Chef's Tips"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Feature",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="video-on-media video-feature-section">
+  <div class="video-feature-container">
+    <div class="video-thumbnail">
+      {% if section.settings.video_url != blank %}
+      <a href="{{ section.settings.video_url }}" target="_blank">
+        {% if section.settings.thumbnail != blank %}
+          <img src="{{ section.settings.thumbnail | img_url: 'medium' }}" alt="Video Thumbnail">
+           <div class="play-button">
+            <svg width="50" height="50" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </div>
+        {% endif %}
+      </a>
+     {% endif %}
+    </div>
+    <div class="video-content">
+      {% if section.settings.title != blank %}
+      <h2 class="video-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <h3 class="video-subtitle">{{ section.settings.subtitle }}</h3>
+       {% endif %}
+      {% if section.settings.description != blank %}
+      <p class="video-description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>

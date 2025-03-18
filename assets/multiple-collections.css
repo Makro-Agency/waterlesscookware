@@ -1,0 +1,109 @@
+.multiple-collections .title{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.multiple-collections .collection__title.title-wrapper {
+  margin: 0 auto 40px;
+  max-width: 400px;
+  text-align: center;
+}
+.multiple-collections .collection__description{
+  font-size: 14px;
+  line-height: 160%;
+  color: #73716E;
+}
+.collection-btn-label{
+  margin-top: 30px;
+}
+.multiple-collections .swiper-btn{
+  position: static;
+  margin: 0;
+  color: #000;
+  height: auto;
+  width: 10px;
+}
+.multiple-collections .swiper-pagination{
+  position: static;
+  width: auto;
+  font-size: 12px;
+  font-family: Jost;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.6px;
+  margin: 0 20px;
+}
+.multiple-collections .swiper-pagination span{
+  width: 10px;
+  display: inline-block;
+}
+.multiple-collections .swiper-btn:after{
+  display: none;
+}
+.multiple-collections .swiper-btn-wrap{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.multiple-collections .grid{
+  margin-bottom: -30px;
+}
+.multiple-collections .grid .grid__item{
+  margin-bottom: 30px;
+}
+.multi-coll-loadmore{
+  text-align: center;
+    margin-top: 40px;
+}
+.multi-coll-loadmore .button{
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  max-width: 360px;
+  width: 100%;
+}
+
+@media screen and (min-width: 990px){
+  .multiple-collections .grid{
+    column-gap: 0;
+    flex-wrap: nowrap;
+  }
+  .multiple-collections .grid--4-col-desktop .grid__item{
+    width: 100%;
+    max-width: 25%;
+  }
+}
+@media screen and (max-width: 989px){
+  .collection-btn-label {
+    margin-top: 20px;
+  }
+  .multiple-collections .swiper-btn-wrap{
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 749px){
+  .multiple-collections .title{
+    font-size: 16px;
+  }
+  .multiple-collections .collection__title.title-wrapper {
+    margin-bottom: 20px;
+    padding-right: 0;
+  }
+  .multiple-collections .grid{
+    margin-bottom: -20px;
+  }
+  .multiple-collections .grid .grid__item{
+    margin-bottom: 25px;
+  }
+  .collection__title .title:not(:only-child){
+    margin-bottom: 16px;
+  }
+  .collection-btn-label {
+    margin-top: 16px;
+  }
+}

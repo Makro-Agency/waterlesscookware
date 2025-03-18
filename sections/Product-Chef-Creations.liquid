@@ -1,0 +1,297 @@
+{% assign user_language = request.locale.iso_code %}
+{{ 'product-chef-creations.css' | asset_url | stylesheet_tag }}
+{%- liquid  
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+
+  if section.settings.video != null
+    assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+     
+    endif
+  endif
+  if section.settings.video_mobile != null
+    assign ratio_diff_mobile = section.settings.video_video_mobile.aspect_ratio | minus: posterMobile.aspect_ratio | abs
+    if ratio_diff_mobile < 0.01 and ratio_diff_mobile > 0
+     
+    endif
+  endif
+-%}
+
+<div class="pdp-chef-section section-padding" id="chef-section" style="background-color: {{ section.settings.background_color }};">
+  <div class="">
+    <div class="pdp-chef-flex">
+      <div class="banner-group-wrapper">
+        <h2 class="main_heading h2">{{ product.metafields.CW360_pro_videos.heading[user_language] | default: section.settings.main_heading }}</h2>
+        <p class="desc">{{ product.metafields.CW360_pro_videos.description[user_language] | default: section.settings.block_descrption }}</p>        
+        {% assign button_link = product.metafields.CW360_pro_videos.button_link | default: section.settings.button_link %}
+        <a href="{{ button_link | default: '#' }}" class="button cta_button small-hide">{{ section.settings.button_text }}</a>
+      </div>
+      <div class="custom-video-group-wrapper">
+        <div class="video-group-wrapper title_video_wrapper {{ section.settings.videoLayout }} videoswiper swiper"> 
+          <div class="swiper-wrapper">
+          {% comment %}
+          {%- for block in section.blocks -%}
+            <div class="video-group swiper-slide">
+              <custom-deferred-media class="video_group">
+            <div class="cover-image">
+              {%- if block.settings.cover_image != blank -%}
+                <img src="{{ block.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+              {%- endif -%}
+              {%- if block.settings.cover_image_mobile != blank -%}
+                <img src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}" class="img-mobile" alt="{{ block.settings.title }}">
+              {%- endif -%}
+              <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+                </svg>
+              </button>
+            </div>
+            <template>
+              {%- if block.settings.video == blank and block.settings.video_url != blank -%}
+                <iframe src="{{ block.settings.video_url | append: '?autoplay=1' }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              {%- else -%}
+                {{ block.settings.video | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true }}
+              {%- endif -%}
+            </template>
+          </custom-deferred-media>
+            </div>
+          {%- endfor -%}
+            {% endcomment %}
+            {% assign count = 0 %}
+            {% for m_video in product.metafields.CW360_pro_videos.video %}
+              {% assign count = count | plus : 1 %}  
+              {%- assign temp_image = product.metafields.CW360_pro_videos.video_thumbnail[forloop.index0] -%}
+              {%- assign temp_video = m_video -%}
+              <div class="video-group swiper-slide">
+                <custom-deferred-media class="video_group">
+                  <div class="cover-image">
+                    {%- if temp_image != blank -%}
+                      {% assign image_src = blank %}
+                      {% for image in temp_image %}
+                        {% assign image_src = image.src %}
+                        {%- liquid
+                          assign sizes = '(min-width:1551px) 16.45834vw, (min-width:750px) 21.9445vw, 71.795vw'
+                          assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'            
+                        -%}
+                        {% assign temp_widths = widths | split:', ' %}
+                        {%- for temp_W in temp_widths -%}
+                          {% assign _temp_W = temp_W | times: 1 %}
+                          {%- capture srcSet -%}
+                            {{ srcSet }}{%- if image.width >= _temp_W -%}{{ image.src | append: '&transform=resize=' | append: _temp_W }} {{ _temp_W }}w,{%- endif -%}
+                            {% if forloop.last %}
+                              {{ image.src | append: '&transform=resize=' | append: image.width }} {{image.width }}w
+                            {% endif %}              
+                          {%- endcapture -%}
+                        {%- endfor -%}
+                        <img src="{{ image.src | append: '&transform=resize=316' }}" srcset="{{ srcSet }}" class="" width="{{ image.width }}" height="{{ image.height }}" sizes="{{ sizes }}" loading="lazy" alt="" />
+                        {% assign srcSet = blank %}              
+                      {% endfor %}
+                    {% else %}
+                      {%- if temp_video contains 'youtube' -%}
+                        {% assign video_id = temp_video | split:'?v=' | last %}
+                        <img src="https://img.youtube.com/vi/{{video_id}}/hqdefault.jpg" loading="lazy" width="auto" height="auto" />
+                      {%- elsif temp_video contains 'vimeo' -%}
+                        {% assign video_id = temp_video | remove:'https://' | remove:'//' | split:'/' | last %}                    
+                        {%- liquid
+                          assign video_url = video_id | split:'//' | last
+                          if video_url contains '?'
+                            assign video_url = video_url | split:'?' | first
+                          endif
+                          assign video_url = video_url | split:'/'
+                          assign video_url_size = video_url | size                          
+                          if video_url_size > 1
+                            assign video_id = video_url | first
+                          endif
+                        -%}
+                        <img src="https://vumbnail.com/{{ video_id }}.jpg" loading="lazy" width="auto" height="auto" />
+                      {% endif %}  
+                    {%- endif -%}
+                    {% comment %}
+                    {%- if block.settings.cover_image != blank -%}
+                      <img src="{{ block.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+                    {%- endif -%}
+                    {%- if block.settings.cover_image_mobile != blank -%}
+                      <img src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}" class="img-mobile" alt="{{ block.settings.title }}">
+                    {%- endif -%}
+                    {% endcomment %}
+                    <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+                      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <template>
+                    {%- if temp_video contains 'youtube' -%}
+                    {% assign video_id = temp_video | split:'?v=' | last %}
+                    {%- assign loop = '&loop=1&playlist=' | append: video_id -%}
+                     <iframe
+                        src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}&rel=0&enablejsapi=1"
+                        class="js-youtube"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title=""
+                      ></iframe>
+                  {%- elsif temp_video contains 'vimeo' -%}
+                    {% assign video_id = temp_video | remove:'https://' | remove:'//' | split:'/' | last %}                    
+                    {%- liquid
+                      assign video_url = video_id | split:'//' | last
+                      if video_url contains '?'
+                        assign video_url = video_url | split:'?' | first
+                      endif
+                      assign video_url = video_url | split:'/'
+                      assign video_url_size = video_url | size
+                      assign additional_attr = ''
+                      if video_url_size > 1
+                        assign video_id = video_url | first
+                        assign temp = video_url | last
+                        assign additional_attr = '&h=' | append: temp
+                      endif
+                    -%}
+                    {%- assign loop = '&loop=1&playlist=' | append: video_id -%}
+                     <iframe
+                        src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}&muted=0{{ additional_attr }}"
+                        class="js-vimeo"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title=""
+                      ></iframe> 
+                  {%- else -%}
+                      <video playsinline="playsinline" autoplay="autoplay" controls="controls" muted="muted" preload="metadata" 
+                        {% if image_src != blank %}poster="{{ image_src }}"{% endif %}>
+                        <source src="{{ temp_video }}" type="video/mp4">
+                        {% if image_src != blank %}<img src="{{ image_src }}">{% endif %}
+                      </video>                  
+                  {%- endif -%}
+                    {% comment %}
+                    {%- if block.settings.video == blank and block.settings.video_url != blank -%}
+                      <iframe src="{{ block.settings.video_url | append: '?autoplay=1' }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    {%- else -%}
+                      {{ block.settings.video | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true }}
+                    {%- endif -%}
+                    {% endcomment %}
+                  </template>
+                </custom-deferred-media>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="slide-nav small-hide medium-hide">
+            <div class="nav-btn fea-col-slide-prev prevprev">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+              </svg>
+            </div>
+            <div class="nav-btn fea-col-slide-next nextnext">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+              </svg>
+          </div>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="btn-wrapper large-up-hide medium-hide">
+      <a href="{{ button_link | default: '#' }}" class="button cta_button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>      
+</div>    
+      
+{% if count == 0 %}
+  <script>
+    if( typeof Shopify.designMode == 'undefined' ){
+      document.getElementById('shopify-section-{{ section.id }}').classList.add('hidden');
+    }
+  </script>
+{% endif %}
+      
+{% schema %}
+  {
+    "name": "Product Chef Creations",
+    "class": "Product-Chef-Creations",
+    "settings": [
+     {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "html",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+    },
+   
+    {
+      "type": "text",
+      "id": "block_descrption",
+      "label": "block descrption",
+      "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+    },
+     {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    ],
+    "blocks": [
+      
+      {
+        "type": "video_block",
+        "name": "Video Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "Play video on loop",
+            "default": false
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "video",
+            "id": "video_mobile",
+            "label": "Mobile video"
+          },
+          {
+            "type": "video_url",
+            "id": "video_url",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "URL"
+          },
+          {
+            "type": "video_url",
+            "id": "video_url_mobile",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "Mobile URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image_mobile",
+            "label": "Cover image for mobile"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Chef Creations"
+      }
+    ]
+  }
+{% endschema %}

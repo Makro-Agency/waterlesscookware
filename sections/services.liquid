@@ -1,0 +1,107 @@
+{% capture servicesData %}
+{% for block in section.blocks %}
+  {% if block.settings.title != blank %}
+    <div class="serv-item">
+        <h5 class="item-title">{{ block.settings.title }}</h5>
+        {% if block.settings.text != blank %}
+        <div class="item-content">
+          <p>{{ block.settings.text }}</p>
+        </div>
+        {% endif %}
+        {% if block.settings.button_label != blank %}
+          <div class="more-link{% unless block.settings.box_clickble %} unlink{% endunless %}">
+            {% if block.settings.button_label contains 'Chat Us' %}
+              {{ block.settings.button_label | replace: 'Chat Us','<a href="javascript:void(0);" class="chat-btn-wrap" onclick="openChatSupport();">Chat Us</a>' }}
+            {% else %}
+              {{ block.settings.button_label }}
+            {% endif %}
+          </div>
+        {% endif %}
+     </div>
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+
+{% if servicesData != blank %}
+<link rel="stylesheet" href="{{ 'services.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'services.css' | asset_url }}"></noscript>
+
+<div class="common-services-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width">
+    <div class="services-list">
+      {{ servicesData }}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+  function openChatSupport() {
+    if(document.querySelector('#dummy-chat-button-iframe')) {
+        openDummy();
+    }
+    else if(document.querySelector('#shopify-chat > iframe')) {
+        openReal();
+    }
+  }
+  
+  function openDummy() {
+    let dummy = document.querySelector('#dummy-chat-button-iframe');
+    $(dummy).contents().find("#dummy-chat-button").click();
+  }
+  
+  function openReal() {
+    let real = document.querySelector('#shopify-chat > iframe');
+    $(real).contents().find("button.chat-toggle").click();
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "Services",
+    "tag":"section",
+    "class":"services-section",
+    "settings": [],
+    "blocks":[
+    {
+      "type": "text",
+      "name": "Block",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Text",
+          "id": "text"
+        },
+        {
+          "type": "inline_richtext",
+          "label": "Button Label",
+          "id": "button_label"
+        },
+        {
+          "type": "checkbox",
+          "label": "Box clickble",
+          "id": "box_clickble",
+          "default": true
+        }
+      ]
+    }
+    ],
+    "presets":[
+      {
+        "name":"Services"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

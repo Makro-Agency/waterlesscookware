@@ -1,0 +1,219 @@
+{{ 'product-gallery--default.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  if section.settings.media_size == 'large'
+    assign media_width = 0.65
+  elsif section.settings.media_size == 'medium'
+    assign media_width = 0.55
+  elsif section.settings.media_size == 'small'
+    assign media_width = 0.45
+  endif
+-%}
+
+<div class="product__media-gallery  thumbnailleft">
+  <div class="swiper swiper-slider--product__holder slider--product__holder" data-gallery-slider>
+    <div class="swiper-wrapper slider--product">
+      {% assign addClass =  '' %}
+      
+      {%- for media in product.media -%}
+        {% assign addClass = '' %}
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}{%- endunless -%}
+          {%- assign alt_color = blank -%}
+          {%- if media.alt contains '#color_' -%}{%- assign alt_color = media.alt | handleize | split: '_' | last -%}{%- endif -%}          
+          {% if media.src contains '.png' or media.src contains '.PNG' or media.src contains '.Png' %}
+            {% assign addClass = ' media--png ' %}
+          {% endif %}
+          <div class="swiper-slide slide--product {{ addClass }}" data-alt-text="{{ alt_color }}">
+            {%- liquid
+              assign media_position = media_position | default: 0 | plus: 1
+              assign lazy_load = false
+              if media_position > 1
+                assign lazy_load = true
+              endif
+            -%}
+            {% render 'product-thumbnail-2',
+              media: media,
+              media_count: media_count,
+              position: media_position,
+              desktop_layout: section.settings.gallery_layout,
+              mobile_layout: section.settings.mobile_thumbnails,
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              constrain_to_viewport: section.settings.constrain_to_viewport,
+              lazy_load: lazy_load
+            %}
+          </div>
+      {%- endfor -%}
+    </div>
+    
+    <div class="product__holder-pagination medium-hide large-up-hide"></div>
+  </div>
+  <div thumbsSlider="" class="swiper swiper-gallery__thumbnails gallery__thumbnails small-hide {% if product.media.size < 2 %} hidden{% endif %}" data-thumbnail-slider>
+    <div class="swiper-wrapper">
+    {%- capture sizes -%}
+      (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4),
+      (min-width: 990px) calc(({{ media_width | times: 100 }}vw - 4rem) / 4),
+      (min-width: 750px) calc((100vw - 15rem) / 8),
+      calc((100vw - 8rem) / 3)
+    {%- endcapture -%}
+    
+    {%- for media in product.media -%}
+      {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}{%- endunless -%}
+        {%- liquid
+          capture media_index
+            if media.media_type == 'model'
+              increment model_index
+            elsif media.media_type == 'video' or media.media_type == 'external_video'
+              increment video_index
+            elsif media.media_type == 'image'
+              increment image_index
+            endif
+          endcapture
+          assign media_index = media_index | plus: 1
+        -%}
+        {%- assign alt_color = blank -%}
+        {%- if media.alt contains '#color_' -%}{%- assign alt_color = media.alt | handleize | split: '_' | last -%}{%- endif -%}
+        <div id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}{{ id_append }}" class="swiper-slide thumb-slide--product
+          {% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}{% if alt_color != blank %} hide-default{% endif %}"
+          data-target="{{ section.id }}-{{ media.id }}" data-media-id="{{ media.id }}"
+          data-media-position="{{ media_index }}" data-imgColorAltText="{{ alt_color }}"
+        >
+          {%- if media.media_type == 'model' -%}
+            <span class="thumbnail__badge" aria-hidden="true">
+              {%- render 'icon-3d-model' -%}
+            </span>
+          {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
+            <span class="thumbnail__badge" aria-hidden="true">
+              {%- render 'icon-play' -%}
+            </span>
+          {%- endif -%}
+          {%- capture thumbnail_id -%}
+            Thumbnail-{{ section.id }}-{{ forloop.index }}{{ id_append }}
+          {%- endcapture -%}
+          <button
+            class="thumbnail global-media-settings global-media-settings--no-shadow"
+            aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
+            {% if media == product.selected_or_first_available_variant.featured_media
+              or product.selected_or_first_available_variant.featured_media == null
+              and forloop.index == 1
+            %}
+              aria-current="true"
+            {% endif %}
+            aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
+            aria-describedby="{{ thumbnail_id }}"
+          >
+            {{
+              media.preview_image
+              | image_url: width: 416
+              | image_tag:
+                loading: 'lazy',
+                sizes: sizes,
+                widths: '54, 74, 104, 162, 208, 324, 416',
+                id: thumbnail_id,
+                alt: media.alt
+              | escape
+            }}
+          </button>
+        </div>
+    {%- endfor -%}
+    </div>
+    <div class="product-slide-nav small-hide medium-hide">
+      <div class="nav-btn mtc-col-slide-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+          <path d="M21.75 27.5L14.25 20L21.75 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="nav-btn mtc-col-slide-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+          <path d="M18.25 27.5L25.75 20L18.25 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    let thumbSwiper = document.querySelector('.product__media-wrapper [data-thumbnail-slider]');
+    let gallerySwiper = document.querySelector('.product__media-wrapper [data-gallery-slider]');
+    let slideEffect = 'fade';
+    let breakPoints = window.matchMedia('(max-width: 750px)');
+    if (breakPoints.matches) {
+      slideEffect = 'fade';
+      gallerySwiper = document.querySelector('[data-gallery-slider]'); // slider is default for mobile screen
+    }
+    let thumbSwiperInit;
+    if(thumbSwiper){
+      thumbSwiperInit = new Swiper(thumbSwiper, {        
+        slidesPerView: 6,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        spaceBetween: 10,
+        direction: "vertical",
+        navigation: {
+          nextEl: ".mtc-col-slide-next",
+          prevEl: ".mtc-col-slide-prev"
+        },
+        breakpoints: {
+          992: {
+            slidesPerView: 6,
+            spaceBetween: 10
+          },
+          750: {
+            slidesPerView: 7,
+            spaceBetween: 10
+          }
+        },
+      });
+    }  
+    if(gallerySwiper){
+      let gallerySwiperInit = new Swiper(gallerySwiper, {
+        effect: slideEffect,
+        loop: true,
+        
+        thumbs: {
+          swiper: thumbSwiperInit ? thumbSwiperInit : null,
+        },
+        pagination: {
+          el: ".product__holder-pagination",
+        },
+        on: {
+          transitionStart: function(){
+            const allVideos = [...document.querySelectorAll('[data-gallery-slider] video, [data-gallery-slider] iframe')];
+            if(allVideos.length) window.pauseAllMedia();
+          },
+          
+          transitionEnd: function(){
+            const activeIndex = this.activeIndex;
+            const activeSlide = document.querySelectorAll('[data-gallery-slider] .swiper-slide')[activeIndex];
+            const activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+            if(activeSlideVideo) activeSlideVideo.play();
+            //for external video
+            const activeSlideIframe = activeSlide.getElementsByTagName('iframe')[0];
+            if(activeSlideIframe){
+              let iframeSrc = activeSlideIframe.getAttribute('src');
+              if(iframeSrc.includes('?autoplay=0')){
+                let newSrc = iframeSrc.replace('?autoplay=0','?autoplay=1&muted=1');
+                activeSlideIframe.setAttribute('src',newSrc);
+              }
+              if(iframeSrc.includes('vimeo.com')){
+                activeSlideIframe.contentWindow.postMessage('{"method":"play"}', '*');
+              }else{
+                activeSlideIframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+              }
+            }
+          }
+        }
+      });
+    }
+
+    if( document.querySelector('variant-radios') ){
+      document.querySelector('variant-radios').updateMedia();
+    }
+  });
+</script>

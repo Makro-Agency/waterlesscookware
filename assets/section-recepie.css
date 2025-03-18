@@ -1,0 +1,241 @@
+.template-article header ul.custom-meta{ display:flex; align-items: center; }
+.template-article header ul .blog-meta{margin-right:10px;     display: flex;     background: var(--Secondary-Beige, #FAF5EB);
+    align-items: center; padding: 4px 12px 4px 12px !important; border-radius:100px; }
+.template-article header ul.custom-meta li{list-style-type:none; }
+.blog-meta.Easy{ color:#606D22; }
+.blog-meta.Medium{ color:#E6A817; }
+.blog-meta.Difficult{ color:#CE1B03; }
+
+
+li.blog-meta.Easy:before{
+      content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 30px;
+    background-color:#606D22;
+      position: relative;
+    top: -1px;
+}
+li.blog-meta.Medium:before{
+      content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 30px;
+    background-color:#E6A817;
+      position: relative;
+    top: -1px;
+}
+li.blog-meta.Difficult:before{
+      content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 30px;
+    background-color:#CE1B03;
+      position: relative;
+    top: -1px;
+}
+
+.template-article header ul.custom-meta li{ 
+color: var(--Green, #606D22);
+/* Body Text Small / Medium */
+font-family: "Proxima Nova";
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 18px */ }
+.template-article header ul{ padding-left:0;}
+  .template-article header ul .blog-meta p{     margin-bottom: 0; margin-left:5px; 
+    margin-top: 3px; }
+
+
+
+
+
+.template-article .product-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    margin-top: 0px;
+}
+.template-article .product-image{ margin-bottom:0; }
+.template-article .product-card {
+    border:none; 
+    padding: 10px;
+    width: 100%; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+background: var(--Secondary-Beige, #FAF5EB);
+    justify-content: space-between;
+     max-width:435px;
+}
+.template-article .article-template .blog-content > span.sub{font-weight:600;}
+
+.template-article .product-image {
+    width: 80px;
+    height: auto;
+  border:none; 
+}
+.template-article .product-details .product-title{
+  color: var(--Black, #0D0D0D);
+    text-overflow: ellipsis;
+    font-family: "Proxima Nova";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 0px;
+   letter-spacing:0; 
+}
+.template-article .product-details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.template-article .product-title {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.template-article .product-price {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.template-article .old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 5px;
+}
+
+.template-article .product-button {
+    background-color:#606D22;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+   width:40px;
+  height:40px;
+    transform: translateY(-50%);
+}
+
+.template-article .product-button .arrow {
+    color: #fff;
+    font-size: 16px;
+}
+
+.template-article p.product-price {
+    color: #000;
+    font-family: "Proxima Nova";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: 150%;
+}
+
+.incrediant ul li{
+  color: var(--Black, #0D0D0D);
+/* Body Text Large / Regular */
+font-family: "Proxima Nova";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+h5.recepie-title{ margin-top:1rem; }
+
+
+
+
+
+
+
+.template-article .article-template ul.list li:before{
+      content: '';
+    width: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    display: flex !important;
+    top: 11px;
+    background: #000000;
+    height: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.author-card {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    /* background-color: white; */
+    border-radius: 4px;
+  margin-top:4rem; 
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    margin: 0;
+ color: var(--Black, #0D0D0D);
+/* Body Text Large / Medium */
+font-family: "Proxima Nova";
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 24px */
+}
+@media screen and (min-width:990px){
+.template-article .article-template .blog-content > span.sub{font-size:16px; } }
+@media screen and (min-width:1200px){
+.image-section img{height:530px;} }
+@media screen and (max-width:767px){
+  .article-template .page-width.page-width--narrow{ padding-left:20px; padding-right:20px; }
+.template-article .product-details .product-title{ max-width:198px;} }
+@media screen and (max-width:576px){
+  .template-article .product-card{ min-height:101px; }
+.article-template__hero-container{ padding:0;} }
+@media screen and (min-width:990px){
+.article-template__hero-container{ padding:0;} }
+@media screen and (max-width:989px){
+  .template-article .product-container{ flex-direction:column; gap:16px; }
+}
+.template-article header ul .blog-meta:before{ display:none !Important; }
+.author-title {
+    margin: 0;
+  padding-top:5px;
+    font-size: 12px;
+   color: var(--gray-tones-black-30, rgba(0, 0, 0, 0.30));
+/* Body Text Standard/Medium */
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 21px */ 
+}
+
+.recipe-section-new .product-inner{ max-width:198px;}
+.recipe-section-new .product-info{ max-width:350px; }

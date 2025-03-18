@@ -1,0 +1,245 @@
+{{ 'recent-discussions.css' | asset_url | stylesheet_tag: preload: true }}
+
+<section class="recent-discussions-sidebar">
+  <div class="container">
+    <div class="content">
+      <div class="recent-discussions">
+        {% if section.settings.sub-heading != blank %}
+        <h5> {{ section.settings.sub-heading }} </h5>
+        {% endif %}
+        {% if section.settings.discussions_heading != blank %}
+        <h2>{{ section.settings.discussions_heading }}</h2>
+       {% endif %}
+        <div class="discussions-container">
+       
+          {% if section.settings.blog != blank %}
+           {%- for article in blogs.recipes.articles -%}
+           
+              <div class="comment-item">
+         
+                <img src="{{ comment.author.image | img_url: '55x' }}" alt="User Image" class="user-image">
+                <div class="comment-details">
+                  <h3>{{ comment.author.name }}</h3>
+                  <p>{{ comment.author.name }} &bull; <span class="date">{{ comment.published_at | date: "%B %d, %Y" }}</span></p>
+          
+                  <div class="comment-stats-mobile">
+                    <div class="icons-group">
+                      {% render 'icon-eye' %}
+                      <span class="views">{{ comment.views }}</span>
+                    </div>
+                    <div class="icons-group">
+                      {% render 'icon-hand' %}
+                      <span class="likes">{{ comment.likes }}</span>
+                    </div>
+                    <div class="icons-group">
+                      {% render 'icon-message' %}
+                      <span class="replies">{{ comment.replies_count }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-stats">
+                  <div class="icons-group">
+                    {% render 'icon-eye' %}
+                    <span class="views">{{ comment.views }}</span>
+                  </div>
+                  <div class="icons-group">
+                    {% render 'icon-hand' %}
+                    <span class="likes">{{ comment.likes }}</span>
+                  </div>
+                  <div class="icons-group">
+                    {% render 'icon-message' %}
+                    <span class="replies">{{ comment.replies_count }}</span>
+                  </div>
+                </div>
+              </div>
+             <div class="article-comments">
+               {% assign article = section.settings.blog %}
+                  {% if article.comments.size > 0 %}
+                    {% for comment in article.comments %}
+                      <div class="comment-item">
+                               {{ comment.content }}
+                        {% if comment.author.email %}
+                         
+                        {% endif %}
+                      <div class="comment-stats">
+                        <div class="icons-group">
+                          {% render 'icon-eye' %}
+                          <span class="views">{{ comment.views }}</span>
+                        </div>
+                        <div class="icons-group">
+                          {% render 'icon-hand' %}
+                          <span class="likes">{{ comment.likes }}</span>
+                        </div>
+                        <div class="icons-group">
+                          {% render 'icon-message' %}
+                          <span class="replies">{{ comment.replies_count }}</span>
+                        </div>
+                      </div>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+            </div>
+          {% endfor %}
+          {% else %}
+          {% for discussion in section.blocks %}
+            {% if discussion.settings.user_image != blank %}
+            <div class="discussion-item">
+              <img src="{{ discussion.settings.user_image | img_url: '50x50' }}" alt="User Image" class="user-image">
+                <div class="discussion-details">
+                <h3>{{ discussion.settings.title }}</h3>
+                <p>{{ discussion.settings.username }} &bull; <span class="date"> {{ discussion.settings.date }} </span></p>
+                
+                <div class="discussion-stats-mobile">
+                <div class="icons-group"> {% render 'icon-eye' %} <span class="views">{{ discussion.settings.views }}</span> </div>
+                <div class="icons-group">  {% render 'icon-hand' %} <span class="likes">{{ discussion.settings.likes }}</span> </div>
+                <div class="icons-group"> {% render 'icon-message' %}   <span class="comments">{{ discussion.settings.comments }}</span> </div>
+                </div>
+                </div>
+                <div class="discussion-stats">
+                <div class="icons-group"> {% render 'icon-eye' %} <span class="views">{{ discussion.settings.views }}</span> </div>
+                <div class="icons-group">  {% render 'icon-hand' %} <span class="likes">{{ discussion.settings.likes }}</span> </div>
+                <div class="icons-group"> {% render 'icon-message' %}   <span class="comments">{{ discussion.settings.comments }}</span> </div>
+                </div>
+              </div>
+              {% endif %}
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+       {% if section.settings.sidebar_heading != blank %}
+        <h2>{{ section.settings.sidebar_heading }}</h2>
+       {% endif %}
+      <ul>
+        <li>{{ section.settings.popular-topics1 }}</li>
+        <li>{{ section.settings.popular-topics2 }}</li>
+        <li>{{ section.settings.popular-topics3 }}</li>
+        <li>{{ section.settings.popular-topics4 }}</li>
+        <li>{{ section.settings.popular-topics5 }}</li>
+        <li>{{ section.settings.popular-topics6 }}</li>
+        <li>{{ section.settings.popular-topics7 }}</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recent Discussions",
+  "settings": [
+     {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog"
+    },
+    {
+      "type": "text",
+      "id": "discussions_heading",
+      "label": "Discussions Heading",
+      "default": "Recent discussions"
+    },
+    {
+      "type": "text",
+      "id": "sidebar_heading",
+      "label": "Sidebar Heading",
+      "default": "Popular topics"
+    },
+       {
+      "type": "text",
+      "id": "sub-heading",
+      "label": "Sub heading",
+      "default": "sub heading"
+    },
+    {
+      "type": "text",
+      "id": "popular-topics1",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics2",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics3",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics4",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics5",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics6",
+      "label": "Popular Topics"
+    },
+        {
+      "type": "text",
+      "id": "popular-topics7",
+      "label": "Popular Topics"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "discussion",
+      "name": "Discussion Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "user_image",
+          "label": "User Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Discussion Title",
+          "default": "Dolor sit amet, consectetur elit"
+        },
+        {
+          "type": "text",
+          "id": "username",
+          "label": "Username",
+          "default": "Geraldine B."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "22 May 2024"
+        },
+        {
+          "type": "number",
+          "id": "views",
+          "label": "Views",
+          "default": 120
+        },
+        {
+          "type": "number",
+          "id": "likes",
+          "label": "Likes",
+          "default": 15
+        },
+        {
+          "type": "number",
+          "id": "comments",
+          "label": "Comments",
+          "default": 34
+        }
+      ]
+    }
+  ],
+  "presets": [
+  {
+        "name": "Recent Discussion"
+      }
+  ]
+}
+{% endschema %}

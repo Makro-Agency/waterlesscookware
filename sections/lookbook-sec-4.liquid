@@ -1,0 +1,245 @@
+{%- capture popup-product -%}
+  {%- for i in (1..6) -%}
+    {%- capture look-product %}product-{{ i }}{% endcapture -%}
+    {%- assign look-product = section.settings[look-product] -%}    
+    {%- if look-product.available != blank -%}
+      <div class="lookbook-popup-items" data-look-id="{{ look-product.id }}">  
+        {%- render 'lookbook-popup-card', product: look-product -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign popup-product = popup-product -%}
+<div class="page-width lookbook-page-width-{% if section.settings.enableSmallCon %}medium{% else %}large{% endif %}" data-section-spacing="{{ section.settings.spaingTopBo }}">  
+  {% assign gridClass = 'grid--2-col-tablet-down grid--2-col-tablet grid--2-col-desktop' %}
+  {% if section.settings.enable4-row %}
+    {% assign gridClass = 'grid--2-col-tablet-down grid--4-col-tablet grid--4-col-desktop enable4-row' %}
+  {% endif %}
+  <div class="lookbook-section-one-image grid {{ gridClass }} mobile-{{ section.settings.mobile-layout }}">
+    {% for i in (1..4) %}
+      {% capture image %}image_{{ i }}{% endcapture %}
+      {% capture enable-full-width-img %}enable-full-width-img_{{ i }}{% endcapture %}
+      {% capture full-width-img %}full-width-img_{{ i }}{% endcapture %}
+      {% capture image_tick %}enable-full-width-img_{{ i }}{% endcapture %}
+      {% assign image_tick = section.settings[image_tick] %}
+      {% assign image = section.settings[image] %}
+      {% assign enable-full-width-img = section.settings[enable-full-width-img] %}
+      {% assign full-width-img = section.settings[full-width-img] %}       
+      <div class="grid__item lookbook-image {% if image_tick %}active-img{% endif %}">      
+        {% if image != blank %}
+        <img
+          srcset="
+            {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if image.width >= 533 -%}{{ image | image_url: width: 533 }} 533w,{%- endif -%}
+            {%- if image.width >= 720 -%}{{ image | image_url: width: 720 }} 720w,{%- endif -%}
+            {%- if image.width >= 940 -%}{{ image | image_url: width: 940 }} 940w,{%- endif -%}
+            {%- if image.width >= 1066 -%}{{ image | image_url: width: 1066 }} 1066w,{%- endif -%}
+            {{ image | image_url }} {{ image.width }}w
+          "
+          src="{{ image | image_url: width: 533 }}"
+          sizes="(min-width: 750px) 50vw, 100vw"
+          alt="{{ image.alt | escape }}"
+          class="motion-reduce"        
+          loading="lazy"        
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+        />
+        {% if enable-full-width-img and full-width-img != blank  %}
+          <div class="full-width-img" data-src="{{ full-width-img | image_url }}" data-width="{{ full-width-img.width }}" data-height="{{ full-width-img.height }}"></div>
+        {% endif %}
+        {% else %}
+          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {% if popup-product != blank %}
+        <div class="lookbook-popup" onmouseenter="showLookBookPopup(event, this, true);" onmouseleave="showLookBookPopup(event, this, true);">
+          <div class="lookbook-popup-gird">
+            <div class="lookbook-popup-title">Shop This Look <span class="closed-popup" onclick="showLookBookPopup(event, this, true);">{% render 'icon-close' %}</span></div>
+            <div class="lookbook-popup-item-wrapper">{{ popup-product }}</div>
+          </div>
+          <button class="button" onclick="showLookBookPopup(event, this);">Shop This Look {% render 'icon-cart-two' %}</button>
+        </div>
+        {%- endif -%}
+      </div>
+    {% endfor %}    
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Lookbook 4",
+    "tag":"section",
+    "class":"lookbook-section lookbook-sec-four",
+    "settings": [
+      {
+        "type":"select",
+        "label":"Select spacing for top and bottom",
+        "id":"spaingTopBo",
+        "options":[
+          {
+            "label":"Remove top spacing",
+            "value":"top"
+          },
+          {
+            "label":"Remove bottom spacing",
+            "value":"bottom"
+          },
+          {
+            "label":"Remove top-bottom spacing",
+            "value":"true"
+          },
+          {
+            "label":"Default",
+            "value":""
+          }
+        ],
+        "default":""
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable small container",
+        "id":"enableSmallCon"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable 4 row in image",
+        "id":"enable4-row"
+      },
+      {
+        "type":"select",
+        "label":"Select mobile layout for the grid",
+        "id":"mobile-layout",
+        "options":[
+          {
+            "value":"layout-one",
+            "label":"Layout 1"
+          },
+          {
+            "value":"layout-two",
+            "label":"Layout 2"
+          }
+        ],
+        "default":"layout-one"
+      },
+      {
+        "type":"header",
+        "content":"Section content"
+      },
+      {
+        "type":"paragraph",
+        "content":"Content 1"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block image 1",
+        "id":"image_1"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable main lookbook image",
+        "id":"enable-full-width-img_1"
+        
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block fulll width image 1",
+        "id":"full-width-img_1"
+      },
+      {
+        "type":"paragraph",
+        "content":"Content 2"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block image 2",
+        "id":"image_2"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable main lookbook image",
+        "id":"enable-full-width-img_2"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block fulll width image 2",
+        "id":"full-width-img_2"
+      },
+      {
+        "type":"paragraph",
+        "content":"Content 3"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block image 3",
+        "id":"image_3"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable main lookbook image",
+        "id":"enable-full-width-img_3"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block fulll width image 3",
+        "id":"full-width-img_3"
+      },
+      {
+        "type":"paragraph",
+        "content":"Content 4"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block image 4",
+        "id":"image_4"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable main lookbook image",
+        "id":"enable-full-width-img_4"
+      },
+      {
+        "type":"image_picker",
+        "label":"Upload block fulll width image 4",
+        "id":"full-width-img_4"
+      },
+      {
+        "type":"header",
+        "content":"Popup product"
+      },
+      {
+        "type":"product",
+        "label":"Select product 1",
+        "id":"product-1"
+      },
+      {
+        "type":"product",
+        "label":"Select product 2",
+        "id":"product-2"
+      },
+      {
+        "type":"product",
+        "label":"Select product 3",
+        "id":"product-3"
+      },
+      {
+        "type":"product",
+        "label":"Select product 4",
+        "id":"product-4"
+      },
+      {
+        "type":"product",
+        "label":"Select product 5",
+        "id":"product-5"
+      },
+      {
+        "type":"product",
+        "label":"Select product 6",
+        "id":"product-6"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lookbook 4"      
+      }
+    ]
+  }
+{% endschema %}

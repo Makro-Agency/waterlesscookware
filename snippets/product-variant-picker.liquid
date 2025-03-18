@@ -1,0 +1,171 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+
+
+{%- render 'metafield-color-variant', product: product, block: block -%}
+
+
+{%- unless product.has_only_default_variant -%}
+  
+  {%- if block.settings.picker_type == 'button' -%}
+
+    <variant-radios
+      id="variant-radios-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        {%- assign optionName = option.name | downcase -%}
+        
+        <fieldset class="js product-form__input option--{{ option.name | handleize }}{% unless optionName == 'color' or optionName == 'colour' %} option-grey-box{% endunless %}" data-option-name="{{ optionName }}">
+          <div class="size-label-wrapper">
+            <legend class="form__label"><strong>{{ option.name }}:</strong> <span class="selected-variant">{{ option.selected_value }}</span></legend>
+            {%- if optionName == 'size' -%}
+              {%- comment -%}Fit-guid size button{%- endcomment -%}
+              <div class="easysize-loaded-show">
+                <a href="#" class="easysize-widget">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.63772 2.86902L5.25771 5.24902M11.3777 6.61902L8.9977 8.99902M15.1277 10.359L12.7477 12.739M9.50771 4.73903L8.31771 5.92903M13.2577 8.48903L12.0677 9.67903M5.76406 0.999023L17 12.235L12.2341 17.0009L0.998169 5.76492L5.76406 0.999023Z" stroke="#73716E" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  {{- 'Size Guide' -}}
+                </a>
+              </div>
+              {%- comment -%}Fit-guid size button{%- endcomment -%}
+            {%- endif -%}
+          </div>
+          <div class="variant-options-wrapper">
+            {% render 'product-variant-options', product: product, option: option, block: block %}
+          </div>
+          {%- comment -%}
+          {%- if optionName == 'size' -%}
+            <div class="model-size-note">Model is 5'10" / 178cm wearing a size S</div>
+          {%- endif -%}
+          {%- endcomment -%}
+        </fieldset>
+        
+      {%- endfor -%}
+    
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+    
+  {%- else -%}
+    
+    <variant-radios
+      id="variant-radios-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        {%- assign optionName = option.name | downcase -%}
+      
+        <fieldset class="js product-form__input option--{{ option.name | handleize }}" data-option-name="{{ optionName }}">
+          <div class="size-label-wrapper">
+            <legend class="form__label"><strong>{{ option.name }}:</strong> <span class="selected-variant">{{ option.selected_value }}</span></legend>  
+            {%- if optionName == 'size' -%}
+              {%- comment -%}Fit-guid size button{%- endcomment -%}
+              <div class="easysize-loaded-show">
+                <a href="#" class="easysize-widget">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.63772 2.86902L5.25771 5.24902M11.3777 6.61902L8.9977 8.99902M15.1277 10.359L12.7477 12.739M9.50771 4.73903L8.31771 5.92903M13.2577 8.48903L12.0677 9.67903M5.76406 0.999023L17 12.235L12.2341 17.0009L0.998169 5.76492L5.76406 0.999023Z" stroke="#73716E" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  {{- 'Size Guide' -}}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="variant-list" data-variant-list>
+            <div class="selected-variant-name" data-selected-variant>
+              <span>{{- option.selected_value -}}</span>
+              <span class="hidden oos-label">Out Of Stock</span>
+            </div>
+            <ul class="variant-dropdown-list">
+              {% render 'render-li-option', product: product, option: option, block: block %}
+            </ul>
+          </div>
+        </fieldset>
+        
+      {%- endfor -%}
+    
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+    
+  {%- endif -%}
+  
+{%- endunless -%}
+
+
+<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+    <label class="form__label" for="Variants-{{ section.id }}">
+      {{- 'products.product.product_variants' | t -}}
+    </label>
+    <div class="select">
+      <select
+        name="id"
+        id="Variants-{{ section.id }}"
+        class="select__select"
+        form="{{ product_form_id }}"
+      >
+        {%- for variant in product.variants -%}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+            {% endif %}
+            {% if variant.available == false %}
+              disabled
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {%- liquid
+              echo variant.title
+              echo variant.price | money | strip_html | prepend: ' - '
+              if variant.available == false
+                echo 'products.product.sold_out' | t | prepend: ' - '
+              endif
+              if variant.quantity_rule.increment > 1
+                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+              endif
+              if variant.quantity_rule.min > 1
+                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+              endif
+              if variant.quantity_rule.max != null
+                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+              endif
+              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+              # theme-check-disable
+              assign cart_quantity = cart | item_count_for_variant: variant.id
+              # theme-check-enable
+              if cart_quantity > 0
+                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+              endif
+            -%}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+  </div>
+</noscript>

@@ -1,0 +1,126 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'collection-top-category.css' | asset_url | stylesheet_tag }}
+
+{% assign categoryCount = collection.metafields.accentuate.FilterImage | size %}
+
+
+{%- if categoryCount > 0 -%}
+  
+  <div class="collection-top-category">
+    <div class="collection-top-category-wrap">
+      <div class="collection-list-wrapper page-width isolate{% if collection.metafields.sareeroom.Sareetitlecategory == blank %} no-heading{% endif %} section-{{ section.id }}-padding">
+        <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- unless collection.metafields.sareeroom.Sareetitlecategory == blank -%}
+            <h2
+              id="SectionHeading-{{ section.id }}"
+              class="collection-list-title inline-richtext {{ section.settings.heading_size }}"
+            >
+              {{- collection.metafields.sareeroom.Sareetitlecategory -}}
+            </h2>
+          {%- endunless -%}
+          {%- if categoryCount > 5 -%}
+            <div class="slider-btn">
+              <div class="swiper-button--prev">{% render 'left-arrow-2' %}</div>
+              <div class="swiper-button--next">{% render 'right-arrow-2' %}</div>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div
+          class="slider-mobile-gutter swiper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          data-collection-category-slider
+        >
+          <ul
+            class="collection-list contains-card contains-card--collection swiper-wrapper{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop grid--2-col-tablet-down"
+            id="Slider-{{ section.id }}"
+            role="list"
+          >
+            {%- for Image in collection.metafields.accentuate.FilterImage -%}
+              {%- if collection.metafields.accentuate.FilterImage[forloop.index0] != blank -%}
+                <li
+                  id="Slide-{{ section.id }}-{{ forloop.index0 }}"
+                  class="collection-list__item swiper-slide"
+                >
+                  {% render 'collection-top-category-card',
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image: collection.metafields.accentuate.FilterImage[forloop.index0],
+                    title: collection.metafields.accentuate.FilterTitle[forloop.index0],
+                    link: collection.metafields.accentuate.FilterURL[forloop.index0]
+                  %}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+{%- endif -%}
+
+
+
+{% schema %}
+{
+  "name": "Collection category",
+  "tag": "section",
+  "class": "section section-collection-list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Categories comes from collection level metafields"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.collection-list.settings.image_ratio.label",
+      "info": "t:sections.collection-list.settings.image_ratio.info"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection category"
+    }
+  ]
+}
+{% endschema %}

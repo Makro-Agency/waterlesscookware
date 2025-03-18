@@ -1,0 +1,148 @@
+{% comment %}
+** We are building colour filters through product tags
+** We have product tag like Pink, Red, Etc..
+** So we capture common colour list to fetch only colour tags from products and exclude other tags as we don't have any prefix for colour tags for now
+** Add color swatch images to file area with prefix 'color-your color name in handleize case', i.e. color-blue, color-rose-pink, etc.
+{% endcomment %}
+
+{%- capture colorLists -%}
+Black,Beige,Cream,Chocolate,Champagne,White,Blue,Red,Brown,Grey,Gray,Purple,Yellow,Gold,Green,Pink,Orange,Olive,Maroon,Emerald,
+Mehendi,Haldi,Mustard,Navy,Teal,Aqua,Azure,Bisque,Blanched Almond,Burly Wood,Coral,Cornsilk,Crimson,Amber,Floral,Mint,
+Sage,Cyan,Khaki,Magenta,Salmon,Violet,Fire,Brick,Fuchsia,Honey,Dew,Indigo,Ivory,Lavender,Lime,Linen,Rose,Olive,Plum,Silver,Tan
+{%- endcapture -%}
+
+{%- assign colorNames = colorLists | strip_newlines -%}
+{%- assign colorNamesRefine = colorNames | split: ',' -%}
+
+{%- assign isColorTagFound = false -%}
+{%- for value in filter.values -%}
+  {%- assign tagValue = value.value | downcase -%}
+  {%- for colorName in colorNamesRefine -%}
+    {%- assign colorNameDownCase = colorName | downcase -%}
+    {%- if colorNameDownCase == tagValue -%}
+      {%- assign colorSwatchName = tagValue | handleize -%}
+      {%- assign colorSwatchNameRefine = colorSwatchName | prepend: 'color-' | append: '.png' -%}
+      {%- assign colorSwatchImg = images[colorSwatchNameRefine] -%}
+      {%- if colorSwatchImg != blank -%}
+        {%- assign isColorTagFound = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {% if isColorTagFound %}{% break %}{% endif %}
+{%- endfor -%}
+
+
+{%- if isColorTagFound -%}
+  <div
+    class="mobile-facets__details js-filter"
+    data-index="mobile-{{ forloop.index }}"
+  >
+    <div class="mobile-facets__summary focus-inset" onclick="toggleFilterAccordion(this)">
+      <div>
+        <span>{{ filter.label | escape }}</span>
+        <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-caret' %}</span>
+        <noscript>{% render 'icon-caret' %}</noscript>
+      </div>
+    </div>
+    <div
+      id="FacetMobile-{{ forloop.index }}-{{ section.id }}"
+      class="mobile-facets__submenu gradient"
+    >
+      <button
+        class="mobile-facets__close-button link link--text focus-inset"
+        aria-expanded="true"
+        type="button"
+      >
+        {% render 'icon-arrow' %}
+        {{ filter.label | escape }}
+      </button>
+      <ul class="mobile-facets__list list-unstyled" role="list">
+        {%- for value in filter.values -%}
+  
+            {%- assign tagValue = value.value -%}
+            {%- if colorNamesRefine contains tagValue -%}
+  
+              {%- assign colorSwatchName = tagValue | handleize -%}
+              {%- assign colorSwatchNameRefine = colorSwatchName | prepend: 'color-' | append: '.png' -%}
+              {%- assign colorSwatchImg = images[colorSwatchNameRefine] -%}
+  
+              {%- if colorSwatchImg != blank -%}
+        
+                <li class="mobile-facets__item list-menu__item">
+                  <label
+                    for="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}"
+                    class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}"
+                  >
+                    <input
+                      class="mobile-facets__checkbox"
+                      type="checkbox"
+                      name="{{ value.param_name }}"
+                      value="{{ value.value }}"
+                      id="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}"
+                      {% if value.active %}
+                        checked
+                      {% endif %}
+                      {% if value.count == 0 and value.active == false %}
+                        disabled
+                      {% endif %}
+                    >
+        
+                    <span class="mobile-facets__highlight"></span>
+        
+                    <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                      <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                    </svg>
+        
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon-checkmark"
+                      width="1.1rem"
+                      height="0.7rem"
+                      viewBox="0 0 11 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+  
+                    <div class="collection-color-filtter">
+                      <span>{{colorSwatchImg | image_url: width: 80 | image_tag: loading: 'lazy' }}</span>
+                    </div>
+                    <span aria-hidden="true">{{ value.label | escape }}</span>
+                    <span class="visually-hidden">{{- value.label | escape }}</span>
+                  </label>
+                </li>
+                
+              {%- endif -%}
+              
+            {%- endif -%}
+              
+        {%- endfor -%}
+      </ul>
+  
+     {% comment %}                 
+      <div class="no-js-hidden mobile-facets__footer gradient">
+        <facet-remove class="mobile-facets__clear-wrapper">
+          <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
+            {{- 'products.facets.clear' | t -}}
+          </a>
+        </facet-remove>
+        <button
+          type="button"
+          class="no-js-hidden button button--primary"
+          onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()"
+        >
+          {{ 'products.facets.apply' | t }}
+        </button>
+        <noscript>
+          <button class="button button--primary">
+            {{ 'products.facets.apply' | t }}
+          </button>
+        </noscript>
+      </div>
+      {% endcomment %}
+                        
+    </div>
+  </div>
+{%- endif -%}  

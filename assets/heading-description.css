@@ -1,0 +1,56 @@
+@font-face {
+    font-family: Cellofy-MedExtExpIta;
+    src: url(https://cdn.shopify.com/s/files/1/0622/1937/files/Cellofy-MedExtExpIta.woff?v=1722574026) format('woff');
+}
+@font-face {
+    font-family: Cellofy-Regular;
+    src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/Cellofy-Regular.woff?v=1722476825) format('woff');
+}
+
+@font-face {
+    font-family: ProximaNova-Regular;
+    src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/ProximaNova-Regular.woff?v=1722476969) format('woff');
+}
+.Terms-condition-container {
+  background: #fcfbf7;
+  width: 51%;
+  margin: 0px auto;
+  padding: 60px 38px;
+}
+.Terms-condition-container h1 {
+    font-family: Cellofy-Regular;
+    font-size: 60px;
+    text-align: left;
+   margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.Terms-condition-container .section-heading {
+    font-size: 24px;
+    font-family:Cellofy-Regular;
+    color: #000000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    line-height: 28px;
+}
+.Terms-condition-container p {
+    font-family: ProximaNova-Regular;
+    margin-bottom: 20px;
+}
+
+.Terms-condition-container .main-content {
+    margin-bottom: 40px;
+}
+  @media only screen and (max-width: 767px) {
+  .Terms-condition-container {
+      background:#fcfbf7;
+      width:100%;
+      margin: 60px auto; 
+      padding: 0px 29px;
+    }
+    .Terms-condition-container h1{
+      font-size: 48px;
+        margin-top: 0;
+    }
+  }

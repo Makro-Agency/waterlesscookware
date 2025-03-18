@@ -1,0 +1,138 @@
+
+{{ 'custom-support-block.css' | asset_url | stylesheet_tag }}
+<style>
+  .main-custom-support-block{
+    background:{{ section.settings.bgcolor }};
+  }
+  </style>
+  <section class="main-custom-support-block">
+    <div class="custom-support-block page-width">
+        <div class="left-content">
+          {% if section.settings.sub_title != blank %}
+           <h6 class="sub-title">{{ section.settings.sub_title }}</h6>
+          {% endif %}
+          {% if section.settings.main_title != blank %}
+          <h2>{{ section.settings.main_title }}</h2>
+            {% endif %}
+         {% if section.settings.cta_text != blank %}
+          <a href="{{ section.settings.cta_link }}" class="button cta_button">{{ section.settings.cta_text }}</a>
+         {% endif %}
+        </div>
+        <div class="right-content">
+          <div class="right-content-inner">
+ {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'image' -%}
+            
+            <div class="pledge-block">
+                <div class="icon-container">
+                  <img src="{{ block.settings.icon_svg | img_url:'' }}" alt="{{ block.settings.title }} ">
+                </div>
+                <div class="text-container">
+                    <h3> {{ block.settings.title }} </h3>
+                    <p>{{ block.settings.description }}</p>
+                </div>
+            </div>
+     {% endcase %}
+              {% endfor %}
+   
+         </div>
+   <div class="image-row">
+      {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'image_row' -%}
+             <div class="block-svg">
+                <img src="{{ block.settings.svg | img_url:'' }}"  alt="{{ block.settings.title }} ">
+                 <span>{{ block.settings.text_1 }}</span>
+               </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+        </div>
+           <a href="{{ section.settings.button_link }}" class="button cta_button desktop-hide">Support American Craftsmanship</a>
+    </div>
+    </section>
+
+
+{% schema %}
+{
+  "name": "Custom Support Block",
+  "settings": [
+     {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Lorem ipsum"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Our Commitment to America and the Planet"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Support American Craftsmanship"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Top Image Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_svg",
+          "label": "Icon SVG"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pledge #4"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
+        }
+      ]
+    },
+    {
+      "type": "image_row",
+      "name": "Image Row",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "svg",
+          "label": "SVG"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text 1",
+          "default": "Made in USA"
+        }
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "Custom support block"
+    }
+  ]
+}
+{% endschema %}

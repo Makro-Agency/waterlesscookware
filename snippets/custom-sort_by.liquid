@@ -1,0 +1,60 @@
+{%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+{%- assign selected_sort_option = blank -%}
+
+{%- capture sortOptins -%}
+  {%- for option in results.sort_options -%}
+    {%- case option.value -%}
+      {%- when 'created-descending' -%}
+        {%- if option.value == sort_by -%}{%- assign selected_sort_option = 'Newest' -%}{%- endif -%}
+        <li value="{{ option.value | escape }}" class="{% if option.value == sort_by %}selected{% endif %}">
+          <label for="Sort-{{ option.value | escape }}{{ mobile }}" class="sort-radio">
+            <input type="radio" value="{{ option.value | escape }}" name="sort_by{{ mobile }}" id="Sort-{{ option.value | escape }}{{ mobile }}" {% if option.value == sort_by %}checked{% endif %}>
+            <span>{{- 'Newest' | escape -}}</span>
+          </label>
+        </li>
+      {%- when 'price-ascending' -%}
+        {%- if option.value == sort_by -%}{%- assign selected_sort_option = 'Price: Low to High' -%}{%- endif -%}
+        <li value="{{ option.value | escape }}" class="{% if option.value == sort_by %}selected{% endif %}">
+          <label for="Sort-{{ option.value | escape }}{{ mobile }}" class="sort-radio">
+            <input type="radio" value="{{ option.value | escape }}" name="sort_by{{ mobile }}" id="Sort-{{ option.value | escape }}{{ mobile }}" {% if option.value == sort_by %}checked{% endif %}>
+            <span>{{- 'Price: Low to High' | escape -}}</span>
+          </label>
+        </li>
+      {%- when 'price-descending' -%}
+        {%- if option.value == sort_by -%}{%- assign selected_sort_option = 'Price: High to Low' -%}{%- endif -%}
+        <li value="{{ option.value | escape }}" class="{% if option.value == sort_by %}selected{% endif %}">
+          <label for="Sort-{{ option.value | escape }}{{ mobile }}" class="sort-radio">
+            <input type="radio" value="{{ option.value | escape }}" name="sort_by{{ mobile }}" id="Sort-{{ option.value | escape }}{{ mobile }}" {% if option.value == sort_by %}checked{% endif %}>
+            <span>{{- 'Price: High to Low' | escape -}}</span>
+          </label>
+        </li>
+      {%- when 'best-selling' -%}
+        {%- if option.value == sort_by -%}{%- assign selected_sort_option = 'Top Rated' -%}{%- endif -%}
+        <li value="{{ option.value | escape }}" class="{% if option.value == sort_by %}selected{% endif %}">
+          <label for="Sort-{{ option.value | escape }}{{ mobile }}" class="sort-radio">
+            <input type="radio" value="{{ option.value | escape }}" name="sort_by{{ mobile }}" id="Sort-{{ option.value | escape }}{{ mobile }}" {% if option.value == sort_by %}checked{% endif %}>
+            <span>{{- 'Top Rated' | escape -}}</span>
+          </label>
+        </li>
+      {%- when 'manual', 'relevance' -%}
+        {%- if option.value == sort_by -%}{%- assign selected_sort_option = 'Most Popular' -%}{%- endif -%}
+        <li value="{{ option.value | escape }}" class="{% if option.value == sort_by %}selected{% endif %}">
+          <label for="Sort-{{ option.value | escape }}{{ mobile }}" class="sort-radio">
+            <input type="radio" value="{{ option.value | escape }}" name="sort_by{{ mobile }}" id="Sort-{{ option.value | escape }}{{ mobile }}" {% if option.value == sort_by %}checked{% endif %}>
+            <span>{{- 'Most Popular' | escape -}}</span>
+          </label>
+        </li>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<custom-sort-by class="custom-select">
+  <div class="selected-sort">{{ selected_sort_option }}</div>
+  <ul class="sort-options" data-sort-option>
+    {%- if sortOptins != blank -%}
+      {{ sortOptins }}
+    {%- endif -%}
+  </ul>
+  {% render 'icon-caret' %}
+</custom-sort-by>
+

@@ -1,0 +1,193 @@
+{{ 'cookware-ugc-section.css' | asset_url | stylesheet_tag }}
+<div class="cookware-ugc-section page-width section-padding">
+  <div class="banner-group-wrapper">
+    <h2 class="main_heading h2">{{ section.settings.main_heading }}</h2>
+    <div class="banner-group">
+      {% for banner in section.blocks %}
+        {% if banner.type == 'banner' %}
+        <div class="banner">
+          {% if banner.settings.banner_heading != blank %}
+            <div class="card-content">
+                <a href="{{ banner.settings.banner_link }}" class="">
+              <h4 class="heading h4">{{ banner.settings.banner_heading }}</h4>
+              <p class="desc">{{ banner.settings.banner_description }}</p>
+                </a>
+              <a href="{{ banner.settings.banner_link }}" class="link makro--link">{{ banner.settings.banner_button_text }} {% render 'btn-arrow-right' %}</a>
+            </div>
+          {% endif %}
+           {% if banner.settings.desktop_image != blank %}
+             <a href="{{ banner.settings.banner_link }}" class="">
+                <div class="image-card">
+                  <img src="{{ banner.settings.desktop_image | img_url: 'master' }}" alt="{{ banner.settings.banner_heading }}" class="desktop-img">
+                   {% if banner.settings.mobile_image != blank %}
+                    <img src="{{ banner.settings.mobile_image | img_url: 'master' }}" alt="{{ banner.settings.banner_heading }}" class="mobile-img">
+                   {% endif %}
+                </div>
+             </a>
+            {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="video-group-wrapper">
+    {% for video in section.blocks %}
+      {% if video.type == 'video' %}
+      <div class="video-group">
+           {% if video.settings.video_url != blank %}
+            <div class="video-wrapper">
+              <div class="cover-image">
+                  {% if video.settings.video_cover_image != blank %}
+                    <img src="{{ video.settings.video_cover_image | img_url: 'master' }}" />
+                   {% endif %}
+                <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+                  </svg>
+                </button>
+              </div>
+              <template>
+                <iframe src="{{ video.settings.video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </template>
+            </div>
+           {% endif %}
+        
+        <div class="auther-content">
+          {% if video.settings.reviews_image != blank %}
+            <div class="reviews"><img src="{{ video.settings.reviews_image | img_url: 'master' }}"></div>
+          {% endif %}
+          {% if video.settings.auther_message != blank %}
+          <div class="auther-message">
+            <h2 class="heading h2">{{ video.settings.auther_message }}</h2>
+          </div>
+           {% endif %}
+           {% if video.settings.auther_image != blank %}
+          <div class="auther-details">
+            <div class="auther-image"><img src="{{ video.settings.auther_image | img_url: 'master' }}"></div>
+            <div class="auther-wrapper">
+              <div class="auther-name">{{ video.settings.auther_name }}</div>
+              <div class="auther-verification">
+                <span class="check-icon">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="12" height="12" rx="6" fill="#A6BB3A"/></rect>
+                    <path d="M3.375 6.00984L5.11734 7.80469L8.625 4.19531" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+                  </svg>
+                </span>
+                <span>{{ video.settings.auther_verification }}</span>
+              </div>
+            </div>
+          </div>
+           {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cookware UGC Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "banner_heading",
+          "label": "Banner Heading",
+          "default": "Cook Like a Pro"
+        },
+        {
+          "type": "textarea",
+          "id": "banner_description",
+          "label": "Banner Description",
+          "default": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection."
+        },
+        {
+          "type": "url",
+          "id": "banner_link",
+          "label": "Banner Link",
+          "default": "/"
+        },
+        {
+          "type": "text",
+          "id": "banner_button_text",
+          "label": "Button Text",
+          "default": "Shop Cookware"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "video_cover_image",
+          "label": "Video Cover Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviews_image",
+          "label": "Reviews Image"
+        },
+        {
+          "type": "textarea",
+          "id": "auther_message",
+          "label": "Author Message",
+          "default": "Great cookware, makes the food amazing! Easy to clean! Love it!"
+        },
+        {
+          "type": "image_picker",
+          "id": "auther_image",
+          "label": "Author Image"
+        },
+        {
+          "type": "text",
+          "id": "auther_name",
+          "label": "Author Name",
+          "default": "Eileen M."
+        },
+        {
+          "type": "text",
+          "id": "auther_verification",
+          "label": "Author Verification",
+          "default": "Verified Buyer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cookware UGC Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1671 @@
+{{ 'category-product-filter.css' | asset_url | stylesheet_tag }}
+<style>
+  .custom-filter-section{
+    display:none;
+  }
+</style>
+<div id="category-product-main-filter-product">
+  <div class="category-product-main-filter-product">
+    <div id="filter-populer-btn">
+      <div class="filter-populer-btn">
+        <div class="filter-popup">
+          <a href="#"
+            >Add Filtering
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 15V1M1 8H15" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="popular-drop">
+          <span
+            >Most Popular
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-filter">
+      <div class="category-filter">
+        <h5>Filter</h5>
+
+        <div class="category-toggle-filter-icon">
+          <div class="category-toggle">
+            <span class="category-toggle-stock">
+              <label class="toggle_switch">
+                <input type="checkbox" checked>
+                <span class="slider-toggle"></span>
+              </label>
+              <span>In Stock</span>
+            </span>
+            <span class="category-toggle-sale">
+              <label class="toggle_switch">
+                <input type="checkbox">
+                <span class="slider-toggle"></span>
+              </label>
+              <span>On Sale</span>
+            </span>
+          </div>
+
+            
+          <div class="category-filter-icon">
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter1</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter2</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter3</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter4</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter5</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter6</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter7</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter8</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="categroy-filter-btn">
+          <a href="#" class="categroy-filter-btn-inner"></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-product-sort-grid">
+      <div class="sort-main-container">
+        <h5 class="header-sort-main">24 Items</h5>
+
+        <div class="sort">
+          <label for="sort">Sort by:</label>
+          <div class="dropdown dropdown-main">
+            <div class="dropdown-button">
+              Most Popular
+              <svg
+                class="chevron"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <ul id="sort" class="dropdown-content">
+              <li>Most Popular</li>
+              <li>default</li>
+              <li>high to low</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="category-product-grid-collection">
+        <div class="category-product-grid-collection">
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog.png?v=1722941481"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <!-- <div class="sell-button">Bestseller</div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <!-- <div class="choice-button">Chef's Choice</div> -->
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1_7a90fdd5-ca43-40c8-9c89-cf826fbf4a27.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="sale-button">On Sale</div>
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog.png?v=1722941481"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <!-- <div class="sell-button">Bestseller</div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <!-- <div class="choice-button">Chef's Choice</div> -->
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1_7a90fdd5-ca43-40c8-9c89-cf826fbf4a27.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="sale-button">On Sale</div>
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog.png?v=1722941481"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <!-- <div class="sell-button">Bestseller</div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <!-- <div class="choice-button">Chef's Choice</div> -->
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1_7a90fdd5-ca43-40c8-9c89-cf826fbf4a27.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="sale-button">On Sale</div>
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog.png?v=1722941481"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <!-- <div class="sell-button">Bestseller</div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <!-- <div class="choice-button">Chef's Choice</div> -->
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1_7a90fdd5-ca43-40c8-9c89-cf826fbf4a27.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="sale-button">On Sale</div>
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog.png?v=1722941481"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <div class="sell-button">Bestseller</div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <!-- <span class="dull-price-txt">$210.00</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/product-catalog-2.png?v=1723001928"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <!-- <div class="sale-button">On Sale</div> -->
+                  <div class="choice-button">Chef's Choice</div>
+                  <!-- <div class="sell-button">Bestseller</div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>3-in-1 Roasting Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Get the elements
+      const filterContainerText = document.querySelector('.category-filter-container-text');
+      const openFilterOption = document.querySelector('.category-open-filter-option');
+      const chevronIcon = document.querySelector('.category-chevron-down-icon-filter');
+
+      // Add click event listener
+      filterContainerText.addEventListener('click', function () {
+          // Toggle the visibility of the filter option with smooth transition
+          if (openFilterOption.classList.contains('show')) {
+              openFilterOption.classList.remove('show');
+              chevronIcon.classList.remove('rotate');
+          } else {
+              openFilterOption.classList.add('show');
+              chevronIcon.classList.add('rotate');
+          }
+      });
+  });
+
+
+  document.querySelectorAll('.dropdown-button').forEach(button => {
+      button.addEventListener('click', () => {
+          const dropdownContent = button.nextElementSibling;
+          const isOpen = dropdownContent.classList.contains('show');
+
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+              content.classList.remove('show');
+          });
+
+          document.querySelectorAll('.chevron').forEach(chevron => {
+              chevron.style.transform = 'rotate(0deg)';
+          });
+
+          if (!isOpen) {
+              dropdownContent.classList.add('show');
+              button.querySelector('.chevron').style.transform = 'rotate(180deg)';
+          }
+      });
+  });
+
+  document.querySelectorAll('.dropdown-content li').forEach(item => {
+      item.addEventListener('click', (e) => {
+          // Update the dropdown content
+          const dropdown = e.target.closest('.dropdown');
+          const button = dropdown.querySelector('.dropdown-button');
+          button.firstChild.textContent = e.target.textContent;
+          dropdown.querySelector('.dropdown-content').classList.remove('show');
+          button.querySelector('.chevron').style.transform = 'rotate(0deg)';
+      });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+      if (!e.target.matches('.dropdown-button') && !e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown-content.show').forEach(openDropdown => {
+              openDropdown.classList.remove('show');
+          });
+          document.querySelectorAll('.chevron').forEach(chevron => {
+              chevron.style.transform = 'rotate(0deg)';
+          });
+      }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "category-product-filter",
+  "class": "custom-filter-section",
+  "settings":[],
+  "presets": [
+    {
+      "name" : "category-product-filter"
+    }
+  ]
+}
+{% endschema %}

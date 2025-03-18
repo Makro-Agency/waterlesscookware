@@ -1,0 +1,68 @@
+{{ 'breadcrumb.css' | asset_url | stylesheet_tag: preload: true }}
+
+{%- assign t = template | split: '.' | first -%}
+
+{%- capture breadcrumbs -%}
+  <ul class="breadcrumbs">
+  
+    <li class="breadcrumbs-item">
+      <a class="breadcrumbs-link" href="/">Home</a>
+    </li>
+    
+    {%- case t -%}
+      
+      {%- when 'page' -%}
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="#" aria-current="page">{% if template.suffix == "faq" %}FAQ's{% else %}{{ page.title }}{% endif %}</a>
+        </li>
+
+      {%- when 'product' -%}
+        {%- if collection.url -%}
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="{{ collection.url }}">{{ collection.title }}</a>
+          </li>
+        {%- endif -%}
+
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+        </li>
+
+      {%- when 'collection' and collection.handle -%}
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+        </li>
+
+      {%- when 'list-collections' -%}
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="#" aria-current="page">{{ 'Collection' }}</a>
+        </li>
+
+      {%- when 'blog' -%}
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+        </li>
+
+      {%- when 'article' -%}
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="{{ blog.url }}">{{ blog.title }}</a>
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link active" href="#" aria-current="page">Article</a>
+        </li>
+    
+    {%- endcase -%}
+  
+  </ul>
+{%- endcapture -%}
+
+{%- unless template == 'index' or template == 'cart' or template == '404' -%}
+  
+  {% if showInContainer %}
+    <div class="page-width page-width-breadcrumbs page-width-{{ template.name }}_B page-width-{{ template.suffix }}-suffix_B">
+      {{ breadcrumbs }}
+    </div>
+  {% else %}
+    {{ breadcrumbs }}
+  {% endif %}
+  
+{%- endunless -%}

@@ -1,0 +1,59 @@
+body.active-pop {position: relative;overflow: hidden;}
+body.active-pop .pop-overlay{display: block;}
+.pop-overlay {position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-color: rgb(0 0 0 / 50%);z-index: 99;display: none;}
+.OOS-box,.QR-code {position: fixed;top: 50%;left: 50%;height: auto; min-height: 359px;width: 500px;background-color: #FFF;z-index: 99999;transform: translate(-50%, -50%);display: none;}
+.OOS-box.active,.QR-code.active {display: block;}
+.product-single__form .OOS-btn ~ .klaviyo-bis-trigger {display: none !important; }
+.product-single__form .QR-btn {margin-top: 10px; }
+.product-single__form .QR-btn img {vertical-align: -1px; }
+.product-single__form .btn--secondary.OOS-btn {border-color: #000; }
+.product-single__form .btn--secondary.OOS-btn:hover {border-color: #e8e8e1; border-color: #000; }
+.OOS-box, .QR-code {border-radius: 5px; max-width: 461px; padding: 30px 40px; width:100%; }
+.OOS-box .close-btn,.QR-code .close-btn {position: absolute; top: 10px; right: 10px; width: 25px; height: 25px; cursor: pointer; }
+.OOS-box .close-btn:before, .QR-code .close-btn:before {content: ''; position: absolute; top: calc(50% - 75%); left: calc(50% - 75%); width: 150%; height: 150%; }
+.OOS-box .close-btn svg, .QR-code .close-btn svg {width: 100%; height: 100%; }
+.OOS-box h4, .QR-code h4 {font-weight: 400; font-size: 23px; line-height: 1.131; font-family: var(--typeBaseFallback);letter-spacing: normal; text-transform: none; margin: 0px 0px 19px 0px; }
+.OOS-box p, .QR-code p {font-size: 15px; line-height: 1.3334; letter-spacing: 0.02em; }
+.sold-notify form {max-width: 100%; }
+.sold-notify form input[type=email] {height: 50px; }
+.sold-notify form .btn-actions .klaviyo_submit_button {width: 100%; margin-top: 13px; height: 50px; background-color: #000;letter-spacing: 0; text-transform: capitalize; }
+.QR-code {text-align: center; }
+.QR-code>svg {margin-top: 7px; }
+.loop-onstore {z-index: 9 !important;}
+#dummy-chat-button-iframe {bottom: 55px !important;}
+
+
+.prod-list .product-grid .grid__item { transform: translateY(0rem); }
+
+/* .template-collection .page-width { max-width:100%; } */
+
+
+@media screen and (max-width: 749px){
+  
+  .prod-list { margin-bottom: 88px; }
+  .prod-list.last .product-grid { justify-content: space-between; }
+  .prod-list.last .product-grid .grid__item { margin-bottom:50px; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

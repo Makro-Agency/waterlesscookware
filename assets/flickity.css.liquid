@@ -1,0 +1,269 @@
+.flickity-enabled{
+  position:relative;
+}
+
+.flickity-enabled:focus{ outline:none; }
+
+.flickity-viewport{
+  overflow:hidden;
+  position:relative;
+  transition:height 0.35s;
+  height:100%;
+}
+
+.flickity-slider{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+.flickity-enabled.is-draggable{
+  -webkit-user-select:none;
+          user-select:none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport{
+  cursor:move;
+  cursor:grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{
+  cursor:grabbing;
+}
+
+.flickity-button{
+  position:absolute;
+  border:none;
+  color:#ffffff;
+  color:var(--colorBtnPrimaryText);
+  background:#111111;
+  background:var(--colorBtnPrimary);
+  border-radius:50%
+}
+
+.hero .flickity-button{
+    color:#000000;
+    color:var(--colorTextBody);
+    background-color:#ffffff;
+    background-color:var(--colorBody);
+    box-shadow:0 5px 5px rgba(0, 0, 0, 0.1)
+}
+
+.flickity-button:hover{
+  cursor:pointer;
+  opacity:1;
+}
+
+.flickity-button:disabled{
+  display:none;
+  cursor:auto;
+  pointer-events:none;
+}
+
+.flickity-prev-next-button{
+  top:50%;
+  width:40px;
+  height:40px;
+  transform:translateY(-50%)
+}
+
+@media only screen and (max-width:768px){
+
+.flickity-prev-next-button{
+    width:33px;
+    height:33px
+}
+  }
+
+.flickity-prev-next-button:hover{
+  transform:translateY(-50%) scale(1.12);
+}
+
+.flickity-prev-next-button:active{
+  transform:translateY(-50%) scale(1);
+  transition:transform 0.05s ease-out;
+}
+
+.flickity-previous{ left:10px; }
+
+.flickity-next{ right:10px; }
+
+.flickity-rtl .flickity-previous{
+  left:auto;
+  right:10px;
+}
+
+.flickity-rtl .flickity-next{
+  right:auto;
+  left:10px;
+}
+
+.flickity-button-icon{
+  position:absolute;
+  left:35%;
+  top:35%;
+  width:30%;
+  height:30%;
+  fill:currentColor;
+}
+
+.flickity-page-dots{
+  position:absolute;
+  width:100%;
+  bottom:-25px;
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align:center;
+  line-height:1;
+  color:currentColor
+}
+
+.hero .flickity-page-dots{
+    bottom:20px;
+    color:#fff
+}
+
+.flickity-rtl .flickity-page-dots{ direction:rtl; }
+
+.flickity-page-dots .dot{
+  display:inline-block;
+  vertical-align:middle;
+  width:6px;
+  height:6px;
+  margin:0 5px;
+  border-radius:100%;
+  cursor:pointer;
+  background-color:currentColor;
+  opacity:0.4
+}
+
+.flickity-page-dots .dot:hover{
+    opacity:0.6;
+  }
+
+.flickity-page-dots .dot.is-selected{
+  opacity:1;
+  background-color:currentColor;
+  width:9px;
+  height:9px;
+}
+
+.flickity-enabled.is-fade .flickity-slider>*{
+  pointer-events:none;
+  z-index:0;
+}
+
+.flickity-enabled.is-fade .flickity-slider>.is-selected{
+  pointer-events:auto;
+  z-index:1;
+}
+
+.hero[data-arrows=true]{
+  overflow:visible;
+  z-index:5
+}
+
+.hero[data-arrows=true] .flickity-prev-next-button{
+    top:auto;
+    bottom:-20px;
+    transform:none;
+  }
+
+.hero[data-arrows=true] .flickity-prev-next-button:hover{
+    transform:scale(1.12);
+  }
+
+.hero[data-arrows=true] .flickity-prev-next-button:active{
+    transform:scale(1);
+  }
+
+.hero[data-arrows=true] .flickity-previous{
+    left:auto;
+    right:90px;
+  }
+
+.hero[data-arrows=true] .flickity-next{
+    right:40px;
+  }
+
+.hero[data-arrows=true].flickity-rtl .flickity-previous{
+    right:auto;
+    left:90px;
+  }
+
+.hero[data-arrows=true].flickity-rtl .flickity-next{
+    right:auto;
+    left:40px;
+  }
+
+@media only screen and (max-width:768px){
+    .hero[data-arrows=true] .flickity-prev-next-button{
+      bottom:-16px;
+    }
+    .hero[data-arrows=true] .flickity-previous{
+      right:60px;
+    }
+    .hero[data-arrows=true] .flickity-next{
+      right:20px;
+    }
+    .hero[data-arrows=true].flickity-rtl .flickity-previous{
+      left:60px;
+    }
+    .hero[data-arrows=true].flickity-rtl .flickity-next{
+      left:20px;
+    }
+  }
+
+[data-bars=true].hero .flickity-page-dots{
+    bottom:0;
+    height:6px;
+    line-height:6px;
+    z-index:6;
+  }
+
+[data-bars=true] .flickity-page-dots .dot{
+    position:relative;
+    border-radius:0;
+    width:120px;
+    height:6px;
+    border:0;
+    opacity:1;
+    vertical-align:top;
+    background:none;
+    overflow:hidden
+  }
+
+@media only screen and (max-width:768px){
+
+[data-bars=true] .flickity-page-dots .dot{
+      width:45px
+  }
+    }
+
+[data-bars=true] .flickity-page-dots .dot:after,[data-bars=true] .flickity-page-dots .dot:before{
+      content:"";
+      display:block;
+      position:absolute;
+      left:0;
+      height:100%;
+      width:100%;
+      background-color:currentColor;
+    }
+
+[data-bars=true] .flickity-page-dots .dot:before{
+      opacity:0.4;
+    }
+
+[data-bars=true] .flickity-page-dots .dot:hover:before{
+      opacity:0.6;
+    }
+
+[data-bars=true] .flickity-page-dots .dot:after{
+      transform:translateX(-100%);
+      transition:none;
+    }
+
+[data-bars=true] .flickity-page-dots .dot.is-selected:after{
+      animation:slideshowBars 0s linear forwards;
+    }

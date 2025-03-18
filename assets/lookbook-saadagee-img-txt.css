@@ -1,0 +1,87 @@
+@media screen and (min-width: 990px) {
+  .lookbook-saadagee-img-txt .image-with-text__content > * { max-width: 540px; }
+
+  .lookbook-saadagee-img-txt .image-with-text__media-item--small { width:100%; max-width:430px; }
+  .lookbook-saadagee-img-txt .image-with-text__media-item--small + .image-with-text__text-item { width:calc(100% - 430px); }
+  
+  .lookbook-saadagee-img-txt .image-with-text__media-item--medium { width:100%; max-width:540px; }
+  .lookbook-saadagee-img-txt .image-with-text__media-item--medium + .image-with-text__text-item { width:calc(100% - 540px); }
+}
+
+
+.lookbook-saadagee-img-txt .image-with-text__grid { max-width: 1090px; margin-left: auto; margin-right: auto; }
+  
+.lookbook-saadagee-img-txt .image-with-text__content .image-with-text__text--caption { margin-bottom:33px; }
+.lookbook-saadagee-img-txt .image-with-text__content .image-with-text__heading.h2 { margin-bottom:18px; }
+.lookbook-saadagee-img-txt .image-with-text__content .image-with-text__heading.h2 p { margin:0; }
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link { margin-top:0; }
+
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link,
+.lookbook-saadagee-img-txt .image-with-text__content .button { margin-top:15px; }
+
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link ~ .image-with-text__heading,
+.lookbook-saadagee-img-txt .image-with-text__content .button ~ .image-with-text__heading { margin-top:33px; }
+
+.lookbook-saadagee-img-txt .image-with-text__content .image-with-text__text + .sim-link,
+.lookbook-saadagee-img-txt .image-with-text__content .image-with-text__text + .button { margin-top:40px; }
+
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link.margin--no_margin { margin-top:0; }
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link.margin--small { margin-top:15px; }
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link.margin--medium { margin-top:26px; }
+.lookbook-saadagee-img-txt .image-with-text__content .sim-link.margin--large { margin-top:40px; }
+
+.image-with-text__text-item.small-box-size .image-with-text__content > * { max-width:430px; }
+
+.lookbook-saadagee-img-txt .image-with-text__grid--reverse .image-with-text__content .image-with-text__heading.h2 { margin-bottom:0; }
+
+.lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn { margin:0; }
+.lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn .head-btn-wrap + .head-btn-wrap { margin-top:33px; }
+
+
+@media screen and (max-width: 749px) {
+
+  .lookbook-saadagee-img-txt .image-with-text {  padding-bottom: 70px; }
+  .lookbook-saadagee-img-txt .image-with-text__content { text-align: center; align-items: left; padding-top:30px; }
+  .lookbook-saadagee-img-txt .image-with-text__content .image-with-text__text--caption { margin-bottom:24px; text-align: left; font-size: 12px;
+    font-style: normal; font-weight: 600; line-height: 100%; letter-spacing: 0.6px; text-transform: uppercase; }
+  
+  .lookbook-saadagee-img-txt .image-with-text__content { padding-left:0; padding-right:0; padding-bottom:0; }
+  .lookbook-saadagee-img-txt .image-with-text__content .image-with-text__heading.h2 { text-align: left; margin-bottom:24px;
+     font-size: 22px; font-style: normal; font-weight: 400; line-height: 110%; letter-spacing: -0.44px; text-transform: capitalize; }
+  
+  .lookbook-saadagee-img-txt .image-with-text__content .sim-link.margin--no_margin { font-size: 12px; font-style: normal; font-weight: 500;
+      line-height: 100%; letter-spacing: 0.6px; text-transform: uppercase; }
+
+  .lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn { text-align:left; }
+
+  .lookbook-saadagee-img-txt .image-with-text__content:has(.heading-with-btn .head-btn-wrap + .head-btn-wrap) .image-with-text__text--caption { width:100%; 
+     text-align:center; margin-bottom:30px; }  
+  
+  .lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn:has(.head-btn-wrap + .head-btn-wrap) { text-align:center; display: flex; 
+     justify-content: center; width: 100%; }
+  .lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn:has(.head-btn-wrap + .head-btn-wrap) .head-btn-wrap { width:100%; line-height: 1;
+      padding:0 15px; text-align:center; }
+  .lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn:has(.head-btn-wrap + .head-btn-wrap) .head-btn-wrap .image-with-text__heading { text-align:center; }
+  .lookbook-saadagee-img-txt .image-with-text__content .heading-with-btn:has(.head-btn-wrap + .head-btn-wrap) .head-btn-wrap + .head-btn-wrap { margin-top:0; 
+     border-left:#D9D5CE 1px solid; }
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end */

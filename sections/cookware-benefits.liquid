@@ -1,0 +1,156 @@
+<link rel="stylesheet" href="{{ 'cookware-benefits.css' | asset_url }}" media="print" onload="this.media='all'" />
+<noscript>{{ 'cookware-benefits.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="cookware-benefits page-width section-padding">
+  <div class="title-wrapper">
+    {% if section.settings.subtitle_text != blank %}
+    <span class="subtitle">{{ section.settings.subtitle_text }}</span>
+    {% endif %}
+    {% if section.settings.main_heading_text != blank %}
+    <h2 class="main_heading h2">{{ section.settings.main_heading_text  }}</h2>
+   {% endif %}
+    {% if section.settings.button_text != blank %}
+    <a href="{{ section.settings.button_link }}" class="button cta_button small-hide">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+  <div class="cookware-benifits-column">
+    <div class="benefits-item-wrapper">
+      {%- liquid                  
+        assign sizes = '(min-width: 1200px) 500px, (min-width: 990px) 20.9090vw, (min-width: 750px) 50vw, calc(67vw - 4rem)'
+        assign widths = '320, 375, 420, 550, 750'
+      -%}
+     {%- for block in section.blocks -%}
+      <div class="benefits-item">
+      <div class="image">
+        {% if block.settings.benefits_image != blank %}
+          {%- liquid
+            assign dek_img = block.settings.benefits_image
+            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+          -%}
+          {{
+            dek_img
+            | image_url: width: 750
+            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths
+          }}
+          {% assign assign dek_img = blank %}{% comment %}
+          <img src="{{ block.settings.benefits_image | img_url: '500x' }}" alt="Benefit Image" height="auto" width="auto">{% endcomment %}
+        {% endif %}
+      </div>
+      <div class="benefits-content">
+        <div class="content-wrapper">
+           {% if block.settings.icon_1_svg != blank %}
+             <span class="icon">{{ block.settings.icon_1_svg }}</span>
+           {% endif %}
+          
+          {% if block.settings.title != blank %}
+          <div class="heading-wrapper">
+            <h2 class="heading h2">{{ block.settings.title }}</h2>
+            <p class="desc">{{ block.settings.details }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+     {% endfor %}
+    </div>
+    <div class="badges">
+      <div class="ratings-badge">
+        <span class="rating-text">5.0</span>
+        <span class="rating-star">
+          <svg width="128" height="24" viewBox="0 0 128 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.0554 2.71739C11.3667 1.82183 12.6333 1.82183 12.9446 2.71739L14.5929 7.45943C14.7302 7.8545 15.0989 8.12237 15.5171 8.1309L20.5364 8.23318C21.4843 8.2525 21.8757 9.45704 21.1202 10.0298L17.1196 13.0629C16.7863 13.3156 16.6455 13.749 16.7666 14.1493L18.2204 18.9546C18.4949 19.8621 17.4703 20.6065 16.692 20.065L12.5712 17.1975C12.2279 16.9586 11.7721 16.9586 11.4288 17.1975L7.30799 20.065C6.52975 20.6065 5.5051 19.8621 5.77965 18.9546L7.23342 14.1493C7.35454 13.749 7.21371 13.3156 6.88042 13.0629L2.87983 10.0298C2.12429 9.45704 2.51567 8.2525 3.4636 8.23318L8.48291 8.1309C8.90108 8.12237 9.26978 7.8545 9.4071 7.45943L11.0554 2.71739Z" fill="#FCFBF7"/>
+          <path d="M37.0554 2.71739C37.3667 1.82183 38.6333 1.82183 38.9446 2.71739L40.5929 7.45943C40.7302 7.8545 41.0989 8.12237 41.5171 8.1309L46.5364 8.23318C47.4843 8.2525 47.8757 9.45704 47.1202 10.0298L43.1196 13.0629C42.7863 13.3156 42.6455 13.749 42.7666 14.1493L44.2204 18.9546C44.4949 19.8621 43.4703 20.6065 42.692 20.065L38.5712 17.1975C38.2279 16.9586 37.7721 16.9586 37.4288 17.1975L33.308 20.065C32.5297 20.6065 31.5051 19.8621 31.7796 18.9546L33.2334 14.1493C33.3545 13.749 33.2137 13.3156 32.8804 13.0629L28.8798 10.0298C28.1243 9.45704 28.5157 8.2525 29.4636 8.23318L34.4829 8.1309C34.9011 8.12237 35.2698 7.8545 35.4071 7.45943L37.0554 2.71739Z" fill="#FCFBF7"/>
+          <path d="M63.0554 2.71739C63.3667 1.82183 64.6333 1.82183 64.9446 2.71739L66.5929 7.45943C66.7302 7.8545 67.0989 8.12237 67.5171 8.1309L72.5364 8.23318C73.4843 8.2525 73.8757 9.45704 73.1202 10.0298L69.1196 13.0629C68.7863 13.3156 68.6455 13.749 68.7666 14.1493L70.2204 18.9546C70.4949 19.8621 69.4703 20.6065 68.692 20.065L64.5712 17.1975C64.2279 16.9586 63.7721 16.9586 63.4288 17.1975L59.308 20.065C58.5297 20.6065 57.5051 19.8621 57.7796 18.9546L59.2334 14.1493C59.3545 13.749 59.2137 13.3156 58.8804 13.0629L54.8798 10.0298C54.1243 9.45704 54.5157 8.2525 55.4636 8.23318L60.4829 8.1309C60.9011 8.12237 61.2698 7.8545 61.4071 7.45943L63.0554 2.71739Z" fill="#FCFBF7"/>
+          <path d="M89.0554 2.71739C89.3667 1.82183 90.6333 1.82183 90.9446 2.71739L92.5929 7.45943C92.7302 7.8545 93.0989 8.12237 93.5171 8.1309L98.5364 8.23318C99.4843 8.2525 99.8757 9.45704 99.1202 10.0298L95.1196 13.0629C94.7863 13.3156 94.6455 13.749 94.7666 14.1493L96.2204 18.9546C96.4949 19.8621 95.4703 20.6065 94.692 20.065L90.5712 17.1975C90.2279 16.9586 89.7721 16.9586 89.4288 17.1975L85.308 20.065C84.5297 20.6065 83.5051 19.8621 83.7796 18.9546L85.2334 14.1493C85.3545 13.749 85.2137 13.3156 84.8804 13.0629L80.8798 10.0298C80.1243 9.45704 80.5157 8.2525 81.4636 8.23318L86.4829 8.1309C86.9011 8.12237 87.2698 7.8545 87.4071 7.45943L89.0554 2.71739Z" fill="#FCFBF7"/>
+          <path d="M115.055 2.71739C115.367 1.82183 116.633 1.82183 116.945 2.71739L118.593 7.45943C118.73 7.8545 119.099 8.12237 119.517 8.1309L124.536 8.23318C125.484 8.2525 125.876 9.45704 125.12 10.0298L121.12 13.0629C120.786 13.3156 120.645 13.749 120.767 14.1493L122.22 18.9546C122.495 19.8621 121.47 20.6065 120.692 20.065L116.571 17.1975C116.228 16.9586 115.772 16.9586 115.429 17.1975L111.308 20.065C110.53 20.6065 109.505 19.8621 109.78 18.9546L111.233 14.1493C111.355 13.749 111.214 13.3156 110.88 13.0629L106.88 10.0298C106.124 9.45704 106.516 8.2525 107.464 8.23318L112.483 8.1309C112.901 8.12237 113.27 7.8545 113.407 7.45943L115.055 2.71739Z" fill="#FCFBF7"/>
+          </svg>
+        </span>
+      </div>
+      <div class="review-badge"><span>{{ section.settings.review_badge_text }}</span></div>
+    </div>     
+  </div>
+  {% if section.settings.button_link_2 != blank %}
+    <a href="{{ section.settings.button_link_2 }}" class="button cta_button large-up-hide medium-hide">{{ section.settings.button_text_2 }}</a>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Cookware Benefits",
+    "settings": [
+       {
+          "type": "text",
+          "id": "subtitle_text",
+          "label": "Subtitle",
+          "default": "Trusted in over 60,000 kitchens"
+        },
+       {
+        "type": "html",
+        "id": "main_heading_text",
+        "label": "Main Heading",
+        "default": "One Pan, <br> Lots of Benefits."
+      },
+       {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+       {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+       {
+        "type": "text",
+        "id": "review_badge_text",
+        "label": "Review Badge Text",
+        "default": "7,000+ 5-Star Reviews"
+      },
+       {
+        "type": "text",
+        "id": "button_text_2",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+       {
+        "type": "url",
+        "id": "button_link_2",
+        "label": "Button Link 2"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "CookwareBenefits",
+        "name": "Cookware Benefits",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "benefits_image",
+            "label": "benefits_image"
+          },
+          {
+            "type": "html",
+            "id": "icon_1_svg",
+            "label": "svg"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "details",
+            "label": "Details"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cookware Benefits",
+      }
+    ]
+  }
+{% endschema %}

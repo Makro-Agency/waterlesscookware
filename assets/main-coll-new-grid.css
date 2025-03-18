@@ -1,0 +1,45 @@
+.prod-list { margin-bottom: 150px; }
+.prod-list .product-grid .grid__item { flex: unset; --grid-desktop-horizontal-spacing: 2px; --grid-mobile-horizontal-spacing: 2px; }
+.collectionDefaultHide-true .prod-list.last { margin-bottom: 0; }
+
+.main-coll-new-grid-sec .mobile-facets__main>div[data-stock-availability] { margin-top: 15px; }
+.main-coll-new-grid-sec .mobile-facets__main>div[data-stock-availability] label.facet-checkbox { display: flex !important; }
+
+@media screen and (max-width: 1199px){
+  .product-count.light { opacity: 1; }
+  .prod-list { margin-bottom: 80px; }
+}
+@media screen and (max-width: 749px){
+.productGrid-true li.grid__item { width: 100%; max-width: 100%; }  
+  
+.main-coll-new-grid-sec .prod-list .product-grid { margin-bottom: -40px; gap:0; }
+.prod-list .product-grid .grid__item { margin-bottom: 40px; }
+
+.main-coll-new-grid-sec .prod-list .productGrid-true.product-grid { margin-bottom: -10px; }
+.prod-list .productGrid-true.product-grid .grid__item { margin-bottom: 10px; }
+
+.prod-list .card-badge-wishlist { right: 10px; top: 10px; }
+.prod-list .productGrid-false .card--standard>.card__content .card__information { padding-left: 10px; padding-right: 10px; }
+.prod-list .productGrid-true .card-badge-wishlist { left: calc( 49.4445% - 26px ); top: 10px; }
+
+.card.card-mobileGrid-true { flex-direction: row; flex-wrap: wrap; }
+
+.card.card-mobileGrid-true>.card__inner { width: 49.4445%; flex: 1 1 auto; }
+.card.card-mobileGrid-true>.card__content { padding-left: 15px; padding-bottom: 15px; width: 50.5555%; display: flex; align-items: flex-end; flex: 1 1 auto; }    
+  
+  .card.card-mobileGrid-true>.card__content .discounted-label-variants .discounted-label { display: none; }
+  
+  .card.card-mobileGrid-true>.card__content .discounted-label-variants ul.metaSwatch { display: flex; margin-top: -8px; margin-bottom: 0; }
+  
+  .card-mobileGrid-true .metaSwatchWrapper { display: flex; align-items: center; margin-top: 40px; }
+  .card-mobileGrid-true .metaSwatchWrapper .label { font-size: 10px; font-weight: 300; line-height: 100%; margin-right: 8px; flex: 0 0 auto; }
+
+  
+  .card-product-new .card-mobileGrid-true .card__heading_wrap .card__heading { font-size: 20px; font-weight: 400; line-height: 110%; letter-spacing: -0.02em; }
+  .card-mobileGrid-true .pro_shortDetail { font-size: 12px; font-weight: 300; line-height: 160%; margin-top: 5px; }
+  
+  .card-mobileGrid-true.card--standard>.card__content .card__information>.price { margin-top: 15px; }
+  .card-mobileGrid-true.card--standard>.card__content .card__information>.price .price__sale .price-item--last { order: -1; margin-right: 5px; color: #000; }
+    
+  .discounted-label-variants.mobile-label ul.variants.metaSwatch { display: flex; margin: 5px 0; margin-left: -5px; }
+}

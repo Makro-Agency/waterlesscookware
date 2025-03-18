@@ -1,0 +1,337 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+{% style %}
+.benefits-slider-section  .swiper-button-next:after , .swiper-button-prev:after{
+    display:none;
+  }
+ .benefits-slider-section .swiper-button-next svg, .swiper-button-prev svg{
+    width:20px; height:20px;
+  }
+  .benefits-slider-section .swiper-button-prev svg{ transform:rotate(0deg);
+}
+.benefits-slider-section .main_heading { 
+  color: #000;
+  font-family: Cellofy;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.8px; 
+}
+.has-nav-wrapper {
+    position: relative;
+}
+  /* Ensure the slider container has relative positioning */
+.benefits-slider-section .slider-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.benefits-slider-section .slider-container .benefits-slider .benefits-slider-swiper {
+  overflow: visible;
+}
+/* Position navigation arrows */
+.benefits-slider-section .slider-navigation {
+  position: absolute;
+  top: -14%;
+  right: 9%; /* Adjust the distance from the right edge as needed */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefits-slider-section .swiper-button-prev {
+  margin-bottom: 10px; /* Space between the buttons */
+}
+
+/* Optional: Ensure that the navigation arrows are positioned above the swiper container */
+.benefits-slider-section .benefits-slider {
+  position: relative;
+}
+.benefits-slider-section .swiper-button-prev{ left:-60px;}
+.benefits-slider-section .swiper-button-next{ right:-60px;}
+
+.Pdp-benefitslider .textflex{
+  align-items: start;
+  display: flex;
+}
+.Pdp-benefitslider .textflex .subtext {
+    font-size: 20px;
+    margin: 0;
+    font-family: Hurricane;
+    font-size: 32px;
+    line-height: 100%;
+    color: #606d22;
+    transform: rotate(-8deg);
+    margin-top: -65px;
+    margin-left: 15px;
+}
+  @media screen and (max-width:767px){
+    .benefits-slider-section .slider-navigation{ display:none; }
+    .benefits-slider-section .slider-container {margin-top: 0;}
+    .template-product main .has-nav-wrapper.page-width {
+        padding: 0;
+    }
+  }
+  @media screen and (max-width:576px){
+    .benefits-slider-section .grid__item{
+      max-width:100%;
+    }
+     .benefits-slider-section .swiper-slide.grid__item img{ height:240px;}
+    .Pdp-benefitslider .benefits-slider-section {
+      margin-left: 0 !important;
+      padding: 0 20px;
+    }
+    .benefits-slider-section .textflex h2 {
+        font-size: 36px;
+        letter-spacing: -0.72px;
+        margin: 0;
+        max-width: 65%;
+    }
+    .Pdp-benefitslider .textflex .subtext {
+        font-size: 24px;
+        margin-left: 0px;
+        position: absolute;
+        right: 20px;
+        top: 50px;
+    }
+    .benefits-slider .benefits-content {
+      padding: 20px;
+    }
+  }
+  @media(max-width:500px){
+    .Pdp-benefitslider .textflex .subtext{
+        right: 0;
+        top: 16px;
+        width: 40%;
+        left: auto;
+    }
+   .template-product main  .benefits-slider-section  .page-width {
+        padding-left: 0;
+        padding-right: 2rem;
+        margin-top: 20px;
+    }
+  }
+{% endstyle %}
+
+{%- liquid
+
+   assign meta_images = shop.metafields.product_benefits.image
+   assign meta_titles = shop.metafields.product_benefits.title
+   assign meta_deses = shop.metafields.product_benefits.description
+   
+   assign product_tags = product.tags
+   assign mata_product_tags = shop.metafields.product_benefits.product_tag
+   assign meta_index = blank
+   for meta_tag in mata_product_tags
+     assign temp_tags = meta_tag | split:','
+     assign loop_break = false
+     assign main_index = forloop.index0
+     for temp_tag in temp_tags
+       assign temp =  temp_tag | downcase | strip
+       for tag in product_tags
+         assign t_tag = tag | downcase | strip
+         if temp == t_tag         
+           if meta_index == blank
+             assign meta_index = main_index
+           else             
+             assign meta_index = meta_index | append:','
+             assign meta_index = meta_index | append: main_index
+           endif
+           assign loop_break = true
+           break
+         endif
+       endfor
+       if loop_break
+         break
+       endif
+     endfor
+   endfor
+   assign meta_index = meta_index | split: ','
+-%}
+
+{% if shop.metafields.product_benefits.title != blank  %}
+<div class="section-{{ section.id }}-padding Pdp-benefitslider Pdp-benefitslider-{{ section.id }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="benefits-slider-section">
+    <div class="has-nav-wrapper page-width">
+       {% if meta_images != blank %}
+        <div class="textflex">
+          <h2 class="main_heading h2">{{ section.settings.heading }}</h2>
+          <p class="subtext">{{ section.settings.subheading }}</p>
+        </div>
+       {% endif %}
+       <div class="slider-navigation slide-nav">
+        <div class="swiper-button-prev nav-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+            <path d="M10.375 1.25L1.625 10L10.375 18.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      <div class="swiper-button-next nav-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+            <path d="M1.625 1.25L10.375 10L1.625 18.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="slider-container">
+      <!-- Swiper Container -->
+      <div class="benefits-slider page-width">
+        <div class="benefits-slider-swiper swiper mySwiper-{{ section.id }}">
+          <div class="swiper-wrapper swiper-inner">
+
+            {%- liquid              
+              assign sizes = '(min-width: 1551px) 22.5vw, (min-width: 750px) 30vw, 71.80vw'
+              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+              assign temp_widths = widths | split:', '
+            -%}
+            
+            {%- for mi in meta_index -%}
+              {% assign temp_mi = mi | times: 1 %}   
+              {%- if meta_images[temp_mi] != blank -%}
+              <div class="swiper-slide grid__item">
+                  {%- for image in meta_images[temp_mi]  limit:1 -%}
+                    {%- for temp_W in temp_widths -%}
+                      {% assign _temp_W = temp_W | times: 1 %}
+                      {%- capture srcSet -%}
+                        {{ srcSet }}{%- if image.width >= _temp_W -%}{{ image.src | append: '&transform=resize=' | append: temp_W }} {{ temp_W }}w,{%- endif -%}
+                        {% if forloop.last %}
+                          {{ image.src | append: '&transform=resize=' | append: image.width }} {{image.width }}w
+                        {% endif %}              
+                      {%- endcapture -%}
+                    {%- endfor -%}
+                    <img src="{{ image.src | append: '&transform=resize=410' }}" srcset="{{ srcSet }}" class="" width="{{ image.width }}" height="{{ image.height }}" sizes="{{ sizes }}" loading="lazy" alt="" />
+                    {% assign srcSet = blank %}
+                  {%- endfor -%}
+                <div class="benefits-content">
+                  {%- if meta_titles[temp_mi] != blank -%}
+                    <h3>{{ meta_titles[temp_mi] }}</h3>
+                  {%- endif -%}{%- if meta_deses[temp_mi] != blank -%}
+                    <p>{{ meta_deses[temp_mi] }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+              {% endif %}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endif %}
+<script>
+  var swiper = new Swiper(".benefits-slider-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.Pdp-benefitslider-{{ section.id }} .swiper-button-next',
+      prevEl: '.Pdp-benefitslider-{{ section.id }} .swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      575: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      750: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1000: {
+        slidesPerView: 3, // Adjust to show 3.5 columns on larger screens
+        spaceBetween: 30,
+      },
+      1500: {
+        slidesPerView: 3, // Consistent with 1000px breakpoint
+        spaceBetween: 32,
+      },
+    },
+  });
+  {% if meta_index == blank %}
+    if( typeof Shopify.designMode == 'undefined' ){
+      document.getElementById('shopify-section-{{ section.id }}').classList.add('hidden');
+    }
+  {% endif %}
+</script>
+{% schema %}
+{
+  "name": "Pdp Benefits Slider",
+  "settings": [
+    
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "One Tool, Lots of Benefits."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Trusted in over 60,000 kitchens"
+    },
+     {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pro-Grade Capacity"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Unleash your culinary creativity with this spacious 2-quart powerhouse!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pdp Benefits Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

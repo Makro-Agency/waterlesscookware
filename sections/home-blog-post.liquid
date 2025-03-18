@@ -1,0 +1,208 @@
+{{ 'home-blog-posts.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign posts_displayed = section.settings.blog.articles_count
+  if section.settings.post_limit <= section.settings.blog.articles_count
+    assign posts_exceed_limit = true
+    assign posts_displayed = section.settings.post_limit
+  endif
+-%}
+    
+<div class="home-blog-posts page-width section-padding">
+  <div class="title-wrapper-with-link">
+    {% if section.settings.title != blank %}
+      <div class="title-description-wrapper">
+        <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+        <p class="desc">{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+  
+    {% if section.settings.link_text != blank %}
+      <div class="article-newtab">
+        <ul class="tab-titles">
+          <li class="tab-item active">
+            <a href="javascript:void(0);" data-tab="tab1" class="active">{{ section.settings.link_text }}</a>
+          </li>
+          <li class="tab-item">
+            <a href="javascript:void(0);" data-tab="tab2">{{ section.settings.recipe_link_text }}</a>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="articles-content-new">
+    <div id="tab1" class="tab-panel active">
+      <!-- Article Content Here -->
+      
+      <div class="article-grid-new">
+        <div class="article-card-list">
+          <div class="article-cards">
+            {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
+              <div class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                <ul id="blog-articales" class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}" role="list">
+                  {% for article in section.settings.blog.articles limit: section.settings.post_limit %}
+                    <li class="blog__post grid__item article">
+                      {% render 'article-card', blog: section.settings.blog, article: article, media_aspect_ratio: 1.66, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: true %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <div class="blog-placeholder">
+                <div class="placeholder media media--landscape">
+                  {{ 'blog-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="blog-placeholder__content">
+                  <h2>{{ 'sections.featured_blog.onboarding_title' | t }}</h2>
+                  <p class="rte-width">{{ 'sections.featured_blog.onboarding_content' | t }}</p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab2" class="tab-panel">
+      
+      <!-- Recepie Content Here -->
+      
+      <div class="article-grid-new">
+        <div class="article-card-list">
+          <div class="article-cards">
+            {% if section.settings.blog_recepie != blank and section.settings.blog_recepie.articles_count > 0 %}
+              <div class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                <ul id="blog-articales" class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}" role="list">
+                  {% for article in section.settings.blog_recepie.articles limit: section.settings.post_limit %}
+                    <li class="blog__post grid__item article {% if forloop.first %} main-content{% else %} side-item{% endif %}">
+                      {% render 'article-card', blog: section.settings.blog_recepie, article: article, media_aspect_ratio: 1.66, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: true %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <div class="blog-placeholder">
+                <div class="placeholder media media--landscape">
+                  {{ 'blog-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="blog-placeholder__content">
+                  <h2>{{ 'sections.featured_blog.onboarding_title' | t }}</h2>
+                  <p class="rte-width">{{ 'sections.featured_blog.onboarding_content' | t }}</p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    </div>
+  </div>
+
+
+    
+
+
+{% schema %}
+{
+  "name": "home-blog-post",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+   {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Articles & Recipes"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar."
+    },
+     {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Blog Articles"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "recipe_link_text",
+      "label": "Recipe Link Text",
+      "default": "Selected Recipes"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+   },
+   {
+    "type": "blog",
+    "id": "blog_recepie",
+    "label": "select blog recepie"
+   },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.post_limit.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.columns_desktop.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_image.label",
+      "info": "t:sections.featured-blog.settings.show_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.featured-blog.settings.show_author.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "home-blog-post",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ]
+}
+{% endschema %}

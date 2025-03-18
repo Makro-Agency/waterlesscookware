@@ -1,0 +1,401 @@
+{{ 'catalog-bakeware.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<style>
+    .background-backware-first {
+      background-image: url(https://cdn.shopify.com/s/files/1/0622/1937/files/backware.png?v=1722996621);
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      z-index: 1;
+      height: auto;
+      /* min-height: 450px; */
+  }
+    @media only screen and (max-width: 768px) {
+
+      .background-backware-first {
+          background-image: url(https://cdn.shopify.com/s/files/1/0622/1937/files/backware-mobile.png?v=1722996622);
+          min-height: 480px;
+      }
+    }
+</style>
+
+<div id="catalog-banner-section-main" class="backware-catalog-section">
+  <div id="backware-catalog-section">
+    <div id="catalog-banner-section-image" class="catelog-banner-section-image-backware background-backware-first">
+      <div class="catalog-banner-section-main">
+        <div class="catalog-icon-with-text">
+          <div class="banner-icon-text">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                  d="M4.16356 8.83559C4.46785 8.55455 4.4867 8.08005 4.20567 7.77576C3.92464 7.47147 3.45014 7.45262 3.14584 7.73365L4.16356 8.83559ZM10.5776 11.8906C10.707 11.4971 10.4929 11.0733 10.0994 10.9439C9.70589 10.8145 9.28201 11.0286 9.15262 11.4221L10.5776 11.8906ZM5.36067 10.9214C5.74631 11.0725 6.18149 10.8824 6.33266 10.4968C6.48383 10.1112 6.29375 9.67599 5.90811 9.52482L5.36067 10.9214ZM7.74974 4.43862L7.66183 5.18345C7.87458 5.20856 8.08791 5.1415 8.24802 4.99918C8.40813 4.85685 8.49974 4.65285 8.49974 4.43862H7.74974ZM14.0958 4.17885H13.3458C13.3458 4.46881 13.513 4.7328 13.7751 4.8568C14.0372 4.98081 14.3473 4.94263 14.5715 4.75874L14.0958 4.17885ZM16.2112 8.50385C15.797 8.50385 15.4612 8.83964 15.4612 9.25385C15.4612 9.66807 15.797 10.0039 16.2112 10.0039V8.50385ZM19.46 6.6106C19.0708 6.46895 18.6404 6.66967 18.4988 7.05891C18.3571 7.44815 18.5579 7.87852 18.9471 8.02017L19.46 6.6106ZM14.0958 10.5917H14.8458C14.8458 10.2619 14.6304 9.97082 14.315 9.87446C13.9995 9.77811 13.6582 9.89912 13.4739 10.1726L14.0958 10.5917ZM10.2561 11.0369C9.90262 10.821 9.44102 10.9324 9.22508 11.2859C9.00914 11.6394 9.12062 12.101 9.47409 12.3169L10.2561 11.0369ZM7.08445 13.4287C6.71369 13.244 6.26341 13.3948 6.07873 13.7656C5.89404 14.1364 6.04488 14.5866 6.41564 14.7713L7.08445 13.4287ZM9.37505 21.45L10.1249 21.4354V21.4354L9.37505 21.45ZM14.625 21.45L15.3749 21.4647V21.4646L14.625 21.45ZM17.5845 14.7713C17.9552 14.5866 18.1061 14.1363 17.9214 13.7656C17.7367 13.3948 17.2864 13.244 16.9156 13.4287L17.5845 14.7713ZM3.14584 7.73365C1.76217 9.01156 1.49507 10.8062 2.11835 12.2762C2.74306 13.7495 4.23668 14.85 6.24149 14.85V13.35C4.82574 13.35 3.88392 12.5976 3.49934 11.6906C3.11335 10.7803 3.26313 9.66719 4.16356 8.83559L3.14584 7.73365ZM6.24149 14.85C8.24543 14.85 10.0019 13.6413 10.5776 11.8906L9.15262 11.4221C8.79889 12.4978 7.6624 13.35 6.24149 13.35V14.85ZM5.90811 9.52482C5.11204 9.21276 4.69475 8.76271 4.50377 8.32637C4.30996 7.88354 4.31274 7.37235 4.50797 6.87464C4.8997 5.87598 6.05332 4.9936 7.66183 5.18345L7.83765 3.69379C5.55504 3.42438 3.75348 4.69041 3.11156 6.32689C2.78996 7.14675 2.7563 8.07481 3.12963 8.92779C3.50579 9.78726 4.25923 10.4896 5.36067 10.9214L5.90811 9.52482ZM8.49974 4.43862C8.49974 3.29741 9.53227 2.25 10.9227 2.25V0.75C8.80845 0.75 6.99974 2.3681 6.99974 4.43862H8.49974ZM10.9227 2.25C12.4101 2.25 13.3458 3.12199 13.3458 4.17885H14.8458C14.8458 2.02395 12.9403 0.75 10.9227 0.75V2.25ZM14.5715 4.75874C14.9984 4.40859 15.5715 4.18846 16.2112 4.18846V2.68846C15.2255 2.68846 14.316 3.02827 13.6202 3.59897L14.5715 4.75874ZM16.2112 4.18846C17.6123 4.18846 18.6342 5.2148 18.6342 6.34615H20.1342C20.1342 4.26576 18.3147 2.68846 16.2112 2.68846V4.18846ZM18.6342 6.34615C18.6342 7.47751 17.6123 8.50385 16.2112 8.50385V10.0039C18.3147 10.0039 20.1342 8.42655 20.1342 6.34615H18.6342ZM18.9471 8.02017C20.378 8.54088 20.8883 9.83567 20.6411 11.0592C20.3936 12.2838 19.3986 13.35 17.7976 13.35V14.85C20.2006 14.85 21.7407 13.1906 22.1114 11.3563C22.4822 9.52089 21.6935 7.42338 19.46 6.6106L18.9471 8.02017ZM17.7976 13.35C16.1289 13.35 14.8458 12.0777 14.8458 10.5917H13.3458C13.3458 12.981 15.3774 14.85 17.7976 14.85V13.35ZM13.4739 10.1726C13.02 10.8462 12.4963 11.2239 11.9834 11.3624C11.4822 11.4976 10.8993 11.4299 10.2561 11.0369L9.47409 12.3169C10.4174 12.8932 11.421 13.0678 12.3742 12.8106C13.3156 12.5565 14.1139 11.9071 14.7178 11.0109L13.4739 10.1726ZM6.41564 14.7713C6.65998 14.893 7.19757 15.3794 7.69143 16.495C8.17276 17.5821 8.58103 19.2026 8.62519 21.4646L10.1249 21.4354C10.0776 19.0108 9.63867 17.188 9.06303 15.8877C8.49992 14.6158 7.77075 13.7705 7.08445 13.4287L6.41564 14.7713ZM8.62519 21.4646C8.63562 21.9991 8.9981 22.3419 9.25671 22.5219C9.53419 22.7151 9.8732 22.8522 10.1864 22.9505C10.815 23.1477 11.5435 23.25 12 23.25V21.75C11.7053 21.75 11.1281 21.6738 10.6354 21.5193C10.3879 21.4416 10.2124 21.3596 10.1138 21.2909C9.99636 21.2091 10.1212 21.2474 10.1249 21.4354L8.62519 21.4646ZM12 23.25C12.4566 23.25 13.1851 23.1477 13.8137 22.9505C14.1269 22.8522 14.4659 22.7151 14.7434 22.5219C15.002 22.3419 15.3645 21.9991 15.3749 21.4647L13.8752 21.4353C13.8789 21.2474 14.0037 21.2091 13.8863 21.2909C13.7877 21.3596 13.6122 21.4416 13.3647 21.5193C12.872 21.6738 12.2948 21.75 12 21.75V23.25ZM15.3749 21.4646C15.419 19.2026 15.8273 17.5821 16.3087 16.495C16.8025 15.3794 17.3401 14.893 17.5845 14.7713L16.9156 13.4287C16.2294 13.7705 15.5002 14.6158 14.9371 15.8877C14.3614 17.188 13.9225 19.0108 13.8752 21.4354L15.3749 21.4646Z"
+                  fill="#A6BB3A" />
+            </svg>
+            <span class="catalog-banner-icon-text">Vapor Technology</span>
+          </div>
+          <div class="banner-icon-text">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                  d="M8.24112 11.6065L11.1923 14.6509L16.3284 9.35947M22.5 12C22.5 13.3151 20.6464 14.247 20.1701 15.3861C19.6938 16.5251 20.3151 18.534 19.4246 19.4246C18.534 20.3151 16.5666 19.6834 15.3861 20.1701C14.2056 20.6568 13.3151 22.5 12 22.5C10.6849 22.5 9.75296 20.6465 8.6139 20.1701C7.47485 19.6938 5.46598 20.3151 4.57544 19.4246C3.68491 18.534 4.31657 16.5666 3.82988 15.3861C3.3432 14.2056 1.5 13.3151 1.5 12C1.5 10.6849 3.35355 9.75296 3.82988 8.61391C4.30621 7.47486 3.68491 5.46597 4.57544 4.57544C5.46598 3.68491 7.43343 4.31657 8.6139 3.82988C9.79438 3.34319 10.6849 1.5 12 1.5C13.3151 1.5 14.247 3.35355 15.3861 3.82988C16.5251 4.30621 18.534 3.68491 19.4246 4.57544C20.3151 5.46597 19.6834 7.43344 20.1701 8.61391C20.6568 9.79438 22.5 10.6849 22.5 12Z"
+                  stroke="#A6BB3A" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </svg>
+            <span class="catalog-banner-icon-text">Handcrafted in the USA</span>
+          </div>
+          <div class="banner-icon-text">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                  d="M16.6446 7.35534L16.6406 7.35134L16.6487 7.35938L16.6446 7.35534ZM16.6446 7.35534C17.6743 8.38087 19.3193 8.42038 20.2984 7.44129L23.25 10.3929L10.3929 23.25L7.44129 20.2984C8.42165 19.3181 8.37273 17.6781 7.3433 16.6487C6.31387 15.6192 4.67388 15.5703 3.69352 16.5507L0.75 13.6071L13.6071 0.75L16.5587 3.70157C15.5796 4.68065 15.6111 6.31765 16.6446 7.35534Z"
+                  stroke="#A6BB3A" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </svg>
+            <span class="catalog-banner-icon-text">Lifetime Warranty</span>
+          </div>
+        </div>
+        <div class="banner-text-catalog">
+          <div class="banner-text-catalog-icon">
+            <h2>Bakeware</h2>
+            <span>
+              <a href="#" class="catalog-banner-icon-view"
+                >View All
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M11.7535 11.5L15 7.99821M15 7.99821L11.7569 4.5M15 7.99821H1"
+                      stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+          <div>
+            <p>
+              Just like the over 60,000 kitchens we've already transformed, we believe in the power of quality tools to
+              turn your home into the best seat in town.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slider-product-section" id="catalog-product-slider">
+      <div class="swiper mySwiper-product-bakeware">
+        <div class="swiper-wrapper swiper-inner">
+          <div class="swiper-slide">
+            <div class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1.png?v=1722996621"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="sale-button desktop-view">
+                    <a href="#">On Sale</a>
+                  </div>
+                  <div class="choice-button">
+                    <a href="#">Chef's Choice</a>
+                  </div>
+                  <div class="sell-button">
+                    <a href="#">Bestseller</a>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>1.75 Quart Saucepan with Cover</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt desktop-view">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1722996621"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="choice-button">
+                    <a href="#">Chef's Choice</a>
+                  </div>
+                  <!-- <div class="sell-button">
+                    <a href="#">Bestseller</a>
+                  </div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>9" x 13" Bake & Roast Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt mobile-view">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1.png?v=1722996621"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="choice-button">
+                    <a href="#">Chef's Choice</a>
+                  </div>
+                  <div class="sell-button">
+                    <a href="#">Bestseller</a>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>9" x 13" Bake & Roast Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-2.png?v=1722996621"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="choice-button">
+                    <a href="#">Chef's Choice</a>
+                  </div>
+                  <!-- <div class="sell-button">
+                    <a href="#">Bestseller</a>
+                  </div> -->
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>9" x 13" Bake & Roast Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product-slider-product-image-header">
+              <div class="product-slider-product-image">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0622/1937/files/backware-product-1.png?v=1722996621"
+                  height="auto"
+                  width="auto"
+                  class=""
+                >
+                <div class="icon-eyes">
+                  {% render 'icon-eyes' %}
+                </div>
+                <div class="sale-choice-sell">
+                  <div class="choice-button">
+                    <a href="#">Chef's Choice</a>
+                  </div>
+                  <div class="sell-button">
+                    <a href="#">Bestseller</a>
+                  </div>
+                </div>
+              </div>
+              <div class="product-slider-product-header">
+                <div class="review-start-product">
+                  <span class="review-text">4.9</span>
+                  <span class="review-start-icon">
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                    {% render 'icon-review-star' %}
+                  </span>
+                  <span class="review-count-number">(27)</span>
+                </div>
+                <div class="product-wrap-header-price">
+                  <div class="product-wrap-header-text">
+                    <p>9" x 13" Bake & Roast Pan</p>
+                  </div>
+                  <div class="product-price">
+                    <span class="price-txt">$210.00</span>
+                    <span class="dull-price-txt">$210.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+              <div class="catalog-button-container">
+            <a href="#" class="catalog-button-container-btn">Shop All Bakeware</a>
+        </div>
+     
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper(".mySwiper-product-bakeware", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          // when window width is >= 0px
+          0: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+          },
+          // when window width is >= 575px
+          575: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+          },
+          // when window width is >= 767px
+          750: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+          },
+          // when window width is >= 1024px
+          1000: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+          },
+          // when window width is >= 1440px
+          1500: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+          },
+      },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "catalog-bakeware",
+  "settings":[],
+  "presets": [
+    {
+      "name" : "catalog-bakeware"
+    }
+  ]
+}
+{% endschema %}

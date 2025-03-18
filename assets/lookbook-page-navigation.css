@@ -1,0 +1,43 @@
+.lookbook-page-navigation { background: #F5F4F2; display:flex; padding:19px 0; }
+
+.lookbook-nav-wrap { max-width: 1470px; padding:0 15px; margin-left:auto; margin-right:auto; display:grid; width: 100%; grid-template-columns: 1fr 2fr 1fr; }
+.lookbook-nav-wrap .center-nav { color: #000; text-align: center; font-size: 20px; font-style: normal; font-weight: 500; margin:0 auto;
+  line-height: 110%; letter-spacing: 1px; text-transform: uppercase; }
+
+.lookbook-nav-wrap .left-nav-wrap { display:flex; justify-content: flex-start; }
+.lookbook-nav-wrap .right-nav-wrap { display:flex; justify-content: flex-end; }
+
+.lookbook-nav-wrap .left-nav-wrap a,
+.lookbook-nav-wrap .right-nav-wrap a { display:flex; gap:10px; color: #000; font-size: 12px; font-style: normal; font-weight: 500; line-height: 100%;
+  letter-spacing: 0.6px; text-transform: uppercase; }
+
+
+@media screen and (max-width: 749px) {
+
+  .lookbook-page-navigation { ppadding: 21.21px 0; }
+  
+  .lookbook-nav-wrap { grid-template-columns: 1fr 4fr 1fr; }
+  .lookbook-nav-wrap .center-nav { font-size: 16px; font-style: normal; font-weight: 500; line-height: 110%; letter-spacing: 0.8px; text-transform: uppercase; }
+  
+  .lookbook-nav-wrap .left-nav-wrap a, 
+  .lookbook-nav-wrap .right-nav-wrap a { font-size:0; }
+
+  .image-with-text__content--mobile-center * { text-align:center; }  
+  .lookbook-saadagee-img-txt  .image-with-text__content.image-with-text__content--mobile-center.image-with-text__text--caption { margin-bottom:20px; }
+  
+
+  
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+/* end */

@@ -1,0 +1,37 @@
+.main-list-collections .page-head{
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+.main-list-collections .breadcrumbs{
+  justify-content: center;
+  margin-top: 0;
+}
+.main-list-collections .page-head h5{
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 0 25px;
+}
+.main-list-collections .page-head .title{
+  font-size: 60px;
+  letter-spacing: -1.2px;
+  text-transform: capitalize;
+  margin: 0;
+}
+.main-list-collections .card__information {
+    padding-bottom: 0;
+    padding-top: 30px;
+}
+.main-list-collections .card__heading{
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+.main-list-collections .card__information .sim-link{
+  vertical-align: top;
+}

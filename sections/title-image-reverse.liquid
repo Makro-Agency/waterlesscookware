@@ -1,0 +1,54 @@
+{{ 'common_second.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .title_image{
+    padding: 150px 80px;
+    gap: 20px;
+}
+
+.inner_title_image_one img{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+  .title_image_txt div{
+    padding-top:10px;
+    padding-bottom:40px
+  }
+
+@media only screen and (max-width: 769px) {
+    .title_image{
+        padding: 60px 20px;
+    }
+}
+</style>
+
+   <section class="title_image d-flex tablet-flex-wrap row-reverse">
+        <div class="col-50 tablet_col_100 inner_title_image_one">
+            <img src="https://cdn.shopify.com/s/files/1/0531/9773/4053/files/product_h.png?v=1719238836" alt="product">
+        </div>
+        <div class="col-50 tablet_col_100">
+            <div class="common_h1 title_image_txt"x>
+                <h1>SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME </h1>
+                <div class="common_txt_div">Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+                    molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem
+                    sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet
+                    feugiat lectus.</div>
+            </div>
+            <div class="common_btn full_width_res">
+                <a href="#">SHOP NOW</a>
+            </div>
+        </div>
+    </section>
+
+{% schema %}
+{
+  "name": "title-image-reverse",
+  "settings":[],
+  "presets": [
+    {
+      "name" : "title-image-reverse"
+    }
+  ]
+}
+{% endschema %}

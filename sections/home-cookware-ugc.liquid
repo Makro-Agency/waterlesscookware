@@ -1,0 +1,454 @@
+<link rel="stylesheet" href="{{ 'cookware-ugc-section.css' | asset_url }}" media="print" onload="this.media='all'" />
+<style>
+  .title_video_wrapper:not(.right_video) .video_group {
+    margin-bottom: 60px;
+    display: block;
+    /* height:529px; */
+  }
+  .cover-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+  }
+  .play-button{
+    width:80px;
+    height:80px;
+  }
+  button.play-button {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    padding: 0;
+  }
+  .video_title .main_heading {
+    margin-bottom: 10px;
+  }
+  .video_title .cta_button {
+    margin-top: 40px;
+  }
+  .img-mobile {
+    display: none;
+  }
+  custom-deferred-media.video_group {
+    display: block;
+  }
+  .video_group {
+    position: relative;
+  }
+  .video_group[loaded="true"] .cover-image,
+  .video_group iframe, .video_group video {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .video_group iframe, .video_group video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-width: 0;
+    transition: all 0.5s 0.2s ease, visibility 0.2s;
+    border-radius:20px;
+  }
+  .video_group[loaded="true"] iframe, .video_group[loaded="true"] video {
+    visibility: visible;
+    opacity: 1;
+  }
+  @media screen and (min-width: 990px){
+    .title_video_wrapper.right_video {
+      display: flex;
+      justify-content: space-between;
+    }
+    .title_video_wrapper.right_video > * {
+      flex: 1;
+    }
+    .title_video_wrapper.right_video .video_title {
+      max-width: 550px;
+    }
+    .title_video_wrapper.right_video .video_group {
+      order: 1;
+      max-width: 1160px;
+    }
+    .title_video_wrapper:not(.right_video) .video_title {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .title_video_wrapper:not(.right_video) .video_title > * {
+      flex: 1;
+    }
+  }
+  @media screen and (max-width: 989px){
+    .video_group {
+      margin-bottom: 40px;
+    }
+    .title_video_wrapper {
+      padding: 60px 20px.title_video_wrapper:not(.right_video) .video_group
+    }
+  }
+  @media screen and (max-width: 767px){
+    .img-mobile {
+      display: block;
+    }
+    .img-desktop {
+      display: none;
+    }
+    .play-button svg {
+      height: 70px;
+      width: 70px;
+    }
+    .video_title .cta_button {
+      width: 100%;
+    }
+  }
+</style>
+
+{%- liquid
+  assign video_alt = section.settings.video.alt | default: section.settings.description
+
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+
+  if section.settings.video != null
+    assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+    endif
+  endif
+  if section.settings.video_mobile != null
+    assign ratio_diff_mobile = section.settings.video_video_mobile.aspect_ratio | minus: posterMobile.aspect_ratio | abs
+    if ratio_diff_mobile < 0.01 and ratio_diff_mobile > 0
+    endif
+  endif
+-%}
+
+<div class="cookware-ugc-section page-width section-padding">
+  <div class="banner-group-wrapper">
+    <h2 class="main_heading h2">{{ section.settings.main_heading }}</h2>
+    <div class="banner-group">
+      <div class="banner">
+        <div class="card-content">
+          <a href="{{ section.settings.banner_link }}">
+            <h4 class="heading h4">{{ section.settings.banner_heading }}</h4>
+            <p class="desc">{{ section.settings.banner_description }}</p>
+          </a>
+          <a href="{{ section.settings.banner_link }}" class="link makro--link">
+            {{- section.settings.banner_button_text }}
+            {% render 'btn-arrow-right' -%}
+          </a>
+        </div>
+        <div class="image-card">
+          <img
+            src="{{ section.settings.desktop_image | img_url: 'master' }}"
+            alt="{{ section.settings.banner_heading }}" width="auto" height="auto"
+            class="desktop-img"
+          >
+          <img
+            src="{{ section.settings.mobile_image | img_url: 'master' }}"
+            alt="{{ section.settings.banner_heading }}" width="auto" height="auto"
+            class="mobile-img"
+          >
+        </div>
+      </div>
+
+      <div class="banner">
+        <div class="card-content">
+          <a href="{{ section.settings.banner_link_2 }}">
+            <h4 class="heading h4">{{ section.settings.banner_heading_2 }}</h4>
+            <p class="desc">{{ section.settings.banner_description_2 }}</p>
+          </a>
+          <a href="{{ section.settings.banner_link_2 }}" class="link makro--link">
+            {{- section.settings.banner_button_text_2 }}
+            {% render 'btn-arrow-right' -%}
+          </a>
+        </div>
+        <div class="image-card">
+          <img
+            src="{{ section.settings.desktop_image_2 | img_url: 'master' }}"
+            alt="{{ section.settings.banner_heading_2 }}"
+            class="desktop-img"
+          >
+          <img
+            src="{{ section.settings.mobile_image_2 | img_url: 'master' }}"
+            alt="{{ section.settings.banner_heading_2 }}"
+            class="mobile-img"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-group-wrapper title_video_wrapper {{ section.settings.videoLayout }}">
+    {%- for block in section.blocks -%}
+      <div class="video-group">
+        <custom-deferred-media class="video_group">
+          <div class="cover-image">            
+            {%- liquid                
+              assign sizes = '(min-width: 1441px) 16.66667vw, (min-width: 1200px) 23vw, (min-width: 750px) 44.27084vw, 76.9231vw'
+              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+            -%} 
+            {%- if block.settings.cover_image != blank -%}            
+              {%- liquid
+                assign height = block.settings.cover_image.width | divided_by: block.settings.cover_image.aspect_ratio | round
+              -%} 
+              {% assign dek_class = 'img-desktop' %}
+              {%- if block.settings.cover_image_mobile != blank -%}
+                {% assign dek_class = '' %}
+              {%- endif -%}
+              {{
+                block.settings.cover_image
+                | image_url: width: 3840
+                | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: dek_class
+              }}{% comment %}
+              <img
+                src="{{ block.settings.cover_image | image_url: width: 3840 }}"
+                class="img-desktop"
+                alt="{{ block.settings.title }}"
+              >{% endcomment %}
+            {%- endif -%}
+            {%- if block.settings.cover_image_mobile != blank -%}
+              {{
+                block.settings.cover_image_mobile
+                | image_url: width: 750
+                | image_tag: loading: 'lazy', height:  block.settings.cover_image_mobile.height, sizes: sizes, widths: widths, class: 'img-mobile'
+              }}{% comment %}
+              <img
+                src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}"
+                class="img-mobile"
+                alt="{{ block.settings.title }}"
+              >{% endcomment %}
+            {%- endif -%}
+            <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+              </svg>
+            </button>
+          </div>
+          <template>
+            {%- if block.settings.video == blank and block.settings.video_url != blank -%}
+              <iframe
+                src="{{ block.settings.video_url | append: '?autoplay=1' }}"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            {%- else -%}
+              {{
+                block.settings.video
+                | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true
+              }}
+            {%- endif -%}
+          </template>
+        </custom-deferred-media>
+        <div class="auther-content">
+          {%- if block.settings.reviews_image != blank -%}
+            <div class="reviews"><img src="{{ block.settings.reviews_image | image_url: width: 128 }}" alt="" width="128" height="24" loading="lazy" /></div>
+          {% endif %}
+          <div class="auther-message">
+            <h2 class="heading h2">{{ block.settings.auther_message }}</h2>
+          </div>
+          <div class="auther-details">
+            {%- if block.settings.auther_image != blank -%}
+              <div class="auther-image"><img src="{{ block.settings.auther_image | image_url: width: 100 }}" alt="" width="80" height="80" loading="lazy" /></div>
+            {% endif %}
+            <div class="auther-wrapper">
+              {%- if block.settings.auther_name != blank -%}
+                <div class="auther-name">{{ block.settings.auther_name }}</div>
+              {% endif %}
+              {%- if block.settings.auther_verification != blank -%}
+                <div class="auther-verification">
+                  <span class="check-icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="12" height="12" rx="6" fill="#A6BB3A"/></rect>
+                      <path d="M3.375 6.00984L5.11734 7.80469L8.625 4.19531" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+                    </svg>
+                  </span>
+                  <span>{{ block.settings.auther_verification }}</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Cookware UGC",
+  "settings": [
+  {
+    "type": "text",
+    "id": "main_heading",
+    "label": "Main Heading",
+    "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+  },
+   {
+      "type":"header",
+      "content":"Header Banner Block 1"
+    },
+    {
+      "type": "text",
+      "id": "banner_heading",
+      "label": "Banner Heading",
+      "default": "Cook Like a Pro"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_description",
+      "label": "Banner Description",
+      "default": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection."
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "banner_button_text",
+      "label": "Button Text",
+      "default": "Shop Cookware"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+     {
+      "type":"header",
+      "content":"Header Banner Block 2"
+    },
+    {
+      "type": "text",
+      "id": "banner_heading_2",
+      "label": "Banner Heading 2",
+      "default": "Cook Like a Pro"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_description_2",
+      "label": "Banner Description 2",
+      "default": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection."
+    },
+    {
+      "type": "url",
+      "id": "banner_link_2",
+      "label": "Banner Link 2",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "banner_button_text_2",
+      "label": "Button Text 2",
+      "default": "Shop Cookware"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_2",
+      "label": "Desktop Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_2",
+      "label": "Mobile Image 2"
+    }
+  ],
+  "blocks": [
+
+    {
+      "type": "video_block",
+      "name": "Video Block",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_video_looping",
+          "label": "Play video on loop",
+          "default": false
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Mobile video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "URL"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url_mobile",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "Mobile URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover image"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image_mobile",
+          "label": "Cover image for mobile"
+        },
+       {
+        "type": "image_picker",
+        "id": "reviews_image",
+        "label": "Reviews Image"
+      },
+      {
+        "type": "textarea",
+        "id": "auther_message",
+        "label": "Author Message",
+        "default": "Great cookware, makes the food amazing! Easy to clean! Love it!"
+      },
+      {
+        "type": "image_picker",
+        "id": "auther_image",
+        "label": "Author Image"
+      },
+      {
+        "type": "text",
+        "id": "auther_name",
+        "label": "Author Name",
+        "default": "Eileen M."
+      },
+      {
+        "type": "text",
+        "id": "auther_verification",
+        "label": "Author Verification",
+        "default": "Verified Buyer"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Cookware UGC"
+    }
+  ]
+}
+{% endschema %}

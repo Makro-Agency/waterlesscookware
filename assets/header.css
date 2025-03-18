@@ -1,0 +1,368 @@
+{% comment %} custom header css {% endcomment %}
+
+.header{
+  width: 100%;
+  /* max-width: 1360px; */
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  /* position:relative; */
+  background: #FCFBF7;
+
+}
+
+.header-logo-megamenu{
+  display:flex;
+  gap:40px;
+  align-items: center;
+}
+.header-search-icons-header{
+  display:flex;
+  gap:30px;
+  align-items: center;
+}
+.search-modal__content{
+  background: #FCFBF7;
+  width: 65%;
+  left: -80px;
+}
+.search-modal__form{
+  width: 99%;
+}
+@media only screen and (max-width: 1340px) and (min-width: 1200px) {
+  .header__icons {
+    gap: 13px;
+  }
+  .header-logo-megamenu {
+    gap: 20px;
+  }
+  .header-search-icons-header {
+    gap: 10px;
+  }
+  details-modal.header__search {
+    margin-left: 30px;
+  }
+  .header__icon--account {
+    padding-left: 15px;
+}
+}
+
+@media only screen and (max-width: 1440px) {
+.header{
+   padding:0px 40px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .header{
+     padding:16px 20px;
+  }
+  .header__icons .desktop-localization-wrapper{
+    display:none ;
+}
+  .header-search-icons-header{
+    gap:20px;
+  }
+  .header-logo-megamenu{
+    width:100%;
+    justify-content: center;
+  }
+  .search-modal__form{
+  width:100%;
+}
+}
+@media only screen and (max-width: 768px) {
+  .header-search-icons-header{ justify-content:flex-end; }
+  .header .header-row{
+    margin:0; 
+    width:100%;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .header-logo-megamenu{
+    display: flex;
+    justify-content: center; 
+  }
+  .header__heading-logo {
+    max-width: 71.35px !important;
+  }
+ 
+}
+
+{% comment %} end custom header css {% endcomment %}
+
+.list-menu__item{
+  font-size: 14px;
+  /* font-family: Jost; */
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.header__icon, .header__icon--cart .icon{
+  height: 2rem;
+}
+.transparent-header .header-wrapper--border-bottom {
+  border-bottom: none;
+}
+.transparent-header #MainContent{
+  margin-top: -70px;
+}
+.transparent-header .header-wrapper, 
+.transparent-header .list-menu__item, 
+.transparent-header .header__icon, 
+.transparent-header .header__heading-logo{
+  transition: all 0.3s ease 0s;
+}
+.transparent-header .header__icon svg, .transparent-header .header__menu-item .icon-caret{
+  transition: all 0s ease 0s;
+}
+.transparent-header .shopify-section-header-sticky:not(.scrolled-past-header) .header-wrapper:not(:hover){
+  background: transparent;
+}
+.transparent-header .shopify-section-header-sticky:not(.scrolled-past-header) .header-wrapper:not(:hover) .header__menu-item-main, 
+.transparent-header .shopify-section-header-sticky:not(.scrolled-past-header) .header-wrapper:not(:hover) .header__icon{
+  color: #fff;
+}
+.transparent-header .shopify-section-header-sticky:not(.scrolled-past-header) .header-wrapper:not(:hover) .header__heading-logo{
+  filter: brightness(0) invert(1);
+}
+.list-menu__item#HeaderDrawer-sale, #HeaderDrawer-sale, #HeaderMenu-sale, .transparent-header .shopify-section-header-sticky:not(.scrolled-past-header) .list-menu__item#HeaderMenu-sale{
+  color: #BC0000;
+}
+.section-header .list-menu--disclosure{
+  width: 22rem;
+  left: -23px;
+  border: none;
+}
+.header__submenu.list-menu {
+  padding: 2.4rem 0;
+}
+.header__submenu .header__menu-item{
+  padding: 9px 4.3rem;
+}
+.header__submenu .li-view-all .header__menu-item{
+  padding-top: 14px;
+}
+.header__submenu .header__menu-item:hover{
+  text-decoration: underline;
+}
+.menu-drawer{
+  width: 100vw;
+  padding: 0;
+  border-width: 0;
+  border-top: 1px solid #F5F4F2;
+}
+.menu-drawer__navigation {
+    padding: 0;
+}
+.menu-drawer summary.menu-drawer__menu-item, .menu-drawer .list-menu__item{
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 15px;
+}
+.menu-drawer .list-menu__item{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0.6px;
+  position: relative;
+}
+.menu-drawer .list-menu__item.menu-drawer-item-one{
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.menu-drawer .menu-drawer__menu li:not(:last-child) .list-menu__item:after, .menu-drawer__close-button:after{
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  background: #F5F4F2;
+  height: 1px;
+}
+.menu-drawer__menu-item>.icon-arrow{
+  right: 15px;
+}
+.menu-drawer__close-button{
+  margin-top: 0;
+  padding: 20px 15px;
+  position: relative;
+      font-family: Jost;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+.js .menu-drawer__menu li {
+  margin-bottom: 0;
+}
+.js .menu-drawer__submenu{
+  border-left: none;
+}
+.menu-drawer .drawer-submenu-head .list-menu__item{
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.44px;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.drawer-submenu-head .sim-link{
+  margin-left: auto;
+}
+.drawer-submenu-head .sim-link path, .menu-drawer__close-button path{
+  stroke: #000;
+}
+.menu-drawer__close-button svg{
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+.menu-drawer__menu-item--active, .menu-drawer__menu-item:focus, .menu-drawer__close-button:focus, .menu-drawer__menu-item:hover, .menu-drawer__close-button:hover{
+  background-color: transparent;
+}
+.header--has-social .menu-drawer__utility-links {
+  padding: 20px 15px;
+  background-color: transparent;
+}
+.menu-drawer__account{
+  padding: 0 30px 0 0;
+  margin-right: 30px;
+  border-right: 1px solid #D9D5CE;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+.menu-drawer__account, .drawer__account_wishlist .swym-wishlist{
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.li-view-all .header__menu-item path{
+  stroke: #000;
+}
+.drawer__account_wishlist{
+  display: flex;
+}
+.drawer__account_wishlist .swym-wishlist svg{
+  vertical-align: middle;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+.search-modal__form .field:after, .search-modal__form .field:before{
+  display: none;
+}
+
+.search-modal__form .predictive-search{
+  border-top: 1px solid rgb(0 0 0 / 10%);
+}
+
+@media screen and (min-width: 990px){
+  .header--middle-left .header__inline-menu {
+    margin-left: 60px;
+  }
+  /* .section-header .header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .section-header .header__menu-item-main{
+    padding: 25px 20px;
+  } */
+  .section-header summary.header__menu-item-main{
+    padding-right: 27px;
+  }
+}
+@media screen and (max-width: 1199px){
+  .header__heading-logo {
+    max-width: 220px;
+  }
+  .section-header header-drawer {
+    display: flex;
+    align-items: center;
+  }
+  .section-header .header__inline-menu{
+    display: none;
+  }
+  .header--middle-left{
+    grid-template-areas: "left-icons heading icons";
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .section-header .header__heading, .header__heading-link {
+    text-align: center;
+    justify-self: center;
+  }
+  .header__icon--summary > span span {
+    color: #fff;
+    padding-left: 40px;
+    color: var(--Black, #0D0D0D);
+    font-family: "Proxima Nova";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  .shopify-section-header-sticky.menu-open .header__icon--summary > span span , 
+  .shopify-section-header-sticky:hover .header__icon--summary > span span,
+  .shopify-section-header-sticky.scrolled-past-header .header__icon--summary > span span {
+    color: #0d0d0d;
+  }
+  .template-index .header__icon--summary > span span{
+    color: #fff;
+  }
+  .shopify-section-header-sticky.menu-open .header.index-header .header__icon svg {
+    top: 33%;
+  }
+  .header__icon--menu svg.icon.icon-hamburger {
+    margin-top: 0;
+  }
+  .mobile_navabar .ly-breakpoint-1 {
+    /* margin-bottom: 60px !important; */
+  }
+}
+
+@media screen and (max-width: 749px){
+  /* .header__heading-logo {
+    max-width: 200px;
+  } */
+  .header__icon:hover .icon, .modal__close-button:hover .icon {
+    transform: scale(1);
+  }
+  .header__icon--cart .icon, .header__icon--search{
+    width: 2.4rem;
+  }
+  .transparent-header #MainContent {
+    margin-top: -50px;
+  }
+  .search-modal__form .field__input{
+    border: none;
+  }
+  .search-modal__form .predictive-search {
+    border: none;
+    padding-top: 20px;
+  }
+  .header-search-icons-header .header__icons {
+    gap: 0;
+  }
+  .header__icon span {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 374px){
+  .header__heading-logo {
+    max-width: 170px;
+  }
+  .logo-container {
+    height: 40px;
+  }
+}
+
+/* /blogs/recipes/pumpkin-swirl-brownies */
+.template-article .section-header { display: block; }

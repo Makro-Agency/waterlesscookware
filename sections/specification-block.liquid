@@ -1,0 +1,72 @@
+{{ 'specification-block.css' | asset_url | stylesheet_tag }}
+<div class="specification">
+<div class="specification-block">
+  {% if section.settings.image != blank %}
+    <div class="image-container">
+        <img src="{{ section.settings.image | img_url:'' }}" alt="{{ block.settings.statement_title }}">
+    </div>
+    <div class="content-container">
+        <h2>{{ section.settings.title }}</h2>
+        {% for block in section.blocks %}
+        <div class="content-block">
+           {% if block.settings.icon_svg != blank %}
+            <div class="icon-container">
+               <img src="{{ block.settings.icon_svg | img_url:'' }}" alt="{{ block.settings.statement_title }}">
+            </div>
+          {% endif %}
+            <div class="text-container">
+                <h3>{{ block.settings.statement_title }}</h3>
+                <p>{{ block.settings.statement_text }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  {% endif %}
+</div>
+</div>
+{% schema %}
+{
+  "name": "Specification Block",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "icon_svg",
+          "label": "SVG Icon"
+        },
+        {
+          "type": "text",
+          "id": "statement_title",
+          "label": "Statement Title"
+        },
+        {
+          "type": "textarea",
+          "id": "statement_text",
+          "label": "Statement Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Specification Block",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

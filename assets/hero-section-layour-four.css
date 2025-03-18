@@ -1,0 +1,199 @@
+#splited-image-hero-section {
+    position: relative;
+    z-index: 1;
+    /* min-height: 900px; */
+    height:85vh;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container {
+    height: 100%;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-1 {
+    /* background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/hero-section-layout41.png'); */
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-2 {
+    /* background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/hero-section-layout42.png'); */
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: linear-gradient(218.44deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 78.94%);
+    opacity:0.5;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-container {
+    z-index: 3;
+
+    max-width: 680px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    height: 100%;
+
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-container-relative {
+    position: relative;
+    height: 100%;
+}
+
+/* box */
+
+#splited-image-hero-section .full-blend-hero-section-container-box {
+    /* padding: 40px; */
+    /* background-color: #FCFBF7; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 450px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+    z-index: 5;
+}
+
+#splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box,#splited-image-hero-section .splited-image-hero-section-container-grid-item-1 .full-blend-hero-section-container-box {
+    left: 50px;
+}
+
+#splited-image-hero-section .full-blend-hero-section-container-box-content-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+#splited-image-hero-section .full-blend-hero-section-container-box-heading-container h1 {
+    font-family: Cellofy;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #FCFBF7;
+    margin: 0;
+    font-size: 40px;
+
+
+}
+
+#splited-image-hero-section .full-blend-hero-section-container-box-text-container p {
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #FCFBF7;
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+}
+
+#splited-image-hero-section .full-blend-hero-section-container-box-btn {
+    text-decoration: none;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 100px;
+    background-color: #606D22;
+    color: #FCFBF7;
+    width: 161px;
+}
+#splited-image-hero-section .full-blend-hero-section-container-box-btn:hover{
+  background:#c3d957;
+}
+
+
+
+@media only screen and (max-width : 1400px) {
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-container {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box{
+        left: 20px;
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-1,
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #splited-image-hero-section .splited-image-hero-section-container-grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+    }
+
+    #splited-image-hero-section .full-blend-hero-section-container-box,
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box{
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%,-50%);
+    }
+  #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box, #splited-image-hero-section .splited-image-hero-section-container-grid-item-1 .full-blend-hero-section-container-box {
+    left: 20px;
+    transform: translate(0px, -50%);
+    padding: 0;
+  }
+  #splited-image-hero-section {
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+    #splited-image-hero-section {
+        height: 1000px;
+    }
+
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-1 {
+        background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/hero-section-layout41-mobile.png');
+    }
+
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 {
+        background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/hero-section-layout42-mobile.png');
+    }
+    #splited-image-hero-section .full-blend-hero-section-container-box {
+        position: relative;
+        padding: 40px 20px;
+        width: 100%;
+        bottom: auto;
+    }
+    #splited-image-hero-section .splited-image-hero-section-container-grid-item-2 .full-blend-hero-section-container-box, #splited-image-hero-section .splited-image-hero-section-container-grid-item-1 .full-blend-hero-section-container-box {
+    left: 5px;
+    }
+}

@@ -1,0 +1,299 @@
+{{ 'video-with-text.css' | asset_url | stylesheet_tag }}
+{% style %}
+     custom-deferred-media.video_group {
+      display: block;
+    }
+   .video_group {
+      position: relative;
+    }
+   .video_group[loaded="true"] .cover-image,
+    .video_group iframe, .video_group video {
+      visibility: hidden;
+      opacity: 0;
+    }
+   .video_group iframe, .video_group video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+      z-index: 1;
+      border-width: 0;
+      transition: all 0.5s 0.2s ease, visibility 0.2s;
+      border-radius:10px;
+    }
+  .why-video-column-inner{ height:100%; position:relative; }
+   .video_group[loaded="true"] iframe, .video_group[loaded="true"] video {
+      visibility: visible;
+      opacity: 1;
+    }
+  custom-deferred-media.video_group{ display:block; height:100%; }
+  .cover-image{ position:relative; height:100%; }
+.play-button.video-wrapper__play-button{
+        background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    padding: 0;
+}
+
+  {% endstyle %}
+<div id="video-with-text-why">
+  <div class="video-with-text-why">
+    <div class="video-with-text-why-inner">
+      <div class="why-video-text-main">
+        <div class="why-video-header-text">
+          <div class="why-video-header-text-inner-first">
+            <span>{{ section.settings.subtitle }}</span>
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+          <div class="why-video-header-text-inner-second">
+            {% for block in section.blocks %}
+              {% if block.type == 'tip' %}
+                <div class="why-border-doted-text-main">
+                  <div class="why-border-doted">
+                    <span>{{ forloop.index }}</span>
+                  </div>
+                  <div class="why-border-doted-text{% if forloop.last %} why-border-doted-text-last-child{% endif %}">
+                    <h4>{{ block.settings.tip_title }}</h4>
+                    <p>{{ block.settings.tip_description }}</p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="catalog-icon-with-text">
+          {% for block in section.blocks %}
+            {% if block.type == 'benefit' %}
+              <div class="banner-icon-text">
+                {% if block.settings.icon %}
+                  {{ block.settings.icon | img_tag: block.settings.benefit_text }}
+                {% endif %}
+                <span class="catalog-banner-icon-text">{{ block.settings.benefit_text }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <a href="{{ section.settings.button_link }}" class="button cta_button  display_none">{{ section.settings.button_text }}</a>
+      </div>
+      <div class="why-video-column">
+        <div class="why-video-column-inner">
+
+
+            <custom-deferred-media class="video_group">
+                  <div class="cover-image">
+                     {%- if section.settings.cover_image != blank -%}
+                     <img src="{{ section.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+                     {%- endif -%}
+                
+                     <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+                        </svg>
+                     </button>
+                        <a href="{{ section.settings.product_link }}" class="why-video-btn-eye">
+                    {{ section.settings.product_link_text }}
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                          d="M0.875 6.9999C0.875 6.9999 2.7125 2.7124 7 2.7124C11.2875 2.7124 13.125 6.9999 13.125 6.9999C13.125 6.9999 11.2875 11.2874 7 11.2874C2.7125 11.2874 0.875 6.9999 0.875 6.9999Z"
+                          stroke="#606D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                          d="M7 8.8374C8.01482 8.8374 8.8375 8.01473 8.8375 6.9999C8.8375 5.98508 8.01482 5.1624 7 5.1624C5.98518 5.1624 5.1625 5.98508 5.1625 6.9999C5.1625 8.01473 5.98518 8.8374 7 8.8374Z"
+                          stroke="#606D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  </div>
+                   <template>
+                    {%- if section.settings.video == null -%}
+                        {%- liquid
+                        assign video_id = section.settings.video.id | default: section.settings.video_url.id
+                        assign video_alt = section.settings.video.alt | default: section.settings.description1
+                        assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+                      -%}
+                        {%- liquid
+                          assign loop = ''
+                          if section.settings.enable_video_looping
+                            assign loop = '&loop=1&playlist=' | append: video_id
+                          endif
+                        -%}
+                        
+                          {%- if section.settings.video_url.type == 'youtube' -%}
+                            <iframe
+                              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
+                              class="js-youtube"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ section.settings.description1 | escape }}"
+                            ></iframe>
+                          {%- else -%}
+                            <iframe
+                              src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
+                              class="js-vimeo"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ section.settings.description1 | escape }}"
+                            ></iframe>
+                          {%- endif -%}
+                    {% else %}
+                     {{ section.settings.video | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true }}
+                     {%- endif -%}
+                  </template>
+               </custom-deferred-media>
+          
+           <!-- <img src="{{ section.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+          <video autoplay loop muted playsinline height="700px" class="background-video" poster=" {{ section.settings.cover_image | image_url: width: 3840 }} ">
+            <source src="{{ section.settings.video_url }}" type="video/mp4">
+          </video> -->
+         
+          <!-- <div class="why-vide0-btn">
+         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z"
+                  fill="white" fill-opacity="0.6" />
+            </svg>
+          </div> -->
+      
+        </div>
+      </div>
+      <a href="{{ section.settings.button_link }}" class="button cta_button full-blend-hero-section-container-box-btn mobile_none">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video with Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Chef's Tips"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Cook with us rorem bsum dolor amet"
+    },
+   {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "Play video on loop",
+            "default": false
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "video_url",
+            "id": "video_url",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "URL"
+          },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Try this Method"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+      {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image"
+          },
+    {
+      "type": "text",
+      "id": "product_link_text",
+      "label": "Product Link Text",
+      "default": "View Products"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tip",
+      "name": "Tip",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tip_title",
+          "label": "Tip Title",
+          "default": "Dolor sit amet, consectetur elit"
+        },
+        {
+          "type": "textarea",
+          "id": "tip_description",
+          "label": "Tip Description",
+          "default": "Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Benefit Icon"
+        },
+        {
+          "type": "text",
+          "id": "benefit_text",
+          "label": "Benefit Text",
+          "default": "Benefit"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video with Text",
+      "blocks": [
+        {
+          "type": "tip"
+        },
+        {
+          "type": "tip"
+        },
+        {
+          "type": "tip"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

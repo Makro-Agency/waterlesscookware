@@ -1,0 +1,234 @@
+{% if section.settings.title != blank or section.settings.des != blank or section.settings.title-1 != blank or section.settings.des-1 != blank or section.settings.title-2 != blank or section.settings.des-2 != blank or section.blocks.size > 0 %}
+  <link rel="stylesheet" href="{{ 'resources-guide.css' | asset_url }}" media="print" onload="this.media='all'" />
+  <noscript>{{ 'resources-guide.css' | asset_url | stylesheet_tag }}</noscript>
+  <style>
+   .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+  
+    .accordion-item.open .accordion-content {
+      max-height: 500px; /* Adjust this value based on your content size */
+      opacity: 1;
+      padding:20px 40px 20px 0;
+      margin-top: 0;
+      display: block;
+      background: transparent;
+      border: none;
+    }
+  
+    .accordion-item {
+      transition: all 0.3s ease-in-out;
+    }
+    .service-block  img{
+      max-width: max-content;
+      width: auto;
+    }
+  </style>
+  <div class="resources-guide-section page-width">
+  
+    {% if section.settings.title != blank or section.settings.des != blank or section.settings.title-1 != blank or section.settings.des-1 != blank or section.settings.title-2 != blank or section.settings.des-2 != blank %}
+    <div class="resources-guide-wrapper">
+      
+      {% if section.settings.title != blank or section.settings.des != blank %}
+      <div class="title-wrapper">
+        {% if section.settings.title != blank %}
+          <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.des != blank %}
+          <p class="desc">{{ section.settings.des }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+  
+      <div class="contact-block small-hide">
+        <h2 class="main_heading h2">{{ section.settings.heading }}</h2>
+        <p class="desc">{{ section.settings.description }}</p>
+        <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="button cta_button btn-light">{{ section.settings.button_text }}</a>
+      </div>
+    </div>
+    {% endif %}
+
+    {% assign faq_blocks = section.blocks | where:'type','faq' %}
+    {% if faq_blocks.size > 0 %}
+      <div class="collapsible-content-wrapper">
+      {% assign counter = 0 %}
+     {% for block in faq_blocks %}
+      {% if block.settings.que != blank and block.settings.ans != blank %}
+      {% assign counter = counter | plus:1 %}
+      <div class="accordion-item {% if counter == 1 %}open{% endif %}">
+          <button class="accordion-button">
+              <h3 class="heading h3">{{ block.settings.que }}</h3>
+              <span class="plus-icon">{% render 'icon-down' %}</span>
+              <span class="minus-icon">{% render 'icon-top' %}</span>
+          </button>
+          <div class="accordion-content">
+              {{ block.settings.ans }}
+             {{ block.settings.ans1 }}
+          </div>
+      </div>
+      {% endif %}
+  {% endfor %}
+     
+    </div>
+    {% endif %}
+      <div class="contact-block large-up-hide medium-hide">
+        {% if section.settings.heading != blank %}
+          <h2 class="main_heading h2">{{ section.settings.heading }}</h2>
+        {% endif %}
+       {% if section.settings.description != blank %}
+          <p class="desc animate__animated animate__fadeInDown">{{ section.settings.description }}</p>
+        {% endif %}
+         {% if section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="button cta_button btn-light">{{ section.settings.button_text }}</a>
+          {% endif %}
+      </div>
+    
+  </div>
+  {% assign bottom_blocks = section.blocks | where:'type','bottom-block' %}
+    {% if bottom_blocks.size > 0 %}
+    <div class="service-block page-width">
+      {% for block in bottom_blocks %}
+      <div class="service-list">
+        {% if block.settings.icon != blank %}
+        <div class="service-icon">
+            <img src="{{ block.settings.icon | image_url: width: 50 }}" width="50" height="50px" loading="lazy" alt="{{ block.settings.title }}">
+        </div>
+        {% endif %}
+        <div class="service-content">
+          {% if block.settings.title != blank %}
+          <a href="{{ block.settings.link | default:'#' }}"><h2 class="main_heading h2">{{ block.settings.title }}</h2></a>
+          {% endif %}
+          {% if block.settings.des != blank %} <a href="{{ block.settings.link }}"><p class="desc">{{ block.settings.des }}</p></a>{% endif %}
+          {% if block.settings.btn-text != blank %}
+          <a href="{{ block.settings.link | default:'#' }}" class="link makro--link">
+            {{ block.settings.btn-text }} {% render 'btn-arrow-right' %}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+  <script>
+    document.querySelectorAll('.accordion-item').forEach((accordionItem) => {
+      const content = accordionItem.querySelector('.accordion-content');
+      
+      accordionItem.addEventListener('click', function() {
+        if (accordionItem.classList.contains('open')) {
+          accordionItem.classList.remove('open');
+          content.style.maxHeight = null;
+        } else {
+          accordionItem.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+  
+  {% endif %}
+  
+  {% schema %}
+    {
+      "name": "Resources & Guides",
+      "class": "makro-resources-guide section-padding",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "des",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Need Help to Get Started?"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Praesent auctor purus luctus, ac scelerisque ante pulvinar. Class aptent taciti sociosqu ad litora."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Contact Us"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "faq",
+          "name": "faq",
+          "settings": [
+            {
+              "type": "text",
+              "id": "que",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "ans",
+              "label": "Description"
+            },
+              {
+              "type": "richtext",
+              "id": "ans1",
+              "label": "Description"
+            }
+          ]
+        },
+        {
+          "type": "bottom-block",
+          "name": "bottom-block",
+          "limit": 3,
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Icon"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "des",
+              "label": "Description"
+            },
+            {
+              "type": "text",
+              "id": "btn-text",
+              "label": "Button Text"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link"
+            }
+          ]
+        },
+      ],
+      "presets": [
+        {
+          "name": "Resources & Guides"
+        }
+      ]
+    }
+  {% endschema %}

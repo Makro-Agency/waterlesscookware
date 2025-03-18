@@ -1,0 +1,527 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'lookbook-pastel-hero.css' | asset_url | stylesheet_tag: preload: true }}
+
+{%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
+
+  {%- if section.settings.img_mobile != blank -%}
+    {%- assign imageObj = section.settings.img_mobile -%}
+  {%- else -%}
+    {%- assign imageObj = section.settings.image -%}
+  {%- endif -%}
+  
+  {%- style -%}
+    @media screen and (max-width: 749px) {
+      #Banner-{{ section.id }}::before,
+      #Banner-{{ section.id }} .banner__media::before,
+      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
+        padding-bottom: {{ 1 | divided_by: imageObj.aspect_ratio | times: 100 }}%;
+        content: '';
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      #Banner-{{ section.id }}::before,
+      #Banner-{{ section.id }} .banner__media::before {
+        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+        content: '';
+        display: block;
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- style -%}
+  #Banner-{{ section.id }}::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+{%- endstyle -%}
+
+
+
+{%- liquid
+  assign full_width = '100vw'
+  assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+
+  if section.settings.image_behavior == 'ambient'
+    assign half_width = '100vw'
+    assign full_width = '120vw'
+    assign stacked_sizes = '(min-width: 750px) 60vw, 120vw'
+    assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+  elsif section.settings.image_behavior == 'fixed'
+    assign half_width = '100vw'
+    assign stacked_sizes = '100vw'
+  else
+    assign half_width = '100vw'
+    assign stacked_sizes = '(min-width: 750px) 100vw'
+  endif
+-%}
+
+<div class="sec-main-wrapper section-{{ section.id }}-padding">
+  <div
+    id="Banner-{{ section.id }}"
+    class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %} banner--desktop-transparent{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  >
+    {%- if section.settings.image != blank -%}
+      <div class="banner__media media{% if section.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}{% if section.settings.img_mobile != blank %} small-hide{% endif %}">
+        {%- assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio -%}
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            preload: 'true',
+            width: section.settings.image.width,
+            height: image_height,
+            sizes: '100vw',
+            widths: widths
+        }}
+      </div>
+    {%- else -%}
+      <div class="banner__media media placeholder{% if section.settings.img_mobile != blank %} small-hide{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    
+    {%- if section.settings.img_mobile != blank -%}
+      <div class="banner__media media{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} medium-hide large-up-hide">
+        {%- assign image_height_2 = section.settings.img_mobile.width | divided_by: section.settings.img_mobile.aspect_ratio-%}
+        {{
+          section.settings.img_mobile
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            preload: 'true',
+            width: section.settings.img_mobile.width,
+            height: image_height_2,
+            sizes: '100vw',
+            widths: widths
+        }}
+      </div>
+    {%- endif -%}
+    
+    <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="banner__box content-container content-container--full-width-mobile color-background-1 gradient">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            
+            {%- when 'heading' -%}
+              <h2
+                class="banner__heading inline-richtext h1 heading--{{ block.id }}" {{ block.shopify_attributes }}>
+                {{ block.settings.heading }}
+              </h2>
+
+            {% style %}
+               @media screen and (min-width: 750px) {
+                 {%- if block.settings.heading_color != blank and block.settings.heading_color != 'rgba(0,0,0,0)' -%}
+                  .lookbook-pastel-hero .banner__content .heading--{{ block.id }}{
+                    color: {{ block.settings.heading_color }} !important;
+                  }
+                {%- endif -%}
+               }
+               @media screen and (max-width: 749px) {
+                  .lookbook-pastel-hero .banner__content .heading--{{ block.id }}{
+                    color: {{ block.settings.mobi_heading_color }} !important;
+                  }                   
+               }
+             {% endstyle %}
+
+            
+            {%- when 'text' -%}
+              <div class="banner__text rte body txt-clr-{{ block.id }}" {{ block.shopify_attributes }}>
+                <p>{{ block.settings.text }}</p>
+              </div>
+
+             {% style %}
+               @media screen and (min-width: 750px) {
+
+                {%- if block.settings.text_color != blank and block.settings.text_color != 'rgba(0,0,0,0)' -%}                
+                  .lookbook-pastel-hero .banner__content .txt-clr-{{ block.id }} p{
+                    color: {{ block.settings.text_color }} !important;
+                  } 
+                {%- endif -%}
+                 
+               }
+               @media screen and (max-width: 749px) {
+                  .lookbook-pastel-hero .banner__content .txt-clr-{{ block.id }} p{
+                    color: {{ block.settings.mobi_text_color }} !important;
+                  }                   
+               }
+             {% endstyle %}
+            
+            {%- when 'buttons' -%}
+              <div class="banner__buttons btn-colors-{{ block.id }}" {{ block.shopify_attributes }}>
+                {%- if block.settings.button_label_1 != blank -%}
+                  <a
+                    {% if block.settings.button_link_1 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_1 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_1 | escape -}}
+                  </a>
+                  {% if block.settings.button_style_secondary_1 == false %}
+                    {% style %}
+                      {%- if block.settings.btn_bg_color != blank and block.settings.btn_bg_color != 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button{
+                          background-color: {{ block.settings.btn_bg_color }};
+                        }
+                      {%- elsif block.settings.btn_bg_color == 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button{
+                          background-color: {{ block.settings.btn_bg_color }};
+                          outline: 1px solid;
+                        }
+                      {%- endif -%}
+                      {%- if block.settings.btn_hover_bg_color != blank and block.settings.btn_hover_bg_color != 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button:hover{
+                          background-color: {{ block.settings.btn_hover_bg_color }};
+                        }
+                      {%- elsif block.settings.btn_hover_bg_color == 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button:hover{
+                          background-color: {{ block.settings.btn_hover_bg_color }};
+                          outline: 1px solid;
+                        }
+                      {%- endif -%}
+                      {%- if block.settings.btn_txt_color != blank and block.settings.btn_txt_color != 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button{
+                          color: {{ block.settings.btn_txt_color }};
+                        }
+                      {%- endif -%}
+                      {%- if block.settings.btn_hover_txt_color != blank and block.settings.btn_hover_txt_color != 'rgba(0,0,0,0)' -%}
+                        .lookbook-pastel-hero .btn-colors-{{ block.id }} .button:hover{
+                          color: {{ block.settings.btn_hover_txt_color }};
+                        }
+                      {%- endif -%}
+                    {% endstyle %}
+                  {% endif %}
+                {%- endif -%}
+              </div>
+        
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "tag": "section",
+  "class": "section lookbook-pastel-hero",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.image-banner.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.image-banner.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.image-banner.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.image-banner.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.image-banner.settings.image_height.label",
+      "info": "t:sections.image-banner.settings.image_height.info"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+        }
+      ],
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.animation.content"
+    },
+    {
+      "type": "select",
+      "id": "image_behavior",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.all.animation.image_behavior.options__1.label"
+        },
+        {
+          "value": "ambient",
+          "label": "t:sections.all.animation.image_behavior.options__2.label"
+        },
+        {
+          "value": "fixed",
+          "label": "t:sections.all.animation.image_behavior.options__3.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.all.animation.image_behavior.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_below",
+      "default": true,
+      "label": "t:sections.image-banner.settings.show_text_below.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-banner.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Image banner",
+          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "color",
+          "label": "Color in Desktop",
+          "id": "heading_color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "label": "Color in Mobile",
+          "id": "mobi_heading_color",
+          "default": "#000"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-banner.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Give customers details about the banner image(s) or content on the template.",
+          "label": "t:sections.image-banner.blocks.text.settings.text.label"
+        },
+        {
+          "type": "color",
+          "label": "Color in Desktop",
+          "id": "text_color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "label": "Color in Mobile",
+          "id": "mobi_text_color",
+          "default": "#000"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.image-banner.blocks.buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Shop now",
+          "label": "Button label",
+          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_1",
+          "default": false,
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label",
+          "info": "If this checked, button colour will not apply"
+        },
+        {
+          "type": "header",
+          "content": "Color scheme"
+        },
+        {
+          "type": "color",
+          "label": "Background color",
+          "id": "btn_bg_color",
+          "default": "#4f5e73"
+        },
+        {
+          "type": "color",
+          "label": "Label color",
+          "id": "btn_txt_color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "label": "Hover background color",
+          "id": "btn_hover_bg_color",
+          "default": "#d0021b"
+        },
+        {
+          "type": "color",
+          "label": "Hover text color",
+          "id": "btn_hover_txt_color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

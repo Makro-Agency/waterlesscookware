@@ -1,0 +1,254 @@
+.resources-guide-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px
+}
+.resources-guide-section .collapsible-content-wrapper {
+    padding-right: 40px;
+}
+.resources-guide-wrapper {
+  padding-right: 116px;
+}
+.resources-guide-wrapper .main_heading {
+  margin: 0 0 10px;
+  font-size: 40px;
+  letter-spacing: -0.8px;
+}
+.guide-card-item {
+  display: flex;
+  gap: 27px;
+  margin-bottom: 40px;
+}
+.guide-card-item .image {
+    line-height: 0;
+}
+.shopify-section .guide-card-item .heading {
+  margin-bottom: 5px;
+}
+.guide-card-item p.desc {
+  color: #666666;
+}
+.guide-card-item a.makro--link {
+  margin-top: 40px;
+}
+.guide-card-item .card-content {
+    max-width: 59%;
+}
+
+.accordion-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 25px 0;
+}
+
+.collapsible-content-wrapper button.accordion-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .3s ease;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.collapsible-content-wrapper button.accordion-button .heading {
+  margin: 0;
+  padding-right: 10px;
+  font-size: 24px;
+  color: #0D0D0D;
+}
+.collapsible-content-wrapper .accordion-item .minus-icon {
+  display: none
+}
+.collapsible-content-wrapper .accordion-item.open .minus-icon {
+  display: block
+}
+.collapsible-content-wrapper .accordion-item.open .plus-icon {
+  display: none;
+}
+.collapsible-content-wrapper button.accordion-button svg.icon {
+    width: 20px;
+    height: 20px;
+}
+.accordion-content {
+  padding: 0;
+  /* display: none; */
+}
+.accordion-content p {
+  font-weight: 400;
+  color: #0D0D0D;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.accordion-content p:last-child {
+  margin: 0;
+}
+.contact-us a {
+  color: #000000;
+  text-decoration: none;
+}
+.contact-block {
+  background: #606D22;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 440px;
+}
+.makro-resources-guide .contact-block .main_heading {
+  font-size: 32px;
+  color: #FCFBF7;
+  margin-bottom: 5px;
+}
+.makro-resources-guide .contact-block p.desc {color: #FCFBF7;}
+.makro-resources-guide .contact-block .cta_button.btn-light {
+  background: #FCFBF7;
+  color: #606D22;
+  margin-top: 30px;
+  font-size:14px;
+}
+/*----------------service block---------------------*/
+.service-block {
+  display: flex;
+  gap: 32px;
+  margin-top: 100px;
+}
+.service-list {
+  display: flex;
+  gap: 32px;
+}
+.makro-resources-guide .service-block {
+  flex-wrap: wrap;
+}
+.makro-resources-guide .service-list {
+  flex: 422px 0 0;  
+}
+.service-list .main_heading {
+  font-size: 32px;
+}
+.service-list .link.makro--link {
+  margin-top: 20px;
+}
+.service-content {
+    padding-right: 20px;
+}
+.service-list:last-child .service-content {
+    padding: 0;
+}
+/*----------------service block---------------------*/
+ .shopify-section.makro-resources-guide {
+    background: #FAF5EB;
+  }
+@media only screen and (max-width: 749px){
+  .makro-resources-guide .contact-block .main_heading{ font-size:24px; }
+  .collapsible-content-wrapper button.accordion-button .heading{ font-size:20px; }
+  .service-block img{ width:40px; height:40px; }
+  .accordion-item.open .accordion-content{     padding: 20px 0px 20px 0 !Important; }
+}
+@media only screen and (min-width: 749px){
+
+  .shopify-section.makro-resources-guide {
+    background: #FAF5EB;
+  }
+}
+@media only screen and (max-width: 1499px){
+  .resources-guide-wrapper {
+    padding-right: 0px;
+  }
+}
+@media only screen and (max-width: 989px) {
+  .resources-guide-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .guide-card-item a.makro--link {
+    margin-top: 20px;
+  }
+  .guide-card-item .card-content {
+    max-width: 50%;
+  }
+  .accordion-content {
+    padding: 20px 1px 20px 0;
+  }
+  .resources-guide-wrapper .main_heading {
+    font-size: 36px;
+    letter-spacing: -0.72px;
+  }
+  .resources-guide-section .collapsible-content-wrapper {
+    padding-right: 0;
+  }
+  .service-block {
+    flex-direction: column;
+  }
+  .makro-resources-guide .service-list {
+      flex: unset;
+  }
+}
+@media only screen and (max-width: 749px) {
+  .template-product main .page-width.service-block {
+    padding: 0;
+  }
+  .service-list {
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .resources-guide-section-pdp {
+    width: 100% !important;
+    order: -1;
+    margin-bottom: 20px;
+  }
+  .contact-block {
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0 0 60px;
+  }
+  .resources-guide-section-pdp .main_heading {
+    font-size: 24px !important;
+  }
+  .service-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  .service-block {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+  .service-list .main_heading {
+    font-size: 24px;
+  }
+  .service-content {
+    padding-right: 0;
+  }
+  .resources-guide-wrapper .title-wrapper {
+    margin: 0;
+  }
+  .resources-guide-section {
+    padding: 0;
+  }
+  .resources-guide-wrapper {
+    padding: 0 2rem;
+  }
+  .resources-guide-section .collapsible-content-wrapper {
+    padding: 0 2rem;
+  }
+}
+
+/* Product page accordian */
+.pdp-faq--resources-guide { margin-bottom: 50px; }
+.pdp-faq--resources-guide {display: flex;flex-direction: row;flex-wrap: wrap;gap: 0 32px;}
+.pdp-faq--resources-guide .resources-guide-wrapper { padding-right: 0; width: 100%; max-width: 432px; }
+.pdp-faq--resources-guide .collapsible-content-wrapper { padding-right: 0; width: 100%; max-width: calc(100% - 432px - 32px); padding-left: 0; }
+@media only screen and (max-width: 989px) {
+  .pdp-faq--resources-guide .title-wrapper { margin-bottom: 2rem; }
+  
+  .pdp-faq--resources-guide .resources-guide-wrapper, 
+  .pdp-faq--resources-guide .collapsible-content-wrapper { max-width: 100%; padding-left: 0; }
+}
+@media only screen and (max-width: 749px) {
+  .pdp-faq--padding:not(#id) { padding-top: 40px; padding-bottom: 80px; }
+  .pdp-faq--resources-guide { margin-bottom: 0; }
+}
+/* Product page accordian */

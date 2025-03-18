@@ -1,0 +1,292 @@
+{{ 'why-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<style>
+  #why-product-slider .card:not(.ratio)>.card__content{ padding-top:0; }
+  #why-product-slider .swiper{
+    position: initial;
+  }
+    .product_indi_btn-group input[type="radio"]:checked + label {
+    background-color: #606d22;
+    color: white;
+  }
+    .makro-product--card .card__heading{
+        font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: inherit;
+    letter-spacing: normal;
+    margin-bottom: 5px;
+  }
+  .makro-product--card .product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+    display: none;
+}
+  .card-descc{
+        font-family: "Proxima Nova";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #000000;
+    opacity: 0.4;
+  }
+  </style>
+  {%- assign hasTagFound = false -%}
+{%- assign tagLastChance = blank -%}
+{%- assign tagJustDropped = blank -%}
+{%- assign tagCouture = blank -%}
+
+{%- for tag in card_product.tags -%}
+  {%- if tag == 'lastchance' -%}
+    {%- assign tagLastChance = 'Last Chance' -%}
+    {%- assign hasTagFound = true -%}
+  {%- endif -%} 
+  {%- if tag == 'new' -%}
+    {%- assign tagJustDropped = 'Just Dropped' -%}
+    {%- assign hasTagFound = true -%}
+  {%- endif -%} 
+  {%- if tag == 'couture' -%}
+    {%- assign tagCouture = 'Couture' -%}
+    {%- assign hasTagFound = true -%}
+  {%- endif -%} 
+{%- endfor -%}
+<div class="why-product {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }} {% endif %}">
+<div id="why-product-slider">
+  <div class="why-product-slider-header-text">
+    <div class="header-product-slider-why">
+      <h2>{{ section.settings.slider_title }}</h2>
+    </div>
+    <div>
+      <div class="product_indi_btn-group">
+        {% for block in section.blocks %}
+          <input type="radio" id="{{ block.id }}" name="category" {% if forloop.first %}checked{% endif %}>
+          <label for="{{ block.id }}" class="product_indi_btn">{{ block.settings.collection_title }}</label>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-slider-product-section" id="catalog-product-slider">
+    {% for block in section.blocks %}
+      <div class="swiper mySwiper-product-why" data-category="{{ block.id }}" {% unless forloop.first %}style="display:none;"{% endunless %}>
+        <div class="swiper-wrapper swiper-inner ">
+          {%- for product in collections[block.settings.collection].products limit: section.settings.products_to_show -%}
+            <div class="swiper-slide makro-product--card">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                 show_description: true,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                show_quick_add: section.settings.enable_quick_add,
+                section_id: section.id,
+                hideVariant: true,
+                section_id: section.id,
+                override_title: section.settings.override_title,
+                override_image: section.settings.override_image,
+                placeholder_image: placeholder_image
+              %}
+            </div>
+          {% endfor %}
+        </div>
+              <div class="catalog-button-container btn-last-btn dektop-view">
+              <a href="{{ block.settings.collection.url }}" class="button cta_button">Shop All
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.7535 11.9653L15 8.46354M15 8.46354L11.7569 4.96533M15 8.46354H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+            <div class="catalog-button-container mobile-view">
+              <a href="{{ block.settings.collection.url }}" class="button cta_button">Shop All
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.7535 11.9653L15 8.46354M15 8.46354L11.7569 4.96533M15 8.46354H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    {% endfor %}
+    
+  </div>
+</div>
+ </div>
+<!-- Swiper JS -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+<!-- Initialize Swiper -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var swipers = [];
+    document.querySelectorAll('.mySwiper-product-why').forEach(function(swiperElement) {
+      var swiper = new Swiper(swiperElement, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: swiperElement.querySelector('.swiper-button-next'),
+          prevEl: swiperElement.querySelector('.swiper-button-prev'),
+        },
+        breakpoints: {
+          // when window width is >= 0px
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          // when window width is >= 575px
+          575: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // when window width is >= 750px
+          750: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // when window width is >= 1000px
+          1000: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+          },
+          // when window width is >= 1500px
+          1500: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+          },
+        },
+      });
+      swipers.push(swiper);
+    });
+
+    document.querySelectorAll('.product_indi_btn-group input').forEach(function(input) {
+      input.addEventListener('change', function() {
+        var category = this.id;
+        document.querySelectorAll('.mySwiper-product-why').forEach(function(swiperElement) {
+          if (swiperElement.getAttribute('data-category') === category) {
+            swiperElement.style.display = 'block';
+          } else {
+            swiperElement.style.display = 'none';
+          }
+        });
+        swipers.forEach(function(swiper) {
+          swiper.update();
+        });
+      });
+    });
+
+    // Trigger change event on the first input to initialize the correct slides
+    document.querySelector('.product_indi_btn-group input:checked').dispatchEvent(new Event('change'));
+  });
+</script>
+
+{% schema %}
+{
+  "name": "why-product-slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slider_title",
+      "label": "Slider Title",
+      "default": "Find your Perfect Cookware"
+    },
+    {
+      "type": "number",
+      "id": "products_to_show",
+      "label": "Products to Show",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Ratio",
+      "options": [
+        { "value": "adapt", "label": "Adapt to image" },
+        { "value": "square", "label": "Square" },
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "landscape", "label": "Landscape" }
+      ],
+      "default": "adapt"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Image Shape",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "circle", "label": "Circle" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "label": "Show secondary image on hover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "label": "Enable quick add",
+      "default": true
+    },
+       {
+      "type": "text",
+      "id": "custom_class",
+      "label": "custom class"
+    }
+   
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Collection Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "why-product-slider"
+    }
+  ]
+}
+{% endschema %}

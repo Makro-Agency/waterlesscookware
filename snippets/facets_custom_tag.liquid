@@ -1,0 +1,195 @@
+{% assign custom_grps = 'Category_,Bestseller,Size_,ChiefChoice' | split: ',' %}
+{% assign m_in_count = main_index_count %}
+{% assign m_in_count = 1 %}
+{% assign id_detail = 'Details' %}
+{% assign id_facet = 'Facet' %}
+{% assign id_filter = 'Filter' %}
+{% assign id_show_more = 'Show-More' %}
+{% if mobile %}
+  {% assign id_detail = 'Details' | append:'-Mobile' %}
+  {% assign id_facet = 'Facet' | append:'-Mobile' %}
+  {% assign id_filter = 'Filter' | append:'-Mobile' %}
+  {% assign id_show_more = 'Show-More' | append:'-Mobile' %}
+  {% assign filter_type = '' %}
+{% endif %}
+{%- for group in custom_grps -%}
+  {% assign filter_label = group | split:'_' | first %}
+  {% assign temp_group = filter_label | downcase %}
+  {%- assign forloop_index_count = 0 -%}  
+  <details
+    id="{{ id_detail }}-{{ filter_label | escape }}-{{ section.id }}"
+    class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
+    data-index="tag-{{ m_in_count }}{% if mobile %}-mobile{% endif %}"
+    {% if filter_type == 'vertical' and main_index_count == 0 %}
+      open
+    {% endif %}
+  > 
+    {% assign m_in_count = m_in_count | plus: 1 %}
+    {% assign main_index_count = m_in_count %}
+    
+    <summary
+      class="{{ mobile_class }}facets__summary caption-large focus-offset"
+      aria-label="{{ filter_label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+    >
+      <div>
+        <span class="facets__summary-label">
+          {{- filter_label | escape }}
+          {%- if filter_type == 'vertical' -%}
+            <span class="facets__selected hidden">({{ filter.active_values.size }})</span>
+          {%- endif -%}
+        </span>
+        {% render 'icon-caret' %}
+      </div>
+    </summary>
+    <div
+      id="{{ id_facet }}-{{ m_in_count }}-{{ section.id }}"
+      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}{% unless mobile %}facets__display-vertical{% endunless %}{% endif %}"
+    >
+      {%- if filter_type != 'vertical' -%}
+        <div class="facets__header hidden">
+          <div>
+            <span class="facets__selected">
+              {{- 'products.facets.filters_selected' | t: count: filter.active_values.size -}}
+            </span>            
+          </div>
+          <facet-remove>
+            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+              {{ 'products.facets.reset' | t }}
+            </a>
+          </facet-remove>
+        </div>
+      {%- endif -%}
+        {% capture facets_ul_cap %}
+        <ul class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} {{ mobile_class }}facets__list{% endif %} list-unstyled"
+          role="list"
+        >
+        {%- for tag in collection.tags -%}
+          {% assign value_label = tag | split:'_' | first %}
+          {% assign value_name = tag | split:'_' | last %}
+          {% assign temp_tag = value_label | downcase %}
+          {% assign value = tag | handle %}
+          {% if value_name == "Mini" or value_name == "Set" or value_name == "XSmall" %}{% continue %}{% endif %}
+          {% if temp_tag == temp_group %}
+            {%- assign forloop_index_count =  forloop_index_count | plus: 1 -%}
+              {% liquid
+                assign input_id = id_filter | append: '-' | append: filter_label | escape | append: '-' | append: forloop.index
+                assign is_disabled = false
+                if value.count == 0 and value.active == false
+                  assign is_disabled = true
+                endif
+              %}
+              {%- capture label_class -%}
+              facets__label {{ mobile_class }}facets__label facet-checkbox{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
+              {%- endcapture -%}
+      
+              {%- capture text_value -%}
+                <span class="facet-checkbox__text" aria-hidden="true">
+                  <span class="facet-checkbox__text-label">{{- value_name | escape }}</span>
+                </span>
+                <span class="visually-hidden">
+                  {{- value_name | escape }} 
+                  {% comment %}(
+                  {%- if value.count == 1 -%}
+                    {{- 'products.facets.product_count_simple.one' | t: count: value.count -}}
+                  {%- else -%}
+                    {{- 'products.facets.product_count_simple.other' | t: count: value.count -}}
+                  {%- endif -%}
+                  ){% endcomment %}
+                </span>
+              {%- endcapture -%}
+
+              {%- assign has_active = false -%}
+              {%- for c_tag in current_tags -%}
+                {%- if tag == c_tag -%}
+                  {%- assign has_active = true -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+            {% assign style_order = '10' %}
+            {% if filter_label == 'Size' %}
+              {% if value == 'size_small' %}
+                {% assign style_order = '0' %}
+              {% elsif value == 'size_medium' %}
+                {% assign style_order = '1' %}
+              {% elsif value == 'size_large' %}
+                {% assign style_order = '2' %}
+              {% endif %}
+            {% endif %}
+            
+              <li class="list-menu__item {{ mobile_class }}facets__item{% if forloop_index_count > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}" tag-filter style="order:{{ style_order }}">
+                <label for="{{ input_id }}" class="{{ label_class }}">
+                  <input
+                    type="checkbox"
+                    name="{{ filter_label }}_tag"
+                    value="{{ value }}"
+                    id="{{ input_id }}"                    
+                    {% if has_active %}
+                      checked
+                    {% endif %}
+                    {% if is_disabled %}
+                      disabled
+                    {% endif %}
+                  >
+                    <svg
+                      width="1.6rem"
+                      height="1.6rem"
+                      viewBox="0 0 16 16"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                    </svg>
+    
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon-checkmark"
+                      width="1.1rem"
+                      height="0.7rem"
+                      viewBox="0 0 11 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" ></path>
+                    </svg>      
+                  {{ text_value }}
+                </label>
+              </li>
+          {% endif %}
+        {%- endfor -%}
+        </ul>
+        {% endcapture %}
+      {% unless mobile %}
+        <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
+          <legend class="visually-hidden">{{ filter_label | escape }}</legend>
+          {{ facets_ul_cap }}
+        </fieldset>
+      {% else %}
+        {{ facets_ul_cap }}
+      {% endunless %}
+      {%- if forloop_index_count > show_more_number and filter_type == 'vertical' -%}
+        <show-more-button>
+          <button
+            class="button-show-more link underlined-link"
+            id="{{ id_show_more }}-{{ forloop_index_count }}-{{ section.id }}"
+            type="button"
+          >
+            <span class="label-show-more label-text"
+              ><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t -}}
+            </span>
+            <span class="label-show-less label-text hidden"
+              ><span aria-hidden="true">- </span>{{ 'products.facets.show_less' | t -}}
+            </span>
+          </button>
+        </show-more-button>
+      {%- endif %}
+    </div>
+    {% if forloop_index_count == 0 %}
+      <style>#{{ id_detail }}-{{ filter_label | escape }}-{{ section.id }} { display: none; }</style>
+    {% endif %}
+  </details>
+{%- endfor -%}

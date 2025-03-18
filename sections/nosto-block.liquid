@@ -1,0 +1,43 @@
+<div class="nosto-custom-section">
+    {{section.settings.custom_html}}
+</div>
+{% stylesheet %}
+  /* sections/nosto-block.liquid */ 
+  .nosto_carousel:focus-visible {
+    outline: none; box-shadow: none; }
+    .nosto_carousel:not(.flickity-enabled) {
+      display: flex; flex-wrap: nowrap; overflow-x: auto; }
+      .nosto_carousel .product-card {
+        flex: 1 0 auto; }
+      .product-card .image-container img {
+        max-width: 100%; }
+      .nosto_carousel .product-card>a {
+        color: inherit; text-decoration: none; }
+  /* sections/nosto-block.liquid */
+{% endstylesheet %}
+  
+{% schema %}
+    {
+        "name": "Nosto Block",
+        "class": "section-nosto-block",
+        "settings": [
+            {
+                "type": "text",
+                "id": "label",
+                "label": "Label"
+            },
+            {
+                "type": "textarea",
+                "id": "custom_html",
+                "label": "Nosto Placement Div"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Nosto Block",
+                "category": "Nosto",
+                "settings": {}
+            }
+        ]
+    }
+{% endschema %}

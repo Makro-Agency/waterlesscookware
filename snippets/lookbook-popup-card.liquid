@@ -1,0 +1,17 @@
+<div class="lobo-popup-card">
+  <div class="lobo-pro-image lookbook-image">
+    <img srcset="
+        {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}        
+        {{ product.featured_media | image_url }} {{ product.featured_media.width }}w" 
+      sizes="110px" alt="{{ product.featured_media.alt | escape }}" class="motion-reduce" loading="lazy" width="110" height="164" />
+  </div>
+  <div class="lobo-pro-content heading-font">
+    <h3>{{ product.title }}</h3>
+    <div class="price">
+      <span class="price-regular">{{ product.price | money }}</span>
+    </div>
+    <div class="lobo-pro-label">Noir — Limited Edition</div>
+    <a href="{{ product.url }}" class="link link-with-icon">Buy now <span class="icon">{% render 'right-arrow-2' %}</span></a>
+  </div>
+</div>

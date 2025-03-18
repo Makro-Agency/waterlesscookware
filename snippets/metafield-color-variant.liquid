@@ -1,0 +1,195 @@
+{%- assign colorProducts = product.metafields.Sareeroom.ColorSwatches | split: '|' -%}
+{%- assign selectedColorNameCore = blank -%}
+{%- assign selectedColorNameLimited = blank -%}
+{%- assign limitedEditProCount = 0 -%}
+
+
+{%- if colorProducts[0] != blank -%}
+  {%- for c_product in colorProducts -%}
+    {%- assign cProduct = all_products[c_product] -%}
+    {%- if cProduct -%}
+
+      {%- assign colorProdName = blank -%}
+      {%- assign isLimitedProd = false -%}
+      {%- assign index = forloop.index -%}
+      
+      {%- assign getColorProdOptionPosition = blank -%}
+      {%- assign getCurrentOptionPosition = blank -%}
+
+      {%- unless product.has_only_default_variant -%}
+        {%- for option in product.options_with_values -%}
+          {%- if option.name == 'Size' or option.name == 'size' -%}
+            {%- assign getCurrentOptionPosition = option.position -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
+      
+      {%- assign optionPos = 'option' | append: getCurrentOptionPosition -%}
+      {%- assign currentVariantTitle = product.selected_or_first_available_variant[optionPos] -%}
+
+      
+      {%- for tag in cProduct.tags -%}
+        {%- assign tagLower = tag | downcase -%}
+        {%- if tagLower contains 'color_' -%}
+          {%- assign colorProdName = tagLower | split: '_' | last -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- for tag in cProduct.tags -%}
+        {%- assign tagLower = tag | downcase -%}
+        {%- if tagLower == 'limitededition' -%}
+          {%- assign isLimitedProd = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+        
+      {%- if isLimitedProd == false and colorProdName != blank -%}
+        
+        {%- capture colorShadesProducts -%}
+          {%- if isLimitedProd == false and colorProdName != blank -%}
+            {%- if colorShadesProducts != blank -%}{{- colorShadesProducts -}}{%- endif -%}
+            {%- if product.handle == cProduct.handle -%}{%- assign selectedColorNameCore = colorProdName -%}{%- endif -%}
+            {%- assign colorProUrl = cProduct.handle -%}
+
+            {%- unless cProduct.has_only_default_variant -%}
+              
+              {%- comment -%}**Color product soldout logic based on current product selected size option**{%- endcomment -%}
+              {%- for option in cProduct.options_with_values -%}
+                {%- if option.name == 'Size' or option.name == 'size' -%}
+                  {%- assign getColorProdOptionPosition = option.position -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- assign colorOptionPos = 'option' | append: getColorProdOptionPosition -%}
+              {%- assign variants_available_arr = cProduct.variants | map: 'available' -%}
+              {%- assign variants_id = cProduct.variants | map: 'id' -%}
+              {%- assign variants_option_arr = cProduct.variants | map: colorOptionPos -%}
+  
+              {%- assign option_disabled = true -%}
+              {%- for option_name in variants_option_arr -%}
+                {%- if variants_option_arr[forloop.index0] == currentVariantTitle -%}
+                  {%- assign colorProUrl = cProduct.handle | append: '?variant=' | append: variants_id[forloop.index0] -%}
+                  {%- if variants_available_arr[forloop.index0] -%}
+                    {%- assign option_disabled = false -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- comment -%}** &&& **{%- endcomment -%}
+
+            {%- else -%}  
+
+              {%- assign option_disabled = true -%}
+              {%- if cProduct.selected_or_first_available_variant.available -%}
+                {%- assign option_disabled = false -%}
+              {%- endif -%}
+              
+            {%- endunless -%}
+ 
+            {%- liquid
+              assign color_file_name = colorProdName | handle | append: '.png'
+              assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
+              assign color_swatch_fallback = colorProdName | split: ' ' | last | handle
+            -%}
+            <a href="{{ colorProUrl }}" data-url="{{ colorProUrl }}" class="color-swatch{% if product.handle == cProduct.handle %} active{% endif %}{% if option_disabled %} disabled{% endif %}" data-color="{{ colorProdName }}" style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
+              <span class="color-label">{{ colorProdName | capitalize }}</span>
+            </a>
+          {%- endif -%}
+        {%- endcapture -%}
+        
+      {%- elsif isLimitedProd and colorProdName != blank -%}
+        
+        {%- capture colorLimitedEditionProducts -%}
+          {%- if isLimitedProd and colorProdName != blank -%}
+            {%- if colorLimitedEditionProducts != blank -%}{{- colorLimitedEditionProducts -}}{%- endif -%}
+            {%- if product.handle == cProduct.handle -%}{%- assign selectedColorNameLimited = colorProdName -%}{%- endif -%}
+            {%- assign colorProUrl = cProduct.handle -%}
+
+            {%- unless cProduct.has_only_default_variant -%}
+
+              {%- comment -%}**Color product soldout logic based on current product selected size option**{%- endcomment -%}
+              {%- for option in cProduct.options_with_values -%}
+                {%- if option.name == 'Size' or option.name == 'size' -%}
+                  {%- assign getColorProdOptionPosition = option.position -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- assign colorOptionPos = 'option' | append: getColorProdOptionPosition -%}
+              {%- assign variants_available_arr = cProduct.variants | map: 'available' -%}
+              {%- assign variants_id = cProduct.variants | map: 'id' -%}
+              {%- assign variants_option_arr = cProduct.variants | map: colorOptionPos -%}
+              
+              {%- assign option_disabled = true -%}
+              {%- for option_name in variants_option_arr -%}
+                {%- if variants_option_arr[forloop.index0] == currentVariantTitle -%}
+                  {%- assign colorProUrl = cProduct.handle | append: '?variant=' | append: variants_id[forloop.index0] -%}
+                  {%- if variants_available_arr[forloop.index0] -%}
+                    {%- assign option_disabled = false -%}
+                    {%- assign limitedEditProCount = limitedEditProCount | plus: 1 -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- comment -%}** &&& **{%- endcomment -%}
+
+            {%- else -%}  
+
+              {%- assign option_disabled = true -%}
+              {%- if cProduct.selected_or_first_available_variant.available -%}
+                {%- assign option_disabled = false -%}
+                {%- assign limitedEditProCount = limitedEditProCount | plus: 1 -%}
+              {%- endif -%}
+              
+            {%- endunless -%}
+            
+            {%- liquid
+              assign color_file_name = colorProdName | handle | append: '.png'
+              assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
+              assign color_swatch_fallback = colorProdName | split: ' ' | last | handle
+            -%}
+            <a href="{{ colorProUrl }}" data-url="{{ colorProUrl }}" class="color-swatch{% if product.handle == cProduct.handle %} active{% endif %}{% if option_disabled %} disabled _hidden{% endif %}" data-color="{{ colorProdName }}" style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}">
+              <span class="color-label">{{ colorProdName | capitalize }}</span>
+            </a>
+          {%- endif -%}
+        {%- endcapture -%}
+        
+      {%- endif -%}
+
+      
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+
+
+{%- if colorShadesProducts != blank or colorLimitedEditionProducts != blank -%}
+  <color-variant data-ajax-load="{{ block.settings.load_ajax }}">
+    {%- if colorShadesProducts != blank -%}
+      <fieldset class="product-form__input option--color-metafield" data-option-name="color-metafield">
+        <legend class="form__label"><strong>{{ 'Capsule colours:' }}</strong>{% if selectedColorNameCore != blank %} <span class="selected-variant">{{ selectedColorNameCore | capitalize }}</span>{% endif %}</legend>
+        <div class="color-metafield-wrapper">{{ colorShadesProducts }}</div>
+      </fieldset>
+    {%- endif -%}
+    {%- if colorLimitedEditionProducts != blank -%}
+      <fieldset class="product-form__input option--color-metafield{% if limitedEditProCount == 0 %} _hidden{% endif %}" data-option-name="color-metafield">
+        <legend class="form__label">
+          <div class="form--label"><strong>{{ 'Limited edition:' }}</strong>{% if selectedColorNameLimited != blank %} <span class="selected-variant">{{ selectedColorNameLimited | capitalize }}</span>{% endif %}</div>
+          <div class="limited-edition-note">
+            {{- 'Will not be restocked. Shop while quantities last.' -}}
+            {%- if block.settings.tooltip_content != blank -%}
+              <div class="limited-edition-tooltip">
+                {% render 'icon-info-2' %}
+                <div class="tooltip-info">{{ block.settings.tooltip_content }}</div>
+              </div>
+            {%- endif -%}
+          </div>
+        </legend>
+        <div class="color-metafield-wrapper">{{ colorLimitedEditionProducts }}</div>
+      </fieldset>
+    {%- endif -%}
+  </color-variant>
+{%- endif -%}
+
+

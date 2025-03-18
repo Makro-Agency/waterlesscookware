@@ -1,0 +1,100 @@
+<style>
+  .text_only {
+    padding: 150px 80px;
+  }
+  .text_only .main_heading {
+    padding-right: 110px;
+  }
+  .text_only .text-wrapper p {
+    margin-bottom: 10px;
+  }
+  .text_only .text-wrapper .button.cta_button {
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 1600px){
+    .text_only .main_heading {
+      padding: 0;
+    }
+  }
+  @media screen and (min-width: 990px){
+    .text_only {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .text_only > * {
+      flex-basis: 50%;
+    }
+  }
+  @media screen and (max-width: 989px){
+    .text_only {
+      padding: 60px 20px;
+    }
+    .text_only .text-wrapper .button.cta_button {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="text_only">
+  {% if section.settings.title != blank %}
+  <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+  {% endif %}  
+  {% if section.settings.description != blank or section.settings.btn_text != blank %}
+  <div class="text-wrapper">
+    <div class="rte">
+    {{ section.settings.description }}
+    </div>
+    {% if section.settings.btn_text != blank %}
+      <a href="{{ section.settings.url | default: '#' }}" class="button cta_button">{{ section.settings.btn_text }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% schema %}
+  {
+    "name": "Text Only",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings":[
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Enter a title",
+        "default":"SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Enter a detail",
+        "default":"<p>Forem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.<\/p>"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "label": "Button text",
+        "id": "btn_text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "label": "Button link",
+        "id": "url"
+      },
+      {
+        "type": "header",
+        "content": "For the steps create the Text block"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Only"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,253 @@
+<style>
+  #full-blend-hero-section-catalog {
+    background-image: url("{{ section.settings.bgimage | img_url:'' }}");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    height:70vh;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-sectiong-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container {
+    z-index: 3;
+    max-width: 1360px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-mobile-image{
+    display: none;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-mobile-image img{
+    width: 100%;
+}
+
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-relative {
+    position: relative;
+    height: 100%;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-box {
+    padding: 40px;
+    background-color: #FCFBF7;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 472px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+    z-index: 5;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-box-content-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-box-heading-container h1 {
+    font-family: Cellofy;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    color: #0D0D0D;
+    margin: 0;
+}
+
+#full-blend-hero-section-catalog .full-blend-hero-section-container-box-text-container p {
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    margin: 0px;
+}
+
+@media only screen and (max-width : 1400px) {
+    #full-blend-hero-section-catalog .full-blend-hero-section-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width : 767px) {
+    #full-blend-hero-section-catalog .full-blend-hero-section-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #full-blend-hero-section-catalog .full-blend-hero-section-container-mobile-image{
+        display: block;
+    }
+
+    #full-blend-hero-section-catalog .full-blend-hero-sectiong-bg-overlay{
+        background: transparent;
+    }
+
+    #full-blend-hero-section-catalog{
+        background-image: none;
+        height: auto;
+    }
+
+    #full-blend-hero-section-catalog .full-blend-hero-section-container-mobile-image img{
+        width: 100%;
+        height:auto;
+        min-height: 240px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    #full-blend-hero-section-catalog .full-blend-hero-section-container-box{
+       display:none;
+    }
+}
+</style>
+
+<div id="full-blend-hero-section-catalog">
+<div class="full-blend-hero-sectiong-bg-overlay"></div>
+<div class="full-blend-hero-section-container">
+  <div class="full-blend-hero-section-container-relative">
+    {% if section.settings.imagemobile != blank %}
+    <div class="full-blend-hero-section-container-mobile-image">
+      <img
+        src="{{ section.settings.imagemobile | img_url:'' }}"
+        alt="catalog-hero-mobile"
+      >
+    </div>
+    {% endif %}
+    <div class="full-blend-hero-section-container-box">
+      <div class="full-blend-hero-section-container-box-content-container">
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{ routes.home_url }}">Home</a>
+            </li>
+            {% if template == 'collection' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+            <li class="breadcrumb-item active" aria-current="page">{{ collection.title }}</li>
+            {% elsif page.handle == 'catalog' %}
+              <li class="breadcrumb-item">
+                <a href="/catalog">360 Catalog</a>
+              </li>
+            {% elsif template == 'product' %}
+              <li class="breadcrumb-item">
+                <a href="/collections">360 Catalog</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="{{ collection.url }}">{{ collection.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+            {% elsif template == 'page' %}
+              <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            {% elsif template == 'article' %}
+              <li class="breadcrumb-item">
+                <a href="/blogs/{{ article.blog.handle }}">{{ article.blog.title }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+            {% endif %}
+          </ol>
+        </nav>
+        
+        {% if section.settings.title != blank %}
+        <div class="full-blend-hero-section-container-box-heading-container">
+          <h1>{{ section.settings.title }}</h1>
+        </div>
+         {% endif %}
+       {% if section.settings.details != blank %}
+        <div class="full-blend-hero-section-container-box-text-container">
+          <p>
+            {{ section.settings.details }}
+          </p>
+        </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+"name": "Catalog Hero",
+"settings": [
+  {
+    "type": "image_picker",
+    "id": "bgimage",
+    "label": "Bg Desktop Image"
+   },
+   {
+      "type": "image_picker",
+      "id": "imagemobile",
+      "label": "Bg Mobile Image"
+   },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Featured collection",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+  {
+      "type": "textarea",
+      "id": "details",
+      "default": "Featured Details",
+      "label": "Details"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+],
+"presets": [
+{
+  "name" : "Catalog hero",
+  "settings": {}
+}
+]
+}
+{% endschema %}

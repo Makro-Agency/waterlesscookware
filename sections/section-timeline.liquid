@@ -1,0 +1,115 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'timeline.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const containers = document.querySelectorAll('.container');
+    containers.forEach(container => {
+        const dot = container.querySelector('.dot');
+        const content = container.querySelector('.content');
+        const image = container.querySelector('.image');
+        
+        if (dot && content) {
+            const contentHeight = content.offsetHeight;
+            const imageHeight = image ? image.offsetHeight : 0;
+            const containerHeight = Math.max(contentHeight, imageHeight);
+            dot.style.top = (containerHeight / 0) + 'px';
+        }
+    });
+});
+</script>
+
+<div class="row-timeline">
+  <div class="heading">
+    <h4 class="section-heading">{{ section.settings.section_heading }}</h4>
+    <p class="section-description">{{ section.settings.section_description }}</p>
+  </div>
+  <div class="timeline">
+     <div class="center-line-mobile"></div>
+    <div class="center-line"></div>
+    {% for block in section.blocks %}
+      <div class="container {{ block.settings.position }}">
+        <div class="dot"></div>
+        <div class="group">
+        <div class="content">
+          <h2 class="title">{{ block.settings.title }}</h2>
+          <p class="description">{{ block.settings.description }}</p>
+        </div>
+        {% if block.settings.image != blank  %}
+          <div class="image">
+            <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
+          </div>
+        {% endif %}
+      </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Timeline Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Our American Manufacturing Heritage"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline_event",
+      "name": "Timeline Event",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "April, 2018"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, augue vel ullamcorper cursus."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

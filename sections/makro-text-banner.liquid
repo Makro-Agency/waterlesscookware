@@ -1,0 +1,167 @@
+{{ 'makro-text-banner.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign content_layout = section.settings.layout
+  assign text_color = section.settings.text_color
+  assign BG_color = section.settings.BG_color
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by:100.00
+-%}
+
+{% capture content %}
+  {% capture title %}
+    {% if section.settings.title != blank %}
+      <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+    {% endif %}
+  {% endcapture %}
+  {% capture detail %}
+    {% if section.settings.description != blank %}
+    <div class="rte desc">{{ section.settings.description }}</div>
+    {% endif %}
+    {% if section.settings.btn_text != blank %}
+      <a href="{{ section.settings.url | default: '#' }}" class="button cta_button">{{ section.settings.btn_text }}</a>
+    {% endif %}
+  {% endcapture %}
+{% if content_layout == "layout-1"  %}
+  <div class="page-width">
+    <div class="text-wrapper">
+      <div class="heading--part">{{ title }}</div>
+      <div class="text--part">{{ detail }}</div>
+    </div>
+  </div>
+{% else %}
+  <div class="page-width">
+    <div class="text-wrapper">
+      <div class="heading--part">{{ title }}</div>
+      <div class="text--part">{{ detail }}</div>
+    </div>
+  </div>
+{% endif %}
+{% endcapture %}
+
+  <div class="{{ content_layout }} makro-text-banner--wrapper{% if section.settings.image %} with-image{% endif %}" 
+    style="{% if BG_color != blank %}--section-BG-color: {{ section.settings.BG_color }};{% endif %}
+    {% if text_color != blank and text_color != 'rgba(0,0,0,0)' %}--section-text-color: {{ text_color }};{% endif %}
+    --overlay-opacity: {{ overlay_opacity }};">
+    {% if section.settings.image != blank %}
+      <div class="makro-TB-image-item">
+      {%- liquid
+        assign image = images['Copy-min.jpg']
+        assign image = section.settings.image
+        assign height = image.width | divided_by: image.aspect_ratio | round
+        if section.settings.image_behavior == 'ambient'
+          assign sizes = '120vw'
+          assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+        else
+          assign sizes = '(min-width: 1550px) calc(100vw - 8rem), (min-width: 990px) calc(100vw - 2rem), (min-width: 750px)  calc(100vw - 4rem) 3.2rem, calc(100vw - 1rem)'
+          assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+        endif
+
+        assign mobileImage = images['Copy_1_-min.jpg']          
+        assign mobileImage = section.settings.image_mobile
+        assign mobileHeight = mobileImage.width | divided_by: mobileImage.aspect_ratio | round
+        assign mobileWidths = '375, 550, 750'
+        assign imgClass = 'small-hide medium-hide'
+      -%}
+      {{
+        image
+        | image_url: width: 3840
+        | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: imgClass
+      }}
+      {% if mobileImage != blank %}
+      {{
+        mobileImage
+        | image_url: width: 750
+        | image_tag: loading: 'lazy', height: mobileHeight, sizes: sizes, widths: mobileWidths, class: 'large-up-hide'
+      }}
+      {% endif %}
+    </div>
+    {% endif %}
+    {{ content }}
+  </div>
+
+{% schema %}
+  {
+    "name": "Text Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "label": "Upload BG image",
+        "id": "image"
+      },
+      {
+        "type": "image_picker",
+        "label": "Upload mobile BG image",
+        "id": "image_mobile"
+      },      
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+      },
+      {
+        "type": "richtext",
+        "label": "Detail",
+        "id": "description",
+        "default": "<p>Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.<\/p>"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "label": "Button text",
+        "id": "btn_text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "label": "Button link",
+        "id": "url"
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "color",
+        "label": "BG color",
+        "id": "BG_color",
+        "default": "#272727"
+      },
+      {
+        "type": "color",
+        "label": "text color",
+        "id": "text_color",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "image overlay"
+      },
+      {
+        "type": "range",
+        "label": "Orverlay opacity",
+        "id": "overlay_opacity",
+        "max": 100,
+        "min": 0,
+        "step": 10,
+        "default": 60
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Banner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,123 @@
+.newsletter__wrapper {
+  padding-right: calc(4rem / var(--font-body-scale));
+  padding-left: calc(4rem / var(--font-body-scale));
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__wrapper {
+    padding-right: 9rem;
+    padding-left: 9rem;
+  }
+}
+
+.newsletter__wrapper > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.newsletter__wrapper > * + * {
+  margin-top: 2rem;
+}
+
+.newsletter__wrapper > * + .newsletter-form {
+  margin-top: 3rem;
+}
+
+.newsletter__subheading {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__wrapper .newsletter-form__field-wrapper {
+  max-width: 36rem;
+}
+
+.newsletter-form__field-wrapper .newsletter-form__message {
+  margin-top: 1.5rem;
+}
+
+.newsletter__button {
+  margin-top: 3rem;
+  width: fit-content;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__button {
+    flex-shrink: 0;
+    margin: 0 0 0 1rem;
+  }
+}
+
+.newsletter__wrapper .newsletter-form__field-wrapper{ border-radius:100px; }
+/* new */
+
+.newsletter__wrapper .h1 { color: #000; text-align: center;  line-height: 110%;  text-transform: capitalize; margin:0 0 15px 0; }
+
+.newsletter__wrapper .newsletter-form__field-wrapper { width:100%; max-width: 100%; }
+
+.newsletter__wrapper .newsletter__subheading { margin-top:15px; }
+.newsletter__wrapper .newsletter__subheading,
+.newsletter__wrapper .newsletter__subheading p { color: #000; text-align: center; font-size: 16px; font-weight: 300; line-height: 160%; }
+.newsletter__wrapper .newsletter-form .newsletter-form__button{ padding-right:15px; }
+.newsletter__wrapper .newsletter-form {  width:100%; max-width: 430px; }
+.newsletter__wrapper .newsletter-form .field { margin-bottom:0; }
+.newsletter__wrapper .newsletter-form .field .field__input { border:none; padding:15px 90px 15px 10px; height: 50px;    background: none; }
+.newsletter__wrapper .newsletter-form .field .field__input:focus,
+.newsletter__wrapper .newsletter-form .field .field__input:focus-within { box-shadow:none; }
+.newsletter__wrapper .newsletter-form .field__label { 
+  background: transparent;
+  color: #A8A5A0; font-size: 14px; font-weight: 300; line-height: 160%; letter-spacing:0; left: 20px; top: 50%; transform: translateY(-50%); }
+.newsletter__wrapper .newsletter-form .field:before,
+.newsletter__wrapper .newsletter-form .field:after {
+  opacity: 0; }
+.newsletter__wrapper .newsletter-form .field__input:not(:placeholder-shown)~.field__label {
+  opacity: 0; }
+.newsletter__wrapper .newsletter-form .newsletter-form__button { height: auto; width: auto; top: 50%; right: 10px; left:auto; transform: translate(0, -50%);
+    color: var(--Black, #0D0D0D);
+text-align: center;
+/* CTA/Standard */
+font-family: "Proxima Nova";
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 16px */                                                            
+  }
+
+.newsletter-form__field-wrapper{
+  border: 1px solid #000;
+    border-radius: 15px;
+}
+.newsletter__wrapper .newsletter__subheading, .newsletter__wrapper .newsletter__subheading p{ text-align:left; }
+@media screen and (max-width: 1199px)  {
+.new-newsletter .newsletter__wrapper{ padding-left:3rem; padding-right:3rem; } }
+@media screen and (min-width: 1024px)  {
+.newsletter__wrapper .newsletter-form .field{ min-width:372px;} }
+@media screen and (max-width: 749px) {
+  
+  .newsletter-section .newsletter__wrapper { padding-top:32px; padding-bottom:32px; padding-left:0; padding-right:0; }  
+  .newsletter__wrapper .h1 { text-align: center; font-size: 16px; line-height: 110%; letter-spacing: -0.32px;
+     margin: 0 0 8px; text-transform: capitalize; }
+  .newsletter__wrapper .newsletter__subheading, 
+  .newsletter__wrapper .newsletter__subheading p {opacity: 1;  line-height: 160%; }
+
+  .newsletter__wrapper .newsletter-form { margin-top:16px; }
+  .new-newsletter .newsletter__wrapper{
+    display:block;
+  }
+}
+
+.newsletter__wrapper .newsletter-form .field .field__input::placeholder{ text-transform:capitalize; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* end */

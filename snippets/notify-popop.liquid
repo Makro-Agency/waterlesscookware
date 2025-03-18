@@ -1,0 +1,68 @@
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" id="klSubJS" defer></script>
+
+<style>
+  #email_signup select.active{background: unset;pointer-events: none;}
+</style>
+
+<div class="OOS-box">
+  <span class="close-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+      <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+    </svg>
+  </span>
+  
+  <div class="sold-notify" data-id="{{ product.id }}" data-klaviyo-notify-wrapper>
+    <h4>{{ product.title }}</h4>
+    <p>Register to recieve a notification when this item is available site wide.</p>
+    {% assign klaviyoListId = section.settings.klaviyo_id %}
+    <form id="email_signup" class="klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }}" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+      <input type="hidden" name="g" value="{{ klaviyoListId }}">
+      <input type="hidden" name="$fields" value="Variant_title">
+      <input type="hidden" name="Variant_title" value='{{ product.selected_or_first_available_variant.title }}'>
+      {%- for option in product.options_with_values -%}
+      <select data-index="{{ forloop.index }}" class="{% if product.has_only_default_variant %}hidden{% endif %}">
+        {% render 'popup-select', product: product, option: option %}
+      </select>
+      {%- endfor -%}
+      <div class="klaviyo_field_group kgrid">
+        <div class="klaviyo_field _email">
+          <input class="input-item" type="email" value="" name="email" id="k_id_email" placeholder="E-mail" required="required" autocomplete="off">
+        </div>
+      </div>
+      <div class="klaviyo_messages">
+        <div class="success_message" style="display:none;"></div>
+        <div class="error_message" style="display:none;"></div>
+      </div>
+      <div class="klaviyo_form_actions btn-actions">
+        <button type="submit" class="btn link-btn klaviyo_submit_button navigable">notify me when available</button>
+      </div>
+    </form>
+  </div> 
+</div>
+
+<script>
+document.querySelector("#klSubJS").addEventListener("load", (event) => {
+  let crLocation = window.location.href;
+  KlaviyoSubscribe.attachToForms('#email_signup', {
+    hide_form_on_success: true,
+    success_message: "Thanks for subscribing!",
+    extra_properties: {
+      $source: crLocation,
+      $method_type: "Klaviyo Form Solid out notification",
+      $method_id: 'embed'
+    },
+    success: function ($form) {
+      //success code
+    },error : function(){
+      // for if errors occurs
+    }
+  }); 
+
+  document.querySelectorAll('#email_signup select').forEach(list => {
+    var total_option = list.querySelectorAll('option').length - list.querySelectorAll('option.hidden').length;
+    if(total_option < 2){
+        list.classList.add('active');
+    }
+  });
+});
+</script>

@@ -1,0 +1,199 @@
+.essentials-cookware-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #FAF5EB;
+  position: relative;
+  border-radius: 15px;
+    margin-bottom: 20px;
+}
+/* updated code */
+.essentials-cookware-set .sale-badge {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  background-color: #606d22;
+  color: white;
+  padding: 4px 14px 4px 15px;
+  border-radius: 15px 0;
+  font-weight: bold;
+  font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 21px */
+}
+
+.essentials-cookware-set .product-info {
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.essentials-cookware-set .product-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.essentials-cookware-set .product-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+/* updated code */
+.essentials-cookware-set .product-pricing {
+  margin-bottom: 0;
+}
+
+.essentials-cookware-set .current-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.essentials-cookware-set .compare-price {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #888;
+}
+/* updated code */
+.essentials-cookware-set .upgrade-button {
+  display: inline-block;
+  background-color: transparent;
+  color: #000;
+  border:1px solid #000;
+  max-width:183px; 
+  text-align:center; 
+  width:100%;
+  padding: .75rem .8rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size:14px;
+  font-family: Proxima Nova;
+  font-weight: 600;
+}
+
+.essentials-cookware-set .product-image {
+  flex: 1;
+  text-align: center;
+}
+
+.essentials-cookware-set .product-image img {
+  max-width: 100%;
+  height: auto;
+  min-width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .essentials-cookware-set .essentials-cookware-set {
+    flex-direction: column;
+  }
+  
+  .essentials-cookware-set .product-info {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+/* updated code */
+.essentials-cookware-set .product-title{
+color:#000;
+    font-family: Cellofy;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+
+.essentials-cookware-set .product-description{
+    color:#000;
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+/* updated code */
+.price-group{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ .essentials-cookware-set .product-image{
+    max-width:150px; height:150px; position: relative;
+  }
+
+/* updated code */
+@media screen and (max-width: 576px){
+.essentials-cookware-set{
+    flex-direction:column;         
+   } 
+  .essentials-cookware-set .product-image{
+      max-width: 100%;
+      height: 150px;
+      max-height: 150px;
+      padding-bottom: 43%;
+      position: relative;
+      min-width: 350px;
+  }
+}
+
+@media screen  and (max-width: 1199px){
+
+.essentials-cookware-set .product-pricing{ margin-top:15px;
+                                         margin-bottom:10px;}
+.price-group{
+align-items:flex-start; 
+flex-direction:column;
+} }
+@media screen and (max-width: 749px){
+  .video-on-media .video-thumbnail{ margin-right:0; }
+  .video-on-media .video-feature-container{ flex-direction:column;  }
+  .video-on-media .video-thumbnail{ width:100%; }
+  .video-on-media .video-content{ margin-top:20px;padding: 0 10px; }
+  .buy-buttons-bar{ margin-bottom:10px; margin-top:20px; }
+  .essentials-cookware-set{ padding:0; margin-bottom:0;}
+  .product__info-container .product-block .sales-points{ margin:9px 0 !Important;}
+  .product__info-container .product-block .sales-points:nth-child(1){ margin-top:0 !important; }
+  .essentials-cookware-set .product-info{        padding: 0px 14px;}
+  .essentials-cookware-set .upgrade-button{ max-width:100%;} }
+  .essentials-cookware-set .compare-price{
+  color: var(--gray-tones-black-20, rgba(0, 0, 0, 0.20));
+  font-family: Cellofy;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 19.2px */
+  letter-spacing: -0.32px;
+  }
+  .essentials-cookware-set .current-price{
+  color: #606D22;
+  
+  /* Header 05 */
+  font-family: Cellofy;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  }
+
+  .essentials-cookware-set .sale-badge {
+    z-index: 9;
+  }
+  .essentials-cookware-set .product-image img {
+    max-width: 100%;
+    height: auto;
+    min-width: 100%;
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    left: 0;
+  }
+  .essentials-cookware-set .product-title {
+    margin-top: 20px;
+  }
+}
+           

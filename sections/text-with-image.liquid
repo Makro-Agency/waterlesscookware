@@ -1,0 +1,162 @@
+<style>
+  .text-width-image {
+    padding: 150px 80px;
+  }
+  .title_wrap .main_heading {
+    margin: 0 0 20px;
+  }
+  .title_wrap .cta_button {
+    margin-top: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    .text-width-image {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .title_wrap {
+      max-width: 560px;
+      padding-right: 110px;
+    }
+    .image_wrap {
+      max-width: 1160px;
+      display: flex;
+      gap: 40px;
+    }
+    .text-width-image.images_right  .image_wrap {
+      order: 1;
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    .title_wrap {
+      padding: 0;
+    }
+    .image_wrap {
+      gap: 20px;
+    }
+  }
+  @media screen and (max-width: 989px) {
+    .text-width-image {
+      padding: 60px 20px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .image_wrap {
+      gap: 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      margin-bottom: 40px;
+      scrollbar-width: none;
+    }
+    .image_wrap .images {
+      max-width: 90%;
+      min-width: 90%;
+    }
+    .title_wrap .cta_button {
+      width: 100%;
+    }
+  }
+</style>
+
+{% capture images %}
+{%- for i in (1..2) -%}
+  {%- capture image %}image_{{ i }}{% endcapture -%}
+  {%- assign image = section.settings[image] -%}
+  {% if image != blank %}  
+    {%- liquid
+      assign height = image.width | divided_by: image.aspect_ratio | round              
+      assign sizes = '50vw'
+      assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+    -%}
+    {% assign imageClass = 'image' %}
+    <div class="images">
+      {{ image
+        | image_url: width: 1100
+        | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: imageClass
+      }}
+    </div>
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+
+<div class="text-width-image{% if section.settings.show_right_side %} images_right{% endif %}">
+  {% if images != blank %}
+  <div class="image_wrap">
+    {{ images }}    
+  </div>
+  {% endif %}
+  <div class="title_wrap">
+    {%- if section.settings.title != blank -%}
+    <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank or section.settings.btn_text != blank -%}
+    <div class="description-wrapper">
+      {%- if section.settings.description != blank -%}
+        <p class="desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+      {%- if section.settings.btn_text != blank -%}
+        <a href="{{ section.settings.url | default:'#' }}" class="button cta_button">{{ section.settings.btn_text }}</a>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Text With Image",
+    "settings": [      
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Upload an image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Upload an image 2"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show image right alignment",
+        "id": "show_right_side"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Enter a title",
+        "default":"SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "description",
+        "label": "Enter a detail",
+        "default":"Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus."
+      },
+      {
+        "type": "text",
+        "label": "Button text",
+        "id": "btn_text",
+        "default": "SHOP NOW"
+      },
+      {
+        "type": "url",
+        "label": "Button link",
+        "id": "url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text With Image"
+      }
+    ]
+  }
+{% endschema %}

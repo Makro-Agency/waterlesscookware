@@ -1,0 +1,101 @@
+{{ 'manufacturing-process-section.css' | asset_url | stylesheet_tag }}
+
+
+<div class="manufacturing-process-section">
+  <div class="process-container">
+      <div class="desktop-hide">
+       <div class="icon">
+         <img src="{{ section.settings.svgicon | img_url:'' }}">
+      </div>
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+
+    
+    {% for block in section.blocks %}
+       {%- case block.type -%}
+        {%- when 'process_item_left' -%}
+        <div class="process-item process-item-{{ forloop.index }}">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+       {% endcase %}
+    {% endfor %}
+    
+    
+    <div class="center-item">
+      <div class="icon">
+        <img src="{{ section.settings.svgicon | img_url:'' }}">
+      </div>
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+    
+     {% for block in section.blocks %}
+         {%- case block.type -%}
+          {%- when 'process_item_right' -%}
+          <div class="process-item process-item-{{ forloop.index }}">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endcase %}
+    {% endfor %}
+
+    
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Manufacturing Process",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+     {
+      "type": "image_picker",
+      "id": "svgicon",
+      "label": "SVG Icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process_item_left",
+      "name": "Process Item Left",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+   {
+      "type": "process_item_right",
+      "name": "Process Item right",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manufacturing process",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

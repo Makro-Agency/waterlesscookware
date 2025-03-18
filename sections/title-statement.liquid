@@ -1,0 +1,277 @@
+<style>
+.title_statement {
+ padding: 150px 80px;
+}
+.main_heading {
+  font-size: 60px;
+  line-height: 90%;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  margin: 0 0 40px;
+}
+.title_statement:not(.left_title) .title_button_wrapper .cta_button {
+  float: right;
+}
+.cta_button {
+  background: #FA255E;
+  color: #fff;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 15px 25px;
+  letter-spacing: 0;
+  height: 50px;
+}
+.cta_button::after,
+.cta_button::before {
+  display: none;
+}
+.button.cta_button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+ul.list-unstyled {
+  list-style: none;
+}
+.title_statement_wrapper ul li {
+  border-top: 1px solid #E6E6E6;
+  padding: 25px 0;
+  flex: 1;
+}
+.title_statement_wrapper ul li h3.headings {
+  font-size: 32px;
+  line-height: 90%;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 10px;
+  letter-spacing: 0;
+}
+p.desc, .desc {
+  font-weight: 400;
+  color: #000;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+.statement-image {
+  display: none;
+}
+.title_statement:not(.left_title) .title_button_wrapper .main_heading {
+  padding-right: 160px;
+}
+@media screen and (max-width: 1600px){
+  .title_statement:not(.left_title) .title_button_wrapper .main_heading {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1600px){
+  .main_heading {
+    font-size: 51px;
+  }
+}
+@media screen and (min-width: 990px){
+  .title_statement:not(.left_title) .title_button_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .title_statement:not(.left_title) .title_button_wrapper > * {
+    flex: 1;
+  }
+  .title_statement:not(.left_title) .title_statement_wrapper ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    flex-wrap: wrap;
+  }
+  .title_statement .cta_button.btn-mobile {
+    display: none;
+  }
+  .title_statement:is(.left_title) {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .title_statement:is(.left_title) > div {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 989px){
+  .title_button_wrapper .cta_button {
+    display: none;
+  }
+  .title_statement .cta_button.btn-mobile {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .title_statement {
+    padding: 60px 20px;
+  }
+}
+@media screen and (max-width: 767px){
+  .statement-image {
+    display: flex;
+    margin: 0 auto 40px;
+  }
+  .main_heading {
+    margin: 0 0 20px;
+  }
+  .title_statement p.desc {
+    font-size: 17px;
+  }
+  p.desc {
+    font-size: 14px;
+  }
+}
+</style>
+
+
+<div class="title_statement {{ section.settings.textLayout }}">
+  {% if section.settings.image != blank %}            
+    {%- liquid
+      assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round              
+      assign sizes = '100vw'
+      assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+    -%}
+    {% assign imageClass = 'statement-image' %}
+    {{
+      section.settings.image
+      | image_url: width: 1100
+      | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: imageClass
+    }}    
+  {%- endif -%}  
+  <div class="title_button_wrapper">
+    {% if section.settings.title != blank %}
+      <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.btn_text != blank %}
+      <span><a href="{{ section.settings.url | default:'#' }}" class="button cta_button">{{ section.settings.btn_text }}</a></span>
+    {% endif %}
+  </div>
+  {%- assign textBlocks = section.blocks | where: 'type','text' -%}
+  {%- if textBlocks.size > 0 -%}
+  <div class="title_statement_wrapper">
+    <ul class="list-unstyled">
+      {%- for block in textBlocks -%}
+      <li>
+        <h3 class="headings h3">STEP {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</h3>
+        {%- if block.settings.detail != blank -%}
+          <div class="desc rte">{{ block.settings.detail }}</div>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}      
+    </ul>
+  </div>
+  {% endif %}
+  {% if section.settings.btn_text != blank %}
+    <a href="{{ section.settings.url | default:'#' }}" class="button cta_button btn-mobile">{{ section.settings.btn_text }}</a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Title Statement",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+  "settings":[
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Upload an image",
+      "info": "Only visible in mobile"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "label": "Select text layout",
+      "id": "textLayout",
+      "options": [
+        {
+          "label": "Layout 1",
+          "value": ""
+        },
+        {
+          "label": "Layout 2",
+          "value": "left_title"
+        }
+      ],
+      "default":""
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Enter a title",
+      "default":"SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "btn_text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "label": "Button link",
+      "id": "url"
+    },
+    {
+      "type": "header",
+      "content": "For the steps create the Text block"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text block",
+      "settings": [
+        {
+          "type": "richtext",
+          "label": "Text",
+          "id": "detail",
+          "default": "<p>Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title Statement",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

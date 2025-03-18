@@ -1,0 +1,11 @@
+{%- assign avgReview = product.metafields.reviews.rating.value | replace : '"', '' | times: 1 | round: 1 -%}
+{%- assign totalReview = product.metafields.reviews.rating_count -%}
+  
+{%- if avgReview > 0 -%}
+  <div class="info-review">
+    <i class="re-star">{%- render 'icon-star' -%}</i>
+    <div class="total-review">{{ avgReview }}</div>
+    <span class="seprator">/</span>
+    <span class="total-review">{{ totalReview }} reviews</span>
+  </div>
+{%- endif -%}

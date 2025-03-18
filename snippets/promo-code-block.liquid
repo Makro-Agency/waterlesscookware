@@ -1,0 +1,72 @@
+{%- assign promoField = block.settings.promo_tags | downcase -%}
+{%- if promoField contains ',' -%}
+  {%- assign promoTags = promoField | split: ',' -%}
+{%- else -%}
+  {%- assign promoTags = promoField -%}
+{%- endif -%}
+
+{%- assign isTagFound = false -%}
+
+{%- if promoField == blank or promoField == '' -%}
+  {%- assign isTagFound = true -%}
+{%- else -%}
+  {%- if block.settings.show_promocode_block -%}
+    {%- for promo_tag in promoTags -%}
+      {%- for tag in product.tags -%}
+        {%- assign tagDownCase = tag | downcase -%}
+        {%- if promo_tag == tagDownCase -%}
+          {%- assign isTagFound = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if isTagFound -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}
+
+
+{%- style -%}
+.promo-code-block {
+  --bgColor: {{ block.settings.bg_color }};
+  --textColor: {{ block.settings.txt_color }};
+}
+{%- endstyle -%}
+
+
+{%- if isTagFound -%}
+  <div class="promo-code-block{% unless block.settings.promo_img %} promo-code-noimg{% endunless %}">
+    {%- if block.settings.promo_tooltip != blank -%}
+      <div class="promo-code-tooltip">
+        {% render 'icon-info' %}
+        {% render 'icon-info-2' %}
+        <div class="tooltip-info">{{ block.settings.promo_tooltip }}</div>
+      </div>
+    {%- endif -%}
+
+    {%- if block.settings.promo_img != blank or block.settings.promo_title != blank or block.settings.promo_coupen_code != blank -%}
+      <div class="promo-code-row">
+        {%- if block.settings.promo_img != blank -%}
+          <div class="promo-code-col col-left">{{ block.settings.promo_img | image_url: width: 350 | image_tag: loading: 'lazy' }}</div>
+        {%- endif -%}
+        <div class="promo-code-col col-right">
+          {%- if block.settings.promo_title != blank -%}
+            <h4>{{ block.settings.promo_title }}</h4>
+          {%- endif -%}
+          {%- if block.settings.promo_coupen_code != blank -%}
+            <div class="promo-code-bottom">
+              {%- if block.settings.promo_sub_title != blank -%}<h6>{{ block.settings.promo_sub_title }}</h6>{%- endif -%}
+              <promocode-field class="promo-code-wrap">  
+                <span class="promo-text" data-promo-code>  
+                  <span class="copy-text">{{ block.settings.promo_coupen_code }} {% render 'icon-copy' %}</span>  
+                  <input id="inputCopyText" class="hidden" value="{{ block.settings.promo_coupen_code }}" type="text">  
+                  <span class="after-copy-msg hidden" data-after-copy>Copied!</span>  
+                </span>  
+              </promocode-field>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+  

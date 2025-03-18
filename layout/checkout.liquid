@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WFKPDQ6"></script>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    <style>
+      .order-summary__sections {height: unset;}
+      @media(max-width: 1000px) {
+        .checkout-features,.checkout-reviews {display: none;}
+      }
+      .checkout-features {border-top: 2px solid #c8c8c8;margin: 0 0 25px;padding: 20px 0 10px;border-bottom: 2px solid #c8c8c8;}
+      .checkout-features .grid {display: flex;flex-flow: row wrap;}
+      .checkout-features .grid > .grid__item strong {display: block;font-weight: 700;margin-bottom: 5px;text-transform: uppercase;font-size: 11px;letter-spacing: 1px;color: black;}
+      .checkout-features .rte {font-size: 12px;}
+      .checkout-features .grid > .grid__item {display: flex;flex-basis: 100%;margin-bottom: 20px;}
+      .checkout-features img {max-height: 40px;margin-right: 10px;max-width: 40px;}
+      .checkout-reviews .testimonials-slider__text {margin: 20px 0;}      
+      .checkout-reviews cite {font-style: normal;font-weight: bold;display: block;margin-bottom: 10px;}
+      .checkout-reviews .testimonial-stars {color: #f7d462;font-size; 16px;}
+      .checkout-reviews h2 {font-weight: bold;text-transform: uppercase;letter-spacing: 1px;}
+      .section--shipping-method .section__header {margin-bottom: 1.15em;}
+      .custom-shipping-wrap {border: 1px solid #D9D9D9; border-radius: 5px; padding: 12px 16px; margin-bottom: 20px;}
+      .custom-shipping-text {display: flex;}
+      .custom-shipping-text svg {display: block; margin-right: 6px; width: 13px; height: 13px;}
+      .custom-shipping-text p { flex: 1 0;position: relative; top: -2px; font-size: 12px; line-height: 1.334; letter-spacing: -0.01em; color: #333333; font-weight: 510;}
+      .custom-shipping-wrap {display: flex; margin-top: 15px; background: #DCF7DA; border: 1px solid #074301;}
+      .custom-shipping-wrap input[type="checkbox"] {width: 16px; height: 16px; -webkit-appearance: auto; margin-right: 12px; opacity: 0;}
+      .custom-shipping-wrap label {display: flex; align-items: center; position: relative; cursor: pointer; font-weight: 510;}
+      .custom-shipping-wrap label:before {content: ''; position: absolute; top: -1px; left: -29px; width: 16px; height: 16px; background: #FFFFFF;border: 1px solid #074301; border-radius: 2px;}
+      .custom-shipping-wrap input[type="checkbox"]:checked + label:before {background-image: url(https://cdn.shopify.com/s/files/1/1169/4922/files/square-check-solid.svg?v=1683734373); background-size: cover;background-position: center; width: 18px; height: 18px; border-width: 0;}
+      .custom-shipping-wrap .tooltip-icon-wrap {position: relative; margin-left: 11px; align-self: center;}
+      .custom-shipping-wrap .tooltip-icon svg {display: block; width: 14px; height: 14px;}
+      .custom-shipping-wrap .tooltip-icon svg path {fill: currentColor;}
+      .custom-shipping-wrap .tooltip-icon-wrap:not(:hover) .tooltip-content,
+      .custom-shipping-wrap .tooltip-icon-wrap:not(:hover):before {opacity: 0; visibility: hidden;}
+      .custom-shipping-wrap .tooltip-content { z-index: 1;position: absolute; background: #074301; border-radius: 5px; width: 310px; color: #fff; padding: 10px 15px 12px; font-size: 12px; font-weight: 400; letter-spacing: -0.01em; top: 100%; left: 50%; margin-top: 9px; line-height: 1.334; margin-bottom: 5px;-webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -ms-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s;-webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0);}
+      .custom-shipping-wrap .tooltip-content:before,.tooltip-icon-wrap .tooltip-icon:before {content: ''; border-width: 0 10px 15px 10px; display: block; border-style: solid; border-color: transparent transparent #074301 transparent;width: 0; height: 0; position: absolute;top: -6px; left: calc(50% - 10px); }
+      .tooltip-icon-wrap .tooltip-icon:before {display: none;}
+      .custom-shipping-wrap .tooltip-icon:not(:hover):before {-webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -ms-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease;}
+      @media screen and (max-width: 999px){
+        .custom-shipping-wrap {margin-bottom: 25px;}
+      }
+      @media screen and (max-width: 560px){
+        .custom-shipping-wrap .tooltip-icon-wrap {position: static;}
+        .tooltip-icon-wrap .tooltip-icon,.custom-shipping-main .custom-shipping-wrap {position: relative;}
+        .tooltip-icon-wrap .tooltip-icon:before {top: 18px;display: block;left: -3px; }
+        .custom-shipping-wrap .tooltip-icon:not(:hover):before, .tooltip-icon-wrap .tooltip-icon:before, .custom-shipping-wrap .tooltip-content {-webkit-transition: all 0s ease 0s;-moz-transition: all 0s ease 0s;-ms-transition: all 0s ease 0s;-o-transition: all 0.3s ease 0s;transition: all 0s ease 0s;}
+        .custom-shipping-wrap .tooltip-icon-wrap:not(:hover) .tooltip-icon:before {opacity: 0; visibility: hidden;}
+        .custom-shipping-wrap .tooltip-content {width: calc(100% - 30px); transform: none; left: 0; margin-top: -3px;}
+        .custom-shipping-wrap .tooltip-content:before {display: none;}
+      }      
+    </style>
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+            {% comment %}{% section 'checkout-features' %}{% endcomment %}
+            {% section 'checkout-feature-icon' %}
+            {% section 'checkout-reviews' %}
+            <script src="https://connect.nosto.com/include/shopify-11694922" async></script>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+
+    <script>
+      {% assign recyleShippingEnable = false %}
+      {% for attribute in checkout.attributes %}
+        {% if attribute.first == "__Recycled Box" and attribute.last != blank %}
+          {% assign recyleShippingEnable = true %}        
+        {% endif %}
+      {% endfor %}
+      var recyleShippingEnable = "{{ recyleShippingEnable }}";
+      if(Shopify.Checkout.step == 'contact_information' && recyleShippingEnable == "false"){
+        localStorage.removeItem("isRecyle_true");
+        updateCartNote("false");
+      }
+      
+      if (Shopify.Checkout.step == 'shipping_method'){
+
+        var checkFeature = document.querySelector("#shopify-section-checkout-features") || null;
+        if(checkFeature) {
+          checkFeature.classList.add("hidden");
+          checkFeature.style.display = "none";
+        }
+  
+        var checkRev = document.querySelector("#shopify-section-checkout-reviews") || null;
+        if(checkRev){
+          checkRev.classList.add("hidden");
+          checkRev.style.display = "none";
+        }
+        
+        (function($) {
+          $(document).on("page:load page:change", function() {
+            //console.log('>>> Page loaded/changed');
+            creatCheckboxHTML();
+          });
+        })(Checkout.$);
+      }
+
+      if (Shopify.Checkout.step == 'payment_method'){
+        let recycle = localStorage.getItem("isRecyle_true") || null;
+        if(recycle && recyleShippingEnable == "false"){
+          updateCartNote("true");
+        }
+      }
+
+      function creatCheckboxHTML(){
+        let shipWrap = document.querySelector(".step__sections .section__content") || null;
+        if(shipWrap){
+          var checked = "";
+          var isRecycle = localStorage.getItem("isRecyle_true");
+          if(isRecycle){
+            checked = "checked";
+          }else{
+            updateCartNote("false");
+          }
+          let checkboxWrap = document.createElement("div");
+          checkboxWrap.classList.add("custom-shipping-main");
+          let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 0C3.13111 0 0 3.13075 0 7C0 10.8688 3.13075 14 7 14C10.8689 14 14 10.8693 14 7C14 3.13116 10.8693 0 7 0ZM7.71884 9.7787C7.71884 9.99986 7.39635 10.221 7.00014 10.221C6.5855 10.221 6.29068 9.99986 6.29068 9.7787V6.26812C6.29068 6.01013 6.58552 5.83502 7.00014 5.83502C7.39635 5.83502 7.71884 6.01013 7.71884 6.26812V9.7787ZM7.00016 4.98739C6.57631 4.98739 6.24463 4.67411 6.24463 4.32395C6.24463 3.97381 6.57634 3.66975 7.00016 3.66975C7.4148 3.66975 7.74654 3.97381 7.74654 4.32395C7.74654 4.67411 7.41478 4.98739 7.00016 4.98739Z" fill="black"></path></svg>`;
+          let leafSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M7.93687 7.02982C7.65211 7.30233 7.35183 7.67124 7.07892 8.166C6.80928 7.19243 6.46937 6.47869 6.12578 5.95616C7.70236 0.688749 0.0187988 0.5 0.0187988 0.5C0.0187988 0.5 0.243092 7.08334 4.25585 6.93218C4.24768 6.49136 4.17945 6.04563 4.08385 5.62769C4.02135 5.35519 3.94699 5.09535 3.87018 4.85553C3.61361 4.06009 3.32395 3.49547 3.32395 3.49547C3.61647 3.8885 3.87549 4.26354 4.10428 4.61612C4.89155 5.82747 5.32134 6.76958 5.52112 7.26719C6.01424 8.32656 6.45711 10.069 6.45711 12.9166C6.45711 13.2389 6.71899 13.5 7.04011 13.5C7.36204 13.5 7.62351 13.2389 7.62351 12.9166C7.62351 11.9937 7.57898 11.1725 7.4985 10.44C7.68439 9.54607 7.96506 8.9116 8.25554 8.46219C8.44633 8.09818 8.79809 7.47473 9.27201 6.83821C9.69404 6.27197 10.2145 5.6951 10.8032 5.28328C10.8032 5.28328 9.59598 6.61964 9.51795 7.92781C12.8525 8.10185 12.982 2.85569 12.982 2.85569C12.982 2.85569 6.87955 3.06405 7.93687 7.02982Z" fill="#4AA42B"/></svg>`;
+          let html = `{% if settings.shipping_text != blank %}<div class="custom-shipping-text">${leafSVG} {{ settings.shipping_text }}</div>{% endif %}
+          <div class="custom-shipping-wrap">
+          {% for attribute in checkout.attributes %}
+            <input type="hidden" name="checkout[attributes][{{ attribute.first }}]" value="{{ attribute.last  }}">
+          {% endfor %}
+          <input type="checkbox" name="checkout[attributes][__Recycled Box]" id="ship-checkbox" value="Yes" data-recycle-ship-checkbox ${checked}>
+          {% comment %}<input type="checkbox" name="shipping_checkbox" id="ship-checkbox" data-recycle-ship-checkbox ${checked}>{% endcomment %}
+          <label for="ship-checkbox"><div class="ship-label">{{ settings.shipping_label }}</div></label>          
+          {% if settings.shipping_tooltip != blank %}
+            <div class="tooltip-icon-wrap">
+              <span class="tooltip-icon">${svg}</span>
+              <div class="tooltip-content">
+              {{ settings.shipping_tooltip }}
+              </div>
+            </div>
+            {% endif %}
+          </div>`;
+          checkboxWrap.innerHTML = html;
+          shipWrap.prepend(checkboxWrap);
+
+          const checkbox = document.querySelector('[data-recycle-ship-checkbox]') || null;
+          if(checkbox){
+            checkbox.addEventListener('change', (event) => {
+              if (event.currentTarget.checked) {
+                updateCartNote("true");
+              } else {
+                updateCartNote("false");
+              }
+            });
+          }
+        }
+      }
+
+      function updateCartNote(checked){
+        //console.log("checked",checked);
+        if( document.querySelector('#continue_button') != null ){
+          document.querySelector('#continue_button').setAttribute('disabled','');
+          document.querySelector('#continue_button').style.opacity = 0.5;
+        }
+        if(checked == "true"){
+          var body = { attributes: { '__Recycled Box': 'Yes'} };
+          localStorage.setItem("isRecyle_true", "true");
+        }else{
+          var body = { attributes: {'__Recycled Box': '' } };
+          localStorage.removeItem("isRecyle_true");
+        }
+        fetch('/cart/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+          body: JSON.stringify(body)
+        })
+        .then(response => response.json())
+        .then(response => {
+          // console.log("response attributes-->",response.attributes);
+          if( document.querySelector('#continue_button') != null ){
+            document.querySelector('#continue_button').removeAttribute('disabled');
+            document.querySelector('#continue_button').style.opacity = 1;
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          if( document.querySelector('#continue_button') != null ){
+            document.querySelector('#continue_button').removeAttribute('disabled');
+            document.querySelector('#continue_button').style.opacity = 1;
+          }
+        });
+      }
+
+      // if(document.querySelectorAll('.feature-icon').length > 0){
+      //   document.querySelectorAll('.feature-icon').forEach((icons) => {
+      //     if(icons.querySelector('.feature-icon-description p').textContent.includes('Terms apply')){
+      //       icons.querySelector('.feature-icon-description p a').innerHTML = icons.querySelector('.feature-icon-description p a').innerHTML.replace("Return policy","Return & Exchange Policy");
+      //       icons.querySelector('.feature-icon-description p a').setAttribute('href', "https://www.thesareeroom.com/pages/return-policy");
+      //     }
+      //   })
+      // }
+      
+      
+      // if(document.querySelectorAll('.policy-list__item').length > 0){
+      //   document.querySelectorAll('.policy-list__item').forEach((policy_text) => {
+      //     if(policy_text.querySelector('a').textContent.includes('Refund policy')){
+      //       policy_text.querySelector('a').innerHTML = policy_text.querySelector('a').innerHTML.replace("Refund policy","Return & Exchange Policy");
+      //       policy_text.querySelector('a').setAttribute('href', "https://www.thesareeroom.com/pages/return-policy");
+      //     }
+      //   })
+      // }
+      
+    </script>
+    {% comment %}{% section 'checkout-feature-icon' %}{% endcomment %}
+    <!-- navidium script starts -->
+    <script>
+        let nvdShop = 'thesareeroom.myshopify.com';
+        let nvdShopCurrency = '{{ shop.money_format | strip_html }}';
+    </script>
+     <script src='https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/plus/navidium-checkout.js' defer></script>
+     <!-- navidium script ends -->
+
+  </body>
+</html>

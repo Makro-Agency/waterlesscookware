@@ -1,0 +1,483 @@
+{{ 'catalog-bakeware.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+{% if section.settings.show_rating %}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<style>
+    .bg-{{ section.id }} .background-backware-second {
+      background-image: url("{{ section.settings.bgimage | img_url:'' }}");
+      background-size: cover;
+      background-position: right;
+      position: relative;
+      z-index: 1;
+      border-radius: 15px;
+      height: auto;
+  }
+    @media only screen and (max-width: 768px) {
+      .bg-{{ section.id }} .background-backware-second {
+          background-image: url("{{ section.settings.imagemobile | img_url:''}}");
+          min-height: 480px;
+          border-radius: 0px;
+      }
+    }
+    
+  .makro-product--card .card__heading{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: inherit;
+    letter-spacing: normal;
+    margin-bottom: 5px;
+  }
+  .makro-product--card .product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+    display: none;
+}
+@media(max-width:670px){
+  .catalog-button-container-btn{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+ 
+</style>
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+ {%- liquid
+    assign ratio = 1
+    if product.featured_media and section.settings.image_ratio == 'portrait'
+      assign ratio = 0.8
+    elsif product.featured_media and section.settings.image_ratio == 'adapt'
+      assign ratio = product.featured_media.aspect_ratio
+    endif
+    if ratio == 0 or ratio == null
+      assign ratio = 1
+    endif
+  -%}
+<div id="catalog-banner-section-main" class="page-width bg-{{ section.id }} backware-catalog-section section-{{ section.id }}-padding">
+  <div id="backware-catalog-section">
+    <div id="catalog-banner-section-image" class="catelog-banner-section-image-backware background-backware-second">
+      <div class="catalog-banner-section-main">
+        <div class="catalog-icon-with-text">
+         {%- for block in section.blocks -%}
+            <div class="banner-icon-text">
+              {% if block.settings.svg != blank %}
+               {{ block.settings.svg }}
+               {% endif %}
+              {% if block.settings.title != blank %}
+                <span class="catalog-banner-icon-text">{{ block.settings.title }}</span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="banner-text-catalog">
+          <div class="banner-text-catalog-icon">
+            <h2>{{ section.settings.title }}</h2>
+            <span>
+              <a href="{{ section.settings.collection.url }}" class="catalog-banner-icon-view"
+                >View All
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M11.7535 11.5L15 7.99821M15 7.99821L11.7569 4.5M15 7.99821H1"
+                      stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+          <div>
+            <p> {{ section.settings.description }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+                
+    <div class="banner-slider-product-section" id="catalog-product-slider">
+      <div class="swiper mySwiper-product-bakeware">
+        <div class="swiper-wrapper swiper-inner">
+         {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          <div class="swiper-slide makro-product--card">
+           {% render 'card-product-new',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
+            %}
+          </div>
+         {% endfor %}
+        </div>
+      </div>
+      {% if section.settings.btn_text !=blank  %}
+      <div class="catalog-button-container">
+          <a href="{{ section.settings.btn_link }}" class="button cta_button catalog-button-container-btn">{{ section.settings.btn_text }}</a>
+      </div>
+     {% endif %}
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper(".mySwiper-product-bakeware", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          // when window width is >= 0px
+          0: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+          },
+          // when window width is >= 575px
+          575: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+          },
+          // when window width is >= 767px
+          750: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+          },
+          // when window width is >= 1024px
+          1000: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+          },
+          // when window width is >= 1440px
+          1500: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+          },
+      },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "catalog bakeware second",
+  "settings":[
+     {
+      "type": "image_picker",
+      "id": "bgimage",
+      "label": "Bg Desktop Image"
+     },
+     {
+      "type": "image_picker",
+      "id": "imagemobile",
+      "label": "Bg Mobile Image"
+     },
+     {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Featured collection",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+     {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+      {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.featured-collection.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.featured-collection.settings.full_width.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "t:sections.featured-collection.settings.show_view_all.label"
+    },
+    {
+      "type": "select",
+      "id": "view_all_style",
+      "label": "t:sections.featured-collection.settings.view_all_style.label",
+      "options": [
+        {
+          "value": "link",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__1.label"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__2.label"
+        },
+        {
+          "value": "solid",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__3.label"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.featured-collection.settings.image_ratio.label"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.all.image_shape.options__1.label"
+        },
+        {
+          "value": "arch",
+          "label": "t:sections.all.image_shape.options__2.label"
+        },
+        {
+          "value": "blob",
+          "label": "t:sections.all.image_shape.options__3.label"
+        },
+        {
+          "value": "chevronleft",
+          "label": "t:sections.all.image_shape.options__4.label"
+        },
+        {
+          "value": "chevronright",
+          "label": "t:sections.all.image_shape.options__5.label"
+        },
+        {
+          "value": "diamond",
+          "label": "t:sections.all.image_shape.options__6.label"
+        },
+        {
+          "value": "parallelogram",
+          "label": "t:sections.all.image_shape.options__7.label"
+        },
+        {
+          "value": "round",
+          "label": "t:sections.all.image_shape.options__8.label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.all.image_shape.label",
+      "info": "t:sections.all.image_shape.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_rating.label",
+      "info": "t:sections.featured-collection.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.featured-collection.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+    },
+    
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+   "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "svg",
+          "label": "svg"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name" : "catalog bakeware second"
+    }
+  ]
+}
+{% endschema %}

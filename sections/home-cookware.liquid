@@ -1,0 +1,560 @@
+{{ 'cookware-section.css' | asset_url | stylesheet_tag }}
+<style>
+
+.cookware-new-section .card__heading_wrap .card__heading{
+  overflow: hidden;
+color: var(--Black, #0D0D0D);
+text-overflow: ellipsis;
+/* Body Text Standard/Medium */
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 21px */
+  
+  }
+     .left-align .link.makro--link{ transition: all 0.3s linear; }
+    .left-align .link.makro--link:hover{ 
+      color:#000 !important; 
+     border-color: #a5bb36 !important;}
+  .cookware-new-section .right-arrow svg{color:#ffffff; }
+  .cookware-new-section .card__heading_wrap .card__heading{
+color: var(--Black, #0D0D0D);
+/* Body Text Standard/Medium */
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 21px */
+  }
+    .cookware-new-section .video-group .link.makro--link svg{ transition:all 0.3s linear; }
+    .cookware-new-section .video-group .link.makro--link{ transition:all 0.3s linear; }
+  .cookware-new-section .video-group .link.makro--link:hover{
+    background: #c3d957 !important;
+    color: #fcfbf7 !important; 
+  }
+  .cookware-new-section .card__heading_wrap .card__heading a{ letter-spacing:0; }
+  .cookware-new-section .makro-product--card{ padding:10px; }
+  .makro-product--card .card__heading_wrap{ max-width:207px; width:100%;  }
+ /* .cookware-new-section  .card__heading_wrap{ padding:26px 0; } */
+ .cookware-new-section .card__heading_wrap .price .price__sale{
+
+   color: var(--gray-tones-black-40, rgba(0, 0, 0, 0.40));
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+text-decoration-line: strikethrough;
+ }
+    .cookware-new-section .card__heading_wrap .price .price__regular{
+    color: var(--Black, #0D0D0D);
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 21px */
+  }
+  .cookware-new-section:hover .right-arrow {
+    background:#c3d957;
+  }
+
+.cookware-new-section .product-image{ width:8rem; height:8rem; }
+.cookware-new-section .video-group .link.makro--link{
+     position: absolute;
+  min-width:165px;
+  height:40px; 
+    padding: 10px 30px;
+    border-radius: 100px;
+    bottom: 20px;
+    left: 25px;
+    background-color: #ffffff;
+  color: var(--Green, #606D22);
+text-align: center;
+/* CTA / Small */
+font-family: "Proxima Nova";
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 14px */
+  
+}
+  .cookware-new-section .makro-product--card{ gap:15px; }
+ .cookware-new-section .right-arrow{ margin-left:0px; 
+         width: 40px;
+    height: 40px;
+    display: flex;
+    /* padding: 19px; */
+    border-radius: 50%;
+    background-color: #606D22;
+    align-items: center;
+    justify-content: center                              
+  } 
+
+ 
+.cookware-new-section .makro-product--card{  max-width:392px;    position: absolute;
+    border-radius: 15px;
+background: var(--White, #FCFBF7);
+align-items:center; 
+/* Hotspot Shadow */
+box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.10);
+    bottom: 75px;
+    width: 90%;
+    right: 0;
+    margin: 0 auto;
+    left: 0;
+    /* height: 100px; */
+    display: flex;
+}
+  .title_video_wrapper:not(.right_video) .video_group {
+    margin-bottom: 60px;
+    display: block;
+    /* height:529px; */
+  }
+  .cover-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+  }
+  .play-button{
+    width:80px;
+    height:80px;
+  }
+  button.play-button {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    padding: 0;
+  }
+  .video_title .main_heading {
+    margin-bottom: 10px;
+  }
+  .video_title .cta_button {
+    margin-top: 40px;
+  }
+  .img-mobile {
+    display: none;
+  }
+  custom-deferred-media.video_group {
+    display: block;
+  }
+  .video_group {
+    position: relative;
+  }
+  .video_group[loaded="true"] .cover-image,
+  .video_group iframe, .video_group video {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .video_group iframe, .video_group video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-width: 0;
+    transition: all 0.5s 0.2s ease, visibility 0.2s;
+    border-radius:20px;
+  }
+  .video_group[loaded="true"] iframe, .video_group[loaded="true"] video {
+    visibility: visible;
+    opacity: 1;
+  }
+    @media screen and (min-width:1141x) and (max-width:1319px) {
+  .process-container{     max-width: 148px; } }
+  @media screen and (max-width:767px){
+  .cookware-new-section .makro-product--card{ display:none;}
+  }
+
+    /* @media screen and (min-width:1240px) and (max-width:1440px){
+   .cookware-new-section .right-arrow{ margin-left:20px; } */
+    }
+     @media screen and (min-width:1161px) and (max-width:1239px){
+   .cookware-new-section .right-arrow{ margin-left:0px; }
+    }
+  @media screen and (min-width:1320px) and (max-width:1439px){
+   .cookware-new-section .card__heading_wrap{ max-width:179px; }
+ 
+  }
+   @media screen and (min-width:1161px) and (max-width:1319px){
+   .cookware-new-section .card__heading_wrap{ max-width:159px; }
+ 
+  }
+  @media screen and (min-width: 990px){
+    .title_video_wrapper.right_video {
+      display: flex;
+      justify-content: space-between;
+    }
+    .title_video_wrapper.right_video > * {
+      flex: 1;
+    }
+    .title_video_wrapper.right_video .video_title {
+      max-width: 550px;
+    }
+    .title_video_wrapper.right_video .video_group {
+      order: 1;
+      max-width: 1160px;
+    }
+    .title_video_wrapper:not(.right_video) .video_title {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .title_video_wrapper:not(.right_video) .video_title > * {
+      flex: 1;
+    }
+  }
+  @media screen and (max-width: 989px){
+    .cookware-new-section{ padding-top:20px; }
+    .video_group {
+      margin-bottom: 40px;
+    }
+    .title_video_wrapper {
+      padding: 60px 20px.title_video_wrapper:not(.right_video) .video_group
+    }
+  }
+    @media screen and (min-width: 768px) and (max-width:1140px){
+    .cookware-new-section  .img-desktop{ position:relative; }
+.cookware-new-section .video-group-wrapper1 .video-group{ min-width:50%;}
+  .cookware-new-section .video-group-wrapper1{ overflow-y:auto; } }
+  @media screen and (max-width: 767px){
+    .cookware-new-section .video-group .auther-content{ margin-top:30px; }
+    .cookware-new-section .video-group-wrapper1{ margin-top:4rem; }
+    .cookware-new-section .card-content{ display:none; }
+    .cookware-new-section .main_heading{ font-size:36px; }
+    .left-align .link.makro--link{
+          color: var(--Black, #0D0D0D);
+    text-align: center;
+    font-family: "Proxima Nova";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    }
+      .makro-product--card { display:none !Important; }
+    .cookware-new-section .heading{ font-size:20px; }
+    .img-mobile {
+      display: block;
+    }
+    .img-desktop {
+      display: none;
+    }
+    .play-button svg {
+      height: 70px;
+      width: 70px;
+    }
+    .video_title .cta_button {
+      width: 100%;
+    }
+  }
+    @media screen and (max-width: 480px){
+   .cookware-new-section  .img-mobile{ height:410px;}
+      .cookware-new-section   .image-inner{ width:100%; }
+  .cookware-new-section .video-group-wrapper1 .video-group{ min-width: calc(92% - 2px); }  
+    }
+    @media screen and (min-width: 480px) and (max-width:749px){
+  .image-inner{ width:100%; } }
+  @media screen and (min-width: 768px) and (max-width:989px){
+  .cookware-new-section .card__heading_wrap{ max-width:18rem;} }
+  @media screen and (min-width: 768px) and (max-width:1160px){
+    .cookware-new-section .makro-product--card{ gap:8px; }
+    /* .cookware-new-section .right-arrow{ margin-left:2rem; } */
+  .cookware-new-section .image-inner{ width:100%;} }
+  .section-headings{ display:flex; }
+  .left-align .link.makro--link{ border-bottom: 3px solid var(--Green, #606D22); width:fit-content; }
+ .makro-product--card:hover { opacity:1; }
+
+  .makro-product--card {
+    opacity:0;
+    transition:all 0.6s linear;
+
+ 
+}
+  @media screen and (min-width: 768px){
+.link.makro--link:hover + .makro-product--card {
+  display: flex !Important; opacity:1;
+}}
+  /* .link.makro--link{ position:absolute; bottom:0; } */
+  .video-group-wrapper1 .video-group:hover .heading{
+      /* color: #a6bb3a; */
+  }
+</style>
+
+
+{%- liquid  
+  
+  
+  assign video_alt = section.settings.video.alt | default: section.settings.description
+
+  
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+ 
+
+  
+
+  if section.settings.video != null
+    assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+     
+    endif
+  endif
+  if section.settings.video_mobile != null
+    assign ratio_diff_mobile = section.settings.video_video_mobile.aspect_ratio | minus: posterMobile.aspect_ratio | abs
+    if ratio_diff_mobile < 0.01 and ratio_diff_mobile > 0
+     
+    endif
+  endif
+-%}
+
+<div class="cookware-new-section page-width section-padding" id="recipe-section">
+  <div class="containe-group">
+    <div class="section-headings">
+    <div class="left-align">
+      <h2 class="main_heading h2">{{ section.settings.main_heading }}</h2>
+   <a href="{{ section.settings.banner_link }}" class="link makro--link">{{ section.settings.banner_button_text }} {% render 'btn-arrow-right' %}</a>
+    </div>
+        <div class="card-content">
+         {% if section.settings.icon !=blank %}   <img src="{{ section.settings.icon | image_url: width: 150 }}" class="icon-image" alt="{{ block.settings.title }}"> {% endif %}
+            <p class="desc">{{ section.settings.banner_description }}</p>  
+          </div>
+    </div>
+       
+ 
+  
+      <div class="video-group-wrapper1 mk title_video_wrapper"> 
+        {%- for block in section.blocks -%}
+          <div class="video-group">
+            <a href="{{ block.settings.prod.url }}" class="full-unstyled-link">
+          <div class="cover-image">
+            <div class="image-inner">
+            {%- if block.settings.cover_image != blank -%}
+              <div class="img-desktop">
+              <img src="{{ block.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+              </div>
+             
+            {%- endif -%}
+            
+            {%- if block.settings.cover_image_mobile != blank -%}
+              <div class="img-mobile">
+              <img src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}" class="img-mobile" alt="{{ block.settings.title }}">
+                 {% if block.settings.prod.available %}
+            <div class="makro-product--card">
+              <div class="product-image"><img src="{{ block.settings.prod.featured_image | image_url }}" height="auto" width="auto"></div>
+              <div class="card__heading_wrap">
+                <h3 class="card__heading h5">{{ block.settings.prod.title }}</h3>
+                <div class="price {% if block.settings.prod.compare_at_price > block.settings.prod.price %}price--on-sale{% endif %}">
+                  <div class="price__container">
+                    <div class="price__regular"> 
+                      <span class="visually-hidden visually-hidden--inline">Regular price</span> 
+                      <span class="price-item price-item--regular"> {{ block.settings.prod.price | money }} </span> 
+                    </div> 
+                    <div class="price__sale">
+                      <span class="visually-hidden visually-hidden--inline">Sale price</span> 
+                      <span class="price-item price-item--sale price-item--last"> {{ block.settings.prod.compare_at_price | money }} </span>
+                      <span class="visually-hidden visually-hidden--inline">Regular price</span> 
+                      <span><s class="price-item price-item--regular"> {{ block.settings.prod.price | money }} </s> </span> 
+                    </div> 
+                    <small class="unit-price caption hidden"> 
+                      <span class="visually-hidden">Unit price</span> 
+                      <span class="price-item price-item--last"> <span></span> 
+                        <span aria-hidden="true">/</span> <span class="visually-hidden">&nbsp;per&nbsp;</span> <span> </span> </span> 
+                    </small> 
+                  </div>
+                </div>
+               
+              </div>
+              <div class="right-arrow">
+                {% render 'btn-arrow-right' %}
+              </div>
+            </div>
+            {% endif %}
+           
+              </div>
+            {%- endif -%}
+        
+          </div>
+              <a href="{{ block.settings.prod.url }}" class="link makro--link">View Product{% render 'btn-eye' %}</a>  
+              {% if block.settings.prod.available %}
+            <div class="makro-product--card">
+              <div class="product-image"><a href="{{ block.settings.prod.url }}" class="full-unstyled-link"><img src="{{ block.settings.prod.featured_image | image_url }}" height="auto" width="auto"></a></div>
+              <div class="card__heading_wrap">
+              <a href="{{ block.settings.prod.url }}" class="full-unstyled-link">
+                <h3 class="card__heading h5">{{ block.settings.prod.title }}</h3>
+                <div class="price {% if block.settings.prod.compare_at_price > block.settings.prod.price %}price--on-sale{% endif %}">
+                  <div class="price__container">
+                    <div class="price__regular"> 
+                      <span class="visually-hidden visually-hidden--inline">Regular price</span> 
+                      <span class="price-item price-item--regular"> {{ block.settings.prod.price | money }} </span> 
+                    </div> 
+                    <div class="price__sale">
+                      <span class="visually-hidden visually-hidden--inline">Sale price</span> 
+                      <span class="price-item price-item--sale price-item--last"> {{ block.settings.prod.compare_at_price | money }} </span>
+                      <span class="visually-hidden visually-hidden--inline">Regular price</span> 
+                      <span><s class="price-item price-item--regular"> {{ block.settings.prod.price | money }} </s> </span> 
+                    </div> 
+                    <small class="unit-price caption hidden"> 
+                      <span class="visually-hidden">Unit price</span> 
+                      <span class="price-item price-item--last"> <span></span> 
+                        <span aria-hidden="true">/</span> <span class="visually-hidden">&nbsp;per&nbsp;</span> <span> </span> </span> 
+                    </small> 
+                  </div>
+                </div>
+              </a>
+              </div>
+               <div class="right-arrow">
+               <a href="{{ block.settings.prod.url }}"> {% render 'btn-arrow-right' %}</a>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+            <div class="auther-content">
+            <div class="reviews"><img src="{{ block.settings.reviews_image | img_url: 'master' }}"></div>
+            <div class="auther-message">
+              <h2 class="heading h2">{{ block.settings.auther_message }}</h2>
+            </div>
+            <div class="auther-details">
+              <div class="auther-image"><img src="{{ block.settings.auther_image | img_url: 'master' }}"></div>
+              <div class="auther-wrapper">
+                <div class="auther-name">{{ block.settings.auther_name }}</div>
+                <div class="auther-verification">
+                  <span class="check-icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="12" height="12" rx="6" fill="#A6BB3A"/></rect>
+                      <path d="M3.375 6.00984L5.11734 7.80469L8.625 4.19531" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+                    </svg>
+                  </span>
+                  <span>{{ block.settings.auther_verification }}</span>
+                </div>
+              </div>
+            </div>
+        </div>
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+  </div>
+</div>      
+
+          
+            
+{% schema %}
+  {
+    "name": "Home Cookware",
+    "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+    },
+     {
+        "type":"header",
+        "content":"Header Banner Block 1"
+      },
+      {
+        "type": "text",
+        "id": "banner_heading",
+        "label": "Banner Heading",
+        "default": "Cook Like a Pro"
+      },
+      {
+        "type": "textarea",
+        "id": "banner_description",
+        "label": "Banner Description",
+        "default": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection."
+      },
+      {
+        "type": "url",
+        "id": "banner_link",
+        "label": "Banner Link",
+        "default": "/"
+      },
+      {
+        "type": "text",
+        "id": "banner_button_text",
+        "label": "Button Text",
+        "default": "Shop Cookware"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+
+    ],
+    "blocks": [
+      
+      {
+        "type": "image_block",
+        "name": "Image Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "Play video on loop",
+            "default": false
+          },
+ 
+          {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image_mobile",
+            "label": "Cover image for mobile"
+          },
+         {
+          "type": "image_picker",
+          "id": "reviews_image",
+          "label": "Reviews Image"
+        },
+        {
+          "type": "textarea",
+          "id": "auther_message",
+          "label": "Author Message",
+          "default": "Great cookware, makes the food amazing! Easy to clean! Love it!"
+        },
+        {
+          "type": "image_picker",
+          "id": "auther_image",
+          "label": "Author Image"
+        },
+        {
+          "type": "text",
+          "id": "auther_name",
+          "label": "Author Name",
+          "default": "Eileen M."
+        },
+        {
+          "type": "text",
+          "id": "auther_verification",
+          "label": "Author Verification",
+          "default": "Verified Buyer"
+        },
+            {
+            "type": "product",
+            "id": "prod",
+            "label": "Select Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Cookware"
+      }
+    ]
+  }
+{% endschema %}

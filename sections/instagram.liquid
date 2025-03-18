@@ -1,0 +1,59 @@
+{% capture replaceLinkAttr %}media="all" fetchpriority="low"{% endcapture %}
+{% if template.name == "index" %}
+  {% capture replaceLinkAttr %}media="print" onload="this.media='all'" fetchpriority="low"{% endcapture %}
+{% endif %}
+{{ 'instagram.css' | asset_url | stylesheet_tag | replace:'media="all"',replaceLinkAttr }}
+
+<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+
+  {% if section.settings.title != blank or section.settings.text != blank %}
+    <div class="insta-head-wrap">
+      {% if section.settings.title != blank %}
+        <h5 class="insta-title">{{ section.settings.title }}</h5>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="insta-text rte">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  
+  {%- for block in section.blocks -%}
+    {% render block %}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Instagram",
+  "tag": "section",
+  "class": "section section-instagram section-padding pt-0",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "t:sections.apps.settings.include_margins.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram"
+    }
+  ]
+}
+{% endschema %}

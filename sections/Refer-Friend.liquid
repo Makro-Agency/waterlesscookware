@@ -1,0 +1,288 @@
+<style>
+    .rotate-text .haricane-font-referfriend {
+        position: relative;
+        top: 30px;
+        display: inline-block;
+        transform: rotate(-370deg);
+        font-family: Hurricane-Regular;
+        color: #6B7A29;
+        font-size:30px;
+    }
+
+    .inner-email {
+        font-family: Cellofy-Regular;
+    }
+
+    .refer-a-friend-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .refer-a-friend-container .giveandget {
+        font-family: Cellofy-Regular;
+        font-size: 60px;
+    }
+
+    .refer-a-friend-container .thanks-for-refering {
+        font-family: Cellofy-Regular;
+        font-size: 60px;
+    }
+
+    .refer-a-friend-container .offer-section {
+        max-width: 50%;      
+    }
+
+    .refer-a-friend-container h1 {
+        font-size: 2rem;
+    }
+
+    .refer-a-friend-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .refer-a-friend-container p {
+        font-family: ProximaNova-Regular;
+        font-size: 16px;
+        color: #0D0D0D;
+    }
+
+    .refer-a-friend-container form {
+        margin-top: 20px;
+    }
+
+    .refer-a-friend-container input[type="email"] {
+        width: 94%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 1px solid #0D0D0D;
+        border-radius: 20px;
+    }
+
+    .refer-a-friend-container button {
+        padding: 10px 40px;
+        background-color: #606D22;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+      .refer-a-friend-container .more-friends-refer {
+        padding: 10px 40px;
+        background-color: #606D22;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+
+    .refer-a-friend-container .social-icons {
+        margin-top: 30px;
+    }
+
+    .refer-a-friend-container .social-icons a {
+        margin-right: 10px;
+    }
+
+    .refer-a-friend-container.social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .refer-a-friend-container .image--right {
+          line-height: 0;
+        max-width: 50%;
+    }
+
+    .refer-a-friend-container .image--right img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .refer-a-friend-container .gmail-default-none {
+        display: none;
+    }
+
+    .refer-a-friend-container .email-pending {
+        border-top: 2px solid #e3e2de;
+        padding: 16px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .refer-a-friend-container .email-pending:last-child {
+        border-bottom: 1px solid #e3e2de;
+    }
+
+    .refer-a-friend-container .email-pending:nth-child(1) {
+        margin-top: 40px;
+    }
+
+    .refer-a-friend-container .email-pending .pending-status {
+        font-family: ProximaNova-Regular;
+        background-color: #E6A817;
+        color: #fff;
+        padding: 2px 24px;
+        border-radius: 20px;
+    }
+
+    h2.thanks-for-refering {
+        margin-bottom: 0px;
+    }
+
+    span.tabs-shift {
+        background: #f7f6f2;
+        border-radius: 20px;
+        padding: 9px 0px;
+    }
+
+    button.tablink.main--tabs {
+        background: none;
+        color: #000;
+    }
+
+    button.tablink.main--tabs.active {
+        background-color: #606D22;
+        color: #fff;
+    }
+
+    .refer-friend-email-default-none, .tabsection-referals {
+        display: none;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .refer-a-friend-container {
+            display: block;
+            max-width: 100%;
+        }
+        .refer-a-friend-container .offer-section {
+            max-width: 100%;
+            padding: 20px;
+        }
+        .refer-a-friend-container .image--right img {
+            border-radius: 0px;
+        }
+        .refer-a-friend-container .image--right {
+            max-width: 100%;
+        }
+        .refer-a-friend-container .giveandget {
+        font-size: 48px;
+      }
+    }
+</style>
+<!-- <div class="yotpo-widget-instance" data-yotpo-instance-id="50260"></div> -->
+
+<div class="refer-a-friend-container">
+    <div class="offer-section">
+        <div class="first-default-show">
+            <span class="rotate-text">
+                <span class="haricane-font-referfriend">Refer a Friend</span>
+            </span>
+            <h1 class="giveandget">Give $25, Get $25</h1>
+            <p>Give your friends $25 off their first order of $100 and get $25 (in points) for each successful referral</p>
+            <div>
+                <form action="#">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button class="button cta_button goto-next-session" type="submit">Next</button>
+                </form>
+            </div>
+        </div>
+        <div class="refer-friend-email-default-none">
+            <span class="rotate-text">
+                <span class="haricane-font-referfriend">Refer a Friend</span>
+            </span>
+            <h1 class="giveandget">Give $25, Get $25</h1>
+            <p>Give your friends $25 off their first order of $100 and get $25 (in points) for each successful referral</p>
+            <div>
+                <form action="#">
+                    <input type="email" placeholder="Friends Email Address" required>
+                    <button class="button cta_button refer-a-friend" type="submit">Refer a Friend</button>
+                </form>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="https://cdn.shopify.com/s/files/1/0622/1937/files/Frame.png?v=1722502985" alt="Icon 1" width="20" height="20"></a>
+                <a href="#"><img src="https://cdn.shopify.com/s/files/1/0622/1937/files/Vector.png?v=1722503019" alt="Icon 2" width="20" height="20"></a>
+                <a href="#"><img src="https://cdn.shopify.com/s/files/1/0622/1937/files/facebook.png?v=1722503044" alt="Icon 3" width="20" height="20"></a>
+                <a href="#"><img src="https://cdn.shopify.com/s/files/1/0622/1937/files/fi_5323603.png?v=1722503059" alt="Icon 4" width="20" height="20"></a>
+                <a href="#"><img src="https://cdn.shopify.com/s/files/1/0622/1937/files/fi_5323603_3017f507-96a4-48f2-b103-335e973bc7e3.png?v=1722503080" alt="Icon 4" width="20" height="20"></a>
+            </div>
+        </div>
+        <div class="tabsection-referals">
+            <span class="tabs-shift">
+                <button class="tablink main--tabs active" data-referal="referAFriend">Refer a Friend</button>
+                <button class="tablink main--tabs" data-referal="yourReferrals">Your Referrals</button>
+            </span>
+            <div id="referAFriend" class="tabcontent">
+                <h2 class="thanks-for-refering">Thanks for Referring</h2>
+                <p>Remind your friends to check their emails</p>
+              <a href="https://www.360cookware.com/pages/refer-a-friend" class="button cta_button more-friends-refer"  type="submit">Refer More Friends</a>
+            </div>
+            <div id="yourReferrals" class="tabcontent gmail-default-none">
+                <div class="email-pending">
+                    <span class="inner-email">email01@gmail.com</span> <span class="pending-status">pending</span>
+                </div>
+                <div class="email-pending">
+                    <span class="inner-email">email01@gmail.com</span> <span class="pending-status">pending</span>
+                </div>
+                <div class="email-pending">
+                    <span class="inner-email">email01@gmail.com</span> <span class="pending-status">pending</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="image--right">
+        <img src="https://cdn.shopify.com/s/files/1/0622/1937/files/Rectangle_1.png?v=1722425096" alt="Cooking Image">
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.main--tabs').on('click', function () {
+                    // Remove active class from all buttons
+                    $('.main--tabs').removeClass('active');
+
+                    // Add active class to the clicked button
+                    $(this).addClass('active');
+
+                    // Hide all tab contents
+                    $('.tabcontent').hide();
+
+                    // Show the corresponding tab content
+                    var referral = $(this).data('referal');
+                    $('#' + referral).show();
+                });
+
+                $('.goto-next-session').on('click', function (e) {
+                    e.preventDefault();
+                    $('.first-default-show').hide();
+                    $('.refer-friend-email-default-none').show();
+                });
+
+                $('.refer-a-friend').on('click', function (e) {
+                    e.preventDefault();
+                    $('.refer-friend-email-default-none').hide();
+                    $('.tabsection-referals').show();
+                    $('#referAFriend').show();
+                });
+            });
+        </script>
+{% schema %}
+{
+"name": "Refer a Friend",
+"settings": [],
+"presets": [
+{
+"name":"Refer a Friend"
+}
+]
+}
+{% endschema %}

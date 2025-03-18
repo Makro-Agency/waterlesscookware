@@ -1,0 +1,167 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'makro-title-product-carousel.css' | asset_url | stylesheet_tag }}
+
+
+<div class="container page-width {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }} {% endif %}">
+  <div class="sectio-header has-slider-nav">
+    <div class="text-wrapper-with-link">
+      {% if section.settings.title != blank %}
+          <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+          {% if section.settings.description != blank %}
+            <p class="desc">{{ section.settings.description }}</p>
+          {% endif %}
+      {% endif %}
+    </div>
+    <a href="#" class="button cta_button small-hide medium-hide   {% if section.settings.button_enable %}top-button-class {% endif %} ">Shop All Bestsellers</a>
+  </div>
+  {%- liquid
+     assign collection = section.settings.collection
+     assign noOfProduct = section.settings.noOfProduct
+  -%}
+  
+  <div class="makro-product-carousel-wrapper">
+    <div class="makro-product-carousel product-carousel-slider swiper">
+      <ul class="swiper-wrapper makro-PC-grid grid" role="list">
+    {%- for product in collection.products limit: noOfProduct -%}
+      {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+      {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+      <li class="swiper-slide makro-PC-grid__item grid__item" {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+        
+        <div class="makro-product--card">
+          {% render 'card-product-new',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: true,
+            show_vendor: false,
+            show_description: true,
+            show_rating: section.settings.show_rating,
+            show_quick_add: false,
+            section_id: section.id,
+            override_title: section.settings.override_title,
+            override_image: section.settings.override_image,
+            placeholder_image: placeholder_image,
+            hideVariant: true
+          %}
+        </div>
+      </li>
+    {%- endfor -%}    
+    </ul>
+    </div>
+    <div class="slide-nav small-hide medium-hide">
+      <div class="nav-btn fea-col-slide-prev prevprev">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+        </svg>
+      </div>
+      <div class="nav-btn fea-col-slide-next nextnext">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.button_enable %}
+  <a href="{{ section.settings.button_link }}" class="button cta_button large-up-hide   {% if section.settings.button_enable %} button-class {% endif %}">
+    {{ section.settings.button_text }} <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M11.7535 11.5L15 7.99821M15 7.99821L11.7569 4.5M15 7.99821H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+  </a>
+    {% endif %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if ( window.innerWidth > 989 ){
+    var mySwiper = new Swiper("#shopify-section-{{ section.id }} .makro-product-carousel", {
+      slidesPerView: 2.33,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      speed: 900,      
+      navigation: {
+        nextEl: ".fea-col-slide-next",
+        prevEl: ".fea-col-slide-prev",
+      },
+        breakpoints: {
+        1200: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 32,
+        },
+        990: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 30,
+        },
+        750: {          
+          slidesPerView: 2.33,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+      },
+    });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Title Product Carousel",
+    "class":"makro-proCarousel-section section-padding",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "Luc Vincent Bestsellers"
+      },
+      {
+        "type": "text",
+        "label": "Description",
+        "id": "description",
+        "default": "Luc Vincent Bestsellers"
+      },
+      {
+        "type": "collection",
+        "label": "Select collection",
+        "id": "collection"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop All Bestsellers"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+         {
+      "type": "checkbox",
+      "id": "button_enable",
+      "label": "Button Enable",
+      "default":false
+    },
+      {
+        "type": "range",
+        "label": "Select no. of product to show",
+        "id": "noOfProduct",
+        "default": 10,
+        "min": 4,
+        "max": 25,
+        "step": 1
+      },
+             {
+      "type": "text",
+      "id": "custom_class",
+      "label": "custom class"
+    }
+    ],
+    "presets": [
+      {
+        "name": "Title Product Carousel"
+      }
+    ]
+  }
+{% endschema %}

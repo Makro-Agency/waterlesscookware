@@ -1,0 +1,64 @@
+{% if section.settings.subTitle != blank or section.settings.title != blank %}
+<style>
+  .large_quotation {
+    padding: 150px 80px;
+  }
+  .large_quotation h3.headings.h3 {
+    font-size: 24px;
+    color: #E6E6E6;
+    margin: 0 0 40px;
+  }
+  @media screen and (min-width: 990px){
+    .large_quotation {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .large_quotation > * {
+      flex-basis: 50%;
+    }
+  }
+  @media screen and (max-width: 989px){
+    .large_quotation {
+      padding: 60px 20px;
+    }
+  }
+</style>
+<div class="large_quotation">
+  {% if section.settings.subTitle != blank %}
+  <h3 class="headings h3">{{ section.settings.subTitle }}</h3>
+  {% endif %}
+  {% if section.settings.title != blank %}
+  <h2 class="main_heading h2">{{ section.settings.title }}</h2>
+  {% endif %}
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Large Quotation",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "label": "Sub title",
+        "id": "subTitle",
+        "default": "OUR MISSION"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "GIVING BACK TO THE WOMEN WHO SUPPORTED ME AND ALLOWED ME TO MAKE A LIVING FROM MY PASSION, HAIRDRESSING."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Large Quotation"
+      }
+    ]
+  }
+{% endschema %}

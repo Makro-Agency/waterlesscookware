@@ -1,0 +1,114 @@
+{{ 'section-multi-column.css' | asset_url | stylesheet_tag }}
+
+<div class="section-multi-column">
+  <div class="section-heading">
+    <div class="heading-group">
+       {% if section.settings.section_title != blank %}
+        <h2 class="section-title">{{ section.settings.section_title }}</h2>
+       {% endif %}
+       {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="button cta_button">{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+     {% if section.settings.section_description != blank %}
+    <div class="section-description">
+      <p class="section-description">{{ section.settings.section_description }}</p>
+       <p class="section-description1">{{ section.settings.section_description1 }}</p>
+    </div>
+     {% endif %}
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="button cta_button desktop-hide">{{ section.settings.button_text }}</a>
+      {% endif %}
+  </div>
+  <div class="grid-container">
+    {% for block in section.blocks %}
+      <div class="grid-item">
+        {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.image_alt }}">
+        {% endif %}
+        <div class="grid-content">
+        {% if block.settings.grid_title != blank %}
+          <h3 class="grid-title">{{ block.settings.grid_title }}</h3>
+        {% endif %}
+         {% if block.settings.grid_text != blank %}
+          <p class="grid-text">{{ block.settings.grid_text }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Multicolumn",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Craftsmanship Meets Sustainability"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
+    },
+      {
+      "type": "textarea",
+      "id": "section_description1",
+      "label": "Section Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Experience American-Made Quality"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid_item",
+      "name": "Grid Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image Alt Text",
+          "default": "Craftsmanship Detail"
+        },
+        {
+          "type": "text",
+          "id": "grid_title",
+          "label": "Grid Title",
+          "default": "Craftsmanship Detail #1"
+        },
+        {
+          "type": "textarea",
+          "id": "grid_text",
+          "label": "Grid Text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Multicolumn",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,204 @@
+.custom-cookware-new-section {
+    display: flex;
+    gap: 32px;
+  }
+  .video-group ul li.blog-meta{ margin-top:0; }
+   .custom-cookware-new-section .card-content .desc{ max-width:300px; height:fit-content; 
+       color: var(--Black, #0D0D0D);
+  font-family: Cellofy;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */                                     
+ }
+.custom-cookware-new-section .card__heading_wrap{ margin-left:15px; }
+.custom-cookware-new-section .makro-product--card{     background: var(--Secondary-Beige, #FAF5EB); border-radius:15px;  }
+  .custom-cookware-new-section .card-content{ margin-top:0px; height:fit-content; margin-right:28px; }
+   .custom-cookware-new-section .card-content { display:flex; gap:20px;  }
+   .custom-cookware-new-section .card-content img{ width:50px; height:50px; }
+  .custom-cookware-new-section  .section-headings{ justify-content:space-between;}
+  .custom-cookware-new-section .video-group .cover-image{ height:100%; }
+  .custom-cookware-new-section .video-group-wrapper1{ margin-top:6rem; }
+  .custom-cookware-new-section .main_heading{
+      
+        color: var(--Black, #0D0D0D);
+      font-family: Cellofy;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -0.8px;
+  }
+  
+  /* .custom-cookware-new-section > div {
+  flex-basis: 50%;
+  } */
+  .custom-cookware-new-section .banner-group-wrapper {
+    padding-right: 60px;
+  }
+  ..custom-cookware-new-section .banner-group {
+    display: flex;
+    gap: 32px;
+  }
+  ..custom-cookware-new-section .banner-group-wrapper .main_heading {
+  font-size: 40px;
+  margin: 0 0 40px;
+  }
+  .custom-cookware-new-section .banner-group .banner {
+  background: #FAF5EB;
+  border-radius: 15px;
+  position: relative;
+  line-height: 0;
+  flex-basis: 50%;
+  }
+  .custom-cookware-new-section .banner-group .card-content {
+    padding: 20px;
+    padding-bottom: 0;
+  }
+  .custom-cookware-new-section .banner-group .card-content .link.makro--link {
+  margin-top: 20px;
+  font-size: 14px;
+  }
+  
+  .custom-cookware-new-section .video-group-wrapper1 {
+    /* display: flex; */
+    gap: 32px;
+  }
+  /* .custom-cookware-new-section .video-group-wrapper1 .video-group {
+    flex: 1;
+  } */
+  .custom-cookware-new-section .video-wrapper {
+  position: relative;
+  /* aspect-ratio: 158/265; */
+  }
+  .custom-cookware-new-section .video-group .cover-image {
+  position: relative;
+  line-height: 0;
+  }
+  /* .custom-cookware-new-section .video-group .cover-image::after {
+  content: "";
+  background: #000000;
+  border-radius: 15px;
+  opacity: 20%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  } */
+  .custom-cookware-new-section .video-group .cover-image img {
+  border-radius: 15px;
+  }
+  .custom-cookware-new-section .video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  }
+  .custom-cookware-new-section .video-group button.play-button {
+  border: none;
+  box-shadow: none;
+  background: none;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  padding: 0;
+  }
+  .custom-cookware-new-section .video-group .auther-content {
+   margin-top: 30px;
+  }
+  .custom-cookware-new-section .video-group .reviews {
+  max-width: 128px;
+  margin-bottom: 10px;
+  }
+  .custom-cookware-new-section .video-group .auther-details {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center;
+  }
+  .custom-cookware-new-section .video-group .auther-image {
+    line-height: 0;
+  }
+  .custom-cookware-new-section .video-group .auther-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #090909;
+  line-height: 150%;
+  }
+  .custom-cookware-new-section  .video-group .auther-verification {
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 600;
+    color: #A6BB3A;
+  }
+  @media screen and (max-width: 576px) {
+.custom-cookware-new-section .heading{ font-size:20px !Important; } }
+  @media screen and (max-width: 1199px) {
+    .custom-cookware-new-section .heading{ max-width:32rem; }
+  .custom-cookware-new-section .banner-group-wrapper {
+    padding-right: 20px;
+  }
+  .custom-cookware-new-section .banner-group-wrapper .main_heading {
+    font-size: 36px;
+    letter-spacing: -0.72px;
+  }
+  }
+  @media screen and (max-width: 989px) {
+  .custom-cookware-new-section {
+    flex-wrap: wrap;
+    overflow:hidden; 
+  }
+  
+  .custom-cookware-new-section>div {
+    flex-basis: 100%;
+  }
+  .custom-cookware-new-section .banner-group-wrapper {
+    padding-right: 0;
+  }
+  .custom-cookware-new-section  .banner-group .card-content {
+    padding: 20px;
+    padding-right: 0;
+  }
+  .custom-cookware-new-section .banner-group .card-content {
+    flex-basis: 80%;
+  }
+  .custom-cookware-new-section  .banner-group .image-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .custom-cookware-new-section  .banner-group .banner {
+    display: flex;
+    align-items: flex-end;
+    flex-basis: unset;
+    justify-content: space-between;
+    flex: auto;
+  }
+  }
+  @media screen and (max-width: 767px) {
+    .custom-cookware-new-section{ padding-bottom:0; }
+  .custom-cookware-new-section .section-headings{ flex-direction:column; } 
+   .custom-cookware-new-section .card-content{ margin-top:0px; }
+  }
+  @media screen and (max-width: 749px) {
+    .custom-cookware-new-section  .banner-group {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .custom-cookware-new-section  .video-group-wrapper1 {
+    gap: 10px;
+    overflow-y: auto;
+  }
+  .custom-cookware-new-section  .video-group-wrapper1 .video-group {
+    min-width: 85%;
+  }
+  }

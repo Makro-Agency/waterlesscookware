@@ -1,0 +1,59 @@
+.recommendations-section {
+  padding-block: 8rem;
+}
+@media screen and (min-width: 990px) {
+  .recommendations-section {
+    padding-block: 15rem;
+  }
+}
+.related-products {
+  display: block;
+}
+
+.related-products__heading {
+  margin: 0 0 5rem;
+}
+
+.related-products__heading{
+  color: #000;  
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 100%; /* 36px */
+  letter-spacing: -0.02em;
+}
+
+product-recommendations .cart-d-svg{ display: none; }
+
+.related-products .product-carousel-slider.swiper-initialized .grid { flex-wrap: nowrap; gap: 0; margin: 0; align-items: flex-start; }
+.related-products .product-carousel-slider.swiper-initialized .grid__item { max-width: unset; }
+
+.related-products .swiper-initialized .nav-btn { border-radius: 100px; background-color: #606D22; width: 5rem; height: 5rem; text-align: center; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; }
+.related-products .swiper-initialized .nav-btn:hover { background-color: #c3d957; }
+.related-products .swiper-initialized .nav-btn.swiper-button-disabled { visibility: hidden; transition: visibility 0.0s 0.5s; }
+.related-products .swiper-initialized .nav-btn svg { width: 2rem; height: 2rem; }
+.related-products .swiper-initialized .nav-btn svg path[stroke] { color: currentColor; }
+
+.related-products .swiper-initialized .nav-btn:after { display: none; }
+.related-products .swiper-initialized .swiper-button-prev svg { transform: scale(-1); }
+.related-products .swiper-initialized .nav-btn { top: calc(50% - (2.5rem + 6.2rem)); }
+.related-products .swiper-initialized .swiper-button-prev { left: 0; }
+.related-products .swiper-initialized .swiper-button-next { right: 0; }
+
+@media screen and (min-width: 990px) {
+  .related-products .product-carousel-slider.swiper-initialized { margin-inline: -2.5rem; padding-inline: 2.5rem; }
+}
+@media screen and (max-width: 989px) {
+
+  .related-products__heading{
+    font-size: 3.6rem;
+    margin-bottom: 3.2rem;
+  }
+  
+  .related-products .product-carousel-slider:not(.swiper-initialized) { margin-inline: -2rem; }
+  .related-products .product-carousel-slider:not(.swiper-initialized) .makro-PC-grid { --grid-desktop-horizontal-spacing: 2rem; --grid-desktop-vertical-spacing: 2rem; align-items: flex-start; }
+  .related-products .product-carousel-slider .nav-btn { display: none; }
+
+  .related-products .product-carousel-slider:not(.swiper-initialized) .makro-PC-grid .grid__item { max-width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2); }
+  .related-products .product-carousel-slider:not(.swiper-initialized) .makro-PC-grid .grid__item:first-child { margin-inline-start: 2rem; }
+  .related-products .product-carousel-slider:not(.swiper-initialized) .makro-PC-grid .grid__item:last-child { margin-inline-end: 2rem; }
+}

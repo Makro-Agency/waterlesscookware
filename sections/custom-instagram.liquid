@@ -1,0 +1,191 @@
+{{ 'custom-instagram.css' | asset_url | stylesheet_tag }}
+{% style %}
+ .custom-instagram  .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.custom-instagram{ overflow:hidden;}
+.custom-instagram .media-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-instagram  .media-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-instagram .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: none; /* Hide unless video link is provided */
+}
+
+.custom-instagram .video-overlay .play-icon {
+    font-size: 2rem;
+    color: white;
+}
+@media screen and (min-width:1540px){
+.videoswiper2 {
+  overflow: visible; 
+   padding-left: 125px; 
+  padding-right: 125px;  
+} }
+@media screen and (min-width:768px) and (max-width:1539px){
+   .videoswiper2 {
+  overflow: visible; 
+   padding-left: 64px; 
+  padding-right: 64px;  
+}
+}
+  @media screen  and (max-width:576px){
+ .custom-instagram .swiper-wrapper{ padding-left:75px; padding-right:75px; } }
+.custom-instagram  .section-heading{ max-width:1360px; margin:0 auto; padding:0 20px;  }
+.custom-instagram .section-heading h4{
+      color: var(--Black, #0D0D0D);
+    font-family: Cellofy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -.64px;
+}
+
+{% endstyle %}
+<div class="custom-instagram">
+ <div class="section-heading"><h4>{{ section.settings.heading }}</h4></div>
+  <div class="video-group-wrapper title_video_wrapper {{ section.settings.videoLayout }} swiper videoswiper2"> 
+        <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="video-group swiper-slide">
+            <custom-deferred-media class="video_group">
+          <div class="cover-image">
+            {%- if block.settings.cover_image != blank -%}
+              <img src="{{ block.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+            {%- endif -%}
+            {%- if block.settings.cover_image_mobile != blank -%}
+              <img src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}" class="img-mobile" alt="{{ block.settings.title }}">
+            {%- endif -%}
+              {%- if block.settings.video_url != blank -%}
+            <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+              </svg>
+            </button>
+            {% endif %}
+          </div>
+          <template>
+            {%- if block.settings.video == blank and block.settings.video_url != blank -%}
+              <iframe src="{{ block.settings.video_url | append: '?autoplay=1' }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            {%- else -%}
+              {{ block.settings.video | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true }}
+            {%- endif -%}
+          </template>
+        </custom-deferred-media>
+         
+          </div>
+        {%- endfor -%}
+        </div>
+         
+          <div class="slide-nav small-hide medium-hide">
+            <div class="nav-btn fea-col-slide-prev prevprev">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+              </svg>
+            </div>
+            <div class="nav-btn fea-col-slide-next nextnext">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
+              </svg>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+
+
+      
+{% schema %}
+  {
+    "name": "Custom Instagram",
+    "class": "custom-instagram",
+    "settings": [
+     {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+         {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      
+      {
+        "type": "video_block",
+        "name": "Video Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "Play video on loop",
+            "default": false
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "video",
+            "id": "video_mobile",
+            "label": "Mobile video"
+          },
+
+          {
+            "type": "video_url",
+            "id": "video_url",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "URL"
+          },
+          {
+            "type": "video_url",
+            "id": "video_url_mobile",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "Mobile URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image_mobile",
+            "label": "Cover image for mobile"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom instagram"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,403 @@
+{% if section.settings.layout == "layout_1" %}
+  {{ 'hero-section-main.css' | asset_url | stylesheet_tag }}
+{% elsif section.settings.layout == "layout_2" %}
+  {{ 'hero-section-layout-two-two.css' | asset_url | stylesheet_tag }}
+{% elsif section.settings.layout == "layout_3" %}
+  {{ 'hero-section-layout-three.css' | asset_url | stylesheet_tag }}
+  {% comment %}
+  {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+  {{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+  {% endcomment %}
+{% elsif section.settings.layout == "layout_4" %}
+  {{ 'hero-section-layour-four.css' | asset_url | stylesheet_tag }}
+{% endif %}
+{% assign loading_attr = 'lazy' %}
+{% assign fetchpriority = 'auto' %}
+{% if section.settings.has_first_section %}
+  {% assign loading_attr = 'eager' %}
+  {% assign fetchpriority = 'high' %}
+{% endif %}
+
+<!-- Layout 1 -->
+{%- if section.settings.layout == 'layout_1' -%}
+<div id="full-blend-hero-section" class="layout1hero" style="display: {% if section.settings.layout == 'layout_1' %}block{% else %}none{% endif %};{% if section.settings.videowise %}overflow:hidden;{% endif %}">
+  {% if section.settings.videowise %}
+    <div class="vw-container">
+      {{ section.settings.videowise }}
+    </div>
+   {% endif %}
+  {%- liquid
+    assign height = section.settings.hero_image.width | divided_by: section.settings.hero_image.aspect_ratio | round
+    assign sizes = '100vw'
+    assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+  -%}
+    {{
+      section.settings.hero_image
+      | image_url: width: 3840
+      | image_tag: loading: loading_attr, height: height, sizes: sizes, widths: widths, class: 'hero-image desktop small-hide', fetchpriority: fetchpriority
+    }}
+  <div class="full-blend-hero-section-bg-overlay"></div>
+  <div class="full-blend-hero-section-container">
+    <div class="full-blend-hero-section-container-relative">
+      {% if section.settings.hero_image != blank and section.settings.videowise == blank %}
+      <div class="full-blend-hero-section-container-mobile-image">
+        
+        {{
+          section.settings.hero_image
+          | image_url: width: 750
+          | image_tag: loading: loading_attr, height: height, sizes: sizes, widths: widths, class: 'hero-image large-up-hide medium-hide', fetchpriority: fetchpriority
+        }}
+        {% comment %}<img 
+          src="{{ section.settings.hero_image | img_url: 'master' }}" 
+          alt="{{ section.settings.hero_image_alt }}"
+          class="hero-image" width="auto" height="auto"
+        />{% endcomment %}
+      </div>
+      {% endif %}
+      <div class="full-blend-hero-section-container-box">
+        <div class="full-blend-hero-section-container-box-content-container">
+          {% if section.settings.heading != blank %}
+          <div class="full-blend-hero-section-container-box-heading-container">
+            <h1>{{ section.settings.heading }}</h1>
+          </div>
+           {% endif %}
+          {% if section.settings.subtext != blank %}
+          <div class="full-blend-hero-section-container-box-text-container">
+            <p>{{ section.settings.subtext }}</p>
+          </div>
+           {% endif %}
+        </div>
+         {% if section.settings.button_text != blank %}
+        <div class="full-blend-hero-section-container-box-btn-container-container">
+          <a href="{{ section.settings.button_link }}" class="button cta_button">{{ section.settings.button_text }}</a>
+        </div>
+         {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+<!-- Layout 2 -->
+{%- if section.settings.layout == 'layout_2' -%}
+<div id="splited-image-hero-layout-2" style="display: {% if section.settings.layout == 'layout_2' %}block{% else %}none{% endif %}">
+  <div class="splited-image-hero-layout-2-container">
+    <div class="splited-image-hero-layout-2-grid">
+      <div class="splited-image-hero-layout-2-grid-item-1">
+        <div class="splited-image-hero-layout-2-grid-item-1-container">
+          <div class="splited-image-hero-layout-2-grid-item-1-container-relative">
+            <div class="full-blend-hero-section-container-box">
+              <div class="full-blend-hero-section-container-box-content-container">
+                 {% if section.settings.heading != blank %}
+                  <div class="full-blend-hero-section-container-box-heading-container">
+                    <h1>{{ section.settings.heading }}</h1>
+                  </div>
+                  {% endif %}
+                 {% if section.settings.subtext != blank %}
+                  <div class="full-blend-hero-section-container-box-text-container">
+                    <p>{{ section.settings.subtext }}</p>
+                  </div>
+                 {% endif %}
+              </div>
+               {% if section.settings.button_text != blank %}
+              <div class="full-blend-hero-section-container-box-btn-container-container">
+                <a href="{{ section.settings.button_link }}" class="button cta_button">{{ section.settings.button_text }}</a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="splited-image-hero-layout-2-grid-item-2">
+        <div class="splited-image-hero-layout-2-grid-item-2-img-div">
+           {% if section.settings.layout_2_image_desktop != blank %}
+          <img src="{{ section.settings.layout_2_image_desktop | img_url: 'master' }}" alt="" class="splited-image-hero-layout-2-grid-item-2-desktop-img">
+          {% endif %}
+            {% if section.settings.layout_2_image_mobile != blank %}
+          <img src="{{ section.settings.layout_2_image_mobile | img_url: 'master' }}" alt="" class="splited-image-hero-layout-2-grid-item-2-mobile-img">
+           {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+<!-- Layout 3 -->
+{%- if section.settings.layout == 'layout_3' -%}
+<div id="hero-section-carousel" style="display: {% if section.settings.layout == 'layout_3' %}block{% else %}none{% endif %}">
+  <div class="hero-section-carousel-container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <div class="swiper-bg-overlay"></div>
+          <div class="hero-carousel-img-container">
+           {% if block.settings.desktop_image != blank %}
+            <img src="{{ block.settings.desktop_image | img_url: 'master' }}" alt="" class="desktop-img" width="auto" height="auto" />
+            {% endif %}
+             {% if block.settings.mobile_image != blank %}
+            <img src="{{ block.settings.mobile_image | img_url: 'master' }}" alt="" class="mobile-img" width="auto" height="auto" />
+             {% endif %}
+          </div>
+          <div class="full-blend-hero-section-container-box">
+            <div class="full-blend-hero-section-container-box-content-container">
+             {% if block.settings.slide_heading != blank %}
+              <div class="full-blend-hero-section-container-box-heading-container">
+                <h1>{{ block.settings.slide_heading }}</h1>
+              </div>
+               {% endif %}
+             {% if block.settings.slide_subtext != blank %}
+              <div class="full-blend-hero-section-container-box-text-container">
+                <p>{{ block.settings.slide_subtext }}</p>
+              </div>
+               {% endif %}
+            </div>
+           {% if block.settings.button_text != blank %}
+            <div class="full-blend-hero-section-container-box-btn-container-container">
+              <a href="{{ block.settings.button_link }}" class="button cta_button">{{ block.settings.button_text }}</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.125 18.75L14.875 10L6.125 1.25" stroke="#606D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.875 18.75L6.125 10L14.875 1.25" stroke="#606D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+<!-- Layout 4 -->
+{%- if section.settings.layout == 'layout_4' -%}
+<div id="splited-image-hero-section" style="display: {% if section.settings.layout == 'layout_4' %}block{% else %}none{% endif %}">
+  <div class="splited-image-hero-section-container">
+    <div class="splited-image-hero-section-container-grid">
+     <div class="splited-image-hero-section-container-grid-item-1" 
+     style="background-image: url('{{ section.settings.layout_4_image_desktop_1 | image_url }}');">
+        <div class="splited-image-hero-section-container-grid-item-bg-overlay"></div>
+        <div class="splited-image-hero-section-container-grid-item-container">
+          <div class="full-blend-hero-section-container-box">
+            <div class="full-blend-hero-section-container-box-content-container">
+              {% if section.settings.heading != blank %}
+              <div class="full-blend-hero-section-container-box-heading-container">
+                <h1>{{ section.settings.heading }}</h1>
+              </div>
+               {% endif %}
+                {% if section.settings.subtext != blank %}
+                <div class="full-blend-hero-section-container-box-text-container">
+                  <p>{{ section.settings.subtext }}</p>
+                </div>
+               {% endif %}
+            </div>
+            {% if section.settings.button_text != blank %}
+            <div class="full-blend-hero-section-container-box-btn-container-container">
+              <a href="{{ section.settings.button_link }}" class="button cta_button">{{ section.settings.button_text }}</a>
+            </div>
+           {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="splited-image-hero-section-container-grid-item-2" style="background-image: url({{ section.settings.layout_4_image_desktop_2 | image_url }});">
+        <div class="splited-image-hero-section-container-grid-item-bg-overlay"></div>
+        <div class="splited-image-hero-section-container-grid-item-container">
+          <div class="full-blend-hero-section-container-box">
+            <div class="full-blend-hero-section-container-box-content-container">
+               {% if section.settings.layout_4_heading != blank %}
+                <div class="full-blend-hero-section-container-box-heading-container">
+                  <h1>{{ section.settings.layout_4_heading }}</h1>
+                </div>
+                {% endif %}
+              {% if section.settings.layout_4_subtext != blank %}
+              <div class="full-blend-hero-section-container-box-text-container">
+                <p>{{ section.settings.layout_4_subtext }}</p>
+              </div>
+             {% endif %}
+            </div>
+           {% if section.settings.layout_4_button_text != blank %}
+            <div class="full-blend-hero-section-container-box-btn-container-container">
+              <a href="{{ section.settings.layout_4_button_link }}" class="button cta_button">{{ section.settings.layout_4_button_text }}</a>
+            </div>
+           {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+<script>
+  {% if section.settings.layout == "layout_3" %}
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 1,
+      loop: true,
+      slidesPerView: "auto",
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      speed: 1000,
+    });
+  });
+  {% endif %}
+
+
+  {% if section.settings.layout == 'layout_1' %}
+     document.querySelector("body").classList.add("layout1-trans");
+  {% endif %}
+</script>
+
+
+
+          
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Select Layout",
+      "options": [
+        { "value": "layout_1", "label": "Layout 1" },
+        { "value": "layout_2", "label": "Layout 2" },
+        { "value": "layout_3", "label": "Layout 3 (Carousel)" },
+        { "value": "layout_4", "label": "Layout 4" }
+      ],
+      "default": "layout_1"
+    },
+    {
+      "type": "checkbox",
+      "id": "has_first_section",
+      "label": "This is the first section?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout 1 & Text for all",
+      "info": "Layout 1 Info"
+    },
+    {
+      "type": "liquid",
+      "id": "videowise",
+      "label": "Videowise widget"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Hero Image Alt Text",
+      "default": "hero_image_alt"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading Text"
+    },
+    {
+      "type": "html",
+      "id": "subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "header",
+      "content": "Layout 2",
+      "info": "Layout 2 Info"
+    },
+    {
+      "type": "image_picker",
+      "id": "layout_2_image_desktop",
+      "label": "Layout 2 Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "layout_2_image_mobile",
+      "label": "Layout 2 Mobile Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout 4",
+      "info": "Layout 4 Info"
+    },
+    {
+      "type": "image_picker",
+      "id": "layout_4_image_desktop_1",
+      "label": "Layout 4 Desktop Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "layout_4_image_desktop_2",
+      "label": "Layout 4 Desktop Image 2"
+    },
+    {
+      "type": "text",
+      "id": "layout_4_heading",
+      "label": "Layout 4 Heading"
+    },
+    {
+      "type": "text",
+      "id": "layout_4_subtext",
+      "label": "Layout 4 Subtext"
+    },
+    {
+      "type": "url",
+      "id": "layout_4_button_link",
+      "label": "Layout 4 Button Link"
+    },
+    {
+      "type": "text",
+      "id": "layout_4_button_text",
+      "label": "Layout 4 Button Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "desktop_image", "label": "Desktop Image" },
+        { "type": "image_picker", "id": "mobile_image", "label": "Mobile Image" },
+        { "type": "text", "id": "slide_heading", "label": "Slide Heading" },
+        { "type": "text", "id": "slide_subtext", "label": "Slide Subtext" },
+        { "type": "url", "id": "button_link", "label": "Button Link" },
+        { "type": "text", "id": "button_text", "label": "Button Text" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Hero Section" }
+  ]
+}
+{% endschema %}

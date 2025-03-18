@@ -1,0 +1,57 @@
+{%- capture marqueeData -%}
+  {%- for block in section.blocks -%}
+    {%- if block.settings.text != blank -%}
+    <div class="swiper-slide">{{ block.settings.text }}</div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign marqueeData = marqueeData | strip_newlines | replace:'   ',' ' | replace:'  ',' ' | replace:'  ',' ' -%}
+
+{%- if marqueeData != blank -%}
+  {% capture replaceLinkAttr %}media="print" onload="this.media='all'"{% endcapture %}
+  {{ 'scrollable-bar.css' | asset_url | stylesheet_tag | replace:'media="all"', replaceLinkAttr }}
+  <div class="marquee-row{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="swiper-container" data-marquee-slider>
+      <div class="swiper-wrapper">
+        {{ marqueeData }}{{ marqueeData }}{{ marqueeData }}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "Scrollable bar",
+  "class": "scrollable-bar",
+  "tag":"section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+      {
+        "name": "Scrollable bar",
+        "category": "Custome"
+      }
+  ]
+}
+{% endschema %}
+{% stylesheet %}
+  /* sections/scrollable-bar */ 
+  .scrollable-bar .marquee-row { overflow: hidden; padding: 20px 0; border-bottom: 1px solid #000; }
+  .scrollable-bar .swiper-wrapper { position: relative; display: flex; }
+  .scrollable-bar .swiper-slide { font-size: 12px; font-family: Jost; font-weight: 400; line-height: 110%; width: auto; position: relative; overflow: hidden; padding: 0 22px; flex: 1 0 auto; }
+  /* sections/scrollable-bar */
+{% endstylesheet %}

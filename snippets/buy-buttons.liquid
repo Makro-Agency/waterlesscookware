@@ -1,0 +1,331 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+
+  Usage:
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+{% endcomment %}
+
+{% assign pre-order = false %}
+{% for tag in product.tags %}
+  {% if tag == 'pre-order' %}
+    {% assign pre-order = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+
+<div {{ block.shopify_attributes }} class="buy-buttons-bar">
+
+
+    <div
+                id="Quantity-Form-{{ section.id }}"
+                class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
+                {% # theme-check-disable %}
+                {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+                {% # theme-check-enable %}
+                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                  {{ 'products.product.quantity.label' | t }}
+                  <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+                    <span class="loading-overlay hidden">
+                      <span class="loading-overlay__spinner">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          class="spinner"
+                          viewBox="0 0 66 66"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                      </span>
+                    </span>
+                    <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
+                  </span>
+                </label>
+                <quantity-input class="quantity">
+                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                    </span>
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input
+                    class="quantity__input"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-{{ section.id }}"
+                    data-cart-quantity="{{ cart_qty }}"
+                    data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                      data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                      max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                    {% endif %}
+                    step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                    value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    form="{{ product_form_id }}"
+                  />
+                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                    </span>
+                    {% render 'icon-plus' %}
+                  </button>
+                </quantity-input>
+                <div class="quantity__rules caption no-js-hidden">
+                  {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
+                    <span class="divider">
+                      {{-
+                        'products.product.quantity.multiples_of'
+                        | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
+                      -}}
+                    </span>
+                  {%- endif -%}
+                  {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
+                    <span class="divider">
+                      {{-
+                        'products.product.quantity.minimum_of'
+                        | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
+                      -}}
+                    </span>
+                  {%- endif -%}
+                  {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
+                    <span class="divider">
+                      {{-
+                        'products.product.quantity.maximum_of'
+                        | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
+                      -}}
+                    </span>
+                  {%- endif -%}
+                </div>
+              </div>
+  
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="icon icon-error"
+          viewBox="0 0 13 13"
+        >
+          <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+          <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+          <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+          <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+        </svg>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          disabled
+          class="product-variant-id"
+        >
+
+        {%- if gift_card_recipient_feature_active -%}
+          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+
+          <button
+            id = "ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} {% if pre-order == true %}hidden disabled{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out_label' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <div class="loading-overlay__spinner hidden">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+          {% if section.settings.klaviyo_id != blank %}
+          <a href="javascript:void(0);" class="button button--full-width {% if pre-order == true %}button--secondary{% else %}button--primary{% endif %} OOS-btn">
+            <i>{% render 'email-icon' %}</i>
+            notify me when available
+          </a>
+          {% endif %}
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+    </product-form>
+    
+    <button class="shop-pay-btn hidden" {%- unless product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}hide-btn{% elsif pre-order == true %}hide-btn{% endunless %}>
+      Buy with
+      <svg width="61" height="14" viewBox="0 0 61 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.9085 4.46676C15.4262 3.4714 14.5117 2.82843 13.1336 2.82843C12.7106 2.83568 12.295 2.93842 11.9187 3.12866C11.5425 3.31892 11.2157 3.59165 10.9636 3.92579L10.9133 3.98606V0.0850077C10.9133 0.0624623 10.9042 0.0408417 10.888 0.0249C10.8718 0.00895783 10.8498 0 10.8269 0H8.8784C8.85576 0.000405104 8.8342 0.00953922 8.81833 0.0254374C8.80243 0.0413357 8.79356 0.0627276 8.79356 0.0850077V11.2751C8.79356 11.2972 8.80252 11.3184 8.81843 11.3341C8.83434 11.3497 8.8559 11.3585 8.8784 11.3585H10.9652C10.9878 11.3585 11.0095 11.3498 11.0257 11.3342C11.0419 11.3186 11.0512 11.2973 11.0516 11.2751V6.50384C11.0516 5.57649 11.6801 4.9196 12.6858 4.9196C13.7857 4.9196 14.0638 5.80987 14.0638 6.71712V11.2751C14.0638 11.2972 14.0728 11.3184 14.0887 11.3341C14.1046 11.3497 14.1262 11.3585 14.1487 11.3585H16.2306C16.2534 11.3585 16.2751 11.3498 16.2912 11.3342C16.3074 11.3186 16.3167 11.2973 16.3172 11.2751V6.44511C16.3172 6.27973 16.3172 6.11743 16.2951 5.95979C16.2593 5.44318 16.1284 4.93726 15.9085 4.46676Z" fill="black"/>
+        <path d="M5.48905 6.12521C5.48905 6.12521 4.42682 5.87946 4.03556 5.78054C3.64429 5.68163 2.96076 5.47142 2.96076 4.96292C2.96076 4.45442 3.5123 4.29213 4.0717 4.29213C4.6311 4.29213 5.25335 4.42506 5.30206 5.03557C5.30403 5.05758 5.31432 5.07802 5.3309 5.09293C5.34749 5.10782 5.36916 5.11601 5.39162 5.11594L7.44849 5.10821C7.4606 5.10824 7.47258 5.10581 7.48369 5.10109C7.49479 5.09636 7.50478 5.08942 7.51304 5.08071C7.5213 5.07202 7.52766 5.06173 7.53168 5.05051C7.53571 5.03927 7.53737 5.02735 7.53649 5.01546C7.40922 3.06185 5.6666 2.36325 4.05912 2.36325C2.15309 2.36325 0.759324 3.59972 0.759324 4.96292C0.759324 5.95829 1.04531 6.89183 3.29388 7.54097C3.68829 7.6538 4.22412 7.80062 4.69239 7.92892C5.25491 8.08349 5.55818 8.31687 5.55818 8.68471C5.55818 9.11129 4.92965 9.40803 4.31212 9.40803C3.41803 9.40803 2.78321 9.08192 2.73135 8.49613C2.72865 8.47471 2.71804 8.45497 2.70152 8.44072C2.68501 8.42647 2.66375 8.41869 2.64178 8.41885L0.58962 8.42813C0.577589 8.42813 0.565681 8.4305 0.554604 8.43513C0.543528 8.43975 0.533511 8.4465 0.525152 8.45503C0.516792 8.46352 0.51026 8.47361 0.505949 8.48466C0.501637 8.49572 0.499633 8.5075 0.500055 8.51933C0.594335 10.3632 2.40451 11.357 4.09214 11.357C6.60628 11.357 7.74234 9.966 7.74234 8.66307C7.74549 8.05101 7.60249 6.65689 5.48905 6.12521Z" fill="black"/>
+        <path d="M31.9503 2.82533C30.9055 2.82533 30.0301 3.3941 29.466 4.08037V2.90571C29.466 2.88384 29.4572 2.86283 29.4416 2.84723C29.4263 2.83162 29.405 2.82265 29.3827 2.82226H27.4312C27.4088 2.82226 27.387 2.83104 27.3712 2.84669C27.3553 2.86235 27.3462 2.88359 27.3462 2.90571V13.8794C27.3468 13.9012 27.356 13.9222 27.3719 13.9374C27.3877 13.9527 27.4091 13.9613 27.4312 13.9613H29.5195C29.5415 13.9613 29.5627 13.9527 29.5783 13.9374C29.5939 13.922 29.6027 13.901 29.6027 13.8794V10.272H29.6342C29.9656 10.7696 30.8723 11.3663 32.0573 11.3663C34.2852 11.3663 36.1426 9.54865 36.1426 7.09272C36.1443 4.7357 34.2963 2.82533 31.9503 2.82533ZM31.757 9.27509C31.3173 9.28583 30.8839 9.16742 30.5129 8.93497C30.1419 8.70249 29.8494 8.36654 29.6732 7.96996C29.4971 7.57337 29.445 7.13414 29.5238 6.70833C29.6024 6.28252 29.8085 5.88945 30.1153 5.57929C30.4222 5.26908 30.8161 5.05588 31.2467 4.96686C31.6772 4.87784 32.125 4.91702 32.5328 5.07942C32.9407 5.24181 33.29 5.52007 33.5365 5.87866C33.7828 6.23727 33.9149 6.65992 33.9161 7.09272C33.9206 7.37561 33.8682 7.65662 33.7622 7.9196C33.6561 8.18258 33.4982 8.42234 33.2975 8.62512C33.097 8.8279 32.8577 8.9897 32.5931 9.10124C32.3288 9.21279 32.0447 9.27185 31.757 9.27509Z" fill="black"/>
+        <path d="M21.1663 2.34323C19.2194 2.34323 18.2483 2.99392 17.4688 3.5148L17.4453 3.53024C17.4051 3.55729 17.3768 3.59829 17.3661 3.645C17.3553 3.69171 17.3628 3.74069 17.3872 3.78217L18.1572 5.08663C18.1715 5.11105 18.1913 5.13203 18.2149 5.14805C18.2386 5.16408 18.2655 5.17479 18.2939 5.17938C18.3216 5.1843 18.35 5.18311 18.3772 5.17588C18.4044 5.16866 18.4296 5.15563 18.451 5.13764L18.5122 5.08819C18.9129 4.75743 19.5556 4.31538 21.1113 4.19483C21.977 4.12684 22.725 4.3494 23.2766 4.85635C23.8831 5.40659 24.2462 6.29529 24.2462 7.23347C24.2462 8.9599 23.2121 10.0449 21.5512 10.0665C20.1825 10.0588 19.2633 9.35711 19.2633 8.32002C19.2633 7.76977 19.5163 7.41121 20.0098 7.05263C20.0474 7.02613 20.074 6.98711 20.0847 6.94279C20.0955 6.89847 20.0895 6.85184 20.0679 6.81152L19.3765 5.52558C19.3637 5.50257 19.3465 5.48226 19.3257 5.46582C19.3049 5.44937 19.2811 5.43712 19.2555 5.42976C19.2293 5.4221 19.2018 5.41994 19.1748 5.42338C19.1476 5.42684 19.1216 5.43586 19.0983 5.44987C18.3222 5.90272 17.3699 6.73115 17.4217 8.32311C17.4845 10.3494 19.1974 11.8965 21.4239 11.9599H21.6879C24.3339 11.8749 26.2447 9.94288 26.2447 7.32312C26.2447 4.91817 24.4628 2.34323 21.1663 2.34323Z" fill="black"/>
+        <path d="M44.3717 3.57968H43.0454C43.0144 3.58008 42.9846 3.59243 42.9626 3.61407C42.9405 3.63572 42.9279 3.66498 42.9278 3.69561V6.43283C42.9279 6.46332 42.9406 6.49238 42.9628 6.51379C42.9848 6.5352 43.0144 6.54721 43.0454 6.54721H44.3717C45.1794 6.54721 45.775 5.92124 45.775 5.06344C45.775 4.20564 45.1794 3.57968 44.3717 3.57968Z" fill="black"/>
+        <path d="M48.4462 8.42195C48.4462 8.81916 48.7871 9.04017 49.3811 9.04017C50.1887 9.04017 50.6663 8.6105 50.6663 7.84852V7.62906L49.4566 7.69088C48.8185 7.72178 48.4462 7.98301 48.4462 8.42195Z" fill="black"/>
+        <path d="M58.2669 0.0247987H40.448C40.1558 0.0247984 39.8662 0.0814591 39.5963 0.19154C39.3262 0.301622 39.0808 0.462968 38.8743 0.666357C38.6676 0.869748 38.5037 1.1112 38.392 1.3769C38.2801 1.64261 38.2229 1.92737 38.2231 2.2149V11.8099C38.2231 12.3905 38.4575 12.9473 38.8748 13.358C39.292 13.7687 39.858 13.9996 40.448 14H58.2669C58.5597 14.0008 58.8497 13.9449 59.1204 13.8354C59.391 13.7259 59.637 13.5649 59.8445 13.3618C60.0517 13.1587 60.2165 12.9174 60.329 12.6516C60.4415 12.3858 60.4994 12.1009 60.5 11.813V2.21799C60.5004 1.92955 60.4432 1.64382 60.3311 1.37725C60.2191 1.11068 60.0546 0.868527 59.8471 0.664706C59.6397 0.460888 59.3932 0.299428 59.1221 0.189609C58.851 0.0797903 58.5603 0.0237794 58.2669 0.0247987ZM44.4392 7.62447H43.0376C43.0064 7.62447 42.9766 7.63667 42.9543 7.6584C42.9322 7.68015 42.9197 7.70964 42.9197 7.74039V9.70327C42.9197 9.73401 42.9073 9.7635 42.8853 9.78523C42.8631 9.80698 42.8333 9.81919 42.802 9.81919H41.815C41.7841 9.81879 41.7541 9.80645 41.7321 9.78478C41.7101 9.76316 41.6978 9.7339 41.6973 9.70327V2.62293C41.6973 2.5922 41.7097 2.56271 41.732 2.54096C41.754 2.51923 41.7838 2.50702 41.815 2.50702H44.4392C45.9257 2.50702 46.9895 3.57193 46.9895 5.06651C46.9895 6.5611 45.9335 7.62754 44.4472 7.62754L44.4392 7.62447ZM51.8245 9.70174C51.8248 9.71708 51.822 9.73231 51.816 9.74656C51.8102 9.7608 51.8015 9.77378 51.7907 9.7847C51.7795 9.79562 51.7666 9.80431 51.7521 9.81023C51.7379 9.81614 51.7223 9.81919 51.7066 9.81919H50.7749C50.7593 9.81919 50.7438 9.81614 50.7294 9.81023C50.7149 9.80431 50.7019 9.79562 50.691 9.7847C50.6801 9.77378 50.6713 9.7608 50.6656 9.74656C50.6598 9.73231 50.6569 9.71708 50.6571 9.70174V9.48999C50.6585 9.4714 50.6541 9.45282 50.6439 9.43703C50.634 9.42121 50.6191 9.409 50.6013 9.40222C50.5837 9.39545 50.5643 9.39448 50.5461 9.39944C50.5277 9.40437 50.5115 9.41499 50.5 9.42971C50.2217 9.72801 49.7692 9.94438 49.048 9.94438C47.9859 9.94438 47.2833 9.40034 47.2833 8.46062C47.2731 8.23149 47.3212 8.00347 47.4233 7.79724C47.5253 7.59105 47.6783 7.41317 47.868 7.2798C48.2513 6.99695 48.8452 6.85013 49.7267 6.81611L50.6617 6.78521V6.51626C50.6617 5.97376 50.2909 5.74348 49.6952 5.74348C49.0998 5.74348 48.7242 5.95058 48.6364 6.28907C48.6293 6.31297 48.6144 6.33388 48.5938 6.34845C48.5734 6.36303 48.5485 6.37041 48.5231 6.36943H47.6008C47.5838 6.36986 47.567 6.3666 47.5513 6.35994C47.536 6.35325 47.522 6.3433 47.5107 6.33077C47.4995 6.31823 47.4912 6.30348 47.4864 6.28744C47.4815 6.27142 47.4803 6.25458 47.4829 6.23807C47.6213 5.43435 48.2969 4.82384 49.7379 4.82384C51.2683 4.82384 51.8198 5.52401 51.8198 6.86093L51.8245 9.70174ZM57.6291 5.10823L55.555 10.5503C55.0836 11.8145 54.2586 12.1391 53.355 12.1391C53.1849 12.1432 53.0149 12.1229 52.8506 12.0789C52.825 12.0721 52.8026 12.0572 52.7861 12.0365C52.7701 12.0159 52.7613 11.9905 52.761 11.9645V11.1376C52.761 11.1203 52.7648 11.1032 52.7722 11.0875C52.7797 11.0718 52.7904 11.0579 52.804 11.0469C52.8176 11.0358 52.8334 11.0278 52.8503 11.0234C52.8673 11.0191 52.8852 11.0185 52.9025 11.0216C53.045 11.0482 53.1896 11.0617 53.3346 11.0619C53.5844 11.0742 53.8313 11.0037 54.0357 10.8616C54.2398 10.7195 54.3897 10.5141 54.4612 10.2782L54.5226 10.0881C54.5321 10.0627 54.5321 10.0348 54.5226 10.0093L52.5835 5.10979C52.5776 5.09228 52.5759 5.07361 52.5788 5.05536C52.5816 5.03709 52.5887 5.01973 52.5993 5.00468C52.6103 4.98963 52.6246 4.97731 52.6412 4.96871C52.6578 4.96011 52.6763 4.95548 52.695 4.95522H53.6379C53.662 4.95545 53.6854 4.96277 53.7054 4.97628C53.7253 4.98977 53.7406 5.00882 53.7494 5.03096L55.0663 8.4869C55.0751 8.50947 55.0904 8.52892 55.1106 8.54264C55.1309 8.55638 55.1549 8.56371 55.1794 8.56371C55.2038 8.56371 55.228 8.55638 55.2481 8.54264C55.2683 8.52892 55.2839 8.50947 55.2924 8.4869L56.435 5.04024C56.4425 5.01674 56.4577 4.99627 56.478 4.98181C56.4984 4.96734 56.5228 4.95965 56.5478 4.95987H57.5145C57.533 4.95979 57.5514 4.96406 57.5682 4.97226C57.5848 4.98048 57.5994 4.99243 57.6106 5.00716C57.6217 5.02189 57.6291 5.03898 57.6323 5.05708C57.6357 5.07516 57.6346 5.09374 57.6291 5.11132V5.10823Z" fill="black"/>
+        </svg>
+    </button>
+    
+  {%- else -%}
+    <div class="product-form">
+      <div class="product-form__buttons form">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width button--primary"
+          disabled
+        >
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+  
+  <a href="https://thesareeroom.onelink.me/DFYA/c8d5f46a" class="button button--full-width QR-btn {% if pre-order == false %}hidden{% endif %}" target="_blank">purchase now in-app <img src="https://cdn.shopify.com/s/files/1/1169/4922/files/MA_sareeRoom-rightArrow.png?v=1682707602" alt="" width="14" height="13" /> </a>
+
+  {%- if show_pickup_availability -%}
+    {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+
+    <pickup-availability
+      class="product__pickup-availabilities no-js-hidden quick-add-hidden"
+      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+        available
+      {% endif %}
+      data-root-url="{{ routes.root_url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-has-only-default-variant="{{ product.has_only_default_variant }}"
+    >
+      <template>
+        <pickup-availability-preview class="pickup-availability-preview">
+          {% render 'icon-unavailable' %}
+          <div class="pickup-availability-info">
+            <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+            <button class="pickup-availability-button link link--text underlined-link">
+              {{ 'products.product.pickup_availability.refresh' | t }}
+            </button>
+          </div>
+        </pickup-availability-preview>
+      </template>
+    </pickup-availability>
+
+    <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</div>
+
+<script>
+  var expressbtn;
+  function ALAbtncheck() {
+    expressbtn = setInterval(function () {custombtn()}, 1000);
+  }
+  function custombtn() {
+    if(document.querySelectorAll(".shopify-payment-button__button--branded").length > 0) {
+      if(document.querySelector(".shop-pay-btn").getAttribute('hide-btn') != null){
+        document.querySelector(".shop-pay-btn").classList.remove('hidden');  
+      }
+      clearInterval(expressbtn);
+    }
+    
+  }
+
+  {% if pre-order == false %}
+  ALAbtncheck();
+  {% endif %}
+
+  var shop_btn = document.querySelector('.shop-pay-btn');
+  shop_btn.addEventListener('click',function(){
+      shop_btn.closest('div').querySelector('.shopify-payment-button__button--branded div[role="button"]').click();
+  });
+
+  /* OOS feature and QR-code Feature */
+
+  document.querySelector('.pop-overlay').addEventListener('click',function(){
+      document.body.classList.remove('active-pop');
+      document.querySelector('.OOS-box').classList.remove('active');
+      document.querySelector('.QR-code').classList.remove('active');
+  })
+
+  if(document.querySelector('.OOS-btn') != null){
+    document.querySelector('.OOS-btn').addEventListener('click',function(){
+      document.body.classList.add('active-pop');
+      document.querySelector('.OOS-box').classList.add('active');
+    });  
+  }
+  
+  var close_btns = document.querySelectorAll('.close-btn');
+  close_btns.forEach(c_btn => {
+    c_btn.addEventListener("click", function(event){
+      document.body.classList.remove('active-pop');
+      document.querySelector('.OOS-box').classList.remove('active');
+      document.querySelector('.QR-code').classList.remove('active');
+    });
+  });
+  
+  document.querySelector('.QR-btn').addEventListener('click',function(e){
+    if($(window).width() > 767 ){
+      e.preventDefault();
+      document.body.classList.add('active-pop');
+      document.querySelector('.QR-code').classList.add('active');
+    }    
+  });
+  
+</script>

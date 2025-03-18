@@ -1,0 +1,146 @@
+{{ 'common_second.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .title_image{
+        padding: 150px 80px;
+        gap: 20px;
+    }
+
+    .inner_title_image_one img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+    }
+      .title_image_txt div{
+        padding-top:10px;
+        padding-bottom:40px
+      }
+
+    @media only screen and (max-width: 769px) {
+        .title_image{
+            padding: 60px 20px;
+        }
+    }
+</style>
+
+<section class="title_image d-flex tablet-flex-wrap{% if section.settings.show_right_side %} row-reverse{% endif %}">
+  <div class="col-65 tablet_col_100 inner_title_image_one">      
+    {% if section.settings.image != blank %}            
+      {%- liquid
+        assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round              
+        assign sizes = '(min-width: 750px) 65vw, 100vw'
+        assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+      -%}
+      {% assign imageClass = 'image' %}
+      {{
+        section.settings.image
+        | image_url: width: 1100
+        | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: imageClass
+      }}
+    {%- else -%}                     
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}            
+    {%- endif -%}
+  </div>
+  <div class="col-40 tablet_col_100">
+    {% for i in (1..2) %}
+      {%- capture title %}title_{{ i }}{% endcapture -%}
+      {%- capture detail %}description_{{ i }}{% endcapture -%}
+      {%- assign title = section.settings[title] -%}
+      {%- assign detail = section.settings[detail] -%}
+      {%- if title != blank or detail != blank -%}
+        <div class="common_h3 title_image_txt">
+          {%- if title != blank -%}
+          <h3>{{ title }}</h3>
+          {%- endif -%}
+          {%- if detail != blank -%}
+          <div class="common_txt_div rte">{{ detail }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {% endfor %}
+    
+    {%- if section.settings.btn_text != blank -%}
+    <div class="common_btn full_width_res">
+      <a href="{{ section.settings.url | default:'#' }}">{{ section.settings.btn_text }}</a>
+    </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "title-image-second",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+  "settings":[
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Upload an image"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show image right alignment",
+      "id": "show_right_side"
+    },
+    {
+      "type": "header",
+      "content": "Content 1"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Enter a title",
+      "default":"SOLUTIONS FOR QUICKLY AND EASILY ACHIEVING YOUR HAIRSTYLE AT HOME"
+    },
+    {
+      "type": "richtext",
+      "id": "description_1",
+      "label": "Enter a detail",
+      "default":"<p>Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Content 2"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Enter a title",
+      "default":"CREATE THE STYLE YOU DESIRE WITHOUT GOING TO A HAIRDRESSER."
+    },
+    {
+      "type": "richtext",
+      "id": "description_2",
+      "label": "Enter a detail",
+      "default":"<p>Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "btn_text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "label": "Button link",
+      "id": "url"
+    }
+  ],
+  "presets": [
+    {
+      "name" : "title-image-second"
+    }
+  ]
+}
+{% endschema %}

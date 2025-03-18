@@ -1,0 +1,959 @@
+{{ 'category-product-filter.css' | asset_url | stylesheet_tag }}
+{% if template.suffix == "ajax-onsale" %}
+  {%- layout none -%}
+{% endif %}
+
+<style>
+  .custom-filter-section{
+    display:none;
+  }
+</style>
+<div id="category-product-main-filter-product">
+  <div class="category-product-main-filter-product">
+    <div id="filter-populer-btn">
+      <div class="filter-populer-btn">
+        <div class="filter-popup">
+          <a href="#"
+            >Add Filtering
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 15V1M1 8H15" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="popular-drop">
+          <span
+            >Most Popular
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-filter">
+      <div class="category-filter">
+        <h5>Filter</h5>
+
+        <div class="category-toggle-filter-icon">
+          <div class="category-toggle">
+            <span class="category-toggle-stock">
+              <label class="toggle_switch">
+                <input type="checkbox" checked>
+                <span class="slider-toggle"></span>
+              </label>
+              <span>In Stock</span>
+            </span>
+            <span class="category-toggle-sale">
+              <label class="toggle_switch">
+                <input type="checkbox">
+                <span class="slider-toggle"></span>
+              </label>
+              <span>On Sale</span>
+            </span>
+          </div>
+
+            
+          <div class="category-filter-icon">
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter1</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter2</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter3</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter4</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter5</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter6</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter7</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-text-main">
+              <div class="category-filter-container-text">
+                <p>Filter8</p>
+                <span class="category-chevron-down-icon-filter">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div class="category-open-filter-option">
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+                <div class="open-filter-input-text">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1">
+                    <span class="checkbox-slider">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 4L5.75 12.25L2 8.5" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <span class="checkbox-label">Custom Checkbox</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="categroy-filter-btn">
+          <a href="#" class="categroy-filter-btn-inner"></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-product-sort-grid">
+        
+      <div id="category-product-grid-collection">
+        <div class="category-product-grid-collection1">
+           <div class="product-grid-container" id="ProductGridContainer">
+          {%- if search.results.size == 0 and search.filters != empty -%}
+            <div class="template-search__results collection collection--empty{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}" id="product-grid" data-id="{{ section.id }}">
+              <div class="loading-overlay gradient"></div>
+              <div class="title-wrapper center">
+                <h2 class="title title--primary">
+                  {{ 'sections.collection_template.empty' | t }}<br>
+                  {{ 'sections.collection_template.use_fewer_filters_html' | t: link: search_url, class: "underlined-link link" }}
+                </h2>
+              </div>
+            </div>
+          {%- else -%}
+            <div class="template-search__results collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}" data-id="{{ section.id }}">
+              <div class="loading-overlay gradient"></div>
+              <ul id="product-grid" class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop" role="list" data-id="{{ section.id }}">
+                {%- for item in search.results -%}
+                  {% assign lazy_load = false %}
+                  {%- if forloop.index > 2 -%}
+                    {%- assign lazy_load = true -%}
+                  {%- endif -%}
+
+                  <li class="grid__item{% if settings.animations_reveal_on_scroll and forloop.index > 4 %} scroll-trigger animate--slide-in{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                    {% endif %}>
+                    {%- case item.object_type -%}
+                      {%- when 'product' -%}
+                          {% liquid
+                            assign comparePrice = card_product.compare_at_price
+                            assign price = product.price
+                            if comparePrice > price
+                            else
+                              if template.suffix == "ajax-onsale"
+                               continue
+                              endif
+                            endif
+                          %}
+                        {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
+                        {% render 'card-product',
+                          card_product: item,
+                          media_aspect_ratio: section.settings.image_ratio,
+                          image_shape: section.settings.image_shape,
+                          show_secondary_image: section.settings.show_secondary_image,
+                          show_vendor: section.settings.show_vendor,
+                          show_rating: section.settings.show_rating,
+                          lazy_load: lazy_load
+                        %}
+                      {%- when 'article' -%}
+                        {% render 'article-card',
+                          article: item,
+                          show_image: true,
+                          show_date: section.settings.article_show_date,
+                          show_author: section.settings.article_show_author,
+                          show_badge: true,
+                          media_aspect_ratio: 1,
+                          lazy_load: lazy_load
+                        %}
+                      {%- when 'page' -%}
+                        <div class="article-card-wrapper card-wrapper underline-links-hover">
+                          <div class="card card--card card--text ratio color-{{ settings.blog_card_color_scheme }}" style="--ratio-percent: 100%;">
+                            <div class="card__content">
+                              <div class="card__information">
+                                <h3 class="card__heading">
+                                  <a href="{{ item.url }}" class="full-unstyled-link">
+                                    {{ item.title | truncate: 50 | escape }}
+                                  </a>
+                                </h3>
+                              </div>
+                              <div class="card__badge {{ settings.badge_position }}">
+                                <span class="badge color-{{ settings.color_schemes | first }}">{{ 'templates.search.page' | t }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    {%- endcase -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, pagination_type: section.settings.pagination_type %}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+        
+        </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Get the elements
+      const filterContainerText = document.querySelector('.category-filter-container-text');
+      const openFilterOption = document.querySelector('.category-open-filter-option');
+      const chevronIcon = document.querySelector('.category-chevron-down-icon-filter');
+
+      // Add click event listener
+      filterContainerText.addEventListener('click', function () {
+          // Toggle the visibility of the filter option with smooth transition
+          if (openFilterOption.classList.contains('show')) {
+              openFilterOption.classList.remove('show');
+              chevronIcon.classList.remove('rotate');
+          } else {
+              openFilterOption.classList.add('show');
+              chevronIcon.classList.add('rotate');
+          }
+      });
+  });
+
+
+  document.querySelectorAll('.dropdown-button').forEach(button => {
+      button.addEventListener('click', () => {
+          const dropdownContent = button.nextElementSibling;
+          const isOpen = dropdownContent.classList.contains('show');
+
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+              content.classList.remove('show');
+          });
+
+          document.querySelectorAll('.chevron').forEach(chevron => {
+              chevron.style.transform = 'rotate(0deg)';
+          });
+
+          if (!isOpen) {
+              dropdownContent.classList.add('show');
+              button.querySelector('.chevron').style.transform = 'rotate(180deg)';
+          }
+      });
+  });
+
+  document.querySelectorAll('.dropdown-content li').forEach(item => {
+      item.addEventListener('click', (e) => {
+          // Update the dropdown content
+          const dropdown = e.target.closest('.dropdown');
+          const button = dropdown.querySelector('.dropdown-button');
+          button.firstChild.textContent = e.target.textContent;
+          dropdown.querySelector('.dropdown-content').classList.remove('show');
+          button.querySelector('.chevron').style.transform = 'rotate(0deg)';
+      });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (e) => {
+      if (!e.target.matches('.dropdown-button') && !e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown-content.show').forEach(openDropdown => {
+              openDropdown.classList.remove('show');
+          });
+          document.querySelectorAll('.chevron').forEach(chevron => {
+              chevron.style.transform = 'rotate(0deg)';
+          });
+      }
+  });
+</script>

@@ -1,0 +1,373 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lifetime-form .lifetime-warranty-container{
+    padding:0 38px;
+  }
+  #warranty_submit.loading span {
+    display: none;
+  }
+</style>
+
+<div class="lifetime-form">
+  <div class="lifetime-warranty-container">
+    <h4 class="h4 form-main-title">Register your cookware and activate your lifetime warranty</h4>
+    <div class="form-wrapper">
+      <form id="submit_warranty_{{ section.id }}" method="post" action="{{ section.settings.form_url }}">
+        <div id="alert"></div>
+        <div class="form-group-wrapper">
+          <div class="name-wrapper">
+            <div class="field field-grp">
+              <label for="lft_warrant_first_name">First Name</label>
+              <input
+                type="text"
+                name="first_name"
+                id="lft_warrant_first_name"
+                class="input-field"
+                required="required"
+                placeholder="First Name"
+              >
+            </div>
+            <div class="field field-grp">
+              <label for="lft_warrant_last_name">Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                id="lft_warrant_last_name"
+                class="input-field"
+                required="required"
+                placeholder="Last Name"
+              >
+            </div>
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_email">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="lft_warrant_email"
+              class="input-field"
+              required="required"
+              placeholder="Email Address"
+            >
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_addrees">Address</label>
+            <input
+              type="text"
+              name="address"
+              id="lft_warrant_address"
+              class="input-field"
+              required="required"
+              placeholder="Address"
+            >
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_address_line2">Address Line 2</label>
+            <input
+              type="text"
+              name="address_line2"
+              id="lft_warrant_address_line2"
+              class="input-field"
+              required="required"
+              placeholder="Address Line 2"
+            >
+          </div>
+          <div class="adrress-group">
+            <div class="field field-grp">
+              <label for="lft_warrant_address_city">City</label>
+              <input
+                type="text"
+                name="address_city"
+                id="lft_warrant_address_city"
+                class="input-field"
+                required="required"
+                placeholder="City"
+              >
+            </div>
+            <div class="field field-grp">
+              <label for="lft_warrant_address_province">State / Province / Region</label>
+              <input
+                type="text"
+                name="address_province"
+                id="lft_warrant_address_province"
+                class="input-field"
+                required="required"
+                placeholder="State / Province / Region"
+              >
+            </div>
+            <div class="field field-grp">
+              <label for="lft_warrant_address_zip">Postal / Zip Code</label>
+              <input
+                type="text"
+                name="address_zip"
+                id="lft_warrant_address_zip"
+                class="input-field"
+                required="required"
+                placeholder="Postal / Zip Code"
+              >
+            </div>
+            <div class="field field-grp">
+              <label for="lft_warrant_address_country">Country</label>
+              <select id="country" name="country">
+                <option value="" disabled selected>Please Select</option>
+                {{ country_option_tags }}
+              </select>
+            </div>
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_phone">Phone Number</label>
+            <input
+              type="tel"
+              maxlength="10"
+              name="phone"
+              id="lft_warrant_phone"
+              class="input-field"
+              required="required"
+              placeholder="Phone Number"
+            >
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_custom_field">Where did you buy your cookware?</label>
+            <select name="Where_did_you_buy">
+              <option value="" disabled selected>Please Select</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+              <option value="option4">Option 4</option>
+            </select>
+          </div>
+          <div class="field field-grp">
+            <div class="check-box-wrapper">
+              <label for="lft_warrant_custom-checkboxb" class="lft_warrant_purchased-items"
+                >What product line did you purchase from?</label
+              >
+              <label class="checkbox-label">
+                <input type="checkbox" name="product_line_option_1" value="360 Cookware">
+                360 Cookware
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="product_line_option_2" value="360 Pro">
+                360 Pro
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="product_line_option_3" value="360 Bakeware">
+                360 Bakeware
+              </label>
+            </div>
+          </div>
+          <div class="field field-grp">
+            <label for="lft_warrant_purchased-items">What item(s) did you purchase?</label>
+            <input
+              type="text"
+              name="purchased-items"
+              id="lft_warrant_purchased-items"
+              class="input-field"
+              required="required"
+              placeholder="What item(s) did you purchase?"
+            >
+          </div>
+          <button
+            type="submit"
+            class="lft_warrant_button button button--primary button--full-width {% if section.settings.form_url == blank %}hidden{% endif %}"
+            id="warranty_submit">
+            Submit
+            <div class="loading-overlay__spinner hidden">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+    {% render 'life-time-warranty-css' %}
+
+    <script type="text/javascript">
+      // <![CDATA[
+      var mrw2vl40v1xcd0;(function(d, t) {
+      var s = d.createElement(t), options = {
+      'userName':'360cookware',
+      'formHash':'mrw2vl40v1xcd0',
+      'autoResize':true,
+      'height':'898',
+      'async':true,
+      'host':'wufoo.com',
+      'header':'show',
+      'ssl':true};
+      s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+      s.onload = s.onreadystatechange = function() {
+      var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+      try { mrw2vl40v1xcd0 = new WufooForm();mrw2vl40v1xcd0.initialize(options);mrw2vl40v1xcd0.display(); } catch (e) {}};
+      var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+      })(document, 'script');
+      // ]]>
+    </script>
+    <div
+      style="font-family: inherit; font-size: small; color: #a7a7a7; text-align: center; display: block;"
+      id="wuf-adv"
+    ></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    let input = document.querySelector('#lft_warrant_phone')
+    input.onkeyup = function() {
+      input.value = input.value.replace(/[^\d]/, "")
+    }
+    document.querySelector('#warranty_submit').addEventListener("click",function(e){
+      e.preventDefault();
+      var _fieldEmpty = false;
+      var _requiredFiledCount = this.closest('form').querySelectorAll('*[required]').length, _FiledFilledCount = 0;
+      _requiredFiledCount += document.querySelectorAll('.lifetime-form form select').length;
+
+      let emailInput = this.closest('form').querySelector('input[type="email"]');
+
+      this.closest('form').querySelectorAll('*[required]').forEach(function(ele, eleIndex, eleArray){
+        
+        if( ele.value == '' ){
+          ele.closest('.field').classList.add('active');
+        }else{
+
+          if(ele.type == "email"){
+            if( emailInput && !validateEmail(emailInput.value) ){
+              _FiledFilledCount -= 1;
+              ele.closest('.field').classList.add('active');
+            }else{
+              _FiledFilledCount += 1;
+              ele.closest('.field').classList.remove('active');
+            }
+          }else if(ele.type == 'tel'){
+            if(ele.value.length == 10){
+              _FiledFilledCount += 1;
+              ele.closest('.field').classList.remove('active');
+            }else{
+              _FiledFilledCount -= 1;
+              ele.closest('.field').classList.add('active');
+            }
+            
+          }else{
+            if( ele.closest('.field') && ele.closest('.field').classList.contains('active') ){
+              ele.closest('.field').classList.remove('active');
+            }
+            _FiledFilledCount += 1;
+          }      
+        }
+        
+      });
+
+      this.closest('form').querySelectorAll('select').forEach(function(eleselect){
+        if(eleselect.value != 'Please Select' && eleselect.value != ''){
+          _FiledFilledCount += 1;
+          eleselect.closest('.field').classList.remove('active');
+        }else{
+          eleselect.closest('.field').classList.add('active');
+        }
+      });
+      console.log(_requiredFiledCount,_FiledFilledCount);
+    
+      if( _requiredFiledCount != _FiledFilledCount ){
+        console.log('nofill');
+        e.preventDefault();
+      }else{
+        console.log('all valid');
+        e.preventDefault();
+        formSubmit(e);
+      }
+    });
+  });
+
+  function validateEmail(mail) {
+    var chk_mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail);
+    if (chk_mail){
+      return true;
+    }    
+    return false;
+  }
+  
+  function formSubmit(event) {
+    console.log(event.target.closest('.form-wrapper').querySelector('#warranty_submit'),'e');    
+    event.preventDefault();
+    event.target.closest('.form-wrapper').querySelector('#warranty_submit').classList.add('loading');
+    event.target.closest('.form-wrapper').querySelector('#warranty_submit .loading-overlay__spinner').classList.remove('hidden');
+    var url = event.target.closest('form').getAttribute('action');    
+    var config = {
+      'method': 'POST',
+      'mode': 'no-cors',
+      'headers': { 'Content-Type': 'application/json', 'Accept': `application/javascript`, 'Access-Control-Allow-Origin': 'https://lucvincent.com/' }
+    };
+    delete config.headers['Content-Type'];
+    config.headers['Accept'] = '/';
+    config.headers['Access-Control-Allow-Headers'] = '';
+    config.headers['Access-Control-Allow-Credentials'] = true;
+    var formData = new FormData(event.target.closest('form'));
+    config.body = formData;
+    console.log(config);
+    fetch(`${url}`, config)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.status) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        event.target.closest('form').classList.add('hidden');
+        /*document.querySelector('.thank-btn').click();*/
+      }
+    })
+    .catch(e => {
+      console.error(e);
+    });
+  
+  }
+</script>
+
+{% schema %}
+{
+  "name": "register-form-lifetime",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "form_url",
+      "label": "Form URL"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name":"register-form-lifetime"
+    }
+  ]
+}
+{% endschema %}

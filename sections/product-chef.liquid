@@ -1,0 +1,261 @@
+{{ 'chef-creations.css' | asset_url | stylesheet_tag }}
+{%- liquid  
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+
+  if section.settings.video != null
+    assign ratio_diff = section.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+    if ratio_diff < 0.01 and ratio_diff > 0
+     
+    endif
+  endif
+  if section.settings.video_mobile != null
+    assign ratio_diff_mobile = section.settings.video_video_mobile.aspect_ratio | minus: posterMobile.aspect_ratio | abs
+    if ratio_diff_mobile < 0.01 and ratio_diff_mobile > 0
+     
+    endif
+  endif
+-%}
+
+<div class="chef-section section-padding" style="background-color: {{ section.settings.background_color }};">
+   <div class="pdp-chef-flex page-width">
+      <div class="banner-group-wrapper">
+         <div class="content-left">
+            {% if section.settings.main_heading != blank %} 
+            <h2 class="main_heading h2">{{ section.settings.main_heading }}</h2>
+            <a href="{{ section.settings.button_link }}" class="button cta_button">{{ section.settings.button_text }}</a>
+            {% endif %} 
+         </div>
+         <div class="content-right">
+           {% if section.settings.block_descrption != blank %}
+            <p class="desc">{{ section.settings.block_descrption }}</p>
+           {% endif %}
+            {% if section.settings.block_descrption1 != blank %}
+            <p class="desc1">{{ section.settings.block_descrption1 }}</p>
+           {% endif %}
+            <div class="icon-group">
+                  {% for block in section.blocks %}
+                    {% if block.type == 'icon-text' %}
+                    {% if block.settings.text != blank  %}
+                     <div class="section-icons">
+                       {% if block.settings.imageicon != blank  %}
+                        <div class="icon-image">
+                          <img src="{{ block.settings.imageicon | img_url:'24x' }}">
+                        </div>
+                        {% endif %}
+                        <div class="icon-content">
+                           <h6> {{ block.settings.text }}</h6>
+                        </div>
+                     </div>
+                      {% endif %}    
+                    {% endif %}
+                  {% endfor %}
+            </div>
+         </div>
+      </div>
+      <div class="video-group-wrapper title_video_wrapper {{ section.settings.videoLayout }} swiper videoswiper1">
+         <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              {% if block.type == 'video_block' %}
+            <div class="video-group swiper-slide">
+               <custom-deferred-media class="video_group">
+                  <div class="cover-image">
+                     {%- if block.settings.cover_image != blank -%}
+                     <img src="{{ block.settings.cover_image | image_url: width: 3840 }}" class="img-desktop" alt="{{ block.settings.title }}">
+                     {%- endif -%}
+                     {%- if block.settings.cover_image_mobile != blank -%}
+                     <img src="{{ block.settings.cover_image_mobile | image_url: width: 750 }}" class="img-mobile" alt="{{ block.settings.title }}">
+                     {%- endif -%}
+                     <button type="button" class="play-button video-wrapper__play-button video-wrapper__play-button--ripple">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80ZM34.3529 51.4112L52.7059 40.8151C53.3333 40.4528 53.3333 39.5472 52.7059 39.1849L34.3529 28.5888C33.7255 28.2266 32.9412 28.6794 32.9412 29.4039V50.5961C32.9412 51.3206 33.7255 51.7734 34.3529 51.4112Z" fill="white" fill-opacity="0.6"></path>
+                        </svg>
+                     </button>
+                  </div>
+                  <template>
+                    {%- if block.settings.video == null -%}
+                        {%- liquid
+                        assign video_id = block.settings.video.id | default: block.settings.video_url.id
+                        assign video_alt = block.settings.video.alt | default: block.settings.description1
+                        assign poster = block.settings.video.preview_image | default: block.settings.cover_image
+                      -%}
+                        {%- liquid
+                          assign loop = ''
+                          if block.settings.enable_video_looping
+                            assign loop = '&loop=1&playlist=' | append: video_id
+                          endif
+                        -%}
+                        
+                          {%- if block.settings.video_url.type == 'youtube' -%}
+                            <iframe
+                              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
+                              class="js-youtube"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ block.settings.description1 | escape }}"
+                            ></iframe>
+                          {%- else -%}
+                            <iframe
+                              src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
+                              class="js-vimeo"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ block.settings.description1 | escape }}"
+                            ></iframe>
+                          {%- endif -%}
+                    {% else %}
+                     {{ block.settings.video | video_tag: autoplay: true, loop: block.settings.enable_video_looping, controls: true }}
+                     {%- endif -%}
+                  </template>
+               </custom-deferred-media>
+               <div class="video-conent">
+                  <h4>{{ block.settings.heading1 }}</h4>
+                  <p> {{ block.settings.description1 }}</p>
+               </div>
+            </div>
+             {%- endif -%}
+            {%- endfor -%}
+         </div>
+         <div class="slide-nav small-hide medium-hide">
+            <div class="nav-btn fea-col-slide-prev prevprev">
+               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </path>
+               </svg>
+            </div>
+            <div class="nav-btn fea-col-slide-next nextnext">
+               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.625 18.75L14.375 10L5.625 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </path>
+               </svg>
+            </div>
+         </div>
+      </div>
+      <a href="{{ section.settings.button_link }}" class="button medium-hide large-hide  cta_button">{{ section.settings.button_text }}</a>
+   </div>
+</div>
+  
+      
+{% schema %}
+  {
+    "name": "Product Chef",
+    "class": "Product-Chef",
+    "settings": [
+       {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+       {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": "t:sections.video.settings.enable_video_looping.label",
+        "default": false
+     },
+      {
+        "type": "html",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+      },
+     
+      {
+        "type": "text",
+        "id": "block_descrption",
+        "label": "block descrption",
+        "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+      },
+           {
+        "type": "text",
+        "id": "block_descrption1",
+        "label": "block descrption",
+        "default": "Transform every home-cooked meal into a gourmet experience with 360 Cookware"
+      },
+         
+        
+       {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video_block",
+        "name": "Video Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_video_looping",
+            "label": "Play video on loop",
+            "default": false
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "video",
+            "id": "video_mobile",
+            "label": "Mobile video"
+          },
+          {
+              "type": "text",
+              "id": "heading1",
+              "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "description1",
+            "label": "Description"
+         },
+          {
+            "type": "video_url",
+            "id": "video_url",
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "label": "URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image",
+            "label": "Cover image"
+          },
+          {
+            "type": "image_picker",
+            "id": "cover_image_mobile",
+            "label": "Cover image for mobile"
+          }
+        ]
+      },
+      {
+      "type": "icon-text",
+      "name": "Icon Text",
+      "settings": [
+            {
+            "type": "image_picker",
+            "id": "imageicon",
+            "label": "Image Icon"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Icon text",
+            "default": "Nutrient retention"
+          }
+      ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "Product Chef"
+      }
+    ]
+  }
+{% endschema %}

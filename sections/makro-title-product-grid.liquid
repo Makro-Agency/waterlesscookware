@@ -1,0 +1,157 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<style>
+
+.makro-PG-grid { --grid-desktop-horizontal-spacing: 40px; --grid-desktop-vertical-spacing: 40px; }
+
+.makro-proGrid-section .sectio-header { display: flex; align-items: center; justify-content: space-between; }
+.product-grid-tab { display: flex; gap: 20px; }
+.product-grid-tab .tab-item { padding-bottom: 5px; position: relative; cursor: pointer; }
+.product-grid-tab .tab-item.active { font-weight: 900; }
+.product-grid-tab .tab-item:after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: currentColor; }
+.product-grid-tab .tab-item.active:after, .product-grid-tab .tab-item:hover:after { height: 3px; background: #FA255E; }
+
+.makro-proGrid-section .tab-content:not(.active) { display: none; }
+.makro-proGrid-section .tab-content.active { opacity: 0; visibility: hidden; }
+.makro-proGrid-section .tab-content.actived { opacity: 1; visibility: visible; transition: visibility 0.15s, opacity 0.3s ease 0.15s; }
+  
+@media screen and (max-width: 989px) {  
+  .makro-PG-grid { --grid-desktop-horizontal-spacing: 20px; --grid-desktop-vertical-spacing: 10px; }
+
+  .makro-proGrid-section .sectio-header { flex-wrap: wrap; gap: 20px; 
+}
+@media screen and (max-width: 749px) {
+  .makro-PG-grid { --grid-mobile-horizontal-spacing: 10px; --grid-mobile-vertical-spacing: 10px; }  
+}
+</style>
+{% liquid
+  assign collBlocks = section.blocks | where: 'type','collection'
+%}
+{% for block in collBlocks %}
+  {% capture id %}{{ block.id }}-{{ block.settings.title | handleize }}-{{ forloop.index }}{% endcapture %}
+  {% assign id = id | strip %}
+  {% capture tab %}{{ tab }}<div class="tab-item{% if forloop.first %} active{% endif %}" data-id="{{ id }}">{{ block.settings.title }}</div>{% endcapture %}
+  {% capture tabContent %}{{ tabContent }}    
+  {%- liquid
+     assign collection = block.settings.collection
+     assign noOfProduct = block.settings.noOfProduct
+  -%}
+  <ul class="{% if forloop.first %}active actived {% endif %}tab-content makro-PG-grid grid grid--2-col grid--3-col-tablet grid--4-col-desktop" role="list" id="{{ id }}">    
+    {%- for product in collection.products limit: noOfProduct -%}
+      <li class="makro-PG-grid__item grid__item{% if forloop.index > 6 %} small-hide{% endif %}"          
+        {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+        <div class="makro-product--card">
+          {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+          {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}          
+          {% render 'card-product-new',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: true,
+            show_vendor: false,
+            show_rating: section.settings.show_rating,
+            show_quick_add: false,
+            section_id: section.id,
+            override_title: section.settings.override_title,
+            override_image: section.settings.override_image,
+            placeholder_image: placeholder_image,
+            hideVariant: true
+          %}
+        </div>
+      </li>
+    {% else %}
+      {%- for i in (1..8) -%}
+        {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+        {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+        <li class="makro-PG-grid__item grid__item{% if forloop.index > 6 %} small-hide{% endif %}"          
+        {% if settings.animations_reveal_on_scroll %} style="--animation-order: {{ forloop.index }};"{% endif %}>
+        {% render 'card-product-new',
+          card_product: product,
+          media_aspect_ratio: section.settings.image_ratio,
+          show_secondary_image: true,
+          show_vendor: false,
+          show_rating: section.settings.show_rating,
+          show_quick_add: false,
+          section_id: section.id,
+          override_title: section.settings.override_title,
+          override_image: section.settings.override_image,
+          placeholder_image: placeholder_image,
+        %}
+        </li>
+      {% endfor %}
+    {%- endfor -%}    
+  </ul>  
+  {% endcapture %}
+{% endfor %}
+
+<div class="container page-width">
+  <div class="sectio-header">
+    <h2 class="main_heading h2 text-uppercase">{{ section.settings.title }}</h2>
+    {%- if collBlocks.size > 1 and tab != blank-%}
+      <div class="product-grid-tab tab">{{ tab }}</div>
+    {%- endif -%}
+  </div>
+  {{ tabContent }}
+</div>
+
+<script>
+  </script>
+
+{% schema %}
+  {
+    "name": "Title Product Grid",
+    "class":"makro-proGrid-section m-section",
+    "settings": [      
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default": "Luc Vincent Bestsellers"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Product gird",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Enter tab title",
+            "id": "title",
+            "default": "Option #"
+          },
+          {
+            "type": "collection",
+            "label": "Select collection",
+            "id": "collection"
+          },
+          {
+            "type": "range",
+            "label": "Select no. of product to show",
+            "id": "noOfProduct",
+            "default": 10,
+            "min": 4,
+            "max": 24,
+            "step": 1
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title Product Grid",
+        "blocks": [
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

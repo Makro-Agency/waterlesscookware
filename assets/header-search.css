@@ -1,0 +1,132 @@
+.search-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #00000033;
+}
+
+.search-input,
+.field__label {
+  border: none;
+  outline: none;
+  background: #fcfbf7;
+  color: #000000;
+
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  padding: 0px;
+}
+.search-container {
+  display: none;
+}
+.search-input::placeholder {
+  color: #0d0d0d;
+}
+
+.header__icon--search {
+  display: flex;
+  gap: 10px;
+   border-bottom: 1px solid var(--gray-tones-black-20, rgba(0, 0, 0, 0.20));
+}
+.layout1-trans .header__icon--search{
+   border-bottom: 1px solid #FCFBF7;
+}
+
+
+.header.index-header:hover 
+.header__icon--search{
+   border-bottom: 1px solid var(--gray-tones-black-20, rgba(0, 0, 0, 0.20)) !important;
+}
+
+.reset__button {
+  display: none;
+}
+
+.search__input.field__input {
+  padding-left: 30px;
+  padding-right: 0px;
+  padding-top: 6px;
+  border: none;
+  background: #fcfbf7;
+}
+.field__input:focus ~ .field__label {
+  display: none !important;
+}
+.field__input:focus {
+  padding-top: 5px;
+  border: none;
+  box-shadow: none;
+}
+.field__input:focus label {
+  display: none;
+}
+.field__label {
+  left: 30px;
+}
+/* .header__search{
+      display:none !important;
+    } */
+
+/* search-mobel */
+
+/* .search-modal{
+      max-width: 1119px;
+    margin:auto;
+}
+ */
+
+.modal__content {
+  width: 100%;
+  max-width: 1360px;
+  margin: auto;
+  /* left: 112px;
+  right: auto; */
+  background: transparent;
+}
+
+.search-modal__close-button {
+  display: none !important;
+}
+@media only screen and (max-width: 1440px) {
+  .modal__content {
+    padding: 0px 40px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .header__search {
+    display: inline-flex !important;
+  }
+  .search-container,
+  .search-input-none {
+    display: none;
+    border: none;
+  }
+  .modal__content {
+    max-width: 100%;
+    left: 0;
+    padding: 0px;
+  }
+  .search-modal__content {
+    top: 96%;
+    max-width: 100%;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .search-modal__close-button {
+    display: flex !important;
+  }
+
+  form.search.search-modal__form {
+    width: 100%;
+    padding: 20px;
+  }
+  .header__icon--search {
+    border: none;
+  }
+}

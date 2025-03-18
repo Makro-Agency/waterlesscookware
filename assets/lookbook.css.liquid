@@ -1,0 +1,198 @@
+.lookbook-page-width-large { max-width: 1440px; padding-left: 0; padding-right: 0; }
+.lookbook-page-width-medium { max-width: 1040px; padding-left: 0; padding-right: 0; }
+.lookbook-page-width-full { max-width: 100%; padding-left: 65px; padding-right: 65px; }
+.lookbook-image img, .lookbook-image .placeholder-svg { width: 100%; height: auto; display: block; height: 100%; object-fit: cover; }
+ 
+.lookbook-image .placeholder-svg { display: block; }
+
+.lookbook-section { padding: 75px 0; }
+.lookbook-section:first-child { padding-top: 0; }
+.lookbook-section.shpy-lookbook-richtext { padding-top: 0; padding-bottom: 0; }
+.lookbook-section:not(.shpy-lookbook-richtext)+.shpy-lookbook-richtext { padding-top: 75px; }
+
+.lookbook-bread { font-size: 14px; color: #73716E; padding-top: 16px; padding-bottom: 16px; }
+.lookbook-bread a { display: inline; }
+
+.lookbook-popup-title { display: none; }
+
+@media only screen and (min-width: 1200px) {
+  .lookbook-section>div[data-section-spacing="top"] { margin-top: -146px; }
+  .lookbook-section>div[data-section-spacing="bottom"] { margin-bottom: -146px; }
+  .lookbook-section>div[data-section-spacing="true"] { margin-top: -146px; margin-bottom: -146px; }
+}
+@media only screen and (max-width: 1199px) {
+  .lookbook-page-width-full { padding-left: 20px; padding-right: 20px; }
+  @media (min-width: 750px) {
+    .lookbook-section { padding: 25px 0; }
+    .lookbook-section>div[data-section-spacing=top] { margin-top: -46px; }
+    .lookbook-section>div[data-section-spacing=bottom] { margin-bottom: -46px; }
+    .lookbook-section>div[data-section-spacing="true"] { margin-top: -46px; margin-bottom: -46px; }
+    .lookbook-section:not(.shpy-lookbook-richtext)+.shpy-lookbook-richtext { padding-top: 25px; }
+  }
+}
+@media only screen and (max-width: 749px){
+  .lookbook-section { padding: 1px 0; }
+  .lookbook-section:not(.shpy-lookbook-richtext)+.shpy-lookbook-richtext { padding-top: 0; }
+}
+
+/* Lookbook section one */
+.lookbook-section-one.grid--gapless {--grid-desktop-horizontal-spacing: 0px; --grid-desktop-vertical-spacing: 0px; }
+.lookbook-section-one .lookbook-text { padding: 80px 80px 0 80px; }
+.lookbook-section-one h6, .lookbook-section-one h2 { margin: 0; }
+.lookbook-section-one .lookbook-text>*+* { margin-top: 25px; }
+.lookbook-section-one h6 { color: rgba(var(--color-foreground),1); letter-spacing: 0.05em; margin: 0; font-size: 12px; line-height: 1; font-weight: 600; }
+.lookbook-section-one h2 { font-size: 60px; letter-spacing: -0.02em; line-height: 1; }
+.lookbook-section-one .rte { font-weight: 400; font-size: 14px; line-height: 150%; }
+
+.lookbook-section-one { margin-bottom: 0; }
+*+.lookbook-section-one-image{ margin-top: 4px; }
+.lookbook-section-one-image { margin-bottom: 0; --grid-desktop-horizontal-spacing: 4px; --grid-desktop-vertical-spacing: 4px; }
+.lookbook-section-one-image .lookbook-image { position: relative; }
+
+
+@media only screen and (min-width: 750px) {
+  .lookbook-sec-five .lookbook-section-one-image.last .grid__item:nth-child(1),
+  .lookbook-sec-five .lookbook-section-one-image.last .grid__item:nth-child(2) {
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) * 1 / 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 1 / 2); }    
+}
+
+@media only screen and (max-width: 1199px){
+  .lookbook-section-one .lookbook-text { padding: 30px 30px 0 30px; }
+  .lookbook-section-one h2 { font-size: 32px; }
+}
+@media only screen and (max-width: 749px){  
+  *+.lookbook-section-one-image{ margin-top: 2px; }
+
+  .lookbook-section-one h2 { font-size: 22px; }
+  .lookbook-section-one .lookbook-bread { padding: 0; }
+  .lookbook-section-one .lookbook-text.medium-hide h2 { margin-top: 10px; }
+  .lookbook-section-one .lookbook-text { padding: 60px 20px; text-align: center; }
+  .lookbook-section-one .lookbook-text.medium-hide { padding-top: 40px; padding-bottom: 40px; }
+  .lookbook-section-one .rte { margin-top: 0; }
+
+  .lookbook-section-one-image { --grid-mobile-horizontal-spacing: 2px; --grid-mobile-vertical-spacing: 2px; }
+
+  .lookbook-section .lookbook-page-width-large .lookbook-section-one-image.enable4-row .grid__item:nth-child(3n+1),
+  .lookbook-section.lookbook-sec-five .lookbook-page-width-large .lookbook-section-one-image .grid__item,
+  .lookbook-sec-five .lookbook-page-width-large .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:nth-child(3n+1),
+  .lookbook-sec-five .lookbook-page-width-medium .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:nth-child(3n),
+  .lookbook-page-width-large .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:not(.grid__item:nth-child(3n+1)),
+  .lookbook-page-width-large .lookbook-section-one-image.grid--2-col-tablet-down .grid__item:not(.grid__item:nth-child(3n+1)),
+  .lookbook-sec-four .page-width .lookbook-section-one-image.mobile-layout-one .grid__item:nth-child(3n+1) { width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); }
+  
+  .lookbook-page-width-large .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:nth-child(3n+1),
+  .lookbook-page-width-large .lookbook-section-one-image.grid--2-col-tablet-down .grid__item:nth-child(3n+1),
+  .lookbook-section.lookbook-sec-five .lookbook-page-width-large .lookbook-section-one-image.two-two .grid__item:nth-child(3n+1),
+  .lookbook-section.lookbook-sec-five .lookbook-page-width-large .lookbook-section-one-image.last .grid__item:nth-child(3n+1),
+  .lookbook-sec-four .page-width .lookbook-section-one-image.mobile-layout-two .grid__item:nth-child(3n+1) { width: 100%; max-width: 100%; }
+  
+  .lookbook-page-width-medium .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:not(.grid__item:nth-child(3n)) { width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); }
+  .lookbook-page-width-medium .lookbook-section-one-image.grid--3-col-tablet-down .grid__item:nth-child(3n) { width: 100%; max-width: 100%; }
+
+  .lookbook-section .lookbook-section-one-image.two-two .grid__item { width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2); }  
+}
+
+
+
+.lookbook-popup { position: absolute; bottom: 20px; right: 20px; text-align: right; }
+.lookbook-popup > .button {
+  --color-button: 255, 255, 255;
+  --alpha-button-background: 1;
+  --color-button-text: 0, 0, 0;
+  --buttons-radius-outset: 100px;
+  --buttons-radius: var(--buttons-radius-outset); font-weight: 400; font-size: 14px; line-height: 100%; letter-spacing: 0; padding: 18px 20px; align-items: center; }
+.lookbook-popup>.button svg { margin-left: 10px; }
+.lookbook-popup>.button:not([disabled]):hover { background: #F5F4F2; }
+.lookbook-popup>.button:not([disabled]):hover:after { --color-button: 245, 244, 242; }
+.lookbook-popup>.button:not([disabled]).active { background: rgb(var(--color-button-text)); color: rgb(var(--color-button)); }
+.lookbook-popup>.button:not([disabled]).active:after { --color-button: 0, 0, 0; }
+
+.lookbook-popup-gird { border-radius: 10px; background: #fff; padding: 20px; min-width: 390px; margin-bottom: 20px; width: 100%; max-width: 390px; text-align: left; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1); }
+.lookbook-popup:not(.active) .lookbook-popup-gird { height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0; }
+.lookbook-popup-gird { margin-bottom: 0; transition: all 0.5s ease; opacity: 0; visibility: hidden; max-height: 487px; overflow: auto; overscroll-behavior: contain; position: absolute; bottom: 100%; right: 0; }
+.active .lookbook-popup-gird { margin-bottom: 20px; transition: visibility 0.2s, all 0.3s ease 0.2s; opacity: 1; visibility: visible; }
+.lookbook-popup.active:after { content: ''; position: absolute; bottom: 0; right: 0; width: 200%; height: 200%; }
+.lookbook-popup-items + .lookbook-popup-items { margin-top: 2px; }
+.lobo-popup-card { display: flex; position: relative; }
+.lobo-pro-image { max-width: 110px; flex: 1 0 auto; }
+.lobo-pro-content { padding-left: 15px; flex: 1 0 auto; }
+.lobo-pro-content h3 { font-size: 14px; margin: 0; line-height: 1; letter-spacing: 0; }
+.lobo-pro-content .price { margin-top: 8px; font-size: 14px; line-height: 1; letter-spacing: 0; }
+.lobo-pro-label { font-size: 12px; line-height: 1; color: #73716E; margin-top: 15px; }
+
+.lobo-pro-content .link { margin-bottom: 0; margin-top: 30px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; font-size: 12px; line-height: 1; }
+.lobo-pro-content .link:after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.lobo-pro-content .link .icon { width: 16px; margin-left: 8px; }
+.lobo-pro-content .link .icon svg { width: 100%; height: auto; }
+.lobo-pro-content .link .icon path { stroke-width: 1px; }
+
+.content-overflowed .lookbook-popup-gird { position: relative; left: 40px; z-index: 1; }
+
+@media only screen and (max-width: 989px){
+  .lookbook-popup>.button { font-size: 10px; padding: 11px 12px; min-height: 1px; }
+  .lookbook-popup>.button svg { width: 12px; height: 12px; margin-left: 8px; }
+}
+@media only screen and (max-width: 749px){
+  .lookbook-popup-gird { padding: 10px; min-width: 290px; max-width: 290px; max-height: 386px; }
+  .lobo-pro-image { max-width: 90px; }
+  .lobo-pro-label { margin-top: 8px; }
+  .lobo-pro-content .link { margin-top: 15px; }
+
+  .content-overflowed .lookbook-popup-gird { left: 108px; }
+}
+
+/* Lookbook section one */
+/* Lookbook richtext */
+.shpy-lookbook-richtext .page-width { padding-top: 150px; padding-bottom: 150px; }
+.shpy-lookbook-richtext h2 { margin: 0; font-size: 36px; letter-spacing: -0.02em; }
+.shpy-lookbook-richtext .rte { margin-top: 25px; font-size: 14px; }
+@media only screen and (max-width: 1440px){
+  .shpy-lookbook-richtext .page-width { padding-left: 20px; padding-right: 20px; }
+  @media (min-width: 1024px){
+    .shpy-lookbook-richtext .page-width { max-width: 1080px;  }
+  }
+}
+@media only screen and (max-width: 1199px){
+  .shpy-lookbook-richtext .page-width { padding-top: 60px; padding-bottom: 60px; }
+}
+@media only screen and (max-width: 749px){
+  .shpy-lookbook-richtext h2 { font-size: 22px; }
+  .shpy-lookbook-richtext .rte { margin-top: 15px; }
+}
+/* Lookbook richtext */
+/* lookbook-collection-list */
+.lookbook-collection-list { padding: 65px 0; }
+.lookbook-collection-list .page-width { padding-left: 65px; padding-right: 65px; max-width: 100%; }
+
+.lookbook-collection-list .collection__title { margin: 40px 0; display: flex; justify-content: space-between; }
+.lookbook-collection-list .collection__title .title { margin-bottom: 0; font-size: 36px; }
+.lookbook-collection-list .slide-nav { display: flex; align-self: center; max-width: 85px; justify-content: space-between; width: 100%; }
+.lookbook-collection-list .slide-nav .nav-btn { cursor: pointer; }
+.lookbook-collection-list .slide-nav svg { display: block; }
+
+.item-colle-content { position: relative; }
+.item-colle-content .media { padding-bottom: 134.985%; }
+.item-colle-info { padding: 20px 15px 0; }
+.item-colle-info .card__heading { font-size: 20px; letter-spacing: -0.02em; margin: 0; }
+.item-colle-info .sim-link { margin-top: 15px; }
+.item-colle-info .card__heading a:after { bottom: 0; content: ""; left: 0; position: absolute; right: 0; top: 0; z-index: 1; }
+@media only screen and (max-width: 1199px){
+  .lookbook-collection-list { padding-top: 60px; padding-bottom: 60px; }
+  .lookbook-collection-list .page-width { padding-left: 20px; padding-right: 20px; } 
+  .lookbook-collection-list .collection__title { margin: 0 0 20px; }  
+}
+@media only screen and (max-width: 989px){
+  .lookbook-collection-list .slider-page-width { padding-left: 0; padding-right: 0; }
+  .lookbook-collection-list .product-carousel-slider .swiper-slide:first-child { padding-left: 0; }
+  .lookbook-collection-list .product-carousel-slider .swiper-slide:last-child { padding-right: 0; }
+}
+@media only screen and (max-width: 749px){
+  .lookbook-collection-list .collection__title .title { font-size: 22px; }
+  .lookbook-collection-list .product-carousel-slider .swiper-slide { width: 41.026%; }  
+  .item-colle-info .card__heading { font-size: 16px; }
+}
+@media only screen and (max-width: 374px){
+  .lookbook-collection-list .product-carousel-slider .swiper-slide { width: 51.026%; }  
+  .item-colle-info .card__heading { font-size: 14px; }
+}
+/* lookbook-collection-list */

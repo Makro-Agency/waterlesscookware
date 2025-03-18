@@ -1,0 +1,213 @@
+a{
+  color: #606d22;
+}
+a:hover{
+  /* color: #A6BB3A; */
+}
+/* breadcrumb */
+.breadcrumbs-item a,
+.breadcrumb-item a,
+.breadcrumb-item a{
+  border-bottom: 1px solid transparent;
+}
+.breadcrumb-item a:hover,
+.breadcrumbs .breadcrumbs-item a:hover,
+.breadcrumb-item a:hover{
+    border-bottom: 1px solid #00000099;
+}
+
+/* menu */
+.cust-inner-menu li:hover a{
+  border-bottom: 1.5px solid #A6BB3A;
+  width: fit-content;
+}
+.navabar-desktop .navbar_item .navbar_link:hover {
+  font-weight: 700;
+}
+
+.card-wrapper .card--card:hover .card__heading a{
+    color: #c3d957 !important;
+}
+.link.makro--link{
+    font-weight: 600;
+    line-height: 100%;
+    margin-top: 10px;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+.image-width-text-header .link.makro--link{
+   margin-top: 5px;
+}
+.link.makro--link:hover,
+.get-started-360 .grid-item a:hover .link.makro--link,
+.service-content:hover a,
+.blog__post.grid__item:hover .card__heading a,
+.blog__post.grid__item:hover .link.makro--link,
+.insta-heading:hover a,
+.announcement-button:hover a,
+.pagination__list li:hover .link
+.header-shop-right .link
+.pagination__item:hover{
+  color:#c3d957 !important;
+}
+.banner-group .banner:hover .link { color: #c3d957; }
+.social-icons a:hover svg path{
+   fill: #c3d957;
+}
+.navbar_item a{
+  align-items: center;
+}
+/* heading */
+.insta-heading a{
+   color:#606D22;
+}
+.service-content:hover .main_heading{
+     color:#c3d957 !important;
+}
+/* background box on hover */
+.image-width-text-header{
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cmn-menu-product{
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.cmn-menu-product:hover .boxhover-bg,
+.category-image-text-link:hover,
+.image-width-text-header:hover{
+  background:#FAF5EB;
+  color: #000;
+}
+
+/* slider nav */
+.makro-product-carousel-wrapper .slide-nav .nav-btn{
+    position: absolute;
+    top: 25%;
+}
+
+.makro-product-carousel-wrapper .nav-btn.prevprev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.ann_bar_main .slide-nav .nav-btn:hover{
+    background: none !important;
+}
+.ann_bar_main .slide-nav .nav-btn{
+    background: none !important;
+}
+.slide-nav .nav-btn:hover,
+.auther-content .right-arrow:hover,
+.swiper-button-div .swiper-button-prev:hover,
+.swiper-button-div .swiper-button-next:hover{
+  background: #c3d957;
+}
+.slide-nav .nav-btn,
+.auther-content .right-arrow,
+.swiper-button-div .swiper-button-prev,
+.swiper-button-div .swiper-button-next{
+    background-color: #606d22;
+    color: #fcfbf7;
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.template-cart .related-products .slide-nav .nav-btn{
+	background:transparent; 
+}
+.template-cart .related-products .slide-nav .nav-btn:hover{
+	background:#c3d957; 
+}
+
+/* button hover and custome */
+.button.cta_button {
+  background: #606D22;
+  color: #FCFBF7;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 15px 25px;
+  letter-spacing: 0;
+  height: 50px;
+  width:max-content;
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  min-height: auto;
+  max-width: fit-content;
+  min-width: fit-content;
+}
+.button.cta_button:hover {
+    background: #c3d957 !important;
+    color: #fcfbf7 !important;
+}
+.button.cta_button::before,
+.button.cta_button:after {
+    display: none;
+}
+.cart-drawer-main-product .quick-add__submit{
+      margin-top: 5px;
+      border: 1px solid;
+}
+.essentials-cookware-set .upgrade-button:hover{
+    background: #a6bb3a;
+    color: #fff;
+    border-color: #a6bb3a;
+}
+
+/* line */
+.banner-text-catalog-icon span a:hover{
+    border-color: #c3d957 !important;
+}
+
+.main_privacy a:hover,.main_copyright a:hover{
+  color:#c3d957;
+}
+.video-group-wrapper .swiper-wrapper{
+      align-items: flex-start;
+}
+.chef-section .video-group .cover-image img{
+    border-radius: 15px;
+ }
+.video-group custom-deferred-media .js-vimeo{
+  background: #000;
+}
+@media(max-width:543px){
+ .button-block-mob .button.cta_button{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .pan_review.review2 {
+    max-width: 170px;
+  }
+  .pan_review.review2 {
+      bottom: -120px;
+   }
+   .stainless-steel-pan .image-wrapper .subtitle {
+      bottom: -160px;
+      width: 131px;
+      right: 30px;
+  }
+    .stainless-steel-pan {
+        padding: 80px 0 85%;
+    }
+}
+@media(max-width:400px){
+    #full-blend-hero-section .full-blend-hero-section-container-box-heading-container h1 {
+      font-size: 40px !important;
+      line-height: 48px;
+      letter-spacing: -.02em;
+  }
+}

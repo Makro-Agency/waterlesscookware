@@ -1,0 +1,464 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
+  {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<footer class="full_footer">
+  <div class="footer_main_sec">
+    <div class="footer">
+      <div class="custom-footer">
+       <div class="logo">
+          {% if section.settings.footer_logo %}
+          {%- liquid
+            assign widths = '320, 375, 420, 550, 750'
+            assign dek_img =  section.settings.footer_logo
+            assign height = dek_img.width | divided_by: dek_img.aspect_ratio | round
+          -%}
+          {{
+            dek_img
+            | image_url: width: 150
+            | image_tag: loading: 'lazy', width: dek_img.width, height: height, sizes: sizes, widths: widths
+          }}
+            {% comment %}<img src="{{ section.settings.footer_logo | img_url: 'master' }}" alt="{{ section.settings.footer_logo_alt | escape }}">{% endcomment %}
+          {% endif %}
+        </div>
+
+        <div class="custom-menu">
+          {% for block in section.blocks %}
+            <div class="footer-menu-block">
+              <div class="inline-menu-flex">
+              <h3>{{ block.settings.menu_heading }}</h3>
+              <div class="ab-icon-arrow">
+                <svg width="15" height="12" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.57747 0.744141L4.99997 4.32164L1.42247 0.744141L0.244141 1.92247L4.99997 6.67831L9.75581 1.92247L8.57747 0.744141Z" fill="#fff"/>
+                </svg>
+              </div>
+              </div>
+              <div class="ab-footer-linklist">
+              {% for link in linklists[block.settings.navigation_menu].links %}
+                <div>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                </div>
+              {% endfor %}
+            </div>
+            </div>
+          {% endfor %}
+        </div>
+
+
+      <div class="custom-subscribe">
+        <div class="subscribe">
+          <h3>{{ section.settings.heading_text }}</h3>
+          <p class="footer_sub_p">
+            {{ section.settings.paragraph_text }}
+          </p>
+      
+          {% comment %}
+            {% form 'customer' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div
+                class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                <div class="subscribe_form_div">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="footer-input"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="Newsletter-error--{{ section.id }}"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="Newsletter-success--{{ section.id }}"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    required
+                  >
+                  <button
+                    type="submit"
+                    class="sub_btn newsletter-form__button field__button"
+                    name="commit"
+                    id="Subscribe"
+                    aria-label="{{ 'newsletter.button_label' | t }}"
+                  >
+                    {% render 'icon-arrow' %}
+                    Subscribe
+                  </button>
+                </div>
+                {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                    {%- render 'icon-error' -%}
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </small>
+                {%- endif -%}
+              </div>
+              {%- if form.posted_successfully? -%}
+                <h6
+                  class="newsletter-form__message newsletter-form__message--success form__message"
+                  id="Newsletter-success--{{ section.id }}"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-success' -%}
+                  {{- 'newsletter.success' | t }}
+                </h6>
+              {%- endif -%}
+            {% endform %}
+                {% endcomment %}
+
+          {% assign klaviyoListId = 'Yfnh5v' %}
+          <form id="newsletter_form" class="_klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+            <input type="hidden" name="g" value="{{ klaviyoListId }}">
+            <input type="hidden" name="$fields" value="language">
+            <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
+            <div class="klaviyo_field_group kgrid">
+              <div class="klaviyo_field _email">
+                <input class="input-item field_input footer-input" type="email" value="" name="email" id="k_id_email" placeholder="{{ 'newsletter.label' | t }}" required="required" autocomplete="off">
+              </div>
+            </div>
+            <div class="klaviyo_messages">
+              <div class="success_message" style="display:none;"></div>
+              <div class="error_message" style="display:none;"></div>
+            </div>
+            <div class="klaviyo_form_actions btn-actions">
+              <button type="submit" id="Subscribe" class="newsletter-form__button klaviyo_submit_button field__button sub_btn">Subscribe</button>
+            </div>
+          </form> 
+
+          <script>
+          document.addEventListener("DOMContentLoaded", (event) => {
+            let crLocation = window.location.href;
+            KlaviyoSubscribe.attachToForms('#newsletter_form', {
+              hide_form_on_success: true,
+              success_message: "Thanks for subscribing!",
+              extra_properties: {
+                $source: crLocation,
+                $method_type: "Klaviyo Form",
+                $method_id: 'embed'
+              },
+              success: function ($form) {
+                console.log($form);
+                $form.addClass('success-true');
+              },error : function(){
+                /*for if errors occurs*/
+              }
+            }); 
+          });
+        </script>
+          
+          <div class="footer-bottom_icon">
+            <h3 class="footer-header-regular">{{ section.settings.follow_us_heading }}</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/360Cookware">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12492)">
+                  <path d="M7.91717 19.7425V13.0925H5.85551V10.0366H7.91717V8.71995C7.91717 5.31579 9.45717 3.73829 12.7988 3.73829C13.133 3.73829 13.5947 3.77329 14.0222 3.82412C14.3424 3.85707 14.66 3.91136 14.973 3.98662V6.75746C14.7921 6.74058 14.6105 6.73057 14.4288 6.72746C14.2253 6.72217 14.0216 6.71967 13.818 6.71995C13.2288 6.71995 12.7688 6.79996 12.4222 6.97746C12.1891 7.09438 11.9932 7.27385 11.8563 7.49579C11.6413 7.84579 11.5447 8.32495 11.5447 8.95579V10.0366H14.8105L14.4888 11.7891L14.2497 13.0925H11.5447V19.9633C16.4963 19.365 20.333 15.1491 20.333 10.0366C20.333 4.51412 15.8555 0.0366211 10.333 0.0366211C4.81051 0.0366211 0.333008 4.51412 0.333008 10.0366C0.333008 14.7266 3.56134 18.6616 7.91717 19.7425Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12492">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/360cookware/">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12493)">
+                  <path d="M6.19141 0.070014C5.12741 0.120181 4.40083 0.290014 3.76558 0.539514C3.10824 0.795764 2.55099 1.13951 1.99658 1.69593C1.44224 2.25235 1.10074 2.80993 0.846409 3.46843C0.600242 4.10493 0.433409 4.83218 0.386409 5.89676C0.339409 6.96135 0.328992 7.3036 0.334242 10.0193C0.339409 12.7348 0.351409 13.0752 0.402992 14.142C0.453826 15.2058 0.622992 15.9322 0.872576 16.5676C1.12924 17.225 1.47258 17.782 2.02924 18.3366C2.58583 18.8912 3.14299 19.2318 3.80299 19.4866C4.43899 19.7324 5.16641 19.9 6.23083 19.9466C7.29524 19.9933 7.63783 20.0041 10.3527 19.9988C13.0675 19.9937 13.4093 19.9816 14.4758 19.931C15.5425 19.8804 16.265 19.71 16.9007 19.4616C17.5581 19.2044 18.1155 18.8616 18.6697 18.3048C19.2238 17.748 19.5651 17.19 19.8192 16.5312C20.0657 15.8952 20.2331 15.1678 20.2792 14.1042C20.3259 13.0368 20.3369 12.696 20.3317 9.98085C20.3265 7.2656 20.3142 6.92518 20.2637 5.85876C20.2131 4.79235 20.0437 4.06818 19.7942 3.43235C19.5372 2.77493 19.1942 2.21835 18.6379 1.66335C18.0815 1.10835 17.523 0.767347 16.8645 0.513764C16.228 0.267514 15.5011 0.099764 14.4367 0.053764C13.3722 0.00776399 13.0297 -0.00415268 10.3138 0.00118066C7.59799 0.00634732 7.25799 0.018014 6.19141 0.070014ZM6.30824 18.1476C5.33324 18.1052 4.80383 17.9432 4.45099 17.8076C3.98383 17.6276 3.65099 17.41 3.29941 17.0618C2.94774 16.7136 2.73183 16.3796 2.54941 15.9134C2.41241 15.5606 2.24741 15.0318 2.20183 14.0568C2.15224 13.003 2.14183 12.6866 2.13599 10.0168C2.13016 7.34701 2.14041 7.03093 2.18658 5.97676C2.22824 5.0026 2.39124 4.4726 2.52658 4.11993C2.70658 3.65218 2.92341 3.31993 3.27241 2.9686C3.62141 2.61718 3.95441 2.40076 4.42099 2.21835C4.77349 2.08076 5.30224 1.91718 6.27683 1.87076C7.33141 1.82076 7.64741 1.81076 10.3168 1.80493C12.9862 1.7991 13.3031 1.8091 14.3581 1.8556C15.3322 1.89793 15.8625 2.05935 16.2147 2.1956C16.6821 2.3756 17.0147 2.59176 17.3661 2.94143C17.7175 3.29093 17.9341 3.62276 18.1165 4.09035C18.2542 4.44176 18.4179 4.97035 18.4639 5.9456C18.5141 7.00018 18.5255 7.31643 18.5302 9.9856C18.5351 12.6548 18.5257 12.9718 18.4794 14.0256C18.4369 15.0006 18.2752 15.5302 18.1394 15.8834C17.9594 16.3504 17.7425 16.6834 17.3932 17.0346C17.0441 17.3858 16.7115 17.6022 16.2447 17.7846C15.8927 17.922 15.3632 18.086 14.3895 18.1324C13.3348 18.182 13.0188 18.1924 10.3484 18.1983C7.67799 18.2041 7.36283 18.1933 6.30824 18.1476ZM14.4605 4.65535C14.4609 4.89271 14.5317 5.12462 14.6639 5.32174C14.7961 5.51887 14.9838 5.67237 15.2032 5.76281C15.4227 5.85326 15.664 5.87659 15.8967 5.82986C16.1295 5.78313 16.3431 5.66843 16.5106 5.50028C16.6781 5.33213 16.792 5.11807 16.8379 4.88518C16.8837 4.6523 16.8595 4.41104 16.7682 4.19193C16.677 3.97282 16.5228 3.7857 16.3251 3.65423C16.1275 3.52276 15.8953 3.45285 15.658 3.45335C15.3398 3.45401 15.0349 3.581 14.8104 3.80641C14.5858 4.03181 14.46 4.33717 14.4605 4.65535ZM5.19841 10.01C5.20399 12.846 7.50724 15.1398 10.3426 15.1344C13.1781 15.129 15.4734 12.826 15.4681 9.99001C15.4627 7.15401 13.1589 4.8596 10.3231 4.86518C7.48724 4.87076 5.19308 7.17435 5.19841 10.01ZM6.99966 10.0064C6.99836 9.34717 7.19258 8.70232 7.55777 8.15343C7.92295 7.60455 8.4427 7.17628 9.05128 6.92279C9.65986 6.66929 10.3299 6.60195 10.9768 6.72929C11.6237 6.85662 12.2182 7.17291 12.6853 7.63815C13.1524 8.1034 13.4711 8.6967 13.601 9.34304C13.7309 9.98939 13.6662 10.6597 13.4151 11.2693C13.164 11.8789 12.7378 12.4003 12.1904 12.7677C11.643 13.1351 10.9989 13.3319 10.3397 13.3332C9.9019 13.3341 9.46825 13.2488 9.06347 13.0821C8.65869 12.9154 8.29071 12.6706 7.98056 12.3617C7.6704 12.0527 7.42413 11.6857 7.25583 11.2816C7.08753 10.8775 7.00048 10.4442 6.99966 10.0064Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12493">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="https://www.pinterest.com/360cookware/_shop/">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12494)">
+                  <path d="M10.3474 0C4.82992 0 0.357422 4.4725 0.357422 9.98917C0.357422 14.2217 2.98909 17.8367 6.70576 19.2908C6.61826 18.5 6.53992 17.2883 6.73992 16.425C6.92242 15.6442 7.91159 11.4608 7.91159 11.4608C7.91159 11.4608 7.61242 10.8608 7.61242 9.97667C7.61242 8.59083 8.41825 7.55083 9.41909 7.55083C10.2724 7.55083 10.6841 8.19167 10.6841 8.9575C10.6841 9.815 10.1399 11.0967 9.85742 12.2842C9.61992 13.2783 10.3574 14.0883 11.3366 14.0883C13.1099 14.0883 14.4766 12.2175 14.4766 9.51583C14.4766 7.13167 12.7574 5.45833 10.3033 5.45833C7.46159 5.45833 5.79575 7.59333 5.79575 9.79083C5.79575 10.6517 6.12409 11.5767 6.53659 12.075C6.61909 12.175 6.62992 12.2625 6.60742 12.3625C6.53242 12.675 6.36326 13.3617 6.32909 13.4983C6.28492 13.6858 6.18576 13.7242 5.99492 13.6358C4.74909 13.0608 3.96742 11.2375 3.96742 9.76417C3.96742 6.6175 6.25742 3.72083 10.5674 3.72083C14.0324 3.72083 16.7274 6.19333 16.7274 9.49C16.7274 12.9358 14.5549 15.7083 11.5333 15.7083C10.5216 15.7083 9.57159 15.1842 9.23492 14.5592L8.61075 16.9325C8.38659 17.8033 7.77409 18.8925 7.36242 19.5542C8.29825 19.8417 9.28409 20 10.3208 20C15.8266 20 20.3083 15.5292 20.3083 10.0108C20.3083 4.49167 15.8266 0.0216667 10.3208 0.0216667L10.3474 0Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12494">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="https://x.com/360Cookware">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12495)">
+                  <path d="M16.0838 0.960938H19.1505L12.4505 8.61927L20.333 19.0384H14.1613L9.32801 12.7184L3.79634 19.0384H0.728008L7.89467 10.8468L0.333008 0.961771H6.66134L11.0305 6.73844L16.0838 0.960938ZM15.008 17.2034H16.7072L5.73801 2.7001H3.91467L15.008 17.2034Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12495">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/user/360Cookware">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12496)">
+                  <path d="M19.9147 5.15493C19.8017 4.72933 19.5789 4.34088 19.2685 4.02849C18.9582 3.71609 18.5712 3.49072 18.1463 3.37493C16.5872 2.9541 10.333 2.9541 10.333 2.9541C10.333 2.9541 4.07884 2.9541 2.51884 3.37493C2.09418 3.49092 1.70742 3.71638 1.39724 4.02875C1.08706 4.34113 0.864334 4.72947 0.751341 5.15493C0.333008 6.72493 0.333008 9.99993 0.333008 9.99993C0.333008 9.99993 0.333008 13.2749 0.751341 14.8449C0.864329 15.2705 1.08715 15.659 1.3975 15.9714C1.70785 16.2838 2.09482 16.5092 2.51967 16.6249C4.07884 17.0458 10.333 17.0458 10.333 17.0458C10.333 17.0458 16.5872 17.0458 18.1472 16.6249C18.5721 16.5092 18.9591 16.2839 19.2694 15.9715C19.5798 15.6591 19.8026 15.2706 19.9155 14.8449C20.333 13.2749 20.333 9.99993 20.333 9.99993C20.333 9.99993 20.333 6.72493 19.9147 5.15493ZM8.28717 12.9733V7.0266L13.5147 9.99993L8.28717 12.9733Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12496">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@360cookware">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_393_12497)">
+                  <path d="M10.7703 0.0166667C11.8619 0 12.9453 0.00833333 14.0286 0C14.0953 1.275 14.5536 2.575 15.4869 3.475C16.4203 4.4 17.7369 4.825 19.0203 4.96667V8.325C17.8203 8.28333 16.6119 8.03333 15.5203 7.51667C15.0453 7.3 14.6036 7.025 14.1703 6.74167C14.1619 9.175 14.1786 11.6083 14.1536 14.0333C14.0869 15.2 13.7036 16.3583 13.0286 17.3167C11.9369 18.9167 10.0453 19.9583 8.10362 19.9917C6.91195 20.0583 5.72028 19.7333 4.70362 19.1333C3.02028 18.1417 1.83695 16.325 1.66195 14.375C1.64528 13.9583 1.63695 13.5417 1.65362 13.1333C1.80362 11.55 2.58695 10.0333 3.80362 9C5.18695 7.8 7.12028 7.225 8.92862 7.56667C8.94528 8.8 8.89528 10.0333 8.89528 11.2667C8.07028 11 7.10362 11.075 6.37862 11.575C5.85362 11.9167 5.45362 12.4417 5.24528 13.0333C5.07028 13.4583 5.12028 13.925 5.12862 14.375C5.32862 15.7417 6.64528 16.8917 8.04528 16.7667C8.97862 16.7583 9.87028 16.2167 10.3536 15.425C10.5119 15.15 10.6869 14.8667 10.6953 14.5417C10.7786 13.05 10.7453 11.5667 10.7536 10.075C10.7619 6.71667 10.7453 3.36667 10.7703 0.0166667Z" fill="#FCFBF7"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_393_12497">
+                  <rect width="20" height="20" fill="white" transform="translate(0.333008)"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+  
+    </div>
+  </div>
+ 
+  <div class="footer_bottom_links main_mobile_div">
+    <div class="links">
+      <a href="{{ section.settings.accessibility_link_url  }}">{{ section.settings.accessibility_link_text }}</a>
+      <a href="{{ section.settings.privacy_policy_link_url  }}">{{ section.settings.privacy_policy_link_text }}</a>
+      <a href="{{ section.settings.terms_conditions_link_url }}">{{ section.settings.terms_conditions_link_text }}</a>
+    </div>
+  </div>
+  <div class="divider main_mobile_div"></div>
+  <div class="luc_p_div main_mobile_div">
+    <p class="luc_p">&copy; 2024, Luc Vincent.</p>
+  </div>
+
+  <div class="divider main_desktom_div"></div>
+  <div class="main_copyrigt_sec main_desktom_div">
+    <div class="copyrigt_grid">
+      <div class="desktop-none"></div>
+      <div class="main_privacy">
+        <p class="privacy_policy_sec"><a href="#">{{ section.settings.privacy_policy_link_text }}</a></p>
+      </div>
+
+      <div class="main_copyright">
+        <p class="privacy_policy_sec"><a href="#">{{ section.settings.terms_conditions_link_text }}</a></p>
+      </div>
+    </div>
+    <div class="copyrigt_grid_cokware">
+      <div class="main_cokware">
+        <p class="cokware_p">&copy; 2024, 360 Cookware</p>
+      </div>
+    </div>
+  </div>
+      </div>
+</footer>
+
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "menu_block",
+      "name": "Navigation Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_heading",
+          "label": "Menu Heading",
+          "default": "Help Center"
+        },
+        {
+          "type": "link_list",
+          "id": "navigation_menu",
+          "label": "Navigation Menu"
+        }
+      ]
+    },
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "footer_logo_alt",
+      "label": "Footer Logo Alt Text",
+      "default": "360 Cookware Logo"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "default": "Subscribe to our emails",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "default": false,
+      "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "Get 10% Off"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "Subscribe to our Newsletter and be the first to know about the best deals, new collections, and limited-time offers!"
+    },
+    {
+      "type": "text",
+      "id": "follow_us_heading",
+      "label": "Heading",
+      "default": "Follow Us"
+    },
+     {
+      "type": "text",
+      "id": "accessibility_link_text",
+      "label": "Accessibility Link Text",
+      "default": "Accessibility"
+    },
+    {
+      "type": "url",
+      "id": "accessibility_link_url",
+      "label": "Accessibility Link URL"
+    },
+    {
+      "type": "text",
+      "id": "privacy_policy_link_text",
+      "label": "Privacy Policy Link Text",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "url",
+      "id": "privacy_policy_link_url",
+      "label": "Privacy Policy Link URL"
+    },
+    {
+      "type": "text",
+      "id": "terms_conditions_link_text",
+      "label": "Terms & Conditions Link Text",
+      "default": "Terms & Conditions"
+    },
+    {
+      "type": "url",
+      "id": "terms_conditions_link_url",
+      "label": "Terms & Conditions Link URL"
+    }    
+  ],
+  "default": {
+   
+  }
+}
+{% endschema %}

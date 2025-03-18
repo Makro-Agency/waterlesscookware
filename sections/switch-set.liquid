@@ -1,0 +1,173 @@
+<style>
+
+    .main_heading {
+      font-size: 40px;
+      margin-bottom:20px;
+    }
+    
+    .custom-seitch-sec{
+      padding: 15px;
+      border-radius: 15px;
+      position:relative;
+    }
+    
+    .switch-to-set-section {
+      padding: 20px;
+      border-radius: 10px;
+      width: 65%;
+    }
+    
+    .set-card {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    .set-image{
+      padding-right: 30px;
+    }
+    
+    .set-image img {
+      border-radius: 10px;
+      height: 160px;
+      width: 160px;
+    }
+    
+    .set-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .set-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin:0;
+    }
+    
+    .set-pricing {
+      display: flex;
+      align-items: center;
+    }
+    
+    .sale-price {
+      color: black;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: grey;
+    }
+    
+    .upgrade-to-set-button,
+    .buy-set-save-button {
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 25px;
+      padding: 6px 25px;
+      margin-top: 15px;
+      cursor: pointer;
+      color:#000;
+      display:inline-block;
+      
+    }
+    .upgrade-to-set-button:hover{
+      background-color: #606D22;
+      color:#fff;
+      border:1px solid #606D22;
+    }
+    .buy-set-save-button {
+      background-color: #708c49;
+      color: white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: 0;
+      padding: 4px 12px 4px 16px;
+      border-radius: 0px 15px 0px 15px;
+      background: #606D22;
+      border: 0;
+    }
+    </style>
+    <section class="switch-to-set-section">
+      <div class="page-width">
+       <h2 class="main_heading h2">{{ section.settings.main_heading }}</h2>
+      <div class="custom-seitch-sec" style="background-color: {{ section.settings.background_color }};">
+      {% if section.settings.product != blank %}
+        {% assign product = all_products[section.settings.product] %}
+        <div class="set-card">
+          <div class="set-image">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+            {% else %}
+              <img src="{{ 'placeholder.jpg' | asset_url }}" alt="Placeholder Image">
+            {% endif %}
+          </div>
+          <div class="set-details">
+            <h3 class="set-title">{{ product.title }}</h3>
+            <div class="set-pricing">
+              {% if product.compare_at_price > product.price %}
+                <span class="sale-price">{{ product.price | money }}</span>
+                <span class="original-price">{{ product.compare_at_price | money }}</span>
+              {% else %}
+                <span class="sale-price">{{ product.price | money }}</span>
+              {% endif %}
+            </div>
+            <div>
+              <a href="{{ product.url }}" class="upgrade-to-set-button">{{ section.settings.upgrade_button_text }}</a>
+            </div>
+          </div>
+          <div>
+            <a href="{{ product.url }}" class="buy-set-save-button">{{ section.settings.buy_button_text }}</a>
+          </div>
+        </div>
+      {% endif %}
+        </div>
+        </div>
+    </section>
+    
+    {% schema %}
+    {
+      "name": "Switch to Set",
+      "settings": [
+        {
+          "type": "text",
+          "id": "main_heading",
+          "label": "Main Heading",
+          "default": "Switch to a Set"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#fdf4ed"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "text",
+          "id": "upgrade_button_text",
+          "label": "Upgrade Button Text",
+          "default": "Upgrade to Set"
+        },
+        {
+          "type": "text",
+          "id": "buy_button_text",
+          "label": "Buy Button Text",
+          "default": "Buy in Set & Save"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Switch to Set",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}
+    

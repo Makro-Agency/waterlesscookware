@@ -1,0 +1,441 @@
+{% style %}
+ .recipe-section-new {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	justify-content: space-between;
+	max-width: 1560px;
+	margin: 0 auto;
+}
+
+.recipe-section-new .recipe-content {
+	flex: 1;
+	max-width: 508px;
+}
+  .recipe-section-new .product-info a.link-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.recipe-section-new .recipe-header p {
+	margin: 0;
+	color: var(--Black, #0D0D0D);
+	/* Body Text Large / Regular */
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	/* 24px */
+}
+
+.recipe-section-new .recipe-header h2 {
+	margin: 10px 0;
+	color: var(--Black, #0D0D0D);
+	font-family: Cellofy;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 120%;
+	letter-spacing: -0.64px;
+	padding-bottom: 10px;
+}
+
+.recipe-section-new .recipe-description {
+	margin: 10px 0;
+	color: #666;
+}
+
+.recipe-section-new .difficulty {
+	color: red;
+	font-weight: bold;
+}
+  .recipe-section-new .cta-button.desktop-hide{ letter-spacing:0; }
+.recipe-section-new .product-info{ margin-bottom:4rem !Important; }
+.recipe-section-new .product-info {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin: 10px 0;
+	padding:14px 16px; 
+     border-radius: 15px;
+    background: var(--Secondary-Beige, #FAF5EB);
+    position:relative;
+}
+
+.recipe-section-new .product-info img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+
+}
+
+.recipe-section-new .product-details {
+	display: flex;
+	font-size: 14px;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 383px;
+}
+
+.recipe-section-new .price {
+	margin-top: 10px;
+	color: #000;
+
+	/* Body Text Standard/Medium */
+	font-family: "Proxima Nova";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 150%;
+	/* 21px */
+}
+
+.recipe-section-new .discounted-price {
+	text-decoration: line-through;
+	color: var(--gray-tones-black-40, rgba(0, 0, 0, 0.40));
+	font-family: "Proxima Nova";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+.recipe-section-new .cta-button {
+	background-color: #606D22;
+	color: white;
+	border: none;
+	padding: 10px 26px 10px 25px;
+	border-radius: 100px;
+	height: 50px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	color: var(--White, #FCFBF7);
+	text-align: center;
+	/* CTA/Standard */
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 100%;
+	/* 16px */
+}
+
+.recipe-section-new .cta-button:hover {
+	background-color: #606D22;
+}
+
+.recipe-section-new .recipe-images {
+	display: flex;
+
+	gap: 20px;
+}
+  .recipe-section-new .cta-button:hover{ color:#fff; }
+.recipe-section-new .cta-button.desktop-hide:after{ border:none; box-shadow:none;}
+.recipe-section-new .recipe-images img {
+
+	height: auto;
+	object-fit: cover;
+
+	max-height: 500px;
+	max-width: 322px;
+}
+
+.recipe-section-new .product-details h5 {
+	margin-bottom: 0;
+	margin-top: 0;
+	letter-spacing: 0;
+	color: var(--Black, #0D0D0D);
+	text-overflow: ellipsis;
+	/* Body Text Large / Medium */
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 150%;
+	/* 24px */
+}
+
+.recipe-section-new .recipe-header ul .tag-meta svg {
+	margin-right: 5px;
+}
+
+.recipe-section-new .recipe-description {
+	color: var(--Black, #0D0D0D);
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+.recipe-section-new .recipe-header ul {
+	padding-left: 0;
+	display: flex;
+	align-items: Center;
+	margin-bottom: 3.5rem;
+}
+
+.recipe-header ul .tag-meta {
+	margin-right: 22px;
+	display: flex;
+	align-items: center;
+	border-radius: 50px;
+	background: var(--Secondary-Beige, #FAF5EB);
+	color: var(--Green, #606D22);
+	padding: 4px 12px;
+	/* Body Text Small / Medium */
+	font-family: "Proxima Nova";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 150%;
+	/* 18px */
+}
+
+.recipe-section-new .recipe-header ul .tag-meta:last-child {
+	color: var(--Secondary-Red, #CE1B03);
+	/* Body Text Small / Medium */
+	font-family: "Proxima Nova";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 150%;
+	/* 18px */
+}
+
+.recipe-section-new {
+	max-width: 1360px;
+	margin: 0 auto;
+	padding-top: 120px;
+	padding-bottom: 150px;
+}
+
+.recipe-section-new p.desc1 {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: var(--gray-tones-black-60, rgba(0, 0, 0, 0.60));
+	/* Body Text Standard/Medium */
+	font-family: "Proxima Nova";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	opacity: 0.4;
+	line-height: 150%;
+	/* 21px */
+}
+
+.recipe-section-new .cta-button span {
+	margin-left: 5px;
+}
+  .recipe-section-new .product-info:hover .product-details span svg rect{
+    fill:#A6BB3A;
+  }
+  @media screen and (max-width:576px) {
+.recipe-section-new .recipe-images img{ max-height:420px; border-radius:15px; } }
+@media screen and (max-width:767px) {
+  
+  .recipe-section-new .product-info{ padding:14px 16px; }
+  .recipe-section-new .product-info img{ width:60px; height:60px; }
+  .recipe-section-new{ padding-top:6rem; padding-bottom:6rem; }
+	.recipe-section-new .recipe-images {
+		overflow-y: auto;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.recipe-section-new .recepie {
+		min-width: 280px;
+	}
+
+	.recipe-section-new .recipe-header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.recipe-section-new {
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+	.recipe-section-new .recipe-images {
+		max-width: 44rem;
+	}
+}
+
+
+.recipe-section-new .cta-button.desktop-hide {
+	margin-top: 40px;
+}
+
+@media screen and (min-width:768px) {
+	.recipe-section-new .cta-button.desktop-hide {
+		display: none;
+	}
+
+	.recipe-section-new .recipe-content .cta-button.desktop-hide {
+		display: none;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.recipe-section-new .recipe-header ul {
+		order: 3;
+		margin-bottom: 0;
+		margin-top: 24px;
+	}
+
+	.recipe-section-new .recipe-content .cta-button {
+		display: none;
+	}
+}
+  .recipe-section-new .product-info img{ border-radius:10px; }
+{% endstyle %}
+<div class="recipe-section-new">
+   <div class="recipe-content">
+      <div class="recipe-header">
+         <ul>
+            <li class="tag-meta"> {%  render 'icon-time' %} {{ section.settings.time }}</li>
+            <li class="tag-meta {{ article.metafields.custom.level }} "> {{ section.settings.difficult }}  </li>
+         </ul>
+         <h2>{{ section.settings.recipe_title }}</h2>
+         <p class="recipe-description">
+            {{ section.settings.recipe_description }}
+         </p>
+      </div>
+      <p class="desc1">{{ section.settings.pdptitle }}</p>
+      {% assign product = all_products[section.settings.product] %}
+     {% if product != blank %}
+      <div class="product-info">
+         <a href="{{ product.url }}" class="link-btn"></a>
+         <img src="{{ product.featured_image | img_url: '' }}" alt="{{ product.title }}">
+         <div class="product-details">
+            <div class="product-inner">
+               <h5>{{ product.title }}</h5>
+               <p class="price">{{ product.price | money }} <span class="discounted-price">{{ product.compare_at_price | money }}</span></p>
+            </div>
+            <span>
+               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                  <rect y="0.5" width="40" height="40" rx="20" fill="#606D22"/>
+                  <path d="M22.8152 23.125L25.25 20.4987M25.25 20.4987L22.8176 17.875M25.25 20.4987H14.75" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+            </span>
+         </div>
+      </div>
+      <a href="{{ section.settings.button_link }}" class="button cta_button">
+        Make This Now 
+         <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+               <path d="M11.7535 8L15 4.49821M15 4.49821L11.7569 1M15 4.49821H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         </span>
+      </a>
+      {% comment %}
+      <button class="cta-button">
+         Make This Now 
+         <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+               <path d="M11.7535 8L15 4.49821M15 4.49821L11.7569 1M15 4.49821H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         </span>
+      </button>
+      {% endcomment %}
+     {% endif %}
+   </div>
+   <div class="recipe-images">
+     {% if section.settings.recipe_image_1 != blank %}
+      <div class="recepie">
+         <img src="{{ section.settings.recipe_image_1 |img_url:'' }}" alt="Recipe Image 1">
+      </div>
+   {% endif %}
+    {% if section.settings.recipe_image_2 != blank %}
+      <div class="recepie">
+         <img src="{{ section.settings.recipe_image_2 |img_url:'' }}" alt="Recipe Image 2">
+      </div>
+    {% endif %}
+   </div>
+ {%  if section.settings.button_text != blank %}
+   <a href="{{ section.settings.button_link }}" class="desktop-hide cta-button  button medium-hide large-hide ">
+     {{ section.settings.button_text }}
+     <span>
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+            <path d="M11.7535 8L15 4.49821M15 4.49821L11.7569 1M15 4.49821H1" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+      </span>
+   </a>
+{% endif %}
+
+</div>
+
+{% schema %}
+{
+    "name": "recipe-section-new",
+    "settings": [
+          {
+            "type": "text",
+            "id": "time",
+            "label": "Add Time"
+        },
+        {
+            "type": "text",
+            "id": "difficult",
+            "label": "Difficult"
+        },
+        {
+            "type": "text",
+            "id": "recipe_title",
+            "label": "Recipe Title",
+            "default": "Seasonal Recipe Title"
+        },
+        {
+            "type": "textarea",
+            "id": "recipe_description",
+            "label": "Recipe Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+        },
+       {
+            "type": "textarea",
+            "id": "pdptitle",
+            "label": "Product Title"
+        },
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Product Select"
+        },
+      
+        {
+            "type": "image_picker",
+            "id": "recipe_image_1",
+            "label": "Recipe Image 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "recipe_image_2",
+            "label": "Recipe Image 2"
+        },
+           {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+    ],
+    "presets": [
+        {
+            "name": "recipe section"
+        }
+    ]
+}
+{% endschema %}

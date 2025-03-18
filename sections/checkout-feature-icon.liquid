@@ -1,0 +1,170 @@
+{% if section.settings.enable_feature_icon %}
+  <style>
+    /* sections/checkout-feature-icon.liquid  */
+    .feature-icons.hide-feature-icons,
+    .feature-icons.hidden {
+      display: none;
+    }
+    
+    .feature-icons {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+    
+    .feature-icon {
+      width: calc(50% - 37px);
+      background: #FFFFFF;
+      border: 1px solid #E4EBE7;
+      border-radius: 8px;
+      padding: 20px 15px;
+      margin-right: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .feature-icon:last-child,
+    .feature-icon:nth-child(even) {
+      margin-right: 0;
+    }
+    
+    .feature-icon img {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .feature-icon h2 {
+      font-style: normal;
+      font-weight: 590;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: #0D381E;
+      margin-bottom: 8px;
+    }
+    
+    .feature-icon .feature-icon-description,
+    .feature-icon .feature-icon-description p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+      color: #6B756F;
+    }
+
+    .feature-icon h2 {
+      font-size: 14px; line-height: 1.16667; }
+    .feature-icon .feature-icon-description, .feature-icon .feature-icon-description p {
+      font-size: 12px; line-height: 1.18182; }
+    
+    .feature-icon-description p a {
+      text-decoration: underline;
+    }
+    /* sections/checkout-feature-icon.liquid  */
+  </style>
+  <div class="feature-icons">
+    {% for block in section.blocks %}
+      <div class="feature-icon">
+        {% if block.settings.feature_icon != blank %}
+        <img src="{{ block.settings.feature_icon | img_url: 'master' }}" alt="{{ block.settings.feature_icon.alt }}">
+        {% endif %}
+        {% if block.settings.title != blank %}
+        <h2>{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.feature_icon_description != blank %}
+        <div class="feature-icon-description">{{ block.settings.feature_icon_description }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    // if (Shopify.Checkout.step == 'shipping_method' || Shopify.Checkout.step == 'contact_information' ){
+      
+    //   if ( Shopify.Checkout.step == 'contact_information' ){
+    //     var checkFeature = document.querySelector("#shopify-section-checkout-features") || null;
+    //     if(checkFeature) {
+    //       checkFeature.classList.add("hidden");
+    //       checkFeature.style.display = "none";
+    //     }
+  
+    //     var checkRev = document.querySelector("#shopify-section-checkout-reviews") || null;
+    //     if(checkRev){
+    //       checkRev.classList.add("hidden");
+    //       checkRev.style.display = "none";
+    //     }
+    //   }
+    // (function () {
+    //   function init() {
+    //     var element = document.querySelector('.feature-icons').cloneNode(true);
+    //     var target = document.querySelector('div.order-summary__section--total-lines');
+    //     target.insertAdjacentElement('afterend', element);
+    //     element.classList.remove('hidden');
+    //   }
+      
+    //   window.addEventListener('DOMContentLoaded', function() {
+    //       init();
+    
+    //       var targetNode = document.querySelector('.main__content');
+    //       var config = {
+    //         attributes: true,
+    //         childList: true,
+    //         subtree: true
+    //       };
+    
+    //       var callback = (mutationList, observer) => {
+    //         for (var mutation of mutationList) {
+    //           if (mutation.type === 'childList') {
+    //             var selector = '.order-summary .feature-icons';
+    //             if (!document.querySelector(selector)) {
+    //               init();
+    //             }
+    //           }
+    //         }
+    //       };
+    
+    //       var observer = new MutationObserver(callback);
+    //       observer.observe(targetNode, config);
+    //   });
+    // })();
+    // }
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Checkout Callouts",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_feature_icon",
+        "label": "Enable Checkout Callouts",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Feature",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "feature_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "feature_icon_description",
+            "label": "Description"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

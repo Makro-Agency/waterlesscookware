@@ -1,0 +1,173 @@
+
+{{ 'custom-help.css' | asset_url | stylesheet_tag }}
+<div class="custom-faq" id="custom-faq">
+<div class="hero-faq">
+  <div class="hero-faq-inner">
+    <div class="hero-faq-first">
+      <h2>{{ section.settings.faq_title }}</h2>
+      <div class="search-help-container">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 15L10.3334 10.3333M11.8889 6.44444C11.8889 9.45133 9.45133 11.8889 6.44444 11.8889C3.43756 11.8889 1 9.45133 1 6.44444C1 3.43756 3.43756 1 6.44444 1C9.45133 1 11.8889 3.43756 11.8889 6.44444Z" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div class="search-input-faq">
+          <input type="search" placeholder="{{ section.settings.search_placeholder }}">
+        </div>
+      </div>
+    </div>
+    <div class="hero-faq-second">
+      {% for block in section.blocks %}
+        {% if block.type == 'title' %}
+          <div class="faq-title">
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+        {% elsif block.type == 'question_answer' %}
+          {% if block.settings.question != blank and block.settings.answer != blank %}
+          <div class="faq-content">
+           
+            <div class="faq-content-container">
+              <div class="faq-content-main">
+                {{ block.settings.question }}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.75 14.375L10 5.625L1.25 14.375" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div class="faq-hidden-content-container">
+                <div class="faq-hidden-content">
+                  <p>{{ block.settings.answer }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const faqs = document.querySelectorAll('.faq-content');
+    const searchInput = document.querySelector('.search-input-faq input');
+
+    // Function to smoothly toggle FAQs
+    function toggleFAQ(faq) {
+        const hiddenContent = faq.querySelector('.faq-hidden-content');
+
+        if (faq.classList.contains('active')) {
+            // Close FAQ
+            hiddenContent.style.maxHeight = null;
+            faq.classList.remove('active');
+        } else {
+            // Open FAQ
+            hiddenContent.style.maxHeight = hiddenContent.scrollHeight + "px";
+            faq.classList.add('active');
+        }
+    }
+
+    // Add click event listeners to each FAQ
+    faqs.forEach(faq => {
+        faq.addEventListener('click', function() {
+            toggleFAQ(faq);
+        });
+    });
+
+    // Add event listener to the search input
+    searchInput.addEventListener('input', function() {
+        const searchValue = searchInput.value.toLowerCase();
+
+        faqs.forEach(faq => {
+            const questionText = faq.querySelector('.faq-content-main').innerText.toLowerCase();
+            const hiddenContent = faq.querySelector('.faq-hidden-content');
+            
+            if (questionText.includes(searchValue)) {
+                faq.style.display = 'block';
+                if (!faq.classList.contains('active')) {
+                    hiddenContent.style.maxHeight = hiddenContent.scrollHeight + "px";
+                    faq.classList.add('active');
+                }
+            } else {
+                faq.style.display = 'none';
+                faq.classList.remove('active');
+                hiddenContent.style.maxHeight = null;
+            }
+        });
+    });
+});
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Help FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder",
+      "default": "Search by question"
+    },
+    {
+      "type": "text",
+      "id": "title1",
+      "label": "Heading",
+      "default": "FAQs"
+    },
+    {
+      "type": "richtext",
+      "id": "text1",
+      "label": "Text",
+      "default": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default Title"
+        }
+      ]
+    },
+    {
+      "type": "question_answer",
+      "name": "Question and Answer",
+      "settings": [
+     
+        {
+          "type": "richtext",
+          "id": "question",
+          "label": "Question",
+          "default": "<p>What is the question?</p>"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "This is the answer to the question."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Help FAQ",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+{{ 'help-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="hero-faq">
+  <div class="hero-faq-inner">
+    <div class="hero-faq-first">
+      <h2>{{ section.settings.faq_title }}</h2>
+      <div class="search-help-container">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 15L10.3334 10.3333M11.8889 6.44444C11.8889 9.45133 9.45133 11.8889 6.44444 11.8889C3.43756 11.8889 1 9.45133 1 6.44444C1 3.43756 3.43756 1 6.44444 1C9.45133 1 11.8889 3.43756 11.8889 6.44444Z" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="search-input-faq">
+          <input type="search" placeholder="{{ section.settings.search_placeholder }}">
+        </div>
+      </div>
+    </div>
+    <div class="hero-faq-second">
+      {% for block in section.blocks %}
+        <div class="faq-content">
+          <h3>{{ block.settings.category_title }}</h3>
+          <div class="faq-content-container">
+            <div class="faq-content-main">
+              {{ block.settings.question }}
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.75 14.375L10 5.625L1.25 14.375" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="faq-hidden-content-container">
+              <div class="faq-hidden-content">
+                <p>{{ block.settings.answer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-content-container').forEach(function (item) {
+    item.addEventListener('click', function () {
+      // Remove active class from all other containers
+      document.querySelectorAll('.faq-content-container').forEach(function (el) {
+        el.classList.remove('active');
+      });
+
+      // Add active class to the clicked container
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Help FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder",
+      "default": "Search by question"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title",
+          "default": "Cooking Techniques and Methods"
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Is Vapor® Cooking suitable for frying or boiling an egg?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Yes, Vapor® Cooking can be used for frying eggs and boiling eggs without water."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Help FAQ",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

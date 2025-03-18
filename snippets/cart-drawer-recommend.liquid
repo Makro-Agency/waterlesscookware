@@ -1,0 +1,62 @@
+{% unless template.name == "product" %}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% endunless %}
+
+{%- for item in cart.items -%}
+{%- assign product = item.product %}{%- break -%}
+{%- endfor -%}
+<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+  <product-recommendations
+    class="related-products page-width isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    data-url="{{ routes.product_recommendations_url }}?section_id=cart-recommendation&product_id={{ product.id }}&limit=10"  
+    data-product-id="{{ product.id }}"
+  >
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <div class="sectio-header has-slider-nav">
+        <div class="section-header-wrapper detail">
+        {% if section.settings.heading != blank %}
+          <h2 class="related-products__heading main_heading h2 text-uppercase {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+        {% endif %}
+        </div>
+        <div class="slide-nav small-hide medium-hide">
+          <div class="nav-btn re-col-slide-prev prevprev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+              <path d="M21.75 27.5L14.25 20L21.75 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="nav-btn re-col-slide-next nextnext">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="19.25" stroke="black" stroke-width="1.5"></rect>
+              <path d="M18.25 27.5L25.75 20L18.25 12.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="makro-product-carousel product-carousel-slider swiper">
+        <ul
+          class="swiper-wrapper makro-PC-grid grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+          role="list"
+        >
+          {% for recommendation in recommendations.products %}
+            <li class="swiper-slide makro-PC-grid__item grid__item">
+              <div class="makro-product--card">
+              {% render 'card-product-new',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                hideVariant: true,
+                show_quick_add: false
+              %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </product-recommendations>
+</div>

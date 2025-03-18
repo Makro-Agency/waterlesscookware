@@ -1,0 +1,174 @@
+  .banner {
+    flex-direction: row;
+  }
+
+  .banner--small:not(.banner--adapt) {
+    min-height: 42rem;
+  }
+
+  .banner--medium:not(.banner--adapt) {
+    min-height: 56rem;
+  }
+
+  .banner--large:not(.banner--adapt) {
+    min-height: 72rem;
+  }
+
+  .banner__content.banner__content--top-left {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--top-center {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--top-right {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .banner__content.banner__content--middle-left {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--middle-right {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .banner__content.banner__content--bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--bottom-center {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+ 
+
+/* New CSS */
+
+
+@media screen and (min-width: 750px) {
+  .lookbook-pastel-hero .banner__content { padding-top: 40px; padding-bottom: 40px; }
+  .lookbook-pastel-hero .banner--large:not(.banner--adapt) { min-height: 83.8rem;  max-height: 100vh; }
+
+  .lookbook-pastel-hero .banner__box { background: transparent; }  
+  
+}
+  
+.lookbook-pastel-hero .button--primary:before,
+.lookbook-pastel-hero .button--primary:after{ display: none; }
+
+.lookbook-pastel-hero .banner__text { margin-bottom:30px; }
+.lookbook-pastel-hero .banner__text,
+.lookbook-pastel-hero .banner__text p { color: #FFF; font-size: 12px; font-weight: 600; line-height: 100%; letter-spacing: 0.6px; text-transform: uppercase; }
+
+.lookbook-pastel-hero .banner__heading { color: #FFF; font-size: 60px; line-height: 110%; letter-spacing: -1.2px; margin:0 0 30px 0; }
+
+.lookbook-pastel-hero .banner__buttons { margin-top:0 !important; }
+.lookbook-pastel-hero .banner__buttons .button { text-align: center; font-size: 12px; font-weight: 500; line-height: 100%; letter-spacing: 0.6px;
+    text-transform: uppercase; margin:0; }
+
+
+@media screen and (max-width: 749px) {
+
+  .banner--large:not(.banner--adapt) { min-height: inherit; }
+  .banner--medium:not(.banner--adapt) { min-height: inherit; }
+  .banner--small:not(.banner--adapt) { min-height: inherit; }
+
+  .lookbook-pastel-hero .banner__box { text-align:left; padding:50px 15px; }
+  
+  .lookbook-pastel-hero .banner__media { height:calc(100vh - 33px) !important; }
+  .lookbook-pastel-hero .banner__content { position:absolute; height:100%; width:100%; }
+
+  .lookbook-pastel-hero .banner__text { margin-bottom:16px; }
+  .lookbook-pastel-hero .banner__text,
+  .lookbook-pastel-hero .banner__text p { font-size: 12px; font-style: normal; font-weight: 600; line-height: 100%; letter-spacing: 0.6px; text-transform: uppercase; }
+  .lookbook-pastel-hero .banner__heading { font-size:40px; margin-bottom:30px; }
+
+  .lookbook-pastel-hero .banner__buttons .button { padding:0 2.5rem; height: 50px; }
+
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__media { position:relative; }
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__content { position:relative;  min-height: inherit !important; }
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__content .banner__box { padding-bottom:0px; }
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__content .banner__box .banner__text,
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__content .banner__box .banner__text p,
+  .lookbook-pastel-hero .banner:not(.banner--mobile-bottom) .banner__content .banner__box .banner__heading { color:#000 !important; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end */

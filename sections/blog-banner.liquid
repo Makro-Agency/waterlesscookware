@@ -1,0 +1,316 @@
+<style>
+    #full-blend-hero-section-why1 {
+      background-image: url('{{ blog.metafields.custom.desktop_image | image_url: width: 1920 }}');
+       background-size: cover;
+       /* background-position: center center; */
+       position: relative;
+       z-index: 1;
+       height: 80rem;
+   }
+  
+   #full-blend-hero-section-why1 .full-blend-hero-sectiong-bg-overlay {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background-color: #000;
+       opacity: 0.2;
+       z-index: 2;
+   }
+   #full-blend-hero-section-why1 .full-blend-hero-section-container {
+       z-index: 3;
+       max-width: 1360px;
+       padding-left: 40px;
+       padding-right: 40px;
+       width: 100%;
+       height: 100%;
+       position: relative;
+       margin: auto;
+   }
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-mobile-image {
+       display: none;
+   }
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-mobile-image img {
+       width: 100%;
+   }
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-relative {
+       position: relative;
+       height: 100%;
+   }
+ 
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-box {
+       padding: 40px;
+       background-color: #FCFBF7;
+       display: flex;
+       flex-direction: column;
+       row-gap: 30px;
+       width: 696px;
+       border-radius: 15px;
+       position: absolute;
+       bottom: 40px;
+       left: 0px;
+       z-index: 5;
+   }
+ 
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-box-content-container {
+       display: flex;
+       flex-direction: column;
+       row-gap: 10px;
+ 
+   }
+ 
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-box-heading-container h1 {
+       font-family: Cellofy;
+       font-size: 60px;
+       font-weight: 600;
+       line-height: 60px;
+       letter-spacing: -0.02em;
+       color: #0D0D0D;
+       margin: 0;
+   }
+ 
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-box-text-container p {
+       font-family: Proxima Nova;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 24px;
+       color: #0D0D0D;
+       margin: 0;
+       padding: 0;
+       margin: 0px;
+   }
+ 
+   #full-blend-hero-section-why1 .full-blend-hero-section-container-box-btn {
+       text-decoration: none;
+       font-family: Proxima Nova;
+       font-size: 16px;
+       line-height: 16px;
+       text-align: center;
+       display: inline-block;
+       padding: 15px 25px;
+       border-radius: 100px;
+       background-color: #606D22;
+       color: #FCFBF7;
+       width: 132px;
+       min-height:50px;
+       display:flex;
+       align-items:center;
+   }
+ 
+ 
+   #full-blend-hero-section-why1 .catalog-banner-icon-text {
+       font-family: Proxima Nova;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 24px;
+       text-align: left;
+       color: #0d0d0d;
+   }
+ 
+   #full-blend-hero-section-why1 .catalog-icon-with-text {
+       display: flex;
+       gap: 24px;
+       align-items: center;
+       flex-wrap: wrap;
+       padding-top:14px;
+       display:none;
+   }
+ 
+   #full-blend-hero-section-why1 .banner-icon-text {
+       display: flex;
+       align-items: center;
+       gap: 12px;
+   }
+ 
+   @media only screen and (max-width : 1440px) {
+       #full-blend-hero-section-why1 .full-blend-hero-section-container {
+           max-width: 100%;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-box-heading-container h1 {
+           font-size: 40px;
+           line-height: 40px;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-box {
+           width: 660px;
+       }
+   }
+ 
+   @media only screen and (max-width : 767px) {
+  #full-blend-hero-section-why1 .full-blend-hero-section-container-desktop-image{ display:none;}
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-box-heading-container h1 {
+ 
+           font-size: 48px;
+           line-height: 48px;
+           letter-spacing: -0.02em;
+ 
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-box {
+           position: relative;
+           padding: 40px 20px;
+           width: 100%;
+           bottom: auto;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-box-btn {
+           display: block;
+           width: 100%;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container {
+           padding-left: 0px;
+           padding-right: 0px;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-mobile-image {
+           display: block;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-sectiong-bg-overlay {
+           background: transparent;
+       }
+ 
+       #full-blend-hero-section-why1 {
+           background-image: none;
+           height: auto;
+       }
+ 
+       #full-blend-hero-section-why1 .full-blend-hero-section-container-mobile-image img {
+           width: 100%;
+           object-fit: cover;
+           object-position: center center;
+       }
+     #full-blend-hero-section-why1 .catalog-icon-with-text{
+               flex-direction: column;
+         gap: 16px;
+         padding: 0;
+         /* justify-content: flex-start; */
+         align-items: flex-start;
+     }
+     #full-blend-hero-section-why1 .full-blend-hero-section-container-box-content-container{
+       row-gap:16px;
+     }
+ 
+   }
+ </style>
+ {% assign heading = section.settings.heading %}
+ {% if template.name == "blog" and heading == blank %}
+   {% assign heading = blog.title %}
+ {% endif %}
+ {% comment %}
+ {%- capture content -%}
+   {%- if heading != blank -%}
+     {%- if section.settings.h1_enable -%}
+       <h1 class="slideHeading h1"> {{ blog.title | escape }} </h1>
+     {%- else -%}
+       <h2 class="slideHeading h1">{{ heading }}</h2>
+     {%- endif -%}
+   {%- endif -%}
+   {%- if section.settings.detail != blank -%}
+   <div class="common_txt_div detail">{{ section.settings.detail }}</div>
+   {%- endif -%}
+ {%- endcapture -%}
+ {% endcomment %}
+ <div id="full-blend-hero-section-why1">
+   <div class="full-blend-hero-sectiong-bg-overlay"></div>
+   <div class="full-blend-hero-section-container">
+     <div class="full-blend-hero-section-container-relative">
+       
+       <div class="full-blend-hero-section-container-mobile-image">
+         <img src="{{ blog.metafields.custom.mobile_image | image_url: width: 1920 }}" alt="{{ section.settings.mobile_image.alt }}">
+       </div>
+       <div class="full-blend-hero-section-container-box">
+         <div class="full-blend-hero-section-container-box-content-container">
+           <div class="full-blend-hero-section-container-box-heading-container">
+             {% if blog.metafields.custom.heading %}
+                <h1>{{ blog.metafields.custom.heading }}</h1>
+             {% else %}
+                <h1>{{ blog.title }}</h1> 
+                {% comment %}<h1>{{ section.settings.heading }}</h1>{% endcomment %}
+             {% endif %}
+           
+           </div>
+           {% if blog.metafields.custom.description != blank %}
+           <div class="full-blend-hero-section-container-box-text-container">
+             <p>{{ blog.metafields.custom.description }}</p>
+           </div>
+           {% endif %}
+           <div class="catalog-icon-with-text">
+             {% for block in section.blocks %}
+               {% if block.type == 'icon_text' %}
+                 <div class="banner-icon-text">
+                   {{ block.settings.icon }}
+                   <span class="catalog-banner-icon-text">{{ block.settings.text }}</span>
+                 </div>
+               {% endif %}
+             {% endfor %}
+           </div>
+         </div>
+         <div class="full-blend-hero-section-container-box-btn-container-container">
+           <a href="#blog-post" class="full-blend-hero-section-container-box-btn">{{ section.settings.button_text }}</a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ 
+ {% schema %}
+ {
+   "name": "Blog Banner",
+   "settings": [
+    
+     {
+       "type": "text",
+       "id": "heading",
+       "label": "Heading",
+       "default": "Horem ipsum dolor amet, consectetur"
+     },
+  
+     {
+       "type": "text",
+       "id": "button_text",
+       "label": "Button Text",
+       "default": "CTA Button"
+     }
+   ],
+   "blocks": [
+     {
+       "type": "icon_text",
+       "name": "Icon with Text",
+       "limit": 3,
+       "settings": [
+         {
+           "type": "html",
+           "id": "icon",
+           "label": "Icon SVG"
+         },
+         {
+           "type": "text",
+           "id": "text",
+           "label": "Text"
+         }
+       ]
+     }
+   ],
+   "presets": [
+     {
+       "name": "Blog banner",
+       "blocks": [
+         {
+           "type": "icon_text"
+         },
+         {
+           "type": "icon_text"
+         },
+         {
+           "type": "icon_text"
+         }
+       ]
+     }
+   ]
+ }
+ {% endschema %}

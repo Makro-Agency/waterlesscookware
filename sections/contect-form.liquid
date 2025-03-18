@@ -1,0 +1,296 @@
+{{ 'contect-form.css' | asset_url | stylesheet_tag }}
+
+<div id="contect-form">
+  <div class="contect-form">
+    <div class="contect-form-column-first">
+        <h2>{{ section.settings.contact_title }}</h2>
+        <div class="common-info">
+            <h4>Email:</h4>
+            <p>{{ section.settings.contact_email }}</p>
+        </div>
+        <div class="common-info office_hours">
+            <h4>Office Hours:</h4>
+            <p>{{ section.settings.contact_hours }} </p>
+        </div>
+        <div class="need-help-box">
+            <h3>{{ section.settings.need_help_title }}</h3>
+            <p>{{ section.settings.need_help_text }}</p>
+            <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="start-live-link">{{ section.settings.live_chat_text }}</a>
+        </div>
+    </div>
+    <div class="contect-form-column-second">
+      <div class="form-container">
+           <h3>{{ section.settings.heading }}</h3>
+           {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+             {%- if form.posted_successfully? -%}
+              <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+                {% render 'icon-success' %}
+                {{ 'templates.contact.form.post_success' | t }}
+              </h2>
+             {%- elsif form.errors -%}
+               <div class="form__message">
+                <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                  {% render 'icon-error' %}
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h2>
+              </div>
+               <ul class="form-status-list caption-large" role="list">
+                <li>
+                  <a href="#ContactForm-email" class="link">
+                    {{ form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email }}
+                  </a>
+                </li>
+              </ul>
+             {%- endif -%}
+              <div class="form-first-last">
+                  <div class="form-first_name common-form">
+                      <input type="text" id="first_name" name="contact[first_name]" placeholder="First Name" required>
+                  </div>
+                  <div class="form-second_name common-form">
+                      <input type="text" id="last_name" name="contact[last_name]" placeholder="Last Name" required>
+                  </div>
+              </div>
+              <div class="form-email common-form">
+                  <input type="email" id="email" name="contact[email]" placeholder="Email" required>
+              </div>
+              <div class="form-textarea">
+                  <textarea id="message" name="contact[body]" placeholder="Message" required></textarea>
+              </div>
+              <div class="select-form">
+                  <span class="title_text">How did you hear about us?</span>
+                  <input type="hidden" id="hear-about" name="contact[how_hear_about_us]">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.25 3.375L6 8.625L0.75 3.375" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div class="select-options">
+                      <div class="select-option">
+                          <input type="hidden" name="contact[referral]" value="Option 1"> Option 1
+                      </div>
+                      <div class="select-option">
+                          <input type="hidden" name="contact[referral]" value="Option 2"> Option 2
+                      </div>
+                      <div class="select-option">
+                          <input type="hidden" name="contact[referral]" value="Option 3"> Option 3
+                      </div>
+                      <div class="select-option">
+                          <input type="hidden" name="contact[referral]" value="Option 4"> Option 4
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <button type="submit" class="send-link">Send Message</button>
+              </div>
+          {%- endform -%}
+        </div>
+    </div>
+  </div>
+  <div class="join-community">
+    <div class="join-first">
+        <h3>{{ section.settings.community_title }}</h3>
+        <p>{{ section.settings.community_text }}</p>
+    </div>
+    <div class="join-second">
+      {% comment %}
+            {% form 'customer', class: 'subscribe-form' %}
+      
+            <div class="join-input">
+                    <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="Newsletter-error--{{ section.id }}"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="Newsletter-success--{{ section.id }}"
+                    {% endif %}
+                    placeholder="Input"
+                    required
+                  >
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+                  {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                    {%- render 'icon-error' -%}
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </small>
+                {%- endif -%}
+                 {%- if form.posted_successfully? -%}
+                <h6
+                  class="newsletter-form__message newsletter-form__message--success form__message"
+                  id="Newsletter-success--{{ section.id }}"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-success' -%}
+                  {{- 'newsletter.success' | t }}
+                </h6>
+              {%- endif -%}
+            </div>
+        {% endform %}
+        {% endcomment %}
+          {% assign klaviyoListId = section.settings.klaivyo %}
+          <form id="contact_page_form" class="subscribe-form _klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+            <input type="hidden" name="g" value="{{ klaviyoListId }}">
+            <input type="hidden" name="$fields" value="language">
+            <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
+            <div class="join-input">
+              <div class="klaviyo_field_group kgrid">
+                <div class="klaviyo_field _email">
+                  <input class="input-item field_input footer-input" type="email" value="" name="email" id="k_id_email" placeholder="your email" required="required" autocomplete="off">
+                </div>
+              </div>
+              <div class="klaviyo_messages">
+                <div class="success_message" style="display:none;"></div>
+                <div class="error_message" style="display:none;"></div>
+              </div>
+              <div class="klaviyo_form_actions btn-actions">
+                <button type="submit" id="Subscribe" class="subscribe-btn newsletter-form__button klaviyo_submit_button field__button sub_btn">Subscribe</button>
+              </div>
+            </div>
+          </form> 
+
+          <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+              let crLocation = window.location.href;
+              KlaviyoSubscribe.attachToForms('#contact_page_form', {
+                hide_form_on_success: true,
+                success_message: "Thanks for subscribing!",
+                extra_properties: {
+                  $source: crLocation,
+                  $method_type: "Klaviyo Form",
+                  $method_id: 'embed'
+                },
+                success: function ($form) {
+                  console.log($form);
+                  $form.addClass('success-true');
+                },error : function(){
+                  /*for if errors occurs*/
+                }
+              }); 
+            });
+          </script>
+    </div>
+  </div>
+</div>
+
+<script>
+        const selectForm = document.querySelector('.select-form');
+        const selectOptions = document.querySelector('.select-options');
+        const options = document.querySelectorAll('.select-option');
+
+        // Toggle dropdown visibility
+        selectForm.querySelector('.title_text').addEventListener('click', () => {
+            selectForm.classList.toggle('active');
+            selectOptions.classList.toggle('active');
+        });
+
+        // Update text and hide dropdown when an option is selected
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                selectForm.querySelector('span').textContent = option.textContent.trim();
+                selectForm.querySelector('#hear-about').value = option.textContent.trim();
+                selectForm.classList.remove('active');
+                selectOptions.classList.remove('active');
+            });
+        });
+
+        // Close the dropdown if clicked outside of it
+        document.addEventListener('click', (event) => {
+            if (!selectForm.contains(event.target)) {
+                selectForm.classList.remove('active');
+                selectOptions.classList.remove('active');
+            }
+        });
+    </script>
+
+
+
+{% schema %}
+{
+  "name": "Contect Form",
+  "settings":[
+  {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact Form Title",
+      "default": "Contact us"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email",
+      "default": "Customer_Inquiries@360Cookware.com"
+    },
+    {
+      "type": "text",
+      "id": "contact_hours",
+      "label": "Office Hours",
+      "default": "Monday- Friday from 8am-5pm est."
+    },
+    {
+      "type": "text",
+      "id": "need_help_title",
+      "label": "Need Help Title (h3)",
+      "default": "Need Help?"
+    },
+    {
+      "type": "textarea",
+      "id": "need_help_text",
+      "label": "Need Help Text (p)",
+      "default": "Horem ipsum dolor sit amet, consectetur adipiscing eli consectetur libero."
+    },
+      {
+      "type": "text",
+      "id": "live_chat_text",
+      "label": "Live Chat Text",
+      "default": "Start Live Chat",
+      "info": "Text that appears for the live chat link."
+    },
+    {
+      "type": "url",
+      "id": "live_chat_link",
+      "label": "Live Chat Link URL",
+      "info": "URL for the live chat link."
+    },
+      {
+      "type": "text",
+      "id": "heading",
+      "label": "contact heading",
+      "default": "Send us a message"
+    },
+    {
+      "type": "text",
+      "id": "community_title",
+      "label": "Join Community Title (h3)",
+      "default": "Join the 360 Community"
+    },
+    {
+      "type": "textarea",
+      "id": "community_text",
+      "label": "Join Community Text (p)",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing seddo eiusmod tempor veniam"
+    },
+    {
+      "type": "text",
+      "id": "klaivyo",
+      "label": "Klaviyo Id"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name" : "Contect Form"
+    }
+  ]
+}
+
+{% endschema %}

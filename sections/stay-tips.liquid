@@ -1,0 +1,770 @@
+{% style %}
+ .care-tips {
+	padding: 40px 0;
+}
+  @media screen and (min-width:768px) {
+    .tips-container ul{ padding-bottom:8rem;}
+  }
+
+.care-tips .tips-inner h2 {
+	text-align: left;
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.care-tips .tips-inner .heading-right {
+	font-size: 32px;
+    max-width: 135px;
+}
+  
+.care-tips-categories {
+	display: flex;
+	gap: 0px;
+	flex-wrap: wrap;
+}
+
+.category {
+	display: flex;
+    border-top: 1px solid var(--gray-tones-black-5, rgba(0, 0, 0, 0.05));
+	align-items: self-start;
+	justify-content: space-between;
+	padding: 8rem 0 8rem 0;
+}
+
+.category h3 {
+	color: var(--Black, #0D0D0D);
+	font-family: Cellofy;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 120%;
+	letter-spacing: -0.64px;
+	margin-bottom: 10px;
+}
+
+.category-inner p {
+	color: var(--Black, #0D0D0D);
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-weight: 400;
+	max-width: 384px;
+	width: 100%;
+	line-height: 150%;
+}
+
+.category p {
+	margin-bottom: 15px;
+}
+
+.tips {
+	display: flex;
+	gap: 10px;
+	column-gap: 25px;
+	max-width: 75rem;
+	flex-wrap: wrap;
+}
+
+.tip {
+	flex: 1 1 45%;
+	padding: 0px 35px;
+	border-radius: 4px;
+}
+
+.tip h4 {
+	color: var(--Black, #0D0D0D);
+	font-family: Cellofy;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 120%;
+	letter-spacing: -0.48px;
+	margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.tip p {
+	color: var(--Black, #0D0D0D);
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%;
+	max-width: 375px;
+}
+
+.tips-container {
+	max-width: 1360px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.tips-container ul li a {
+	text-decoration: none;
+	color: var(--Black, #0D0D0D);
+}
+
+.tips-container ul li {
+	margin-right: 15px;
+}
+
+.tips-container ul {
+	padding-left: 0;
+	display: flex;
+	margin-top: 32px;
+	margin-left: 20px;
+    
+}
+
+.tips-container ul li {
+	list-style-type: none;
+	color: var(--Black, #0D0D0D);
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 150%;
+	border-radius: 100px;
+	border: 1px solid var(--gray-tones-black-10, rgba(0, 0, 0, 0.10));
+	padding: 12px 25px;
+}
+
+.care-tips .tips-inner h2 {
+	color: var(--Black, #0D0D0D);
+	font-family: Cellofy;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 100%;
+	letter-spacing: -0.8px;
+}
+
+.care-tips-categories {
+	flex-direction: column;
+}
+
+/* .care-tips .accordion {
+	display: block;
+} */
+
+.care-tips .accordion-button {
+	cursor: pointer;
+	padding: 15px 20px;
+	color: var(--Black, #0D0D0D);
+	/* 📱 Mobile/Header 04 */
+	font-family: Cellofy;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 120%;
+	/* 28.8px */
+	letter-spacing: -0.48px;
+	margin-bottom: 5px;
+	border: none;
+	text-align: left;
+
+}
+
+/* .accordion-button.active {
+	background-color: #e2e2e2;
+}
+ */
+.care-tips .accordion-content {
+	display: none;
+	padding: 10px 20px;
+	/* background-color: #fff; */
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+.care-tips .accordion-content.active {
+	display: block;
+}
+
+.tip {
+	padding: 10px 0;
+}
+
+.tip h4 {
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.tip p {
+	margin: 0;
+}
+
+div#category1 {
+	margin-top: 11rem;
+}
+
+@media screen and (max-width: 576px) {
+	.tips-container ul li {
+		padding: 12px 15px;
+	}
+
+	.tips-container ul li {
+		margin-right: 10px !Important;
+	}
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1199px) {
+	.category {
+		gap: 20px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.accordion {
+		display: none;
+	}
+}
+@media screen and (min-width: 768px) and (max-width:1199px){
+  .tip p{ max-width:22rem;} }
+
+@media screen and (min-width: 768px) and (max-width: 989px) {
+	.tips {
+		max-width: 46rem;
+	}
+}
+
+@media screen and (min-width: 990px) and (max-width: 539px) {
+	.tips {
+		max-width: 70rem;
+	}
+}
+
+@media screen and (max-width: 767px) {
+  .care-tips .accordion-button{ padding-left:0; }
+  span.arrow-right svg{width:20px; height:20px; }
+	.care-tips h2 {
+		font-size: 36px !Important;
+	}
+
+	.care-tips-categories {
+		display: none;
+	}
+
+	.tips-container ul li {
+		margin-right: 40px;
+	}
+
+	.accordion {
+		display: flex !Important;
+		flex-direction: column;
+	}
+    .care-tips .tips-inner .heading-right {
+  	font-size: 24px;
+    }
+}
+
+.accordion .tip h4 {
+	margin-top: 0;
+}
+
+.accordion .tips {
+	flex-direction: column;
+}
+
+.care-tips .accordion-content {
+	padding-top: 0;
+}
+
+.care-tips .accordion-content p {
+	margin-top: 0;
+}
+
+.care-tips .accordion-content p {
+	color: var(--Black, #0D0D0D);
+	/* 📱 Mobile/Body Text Large/Regular */
+	font-family: "Proxima Nova";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	/* 24px */
+}
+
+.care-tips .accordion-content {
+	display: none;
+	/* Hide all content by default */
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.care-tips .accordion-content.active {
+	display: block;
+	/* Show content when active */
+}
+
+.accordion-button.active {
+	/* Style for active button, optional */
+}
+
+.tips-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.heading-right {
+	color: var(--Green, #606D22);
+	/* Handwritten Note / Small */
+	font-family: Hurricane;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	/* 24px */
+	max-width: 121px;
+	margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.heading-right {
+		transform: rotate(-5deg);
+	}
+}
+
+.accordion-button {
+	position: relative;
+}
+
+span.arrow-right {
+	position: absolute;
+	right: 0;
+}
+
+.accordion-button.active span.arrow-right {
+	transform: rotate(180deg);
+}
+
+
+.category-inner {
+	border-radius: 15px;
+	background: var(--gray-tones-black-2, rgba(0, 0, 0, 0.02));
+	padding: 40px;
+}
+
+@media screen and (min-width: 768px) and (max-width:1199px) {
+	.tips {
+		max-width: 60rem;
+	}
+}
+
+@media screen and (min-width: 1200px) and (max-width:1340px) {
+	.tips {
+		max-width: 70rem;
+	}
+}
+
+.accordion-button {
+	background: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .tips-container ul{ margin-bottom:4rem; }
+  .accordion-button{ border-top:1px solid rgb(0,0,0, 0.1);}
+	.tips-container ul {
+		margin-left: 0;
+	}
+
+	.accordion-button {
+		padding: 40px 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.heading-right {
+		transform: rotate(-5deg);
+	}
+}
+
+.care-tips .accordion-content {
+	display: none;
+	/* Hide content by default */
+	overflow: hidden;
+}
+.care-tips .accordion-button.active{ padding-bottom:0; margin-bottom:10px; }
+.care-tips .accordion-content.active {
+	display: block;
+	/* Show content when active */
+}
+
+.care-tips .accordion-button.active .arrow-right {
+	transform: rotate(180deg);
+	/* Rotate arrow when active */
+}
+.care-tips .accordion-content.active{ opacity:1 !important; border:none; padding:0;  }
+.arrow-right {
+	transition: transform 0.3s;
+	/* Smooth transition for arrow rotation */
+}
+ .care-tips .accordion-content {
+    max-height: 0; /* Start with max-height of 0 */
+    overflow: hidden; /* Hide overflow */
+    transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.care-tips .accordion-content.active {
+    max-height: 500px;
+  
+}
+{% endstyle %}
+
+
+
+<section class="care-tips" id="care-tips">
+  <div class="tips-container">
+    <div class="tips-inner">
+      {% if section.settings.section_title != blank %}
+          <h2> {{ section.settings.section_title}} </h2>
+        {% endif %}
+      {% if section.settings.section_title != blank %}
+        <h6 class="heading-right">{{ section.settings.details }}</h6>
+       {% endif %}
+    </div>
+    <ul>
+      <li><a href="#" class="tab-scroll-category" data-target="{{ section.settings.tab1 }}">{{ section.settings.tab1 }}</a></li>
+      <li><a href="#" class="tab-scroll-category" data-target="{{ section.settings.tab2 }}">{{ section.settings.tab2 }}</a></li>
+      <li><a href="#" class="tab-scroll-category" data-target="{{ section.settings.tab3 }}">{{ section.settings.tab3 }}</a></li>
+    </ul>
+
+    <div class="care-tips-categories">
+      <!-- Non-accordion categories -->
+      <div class="category" id="{{ section.settings.tab1 }}">
+        <div class="category-inner">
+          <h3>{{ section.settings.heading1 }}</h3>
+          <p>{{ section.settings.category_1_desc }}</p>
+        </div>
+        <div class="tips">
+          <div class="tip">
+            <h4>{{ section.settings.title1 }}</h4>
+            <p>{{ section.settings.description1 }}</p>
+          </div>
+          <div class="tip">
+            <h4>{{ section.settings.title2 }}</h4>
+            <p>{{ section.settings.description2 }}</p>
+          </div>
+          <div class="tip">
+            <h4>{{ section.settings.title3 }}</h4>
+            <p>{{ section.settings.description3 }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="category" id="{{ section.settings.tab2 }}">
+        <div class="category-inner">
+          <h3>{{ section.settings.heading2 }}</h3>
+          <p>{{ section.settings.category_2_desc }}</p>
+        </div>
+        <div class="tips">
+          <div class="tip">
+            <h4>{{ section.settings.title4 }}</h4>
+            <p>{{ section.settings.description4 }}</p>
+          </div>
+          <div class="tip">
+            <h4>{{ section.settings.title5 }}</h4>
+            <p>{{ section.settings.description5 }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="category" id="{{ section.settings.tab3 }}">
+        <div class="category-inner">
+          <h3>{{ section.settings.heading3 }}</h3>
+          <p>{{ section.settings.category_3_desc }}</p>
+        </div>
+        <div class="tips">
+          <div class="tip">
+            <h4>{{ section.settings.title6 }}</h4>
+            <p>{{ section.settings.description6 }}</p>
+          </div>
+          <div class="tip">
+            <h4>{{ section.settings.title7 }}</h4>
+            <p>{{ section.settings.description7 }}</p>
+          </div>
+          <div class="tip">
+            <h4>{{ section.settings.title8 }}</h4>
+            <p>{{ section.settings.description8 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Accordion Section -->
+<div class="accordion" id="accordion-1">
+  <button class="accordion-button" data-target="#category1-content-1" id="accordion-button-1">
+    {{ section.settings.heading1 }} <span class="arrow-right"> {% render 'arrow-up' %} </span>
+  </button>
+  <div class="accordion-content" id="category1-content-1">
+    <p>{{ section.settings.category_1_desc }}</p>
+    <div class="tips">
+      <div class="tip">
+        <h4>{{ section.settings.title1 }}</h4>
+        <p>{{ section.settings.description1 }}</p>
+      </div>
+      <div class="tip">
+        <h4>{{ section.settings.title2 }}</h4>
+        <p>{{ section.settings.description2 }}</p>
+      </div>
+      <div class="tip">
+        <h4>{{ section.settings.title3 }}</h4>
+        <p>{{ section.settings.description3 }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="accordion-button" data-target="#category2-content-1" id="accordion-button-2">
+    {{ section.settings.heading2 }} <span class="arrow-right"> {% render 'arrow-up' %} </span>
+  </button> 
+  <div class="accordion-content" id="category2-content-1">
+    <p>{{ section.settings.category_2_desc }}</p>
+    <div class="tips">
+      <div class="tip">
+        <h4>{{ section.settings.title4 }}</h4>
+        <p>{{ section.settings.description4 }}</p>
+      </div>
+      <div class="tip">
+        <h4>{{ section.settings.title5 }}</h4>
+        <p>{{ section.settings.description5 }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="accordion-button" data-target="#category3-content-1" id="accordion-button-3">
+    {{ section.settings.heading3 }} <span class="arrow-right"> {% render 'arrow-up' %} </span>
+  </button>
+  <div class="accordion-content" id="category3-content-1">
+    <p>{{ section.settings.category_3_desc }}</p>
+    <div class="tips">
+      <div class="tip">
+        <h4>{{ section.settings.title6 }}</h4>
+        <p>{{ section.settings.description6 }}</p>
+      </div>
+      <div class="tip">
+        <h4>{{ section.settings.title7 }}</h4>
+        <p>{{ section.settings.description7 }}</p>
+      </div>
+      <div class="tip">
+        <h4>{{ section.settings.title8 }}</h4>
+        <p>{{ section.settings.description8 }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabLinks = document.querySelectorAll('.tab-scroll-category');
+    tabLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        tabLinks.forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+        const targetSectionId = link.getAttribute('data-target'); // Get the target section ID
+        const targetSection = document.getElementById(targetSectionId); // Find the target section
+        if (targetSection) {
+          const sectionPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - 50; // Calculate the scroll position
+          window.scrollTo({
+            top: sectionPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.accordion').forEach(accordion => {
+    const accButtons = accordion.querySelectorAll('.accordion-button');
+
+    function toggleAccordion(event) {
+      const targetContent = accordion.querySelector(event.currentTarget.getAttribute('data-target'));
+
+      // Check if the clicked button is already active
+      if (event.currentTarget.classList.contains('active')) {
+        // If active, remove active classes and close content
+        event.currentTarget.classList.remove('active');
+        targetContent.classList.remove('active');
+      } else {
+        // Close all accordion sections within this accordion
+        accButtons.forEach(function(btn) {
+          btn.classList.remove('active');
+          const content = accordion.querySelector(btn.getAttribute('data-target'));
+          content.classList.remove('active');
+        });
+
+        // Open the clicked section
+        event.currentTarget.classList.add('active');
+        targetContent.classList.add('active');
+      }
+    }
+
+    accButtons.forEach(function(btn) {
+      btn.addEventListener('click', toggleAccordion);
+    });
+
+    // Open the first accordion by default
+    if (accButtons.length > 0) {
+      const firstButton = accButtons[0];
+      const firstContent = accordion.querySelector(firstButton.getAttribute('data-target'));
+      firstButton.classList.add('active');
+      firstContent.classList.add('active');
+    }
+  });
+});
+
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Care Tips",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Care Tips"
+    },
+       {
+      "type": "textarea",
+      "id": "details",
+      "label": "Section Details"
+    },
+       {
+      "type": "text",
+      "id": "tab1",
+      "label": "Tab-1"
+    },
+       {
+      "type": "text",
+      "id": "tab2",
+      "label": "Tab-2"
+    },
+       {
+      "type": "text",
+      "id": "tab3",
+      "label": "Tab-3"
+    },
+      {
+      "type": "text",
+      "id": "heading1",
+      "label": "Category Title"
+    },
+    {
+      "type": "textarea",
+      "id": "category_1_desc",
+      "label": "Category 1 Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+       {
+      "type": "text",
+      "id": "title1",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description1",
+      "label": "Block Description"
+    },
+      {
+      "type": "text",
+      "id": "title2",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description2",
+      "label": "Block Description"
+    },
+      {
+      "type": "text",
+      "id": "title3",
+      "label": "block Title"
+    },
+      {
+      "type": "text",
+      "id": "description3",
+      "label": "Block Description"
+    },
+        {
+      "type": "text",
+      "id": "heading2",
+      "label": "Category Title"
+    },
+    {
+      "type": "textarea",
+      "id": "category_2_desc",
+      "label": "Category 2 Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+        {
+      "type": "text",
+      "id": "title4",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description4",
+      "label": "Block Description"
+    },
+      {
+      "type": "text",
+      "id": "title5",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description5",
+      "label": "Block Description"
+    },
+        {
+      "type": "text",
+      "id": "heading3",
+      "label": "Category Title"
+    },
+    {
+      "type": "textarea",
+      "id": "category_3_desc",
+      "label": "Category 3 Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+         {
+      "type": "text",
+      "id": "title6",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description6",
+      "label": "Block Description"
+    },
+      {
+      "type": "text",
+      "id": "title7",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description7",
+      "label": "Block Description"
+    },
+      {
+      "type": "text",
+      "id": "title8",
+      "label": "Block Title"
+    },
+      {
+      "type": "text",
+      "id": "description8",
+      "label": "Block Description"
+    },
+  ],
+     "presets": [
+      {
+        "name": "Stay tips"
+      }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,199 @@
+<style>
+  .product-finder-section{
+    padding-bottom:80px;
+  }
+  .product-finder-container {
+      background: #FAF5EB;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 1360px;
+      margin: auto;
+  }
+
+  .product-finder-grid {
+      display: flex;
+      gap: 30px;
+  }
+
+  .finder-item-2 {
+      width: 100%;
+      display: flex;
+      gap: 30px;
+  }
+
+  .finder-content {
+      width: 312px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  }
+
+  .finder-heading {
+      font-family: Cellofy;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 38.4px;
+      letter-spacing: -0.02em;
+
+      margin: 0;
+
+  }
+
+  .finder-text {
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+
+      margin: 0;
+
+  }
+
+  .finder-btn {
+      width: 158px;
+      height:50px;
+      /* padding: 15px 25px 15px 25px; */
+      gap: 10px;
+      border-radius: 100px;
+      border: 1px solid #0D0D0D;
+      opacity: 0px;
+      text-decoration: none;
+      color: #0D0D0D;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      font-family: Proxima Nova;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+
+
+  }
+.finder-btn:hover{
+  background: #a6bb3a;
+  color: #fff;
+  border: #fff;
+}
+ .finder-btn:hover svg path{
+   stroke:#fff; 
+  }
+  .finder-item-3 {
+      display: flex;
+      align-items: center;
+  }
+
+
+  @media only screen and (max-width : 768px) {
+      .product-finder-grid {
+          flex-direction: column;
+      }
+
+      .finder-btn {
+          width: 100%;
+          font-size: 14px;
+          line-height: 14px;
+      }
+
+      .finder-btn-div {
+          width: 100%;
+      }
+
+      .finder-heading {
+          font-size: 24px;
+          line-height: 28.8px;
+      }
+    
+    .product-finder-container{
+      padding:30px 20px;
+    }
+    .product-finder-section{
+      padding-inline:20px;
+    }
+    .finder-item-2{
+      gap:24px;
+    }
+  }
+.custom-finder.new-custom  .product-finder-container{ background:#ffffff;  }
+  .custom-finder.new-custom{ padding-bottom:10rem;     background: #FAF5EB; }
+   @media only screen and (max-width : 480px) {
+  .finder-content{ width:26rem;}
+    .finder-item-2 svg{ width:40px; min-width:40px;  height:40px; } }
+    @media only screen and (min-width:768px) and (max-width : 1439px) {
+  .product-finder-container{ margin:0 40px; } }
+</style>
+<div class="custom-finder {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }} {% endif %} ">
+<div class="product-finder-section">
+  <div class="product-finder-container">
+    <div class="product-finder-grid">
+      <div class="finder-item-2">
+        {{ section.settings.icon }}
+        <div class="finder-content">
+          <h2 class="finder-heading">{{ section.settings.heading }}</h2>
+          <p class="finder-text">{{ section.settings.description }}</p>
+        </div>
+      </div>
+
+      <div class="finder-item-3">
+        <div class="finder-btn-div">
+          <a href="{{ section.settings.button_link }}" class="finder-btn">
+            {{ section.settings.button_text }}
+            <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.7535 7.96533L15 4.46354M15 4.46354L11.7569 0.965332M15 4.46354H1" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+{% schema %}
+{
+  "name": "Product Finder",
+  "settings": [
+    {
+      "type": "html",
+      "id": "icon",
+      "label": "Icon SVG",
+      "default": "<svg width=\"50\" height=\"51\" viewBox=\"0 0 50 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect y=\"0.465332\" width=\"50\" height=\"50\" rx=\"25\" fill=\"#A6BB3A\" /><path d=\"M33.75 34.2153L27.9168 28.382M29.8611 23.5209C29.8611 27.2795 26.8142 30.3264 23.0556 30.3264C19.297 30.3264 16.25 27.2795 16.25 23.5209C16.25 19.7623 19.297 16.7153 23.0556 16.7153C26.8142 16.7153 29.8611 19.7623 29.8611 23.5209Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg>"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product finder"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Horem ipsum dolor sit amet, consectetur adipiscing eli consectetur libero."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Started"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+          {
+      "type": "text",
+      "id": "custom_class",
+      "label": "custom class"
+    }
+   
+  ],
+  "presets": [
+    {
+      "name": "Product Finder"
+    }
+  ]
+}
+{% endschema %}
