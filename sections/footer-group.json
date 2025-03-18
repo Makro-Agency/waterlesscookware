@@ -40,9 +40,17 @@
         },
         "menu_block_qXnETj": {
           "type": "menu_block",
+          "disabled": true,
           "settings": {
             "menu_heading": "Help Center/ Policy pages",
             "navigation_menu": ""
+          }
+        },
+        "menu_block_r6WJiD": {
+          "type": "menu_block",
+          "settings": {
+            "menu_heading": "Help Center",
+            "navigation_menu": "help-center-policy-pages"
           }
         },
         "menu_block_qDtnPC": {
@@ -58,6 +66,7 @@
         "menu_block_t7FTBj",
         "menu_block_yzwXAi",
         "menu_block_qXnETj",
+        "menu_block_r6WJiD",
         "menu_block_qDtnPC"
       ],
       "settings": {
