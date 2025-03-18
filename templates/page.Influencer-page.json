@@ -128,30 +128,6 @@
             "details": "",
             "url": ""
           }
-        },
-        "text_MJnDBR": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "details": "",
-            "url": ""
-          }
-        },
-        "text_wxmf3m": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "details": "",
-            "url": ""
-          }
-        },
-        "text_FyBVxR": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "details": "",
-            "url": ""
-          }
         }
       },
       "block_order": [
@@ -166,10 +142,7 @@
         "text_jWhYnn",
         "text_bAe4pX",
         "text_iEJGw4",
-        "text_hgHXEK",
-        "text_MJnDBR",
-        "text_wxmf3m",
-        "text_FyBVxR"
+        "text_hgHXEK"
       ],
       "settings": {
         "title": "360 Cookware Influencers",
