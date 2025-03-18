@@ -280,20 +280,25 @@
         "icon_text_XDjFzh": {
           "type": "icon_text",
           "settings": {
+            "icon": "shopify://shop_images/coupon-02_2.svg",
             "text": "Lifetime Warranty"
           }
         },
         "icon_text_AwwiTj": {
           "type": "icon_text",
           "settings": {
+            "icon": "shopify://shop_images/trophy_2.svg",
             "text": "Top-Quality Cookware"
           }
         },
         "review_c9eRUp": {
           "type": "review",
           "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
             "review_text": "The set is solidly constructed and works wonderfully on our induction cooktop.",
+            "client_image": "shopify://shop_images/check-verified_3.svg",
             "client_name": "Richard H.",
+            "reviewbyicon": "shopify://shop_images/check.png",
             "reviewby": "Verified Buyer"
           }
         },
