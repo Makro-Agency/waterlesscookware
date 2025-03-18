@@ -96,6 +96,7 @@
         "text_jWhYnn": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_5.png",
             "title": "Spork Foods",
             "details": "",
             "url": ""
