@@ -96,7 +96,7 @@
           "settings": {
             "menu": "Bakeware",
             "menu_heading": "Shop Bakeware",
-            "inner_menu": "",
+            "inner_menu": "bakeware",
             "link_text_1": "Shop All Bakeware",
             "link_url_1": "shopify://collections/360-bakeware",
             "header_text": "Bakeware Bestsellers",
@@ -176,7 +176,7 @@
           "settings": {
             "menu": "cookware",
             "menu_heading": "Shop Cookware",
-            "inner_menu": "",
+            "inner_menu": "cookware",
             "link_text_1": "Shop All Cookware",
             "link_url_1": "shopify://collections/360-cookware",
             "header_text": "Cookware Bestsellers",
