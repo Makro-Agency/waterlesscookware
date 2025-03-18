@@ -33,6 +33,7 @@
         "text_EXGYX6": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3.png",
             "title": "Chelsea Lauridsen",
             "details": "",
             "url": ""
