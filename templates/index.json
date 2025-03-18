@@ -189,8 +189,8 @@
             "type": "video_block",
             "settings": {
               "enable_video_looping": false,
-              "video": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
-              "video_mobile": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
+              "video": "",
+              "video_mobile": "",
               "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
               "video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
               "cover_image": "shopify://shop_images/user2.webp",
@@ -842,4 +842,3 @@
       "instafeed_WwCYTy"
     ]
   }
-  
