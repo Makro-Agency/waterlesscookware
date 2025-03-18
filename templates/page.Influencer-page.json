@@ -78,6 +78,7 @@
         "text_wgfhNf": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_2_2.png",
             "title": "Sophie Uliano",
             "details": "",
             "url": ""
@@ -86,6 +87,7 @@
         "text_KRaN6D": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_4.png",
             "title": "We Care Spa",
             "details": "",
             "url": ""
