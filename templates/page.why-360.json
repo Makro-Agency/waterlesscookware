@@ -179,6 +179,7 @@
         "benefit_3Eh3dr": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/coupon-02_2.svg",
             "benefit_text": "Flavor Retention"
           }
         },
