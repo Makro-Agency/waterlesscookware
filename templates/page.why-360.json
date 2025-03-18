@@ -305,8 +305,11 @@
         "review_AKpLeK": {
           "type": "review",
           "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
             "review_text": "I am in love with these pans! They are one of the best purchases we have made - the quality is impeccable!",
+            "client_image": "shopify://shop_images/check-verified_3.svg",
             "client_name": "Jennifer S.",
+            "reviewbyicon": "shopify://shop_images/check.png",
             "reviewby": "Verified Buyer"
           }
         },
