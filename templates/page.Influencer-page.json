@@ -114,6 +114,7 @@
         "text_iEJGw4": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_6.png",
             "title": "Vincent Pedre, M.D.",
             "details": "",
             "url": ""
