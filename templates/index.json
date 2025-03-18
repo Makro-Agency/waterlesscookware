@@ -33,6 +33,8 @@
         "block_tMqqNH": {
           "type": "block",
           "settings": {
+            "desktop_image": "shopify://shop_images/hero-section-layout-first.webp",
+            "mobile_image": "shopify://shop_images/hero-section-layout-first.webp",
             "slide_heading": "Elevate Your Culinary Experience with 360 Cookware",
             "slide_subtext": "Elevate Your Culinary Experience with 360 CookwareDiscover premium, American-made stainless steel cookware that revolutionizes your cooking for superior performance, healthier meals, and a lifetime of culinary excellence.",
             "button_link": "shopify://pages/catalog",
@@ -42,6 +44,8 @@
         "block_8nGQLB": {
           "type": "block",
           "settings": {
+            "desktop_image": "shopify://shop_images/hero-section-layout-first.webp",
+            "mobile_image": "shopify://shop_images/hero-section-layout42.webp",
             "slide_heading": "",
             "slide_subtext": "",
             "button_link": "",
