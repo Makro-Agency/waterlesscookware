@@ -44,8 +44,6 @@
         "block_8nGQLB": {
           "type": "block",
           "settings": {
-            "desktop_image": "shopify://shop_images/hero-section-layout-first.webp",
-            "mobile_image": "shopify://shop_images/hero-section-layout42.webp",
             "slide_heading": "",
             "slide_subtext": "",
             "button_link": "",
