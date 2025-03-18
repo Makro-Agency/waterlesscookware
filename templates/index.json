@@ -488,6 +488,8 @@
     "makro_text_banner_KBAPgt": {
       "type": "makro-text-banner",
       "settings": {
+        "image": "shopify://shop_images/banner-bg-desk.png",
+        "image_mobile": "shopify://shop_images/text-banner-mob.png",
         "title": "360 Fresh Start To A New Year",
         "description": "<p>Prepare for a season of heartwarming meals with our premium cookware sets. </p>",
         "btn_text": "Shop Now",
