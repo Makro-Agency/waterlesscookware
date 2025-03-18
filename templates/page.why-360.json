@@ -186,6 +186,7 @@
         "benefit_YwWcJA": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/trophy_2.svg",
             "benefit_text": "Precision Control"
           }
         }
@@ -215,31 +216,41 @@
         "table_row_UdrNhq": {
           "type": "table_row",
           "settings": {
-            "property": "Non-Toxic, surgical-grade stainless steel construction"
+            "property": "Non-Toxic, surgical-grade stainless steel construction",
+            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
         "table_row_g3h6Hc": {
           "type": "table_row",
           "settings": {
-            "property": "Free from PFAS, PFOA, and other harmful chemical"
+            "property": "Free from PFAS, PFOA, and other harmful chemical",
+            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
         "table_row_XhxRHJ": {
           "type": "table_row",
           "settings": {
-            "property": "Locks in natural flavors for tastier meals"
+            "property": "Locks in natural flavors for tastier meals",
+            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
         "table_row_daeWYG": {
           "type": "table_row",
           "settings": {
-            "property": "Retains up to 600% more nutrients while cooking"
+            "property": "Retains up to 600% more nutrients while cooking",
+            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
         "table_row_ACdUhR": {
           "type": "table_row",
           "settings": {
-            "property": "Backed by an unconditional lifetime warranty"
+            "property": "Backed by an unconditional lifetime warranty",
+            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         }
       },
