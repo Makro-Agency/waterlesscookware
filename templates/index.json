@@ -395,6 +395,7 @@
         "image_with_text_DgJVkn": {
           "type": "image-with-text",
           "settings": {
+            "image": "shopify://shop_images/Food-0005_1.png",
             "title": "Save on Sets",
             "text": "Upgrade your kitchen with our thoughtfully curated sets, offering everything you need for a complete cooking experience with great value.",
             "link": "shopify://collections/sets-1",
