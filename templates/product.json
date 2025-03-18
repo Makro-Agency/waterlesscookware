@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
     "sections": {
       "main": {
@@ -132,10 +141,10 @@
             "type": "video-media",
             "settings": {
               "video_url": "",
-              "thumbnail": "",
-              "title": "",
+              "thumbnail": "{{ product.metafields.accentuate.see_it_in_action.value.thumbnail_image.value }}",
+              "title": "{{ product.metafields.accentuate.see_it_in_action.value.title.value }}",
               "subtitle": "Chef's Tips",
-              "description": ""
+              "description": "{{ product.metafields.accentuate.see_it_in_action.value.description.value }}"
             }
           },
           "yotpo_loyalty_rewards_product_points_module_app_block_rJgWcf": {
@@ -270,8 +279,8 @@
             "type": "video_block",
             "settings": {
               "enable_video_looping": false,
-              "video": "",
-              "video_mobile": "",
+              "video": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
+              "video_mobile": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
               "video_url": "",
               "video_url_mobile": "",
               "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
@@ -282,8 +291,8 @@
             "type": "video_block",
             "settings": {
               "enable_video_looping": false,
-              "video": "",
-              "video_mobile": "",
+              "video": "shopify://files/videos/demo_why.mp4",
+              "video_mobile": "shopify://files/videos/demo_why.mp4",
               "video_url": "",
               "video_url_mobile": "",
               "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
@@ -294,8 +303,8 @@
             "type": "video_block",
             "settings": {
               "enable_video_looping": false,
-              "video": "",
-              "video_mobile": "",
+              "video": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
+              "video_mobile": "shopify://files/videos/Mussles_Vapor_Seal_IG_Feed_Square.mp4",
               "video_url": "",
               "video_url_mobile": "",
               "cover_image": "shopify://shop_images/Image_7134c8a1-b885-42b4-b636-97a6479eb6fc.png",
@@ -306,8 +315,8 @@
             "type": "video_block",
             "settings": {
               "enable_video_looping": false,
-              "video": "",
-              "video_mobile": "",
+              "video": "shopify://files/videos/demo_why.mp4",
+              "video_mobile": "shopify://files/videos/demo_why.mp4",
               "video_url": "",
               "video_url_mobile": "",
               "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
