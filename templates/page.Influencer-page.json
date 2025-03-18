@@ -60,6 +60,7 @@
         "text_MJQmrp": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_2.png",
             "title": "Amanda Warren",
             "details": "",
             "url": ""
