@@ -365,6 +365,7 @@
         "image_with_text_YbYCbe": {
           "type": "image-with-text",
           "settings": {
+            "image": "shopify://shop_images/Image_3_f42ece0d-4aae-4f1e-a9e1-02198441171e.png",
             "title": "Cookware",
             "text": "Experience superior stovetop performance with our Vapor® Technology-enabled stainless steel cookware.",
             "link": "shopify://collections/360-cookware",
@@ -374,6 +375,7 @@
         "image_with_text_MqF7KK": {
           "type": "image-with-text",
           "settings": {
+            "image": "shopify://shop_images/IMG_2394.png",
             "title": "Bakeware",
             "text": "Achieve bakery-worthy results with our durable bakeware, designed for even heat distribution and perfect outcomes every time.",
             "link": "shopify://collections/360-bakeware",
@@ -383,6 +385,7 @@
         "image_with_text_JFAVYi": {
           "type": "image-with-text",
           "settings": {
+            "image": "shopify://shop_images/Image_4_50f5861a-ff07-4730-813a-8908cbc3d32c.png",
             "title": "Tools & Accessories",
             "text": "Enhance your cooking with our high-quality utensils and accessories, designed for functionality and precision to complement your 360 Cookware.",
             "link": "shopify://collections/accessories",
