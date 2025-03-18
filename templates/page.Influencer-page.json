@@ -123,6 +123,7 @@
         "text_hgHXEK": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_7.png",
             "title": "The Gourmandise Cooking School",
             "details": "",
             "url": ""
