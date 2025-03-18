@@ -69,6 +69,7 @@
         "text_AgFtLY": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3_3.png",
             "title": "Chef Emily Ellyn",
             "details": "",
             "url": ""
