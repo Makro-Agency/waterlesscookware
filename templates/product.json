@@ -110,6 +110,7 @@
         "feature_media_B8QzPA": {
           "type": "feature-media",
           "settings": {
+            "icon": "shopify://shop_images/cold_7d76bd55-42e5-45ba-be4d-85c37211a62d.svg",
             "title": "Long Lasting Performance",
             "description": ""
           }
@@ -117,6 +118,7 @@
         "feature_media_j7QKNj": {
           "type": "feature-media",
           "settings": {
+            "icon": "shopify://shop_images/Frame_1.svg",
             "title": "Stainless Surgical Steel",
             "description": ""
           }
@@ -124,6 +126,7 @@
         "feature_media_z9aUNP": {
           "type": "feature-media",
           "settings": {
+            "icon": "shopify://shop_images/Capa_1_1.svg",
             "title": "Handcrafted in the U.S.A",
             "description": ""
           }
