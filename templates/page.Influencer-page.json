@@ -105,6 +105,7 @@
         "text_bAe4pX": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_2_3.png",
             "title": "Dr. Davinah",
             "details": "",
             "url": ""
