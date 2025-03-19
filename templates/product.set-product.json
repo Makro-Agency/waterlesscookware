@@ -142,15 +142,6 @@
             "title": "Handcrafted in the U.S.A",
             "description": ""
           }
-        },
-        "video_media_kcwfqr": {
-          "type": "video-media",
-          "settings": {
-            "video_url": "",
-            "title": "",
-            "subtitle": "Chef's Tips",
-            "description": ""
-          }
         }
       },
       "block_order": [
@@ -172,8 +163,7 @@
         "feature_media_Cwg4ij",
         "feature_media_B8QzPA",
         "feature_media_j7QKNj",
-        "feature_media_z9aUNP",
-        "video_media_kcwfqr"
+        "feature_media_z9aUNP"
       ],
       "custom_css": [
         ".custompromo {background-color: #990000; text-align: left; padding-top: 10px; padding-bottom: 20px; color: #ffffff; padding-left: 20px; padding-right: 20px;}",
