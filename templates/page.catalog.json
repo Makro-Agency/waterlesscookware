@@ -88,6 +88,8 @@
         "image_text_qGyTLR": {
           "type": "image-text",
           "settings": {
+            "image": "shopify://shop_images/catalog-product-1.png",
+            "mobileimage": "shopify://shop_images/catalog-product-1-mobile.png",
             "title": "Cookware",
             "details": "Premium American-made stainless steel cookware for unparalleled performance.",
             "buttondesktop": "Shop Cookware",
