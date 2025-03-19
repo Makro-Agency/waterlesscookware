@@ -311,6 +311,8 @@
         "text_MBQpRJ"
       ],
       "settings": {
+        "bgimage": "shopify://shop_images/banner-2.png",
+        "imagemobile": "shopify://shop_images/banner-mobile-2.png",
         "title": "Tools & Accessories",
         "heading_size": "h1",
         "description": "<p>The right tool can make all the difference in the kitchen. Our utensils and accessories are designed with the same attention to detail as our cookware!</p>",
