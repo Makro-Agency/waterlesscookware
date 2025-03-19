@@ -105,6 +105,7 @@
         "text_YPXDMX": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Frame_23_1_1.png",
             "title": "The Early Show",
             "details": "360 Cookware featured on The Early Show in preparation for the International Housewares Show in Chicago, IL.",
             "link": "https://www.360cookware.com/blogs/press/17076007-the-early-show"
@@ -113,6 +114,7 @@
         "text_Dtm8y7": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Frame_22_6.png",
             "title": "KABC Los Angeles | Fight Fat with Cookware that uses Vapor Technology",
             "details": "LOS ANGELES (KABC) -- The fat-free revolution has come and gone, but even health conscious eaters tend to take a less-is-best attitude when it comes to fat...",
             "link": "https://www.360cookware.com/blogs/press/17076087-kabc-los-angeles-fight-fat-with-cookware-that-uses-vapor-technology"
@@ -121,6 +123,7 @@
         "text_8VTmhx": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Frame_22_4.png",
             "title": "360 Cookware is Ashley Koff Approved!",
             "details": "About Ashley Koff, RD\n\nAshley Koff, RD is the dietitian for the CW's Shedding for the Wedding (by the producers of the Biggest Loser) which began airing in 2011...",
             "link": "https://www.360cookware.com/blogs/press/17076107-360-cookware-is-ashley-koff-approved"
@@ -129,6 +132,7 @@
         "text_yYEdYQ": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/blog_4_4d5f5342-fca5-4f88-8bb9-2d7cd05b4d0a.png",
             "title": "\"The Doctors\" Introduce 360 Cookware to Their Audience",
             "details": "360 Cookware was gifted to 200 members of The Doctors television talk show audience. The Doctors introduced 360 to their audience and highlighted...",
             "link": "https://www.360cookware.com/blogs/press/16860719-the-doctors-introduce-360-cookware-to-their-audience"
