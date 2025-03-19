@@ -369,10 +369,12 @@
         "text_rJkHh6"
       ],
       "settings": {
+        "bgimage": "shopify://shop_images/backware-2.png",
+        "imagemobile": "shopify://shop_images/backware-mobile-2.png",
         "title": "Save on Sets",
         "heading_size": "h1",
         "description": "<p>Embarking on a new culinary journey or upgrading your kitchen arsenal? Our carefully curated sets have you covered.</p>",
-        "collection": "sets-1",
+        "collection": "cookware",
         "btn_text": "Shop All Sets",
         "btn_link": "",
         "products_to_show": 4,
