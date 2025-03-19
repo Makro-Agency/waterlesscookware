@@ -164,7 +164,9 @@
             "enable_video_looping": true,
             "heading1": "Proper Preheating",
             "description1": "Start on medium heat and wait until water droplets dance across the surface before adding ingredients. This ensures optimal cooking conditions.",
-            "video_url": "https://vimeo.com/1015539972?share=copy"
+            "video_url": "https://vimeo.com/1015539972?share=copy",
+            "cover_image": "shopify://shop_images/Image_7.png",
+            "cover_image_mobile": "shopify://shop_images/Image_7_1.png"
           }
         },
         "video_block_fnjwiD": {
@@ -173,7 +175,9 @@
             "enable_video_looping": true,
             "heading1": "Creating the Vapor Seal",
             "description1": "Once you see steam escaping, spin the lid to form a water seal. Listen for a slight \"whoosh\" sound as the seal forms.",
-            "video_url": "https://vimeo.com/1015546641?share=copy"
+            "video_url": "https://vimeo.com/1015546641?share=copy",
+            "cover_image": "shopify://shop_images/Vapour_Seal_Image.png",
+            "cover_image_mobile": "shopify://shop_images/Vapour_Seal_Image_1.png"
           }
         },
         "video_block_AH3BCa": {
@@ -182,7 +186,9 @@
             "enable_video_looping": true,
             "heading1": "Low and Slow",
             "description1": "Reduce heat to low and let the vapor do its work. Resist the urge to lift the lid - trust the process!",
-            "video_url": "https://vimeo.com/1015546425?share=copy"
+            "video_url": "https://vimeo.com/1015546425?share=copy",
+            "cover_image": "shopify://shop_images/Low_SlowJam.png",
+            "cover_image_mobile": "shopify://shop_images/Low_SlowJam_1.png"
           }
         },
         "video_block_AY4qjf": {
@@ -191,7 +197,9 @@
             "enable_video_looping": true,
             "heading1": "Resting Period",
             "description1": "After cooking, let your food rest in the pan for a few minutes. This allows flavors to settle and ensures even distribution of heat.",
-            "video_url": "https://vimeo.com/1015545149?share=copy"
+            "video_url": "https://vimeo.com/1015545149?share=copy",
+            "cover_image": "shopify://shop_images/Image_28.png",
+            "cover_image_mobile": "shopify://shop_images/Image_28_1.png"
           }
         },
         "icon_text_JXaXgd": {
