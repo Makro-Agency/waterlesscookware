@@ -317,6 +317,7 @@
         "article_card_iYXW4e": {
           "type": "article_card",
           "settings": {
+            "desktop_image": "shopify://shop_images/Image_29.png",
             "heading": "Stainless Steel or Nonstick: Transforming Kitchens with 360 Cookware",
             "description": "Whether you’re buying cookware for the first time, or planning a major upgrade to your kitchen equipment, it’s worth investing in pots and pans that will stand the test of time and provide superior performance. Two of the main contenders are nonstick and stainless steel: which material is the best for the home cook?",
             "link": "shopify://blogs/360-cookware-blog/stainless-steel-vs-nonstick-cookware"
@@ -325,6 +326,8 @@
         "article_card_AFGKk6": {
           "type": "article_card",
           "settings": {
+            "desktop_image": "shopify://shop_images/blog_2_1.png",
+            "mobile_image": "shopify://shop_images/blog_2_mob_48f78d06-f7e4-4e85-9816-6fbc23ab3a46.png",
             "heading": "From Kitchen to Table: Recipes of Gourmet Meals at Home",
             "description": "Savor the perfect chicken recipe to fill your family.",
             "link": "https://www.360cookware.com/blogs/recipes/26543235-chicken-in-a-pot"
