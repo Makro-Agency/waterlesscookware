@@ -23,6 +23,12 @@
           "type": "title",
           "settings": {}
         },
+        "custom_liquid_X4jmHh": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "shortdetails_tUdhaq": {
           "type": "shortdetails",
           "settings": {}
@@ -118,7 +124,6 @@
         "feature_media_j7QKNj": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Frame.svg",
             "title": "Stainless Surgical Steel",
             "description": ""
           }
@@ -135,7 +140,6 @@
           "type": "video-media",
           "settings": {
             "video_url": "",
-            "thumbnail": "",
             "title": "",
             "subtitle": "Chef's Tips",
             "description": ""
@@ -145,6 +149,7 @@
       "block_order": [
         "yotpo_product_reviews_ugc_star_rating_Ynx9wQ",
         "title",
+        "custom_liquid_X4jmHh",
         "shortdetails_tUdhaq",
         "615c3fca-3aaf-48d4-8f98-70af55b3903e",
         "price",
@@ -256,9 +261,7 @@
           "settings": {
             "enable_video_looping": false,
             "video_url": "",
-            "video_url_mobile": "",
-            "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
-            "cover_image_mobile": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png"
+            "video_url_mobile": ""
           }
         },
         "video_block_gU7qVW": {
@@ -266,9 +269,7 @@
           "settings": {
             "enable_video_looping": false,
             "video_url": "",
-            "video_url_mobile": "",
-            "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
-            "cover_image_mobile": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png"
+            "video_url_mobile": ""
           }
         },
         "video_block_izbyaz": {
@@ -276,9 +277,7 @@
           "settings": {
             "enable_video_looping": false,
             "video_url": "",
-            "video_url_mobile": "",
-            "cover_image": "shopify://shop_images/Image_7134c8a1-b885-42b4-b636-97a6479eb6fc.png",
-            "cover_image_mobile": "shopify://shop_images/Image_7134c8a1-b885-42b4-b636-97a6479eb6fc.png"
+            "video_url_mobile": ""
           }
         },
         "video_block_nrhPX9": {
@@ -286,9 +285,7 @@
           "settings": {
             "enable_video_looping": false,
             "video_url": "",
-            "video_url_mobile": "",
-            "cover_image": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png",
-            "cover_image_mobile": "shopify://shop_images/Image_1_3336f869-c2c2-49cd-8e99-63c9f93ef6cf.png"
+            "video_url_mobile": ""
           }
         }
       },
