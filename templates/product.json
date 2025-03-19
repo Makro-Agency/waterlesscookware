@@ -134,10 +134,11 @@
         "video_media_kcwfqr": {
           "type": "video-media",
           "settings": {
-            "video_url": "",
-            "title": "",
+            "video_url": "{{ product.metafields.custom.see_it_in_action.value.video_url.value }}",
+            "thumbnail": "{{ product.metafields.custom.see_it_in_action.value.thumbnail_image.value }}",
+            "title": "{{ product.metafields.custom.see_it_in_action.value.title.value }}",
             "subtitle": "Chef's Tips",
-            "description": ""
+            "description": "{{ product.metafields.custom.see_it_in_action.value.description.value }}"
           }
         }
       },
