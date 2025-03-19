@@ -195,6 +195,8 @@
         "text_tY68TD"
       ],
       "settings": {
+        "bgimage": "shopify://shop_images/banner-catalog.png",
+        "imagemobile": "shopify://shop_images/banner-catalog-mobile.png",
         "title": "Cookware",
         "heading_size": "h1",
         "description": "<p>From sizzling stovetop stir-fries to slow-simmered Sunday sauces, our stainless steel pots and pans are built to last and designed to perform for home cooks and professional chefs alike.</p>",
