@@ -26,7 +26,7 @@
         "custom_liquid_X4jmHh": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": ""
+            "custom_liquid": "{{ product.metafields.accentuate.short_details }}"
           }
         },
         "shortdetails_tUdhaq": {
