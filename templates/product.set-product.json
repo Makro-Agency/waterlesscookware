@@ -240,7 +240,7 @@
             "ans": "<p>This guide will help you maximize your cookware's benefits, enabling healthier, delicious meals. Please review these care instructions before first use.<br/></p><p>See here: <a href=\"https://www.360cookware.com/pages/use-care-guide\" target=\"_blank\" title=\"https://www.360cookware.com/pages/use-care-guide\"><span style=\"text-decoration:underline\"><strong>Use & Care Guides</strong></span></a></p>",
             "enable_metafiled": true,
             "metafiled": "{% assign user_language = request.locale.iso_code %}\n        {{ product.metafields.CW360_faq.care__product_guides[user_language] }}",
-            "hide_tab": "hide-case"
+            "hide_tab": ""
           }
         }
       },
