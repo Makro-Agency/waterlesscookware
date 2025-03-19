@@ -552,7 +552,7 @@
         "collection_cNkk4M": {
           "type": "collection",
           "settings": {
-            "collection": "all-1",
+            "collection": "accessories",
             "collection_title": "Sauté Pans"
           }
         },
@@ -566,7 +566,7 @@
         "collection_nDcwG8": {
           "type": "collection",
           "settings": {
-            "collection": "fry-pans",
+            "collection": "bakeware",
             "collection_title": "Fry Pans"
           }
         },
