@@ -213,6 +213,7 @@
       "blocks": {
         "slide_GGNQYj": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "title": "Pro-Grade Capacity",
             "description": "Unleash your culinary creativity with this spacious 2-quart powerhouse!"
