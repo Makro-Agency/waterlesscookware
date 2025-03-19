@@ -59,6 +59,7 @@
         },
         "essentials_rJKBBL": {
           "type": "Essentials",
+          "disabled": true,
           "settings": {
             "product": "stainless-steel-1-quart-saucepan-with-cover-new-logo",
             "title": "The Essentials Cookware Set",
