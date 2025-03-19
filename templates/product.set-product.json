@@ -130,6 +130,7 @@
         "feature_media_j7QKNj": {
           "type": "feature-media",
           "settings": {
+            "icon": "shopify://shop_images/Frame.svg",
             "title": "Stainless Surgical Steel",
             "description": ""
           }
