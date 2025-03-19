@@ -336,6 +336,8 @@
         "article_card_i9kVMg": {
           "type": "article_card",
           "settings": {
+            "desktop_image": "shopify://shop_images/blog_3_1.png",
+            "mobile_image": "shopify://shop_images/blog_3_3c0f8a85-22d2-4749-80ff-121b1bfd3ad7.png",
             "heading": "Lifetime Warranty: What It Means and Why It Matters",
             "description": "Enjoy peace of mind with our comprehensive lifetime warranty, covering defects in materials and workmanship for as long as you own the product.",
             "link": "shopify://pages/lifetime-warranty-1"
