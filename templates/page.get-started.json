@@ -465,7 +465,7 @@
       "settings": {
         "title": "Recommended Accessories",
         "description": "",
-        "collection": "accessories",
+        "collection": "cookware",
         "button_text": "Shop All Care Accessories",
         "button_link": "shopify://collections/accessories",
         "button_enable": true,
