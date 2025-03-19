@@ -271,6 +271,7 @@
       "blocks": {
         "video_block_iNWhir": {
           "type": "video_block",
+          "disabled": true,
           "settings": {
             "enable_video_looping": true,
             "video_url": "https://vimeo.com/1015538731?share=copy",
@@ -281,6 +282,7 @@
         },
         "video_block_fkwX3e": {
           "type": "video_block",
+          "disabled": true,
           "settings": {
             "enable_video_looping": true,
             "video_url": "https://vimeo.com/1015538814?share=copy#t=0",
