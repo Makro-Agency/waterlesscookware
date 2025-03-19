@@ -126,6 +126,7 @@
         "grid_item_RwVTDq": {
           "type": "grid_item",
           "settings": {
+            "image": "shopify://shop_images/Image_14.png",
             "image_alt": "Craftsmanship Detail:Vapor® Seal Technology",
             "grid_title": "Vapor® Seal Technology",
             "grid_text": "The precision-fitted lids create a vapor seal, locking in moisture and nutrients for healthier, more flavorful meals."
@@ -134,6 +135,7 @@
         "grid_item_EXeFHT": {
           "type": "grid_item",
           "settings": {
+            "image": "shopify://shop_images/Image_15_aa58c865-2484-4ca4-9213-f637123cdc0b.png",
             "image_alt": "Craftsmanship Detail: Ergonomic Handles",
             "grid_title": "Ergonomic Handles",
             "grid_text": "Carefully designed for comfort and balance, our stay-cool handles make cooking and maneuvering a breeze, even with heavier dishes."
@@ -142,6 +144,7 @@
         "grid_item_FXKLyz": {
           "type": "grid_item",
           "settings": {
+            "image": "shopify://shop_images/Image_16_7993868b-db21-4c00-96b8-f02c6ad90e4e.png",
             "image_alt": "Craftsmanship Detail",
             "grid_title": "Dry-Sanded Finish",
             "grid_text": "Our unique dry-sanding process creates a non-porous cooking surface that's naturally non-stick and easy to clean, without the need for harmful coatings."
@@ -150,6 +153,7 @@
         "grid_item_ibtMFK": {
           "type": "grid_item",
           "settings": {
+            "image": "shopify://shop_images/Image_17_b20a3e31-422d-4d39-afb2-a9ae15e4bcee.png",
             "image_alt": "Craftsmanship Detail: Tri-Ply Construction",
             "grid_title": "Tri-Ply Construction",
             "grid_text": "Our cookware features a unique three-layer design with an aluminum core sandwiched between T-304 surgical grade stainless steel, ensuring optimal heat distribution and durability."
@@ -176,6 +180,7 @@
         "content_block_m7amTX": {
           "type": "content_block",
           "settings": {
+            "icon_svg": "shopify://shop_images/Frame_6175_1.svg",
             "statement_title": "Heirloom Quality for Generations",
             "statement_text": "Our cookware is built to last a lifetime, reducing waste and providing value that spans generations."
           }
@@ -183,6 +188,7 @@
         "content_block_LAGCGT": {
           "type": "content_block",
           "settings": {
+            "icon_svg": "shopify://shop_images/Frame_6175_1_1.svg",
             "statement_title": "Healthier Cooking, Healthier Families",
             "statement_text": "With our innovative Vapor® Technology, you can cook nutritious meals using less oil and retaining more vitamins and minerals."
           }
@@ -190,6 +196,7 @@
         "content_block_gEXLem": {
           "type": "content_block",
           "settings": {
+            "icon_svg": "shopify://shop_images/Frame_6175_1_2.svg",
             "statement_title": "Eco-Friendly from Start to Finish",
             "statement_text": "From our wind-powered factory to our durable products, we're committed to minimizing our environmental impact at every step."
           }
@@ -201,6 +208,7 @@
         "content_block_gEXLem"
       ],
       "settings": {
+        "image": "shopify://shop_images/Frame_6135.png",
         "title": "Redefining the American Kitchen: Quality, Health, and Sustainability United"
       }
     },
