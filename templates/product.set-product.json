@@ -38,6 +38,7 @@
         },
         "shortdetails_tUdhaq": {
           "type": "shortdetails",
+          "disabled": true,
           "settings": {}
         },
         "price": {
@@ -51,6 +52,10 @@
             "tooltip_content": "<p>We drop new limited edition pieces every month. When a limited edition piece is sold out, it will <strong>NEVER</strong> be restocked. Shop now while quantities last</p>",
             "load_ajax": false
           }
+        },
+        "offer_section_aaeDeH": {
+          "type": "offer-section",
+          "settings": {}
         },
         "essentials_rJKBBL": {
           "type": "Essentials",
@@ -154,6 +159,7 @@
         "shortdetails_tUdhaq",
         "price",
         "variant_picker",
+        "offer_section_aaeDeH",
         "essentials_rJKBBL",
         "quantity_selector_g6FEyA",
         "buy_buttons",
