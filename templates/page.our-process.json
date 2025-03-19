@@ -114,6 +114,7 @@
       "type": "custom-testimonial",
       "settings": {
         "testimonial_quote": "\"Cookware is a fundamental tool- one that should never be coated, toxic or disposable. If it doesn’t enhance your culinary experience, it isn’t 360 Cookware.\"",
+        "author_image": "shopify://shop_images/IMG_0002.jpg",
         "author_name": "Bryan Hurley",
         "author_title": "Founder",
         "author_sign": "Bryan Hurley"
