@@ -253,10 +253,12 @@
         "text_yYnxaL"
       ],
       "settings": {
+        "bgimage": "shopify://shop_images/Bakeware_1.png",
+        "imagemobile": "shopify://shop_images/Bakeware_Mobile.png",
         "title": "Bakeware",
         "heading_size": "h1",
         "description": "<p>Whether you're whipping up a quick batch of cookies or tackling a multi-tiered cake, our bakeware has your back.</p>",
-        "collection": "360-bakeware",
+        "collection": "bakeware",
         "btn_text": "Shop All Bakeware",
         "btn_link": "#",
         "products_to_show": 4,
