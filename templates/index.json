@@ -502,7 +502,7 @@
       "settings": {
         "title": "360 Bestsellers",
         "description": "Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.",
-        "collection": "360s-essentials",
+        "collection": "whats-new",
         "button_text": "Shop All Bestsellers",
         "button_link": "shopify://collections/360s-essentials",
         "button_enable": false,
