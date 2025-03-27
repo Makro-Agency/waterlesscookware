@@ -323,6 +323,7 @@
         "banner_MTCixE",
         "videowise_xUHGmi"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "",
         "enable_video_looping": false,
