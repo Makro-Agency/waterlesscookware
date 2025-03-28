@@ -223,7 +223,7 @@
         "menu": "new-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
-        "enable_transparent_header": false,
+        "enable_transparent_header": true,
         "show_line_separator": true,
         "color_scheme": "inverse",
         "enable_country_selector": true,
