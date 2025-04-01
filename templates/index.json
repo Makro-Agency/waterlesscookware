@@ -499,10 +499,10 @@
       "settings": {
         "image": "shopify://shop_images/banner-bg-desk.png",
         "image_mobile": "shopify://shop_images/text-banner-mob.png",
-        "title": "360 Fresh Start To A New Year",
-        "description": "<p>Prepare for a season of heartwarming meals with our premium cookware sets. </p>",
+        "title": "Unleash Your Inner Chef",
+        "description": "<p>Transform every home-cooked meal into a gourmet experience with 360 Cookware. Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.</p>",
         "btn_text": "Shop Now",
-        "url": "shopify://collections/sets",
+        "url": "#",
         "BG_color": "#620606",
         "text_color": "#000000",
         "overlay_opacity": 0
