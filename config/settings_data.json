@@ -1017,7 +1017,7 @@
       },
       "accent-2": {
         "settings": {
-          "background": "#990000",
+          "background": "#7e0002",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
@@ -1072,7 +1072,7 @@
       },
       "scheme-16a00cf2-d228-465f-b9cf-f6c0a39daa6a": {
         "settings": {
-          "background": "#ad1f02",
+          "background": "#7e0002",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
