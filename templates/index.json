@@ -152,11 +152,11 @@
       "settings": {
         "subtitle_text": "Trusted in over 70,000 kitchens",
         "main_heading_text": "One Pan,<br>\nLots of Benefits.",
-        "button_link": "shopify://pages/catalog",
+        "button_link": "#",
         "button_text": "Shop Now",
-        "review_badge_text": "7,000+ 5-Star Reviews",
+        "review_badge_text": "7.000+ 5-Star Reviews",
         "button_text_2": "Shop Now",
-        "button_link_2": ""
+        "button_link_2": "#"
       }
     },
     "17298567650c2acc34": {
