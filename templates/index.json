@@ -174,6 +174,7 @@
             "enable_video_looping": false,
             "video_url": "https://vimeo.com/1015538731?share=copy",
             "video_url_mobile": "https://vimeo.com/1015538731?share=copy",
+            "cover_image": "shopify://shop_images/Image_68.png",
             "auther_message": "Great cookware, makes the food amazing! Easy to clean! Love it!",
             "auther_name": "Eileen M.",
             "auther_verification": "Verified Buyer"
@@ -185,6 +186,7 @@
             "enable_video_looping": false,
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/Image_69.png",
             "auther_message": "Great cookware, makes the food amazing! Easy to clean! Love it!",
             "auther_name": "Eileen M.",
             "auther_verification": "Verified Buyer"
@@ -201,10 +203,12 @@
         "banner_description": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection.",
         "banner_link": "shopify://collections/360-cookware",
         "banner_button_text": "Shop Cookware",
+        "desktop_image": "shopify://shop_images/image_2_7.png",
         "banner_heading_2": "Bake It Happen",
         "banner_description_2": "Top-tier baking essentials. Precision-crafted for consistently delicious results.",
         "banner_link_2": "shopify://collections/360-bakeware",
-        "banner_button_text_2": "Shop Bakeware"
+        "banner_button_text_2": "Shop Bakeware",
+        "desktop_image_2": "shopify://shop_images/image_2_5.png"
       }
     },
     "169272982418e0436f": {
