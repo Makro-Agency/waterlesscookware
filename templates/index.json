@@ -195,15 +195,14 @@
         "video_block_XqgKRn",
         "video_block_C9qpfJ"
       ],
-      "disabled": true,
       "settings": {
-        "main_heading": "Transform Your Kitchen: Professional-Grade Tools for Every Culinary Adventure",
-        "banner_heading": "Precision Cookware",
-        "banner_description": "Top-tier cooking essentials. Precision-crafted for consistently delicious results.",
+        "main_heading": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
+        "banner_heading": "Cook Like a Pro",
+        "banner_description": "Premium pots and pans for culinary mastery. Durable, efficient, and designed for perfection.",
         "banner_link": "shopify://collections/360-cookware",
         "banner_button_text": "Shop Cookware",
-        "banner_heading_2": "Artisan Bakeware",
-        "banner_description_2": "Unleash your inner pastry chef with our premium stainless steel bakeware.",
+        "banner_heading_2": "Bake It Happen",
+        "banner_description_2": "Top-tier baking essentials. Precision-crafted for consistently delicious results.",
         "banner_link_2": "shopify://collections/360-bakeware",
         "banner_button_text_2": "Shop Bakeware"
       }
