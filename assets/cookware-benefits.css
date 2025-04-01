@@ -12,17 +12,18 @@
 .shopify-section .cookware-benifits-column .heading {
   font-size: 32px;
 }
+.cookware-benefits .main_heading{ margin-bottom:30px; }
 .title-wrapper .subtitle {
   font-family: 'Hurricane';
   font-size: 32px;
   line-height: 100%;
-  color: #606d22;
+  color: #7E0002; 
   position: absolute;
   right: 0;
   max-width: 188px;
   text-align: center;
   top: -45px;
-  transform: rotate(-10deg);
+  transform: rotate(-5deg);
 }
 .cookware-benefits .cookware-benifits-column {
   flex: 1;
@@ -63,7 +64,7 @@
   left: 0;
 }
 .ratings-badge {
-  background: #606D22;
+  background: #7E0002; 
   padding: 10px 15px;
   border-radius: 10px;
   display: flex;
@@ -71,16 +72,16 @@
   margin-left: -20px;
   margin-top: -30px;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.8px;
   gap: 10px;
   line-height: 100%;
-  color: #FCFBF7;
+  color: #FCFCFA; 
   max-width: max-content;
-  font-family: var(--font-heading-family);
+  font-family: IBM Plex Serif; 
 }
 .review-badge {
-  background: #A6BB3A;
+  background: #5F0001; 
   padding: 10px 15px;
   border-radius: 10px;
   font-size: 16px;

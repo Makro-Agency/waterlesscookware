@@ -1,4 +1,6 @@
 /* iter fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap');
 @font-face {
   font-family: 'Inter';
   src: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Inter18pt-Regular.woff2?v=1724311929') format('woff2'),
@@ -134,7 +136,7 @@ body,
 body .swym-ui-component *,
 body .swym-ui-component .swym-is-button,
 body .swym-ui-component .swym-is-anchor {
-font-family: "Proxima Nova";
+font-family: "Manrope";
 letter-spacing: 0;
 }
 a,
@@ -191,7 +193,7 @@ body .swym-ui-component .swym-title,
 body .swym-ui-component .swym-heading,
 body .swym-ui-component .swym-label,
 .heading-font {
-font-family: Cellofy;
+font-family: IBM Plex Serif;
 font-weight: 600;
 }
 .pt-0 {
@@ -233,8 +235,8 @@ font-size: 14px;
 max-width: 1190px;
 }
 .section-padding {
-padding-top: 100px;
-padding-bottom: 100px;
+padding-top: 150px;
+padding-bottom: 150px;
 }
 /* template-page gift-guide */
 .template-page.gift-guide .section-padding {
@@ -371,26 +373,31 @@ max-width: 1360px;
 margin: auto;
 }
 .main_heading {
-/* font-size: 60px; */
-line-height: 100%;
-font-weight: 600;
-color: #000000;
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100%;
+  color:#1A1A1A;  
 letter-spacing: -1.2px;
 margin: 0 0 10px;
 }
 .shopify-section .heading {
-font-size: 24px;
-line-height: 120%;
-letter-spacing: -0.48px;
-font-weight: 600;
-color: #000000;
-margin: 0 0 5px;
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  color:#1A1A1A; 
+margin: 0 0 10px;
 }
 p.desc, .desc {
-font-weight: 400;
-color: #090909;
-font-size: 16px;
-line-height: 150%;
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  vertical-align: bottom;
+  color:#1A1A1A; 
 margin: 0;
 }
 
