@@ -707,6 +707,10 @@
   } 
     .feature-item .feature-title{
       margin-top: 8px;
+      font-size: 10px;
+    }
+    .product__info-container .price--on-sale .price__container .price__sale {
+      /* flex-direction: row; */
     }
     .feature-ico-text {
       gap: 5px;
