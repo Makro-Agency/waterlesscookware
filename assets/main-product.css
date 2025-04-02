@@ -29,6 +29,7 @@
   .product__info-container div[id*="price-template--"] .price__container .price__regular .price-item--regular {
     letter-spacing: 0;
   }
+  .card__information .custom-review-yotpo {color: #7E0002;}
   .product-form__input:not(:nth-last-child(2)) {
     margin: 0 0 30px;
   }
@@ -464,7 +465,7 @@
   
   /* video media */
   .video-on-media.video-feature-section {
-   background: #00000005;
+    background: rgba(0, 0, 0, 0.02);
     padding: 20px;
     border-radius: 10px;
   }
@@ -473,14 +474,16 @@
         display: flex;
   }
   .video-on-media .textflex .video-subtitle{
-      font-size: 20px;
-      margin: 0;
-      font-family: Hurricane;
-      font-size: 32px;
-      line-height: 100%;
-      color: #A6BB3A;
-      transform: rotate(-10deg);
-      font-weight: 400 !important;
+    margin: 0;
+    font-family: Hurricane;
+    line-height: 100%;
+    transform: rotate(-10deg);
+    color: #5F0001;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400 !important;
+    margin-left: 15px;
   }
   .video-on-media .video-feature-container {
     display: flex;
@@ -518,9 +521,13 @@
   }
   
   .video-on-media .video-title {
-    font-size: 24px;
     margin: 0;
-    font-weight: 600;
+    color: #1A1A1A;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.48px;
   }
   
   .video-on-media .video-subtitle {
@@ -530,14 +537,22 @@
   }
   
   .video-on-media .video-description {
+    overflow: hidden;
+    color: #1A1A1A;
+    text-overflow: ellipsis;
     font-size: 16px;
-    color: #0D0D0D;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
   }
   
   .benefits-slider-section.page-width{
     padding-right: 0;
   }
-  
+  .video-on-media.video-feature-section {
+    max-width: 660px;
+    margin-left: auto;
+}
   /* new */
   /* .product .media-gallery-flex{
      display: flex;
@@ -565,11 +580,11 @@
   /* end new */
   @media screen and (min-width: 1501px) {
     .product--medium:not(.product--no-media) .product__media-wrapper, .product--small:not(.product--no-media) .product__info-wrapper {
-      max-width: 50%;
+      max-width: 57%;
       width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
     }
     .product--medium:not(.product--no-media) .product__info-wrapper, .product--small:not(.product--no-media) .product__media-wrapper {
-      max-width: 50%;
+      max-width: 43%;
       width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
       padding-top: 0;
     }
@@ -658,15 +673,25 @@
     .feature-item .feature-title{   font-size:10px; } 
     }
   
-  .feature-item .feature-title{ font-family: 'Proxima Nova';    letter-spacing: 0; }
+  .feature-item .feature-title{ 
+    letter-spacing: 0;
+    color: #7E0002;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
   .product__info-container .product__title h1{
-        font-family: Cellofy;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 38px;
-      text-transform: capitalize;
-      letter-spacing: -0.64px;
+    text-transform: capitalize;
+    color: #1A1A1A;
+    font-family: "IBM Plex Serif";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
     
   }
   @media screen and (max-width: 576px){
@@ -687,7 +712,7 @@
       gap: 5px;
     }
   }
-  .price__regular .price-item--regular { color:#606D22; }
+  .price__regular .price-item--regular { color:#7E0002; }
   
   
   .product-block.product-block--sales-point{ margin:0; }
@@ -772,14 +797,14 @@
     
   }
   .price-monthly .monthly-price{ 
-    margin:0;
-  color: #0D0D0D;
-  font-family: "Proxima Nova";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;         
+    margin: 0;
+    letter-spacing: 0;
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;         
   }
   .price-monthly .monthly-price span{
   font-family: "Proxima Nova";
@@ -818,7 +843,10 @@
   
   }
   .resources-guide-section .accordion-content table td{
-        font-size: 16px;
+    color: #1A1A1A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
   }
   /* mk */
   

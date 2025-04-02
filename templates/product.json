@@ -82,7 +82,7 @@
           "type": "sales_point",
           "settings": {
             "icon": "free-tag",
-            "text": "30 Day Returns"
+            "text": "Free Exchanges"
           }
         },
         "sales_point_CdyhdB": {
@@ -102,7 +102,7 @@
         "feature_media_Cwg4ij": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Vector_1_eb1f31c7-b1c5-482d-a00f-0e545e472613.svg",
+            "icon": "shopify://shop_images/microwave_1.svg",
             "title": "Oven Safe Up To 500°",
             "description": ""
           }
@@ -110,23 +110,23 @@
         "feature_media_B8QzPA": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/cold_7d76bd55-42e5-45ba-be4d-85c37211a62d.svg",
-            "title": "Long Lasting Performance",
+            "icon": "shopify://shop_images/cold_1.svg",
+            "title": "Stay Cool Long Handle",
             "description": ""
           }
         },
         "feature_media_j7QKNj": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1.svg",
-            "title": "Stainless Surgical Steel",
+            "icon": "shopify://shop_images/Capa_1_2.svg",
+            "title": "Induction Capable",
             "description": ""
           }
         },
         "feature_media_z9aUNP": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Capa_1_1.svg",
+            "icon": "shopify://shop_images/Capa_1_3.svg",
             "title": "Handcrafted in the U.S.A",
             "description": ""
           }
@@ -210,9 +210,9 @@
       ],
       "settings": {
         "heading": "One Tool, Lots of Benefits.",
-        "subheading": "Trusted in over <br>70,000 kitchens",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "subheading": "Trusted in over <br>60,000 kitchens",
+        "padding_top": 100,
+        "padding_bottom": 52
       }
     },
     "pdp_faq_EaUb6y": {
@@ -237,8 +237,8 @@
         "des": "",
         "faq_title_1": "Full product details",
         "faq_title_2": "What's included",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 100
       }
     },
     "1726589780a38322d3": {
@@ -290,11 +290,10 @@
         "video_block_izbyaz",
         "video_block_nrhPX9"
       ],
-      "disabled": true,
       "settings": {
-        "background_color": "#faf5eb",
-        "main_heading": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
-        "block_descrption": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
+        "background_color": "#edede8",
+        "main_heading": "Chef Creations Cooked with 360",
+        "block_descrption": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
         "button_link": "",
         "button_text": "Shop Now"
       }
@@ -305,36 +304,44 @@
         "faq_LDwKKe": {
           "type": "faq",
           "settings": {
-            "que": "Is 360 Cookware safe and non-toxic?",
-            "ans": "<p>Absolutely. Our cookware is crafted from surgical-grade stainless steel, which is 100% non-toxic and free from harmful chemicals or coatings. This means you can cook with confidence, knowing that no unwanted substances will leach into your food, even at high temperatures. At 360 Cookware, we prioritize your health and safety. Our commitment to using only the highest quality materials extends beyond performance to ensure that every meal you prepare is as safe as it is delicious. This dedication to non-toxic cooking aligns with our mission to provide cookware that contributes to a healthier lifestyle for you and your family.</p>"
+            "que": "Dolor sit amet, consectetur elit?",
+            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
           }
         },
-        "faq_KGAeyx": {
+        "faq_cDPzgh": {
           "type": "faq",
           "settings": {
-            "que": "Is 360 Cookware Built To Last?",
-            "ans": "<p>Absolutely! 360 Cookware comes with a <a href=\"https://www.360cookware.com/pages/lifetime-warranty\"><span style=\"text-decoration:underline\">lifetime warranty</span></a>. While standard cookware may wear out in about 10 years, we commonly receive letters from happy customers who have been using their cookware daily for 40 years or more.</p>"
+            "que": "Class aptent taciti sociosqu?",
+            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
           }
         },
-        "faq_qNePbz": {
+        "faq_jDHddX": {
           "type": "faq",
           "settings": {
-            "que": "Can I Put 360 Stainless Steel Cookware And Bakeware In The Oven?",
-            "ans": "<p>360 Cookware is oven safe up to 500º.</p>"
+            "que": "Korem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
+          }
+        },
+        "faq_xqTWgE": {
+          "type": "faq",
+          "settings": {
+            "que": "Dolor sit amet, consectetur elit?",
+            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
           }
         }
       },
       "block_order": [
         "faq_LDwKKe",
-        "faq_KGAeyx",
-        "faq_qNePbz"
+        "faq_cDPzgh",
+        "faq_jDHddX",
+        "faq_xqTWgE"
       ],
       "settings": {
-        "bgcolor": "#faf5eb",
-        "title": "Your Guide to Culinary Confidence",
-        "des": "Find answers, explore tips, and discover the full potential of your 360 Cookware.",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "bgcolor": "#edede8",
+        "title": "All Your Questions Answered",
+        "des": "Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Class aptent taciti sociosqu ad litora.",
+        "padding_top": 100,
+        "padding_bottom": 52
       }
     },
     "pdp_guide_VhfYGR": {
@@ -343,9 +350,9 @@
         "service_FVD8fN": {
           "type": "service",
           "settings": {
-            "icon_svg": "<svg width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#606D22\"></rect><path d=\"M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
+            "icon_svg": "<svg width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#7E0002\"></rect><path d=\"M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
             "title": "Product Care Guide",
-            "description": "Learn how to properly use and maintain your cookware for optimal performance and longevity.",
+            "description": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet.",
             "link": "shopify://pages/use-care-guide",
             "link_text": "Explore Now"
           }
@@ -353,9 +360,9 @@
         "service_jFAXPA": {
           "type": "service",
           "settings": {
-            "icon_svg": "<svg width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#E6A817\"></rect>\n<path d=\"M18.8868 30.2177L31.281 30.2083M24.9996 15.625C27.0076 15.625 28.6847 17.0313 29.093 18.9073C30.1651 18.6186 31.3086 18.7655 32.2719 19.3157C33.2352 19.8659 33.9394 20.7743 34.2296 21.8411C34.5197 22.908 34.3721 24.0457 33.8191 25.0042C33.2661 25.9627 32.3532 26.6634 31.281 26.9521V34.375H18.7182V26.9521C18.1873 26.809 17.69 26.5633 17.2546 26.2289C16.8191 25.8946 16.4541 25.4782 16.1804 25.0035C15.9067 24.5288 15.7297 24.0051 15.6594 23.4623C15.5891 22.9196 15.6269 22.3683 15.7707 21.8401C15.9145 21.3119 16.1615 20.817 16.4975 20.3837C16.8335 19.9505 17.252 19.5873 17.7291 19.315C18.2061 19.0426 18.7324 18.8665 19.2779 18.7965C19.8234 18.7266 20.3775 18.7642 20.9083 18.9073C21.1113 17.9777 21.6278 17.1451 22.3721 16.548C23.1163 15.9509 24.0435 15.6252 24.9996 15.625Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Explore the Catalog",
-            "description": "Discover our full range of cookware, bakeware, and accessories to complete your kitchen setup.",
+            "icon_svg": "<svg width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#BD2129\"></rect>\n<path d=\"M18.8868 30.2177L31.281 30.2083M24.9996 15.625C27.0076 15.625 28.6847 17.0313 29.093 18.9073C30.1651 18.6186 31.3086 18.7655 32.2719 19.3157C33.2352 19.8659 33.9394 20.7743 34.2296 21.8411C34.5197 22.908 34.3721 24.0457 33.8191 25.0042C33.2661 25.9627 32.3532 26.6634 31.281 26.9521V34.375H18.7182V26.9521C18.1873 26.809 17.69 26.5633 17.2546 26.2289C16.8191 25.8946 16.4541 25.4782 16.1804 25.0035C15.9067 24.5288 15.7297 24.0051 15.6594 23.4623C15.5891 22.9196 15.6269 22.3683 15.7707 21.8401C15.9145 21.3119 16.1615 20.817 16.4975 20.3837C16.8335 19.9505 17.252 19.5873 17.7291 19.315C18.2061 19.0426 18.7324 18.8665 19.2779 18.7965C19.8234 18.7266 20.3775 18.7642 20.9083 18.9073C21.1113 17.9777 21.6278 17.1451 22.3721 16.548C23.1163 15.9509 24.0435 15.6252 24.9996 15.625Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "title": "Starting Guides",
+            "description": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet.",
             "link": "shopify://collections/all-cookware-and-bakeware-hm",
             "link_text": "Explore Now"
           }
@@ -364,7 +371,7 @@
           "type": "help",
           "settings": {
             "title": "Need Help to Get Started?",
-            "description": "Have more questions or need personalized advice? Our team of cookware specialists is here to help you make the best choice for your kitchen. ",
+            "description": "Praesent auctor purus luctus, ac scelerisque ante pulvinar. Class aptent taciti sociosqu ad litora.",
             "link": "shopify://pages/contact-us",
             "link_text": "Contact Us"
           }
@@ -376,9 +383,9 @@
         "help_zgf3G4"
       ],
       "settings": {
-        "bgcolor": "#faf5eb",
+        "bgcolor": "#edede8",
         "padding_top": 12,
-        "padding_bottom": 72
+        "padding_bottom": 76
       }
     },
     "172500374596313ea4": {

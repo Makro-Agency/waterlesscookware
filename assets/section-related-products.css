@@ -15,11 +15,12 @@
 }
 
 .related-products__heading{
-  color: #000;  
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 100%; /* 36px */
-  letter-spacing: -0.02em;
+  color: #1A1A1A;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.02em;
 }
 
 product-recommendations .cart-d-svg{ display: none; }
@@ -28,7 +29,7 @@ product-recommendations .cart-d-svg{ display: none; }
 .related-products .product-carousel-slider.swiper-initialized .grid__item { max-width: unset; }
 
 .related-products .swiper-initialized .nav-btn { border-radius: 100px; background-color: #606D22; width: 5rem; height: 5rem; text-align: center; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; }
-.related-products .swiper-initialized .nav-btn:hover { background-color: #c3d957; }
+.related-products .swiper-initialized .nav-btn:hover { background-color: #7E0002; }
 .related-products .swiper-initialized .nav-btn.swiper-button-disabled { visibility: hidden; transition: visibility 0.0s 0.5s; }
 .related-products .swiper-initialized .nav-btn svg { width: 2rem; height: 2rem; }
 .related-products .swiper-initialized .nav-btn svg path[stroke] { color: currentColor; }

@@ -60,7 +60,7 @@
         "simple_hFAdXp": {
           "type": "simple",
           "settings": {
-            "announcement_message": "GET 17% OFF COOKWARE AND BAKEWARE WITH CODE LUCKY17",
+            "announcement_message": "Announcement Message",
             "cta_text": "Shop now",
             "cta_link": "shopify://collections/sets-1",
             "cta_color": "#ffffff",
@@ -226,7 +226,7 @@
         "enable_transparent_header": true,
         "show_line_separator": true,
         "color_scheme": "inverse",
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "new_img": "shopify://shop_images/Image_15.png",
