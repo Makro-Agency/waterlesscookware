@@ -291,6 +291,38 @@ endif
           </div>
         {%- endif -%}
       </a>
+        {% capture meta_varaints_cap %}                
+            {%- assign productReferenced = card_product.metafields['360cookware'].Productlinked.value -%}
+            {%- for metaPro in productReferenced -%}
+              {%- liquid 
+               assign size = blank 
+               assign maesure = blank 
+               for tag in metaPro.tags 
+                 if tag contains 'Size_' or tag contains 'size_' 
+                   assign size = tag | split: '_' | last 
+                 endif 
+                 if tag contains 'Measure_' or tag contains 'measure_'                       
+                   assign measure  = tag | split: '_' | last
+                   assign measure  = measure | prepend: ' <span>(' | append:')</span>'
+                 endif                       
+               endfor
+              -%}
+              {%- if size != blank -%}
+                <a href="{{ metaPro.url }}" 
+                  class="size-button {% if card_product.handle == metaPro.handle %}selected{% endif %} variant-available--{{ metaPro.available }}" 
+                  data-size="{{ size  | downcase }}" data-featured-img="{{ metaPro.featured_image | image_url }}">{{ size }}{{ measure }}</a>
+              {%- endif -%}               
+            {%- endfor -%}
+          {% endcapture %}{%- assign meta_varaints_cap = meta_varaints_cap | strip_newlines | strip -%}
+                      
+          {%- if meta_varaints_cap != blank -%}              
+            <div class="meta-size-selector small-hide">
+              <div class="size-options">
+                {{ meta_varaints_cap }}
+              </div>
+            </div>
+          {%- endif -%}
+        
         {% unless template.name == "index" %}
         <div class="card__content">
           <div class="card__information">
@@ -335,7 +367,6 @@ endif
               </span>
             {%- endif -%}
           </div>
-  
         </div>{% endunless %}
       </div>
       <div class="card__content">
@@ -639,6 +670,8 @@ endif
       </div>
     </div>
    {% endif %}
+    
+ 
     
     <div class="product-badge">
       {% if card_product.title == "Square Hair Brush 32mm" %}
