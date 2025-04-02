@@ -202,13 +202,13 @@
 .product__info-container .product__accordion summary .icon,
 .product__info-container .product__accordion .summary .icon { right:0; width:10px; height:auto; position: absolute; top: calc(50% - 3px); }
 .product__info-container .product__accordion .summary__title .accordion__title {
-    color: #0D0D0D;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: -0.48px;
-    transition: all .3s ease 0s;
+  color: #1A1A1A;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  transition: all .3s ease 0s;
 }
 .product__info-container .product__accordion .accordion-item:not(.accordion-open) .summary__title svg {
   transform: rotate(180deg);
@@ -239,21 +239,25 @@
     vertical-align: middle;
 }
 .date-format {
-    font-size: 12px;
-    color: #0D0D0D;
-    line-height: 150%;
+  color: #1A1A1A;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 .review-container .title {
   margin: 0 0 5px;
-  color: #000;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 120%; 
-  font-family: var(--font-heading-family);
+    color: #1A1A1A;
+    font-family: "IBM Plex Serif";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
 }
 .cta-btn.show-more {
   border-radius: 100px;
-  border: 1px solid #0D0D0D;
+  border: 1px solid #1A1A1A;
   display: flex;
   height: 50px;
   min-height: 50px;
@@ -1006,7 +1010,7 @@ shopify-payment-terms{
 
 /* yotpo widget */
 .yotpo-main-layout.yotpo-main-reviews-widget { 
-  --primary-font-family: Cellofy; --secondary-font-family: var(--font-body-family); --primary-color: #606D22; --text-color: #0D0D0D; --primary-font-weight: 400; --secondary-font-weight: 400; 
+  --primary-font-family: IBM Plex Serif; --secondary-font-family: Manrope; --primary-color: #7E0002 ; --text-color: #1A1A1A; --primary-font-weight: 400; --secondary-font-weight: 400; 
   font-family: var(--secondary-font-family); color: var(--text-color); }
 
 .yotpo-reviews-main-widget div:empty { display: none; }
@@ -1016,17 +1020,64 @@ shopify-payment-terms{
 .yotpo-main-reviews-widget:not(#id) .yotpo-layout-header-wrapper { margin-bottom: 0; }
 .yotpo-main-reviews-widget .yotpo-header-container { margin-bottom: 60px; }
 
-.yotpo-summary-section:not(#id) .yotpo-bottom-line-score { font-family: var(--primary-font-family); font-size: 60px; font-weight: 600; line-height: 100%; letter-spacing: -1.2px; --primary-color: #606D22; }
+.yotpo-summary-section:not(#id) .yotpo-bottom-line-score { 
+  --primary-color: #7E0002;
+    color: #7E0002;
+    font-family: "IBM Plex Serif";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -1.2px; 
+}
 .yotpo-bottom-line .yotpo-summary-section .yotpo-bottom-line-right-panel { padding-top: 0; }
-.yotpo-bottom-line-summary .yotpo-bottom-line-text { font-family: var(--font-body-family) !important; font-size: 16px; font-weight: 600  !important; line-height: 150%; color: #0D0D0D !important; margin-top: 2px; }
+.yotpo-bottom-line-summary .yotpo-bottom-line-text { 
+  font-family: Manrope !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    color: #1A1A1A !important;
+}
   .yotpo-summary-section .yotpo-star-rating .star-container { width: 28px; height: 28px; }
   .yotpo-summary-section .yotpo-star-rating .star-container .yotpo-star-rating-icon { width: 100%; height: 100%; padding: 0 6px; }
   .yotpo-star-rating .star-container .yotpo-star-rating-icon linearGradient stop:first-child { stop-color: #606d22; }
-  .yotpo-star-rating .star-container .yotpo-star-rating-icon path { stroke: #606D22; }
+  .yotpo-star-rating .star-container .yotpo-star-rating-icon path { stroke: #7E0002; fill: #7E0002}
   .yotpo-summary-section .yotpo-star-rating .star-container:not(:last-child) { margin-right: 2px; }
 
-.yotpo-new-review-btn-wrapper #yotpo-main-widget-btn { font-family: var(--font-body-family); font-size: 16px; font-style: normal; font-weight: 600; line-height: 100%; --primary-color: #606D22; padding: 16px 25px; height: auto;
-  border-color: var(--primary-color); transition: color 0.5s linear, all 0.4s cubic-bezier(0.86, 0.39, 0.58, 0.37); border: 1px solid var(--primary-color); }
+.yotpo-new-review-btn-wrapper #yotpo-main-widget-btn {
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  --primary-color: #7E0002;
+  border-color: var(--primary-color);
+  transition: color 0.5s linear, all 0.4s cubic-bezier(0.86, 0.39, 0.58, 0.37);
+  border: 1px solid var(--primary-color);
+  display: flex
+;
+  min-width: 200px;
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  color: #FCFCFA;
+text-align: center;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 16px */
+}
+.template-product .yotpo-filters-container {
+display: none;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-title, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-title {
+  font-size: 24px;
+}
 .yotpo-new-review-btn-wrapper #yotpo-main-widget-btn:hover { 
   yotpo-empty-white: #606D22;
   --primary-color: #606D22; 
