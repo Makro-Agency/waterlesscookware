@@ -226,7 +226,7 @@
         "enable_transparent_header": true,
         "show_line_separator": true,
         "color_scheme": "inverse",
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "new_img": "shopify://shop_images/Image_15.png",
