@@ -102,7 +102,7 @@
         "feature_media_Cwg4ij": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Vector_1_eb1f31c7-b1c5-482d-a00f-0e545e472613.svg",
+            "icon": "shopify://shop_images/microwave_1.svg",
             "title": "Oven Safe Up To 500°",
             "description": ""
           }
@@ -419,7 +419,7 @@
     "recommendations_C8H7DX": {
       "type": "recommendations",
       "settings": {
-        "heading": "You May AlsoLike",
+        "heading": "You May Also Like",
         "heading_size": "h1",
         "products_to_show": 10,
         "columns_desktop": 4,
