@@ -36,10 +36,22 @@
       | image_url: width: 3840
       | image_tag: loading: loading_attr, height: height, sizes: sizes, widths: widths, class: 'hero-image desktop small-hide', fetchpriority: fetchpriority
     }}
+    {% if section.settings.hero_image_mobile != blank %}
+        {%- liquid
+    assign height = section.settings.hero_image_mobile.width | divided_by: section.settings.hero_image_mobile.aspect_ratio | round
+    assign sizes = '100vw'
+    assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+  -%}
+    {{
+      section.settings.hero_image_mobile
+      | image_url: width: 3840
+      | image_tag: loading: loading_attr, height: height, sizes: sizes, widths: widths, class: 'hero-image-mobile ', fetchpriority: fetchpriority
+    }}
+    {% endif %}
   <div class="full-blend-hero-section-bg-overlay"></div>
   <div class="full-blend-hero-section-container">
     <div class="full-blend-hero-section-container-relative">
-      {% if section.settings.hero_image != blank and section.settings.videowise == blank %}
+      {% if section.settings.hero_image != blank and section.settings.videowise == blank and  section.settings.hero_image_mobile == blank %}
       <div class="full-blend-hero-section-container-mobile-image">
         
         {{
@@ -304,6 +316,11 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero Image"
+    },
+         {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Hero Image Mobile"
     },
     {
       "type": "text",

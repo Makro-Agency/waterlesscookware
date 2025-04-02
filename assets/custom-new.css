@@ -284,7 +284,7 @@ cart-drawer .drawer__inner{
 }
 .layout1-trans .header.index-header .navbar_item > div.navbar_link {
   color: #FCFBF7;
-  font-weight: 600;
+  font-weight: 500;
 }
 .layout1-trans .header.index-header:hover .navbar_item > div.navbar_link {
   color: #1a1a1a !important;
@@ -355,11 +355,7 @@ cart-drawer .drawer__inner{
 }
 
 .service-block .service-content p,.service-block .service-content a{
-<<<<<<< HEAD
   color:#1A1A1A;
-=======
-  font-size: 16px;
->>>>>>> c81e5895273571562b7e62cf845d6b72878cebc6
 }
 
 .service-block .service-content p{ margin-bottom:0; margin-top:10px; }

@@ -156,6 +156,9 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
   }
 }
 @media screen and (max-width: 749px) {
+  .makro-proCarousel-section .main_heading {
+    margin-bottom:10px; 
+  }
   .makro-PC-grid {
     --grid-mobile-horizontal-spacing: 10px;
     --grid-mobile-vertical-spacing: 10px;
@@ -170,7 +173,7 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
      margin-inline-end: 1.5rem;
   }  
   .makro-PC-grid.swiper-wrapper .makro-PC-grid__item {
-    max-width: calc(42.745% - var(--grid-mobile-horizontal-spacing) / 2);
+    max-width: calc(45.745% - var(--grid-mobile-horizontal-spacing) / 2);
   }
 
   .makro-product--card .ratio::before {

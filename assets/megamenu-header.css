@@ -45,11 +45,11 @@
   display: inline-block;
   transition: transform 0.3s ease;
 }
-
+.common-h5.product-360-header a h5{ margin-bottom:10px; }
 .dropdown_menu {
     display: none;
     position: absolute;
-    background-color: #fcfbf7;
+    background-color: #FCFCFA;
     width: 100%;
     /* box-shadow: 0 8px 16px #0003; */
     z-index: 1;
