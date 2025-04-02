@@ -256,6 +256,12 @@ color:#1a1a1a;
   .resources-guide-wrapper {
     padding: 0 2rem;
   }
+  .template-product .resources-guide-wrapper {
+   padding: 0 0;
+  }
+  .template-product .resources-guide-section .collapsible-content-wrapper {
+    padding: 0 0;
+  }
   .resources-guide-section .collapsible-content-wrapper {
     padding: 0 2rem;
   }
