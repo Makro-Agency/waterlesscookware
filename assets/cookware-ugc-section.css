@@ -32,6 +32,13 @@
   flex-basis: 50%;
   height:fit-content; 
 }
+@media screen and (max-width: 767px) {
+  .cover-image img{ display:none; }
+.cover-image .img-mobile {
+      display: block;
+  }
+}
+
 .banner-group .card-content {
     padding: 20px;
     padding-bottom: 0;

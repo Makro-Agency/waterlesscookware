@@ -482,8 +482,8 @@ background-color: #FCFBF7;
 }
 @media screen and (max-width: 749px) {
 .section-padding {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .button.cta_button {
   width: 100%;
