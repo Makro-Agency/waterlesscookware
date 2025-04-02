@@ -60,7 +60,7 @@
         "simple_hFAdXp": {
           "type": "simple",
           "settings": {
-            "announcement_message": "GET 17% OFF COOKWARE AND BAKEWARE WITH CODE LUCKY17",
+            "announcement_message": "Announcement Message",
             "cta_text": "Shop now",
             "cta_link": "shopify://collections/sets-1",
             "cta_color": "#ffffff",
