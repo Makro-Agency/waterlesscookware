@@ -74,8 +74,40 @@
 .product__info-container .price--on-sale .price__container .price__sale { display:flex; align-items:center; flex-direction: row-reverse; justify-content: flex-end; }
 .product__info-container .price--on-sale .price__container .price__sale .price-item--regular {  color: #A8A5A0; font-size: 20px; 
   font-style: normal; font-weight: 500; line-height: 160%; text-decoration: line-through;    letter-spacing: 0;}
-.product__info-container .price--on-sale .price__container .price__sale .price-item--sale { color: #606D22; font-size: 24px; font-style: normal; font-weight: 600;
-  line-height: 100%; letter-spacing: 0; text-transform: uppercase; text-decoration:none; }
+.product__info-container .price--on-sale .price__container .price__sale .price-item--sale { 
+  letter-spacing: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #7E0002;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; 
+}
+.template-product .product__info-container .price--on-sale .price__container .price__sale .price-item--sale {
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #7E0002;
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.template-product .product--left .price__regular span.buy-now {
+  text-transform: capitalize;
+    letter-spacing: 0;
+    margin-bottom: 5px;
+    display: block;
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
 .product__info-container .price--on-sale .price__badge-sale { display:none; }
 
 
