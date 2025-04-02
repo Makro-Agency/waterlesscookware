@@ -2,7 +2,7 @@
     border-bottom: none;
   }
   .product__info-wrapper {
-    padding: 60px 0 0 60px;
+    padding:60px 0 0 32px;
   }
   .main-product-section .seprator + .total-review {
     text-decoration-line: underline;
@@ -589,7 +589,7 @@
       padding-top: 0;
     }
     .product__info-wrapper {
-      padding-right: 6%;
+      padding-right: 0;
     }
   }
   @media screen and (min-width: 750px) {
@@ -785,17 +785,16 @@
     }
   
   .price-monthly .month-price span{
-  font-family: "Proxima Nova";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing:0;
-  line-height: 150%; /* 18px */
-  color:  #0d0d0d;
-  margin-bottom: 5px;
-  margin-right: 5px;
-    
-  }
+    letter-spacing: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
   .price-monthly .monthly-price{ 
     margin: 0;
     letter-spacing: 0;
