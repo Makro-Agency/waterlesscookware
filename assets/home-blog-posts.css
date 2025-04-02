@@ -17,6 +17,7 @@
 .home-blog-posts .article-cards .readMore-link svg path {
   stroke: currentColor;
 }
+.home-blog-posts .title-wrapper-with-link p{ max-width:544px; }
 .home-blog-posts  .article-cards .blog__post.grid__item.article:first-child .card__heading{
   font-size: 32px;
 }
@@ -34,11 +35,12 @@
   visibility:hidden;
 }
 .home-blog-posts .article-cards .card__heading {
-  font-size: 24px;
-    line-height: 120%;
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%; 
     letter-spacing: -.48px;
-    font-weight: 600;
-    color: #000;
+    color: #1A1A1A; 
     margin: 0 0 5px;
 }
 .home-blog-posts .underline-links-hover:hover .readMore-link {opacity: 1;}
@@ -79,7 +81,7 @@
   align-items: center;
 }
 .article-newtab ul li.active {
-  background: #606d22;
+  background: #7E0002; 
 }
 .article-newtab ul li{
   border-radius: 100px;

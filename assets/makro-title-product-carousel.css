@@ -1,8 +1,18 @@
 .sectio-header { margin-bottom: 40px; }
-.sectio-header .main_heading { margin-bottom: 0;  font-size: 40px; line-height: 1.12; }
+.sectio-header .main_heading { margin-bottom: 10px;  font-size: 40px; font-family: IBM Plex Serif;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -2%;
+   }
 .sectio-header .text-wrapper-with-link p.desc {
     padding-right: 43%;
 }
+.custom-review-yotpo{ color:#7E0002;  font-family: Manrope;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+   }
 .card__heading_wrap p {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.4);

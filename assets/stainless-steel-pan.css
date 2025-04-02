@@ -40,7 +40,7 @@
 .content-icon-wrapper {
   display: flex;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .about-wrapper .main_heading {
   margin-bottom: 20px;
@@ -75,24 +75,31 @@
   line-height: 150%;
 }
 .pan_review .auther-verification {
+  font-family: Manrope;
+  font-weight: 500;
   font-size: 12px;
   line-height: 150%;
-  font-weight: 600;
-  color: #a6bb3a;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  color:#5F0001;  
 }
 .pan_review.review2 .auther-verification {
   color: #606d22;
 }
 
 .pan_review .auther-message .heading {
+  font-family: Manrope;
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  letter-spacing: normal;
-  font-family: "Proxima Nova";
-  color: #090909;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: bottom;
+  color:#1a1a1a;   
 }
+.pan_review.review1 .auther-message h2{ max-width:238px;  }
 .pan_review.review1 {
-  max-width: 395px;
+  max-width: 278px;
   right: 2.63%;
   top: -16.78%;
   width: 100%;
@@ -105,19 +112,22 @@
 }
 .image-wrapper .subtitle {
   font-family: "Hurricane";
+  font-weight: 400;
   font-size: 32px;
   line-height: 100%;
-  color: #606d22;
+  letter-spacing: 0%;
+  text-align: center;
+  color:#7E0002; 
   position: absolute;
   right: auto;
   max-width: 188px;
   text-align: center;
-  transform: rotate(-10deg);
+  transform: rotate(-5deg);
   left: 14.75%;
   bottom: -8.33%;
 }
 .pan_review.review3 {
-  max-width: 264px;
+  max-width: 224px;
   top: -3.81%;
   left: 26.44%;
   z-index: 1;

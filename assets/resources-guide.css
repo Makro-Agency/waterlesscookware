@@ -56,8 +56,13 @@
 .collapsible-content-wrapper button.accordion-button .heading {
   margin: 0;
   padding-right: 10px;
-  font-size: 24px;
-  color: #0D0D0D;
+  font-size: 20px;
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+color:#1a1a1a;   
 }
 .collapsible-content-wrapper .accordion-item .minus-icon {
   display: none
@@ -92,7 +97,7 @@
   text-decoration: none;
 }
 .contact-block {
-  background: #606D22;
+  background: #7E0002; 
   padding: 30px;
   border-radius: 15px;
   max-width: 440px;
@@ -108,6 +113,7 @@
   color: #606D22;
   margin-top: 30px;
   font-size:14px;
+  max-height:40px; 
 }
 /*----------------service block---------------------*/
 .service-block {
@@ -139,7 +145,7 @@
 }
 /*----------------service block---------------------*/
  .shopify-section.makro-resources-guide {
-    background: #FAF5EB;
+    background: #EDEDE8; 
   }
 @media only screen and (max-width: 749px){
   .makro-resources-guide .contact-block .main_heading{ font-size:24px; }
@@ -150,7 +156,7 @@
 @media only screen and (min-width: 749px){
 
   .shopify-section.makro-resources-guide {
-    background: #FAF5EB;
+    background: #EDEDE8; 
   }
 }
 @media only screen and (max-width: 1499px){

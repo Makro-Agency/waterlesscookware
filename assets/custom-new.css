@@ -297,7 +297,7 @@ cart-drawer .drawer__inner{
   /* display:block; */
 }
 .stainless-steel-pan .main_heading{
-  font-size: 50px;
+  font-size: 60px;
 }
 .accordion-item .accordion-content{
   padding:0;
@@ -343,17 +343,18 @@ cart-drawer .drawer__inner{
 }
 
 .shopify-section-header-sticky.scrolled-past-header .header.index-header span.ly-custom-dropdown-current,.header.index-header:hover .ly-custom-dropdown-current {
-    color: #000 !important;
+    color: #1A1A1A !important;
 }
 
 .shopify-section-header-sticky.scrolled-past-header .header.index-header .ly-languages-switcher svg path,.header.index-header:hover .ly-languages-switcher svg path {
-    stroke: #000;
+    stroke: #1A1A1A;
 }
 
 .service-block .service-content p,.service-block .service-content a{
-  color:#000;
+  color:#1A1A1A;
 }
 
+.service-block .service-content p{ margin-bottom:0; margin-top:10px; }
 .card-descc{
   display: -webkit-box;
   -webkit-line-clamp: 2;
