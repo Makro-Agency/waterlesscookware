@@ -62,8 +62,12 @@
 
 .product__info-container div[id*="price-template--"] .price__container { margin:0; }
 .product__info-container div[id*="price-template--"] .price__container .price__regular .price-item--regular {  
-  font-size: 24px; 
-      font-style: normal; font-weight: 600; line-height: 100%; letter-spacing: 1px; text-transform: uppercase;
+  text-transform: uppercase;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
 }
 .product__info-container div[id*="price-template--"] .price .price__badge-sold-out { display:none !important; }
 
@@ -90,8 +94,18 @@
 
 .product__info-container .product-form .product-form__buttons .button--primary,
 .product__info-container .product-form .product-form__buttons .button--secondary { 
-  font-size: 16px; font-style: normal; font-weight: 600; line-height: 100%;
-  letter-spacing: 0.6px;text-transform: none; display:flex; align-items:center; gap:10px;
+  letter-spacing: 0.6px;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FCFCFA;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
 }
 .product__info-container .product-form .product-form__buttons .button--primary i,
 .product__info-container .product-form .product-form__buttons .button--secondary i { display:flex; }
@@ -368,8 +382,17 @@ font-style: normal; font-weight: 600; line-height: 100%; letter-spacing: 0.6px; 
 .product__info-container .product__accordion .accordion-body .size-photos .gridDiv_item .rte h6 { font-weight:500; }
 
 
-.product__info-container .product-block .sales-point .icon-and-text { display:flex; align-items:center; color: #0D0D0D; font-size: 14px; font-style: normal; gap:16px;
-  font-weight: 400; line-height: 160%; }
+.product__info-container .product-block .sales-point .icon-and-text { 
+  display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #1A1A1A;
+      font-family: Manrope;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; 
+}
 .product__info-container .product-block .sales-point .icon-and-text.final_sale { color: #B81600; }
 
 .QR-code { border-radius:0; max-width:550px; padding:50px 60px; }
@@ -788,7 +811,7 @@ section .rebuy-widget-container .rebuy-carousel__arrows .splide__arrow.rebuy-car
 
 .product__info-container .product-form .product-form__submit{
       border-radius: 100px;
-    background-color: #606D22;
+    background-color: #7E0002;
 }
 .product__info-container .product-form .product-form__buttons .button--primary{ border-radius:100px;}
 
@@ -863,7 +886,7 @@ height: 100%;
 }
 
 .benefits-slider .swiper-wrapper .swiper-slide{
-  background: #f1efea;
+  background: rgba(0, 0, 0, 0.02);
   border-radius: 10px;
   height: auto;
 }
@@ -874,20 +897,25 @@ height: 100%;
     gap: 5px;
 }
 .benefits-slider .swiper-wrapper .swiper-slide h3 {
-  color: #0D0D0D;
-  font-family: Cellofy;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: -0.48px;
   padding: 0;
-  margin: 0;
+    margin: 0;
+    color: #1A1A1A;
+    font-family: "IBM Plex Serif";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.48px;
 }
 .benefits-slider .swiper-wrapper .swiper-slide p {
   padding: 0;
-  margin: 0;
-  color: var(--Black, #0D0D0D);
+    margin: 0;
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
 }
 
 .benefits-slider .swiper-wrapper .swiper-slide img{
@@ -917,8 +945,29 @@ shopify-payment-terms{
 .product .custom-review-yotpo>.star { line-height: 0; display: flex; }
 .product .custom-review-yotpo>.star svg { width: 16px; height: 16px; }
 .product .custom-review-yotpo>span { display: inline-flex; }
-.product .custom-review-yotpo .review-text { font-size: 14px; font-weight: 400; line-height: 150%; text-decoration-line: underline; color: rgba(13, 13, 13, 1); text-underline-offset: 0.15em; }
-.product .custom-review-yotpo .average { padding-top: 0.2em; }
+.product .custom-review-yotpo .review-text { 
+    color: #1A1A1A;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font; 
+}
+.product .custom-review-yotpo .average { 
+  padding-top: 0.2em;
+    color: #7E0002;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
 /* product review rating */
 
 
