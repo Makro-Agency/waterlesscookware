@@ -15,11 +15,12 @@
 }
 
 .navbar_item {
-  font-family: Proxima Nova;
+  font-family: Manrope;
+  font-weight: 500;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  color: #0D0D0D;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color:#FCFCFA;   
   cursor:pointer;
 
 }
@@ -121,20 +122,20 @@
 }
 
 .header-header-text-list ul li a {
-  font-family: Proxima Nova;
+  font-family: Manrope;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 24px;
-  color: #000000;
+  color: #1a1a1a;
   text-align:left;
 }
 
 .header-shop-right span a {
-  font-family: Proxima Nova;
+  font-family: Manrope;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
-  color: #000000;
+  color: #1a1a1a;
   display: flex;
   gap: 5px;
 }
@@ -236,11 +237,12 @@
 }
 
 .product-360-para p {
-  font-family: Proxima Nova;
+  font-family: Manrope; 
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
   margin: 0;
+  color:#1a1a1a; 
 }
 
 .product-360-link a {
@@ -256,7 +258,7 @@
 .product-360-category-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
   text-align:left;
 }
 a.product-360-category-inner{
@@ -376,9 +378,9 @@ a.product-360-category-inner:hover .product-360-link{
   border-radius:10px;
 }
 .review-start-align svg path{
-  fill:#606D22;
+  fill:#7E0002;
 }
-
+.navbar.navabar-desktop .product-360-category-main .product-360-image{  margin-bottom:20px; }
 .header-wrap-title p, .header-wrap-para p{
   text-align:left;
 }

@@ -1,8 +1,18 @@
 .sectio-header { margin-bottom: 40px; }
-.sectio-header .main_heading { margin-bottom: 0;  font-size: 40px; line-height: 1.12; }
+.sectio-header .main_heading { margin-bottom: 10px;  font-size: 40px; font-family: IBM Plex Serif;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -2%;
+   }
 .sectio-header .text-wrapper-with-link p.desc {
     padding-right: 43%;
 }
+.custom-review-yotpo{ color:#7E0002;  font-family: Manrope;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+   }
 .card__heading_wrap p {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.4);
@@ -43,14 +53,25 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
 .makro-product--card .ratio::before { padding-bottom: var(--ratio-percent); min-height: 316px; }
 .makro-product--card .card__inner .card__media .placeholder-svg, .makro-product--card .card__inner .card__media .img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 .makro-product--card .card__content .card__information { padding-top: 20px; padding-bottom: 20px; }
-.makro-product--card .card__heading { font-size: 16px; font-weight: 600; line-height: 1.5; font-family: inherit; letter-spacing: normal; margin-bottom: 5px; margin-top: 10px; }
+.makro-product--card .card__heading { font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color:#1A1A1A; 
+   letter-spacing: normal; margin-bottom: 5px; margin-top: 10px; }
 
 .card .card__heading_wrap { display: flex; gap: 0 20px; flex-direction: column; }
 .card .card__heading_wrap .card__heading {flex: 1 1 auto;}
 .card .card__heading_wrap .price { flex: 0 0 auto; }
 .card__heading .caption-large { font-size: 12px; font-weight: 400; display: none; }
 
-.card .price { font-size: 14px; line-height: 1.5; letter-spacing: normal; font-weight: 600; }
+.card .price { font-family: Manrope;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color:#1a1a1a; }
 .card .price .price__sale .price-item--last,
 .card .price .price__container>.price__regular { font-weight: 600; }
 .card .price__sale .price-item--regular { font-size: inherit; color: #CCCCCC; margin-right: 0; font-weight: 400; }

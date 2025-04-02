@@ -16,12 +16,21 @@
   font-size: 40px;
   margin: 0 0 40px;
 }
+.video-group-wrapper.title_video_wrapper .auther-message h2{
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color:#1a1a1a;  
+}
 .banner-group .banner {
-  background: #FAF5EB;
+  background: #EDEDE8;
   border-radius: 15px;
   position: relative;
   line-height: 0;
   flex-basis: 50%;
+  height:fit-content; 
 }
 .banner-group .card-content {
     padding: 20px;
@@ -101,10 +110,13 @@
     line-height: 0;
 }
 .video-group .auther-name {
+  font-family: Manrope;
+  font-weight: 500;
   font-size: 16px;
-  font-weight: 600;
-  color: #090909;
   line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  color:#1a1a1a;   
 }
 .video-group .auther-verification {
     font-size: 12px;

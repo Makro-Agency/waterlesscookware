@@ -56,12 +56,22 @@
 .collapsible-content-wrapper button.accordion-button .heading {
   margin: 0;
   padding-right: 10px;
+<<<<<<< HEAD
+  font-size: 20px;
+  font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+color:#1a1a1a;   
+=======
   color: #1A1A1A;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.48px;
+>>>>>>> c81e5895273571562b7e62cf845d6b72878cebc6
 }
 .collapsible-content-wrapper .accordion-item .minus-icon {
   display: none
@@ -96,22 +106,32 @@
   text-decoration: none;
 }
 .contact-block {
+<<<<<<< HEAD
+  background: #7E0002; 
+=======
   background: #7E0002;
+>>>>>>> c81e5895273571562b7e62cf845d6b72878cebc6
   padding: 30px;
   border-radius: 15px;
   max-width: 440px;
 }
 .makro-resources-guide .contact-block .main_heading {
+  font-family: IBM Plex Serif;
+  font-weight: 400;
   font-size: 32px;
-  color: #FCFBF7;
+  line-height: 120%;
+  letter-spacing: -0.02em; 
+  color:#FCFCFA;  
   margin-bottom: 5px;
 }
+.resources-guide-wrapper .title-wrapper{ margin-bottom:40px;  }
 .makro-resources-guide .contact-block p.desc {color: #FCFBF7;}
 .makro-resources-guide .contact-block .cta_button.btn-light {
-  background: #FCFBF7;
-  color: #606D22;
+  background: #FCFCFA; 
+  color: #7E0002; 
   margin-top: 30px;
   font-size:14px;
+  max-height:40px; 
 }
 /*----------------service block---------------------*/
 .service-block {
@@ -148,7 +168,7 @@
 }
 /*----------------service block---------------------*/
  .shopify-section.makro-resources-guide {
-    background: #FAF5EB;
+    background: #EDEDE8; 
   }
 @media only screen and (max-width: 749px){
   .makro-resources-guide .contact-block .main_heading{ font-size:24px; }
@@ -159,7 +179,7 @@
 @media only screen and (min-width: 749px){
 
   .shopify-section.makro-resources-guide {
-    background: #FAF5EB;
+    background: #EDEDE8; 
   }
 }
 @media only screen and (max-width: 1499px){

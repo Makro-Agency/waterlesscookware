@@ -722,12 +722,12 @@ justify-content: space-between;
 .cart-product-text .card-header{ flex-direction:column; } 
 }
 .card .card__heading_wrap .card__heading a{ 
-font-family:lato;
+
 display: -webkit-box;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
 overflow: hidden;
-letter-spacing: 0.5px;
+letter-spacing: 0;
 }
 .card .card__inner .card__media{
   border-radius: 15px !important;

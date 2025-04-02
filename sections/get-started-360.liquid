@@ -1,20 +1,30 @@
 <style>
   .get-started-360 {
-    padding: 40px 0 60px 0;
+    padding: 0px 0 0px 0;
     text-align: center;
   }
 
   .get-started-360 h2 {
-    font-size: 60px;
-    font-weight: 600;
-    letter-spacing: -1.2px;
+   font-family: IBM Plex Serif;
+font-weight: 400;
+font-size: 60px;
+line-height: 100%;
+letter-spacing: -2%;
+text-align: center;
+color:#1a1a1a;
+margin-top:0; 
     margin-bottom: 0;
   }
 
   .get-started-360 p {
-    font-size: 16px;
-    margin-bottom: 40px;
-    max-width: 600px;
+   font-family: Manrope;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0%;
+vertical-align: bottom;
+    margin-bottom: 60px;
+    max-width: 664px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -25,7 +35,7 @@
     flex-wrap: wrap;
     gap: 20px;
   }
-  
+   .get-started-360 .custom-grid .link.makro--link{ margin-top:30px; }
   .get-started-360 .grid-item {
     max-width: calc(25% - 20px);
     text-align: left;
@@ -37,18 +47,29 @@
   }
   
   .get-started-360 .grid-item h3 {
-    margin: 15px 0 10px;
-    font-family: Cellofy;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
+    margin: 20px 0 10px;
+font-family: IBM Plex Serif;
+font-weight: 400;
+font-size: 24px;
+line-height: 120%;
+letter-spacing: 0;
+
   }
-  
+  .get-started-360 .custom-grid .link.makro--link{ color:#1a1a1a; font-family: Manrope;
+font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+ }
   .get-started-360 .grid-item p {
-    color: #000;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+font-family: Manrope;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0%;
+vertical-align: bottom;
+color:#1a1a1a; 
     margin: 0 0 10px 0;
   }
   
@@ -67,7 +88,7 @@
     text-decoration: unset;
   }
   .arrow360{
-    margin-left:10px;
+    margin-left:2px;
     display:block;
   }
   .arrow360 svg {
@@ -113,7 +134,7 @@
 
 <!-- sections/get-started-360.liquid -->
 <section class="get-started-360">
-  <div class="page-width">
+  <div class="page-width section-padding">
     {% if section.settings.heading != blank %}
     <h2>{{ section.settings.heading }}</h2>
     {% endif %}

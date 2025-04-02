@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ 'cookware-ugc-section.css' | asset_url }}" media="print" onload="this.media='all'" />
 <style>
   .title_video_wrapper:not(.right_video) .video_group {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     display: block;
     /* height:529px; */
   }
@@ -9,6 +9,15 @@
     position: relative;
     height: 100%;
     display: flex;
+  }
+  .video-group .auther-verification span{
+font-family: Manrope;
+font-weight: 500;
+font-size: 12px;
+line-height: 150%;
+letter-spacing: 0%;
+vertical-align: bottom;
+color:#5F0001; 
   }
   .play-button{
     width:80px;
@@ -265,10 +274,10 @@
               {%- if block.settings.auther_verification != blank -%}
                 <div class="auther-verification">
                   <span class="check-icon">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="12" height="12" rx="6" fill="#A6BB3A"/></rect>
-                      <path d="M3.375 6.00984L5.11734 7.80469L8.625 4.19531" stroke="#FCFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></path>
-                    </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                   <rect width="12" height="12" rx="6" fill="#5F0001"/>
+                   <path d="M3.375 6.00984L5.11734 7.80469L8.625 4.19531" stroke="#FCFCFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                   </span>
                   <span>{{ block.settings.auther_verification }}</span>
                 </div>

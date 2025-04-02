@@ -167,19 +167,20 @@ a {
 
 .header-wrap-title {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24px;
-  color: #000000;
+  color: #1a1a1a;
 }
 .header-wrap-para {
   padding-top: 5px;
 }
 .header-wrap-para,
 .price_root {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 24px;
-  color: #999999;
+  font-family:Manrope; 
+  color: #1a1a1a;
   /* font-family: "Inter", sans-serif; */
 }
 .card-header {
