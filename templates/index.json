@@ -98,6 +98,7 @@
         "has_first_section": true,
         "videowise": "",
         "hero_image": "shopify://shop_images/Full_Bleed_Image_Hero_6.png",
+        "hero_image_mobile": "shopify://shop_images/Frame_6123_2.png",
         "hero_image_alt": "hero_image_alt",
         "heading": "Discover the chef within you with 360 Cookware",
         "subtext": "Just like the over 70,000 kitchens we've already transformed, we believe in the power of quality tools to turn your home into the best seat in town.",
@@ -175,6 +176,7 @@
             "video_url": "https://vimeo.com/1015538731?share=copy",
             "video_url_mobile": "https://vimeo.com/1015538731?share=copy",
             "cover_image": "shopify://shop_images/Image_68.png",
+            "cover_image_mobile": "shopify://shop_images/Image_70.png",
             "reviews_image": "shopify://shop_images/Frame_6176_3.png",
             "auther_message": "Great cookware, makes the food amazing! Easy to clean! Love it!",
             "auther_image": "shopify://shop_images/photo_middle_age_woman_avatar_8.png",
@@ -189,6 +191,7 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/Image_69.png",
+            "cover_image_mobile": "shopify://shop_images/Image_71.png",
             "reviews_image": "shopify://shop_images/Frame_6176_3.png",
             "auther_message": "Can’t say enough good things about it! Highly recommend!",
             "auther_image": "shopify://shop_images/Frame_5627_4.png",
@@ -208,11 +211,13 @@
         "banner_link": "shopify://collections/360-cookware",
         "banner_button_text": "Shop Cookware",
         "desktop_image": "shopify://shop_images/image_2_7.png",
+        "mobile_image": "shopify://shop_images/Group_1_92b89eff-cf2e-45a7-a78c-e2a712f0a4fd.png",
         "banner_heading_2": "Bake It Happen",
         "banner_description_2": "Top-tier baking essentials. Precision-crafted for consistently delicious results.",
         "banner_link_2": "shopify://collections/360-bakeware",
         "banner_button_text_2": "Shop Bakeware",
-        "desktop_image_2": "shopify://shop_images/image_2_5.png"
+        "desktop_image_2": "shopify://shop_images/image_2_5.png",
+        "mobile_image_2": "shopify://shop_images/Group_2_1.png"
       }
     },
     "169272982418e0436f": {
