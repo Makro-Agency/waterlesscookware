@@ -29,6 +29,7 @@
   .product__info-container div[id*="price-template--"] .price__container .price__regular .price-item--regular {
     letter-spacing: 0;
   }
+  .card__information .custom-review-yotpo {color: #7E0002;}
   .product-form__input:not(:nth-last-child(2)) {
     margin: 0 0 30px;
   }

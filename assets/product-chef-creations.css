@@ -89,17 +89,13 @@
     padding-right: 28%;
   }
   .banner-group-wrapper .main_heading {
-    color: #000;
-    font-family: Cellofy;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: -0.8px;
     padding-right: 100px;
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
   }
   .banner-group-wrapper p.desc{
-    margin-bottom:20px;
+    margin-bottom:40px;
   }
 
   .video-group-wrapper .slide-nav {
@@ -121,7 +117,7 @@
   }
   .video-group-wrapper .slide-nav .nav-btn {
       position: absolute;
-      background-color: #606d22;
+      background-color: #7E0002;
       border-radius: 100px;
       color: #fcfbf7;
       height: 50px;

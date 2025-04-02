@@ -351,7 +351,7 @@ cart-drawer .drawer__inner{
 }
 
 .service-block .service-content p,.service-block .service-content a{
-  color:#000;
+  font-size: 16px;
 }
 
 .card-descc{
