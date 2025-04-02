@@ -63,6 +63,12 @@
   top: 0;
   left: 0;
 }
+.ratings-badge  span.rating-star{
+  position: relative;
+  top: -12px;
+}
+
+
 .ratings-badge {
   background: #7E0002; 
   padding: 10px 15px;

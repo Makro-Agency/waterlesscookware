@@ -60,8 +60,12 @@ ol.breadcrumb{
 }
 .price__regular .price-item--regular {
   margin-right: 0;
-  color: #000;
-  font-weight: 600;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+color:#1a1a1a;   
 }
 .card-information>.price{
   margin-top:0 !important;
@@ -283,12 +287,12 @@ cart-drawer .drawer__inner{
   font-weight: 600;
 }
 .layout1-trans .header.index-header:hover .navbar_item > div.navbar_link {
-  color: #0d0d0d !important;
-  font-weight: 600;
+  color: #1a1a1a !important;
+  font-weight: 500;
 }
 .shopify-section-header-sticky.scrolled-past-header .header.index-header .navbar_item > div.navbar_link {
-  color: #0d0d0d !important;
-  font-weight: 600;
+  color: #1a1a1a !important;
+  font-weight: 500;
 }
 .image-width-text-header .common-h5 h5,.product-360-para p{
   text-align:left;

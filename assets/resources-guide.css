@@ -103,14 +103,19 @@ color:#1a1a1a;
   max-width: 440px;
 }
 .makro-resources-guide .contact-block .main_heading {
+  font-family: IBM Plex Serif;
+  font-weight: 400;
   font-size: 32px;
-  color: #FCFBF7;
+  line-height: 120%;
+  letter-spacing: -0.02em; 
+  color:#FCFCFA;  
   margin-bottom: 5px;
 }
+.resources-guide-wrapper .title-wrapper{ margin-bottom:40px;  }
 .makro-resources-guide .contact-block p.desc {color: #FCFBF7;}
 .makro-resources-guide .contact-block .cta_button.btn-light {
-  background: #FCFBF7;
-  color: #606D22;
+  background: #FCFCFA; 
+  color: #7E0002; 
   margin-top: 30px;
   font-size:14px;
   max-height:40px; 

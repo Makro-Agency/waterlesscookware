@@ -32,7 +32,7 @@
   position: relative;
 }
 .about-wrapper {
-  padding-right: 40px;
+  padding-right: 0px;
   max-width: 35%;
   flex: 1;
   z-index: 1;
@@ -92,22 +92,21 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  letter-spacing: 0%;
-  text-align: center;
+  letter-spacing: 0;
   vertical-align: bottom;
   color:#1a1a1a;   
 }
 .pan_review.review1 .auther-message h2{ max-width:238px;  }
 .pan_review.review1 {
   max-width: 278px;
-  right: 2.63%;
-  top: -16.78%;
+  right: 3.63%;
+  top: -15.78%;
   width: 100%;
 }
 .pan_review.review2 {
   max-width: 348px;
-  right: 12.13%;
-  bottom: -18.07%;
+  right: 28.13%;
+  bottom: -13.07%;
   width: 100%;
 }
 .image-wrapper .subtitle {
@@ -127,9 +126,9 @@
   bottom: -8.33%;
 }
 .pan_review.review3 {
-  max-width: 224px;
-  top: -3.81%;
-  left: 26.44%;
+  max-width: 264px;
+  top: -4.81%;
+  left: 25.44%;
   z-index: 1;
   text-align: center;
   display: flex;
@@ -137,21 +136,29 @@
   gap: 20px;
 }
 .pan_review.review4 {
-  background: #a6bb3a;
+  background: #5F0001; 
   padding: 10px 15px;
   top: 16.79%;
-  right: calc(28.66% + 4.63% + 2rem);
+  right: calc(25.29% + 2rem);
   z-index: 1;
 }
 .pan_review.review4 .heading {
-  font-family: "Proxima Nova";
-  color: #fcfbf7;
-  font-weight: 700;
+  font-family: Manrope;
+  font-weight: 600;
   font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+color:#FCFCFA;  
+margin:0; 
 }
 .pan_review.review4 .heading.h3 {
-  font-weight: 600;
+  font-family: Manrope;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+ margin:0;   
+ color:#FCFCFA; 
 }
 @media only screen and (max-width: 1850px) {
   .stainless-steel-pan {
@@ -283,6 +290,9 @@
     top: 0%;
     right: 13.66%;
     z-index: 2;
+  }
+  .pan_review.review1 {
+    bottom: -163px;
   }
   .button-block-mob {
     width: 100%;

@@ -22,7 +22,7 @@
   align-items: center;
 }
 .search-modal__content{
-  background: #FCFBF7;
+  background: #fafafa;
   width: 65%;
   left: -80px;
 }
@@ -317,7 +317,7 @@
     color: #fff;
   }
   .shopify-section-header-sticky.menu-open .header.index-header .header__icon svg {
-    top: 33%;
+    top: 40%;
   }
   .header__icon--menu svg.icon.icon-hamburger {
     margin-top: 0;
@@ -328,6 +328,8 @@
 }
 
 @media screen and (max-width: 749px){
+  .shopify-section-header-sticky.menu-open  .logo-container.first-logo img.first-logo{ display:none !Important; }
+  .shopify-section-header-sticky.menu-open .logo-container.first-logo img.second-logo{ display:block !Important; }
   /* .header__heading-logo {
     max-width: 200px;
   } */
@@ -366,3 +368,4 @@
 
 /* /blogs/recipes/pumpkin-swirl-brownies */
 .template-article .section-header { display: block; }
+

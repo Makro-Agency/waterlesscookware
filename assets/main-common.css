@@ -79,13 +79,12 @@ a:hover{
     padding: 5px;
     margin-bottom: 10px;
 }
-.cmn-menu-product:hover .boxhover-bg,
-.category-image-text-link:hover,
-.image-width-text-header:hover{
-  background:#FAF5EB;
-  color: #000;
+.cmn-menu-product:hover
+{
+  background:#EDEDE8;
+  color: #1a1a1a;
 }
-
+.cmn-menu-product .boxhover-bg, .category-image-text-link, .image-width-text-header{ transition:all 0.3s linear; }
 /* slider nav */
 .makro-product-carousel-wrapper .slide-nav .nav-btn{
     position: absolute;
@@ -112,7 +111,7 @@ a:hover{
 .auther-content .right-arrow,
 .swiper-button-div .swiper-button-prev,
 .swiper-button-div .swiper-button-next{
-    background-color: #606d22;
+    background-color: #7E0002;
     color: #fcfbf7;
     border-radius: 100px;
     height: 50px;

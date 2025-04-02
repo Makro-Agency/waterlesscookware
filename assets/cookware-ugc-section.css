@@ -25,11 +25,12 @@
   color:#1a1a1a;  
 }
 .banner-group .banner {
-  background: #FAF5EB;
+  background: #EDEDE8;
   border-radius: 15px;
   position: relative;
   line-height: 0;
   flex-basis: 50%;
+  height:fit-content; 
 }
 .banner-group .card-content {
     padding: 20px;
