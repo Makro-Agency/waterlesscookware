@@ -454,13 +454,14 @@ text-align: left;
   }
 
   .links a {
-    font-family: Inter;
-    font-size: 12px;
+    font-family: Manrope;
     font-weight: 400;
-    line-height: 18px;
-    color: #FCFCFA;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0%;    
     text-decoration: none;
     margin-right: 20px;
+    color:#FCFCFA; 
   }
 
   .luc_p {

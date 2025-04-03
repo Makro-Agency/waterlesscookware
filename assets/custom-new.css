@@ -113,37 +113,41 @@ color:#1a1a1a;
   left: 10px;
 }
 .sale-button {
-    font-family: Proxima Nova;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;  
     padding: 1px 10px;
     border-radius: 100px;
-    background: #e6a817;
+    background: #BD2129;
     text-decoration: none;
-    color: #fcfbf7;
+    color: #fcfcfa;
     display: inline-flex;
 }
 .choice-button {
-    font-family: Proxima Nova;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+ color:#fcfcfa;  
     padding: 1px 10px;
     border-radius: 100px;
-    background: #a6bb3a;
+    background: #5F0001;
     text-decoration: none;
     color: #fcfbf7;
     display: inline-flex;
 }
 .sell-button {
-    font-family: Proxima Nova;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;  
     padding: 1px 10px;
     border-radius: 100px;
-    background: #606d22;
+    background: #7E0002;
     text-decoration: none;
     color: #fcfbf7;
     display: inline-flex;

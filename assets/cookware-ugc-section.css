@@ -32,9 +32,39 @@
   flex-basis: 50%;
   height:fit-content; 
 }
+.cookware-ugc-section .banner-group .card-content{ position:relative; z-index:2; }
+.cookware-ugc-section .image-card img{ position:relative; z-index:1; }
+.cookware-ugc-section .image-card {
+  position: relative;
+  overflow: hidden;
+}
+.cookware-ugc-section .image-card:before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: 100% 100% 0 0;
+  background: #EDEDE8;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
 @media screen and (max-width: 767px) {
-  .cover-image img{ display:none; }
-.cover-image .img-mobile {
+  .cookware-ugc-section .image-card:before{
+    border-radius: 100px 100px 0 0;
+    bottom: -16px;
+  }
+  .cookware-ugc-section .banner-group .banner:last-child .image-card:before {
+    border-radius: 100px 0 0 100px;
+    bottom: 16px;
+    right: 0;
+  }
+  .cookware-ugc-section .banner-group .banner:last-child .image-card { border-radius: 15px; }
+}
+@media screen and (max-width: 767px) {
+  .cookware-ugc-section .cover-image img{ display:none; }
+  .cookware-ugc-section .cover-image .img-mobile {
       display: block;
   }
 }
