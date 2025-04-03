@@ -50,14 +50,21 @@
           "type": "menu_block",
           "settings": {
             "menu_heading": "Help Center",
-            "navigation_menu": "help-center-policy-pages"
+            "navigation_menu": "help-center"
           }
         },
         "menu_block_qDtnPC": {
           "type": "menu_block",
           "settings": {
             "menu_heading": "Resources",
-            "navigation_menu": "resources"
+            "navigation_menu": "recourses"
+          }
+        },
+        "menu_block_gg6TzB": {
+          "type": "menu_block",
+          "settings": {
+            "menu_heading": "About 360",
+            "navigation_menu": "about-360"
           }
         }
       },
@@ -67,7 +74,8 @@
         "menu_block_yzwXAi",
         "menu_block_qXnETj",
         "menu_block_r6WJiD",
-        "menu_block_qDtnPC"
+        "menu_block_qDtnPC",
+        "menu_block_gg6TzB"
       ],
       "settings": {
         "footer_logo": "shopify://shop_images/logo-footer_b208c080-a91f-43aa-8724-7830a3c7c582.png",
