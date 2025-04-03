@@ -305,7 +305,6 @@
         "video_block_izbyaz",
         "video_block_nrhPX9"
       ],
-      "disabled": true,
       "settings": {
         "background_color": "#faf5eb",
         "main_heading": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
@@ -435,7 +434,7 @@
     "recommendations_C8H7DX": {
       "type": "recommendations",
       "settings": {
-        "heading": "You May Also Like",
+        "heading": "<p>You May Also Like</p>",
         "heading_size": "h1",
         "products_to_show": 10,
         "columns_desktop": 4,
