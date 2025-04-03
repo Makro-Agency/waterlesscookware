@@ -19,7 +19,9 @@
   text-decoration: none;
   text-align: var(--text-alignment);
 }
-
+.makro-product-carousel .card__inner .size-button:hover{
+  border:1.5px solid #7E0002; 
+}
 .card:not(.ratio) {
   display: flex;
   flex-direction: column;
@@ -557,7 +559,7 @@
     color: #0D0D0D; 
     transition: 0.5s ease,
     color 0.3s linear; 
-    border: 2px solid #0000000D;
+    border: 1px solid #0000000D;
   }
   .card__inner .size-button span { display: block; color: rgba(0, 0, 0, 0.30); transition: 0.5s ease; }
 

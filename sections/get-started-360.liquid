@@ -130,6 +130,16 @@ color:#1a1a1a;
     font-size: 48px;
   }
 }
+@media screen and (max-width:767px){
+.get-started-360 .link.makro--link.desktop-button{
+display:none;
+}
+}
+@media screen and (min-width:768px){
+.get-started-360 .link.makro--link.mobile-button{
+display:none;
+}
+}
 </style>
 
 <!-- sections/get-started-360.liquid -->
@@ -172,7 +182,7 @@ color:#1a1a1a;
             <p>{{ block.settings.text }}</p>
             {% endif %}
            {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" class="link makro--link">{{ block.settings.link_text }} 
+            <a href="{{ block.settings.link }}" class="link makro--link desktop-button">{{ block.settings.link_text }} 
               {% if settings.arrowsvg != blank %}
                 <span class="arrow360">
                   {{ settings.arrowsvg }}
@@ -180,6 +190,16 @@ color:#1a1a1a;
               {% endif %}
             </a>
             {% endif %}
+               {% if block.settings.mobile_link != blank %}
+            <a href="{{ block.settings.mobile_link }}" class="link makro--link mobile-button ">{{ block.settings.mobile_link_text }} 
+              {% if settings.arrowsvg != blank %}
+                <span class="arrow360">
+                  {{ settings.arrowsvg }}
+                </span>  
+              {% endif %}
+
+            </a>
+                {% endif %}
           </div>
         </div>
       {% endfor %}
@@ -236,6 +256,16 @@ color:#1a1a1a;
           "type": "text",
           "id": "link_text",
           "label": "Link Text",
+          "default": "Shop Now"
+        },  {
+          "type": "url",
+          "id": "mobile_link",
+          "label": "Mobile Link"
+        },
+        {
+          "type": "text",
+          "id": "mobile_link_text",
+          "label": "Mobile Link Text",
           "default": "Shop Now"
         }
       ]

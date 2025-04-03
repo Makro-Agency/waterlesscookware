@@ -40,7 +40,7 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
 .has-slider-nav .nav-btn.swiper-button-disabled { opacity: 0.2; pointer-events: none; }
 .has-slider-nav .slide-nav svg { width: 100%; height: 100%; }
   
-.makro-PC-grid { list-style-type: none; padding-inline-start: 0; margin-block: 0; display: flex; flex-wrap: wrap; flex-direction: row; --grid-desktop-horizontal-spacing: 40px; --grid-desktop-vertical-spacing: 40px; }
+.makro-PC-grid { align-items:flex-start;  list-style-type: none; padding-inline-start: 0; margin-block: 0; display: flex; flex-wrap: wrap; flex-direction: row; --grid-desktop-horizontal-spacing: 40px; --grid-desktop-vertical-spacing: 40px; }
 .makro-product-carousel { margin-block-start: 50px; }
 .makro-product-carousel-wrapper {
   position: relative;
@@ -71,10 +71,16 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0;
-  color:#1a1a1a; }
+  color:#1a1a1a; 
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
 .card .price .price__sale .price-item--last,
-.card .price .price__container>.price__regular { font-weight: 600; }
-.card .price__sale .price-item--regular { font-size: inherit; color: #CCCCCC; margin-right: 0; font-weight: 400; }
+.card .price .price__container>.price__regular { font-weight: 500; }
+.card .price__sale .price-item--regular { font-size: inherit; color: rgb(0,0,0, 0.4); margin-right: 0; font-weight: 400; }
 
 .card-product-new>.media-content {  position: absolute; }  
 .card-product-new>.media-content ul { padding-left: 0; list-style-type: none; display: flex; gap: 5px 0; flex-direction: column;margin-top:0; }

@@ -158,10 +158,25 @@
 .home-blog-posts .article-cards {display:block;}
 
 
+@media  screen and (max-width: 767px){
+.home-blog-posts .article-cards .card__heading{font-family: IBM Plex Serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
 
+   }
+  }
+  @media  screen and (max-width: 576px){
+    .home-blog-posts p.article-card__excerpt.rte-width{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-
-
+  }
 @media only screen and (max-width: 1441px){
   .home-blog-posts .article-grid-new .blog__posts {
     display: grid;
