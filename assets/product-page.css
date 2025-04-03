@@ -1120,7 +1120,7 @@ display: none;
 .yotpo-review-votes-wrapper:not(#id) .yotpo-review-votes-icons-wrapper .yotpo-review-votes-icon-down { transform: scale(-1) rotateX(180deg); }
 
 .yotpo-reviews-list .yotpo-reviews-pagination-container { margin-top: 60px; justify-content: flex-end; }
-.yotpo-reviews-pagination-container li .yotpo-reviews-pagination-item { font-family: var(--primary-font-family); font-size: 24px; font-weight: 600;
+.yotpo-reviews-pagination-container li .yotpo-reviews-pagination-item { font-family: var(--primary-font-family); font-size: 24px; font-weight: 400;
   line-height: 120%; letter-spacing: -0.02em; color: rgba(0,0,0,.40); padding-inline: 15px; padding-block-end: 2px; }
 .yotpo-reviews-pagination-container li .selected { background: transparent; color: var(--text-color); }
 .yotpo-horizontal-pagination .yotpo-reviews-pagination-item { padding-inline: 35px; }
