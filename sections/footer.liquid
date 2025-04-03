@@ -123,50 +123,88 @@
                 {% endcomment %}
 
                 {% if request.locale.iso_code == 'fr' %} 
-                  {% assign klaviyoListId = section.settings.klaviyo_id_fr %}
-                {% elsif request.locale.iso_code == 'es' %} 
-                  {% assign klaviyoListId = section.settings.klaviyo_id_es %}
-                {% else %} 
-                  {% assign klaviyoListId = section.settings.klaviyo_id %}
-                {% endif %}
-                
-                <form id="newsletter_form_{{ request.locale.iso_code }}" class="_klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
-                  <input type="hidden" name="g" value="{{ klaviyoListId }}">
-                  <input type="hidden" name="$fields" value="language">
-                  <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
-                  <div class="custom-subscribes">
-                    <div class="klaviyo_field_group kgrid">
-                      <div class="klaviyo_field email">
-                        <input class="input-item field__input" type="email" value="" name="email" id="k_id_email" placeholder="{{ 'newsletter.label' | t }}" required="required" autocomplete="off">
-                        <button type="submit" id="Subscribe" class="sub_button newsletter-form__button klaviyo_submit_button">Subscribe</button>
-                      </div>
-                      <div class="klaviyo_messages">
-                        <div class="success_message" style="display:none;"></div>
-                        <div class="error_message" style="display:none;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                
-                <script>
-                  document.addEventListener("DOMContentLoaded", (event) => {
-                    let crLocation = window.location.href;
-                    KlaviyoSubscribe.attachToForms('#newsletter_form_{{ request.locale.iso_code }}', {
-                    hide_form_on_success: true,
-                    success_message: "Thanks for subscribing!",
-                    extra_properties: {
-                      $source: crLocation,
-                      $method_type: "Klaviyo Form",
-                      $method_id: 'embed'
-                    },
-                    success: function ($form) {
-                      console.log($form);
-                      $form.addClass('success-true');
-                    },
-                    error: function() {}
-                  });
-                });
-              </script>
+                  {% assign klaviyoListIdFr = section.settings.klaviyo_id_fr  %}
+                   <form id="newsletter_form_fr" class="_klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListIdFr }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+                     <input type="hidden" name="g" value="{{ klaviyoListIdFr }}">
+                     <input type="hidden" name="$fields" value="language">
+                     <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
+                     <div class="custom-subscribes">
+                     <div class="klaviyo_field_group kgrid">
+                       <div class="klaviyo_field email">
+                         <input class="input-item field__input" type="email" value="" name="email" id="k_id_email" placeholder="{{ 'newsletter.label' | t }}" required="required" autocomplete="off">
+                         <button type="submit" id="Subscribe" class="sub_button newsletter-form__button klaviyo_submit_button">Subscribe</button>
+                       </div>
+                       <div class="klaviyo_messages">
+                       <div class="success_message" style="display:none;"></div>
+                       <div class="error_message" style="display:none;"></div>
+                     </div>
+                     </div>
+                     </div>
+                   </form> 
+         
+                   <script>
+                   document.addEventListener("DOMContentLoaded", (event) => {
+                     let crLocation = window.location.href;
+                     KlaviyoSubscribe.attachToForms('#newsletter_form_fr', {
+                       hide_form_on_success: true,
+                       success_message: "Thanks for subscribing!",
+                       extra_properties: {
+                         $source: crLocation,
+                         $method_type: "Klaviyo Form",
+                         $method_id: 'embed'
+                       },
+                       success: function ($form) {
+                         console.log($form);
+                         $form.addClass('success-true');
+                       },error : function(){
+                       }
+                     }); 
+                   });
+                 </script>
+     
+                  {% else %} 
+                     {% assign klaviyoListId = section.settings.klaviyo_id  %}
+                   <form id="newsletter_form" class="_klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
+                     <input type="hidden" name="g" value="{{ klaviyoListId }}">
+                     <input type="hidden" name="$fields" value="language">
+                     <input type="hidden" name="language" value="{{ request.locale.iso_code }}">
+                     <div class="custom-subscribes">
+                     <div class="klaviyo_field_group kgrid">
+                       <div class="klaviyo_field email">
+                         <input class="input-item field__input" type="email" value="" name="email" id="k_id_email" placeholder="{{ 'newsletter.label' | t }}" required="required" autocomplete="off">
+                         <button type="submit" id="Subscribe" class="sub_button newsletter-form__button klaviyo_submit_button">Subscribe</button>
+                       </div>
+                       <div class="klaviyo_messages">
+                       <div class="success_message" style="display:none;"></div>
+                       <div class="error_message" style="display:none;"></div>
+                     </div>
+                     </div>
+                     
+                   
+                     </div>
+                   </form> 
+         
+                   <script>
+                   document.addEventListener("DOMContentLoaded", (event) => {
+                     let crLocation = window.location.href;
+                     KlaviyoSubscribe.attachToForms('#newsletter_form', {
+                       hide_form_on_success: true,
+                       success_message: "Thanks for subscribing!",
+                       extra_properties: {
+                         $source: crLocation,
+                         $method_type: "Klaviyo Form",
+                         $method_id: 'embed'
+                       },
+                       success: function ($form) {
+                         console.log($form);
+                         $form.addClass('success-true');
+                       },error : function(){
+                       }
+                     }); 
+                   });
+                 </script>
+     
+                 {% endif %}  
           
           <div class="footer-bottom_icon">
             <h3 class="footer-header-regular">{{ section.settings.follow_us_heading }}</h3>
