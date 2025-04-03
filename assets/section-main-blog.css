@@ -136,7 +136,8 @@ line-height: 100%; /* 40px */
 letter-spacing: -0.8px; }
 .main-blog a.tab-link{  color: #0d0d0d;  } 
 .main-blog   a.tab-link.active{     
- background: var(--Green, #606D22);  color: var(--White, #FCFBF7);   }
+ background: #7E0002;  color: var(--White, #FCFBF7);   }
+ 
 .main-blog  ul.pagination__list.list-unstyled{ margin-top:7rem; }
 .main-blog  .article-card__info:first-child{ display:none; }
 .main-blog  .article-card .card__heading a{
