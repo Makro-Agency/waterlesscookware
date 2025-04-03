@@ -1041,7 +1041,7 @@ shopify-payment-terms{
 }
   .yotpo-summary-section .yotpo-star-rating .star-container { width: 28px; height: 28px; }
   .yotpo-summary-section .yotpo-star-rating .star-container .yotpo-star-rating-icon { width: 100%; height: 100%; padding: 0 6px; }
-  .yotpo-star-rating .star-container .yotpo-star-rating-icon linearGradient stop:first-child { stop-color: #606d22; }
+  .yotpo-star-rating .star-container .yotpo-star-rating-icon linearGradient stop:first-child { stop-color: #7E0002; }
   .yotpo-star-rating .star-container .yotpo-star-rating-icon path { stroke: #7E0002; fill: #7E0002}
   .yotpo-summary-section .yotpo-star-rating .star-container:not(:last-child) { margin-right: 2px; }
 
@@ -1079,8 +1079,8 @@ display: none;
   font-size: 24px;
 }
 .yotpo-new-review-btn-wrapper #yotpo-main-widget-btn:hover { 
-  yotpo-empty-white: #606D22;
-  --primary-color: #606D22; 
+  yotpo-empty-white: #7E0002;
+  --primary-color: #7E0002; 
  background: #A6BB3A;
     border-color: #A6BB3A;
 }

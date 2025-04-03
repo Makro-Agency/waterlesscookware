@@ -32,7 +32,7 @@
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
-    color: #606d22;
+    color: #7E0002;
     transform: rotate(-5deg);
     width: fit-content;
   }
@@ -87,7 +87,7 @@
   }
   
   .why-border-doted span {
-    border: 1px dashed #606d22;
+    border: 1px dashed #7E0002;
     border-radius: 100px;
     font-family: Proxima Nova;
     font-size: 14px;
@@ -99,7 +99,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #606d22;
+    color: #7E0002;
     background-color: #faf5eb;
     z-index: 5;
     position: relative;
@@ -113,7 +113,7 @@
     content: "";
     width: 2px;
     display: block;
-    border-left: 1px dashed #606d22;
+    border-left: 1px dashed #7E0002;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -139,7 +139,7 @@
     display: inline-block;
     padding: 15px 25px;
     border-radius: 100px;
-    background-color: #606d22;
+    background-color: #7E0002;
     color: #fcfbf7;
     width: fit-content;
   }
@@ -191,7 +191,7 @@
     padding: 15px 25px;
     border-radius: 100px;
     gap: 10px;
-    color: #606d22;
+    color: #7E0002;
     font-family: Proxima Nova;
     font-size: 14px;
     font-weight: 600;

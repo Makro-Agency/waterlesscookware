@@ -6,7 +6,7 @@
 .annoucement-bar-first {
   display: flex;
   gap: 40px;
-  /* background: #606d22; */
+  /* background: #7E0002; */
   justify-content: center;
   align-items: center;
   color: #fcfbf7;
@@ -59,7 +59,7 @@
   gap: 10px;
   border-radius: 2px;
   background-color: #fcfbf7;
-  color: #606d22;
+  color: #7E0002;
   font-family: Proxima Nova;
   font-size: 14px;
   font-weight: 600;
@@ -91,7 +91,7 @@
   display: none;
 }
 .background-green {
-  background: #606d22;
+  background: #7E0002;
 }
 
 .background-black {

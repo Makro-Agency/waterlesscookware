@@ -389,7 +389,7 @@ input:checked + .slider-toggle:before {
   font-weight: 600;
   line-height: 24px;
   margin: 0;
-  color: #606d22;
+  color: #7E0002;
 }
 
 /* product-css start  */
@@ -458,7 +458,7 @@ input:checked + .slider-toggle:before {
   line-height: 18px;
   padding: 1px 10px;
   border-radius: 100px;
-  background: #606d22;
+  background: #7E0002;
   text-decoration: none;
   color: #fcfbf7;
   display: inline-flex;
@@ -483,7 +483,7 @@ input:checked + .slider-toggle:before {
   width: fit-content;
   padding: 5px;
   border-radius: 100px;
-  background: #606d22;
+  background: #7E0002;
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -498,7 +498,7 @@ input:checked + .slider-toggle:before {
   display: none;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color: #606d22;
+  background-color: #7E0002;
   color: #fcfbf7;
   width: 100%;
   margin-top: 40px;

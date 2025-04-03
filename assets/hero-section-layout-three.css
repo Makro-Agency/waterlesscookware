@@ -51,7 +51,7 @@
 
 .hero-section-carousel-container .swiper-button-next,
 .hero-section-carousel-container .swiper-button-prev {
-  color: #606d22;
+  color: #7E0002;
   background: #fcfbf7;
   border-radius: 50%;
   width: 50px;
@@ -174,7 +174,7 @@
   display: inline-block;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color: #606d22;
+  background-color: #7E0002;
   color: #fcfbf7;
   width: 124px;
 }

@@ -11,7 +11,7 @@
 #catalog-product-slider .swiper-button-next,
 #catalog-product-slider .swiper-button-prev {
   color: #fcfbf7;
-  background: #606d22;
+  background: #7E0002;
   width: 50px;
   height: 50px;
   border-radius: 100px;
@@ -104,7 +104,7 @@
   display: flex;
   padding: 0px 0px 5px 0px;
   gap: 5px;
-  border-bottom: 3px solid #606d22;
+  border-bottom: 3px solid #7E0002;
 }
 
 .banner-text-catalog p {
@@ -166,7 +166,7 @@
   line-height: 18px;
   padding: 1px 10px;
   border-radius: 100px;
-  background: #606d22;
+  background: #7E0002;
   text-decoration: none;
   color: #fcfbf7;
   display: inline-flex;
@@ -191,7 +191,7 @@
   width: fit-content;
   padding: 5px;
   border-radius: 100px;
-  background: #606d22;
+  background: #7E0002;
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -211,7 +211,7 @@
   display: none;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color: #606d22;
+  background-color: #7E0002;
   color: #fcfbf7;
   width: 100%;
   margin-top: 40px;
