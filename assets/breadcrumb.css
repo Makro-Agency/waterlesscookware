@@ -1,6 +1,15 @@
 .breadcrumbs { list-style-type: none; padding: 0; margin:20px 0; display: flex; flex-wrap: wrap; align-items: center;  }
 .breadcrumbs .breadcrumbs-item { display: flex;    align-items: center; }
-.breadcrumbs .breadcrumbs-item, .breadcrumbs .breadcrumbs-item a { color: #73716E; font-size: 14px; font-weight: 600; line-height: 160%; text-decoration:none; text-transform:lowercase; }
+.breadcrumbs .breadcrumbs-item, .breadcrumbs .breadcrumbs-item a { 
+  text-decoration: none;
+    color: rgba(0, 0, 0, 0.60);
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: lowercase;
+}
 .breadcrumbs .breadcrumbs-item a:first-letter { text-transform:uppercase; }
 .breadcrumbs .breadcrumbs-item a.active{pointer-events: none;}
 
