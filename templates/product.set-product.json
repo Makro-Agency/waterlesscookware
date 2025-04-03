@@ -442,7 +442,7 @@
     "recommendations_C8H7DX": {
       "type": "recommendations",
       "settings": {
-        "heading": "<p>You May Also Like</p>",
+        "heading": "<p>You May Also</p><p>Like</p>",
         "heading_size": "h1",
         "products_to_show": 10,
         "columns_desktop": 4,
