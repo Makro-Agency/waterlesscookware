@@ -546,6 +546,7 @@
 .product-card-wrapper .card__inner .full-unstyled-link { width: 100%; position: absolute; top: 0; left: 0; height: 100%; z-index: 3; }
 
 .card__inner .size-options { display: flex; gap: 10px; }
+.makro-product--card .card--card.card--media>.card__content{ padding:2rem 1rem; }
   .card__inner .size-button { 
     border-radius: 10px; 
     /* box-shadow: 0 0 0 1px rgba(0, 0, 0, .05); */
