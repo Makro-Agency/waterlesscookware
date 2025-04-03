@@ -306,7 +306,7 @@
         "video_block_nrhPX9"
       ],
       "settings": {
-        "background_color": "#faf5eb",
+        "background_color": "#edede8",
         "main_heading": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
         "block_descrption": "Transform every home-cooked meal into a gourmet experience with 360 Cookware",
         "button_link": "",
@@ -344,11 +344,11 @@
         "faq_qNePbz"
       ],
       "settings": {
-        "bgcolor": "#faf5eb",
+        "bgcolor": "#edede8",
         "title": "Your Guide to Culinary Confidence",
         "des": "Find answers, explore tips, and discover the full potential of your 360 Cookware.",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     },
     "pdp_guide_VhfYGR": {
