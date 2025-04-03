@@ -106,10 +106,11 @@
 }
 
 .header-header-text {
-  font-family: Proxima Nova;
-  font-size: 12px;
-  font-weight: 600;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 18px;
+  color:#1a1a1a; 
 }
 
 .header-header-text-list ul {
