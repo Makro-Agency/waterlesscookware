@@ -165,8 +165,8 @@
 
 .product-card-wrapper .card__inner:hover .size-button{
     background: #fff;
-    /* color: #606d22; */
-    /* box-shadow: 0 0 0 1.5px #606d22; */
+    /* color: #7E0002; */
+    /* box-shadow: 0 0 0 1.5px #7E0002; */
 }
 
 @media screen and (min-width: 750px) {
@@ -567,7 +567,7 @@
   /* .card__inner .size-button:hover, */
 .card__inner .size-button.selected { 
   background:#fff; 
-  color: #606D22; 
+  color: #7E0002; 
   border: 2px solid;
 }
 .card__inner .size-button:hover{

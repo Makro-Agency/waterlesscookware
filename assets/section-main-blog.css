@@ -120,7 +120,7 @@
     background: rgba(0, 0, 0, 0.02);
     border-radius: 100px;
     align-items: center; }
-.article-tab ul li.active{   background: #606D22; }
+.article-tab ul li.active{   background: #7E0002; }
 .main-blog a.tab-link.active{ min-width:142px;   }
 .main-blog a.tab-link{     padding: 12px 25px; height:50px; 
     border-radius: 100px; min-width:181px;text-transform: capitalize; }

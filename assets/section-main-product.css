@@ -1663,8 +1663,8 @@ a.product__text {
  width:80px; height:80px; 
 }
 }
-.thumbnail[aria-current]{ box-shadow: 0 0 0 .2rem #606D22;
-    border-color: #606D22;
+.thumbnail[aria-current]{ box-shadow: 0 0 0 .2rem #7E0002;
+    border-color: #7E0002;
 }
 .thumbnailleft .thumbnail-list__item.slider__slide{ border-radius:15px; }
 .thumbnail{ border-radius:15px;}

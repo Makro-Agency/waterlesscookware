@@ -324,7 +324,7 @@ flex-direction: column;
 
 cart-remove-button .button { min-width: 1.6rem; min-height: 1.6rem; display: block; }
 cart-remove-button .button svg path[fill] { fill: #CCCBCB; }
-cart-remove-button .button:hover svg path[stroke] { stroke: #606D22; stroke-opacity: 1; }
+cart-remove-button .button:hover svg path[stroke] { stroke: #7E0002; stroke-opacity: 1; }
 
 .cart-product-text-inner dl { margin-block: 0; }
 .cart-product-text-inner .product-option:empty, 
@@ -646,7 +646,7 @@ color: #000000;
 .progress-bar {
   height: 5px;
   width: 25%;
-  background-color: #606D22;
+  background-color: #7E0002;
   border-radius: 5px 0 0 5px;
   transition: width 0.4s ease;
 }

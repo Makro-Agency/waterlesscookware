@@ -170,7 +170,7 @@
 		margin-left: -2px;
 		/* To center the line */
 		background-color: transparent;
-		border-left: 1px dashed #606D22;
+		border-left: 1px dashed #7E0002;
 		z-index: 1;
 	}
 
@@ -179,7 +179,7 @@
 		left: 50%;
 		width: 12px;
 		height: 12px;
-		background-color: #606D22;
+		background-color: #7E0002;
 		border-radius: 50%;
 		margin-left: -6px;
 		/* To center the dot on the line */
@@ -359,7 +359,7 @@
         top: -8% !important;
         width: 12px;
         height: 12px;
-        background-color: #606d22;
+        background-color: #7E0002;
         border-radius: 50%;
         margin-left: -6px;
         z-index: 4;
@@ -370,7 +370,7 @@
     height: 4px;
     top: 18px;
     background-color: transparent;
-    border-top: 1px dashed #606D22;
+    border-top: 1px dashed #7E0002;
     left: 18px;
     margin-left: -6px;
     z-index: 2;
@@ -385,10 +385,10 @@
 
 .dot:before{
       content: '';
-    /* border: 1px solid #606d22; */
+    /* border: 1px solid #7E0002; */
     position: absolute;
     top: -9px;
-    background-color: #606d22;
+    background-color: #7E0002;
     opacity: 0.1;
     width: 30px;
     height: 30px;

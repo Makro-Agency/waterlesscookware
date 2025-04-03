@@ -49,7 +49,7 @@
     color: #000;
   }
   .products-included-wrapper .product-included-lists .show-more-button {
-    color: #606D22;
+    color: #7E0002;
   font-size: 14px;
   font-weight: 600;
     cursor: pointer;
@@ -82,7 +82,7 @@
       height: 30px;
       display: inline-flex;
       align-items: center;
-      background: #606D22;
+      background: #7E0002;
       color: #FCFBF7;
       border-radius: 0px 15px 0px 15px;
       padding: 10px 12px 10px 16px;

@@ -80,7 +80,7 @@ span.title_text {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  background: #606d22;
+  background: #7E0002;
 }
 
 .need-help-box h3 {
@@ -111,7 +111,7 @@ span.title_text {
   width: 142px;
   height: 40px;
   background: #fcfbf7;
-  color: #606d22;
+  color: #7E0002;
   border-radius: 100px;
 
   font-family: Proxima Nova;
@@ -196,7 +196,7 @@ textarea::placeholder {
   border-radius: 100px;
   justify-content: center;
   align-items: center;
-  background: #606d22;
+  background: #7E0002;
   cursor:pointer;  
   font-family: Proxima Nova;
   font-size: 16px;

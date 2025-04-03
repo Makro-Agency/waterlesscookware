@@ -204,8 +204,8 @@ color:#1a1a1a;
   margin: 0 5px;
 }
 .product-swatches .swatch.size-swatch:hover{
-  border: 1px solid #606D22;
-  color: #606D22;
+  border: 1px solid #7E0002;
+  color: #7E0002;
 }
 
 
@@ -415,7 +415,7 @@ box-shadow: none;
 }
 .cart-drawer-show cart-drawer.drawer.is-empty a.button ,
 cart-items.is-empty a.button {
-    background: #606d22;
+    background: #7E0002;
     color: #fcfbf7;
     font-size: 16px;
     line-height: 100%;

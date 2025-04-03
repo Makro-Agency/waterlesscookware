@@ -2,7 +2,7 @@
 .template-article header ul .blog-meta{margin-right:10px;     display: flex;     background: var(--Secondary-Beige, #FAF5EB);
     align-items: center; padding: 4px 12px 4px 12px !important; border-radius:100px; }
 .template-article header ul.custom-meta li{list-style-type:none; }
-.blog-meta.Easy{ color:#606D22; }
+.blog-meta.Easy{ color:#7E0002; }
 .blog-meta.Medium{ color:#E6A817; }
 .blog-meta.Difficult{ color:#CE1B03; }
 
@@ -12,7 +12,7 @@ li.blog-meta.Easy:before{
     width: 4px;
     height: 4px;
     border-radius: 30px;
-    background-color:#606D22;
+    background-color:#7E0002;
       position: relative;
     top: -1px;
 }
@@ -111,7 +111,7 @@ background: var(--Secondary-Beige, #FAF5EB);
 }
 
 .template-article .product-button {
-    background-color:#606D22;
+    background-color:#7E0002;
     border: none;
     padding: 10px;
     cursor: pointer;

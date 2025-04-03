@@ -427,7 +427,7 @@
   .feature-item .feature-title{
       font-weight: 600;
       font-size: 16px;
-      color: #606D22;
+      color: #7E0002;
       margin: 10px 0 0 0;
   }
   .feature-item img{
@@ -900,7 +900,7 @@
   
   .meta-size-selector  .size-button.selected {
     background-color: transparent;
-    border: 2px solid #606D22;
+    border: 2px solid #7E0002;
     font-weight: 600;
   }
   .meta-size-selector  .size-button:hover{

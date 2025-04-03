@@ -1194,7 +1194,7 @@ summary .icon-caret {
 @media screen and (max-width: 989px) {
   .facets-container { grid-template-columns: 1fr 1fr; column-gap: 1rem; padding-top: 0; }
   .facets-container .product-count { grid-column: 1 / -1; text-align: left; }
-  .facets-container .product-count .product-count__text { font-size: 20px; font-style: normal; font-weight: 600; line-height: 120%; font-family: Cellofy; color: #606D22; }
+  .facets-container .product-count .product-count__text { font-size: 20px; font-style: normal; font-weight: 600; line-height: 120%; font-family: Cellofy; color: #7E0002; }
   .facets-container .active-facets { margin-bottom: 40px; }
 
   .facets-container>menu-drawer.mobile-facets__wrapper,
