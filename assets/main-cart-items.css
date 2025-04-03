@@ -700,6 +700,7 @@ max-width: calc(58% - 20px);
 grid-template-columns: 1fr;
 }
 }
+.cart__sales-points{ flex-wrap: wrap; }
 .cart-total, .cart-saving{    font-family:Manrope;
 font-size: 14px;
 font-style: normal;
@@ -737,9 +738,11 @@ letter-spacing: 0;
 font-weight: 500;
 font-size: 16px;
 line-height: 150%;
-letter-spacing: 0%;
+letter-spacing: 0;
 
 }
+.custom-switch-set{ background-color: #edede8 !Important; }
+.switch-btn, .add-btn-inner{ font-weight:500 !Important; letter-spacing: 0 !Important;  }
 @media only screen and (max-width: 999px) {
 /* .category-product-collection-first-inner {
 grid-template-columns: repeat(2, 1fr);
