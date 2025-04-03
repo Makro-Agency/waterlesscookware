@@ -219,8 +219,8 @@ body:not(.smart-cart--enabled) .product-form__submit {
 }
 
 .cart__ctas .cart__checkout-button.button{
-  background-color: #606D22;
-  border-color:#606D22;
+  background-color: #7E0002;
+  border-color:#7E0002;
   border-radius:100px;
   text-transform:capitalize;
 }

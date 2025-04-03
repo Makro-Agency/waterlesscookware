@@ -146,8 +146,19 @@ color:#FCFCFA;
 .shopify-section-header-sticky.scrolled-past-header  .header__icon .search-input::placeholder {
   color:#04232F;
 } 
+.cart-switch-set .custom-label{
+  font-family: Manrope;
+font-weight: 500;
+padding:8px 10px; 
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+color:#fafafc; 
+background-color:#7E0002; 
+}
 .header.index-header .header__icon--search{    border-bottom: 1px solid #ffffff; }
-
+.cart-drawer__footer>.totals>*, .totals.cart-subtotal-price .totals__subtotal-value{ color:#1a1a1a; }
  .shopify-section-header-sticky.scrolled-past-header .header__localization .disclosure .localization-form__select svg{ color:#04232F; }
 .shopify-section-header-sticky.scrolled-past-header  .header__icon svg{ color:#04232F; }
 .shopify-section-header-sticky.scrolled-past-header  .header.index-header .navbar_item > a{ color:#04232F; transition:all 0.3s linear; }
@@ -186,7 +197,7 @@ color:#FCFCFA;
         left: 0;
         right: 0; 
         transition: all 600ms ease-in-out;
-        padding: 16px 20px;
+   
                  }
     {% endif %}
    
@@ -241,6 +252,21 @@ color:#FCFCFA;
     padding-top: 1rem;
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
+  .custom-switch-set{
+    background:#EDEDE8; 
+  }
+  .cart-switch-set .price_root{   font-family: Manrope;
+font-weight: 500;
+font-size: 14px; color:#1a1a1a; letter-spacing:0;  }
+  .routine-product-text .switch-set-title{
+    font-family: Manrope;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0;
+color:#1a1a1a; 
+  }
+  .switch-btn, .add-btn-inner{ font-weight:500;    font-family: Manrope; }
     @media screen and (max-width: 1199px) {
 .header.index-header .header__icon--search{ border:none; } }
   @media screen and (min-width: 750px) {

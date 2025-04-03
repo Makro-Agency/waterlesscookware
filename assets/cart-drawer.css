@@ -8,26 +8,26 @@
   cart-drawer .drawer__inner { overflow-x: hidden !important; border-width: 0; --color-background: 252, 251, 247; }
 
 /* sale-point */
-  cart-drawer .cart__block--sales-point { background: #A6BB3A; padding-block: 10px; color: #fff; }
+  cart-drawer .cart__block--sales-point { background:#7E0002; padding-block: 10px; color: #fafafc; }
   cart-drawer .cart__block--sales-point path { stroke: currentColor; }
-  cart-drawer .cart__sales-point { font-weight: 700; text-transform: capitalize; }
+  cart-drawer .cart__sales-point { font-weight: 500; text-transform: capitalize; }
 /* sale-point */
 /* drawer header  */
   .cart-drawer .drawer__header { padding: 2.4rem 4rem; }
-  .cart-drawer .drawer__header .drawer__heading { margin-bottom: 0; font-size: 24px; line-height: 90%; text-transform: uppercase; }
+  .cart-drawer .drawer__header .drawer__heading { margin-bottom: 0; font-size: 24px; line-height: 90%; text-transform: uppercase; color:#1a1a1a; font-family:IBM Plex Serif;  }
   .cart-drawer .drawer__header .drawer__close { min-height: 1px; min-width: 1px; }
   .cart-drawer .drawer__header .drawer__close svg { height: 1.6rem; width: 1.6rem; color: #CCCBCB; }
   .cart-drawer .drawer__header .drawer__close path { stroke: currentColor; }
 /* drawer header  */
 /* drawer progressbar */
-  cart-drawer .drawer-progressbar { padding: 1.8rem 4rem; gap: 1rem; display: flex; flex-direction: column; background: #FAF5EB; }
+  cart-drawer .drawer-progressbar { padding: 1.8rem 4rem; gap: 1rem; display: flex; flex-direction: column; background: #EDEDE8; }
   .drawer-progressbar .progress-container { width: 100%; background-color: #0000000D; border-radius: 100px; height: 5px; position: relative; display: flex; align-items: center; }
-  .progress_shipping_icon { position: absolute; top: calc(50% - 1.3rem); width: 2.6rem; height: 2.6rem; display: inline-flex; padding: 0.6rem; border-radius: 100px; background: #EDE9DF;; right: 0; z-index: 1; color: #A6BB3A; }
+  .progress_shipping_icon { position: absolute; top: calc(50% - 1.3rem); width: 2.6rem; height: 2.6rem; display: inline-flex; padding: 0.6rem; border-radius: 100px; background: #EDE9DF;; right: 0; z-index: 1; color:#7e0002; }
   .progress_shipping_icon svg { display: block; width: 100%; height: 100%; }
-  .drawer-progressbar .progress-bar { height: 5px; width: 25%; background-color: #A6BB3A; border-radius: 5px 0 0 5px; transition: width 0.4s ease; }      
+  .drawer-progressbar .progress-bar { height: 5px; width: 25%; background-color: #7E0002; border-radius: 5px 0 0 5px; transition: width 0.4s ease; }      
   .drawer-progressbar-text { position: relative; padding-right: 3.1rem; }
-  .drawer-progressbar-text p { font-size: 14px; font-weight: 600; line-height: 1.5; margin: 0; }
-  .drawer-progressbar-text p span { color: #606D22; }
+  .drawer-progressbar-text p { font-size: 14px; font-weight: 500; line-height: 1.5; margin: 0; color:#1a1a1a;  }
+  .drawer-progressbar-text p span { color:#7E0002; }
 /* drawer progressbar  */
 
   .close-icon-drawer {
@@ -89,8 +89,9 @@
   .cart-drawer-main-product .cart-product-text-inner { gap: 0.4rem; }
   .cart-drawer-main-product .cart-product-text { gap: 20px; }
   .cart-item .product-option { color: rgba(var(--color-foreground), 0.4); }
-  .cart-item .cart-price-product .product-option { color: rgba(var(--color-foreground), 1); }
-  .cart-item .product-option dt { font-weight: 600; }
+  .cart-item .cart-price-product .product-option { color: #1a1a1a;  }
+  .cart-item .product-option dt { font-weight: 600; color:#1a1a1a; }
+  .cart-drawer .product-option dd{ color:#1a1a1a; }
   .cart-item[id*="CartDrawer-"] .price_root { font-size: 1.4rem; letter-spacing: normal; line-height: 1.5; }
   
   .drawer__cart-items-wrapper .card-header cart-remove-button { margin-left: auto; align-items: flex-start; }
@@ -124,7 +125,7 @@
   .details__disocunt .summary__title .icon-coupon { position: static; margin-right: 0.8rem; width: 1.6rem; height: 1.6rem; }
   .details__disocunt summary svg { position: absolute; top: calc(50% - 0.6rem); right: 0; }  
   .details__disocunt[open] summary svg .plus { opacity: 0; }
-  .details__disocunt .summary__title { font-size: 12px; font-weight: 700; line-height: 100%; text-transform: uppercase; color: #0D0D0D; display: flex; align-items: center; gap: 0; }
+  .details__disocunt .summary__title { font-size: 12px; font-weight: 700; line-height: 100%; text-transform: uppercase; color: #1a1a1a; display: flex; align-items: center; gap: 0; }
   
   .details__disocunt .limoniapps-discountninja-cartdiscountfield-placeholder:not(#id) { margin-bottom: 0; }
   .details__disocunt .limoniapps-discountninja-cartdiscountfield-inputandbutton:not(#id) input { padding-left: 15px; background-image: none; }
@@ -246,7 +247,7 @@ cart-drawer-items .routine-product-image-txt { gap: 2rem; }
   
   
   cart-drawer.drawer product-recommendations { padding: 2.4rem 4rem; background: #F7F6F2; display: block; }
-  cart-drawer.drawer .sectio-header .main_heading { font-size: 16px; text-transform: none; letter-spacing: normal; }  
+  cart-drawer.drawer .sectio-header .main_heading { font-size: 16px; font-weight:500;  text-transform: none; letter-spacing: normal; }  
   
   cart-drawer.drawer product-recommendations .card .yotpo,
   cart-drawer.drawer product-recommendations .card .custom-review-yotpo,
@@ -289,7 +290,7 @@ cart-drawer-items .routine-product-image-txt { gap: 2rem; }
   cart-drawer.drawer product-recommendations .card .price_b2b-true { display: flex; flex-direction: row-reverse; align-items: center; gap: 2rem; justify-content: flex-end; }
   cart-drawer.drawer product-recommendations .card .price__container--b2b { margin-top: 0; }
 
-  cart-drawer.drawer product-recommendations .card .price-item--regular { color: #0D0D0D; }
+  cart-drawer.drawer product-recommendations .card .price-item--regular { color: #1a1a1a; }
   cart-drawer.drawer product-recommendations .price--on-sale .price__sale { display: flex; flex-wrap: wrap; }
   cart-drawer.drawer product-recommendations .price--on-sale .price__sale>span:not([class]) { order: 1; }
   cart-drawer.drawer product-recommendations .price--on-sale .price__sale>.price-item { margin-right: 5px; }
