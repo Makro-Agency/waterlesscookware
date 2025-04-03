@@ -22,6 +22,9 @@
     line-height: 100%;
     letter-spacing: -0.02em;
 }
+.related-products__heading p {
+  margin:  0 0;
+}
 
 product-recommendations .cart-d-svg{ display: none; }
 
