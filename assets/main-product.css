@@ -895,7 +895,7 @@
     /* flex: 1 0 0; */
     max-width: calc(50% - 5px);
     border-radius: 100px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
+    border: 2px solid rgba(0, 0, 0, 0.10);
   }
   
   .meta-size-selector  .size-button.selected {
