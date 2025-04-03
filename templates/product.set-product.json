@@ -114,7 +114,7 @@
         "feature_media_Cwg4ij": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Vector_1_eb1f31c7-b1c5-482d-a00f-0e545e472613.svg",
+            "icon": "shopify://shop_images/microwave_1.svg",
             "title": "Oven Safe Up To 500°",
             "description": ""
           }
@@ -122,23 +122,23 @@
         "feature_media_B8QzPA": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/cold_7d76bd55-42e5-45ba-be4d-85c37211a62d.svg",
-            "title": "Long Lasting Performance",
+            "icon": "shopify://shop_images/cold_1.svg",
+            "title": "Stay Cool Long Handle",
             "description": ""
           }
         },
         "feature_media_j7QKNj": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Frame.svg",
-            "title": "Stainless Surgical Steel",
+            "icon": "shopify://shop_images/Capa_1_2.svg",
+            "title": "Induction Capable",
             "description": ""
           }
         },
         "feature_media_z9aUNP": {
           "type": "feature-media",
           "settings": {
-            "icon": "shopify://shop_images/Capa_1_1.svg",
+            "icon": "shopify://shop_images/Capa_1_3.svg",
             "title": "Handcrafted in the U.S.A",
             "description": ""
           }
