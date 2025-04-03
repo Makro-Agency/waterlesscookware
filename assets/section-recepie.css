@@ -36,7 +36,7 @@ li.blog-meta.Difficult:before{
 }
 
 .template-article header ul.custom-meta li{ 
-color: var(--Green, #606D22);
+color: #7E0002;
 /* Body Text Small / Medium */
 font-family: "Proxima Nova";
 font-size: 12px;

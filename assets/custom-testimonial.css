@@ -73,7 +73,7 @@ background: var(--Secondary-Beige, #FAF5EB);
 }
 
 .testimonial-container .author-title {
-	color: var(--Green, #606D22);
+	color: #7E0002;
 	/* Body Text Small / Medium */
 	font-family: "Proxima Nova";
 	font-size: 12px;
@@ -90,7 +90,7 @@ background: var(--Secondary-Beige, #FAF5EB);
 }
 
 .testimonial-container .author-sign {
-    color: var(--Green, #606D22);
+    color: #7E0002;
     font-family: Hurricane;
     font-size: 32px;
     font-style: normal;

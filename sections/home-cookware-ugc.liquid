@@ -243,11 +243,29 @@ color:#5F0001;
           </div>
           <template>
             {%- if block.settings.video == blank and block.settings.video_url != blank -%}
-              <iframe
-                src="{{ block.settings.video_url | append: '?autoplay=1' }}"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-              ></iframe>
+         {% assign video_url = block.settings.video_url %}
+
+{% if video_url contains "youtube.com" or video_url contains "youtu.be" %}
+  {% assign video_id = video_url | replace: "https://www.youtube.com/watch?v=", "" | replace: "https://youtu.be/", "" | split: "&" | first %}
+  {% assign embed_url = "https://www.youtube.com/embed/" | append: video_id %}
+{% elsif video_url contains "vimeo.com" %}
+  {% assign video_id = video_url | replace: "https://vimeo.com/", "" %}
+  {% assign embed_url = "https://player.vimeo.com/video/" | append: video_id %}
+{% else %}
+  {% assign embed_url = "" %}
+{% endif %}
+
+{% if embed_url != "" %}
+  <iframe
+    src="{{ embed_url | append: '?autoplay=1' }}"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    width="560"
+    height="315">
+  </iframe>
+{% else %}
+  <p>Please enter a valid YouTube or Vimeo URL.</p>
+{% endif %}
             {%- else -%}
               {{
                 block.settings.video
