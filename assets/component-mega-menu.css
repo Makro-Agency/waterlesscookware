@@ -15,7 +15,11 @@
   right: 0;
   top: 100%;
 }
-
+.header-wrap-title p, .header-wrap-para p{ color:#1a1a1a; font-weight:500; font-family: Manrope;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  }
 .shopify-section-header-sticky .mega-menu__content {
   max-height: calc(100vh - var(--header-bottom-position-desktop, 20rem) - 4rem);
 }

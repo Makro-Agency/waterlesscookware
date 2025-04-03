@@ -79,11 +79,23 @@ a:hover{
     padding: 5px;
     margin-bottom: 10px;
 }
-.cmn-menu-product:hover
-{
-  background:#EDEDE8;
-  color: #1a1a1a;
+@media screen and (min-width:768px){
+  .cmn-menu-product:hover
+  {
+    background:#EDEDE8;
+    color: #1a1a1a;
+  }
 }
+.makro-product-carousel-wrapper .card-descc{
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color:rgb(0,0,0, 0.4);
+}
+
+
 .cmn-menu-product .boxhover-bg, .category-image-text-link, .image-width-text-header{ transition:all 0.3s linear; }
 /* slider nav */
 .makro-product-carousel-wrapper .slide-nav .nav-btn{

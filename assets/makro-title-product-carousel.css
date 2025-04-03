@@ -52,7 +52,7 @@ a.button.cta_button.small-hide.medium-hide.top-button-class{ display:none; }
 .makro-product--card .card__inner .card__media img { border-radius: 15px; }
 .makro-product--card .ratio::before { padding-bottom: var(--ratio-percent); min-height: 316px; }
 .makro-product--card .card__inner .card__media .placeholder-svg, .makro-product--card .card__inner .card__media .img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-.makro-product--card .card__content .card__information { padding-top: 20px; padding-bottom: 20px; }
+.makro-product--card .card__content .card__information { padding-top: 0px; padding-bottom: 20px; }
 .makro-product--card .card__heading { font-family: Manrope;
   font-weight: 500;
   font-size: 16px;
