@@ -172,7 +172,7 @@
         "video_block_XqgKRn": {
           "type": "video_block",
           "settings": {
-            "enable_video_looping": false,
+            "enable_video_looping": true,
             "video_url": "https://vimeo.com/1015538731?share=copy",
             "video_url_mobile": "https://vimeo.com/1015538731?share=copy",
             "cover_image": "shopify://shop_images/Image_68.png",
@@ -187,7 +187,7 @@
         "video_block_C9qpfJ": {
           "type": "video_block",
           "settings": {
-            "enable_video_looping": false,
+            "enable_video_looping": true,
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "video_url_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/Image_69.png",
@@ -195,7 +195,7 @@
             "reviews_image": "shopify://shop_images/Frame_6176_3.png",
             "auther_message": "Can’t say enough good things about it! Highly recommend!",
             "auther_image": "shopify://shop_images/Frame_5627_4.png",
-            "auther_name": "Eileen M.",
+            "auther_name": "Alan B.",
             "auther_verification": "Verified Buyer"
           }
         }
