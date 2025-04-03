@@ -1,7 +1,7 @@
 .products-included-wrapper {
     padding: 40px 20px 20px;
       border-radius: 15px;
-      background: #FAF5EB;
+      background: #EDEDE8;
     position: relative;
     margin: 40px 0 20px 0;
   }
@@ -28,7 +28,6 @@
   }
   .products-included-wrapper .product-included-lists .pro-title {
     margin: 0 0 0 0;
-    font-family: Proxima Nova;
   }
   .products-included-wrapper .product-included-lists  .price__sale .price-item--sale{
       font-style: normal;
