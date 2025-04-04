@@ -22,7 +22,7 @@
 .newsletter__wrapper > * + .newsletter-form {
   margin-top: 3rem;
 }
-
+.new-newsletter .newsletter__wrapper .main_heading.inline-richtext{ font-size:48px; }
 .newsletter__subheading {
   max-width: 70rem;
   margin-left: auto;

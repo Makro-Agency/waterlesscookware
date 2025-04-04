@@ -465,7 +465,7 @@ background-color: #FCFBF7;
 }
 
 /* global css end */
-
+.template-article .article-template .article-template__social-sharing span svg path{ stroke: #7E0002; }
 @media screen and (min-width: 990px) and (max-width: 1199px) {
 .xl-medium-hide {
   display: none !important;

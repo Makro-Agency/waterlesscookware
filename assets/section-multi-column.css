@@ -7,14 +7,11 @@
 @media screen and (max-width:767px){
 .section-multi-column{ padding-top:14rem; } }
 .section-multi-column .section-title {
-	color: var(--Black, #0D0D0D);
-	/* Header 02 */
-	font-family: Cellofy;
+	color: #1a1a1a; 
 	font-size: 40px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 100%;
-	/* 40px */
 	letter-spacing: -0.8px;
 	margin-bottom: 30px;
 	text-align: left;
@@ -23,8 +20,7 @@
 
 .section-multi-column .section-description {
 	text-align: left;
-	color: var(--Black, #0D0D0D);
-	font-family: "Proxima Nova";
+	color: #1a1a1a; 
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -62,18 +58,16 @@ p.section-description1{ margin-top:0; }
 .section-multi-column .grid-title {
 
 	margin: 30px 0 0px;
-	color: var(--Black, #0D0D0D);
-	font-family: Cellofy;
+	color: #1a1a1a; 
 	font-size: 24px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 120%;
 	letter-spacing: -0.48px;
 }
 
 .section-multi-column .grid-text {
-	color: var(--Black, #0D0D0D);
-	font-family: "Proxima Nova";
+	color: #1a1a1a; 
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;

@@ -5,7 +5,7 @@
   <div class="process-container">
       <div class="desktop-hide">
        <div class="icon">
-         <img src="{{ section.settings.svgicon | img_url:'' }}">
+           {{ section.settings.svg_icon | raw }}
       </div>
       <h2>{{ section.settings.title }}</h2>
     </div>
@@ -24,7 +24,7 @@
     
     <div class="center-item">
       <div class="icon">
-        <img src="{{ section.settings.svgicon | img_url:'' }}">
+        {{ section.settings.svg_icon | raw }}
       </div>
       <h2>{{ section.settings.title }}</h2>
     </div>
@@ -51,11 +51,12 @@
       "id": "title",
       "label": "Title"
     },
-     {
-      "type": "image_picker",
-      "id": "svgicon",
-      "label": "SVG Icon"
-    }
+   {
+  "type": "textarea",
+  "label": "SVG Icon",
+  "id": "svg_icon",
+  "default": "<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' /></svg>"
+}
   ],
   "blocks": [
     {
