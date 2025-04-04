@@ -8,6 +8,7 @@
 	padding: 15rem 20px;
 
 }
+.manufacturing-process-section .center-item .icon svg path{ fill:#7E0002 !important; }
  .process-item p{ max-width:330px;}
 @media screen and (max-width:989px){
   .process-container{ display:flex; flex-direction:column; 
