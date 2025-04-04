@@ -28,7 +28,7 @@
   }
   
   .why-video-header-text-inner-first span {
-    font-family: Hurricane;
+    font-family: Ephesis; 
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
@@ -41,7 +41,6 @@
     margin: 0;
     font-family: IBM Plex Serif;
     font-size: 40px;
-    font-weight: 600;
     line-height: 40px;
     letter-spacing: -0.02em;
     color:  #1A1A1A;
@@ -72,7 +71,6 @@
     color:  #1A1A1A;
     font-family: IBM Plex Serif;
     font-size: 24px;
-    font-weight: 600;
     line-height: 28.8px;
     letter-spacing: -0.02em;
   }

@@ -220,7 +220,6 @@
   color:  #1A1A1A;
   font-family: IBM Plex Serif;
   font-size: 40px;
-  font-weight: 600;
   line-height: 40px;
   letter-spacing: -0.02em;
   margin: 0;
@@ -248,7 +247,6 @@
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  font-weight: 700;
   line-height: 24px;
 }
 
