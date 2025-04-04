@@ -52,7 +52,7 @@
           }
   
           .shipping-container h1 {
-             color: var(--Black, #0D0D0D);
+             color: #1A1A1A;
             font-size: 60px;
             font-style: normal;
             font-weight: 600;
