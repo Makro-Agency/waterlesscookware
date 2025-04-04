@@ -5,11 +5,10 @@
   }
   
    .cookware-new-section .card-content .desc{ max-width:300px; height:fit-content; 
-       color: var(--Black, #0D0D0D);
-  font-family: Cellofy;
+       color: #1a1a1a; 
   font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 120%; /* 24px */                                     
                                             }
   .cookware-new-section .card-content{ margin-top:0px; height:fit-content; margin-right:0px; padding:30px; border-radius: 15px;
@@ -21,11 +20,10 @@ background: var(--gray-tones-black-2, rgba(0, 0, 0, 0.02));  }
   .cookware-new-section .video-group-wrapper1{ margin-top:6rem; }
   .cookware-new-section .main_heading{
        max-width:330px;
-        color: var(--Black, #0D0D0D);
-      font-family: Cellofy;
+        color: #1a1a1a; 
       font-size: 40px;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 100%;
       letter-spacing: -0.8px;
   }

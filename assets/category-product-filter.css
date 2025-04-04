@@ -75,14 +75,18 @@
   flex-direction: column;
   gap: 25px;
 }
-
+.category-toggle-stock, .category-toggle-sale{ color:#1a1a1a; }
 .category-filter h5 {
   font-family: "IBM Plex Serif";
   font-size: 20px;
-  font-weight: 600;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 100%;
   margin: 0;
+<<<<<<< HEAD
+  color:#1a1a1a;
+=======
   color: #1A1A1A;
+>>>>>>> 740ecad0d703f6d9c84434234d450a558f307467
 }
 
 .category-toggle {
@@ -364,9 +368,9 @@ input:checked + .slider-toggle:before {
 }
 
 .sort label {
-  font-family: Proxima Nova;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
+  color:#1a1a1a; 
   line-height: 24px;
   text-align: left;
 }
@@ -384,10 +388,10 @@ input:checked + .slider-toggle:before {
 }
 
 .header-sort-main {
-  font-family: Cellofy;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 24px;
+  letter-spacing:0; 
   margin: 0;
   color: #7E0002;
 }
@@ -568,11 +572,10 @@ custom-price-blocks .facets__list {
 
 .facets__summary-label{
   margin: 0;
-  font-family: Proxima Nova;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  color: #0d0d0d;
+  line-height: 100%;
+  color: #1a1a1a;
 }
 
 .template-collection ul.list-unstyled {

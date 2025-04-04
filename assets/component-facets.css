@@ -21,8 +21,8 @@
   justify-content: space-between;
 }
 /* updated code */
-span.facet-checkbox__text{ color:#0d0d0d; }
-.facet-checkbox{ color:#0d0d0d;  }
+span.facet-checkbox__text{ color:#1a1a1a; }
+.facet-checkbox{ color:#1a1a1a;   }
 
 @media screen and (min-width: 750px) {
   .facets-container > * + * {
@@ -410,11 +410,12 @@ button.facets__button {
 }
 
 span.active-facets__button-inner {
-  color: rgb(var(--color-foreground));
+  color:#1a1a1a; 
   box-shadow: 0 0 0 0.1rem rgb(var(--color-foreground));
   border-radius: 2.6rem;
   font-size: 1rem;
   min-height: 0;
+  letter-spacing:0; 
   min-width: 0;
   padding: 0.5rem 1rem;
   display: flex;

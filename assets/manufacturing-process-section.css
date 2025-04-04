@@ -47,6 +47,7 @@
 		justify-content: center;
 		background-size: contain;
 		margin-bottom: 30px;
+
 		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Group_8.png?v=1725537059');
 	}
 
@@ -97,11 +98,10 @@
 }
 
 .process-item h3 {
-	color: var(--Black, #0D0D0D);
-	font-family: Cellofy;
+	color: #1a1a1a; 
 	font-size: 24px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 120%;
 	letter-spacing: -0.48px;
 	margin-top: 4rem;
@@ -109,9 +109,8 @@
 }
 
 .process-item-1 p {
-	color: var(--Black, #0D0D0D);
+	color: #1a1a1a; 
 	/* Body Text Large / Regular */
-	font-family: "Proxima Nova";
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -161,10 +160,11 @@
 	position: absolute;
 	width: 460px;
 	height: 460px;
-	background-image: url(https://cdn.shopify.com/s/files/1/0622/1937/files/Group_8.png?v=1725537059);
+	mask-image: url(https://cdn.shopify.com/s/files/1/0622/1937/files/Group_8.png?v=1725537059);
 	/* border-radius: 50%; */
-	background-size: contain;
-	background-repeat: no-repeat;
+	mask-size: contain;
+	background-color:#7E0002;
+	mask-repeat: no-repeat;
     z-index:2;
 }
 
@@ -175,13 +175,13 @@
 }
 
 .center-item h2 {
-	color: var(--Black, #0D0D0D);
+color:#1a1a1a; 
+letter-spacing:0; 
 	text-align: center;
 	/* Header 03 */
-	font-family: Cellofy;
 	font-size: 32px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 120%;
 	/* 38.4px */
 	letter-spacing: -0.64px;
@@ -213,10 +213,11 @@
 		position: absolute;
 		width: 460px;
 		height: 460px;
-		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1.png?v=1725538345');
+		mask-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1.png?v=1725538345');
+		background-color:#7E0002;
 		/* border-radius: 50%; */
-		background-size: contain;
-		background-repeat: no-repeat;
+		mask-size: contain;
+		mask-repeat: no-repeat;
 		top: 0;
 	}
 
@@ -233,12 +234,13 @@
 		position: absolute;
 		width: 460px;
 		height: 460px;
-		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1_b1c0577c-bd35-477d-ab10-9449810ebd4c.png?v=1725538721');
+		mask-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1_b1c0577c-bd35-477d-ab10-9449810ebd4c.png?v=1725538721');
 		/* border-radius: 50%; */
-		background-size: contain;
-		background-repeat: no-repeat;
+		mask-size: contain;
+		mask-repeat: no-repeat;
 		top: 0;
 		left: -132px;
+		background-color:#7E0002;
 	}
 
 	.process-item.process-item-3:after {
@@ -246,12 +248,13 @@
 		position: absolute;
 		width: 460px;
 		height: 442px;
-		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1_b1c0577c-bd35-477d-ab10-9449810ebd4c.png?v=1725538721');
+		mask-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1_b1c0577c-bd35-477d-ab10-9449810ebd4c.png?v=1725538721');
 		/* border-radius: 50%; */
-		background-size: contain;
-		background-repeat: no-repeat;
+		mask-size: contain;
+		mask-repeat: no-repeat;
 		top: 0;
-		left: -125px;
+		left: -118px;
+		background-color:#7E0002;
 	}
 
 	.process-item.process-item-4:after {
@@ -259,17 +262,18 @@
 		position: absolute;
 		width: 460px;
 		height: 442px;
-		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1.png?v=1725538345');
+		mask-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Vector_1.png?v=1725538345');
 		/* border-radius: 50%; */
-		background-size: contain;
-		background-repeat: no-repeat;
+		mask-size: contain;
+		mask-repeat: no-repeat;
 		top: 0;
-      left:25px; 
+      left:10px; 
+	  background-color:#7E0002;
 	}
 
 }
 @media screen and (min-width:1258px) and (max-width:1539px) {
-  .process-item.process-item-4:after{ left:14px; }
+  .process-item.process-item-4:after{ left:1px; }
 .process-item.process-item-3:after{ left:-104px;} }
 @media screen and (min-width:990px) {
 
@@ -324,9 +328,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-size: contain;
+		mask-size: contain;
+		background-color:#7E0002;
 		margin-bottom: 30px;
-		background-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Group_8.png?v=1725537059');
+		mask-image: url('https://cdn.shopify.com/s/files/1/0622/1937/files/Group_8.png?v=1725537059');
 	}
 
 	.process-container {
