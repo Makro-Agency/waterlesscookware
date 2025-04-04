@@ -294,24 +294,21 @@ flex-direction: column;
   justify-content: space-between;
 }
 .sub-totals{
-  color: var(--Black, #0D0D0D);
-  font-family: "Proxima Nova";
+  color: #1A1A1A;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 .totals__subtotal-value.common_h2 .h2{
-  color: var(--Black, #0D0D0D);
+  color: #1A1A1A;
   text-align: right;
-  font-family: "Proxima Nova";
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
 }
 .card-subtotal-txt p{
-  color: var(--gray-tones-black-40, rgba(0, 0, 0, 0.40));
-  font-family: "Proxima Nova";
+  color: #1A1A1A;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -428,7 +425,7 @@ border: none;
 outline: none;
 background: transparent;
 }
-.cart-button .cart-input { margin-inline: -10px; }
+.cart-button .cart-input { margin-inline: -10px; font-family: 'Manrope';}
 
 .cart-button-price {
 display: flex;
@@ -896,8 +893,7 @@ gap: 10px;
 /* cart redesign css */
 
 .template-cart .title--primary{
-    color: var(--Black, #0D0D0D);
-    font-family: Cellofy;
+    color: #1A1A1A;
     font-size: 40px;
     font-style: normal;
     font-weight: bold !important;
