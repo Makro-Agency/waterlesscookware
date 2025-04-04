@@ -1483,9 +1483,9 @@ a.product__text {
     width: 100%;
   }
 }
-
+html .template-product .product-media-container .product__modal-opener,
 .product-media-container .product__modal-opener {
-  display: block;
+  display: block !important;
   position: relative;
 }
 
