@@ -344,7 +344,7 @@
         "collection_CnpjAp": {
           "type": "collection",
           "settings": {
-            "collection": "all-1",
+            "collection": "accessories",
             "collection_title": "Sauté Pans"
           }
         },
