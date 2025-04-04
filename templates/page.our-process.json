@@ -264,9 +264,9 @@
             "enable_video_looping": false,
             "cover_image": "shopify://shop_images/Image_fd1d78c0-d7b0-4c5b-8f8b-ed2f2f8a74c7.png",
             "cover_image_mobile": "shopify://shop_images/Image_fd1d78c0-d7b0-4c5b-8f8b-ed2f2f8a74c7_1.png",
-            "reviews_image": "shopify://shop_images/reviews_64e638d0-51f8-451c-a82a-1fcdda2e389c.png",
+            "reviews_image": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "auther_message": "“I've cooked with this cookware for over 15 years, and it still looks as good as the day I bought it. My husband and I cook all our meals at home, and we are constantly amazed at how easy it is to clean up after even the stickiest of meals.”",
-            "auther_image": "shopify://shop_images/check-verified_3.svg",
+            "auther_image": "shopify://shop_images/photo_middle_age_woman_avatar_8.png",
             "auther_name": "Debbie K.",
             "auther_verification": "Verified Buyer",
             "prod": "1-3-4-quart-saucepan"
@@ -278,9 +278,9 @@
             "enable_video_looping": false,
             "cover_image": "shopify://shop_images/Image_a8ec91ee-be91-4027-a443-b559b2fd82e5.png",
             "cover_image_mobile": "shopify://shop_images/Image_a8ec91ee-be91-4027-a443-b559b2fd82e5_1.png",
-            "reviews_image": "shopify://shop_images/reviews_64e638d0-51f8-451c-a82a-1fcdda2e389c.png",
+            "reviews_image": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "auther_message": "\"The quality of these pans is unmatched. They heat evenly, clean up easily, and have made cooking a joy again. Plus, knowing they're made in the USA with sustainable practices makes me feel good about my purchase.\"",
-            "auther_image": "shopify://shop_images/check-verified_3.svg",
+            "auther_image": "shopify://shop_images/Frame_5627_4.png",
             "auther_name": "Michael R.",
             "auther_verification": "Verified Buyer",
             "prod": "1-quart-saucepan"
@@ -292,9 +292,9 @@
             "enable_video_looping": false,
             "cover_image": "shopify://shop_images/LumixSync_copy_2023-01-05_20_28_43_0000JpegFile_1.png",
             "cover_image_mobile": "shopify://shop_images/LumixSync_copy_2023-01-05_20_28_43_0000JpegFile_1_1.png",
-            "reviews_image": "shopify://shop_images/reviews_64e638d0-51f8-451c-a82a-1fcdda2e389c.png",
+            "reviews_image": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "auther_message": "“As a nutritionist, I'm thrilled to recommend 360 Cookware to my clients. It's the perfect blend of safe, non-toxic materials and superior cooking performance. My family enjoys healthier, more flavorful meals without worrying about harmful chemicals leaching into our food.”",
-            "auther_image": "shopify://shop_images/check-verified_3.svg",
+            "auther_image": "shopify://shop_images/photo_middle_age_woman_avatar_8.png",
             "auther_name": "Sarah M.",
             "auther_verification": "Verified Buyer",
             "prod": "1-quart-sauce-pan-with-cover"
@@ -321,7 +321,7 @@
         "image_gKw8id": {
           "type": "image",
           "settings": {
-            "icon_svg": "shopify://shop_images/Frame_6175_1_3.svg",
+            "icon_svg": "shopify://shop_images/Frame_6175_5.png",
             "title": "Unwavering Quality",
             "description": "We commit to maintaining the highest standards of craftsmanship, ensuring each piece of 360 Cookware is built to last a lifetime."
           }
@@ -329,7 +329,7 @@
         "image_NTRckY": {
           "type": "image",
           "settings": {
-            "icon_svg": "shopify://shop_images/Frame_6177.svg",
+            "icon_svg": "shopify://shop_images/Frame_6177_1.png",
             "title": "Environmental Stewardship",
             "description": "We promise to uphold and expand our eco-friendly practices, minimizing our environmental impact in all aspects of our business."
           }
@@ -337,7 +337,7 @@
         "image_NwRjeE": {
           "type": "image",
           "settings": {
-            "icon_svg": "shopify://shop_images/Frame_6178.svg",
+            "icon_svg": "shopify://shop_images/Frame_6178_1.png",
             "title": "Continued Innovation",
             "description": "We pledge to continually innovate our products and processes, always seeking ways to improve performance and sustainability."
           }
@@ -345,7 +345,7 @@
         "image_E8AGiU": {
           "type": "image",
           "settings": {
-            "icon_svg": "shopify://shop_images/Frame_6176.svg",
+            "icon_svg": "shopify://shop_images/Frame_6176_4.png",
             "title": "Community Support",
             "description": "We commit to supporting local communities through job creation and sustainable manufacturing practices."
           }
@@ -353,42 +353,42 @@
         "image_row_tzPmxd": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Made in USA"
           }
         },
         "image_row_WYWkXJ": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Eco-Friendly"
           }
         },
         "image_row_qXNXnx": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Lifetime Quality"
           }
         },
         "image_row_eL48Gt": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Non-Toxic"
           }
         },
         "image_row_eNXiND": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Made in USA"
           }
         },
         "image_row_R9tRjy": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Family-Owned"
           }
         }
@@ -406,7 +406,7 @@
         "image_row_R9tRjy"
       ],
       "settings": {
-        "bgcolor": "#faf5eb",
+        "bgcolor": "#edede8",
         "sub_title": "Sustainability Commitments",
         "main_title": "Our Commitment to America and the Planet",
         "cta_link": "shopify://collections",
@@ -487,7 +487,7 @@
         "email_form_JdijyD"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
