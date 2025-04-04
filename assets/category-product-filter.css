@@ -82,7 +82,11 @@
   font-weight: 400;
   line-height: 100%;
   margin: 0;
+<<<<<<< HEAD
   color:#1a1a1a;
+=======
+  color: #1A1A1A;
+>>>>>>> 740ecad0d703f6d9c84434234d450a558f307467
 }
 
 .category-toggle {

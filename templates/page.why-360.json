@@ -24,21 +24,21 @@
         "icon_text_6XgBTt": {
           "type": "icon_text",
           "settings": {
-            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M16.6446 7.35534L16.6406 7.35134L16.6487 7.35938L16.6446 7.35534ZM16.6446 7.35534C17.6743 8.38087 19.3193 8.42038 20.2984 7.44129L23.25 10.3929L10.3929 23.25L7.44129 20.2984C8.42165 19.3181 8.37273 17.6781 7.3433 16.6487C6.31387 15.6192 4.67388 15.5703 3.69352 16.5507L0.75 13.6071L13.6071 0.75L16.5587 3.70157C15.5796 4.68065 15.6111 6.31765 16.6446 7.35534Z\" stroke=\"#A6BB3A\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M16.6446 7.35534L16.6406 7.35134L16.6487 7.35938L16.6446 7.35534ZM16.6446 7.35534C17.6743 8.38087 19.3193 8.42038 20.2984 7.44129L23.25 10.3929L10.3929 23.25L7.44129 20.2984C8.42165 19.3181 8.37273 17.6781 7.3433 16.6487C6.31387 15.6192 4.67388 15.5703 3.69352 16.5507L0.75 13.6071L13.6071 0.75L16.5587 3.70157C15.5796 4.68065 15.6111 6.31765 16.6446 7.35534Z\" stroke=\"#5F0001\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
             "text": "Unparalleled Performance"
           }
         },
         "icon_text_K6Ac8E": {
           "type": "icon_text",
           "settings": {
-            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.24112 11.6065L11.1923 14.6509L16.3284 9.35947M22.5 12C22.5 13.3151 20.6464 14.247 20.1701 15.3861C19.6938 16.5251 20.3151 18.534 19.4246 19.4246C18.534 20.3151 16.5666 19.6834 15.3861 20.1701C14.2056 20.6568 13.3151 22.5 12 22.5C10.6849 22.5 9.75296 20.6465 8.6139 20.1701C7.47485 19.6938 5.46598 20.3151 4.57544 19.4246C3.68491 18.534 4.31657 16.5666 3.82988 15.3861C3.3432 14.2056 1.5 13.3151 1.5 12C1.5 10.6849 3.35355 9.75296 3.82988 8.61391C4.30621 7.47486 3.68491 5.46597 4.57544 4.57544C5.46598 3.68491 7.43343 4.31657 8.6139 3.82988C9.79438 3.34319 10.6849 1.5 12 1.5C13.3151 1.5 14.247 3.35355 15.3861 3.82988C16.5251 4.30621 18.534 3.68491 19.4246 4.57544C20.3151 5.46597 19.6834 7.43344 20.1701 8.61391C20.6568 9.79438 22.5 10.6849 22.5 12Z\" stroke=\"#A6BB3A\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.24112 11.6065L11.1923 14.6509L16.3284 9.35947M22.5 12C22.5 13.3151 20.6464 14.247 20.1701 15.3861C19.6938 16.5251 20.3151 18.534 19.4246 19.4246C18.534 20.3151 16.5666 19.6834 15.3861 20.1701C14.2056 20.6568 13.3151 22.5 12 22.5C10.6849 22.5 9.75296 20.6465 8.6139 20.1701C7.47485 19.6938 5.46598 20.3151 4.57544 19.4246C3.68491 18.534 4.31657 16.5666 3.82988 15.3861C3.3432 14.2056 1.5 13.3151 1.5 12C1.5 10.6849 3.35355 9.75296 3.82988 8.61391C4.30621 7.47486 3.68491 5.46597 4.57544 4.57544C5.46598 3.68491 7.43343 4.31657 8.6139 3.82988C9.79438 3.34319 10.6849 1.5 12 1.5C13.3151 1.5 14.247 3.35355 15.3861 3.82988C16.5251 4.30621 18.534 3.68491 19.4246 4.57544C20.3151 5.46597 19.6834 7.43344 20.1701 8.61391C20.6568 9.79438 22.5 10.6849 22.5 12Z\" stroke=\"#5F0001\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
             "text": "Healthier Cooking"
           }
         },
         "icon_text_ftVAdj": {
           "type": "icon_text",
           "settings": {
-            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 14.8125C8.8934 14.8125 6.375 12.2941 6.375 9.18748V3.97915C6.375 3.59117 6.375 3.39718 6.43154 3.24184C6.52632 2.98143 6.73145 2.7763 6.99186 2.68152C7.14719 2.62498 7.34118 2.62498 7.72917 2.62498H16.2708C16.6588 2.62498 16.8528 2.62498 17.0081 2.68152C17.2685 2.7763 17.4737 2.98143 17.5685 3.24184C17.625 3.39718 17.625 3.59117 17.625 3.97915V9.18749C17.625 12.2941 15.1066 14.8125 12 14.8125ZM12 14.8125V17.625M17.625 4.49998H19.9688C20.4056 4.49998 20.624 4.49998 20.7963 4.57135C21.026 4.6665 21.2085 4.84901 21.3036 5.07872C21.375 5.251 21.375 5.46941 21.375 5.90623V6.37498C21.375 7.24683 21.375 7.68276 21.2792 8.04041C21.0191 9.01098 20.261 9.76909 19.2904 10.0292C18.9328 10.125 18.4968 10.125 17.625 10.125M6.375 4.49998H4.03125C3.59443 4.49998 3.37602 4.49998 3.20373 4.57135C2.97402 4.6665 2.79151 4.84901 2.69636 5.07872C2.625 5.251 2.625 5.46941 2.625 5.90623V6.37498C2.625 7.24683 2.625 7.68276 2.72083 8.04041C2.9809 9.01098 3.739 9.76909 4.70957 10.0292C5.06723 10.125 5.50315 10.125 6.375 10.125M7.72917 21.375H16.2708C16.501 21.375 16.6875 21.1884 16.6875 20.9583C16.6875 19.1174 15.1951 17.625 13.3542 17.625H10.6458C8.80488 17.625 7.3125 19.1174 7.3125 20.9583C7.3125 21.1884 7.49905 21.375 7.72917 21.375Z\" stroke=\"#A6BB3A\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 14.8125C8.8934 14.8125 6.375 12.2941 6.375 9.18748V3.97915C6.375 3.59117 6.375 3.39718 6.43154 3.24184C6.52632 2.98143 6.73145 2.7763 6.99186 2.68152C7.14719 2.62498 7.34118 2.62498 7.72917 2.62498H16.2708C16.6588 2.62498 16.8528 2.62498 17.0081 2.68152C17.2685 2.7763 17.4737 2.98143 17.5685 3.24184C17.625 3.39718 17.625 3.59117 17.625 3.97915V9.18749C17.625 12.2941 15.1066 14.8125 12 14.8125ZM12 14.8125V17.625M17.625 4.49998H19.9688C20.4056 4.49998 20.624 4.49998 20.7963 4.57135C21.026 4.6665 21.2085 4.84901 21.3036 5.07872C21.375 5.251 21.375 5.46941 21.375 5.90623V6.37498C21.375 7.24683 21.375 7.68276 21.2792 8.04041C21.0191 9.01098 20.261 9.76909 19.2904 10.0292C18.9328 10.125 18.4968 10.125 17.625 10.125M6.375 4.49998H4.03125C3.59443 4.49998 3.37602 4.49998 3.20373 4.57135C2.97402 4.6665 2.79151 4.84901 2.69636 5.07872C2.625 5.251 2.625 5.46941 2.625 5.90623V6.37498C2.625 7.24683 2.625 7.68276 2.72083 8.04041C2.9809 9.01098 3.739 9.76909 4.70957 10.0292C5.06723 10.125 5.50315 10.125 6.375 10.125M7.72917 21.375H16.2708C16.501 21.375 16.6875 21.1884 16.6875 20.9583C16.6875 19.1174 15.1951 17.625 13.3542 17.625H10.6458C8.80488 17.625 7.3125 19.1174 7.3125 20.9583C7.3125 21.1884 7.49905 21.375 7.72917 21.375Z\" stroke=\"#5F0001\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
             "text": "Lifetime Investment"
           }
         }
@@ -172,21 +172,21 @@
         "benefit_3kgYyz": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/check-verified_3.svg",
+            "icon": "shopify://shop_images/check-verified_3_2.svg",
             "benefit_text": "Even Heating"
           }
         },
         "benefit_3Eh3dr": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/coupon-02_2.svg",
+            "icon": "shopify://shop_images/coupon-02_2_2.svg",
             "benefit_text": "Flavor Retention"
           }
         },
         "benefit_YwWcJA": {
           "type": "benefit",
           "settings": {
-            "icon": "shopify://shop_images/trophy_2.svg",
+            "icon": "shopify://shop_images/trophy_2_2.svg",
             "benefit_text": "Precision Control"
           }
         }
@@ -218,7 +218,7 @@
           "type": "table_row",
           "settings": {
             "property": "Non-Toxic, surgical-grade stainless steel construction",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -226,7 +226,7 @@
           "type": "table_row",
           "settings": {
             "property": "Free from PFAS, PFOA, and other harmful chemical",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -234,7 +234,7 @@
           "type": "table_row",
           "settings": {
             "property": "Locks in natural flavors for tastier meals",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -242,7 +242,7 @@
           "type": "table_row",
           "settings": {
             "property": "Retains up to 600% more nutrients while cooking",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -250,7 +250,7 @@
           "type": "table_row",
           "settings": {
             "property": "Backed by an unconditional lifetime warranty",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         }
@@ -281,47 +281,47 @@
         "icon_text_XDjFzh": {
           "type": "icon_text",
           "settings": {
-            "icon": "shopify://shop_images/coupon-02_2.svg",
+            "icon": "shopify://shop_images/coupon-02_2_3.svg",
             "text": "Lifetime Warranty"
           }
         },
         "icon_text_AwwiTj": {
           "type": "icon_text",
           "settings": {
-            "icon": "shopify://shop_images/trophy_2.svg",
+            "icon": "shopify://shop_images/trophy_2_2.svg",
             "text": "Top-Quality Cookware"
           }
         },
         "review_c9eRUp": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "The set is solidly constructed and works wonderfully on our induction cooktop.",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Richard H.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         },
         "review_AKpLeK": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "I am in love with these pans! They are one of the best purchases we have made - the quality is impeccable!",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Jennifer S.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         },
         "review_BLLfHq": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "If used properly these pans work wonderfully. Made in USA, healthier to use than other types of materials, easy cleaning. Never wear out. What's not to like?",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Kathy T.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         }
@@ -344,7 +344,7 @@
         "collection_CnpjAp": {
           "type": "collection",
           "settings": {
-            "collection": "all-1",
+            "collection": "accessories",
             "collection_title": "Sauté Pans"
           }
         },
@@ -391,7 +391,7 @@
     "why_product_finder_UxkXx8": {
       "type": "why-product-finder",
       "settings": {
-        "icon": "<svg width=\"50\" height=\"51\" viewbox=\"0 0 50 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect y=\"0.465332\" width=\"50\" height=\"50\" rx=\"25\" fill=\"#A6BB3A\"></rect><path d=\"M33.75 34.2153L27.9168 28.382M29.8611 23.5209C29.8611 27.2795 26.8142 30.3264 23.0556 30.3264C19.297 30.3264 16.25 27.2795 16.25 23.5209C16.25 19.7623 19.297 16.7153 23.0556 16.7153C26.8142 16.7153 29.8611 19.7623 29.8611 23.5209Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "icon": "<svg width=\"50\" height=\"51\" viewbox=\"0 0 50 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect y=\"0.465332\" width=\"50\" height=\"50\" rx=\"25\" fill=\"#5F0001\"></rect><path d=\"M33.75 34.2153L27.9168 28.382M29.8611 23.5209C29.8611 27.2795 26.8142 30.3264 23.0556 30.3264C19.297 30.3264 16.25 27.2795 16.25 23.5209C16.25 19.7623 19.297 16.7153 23.0556 16.7153C26.8142 16.7153 29.8611 19.7623 29.8611 23.5209Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
         "heading": "Product Finder",
         "description": "Discover kitchen essentials that inspire culinary creativity and elevate your cooking experience.",
         "button_text": "Get Started",

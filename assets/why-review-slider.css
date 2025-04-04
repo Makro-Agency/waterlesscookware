@@ -14,7 +14,7 @@
 }
 
 .client_box_section-slider {
-  background: #faf5eb;
+  background: #EDEDE8;
   overflow: hidden;
 }
 #client-slider-with-text .swiper{
@@ -51,18 +51,18 @@
 
 .header-one_pan-main h2 {
   margin: 0;
-  font-family: Cellofy;
+  font-family: IBM Plex Serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: -0.02em;
-  color: #0d0d0d;
+  color: #1A1A1A;;
 }
 
 .header-one_pan-main p {
   margin: 0;
-  color: #0d0d0d;
-  font-family: Proxima Nova;
+  color: #1A1A1A;;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -82,8 +82,8 @@
 
 #client-slider-with-text .health-section-header-review-box-inner h4 {
   margin: 0;
-  color: #0d0d0d;
-  font-family: Cellofy;
+  color: #1A1A1A;;
+  font-family: IBM Plex Serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 28.8px;
@@ -120,7 +120,7 @@
 
 #client-slider-with-text .health-client-info-header {
   color: #090909;
-  font-family: Proxima Nova;
+  font-family: IBM Plex Serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -134,7 +134,7 @@
 
 #client-slider-with-text .health-client-info-true-icon span {
   color: #7E0002;
-  font-family: Proxima Nova;
+  font-family: IBM Plex Serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
@@ -199,11 +199,11 @@
 }
 
 .catalog-banner-icon-text {
-  font-family: Proxima Nova;
+  font-family: IBM Plex Serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #0d0d0d;
+  color: #1A1A1A;;
 }
 
 .client-box-slider-main-slider {

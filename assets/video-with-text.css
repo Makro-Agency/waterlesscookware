@@ -1,5 +1,5 @@
 #video-with-text-why {
-    background: #faf5eb;
+    background: #EDEDE8;
   }
   
   .video-with-text-why {
@@ -39,12 +39,12 @@
   
   .why-video-header-text-inner-first h2 {
     margin: 0;
-    font-family: Cellofy;
+    font-family: IBM Plex Serif;
     font-size: 40px;
     font-weight: 600;
     line-height: 40px;
     letter-spacing: -0.02em;
-    color: #0d0d0d;
+    color:  #1A1A1A;
     width: 564px;
   }
   
@@ -69,8 +69,8 @@
   
   .why-border-doted-text h4 {
     margin: 0;
-    color: #0d0d0d;
-    font-family: Cellofy;
+    color:  #1A1A1A;
+    font-family: IBM Plex Serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 28.8px;
@@ -79,8 +79,8 @@
   
   .why-border-doted-text p {
     margin: 0;
-    color: #0d0d0d;
-    font-family: Proxima Nova;
+    color:  #1A1A1A;
+    font-family: Manrope;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -89,7 +89,7 @@
   .why-border-doted span {
     border: 1px dashed #7E0002;
     border-radius: 100px;
-    font-family: Proxima Nova;
+    font-family: Manrope;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
@@ -132,7 +132,7 @@
   
   #video-with-text-why .full-blend-hero-section-container-box-btn {
     text-decoration: none;
-    font-family: Proxima Nova;
+    font-family: Manrope;
     font-size: 16px;
     line-height: 16px;
     text-align: center;
@@ -145,12 +145,12 @@
   }
   
   #video-with-text-why .catalog-banner-icon-text {
-    font-family: Proxima Nova;
+    font-family: Manrope;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    color: #0d0d0d;
+    color:  #1A1A1A;
   }
   
   #video-with-text-why .catalog-icon-with-text {
@@ -192,12 +192,12 @@
     border-radius: 100px;
     gap: 10px;
     color: #7E0002;
-    font-family: Proxima Nova;
+    font-family: Manrope;
     font-size: 14px;
     font-weight: 600;
     line-height: 14px;
     text-align: center;
-    width: 165px;
+    width: 170px;
     height: 40px;
     align-items: center;
   
