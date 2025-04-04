@@ -136,8 +136,9 @@ background: var(--gray-tones-black-2, rgba(0, 0, 0, 0.02));  }
     font-size: 12px;
     line-height: 150%;
     font-weight: 600;
-    color: #A6BB3A;
+    color: #7E0002;
   }
+  
   @media screen and (max-width: 1199px) {
     .cookware-new-section .heading{ max-width:32rem; }
   .cookware-new-section .banner-group-wrapper {
