@@ -21,8 +21,8 @@
 
 .health-section-header-text h2 {
   margin: 0;
-  color: #0d0d0d;
-  font-family: Cellofy;
+  color:  #1A1A1A;
+  font-family: IBM Plex Serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 40px;
@@ -37,8 +37,8 @@
 
 .health-section-header-text p {
   margin: 0;
-  color: #0d0d0d;
-  font-family: Proxima Nova;
+  color:  #1A1A1A;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -51,12 +51,12 @@
   display: flex;
   gap: 5px;
   align-items: center;
-  font-family: Proxima Nova;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
   text-align: center;
-  color: #0d0d0d;
+  color:  #1A1A1A;
   width: fit-content;
   text-decoration: none;
 }
@@ -74,8 +74,8 @@
 
 .health-section-header-review-box-inner p {
   margin: 0;
-  color: #0d0d0d;
-  font-family: Proxima Nova;
+  color:  #1A1A1A;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -90,7 +90,7 @@
   gap: 10px;
   border-radius: 15px;
   opacity: 0px;
-  background: #00000005;
+  background: #0000000D;
 }
 
 .health-client-img-width-text {
@@ -109,7 +109,7 @@
 
 .health-client-info-header {
   color: #090909;
-  font-family: Proxima Nova;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -123,7 +123,7 @@
 
 .health-client-info-true-icon span {
   color: #7E0002;
-  font-family: Proxima Nova;
+  font-family:  Manrope;
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
@@ -144,7 +144,7 @@
 
 .three-column-table td:nth-child(2),
 .three-column-table th:nth-child(2) {
-  background-color: #faf5eb;
+  background-color: #EDEDE8;
   font-weight: bold;
   width: 370px;
   max-width: 100%;
@@ -162,7 +162,7 @@
 .three-column-table th:nth-child(2) h4 {
   margin: 0;
   color: #7E0002;
-  font-family: Cellofy;
+  font-family: IBM Plex Serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 28.8px;
@@ -173,8 +173,8 @@
 .three-column-table th:nth-child(3) h4,
 .three-column-table th:nth-child(1) h4 {
   margin: 0;
-  color: #00000066;
-  font-family: Cellofy;
+  color: #414141;
+  font-family: IBM Plex Serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 28.8px;
@@ -182,8 +182,8 @@
 }
 
 .three-column-table td:nth-child(1) {
-  color: #0d0d0d;
-  font-family: Proxima Nova;
+  color:  #1A1A1A;
+  font-family:  Manrope;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -295,7 +295,7 @@
   }
 
   .three-column-table th:nth-child(2) h4 {
-    font-family: Proxima Nova;
+    font-family:  Manrope;
     font-size: 12px;
     font-weight: 600;
     line-height: 18px;
@@ -304,7 +304,7 @@
 
   .three-column-table th:nth-child(3) h4,
   .three-column-table th:nth-child(1) h4 {
-    font-family: Proxima Nova;
+    font-family:  Manrope;
     font-size: 12px;
     font-weight: 600;
     line-height: 18px;
@@ -327,14 +327,14 @@
   .three-column-table th:nth-child(1) {
     /* width: 170px; */
     padding: 30px 16px 30px 0px;
-    font-family: Proxima Nova;
+    font-family:  Manrope;
     font-size: 12px;
     font-weight: 600;
     line-height: 18px;
   }
 
   .health-section-header-text h2 {
-    font-family: Cellofy;
+    font-family: IBM Plex Serif;
     font-size: 36px;
     font-weight: 600;
     line-height: 36px;
