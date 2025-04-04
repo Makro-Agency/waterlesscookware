@@ -95,43 +95,18 @@
         "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-1": {
           "type": "text",
           "settings": {
-            "text": "<p>In 2015, Sofi reached her breaking point with the limited options available for modern and stylish South Asian clothing. The prospect of attending events filled her with dread due to the painstaking process of finding the right outfit. The lack of contemporary choices and the unreliability of online shopping for South Asian Fashion frustrated her. She was unwilling to settle for drop-shipped outfits with final sale conditions or to splurge on designer ensembles meant for a single wear. Determined to address these challenges, Sofi and her co-founder, Adam Meghji, embarked on a mission to establish a brand that seamlessly combined modernity, affordability, and simplicity, catering to all women. And so, The Saree Room was conceived.</p>",
+            "text": "<p>This was the first approach to cooking that managed to retain all of nature’s whole food nutrients in a meal while heating it. Truth be told, although the pair didn’t know it yet, their invention was also the first handmade “eco-friendly” cookware in America. They namedtheir product Kitchen Craft. Shortly after its invention, production of this new innovation in food preparation began. With the lack of retail stores in rural America, the brothers chose to sell the miracle device through in-home demonstrations. Kitchen Craft’s success was so overwhelming they were joined by a team of investors, rented a button factory situated on the west bend of the Milwaukee River, and started America’s first waterless cookware manufacturing facility. They gave it a simple monicker— the West Bend Aluminum Company.</p>",
             "text_style": "body"
-          }
-        },
-        "31b610b9-5f78-4911-8fc4-eb5005cad309": {
-          "type": "caption",
-          "settings": {
-            "caption": "CO-FOUNDER & CHIEF CREATIVE OFFICER",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "meet sofi",
-            "heading_size": "h2"
-          }
-        },
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Follow on Instagram",
-            "button_link": "https://www.instagram.com/thesareeroom/",
-            "button_style_secondary": "link"
           }
         }
       },
       "block_order": [
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-1",
-        "31b610b9-5f78-4911-8fc4-eb5005cad309",
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-0",
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-2"
+        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-1"
       ],
       "settings": {
         "sec_bg": "",
-        "height": "large",
+        "image": "shopify://shop_images/w1200_51f3_KitchenTradition-BW.webp",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
