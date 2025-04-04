@@ -371,8 +371,9 @@ h3,
 .h3 {
   font-size: calc(var(--font-heading-scale) * 1.7rem);
   line-height: 1.1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
+
 
 .largeScaleF h3,
 .largeScaleF .h3 {
@@ -432,7 +433,7 @@ blockquote {
 
 .caption {
   font-size: 1rem;
-  letter-spacing: 0.07rem;
+  letter-spacing: 0;
   line-height: calc(1 + 0.7 / var(--font-body-scale));
 }
 

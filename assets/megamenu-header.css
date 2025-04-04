@@ -296,14 +296,15 @@ a.product-360-category-inner{
   flex-direction: column;
 }
 
+
 .header-list-main{
   border: 0px 0px 1px 0px;
   display: flex;
   justify-content: space-between;
   color: #000000;
-  font-family: Cellofy;
+  font-family: IBM Plex Serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 24px;
 }
 .open-btn-list-text{
@@ -485,7 +486,7 @@ a.product-360-category-inner:hover .product-360-link{
   .text-container-navbar .common_h3 h3{
     font-size: 22px;
     margin: 0;
-    font-family: Proxima Nova !important;
+    font-family:IBM Plex Serif !important;
     text-transform: capitalize;
   }
   .toggle-open-align {
