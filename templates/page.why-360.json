@@ -218,7 +218,7 @@
           "type": "table_row",
           "settings": {
             "property": "Non-Toxic, surgical-grade stainless steel construction",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -226,7 +226,7 @@
           "type": "table_row",
           "settings": {
             "property": "Free from PFAS, PFOA, and other harmful chemical",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -234,7 +234,7 @@
           "type": "table_row",
           "settings": {
             "property": "Locks in natural flavors for tastier meals",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -242,7 +242,7 @@
           "type": "table_row",
           "settings": {
             "property": "Retains up to 600% more nutrients while cooking",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         },
@@ -250,7 +250,7 @@
           "type": "table_row",
           "settings": {
             "property": "Backed by an unconditional lifetime warranty",
-            "iconsvg1": "shopify://shop_images/Frame_5623.svg",
+            "iconsvg1": "shopify://shop_images/Frame_5623_1_1576424a-70ce-4854-8e19-efee7e1cb38c.svg",
             "iconsvg2": "shopify://shop_images/Frame_5623_1.svg"
           }
         }
@@ -281,47 +281,47 @@
         "icon_text_XDjFzh": {
           "type": "icon_text",
           "settings": {
-            "icon": "shopify://shop_images/coupon-02_2.svg",
+            "icon": "shopify://shop_images/coupon-02_2_3.svg",
             "text": "Lifetime Warranty"
           }
         },
         "icon_text_AwwiTj": {
           "type": "icon_text",
           "settings": {
-            "icon": "shopify://shop_images/trophy_2.svg",
+            "icon": "shopify://shop_images/trophy_2_2.svg",
             "text": "Top-Quality Cookware"
           }
         },
         "review_c9eRUp": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "The set is solidly constructed and works wonderfully on our induction cooktop.",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Richard H.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         },
         "review_AKpLeK": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "I am in love with these pans! They are one of the best purchases we have made - the quality is impeccable!",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Jennifer S.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         },
         "review_BLLfHq": {
           "type": "review",
           "settings": {
-            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906.svg",
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
             "review_text": "If used properly these pans work wonderfully. Made in USA, healthier to use than other types of materials, easy cleaning. Never wear out. What's not to like?",
-            "client_image": "shopify://shop_images/check-verified_3.svg",
+            "client_image": "shopify://shop_images/check-verified_3_2.svg",
             "client_name": "Kathy T.",
-            "reviewbyicon": "shopify://shop_images/check.png",
+            "reviewbyicon": "shopify://shop_images/check_2.png",
             "reviewby": "Verified Buyer"
           }
         }
