@@ -391,7 +391,7 @@
     "why_product_finder_UxkXx8": {
       "type": "why-product-finder",
       "settings": {
-        "icon": "<svg width=\"50\" height=\"51\" viewbox=\"0 0 50 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect y=\"0.465332\" width=\"50\" height=\"50\" rx=\"25\" fill=\"#A6BB3A\"></rect><path d=\"M33.75 34.2153L27.9168 28.382M29.8611 23.5209C29.8611 27.2795 26.8142 30.3264 23.0556 30.3264C19.297 30.3264 16.25 27.2795 16.25 23.5209C16.25 19.7623 19.297 16.7153 23.0556 16.7153C26.8142 16.7153 29.8611 19.7623 29.8611 23.5209Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "icon": "<svg width=\"50\" height=\"51\" viewbox=\"0 0 50 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect y=\"0.465332\" width=\"50\" height=\"50\" rx=\"25\" fill=\"#5F0001\"></rect><path d=\"M33.75 34.2153L27.9168 28.382M29.8611 23.5209C29.8611 27.2795 26.8142 30.3264 23.0556 30.3264C19.297 30.3264 16.25 27.2795 16.25 23.5209C16.25 19.7623 19.297 16.7153 23.0556 16.7153C26.8142 16.7153 29.8611 19.7623 29.8611 23.5209Z\" stroke=\"#FCFBF7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
         "heading": "Product Finder",
         "description": "Discover kitchen essentials that inspire culinary creativity and elevate your cooking experience.",
         "button_text": "Get Started",
