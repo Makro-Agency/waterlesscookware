@@ -70,10 +70,14 @@
 }
 .pan_review .auther-name {
   font-size: 16px;
-  font-weight: 600;
-  color: #090909;
+  font-weight: 500;
+  color: #1a1a1a; 
   line-height: 150%;
 }
+.pan_review.review2  .auther-name {   font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a; 
+  line-height: 150%;}
 .pan_review .auther-verification {
   font-family: Manrope;
   font-weight: 500;
@@ -100,7 +104,7 @@
 .pan_review.review1 {
   max-width: 278px;
   right: 3.63%;
-  top: -15.78%;
+  top: -17.78%;
   width: 100%;
 }
 .pan_review.review2 {

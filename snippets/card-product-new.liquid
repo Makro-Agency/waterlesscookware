@@ -410,7 +410,7 @@ endif
               <span class="caption-large light">{{ block.settings.description | escape }}</span>
             </h3>  
               {% if show_description %}
-                <div class="card-descc"> {{ card_product.metafields.accentuate.short_details }}</div>
+              {% if card_product.metafields.accentuate.short_details != blank %}  <div class="card-descc"> {{ card_product.metafields.accentuate.short_details }}</div> {% endif %}
                {% endif %}
               <!-- <p>Ideal for side dishes, sauces, and soups. Deep walls and 360 Vapor® seal lid for versatile, waterless cooking.</p> -->
             {%- capture _price -%}

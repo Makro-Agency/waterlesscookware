@@ -89,11 +89,10 @@
 }
 
 #splited-image-hero-section .full-blend-hero-section-container-box-heading-container h1 {
-    font-family: Cellofy;
-    font-weight: 600;
-    line-height: 40px;
+    font-weight: 400;
+    line-height: 100%;
     letter-spacing: -0.02em;
-    color: #FCFBF7;
+    color: #fcfcfa;
     margin: 0;
     font-size: 40px;
 
@@ -101,11 +100,10 @@
 }
 
 #splited-image-hero-section .full-blend-hero-section-container-box-text-container p {
-    font-family: Proxima Nova;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
-    color: #FCFBF7;
+    line-height: 150%;
+    color: #fcfcfa;
     margin: 0;
     padding: 0;
     margin: 0px;
@@ -121,7 +119,7 @@
     padding: 15px 25px;
     border-radius: 100px;
     background-color: #7E0002;
-    color: #FCFBF7;
+    color: #fcfcfa;
     width: 161px;
 }
 #splited-image-hero-section .full-blend-hero-section-container-box-btn:hover{

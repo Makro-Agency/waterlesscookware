@@ -65,10 +65,9 @@
 }
 
 .catalog-banner-icon-text {
-  font-family: Proxima Nova;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 100%;
   text-align: left;
 }
 
@@ -85,21 +84,20 @@
 }
 
 .banner-text-catalog-icon h2 {
-  font-family: Cellofy;
+
   font-size: 40px;
-  font-weight: 600;
-  line-height: 40px;
+  font-weight: 500;
+  line-height: 100%;
   letter-spacing: -0.02em;
   margin: 0;
 }
 
 .banner-text-catalog-icon span a {
-  font-family: Proxima Nova;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 16px;
+  font-weight: 500;
+  line-height: 100%;
   text-decoration: none;
-  color: #0d0d0d;
+  color: #1a1a1a;
 
   display: flex;
   padding: 0px 0px 5px 0px;
@@ -108,13 +106,12 @@
 }
 
 .banner-text-catalog p {
-  font-family: Proxima Nova;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 150%;
   margin: 0%;
   width: 432px;
-  color: #0d0d0d;
+  color: #1a1a1a;
 }
 
 /* slider-product */

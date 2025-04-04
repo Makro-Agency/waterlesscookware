@@ -93,7 +93,7 @@ text-align: left;
 .shop h3,
 .main_grid_div h3,.custom-footer h3{
   margin:0;
-  color:#ffffff;
+  color:#fcfcfa;
   font-family: IBM Plex Serif; 
   font-weight: 400;
   font-size: 20px;
@@ -104,7 +104,7 @@ text-align: left;
 }
 .shop a,
 .main_grid_div a,.custom-footer a{
-   color:#fafafa;
+   color:#fcfcfa;
    font-weight: 400;
    font-size: 14px;
    font-family:Manrope; 
@@ -184,7 +184,7 @@ input[type="email"]:focus-visible {
 }
 
 .footer-bottom_icon a {
-  color: white;
+  color: #fcfcfa;
   text-decoration: none;
   margin: 0 10px;
 }

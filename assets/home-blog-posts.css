@@ -41,7 +41,7 @@
   line-height: 120%; 
     letter-spacing: -.48px;
     color: #1A1A1A; 
-    margin: 0 0 5px;
+    margin: 0 0 10px;
 }
 .home-blog-posts .underline-links-hover:hover .readMore-link {opacity: 1;}
 .home-blog-posts .underline-links-hover:hover a,
@@ -148,6 +148,7 @@
 .home-blog-posts .article-cards  .card--text {
   justify-content: center;
 }
+.home-blog-posts .article-cards .card--text .article-card__excerpt.rte-width{ color:#1a1a1a; }
 .home-blog-posts .article-cards  .card--text .article-card__excerpt.rte-width {margin: 0 0 0 0;}
 .home-blog-posts .card--text .card__inner.color-background-2.gradient {
  background-color: transparent;
