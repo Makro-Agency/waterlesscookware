@@ -353,42 +353,42 @@
         "image_row_tzPmxd": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/Group.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Made in USA"
           }
         },
         "image_row_WYWkXJ": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/Group.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Eco-Friendly"
           }
         },
         "image_row_qXNXnx": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Lifetime Quality"
           }
         },
         "image_row_eL48Gt": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/Group.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Non-Toxic"
           }
         },
         "image_row_eNXiND": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Made in USA"
           }
         },
         "image_row_R9tRjy": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/fi_861795_2.svg",
             "text_1": "Family-Owned"
           }
         }
@@ -406,7 +406,7 @@
         "image_row_R9tRjy"
       ],
       "settings": {
-        "bgcolor": "#faf5eb",
+        "bgcolor": "#edede8",
         "sub_title": "Sustainability Commitments",
         "main_title": "Our Commitment to America and the Planet",
         "cta_link": "shopify://collections",
@@ -487,7 +487,7 @@
         "email_form_JdijyD"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
