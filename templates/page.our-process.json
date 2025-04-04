@@ -353,14 +353,14 @@
         "image_row_tzPmxd": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/Group.svg",
             "text_1": "Made in USA"
           }
         },
         "image_row_WYWkXJ": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/Group.svg",
             "text_1": "Eco-Friendly"
           }
         },
@@ -374,7 +374,7 @@
         "image_row_eL48Gt": {
           "type": "image_row",
           "settings": {
-            "svg": "shopify://shop_images/fi_861795.svg",
+            "svg": "shopify://shop_images/Group.svg",
             "text_1": "Non-Toxic"
           }
         },
