@@ -18,11 +18,12 @@ ol.breadcrumb{
   line-height: 150%;
 }
 
+
 .breadcrumb-item a {
   text-decoration: none;
-  color: var(--gray-tones-black-60, rgba(0, 0, 0, 0.60));
-  font-family: "Proxima Nova";
-  font-weight: 600;
+  color: #1a1a1a; 
+  font-weight: 500;
+  letter-spacing:0; 
   font-size: 12px;
   line-height: 150%;
 }

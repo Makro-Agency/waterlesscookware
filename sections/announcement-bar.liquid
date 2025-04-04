@@ -37,7 +37,7 @@
     color: #7E0002;
     padding: 2px 8px;
     min-width:26px;
-    font-weight:600;
+    font-weight:400;
   }
   .ann-grid{
     display: flex;
@@ -58,7 +58,8 @@
      border-right:unset;
    }
    .announcement.slides{
-     padding:10px 0;
+ 
+     line-height: 100%;
      width:100% !important;
      justify-content:center;
    }
@@ -66,7 +67,7 @@
   font-family: Manrope;
 font-weight: 500;
 font-size: 14px;
-line-height: 150%;
+line-height: 100%;
 letter-spacing: 0%;
 color:#FCFCFA; 
   }
@@ -74,7 +75,8 @@ color:#FCFCFA;
   .custom-page-width{
     padding:0 60px;
     min-height:40px;
-   
+   padding-top:9.5px;
+   padding-bottom:9.5px; 
   }
   .swiper-wrapper{
     align-items:center;
@@ -90,12 +92,12 @@ color:#FCFCFA;
   }
 @media only screen and (max-width: 989px) {
   .custom-page-width {
-    padding: 0 20px;
+    padding: 9.5px 20px;
   }
 }
 @media only screen and (max-width: 768px) {
   .custom-page-width {
-    padding: 0 10px;
+    padding: 9.5px 10px;
     max-height:88px;
   }
   .countdown-ann{
@@ -111,6 +113,7 @@ color:#FCFCFA;
     display:none;
   }
 }
+.announcement-bar-section .slide-nav .nav-btn{ display:none; }
 </style>
 
 
@@ -376,7 +379,7 @@ color:#FCFCFA;
         {
         "type": "color",
         "id": "cta_color",
-        "default": "#ffffff",
+        "default": "#fafafc",
         "label": "button Color"
         },
         {
