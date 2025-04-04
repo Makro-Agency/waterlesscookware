@@ -264,6 +264,9 @@ flex-wrap: wrap;
 width: 100%;
 }
 }
+@media screen and (min-width:768px) and (max-width:1439px){
+  #catalog-banner-section-main{ padding-left:30px; padding-right:30px; overflow:hidden; }
+}
 
 @media only screen and (max-width: 768px) {
 #catalog-product-dishes {

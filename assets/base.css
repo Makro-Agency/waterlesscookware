@@ -613,7 +613,7 @@ hr {
 
 .full-unstyled-link {
   text-decoration: none;
-  color: currentColor;
+  color: #1a1a1a;
   display: block;
 }
 
