@@ -17,7 +17,7 @@
 .custom-faq .hero-faq-first h2 {
   margin: 0;
   color: #0d0d0d;
-  font-family: Cellofy;
+  /* font-family: Cellofy; */
   font-size: 40px;
   font-weight: 600;
   line-height: 40px;
@@ -68,7 +68,7 @@
   /* align-items: center; */
   cursor: pointer;
 align-items:center; 
-  font-family: Cellofy;
+  /* font-family: Cellofy; */
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
