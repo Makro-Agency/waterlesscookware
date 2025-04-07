@@ -153,7 +153,6 @@ flex-wrap: wrap;
   left: 10px;
 } */
 .sale-button a {
-font-family: Proxima Nova;
 font-size: 12px;
 font-weight: 600;
 line-height: 18px;
@@ -166,7 +165,6 @@ display: inline-flex;
 }
 
 .choice-button a {
-font-family: Proxima Nova;
 font-size: 12px;
 font-weight: 600;
 line-height: 18px;
@@ -185,9 +183,7 @@ display: inline-flex;
 } */
 
 .sell-button a {
-font-family: Proxima Nova;
 font-size: 12px;
-font-weight: 600;
 line-height: 18px;
 padding: 1px 10px;
 border-radius: 100px;
@@ -229,7 +225,6 @@ display: none;
 
 .catalog-button-container-btn {
 text-decoration: none;
-font-family: Proxima Nova;
 font-size: 16px;
 line-height: 16px;
 text-align: center;

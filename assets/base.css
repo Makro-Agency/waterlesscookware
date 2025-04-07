@@ -3658,7 +3658,6 @@ details-disclosure > details {
     left: 50px;
     top:30px;
     margin: 0;
-    font-family: Proxima Nova;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -3679,7 +3678,6 @@ details-disclosure > details {
 .product--left .price__regular span.buy-now{
   text-transform:capitalize;
   color: var(--Black, #0D0D0D);
-  font-family: "Proxima Nova";
   font-size: 12px;
   font-style: normal;
   font-weight: 600;

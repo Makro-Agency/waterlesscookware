@@ -29,9 +29,7 @@
 
 .annoucement-bar-text-message a,
 .annoucement-bar-text-message span a {
-  font-family: Proxima Nova;
   font-size: 14px;
-  font-weight: 600;
   line-height: 21px;
   display: flex;
   align-items: center;
@@ -39,9 +37,7 @@
 }
 
 .annoucement-bar-text-width-right-icon a {
-  font-family: Proxima Nova;
   font-size: 14px;
-  font-weight: 600;
   line-height: 21px;
   text-align: center;
   color: #fcfbf7;
@@ -60,14 +56,11 @@
   border-radius: 2px;
   background-color: #fcfbf7;
   color: #7E0002;
-  font-family: Proxima Nova;
   font-size: 14px;
-  font-weight: 600;
   line-height: 21px;
 }
 
 .annoucenment-colan {
-  font-family: Inter;
   font-size: 14px;
   font-weight: 500;
   line-height: 16.94px;
