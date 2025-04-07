@@ -202,7 +202,6 @@ h5.recepie-title{ margin-top:1rem; }
     margin: 0;
  color: var(--Black, #0D0D0D);
 /* Body Text Large / Medium */
-font-family: "Proxima Nova";
 font-size: 16px;
 font-style: normal;
 font-weight: 600;
@@ -230,7 +229,6 @@ line-height: 150%; /* 24px */
     font-size: 12px;
    color: var(--gray-tones-black-30, rgba(0, 0, 0, 0.30));
 /* Body Text Standard/Medium */
-font-family: "Proxima Nova";
 font-size: 14px;
 font-style: normal;
 font-weight: 600;
