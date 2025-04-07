@@ -12,7 +12,7 @@
   line-height: 120%; /* 24px */                                     
  }
 .custom-cookware-new-section .card__heading_wrap{ margin-left:15px; }
-.custom-cookware-new-section .makro-product--card{     background:#EDEDE8;  border-radius:15px;  }
+.custom-cookware-new-section .makro-product--card{     background:#EDEDE8;   border-radius:15px;  }
   .custom-cookware-new-section .card-content{ margin-top:0px; height:fit-content; margin-right:28px; }
    .custom-cookware-new-section .card-content { display:flex; gap:20px;  }
    .custom-cookware-new-section .card-content img{ width:50px; height:50px; }

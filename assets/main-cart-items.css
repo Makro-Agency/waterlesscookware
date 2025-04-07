@@ -918,7 +918,6 @@ gap: 10px;
 }
 .template-cart .cart-total-text,.template-cart .cart-total-text{
   color: var(--Black, #0D0D0D);
-  font-family: "Proxima Nova";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -927,27 +926,22 @@ gap: 10px;
 .template-cart .cart-total-price{
   color: var(--Black, #0D0D0D);
   text-align: right;
-  font-family: "Proxima Nova";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+
   line-height: 150%;
 }
 .template-cart  .cart-total-price{
   color: var(--Black, #0D0D0D);
   text-align: right;
-  font-family: "Proxima Nova";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: 150%;
 }
 .template-cart .cart__ctas .cart__checkout-button.button{
   color: var(--White, #FCFBF7);
   text-align: center;
-  font-family: "Proxima Nova";
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: 100%;
 }
