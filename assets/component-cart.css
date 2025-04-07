@@ -268,6 +268,9 @@ cart-items {
 /* discount ninja */
 .cart__footer .limoniapps-discountninja-cartdiscountfield-placeholder:not(#id) { margin-bottom: 12px; }
 /* discount ninja */
+.cartMain-product.cart-main-product.is-empty .drawer-progressbar-text{ display:none; }
+@media screen and (min-width: 1200px) {
+.cart__warnings .cart__login-title{ font-size:36px; } }
 @media screen and (max-width: 767px) {
   /* .cart-drawer-heading-wrap .cart-product-image img{ height:90px; } */
   .cartMain-product .cart-drawer-heading-wrap .heading-wrap-cart-product h3{ font-size:24px; }

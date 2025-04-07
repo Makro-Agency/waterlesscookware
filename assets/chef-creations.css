@@ -2,15 +2,13 @@
   @media only screen and (max-width: 767px) {
     .chef-section .title_video_wrapper{ padding-bottom:40px !Important;}
   .chef-section .main_heading{ font-size: 30px;
-        font-family: 'inter' !Important; margin-bottom:10px !Important; } }
+   margin-bottom:10px !Important; } }
 
 .video-conent p{
-    color: var(--Black, #0D0D0D);
-  /* Body Text Large / Regular */
-  font-family: "Proxima Nova";
+    color: #1a1a1a;
   font-size: 16px;
   font-style: normal;
-    margin-top:0; 
+    margin-top:10px; 
     max-width:276px; 
   font-weight: 400;
   line-height: 150%; /* 24px */
@@ -18,13 +16,11 @@
   .chef-section .video-group-wrapper .slide-nav .nav-btn.fea-col-slide-next{ display:none;}
   .video-conent h4{ margin-top:3rem;  margin-bottom:0; }
   .video-conent h4{
-   color: var(--Black, #0D0D0D);
-  /* Header 04 */
-  font-family: Cellofy;
+   color: #1a1a1a; 
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 120%; /* 28.8px */
+  font-weight: 400;
+  line-height: 120%;
   letter-spacing: -0.48px;
   }
  
@@ -122,11 +118,9 @@
 
     
   .chef-section  .main_heading{
-      color: #000;
-      font-family: Cellofy;
+      color: #1a1a1a;
       font-size: 40px;
       font-style: normal;
-      font-weight: 600;
       line-height: 100%;
       letter-spacing: -0.8px;
     margin-bottom:30px; 
@@ -147,13 +141,11 @@
     }
   
    .chef-section .icon-content h6{
-    color: var(--Black, #0D0D0D);
-  /* Body Text Large / Regular */
-  font-family: "Proxima Nova";
+    color: #1a1a1a; 
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 24px */
+  line-height: 150%; 
      margin:0; 
   }
   .chef-section .pdp-chef-flex.page-width{ padding-left:5rem; padding-right:5rem; }

@@ -35,9 +35,8 @@ span.title_text {
 
 .contect-form-column-first h2 {
   margin: 0;
-  color: #0d0d0d;
+  color: #1a1a1a;
   font-size: 40px;
-  font-weight: 600;
   line-height: 40px;
   letter-spacing: -0.02em;
   text-align: left;
@@ -54,7 +53,6 @@ span.title_text {
   margin: 0;
   color: #0d0d0d;
   font-size: 24px;
-  font-weight: 600;
   line-height: 28.8px;
   letter-spacing: -0.02em;
   text-align: left;
@@ -82,9 +80,8 @@ span.title_text {
 
 .need-help-box h3 {
   margin: 0;
-  color: #fcfbf7;
+  color: #fcfcfa;
   font-size: 32px;
-  font-weight: 600;
   line-height: 38.4px;
   letter-spacing: -0.02em;
   text-align: left;
@@ -125,14 +122,14 @@ span.title_text {
 
 .form-container h3 {
   margin: 0;
-  color: #0d0d0d;
+  color: #1a1a1a;
   font-size: 40px;
-  font-weight: 600;
   line-height: 38.4px;
   letter-spacing: -0.02em;
   text-align: left;
   margin-bottom: 40px;
 }
+
 
 .form-container form {
   display: flex;
