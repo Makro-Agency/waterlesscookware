@@ -286,6 +286,7 @@ span.facet-checkbox__text{ color:#1a1a1a; }
 .facets__item {
   display: flex;
   align-items: center;
+  padding: 1rem 2rem 1rem 0;
 }
 
 .facets__item label,
@@ -333,7 +334,7 @@ span.facet-checkbox__text{ color:#1a1a1a; }
   position: absolute;
   left: 0.3rem;
   z-index: 5;
-  top: 1.4rem;
+  top: 0.75rem;
 }
 
 .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark,

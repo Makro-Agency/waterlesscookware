@@ -223,7 +223,7 @@
   text-transform: capitalize;
 }
 .parent-display .facet-checkbox input[type=checkbox]+svg{
-  color: #D9D5CE;
+  color: #000;
 }
 .parent-display .facet-checkbox>input[type=checkbox]:checked+svg {
   color: #000;
