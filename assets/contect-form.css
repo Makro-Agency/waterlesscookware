@@ -58,6 +58,7 @@ span.title_text {
   text-align: left;
 }
 
+
 .common-info p {
   margin: 0;
   color: #0d0d0d;
@@ -106,7 +107,6 @@ span.title_text {
   color: #7E0002;
   border-radius: 100px;
   font-size: 14px;
-  font-weight: 600;
   line-height: 14px;
   margin-top: 25px;
   text-decoration: none;
@@ -187,7 +187,6 @@ textarea::placeholder {
   background: #7E0002;
   cursor:pointer;  
   font-size: 16px;
-  font-weight: 600;
   line-height: 16px;
   text-align: center;
   color: #fcfbf7;
@@ -268,6 +267,7 @@ textarea::placeholder {
   margin-top: 120px;
 }
 
+
 .join-first {
   width: 100%;
   max-width: 426.67px;
@@ -276,9 +276,7 @@ textarea::placeholder {
 .join-first h3 {
   margin: 0;
   color: #0d0d0d;
-  font-family: Cellofy;
   font-size: 32px;
-  font-weight: 600;
   line-height: 38.4px;
   letter-spacing: -0.02em;
   text-align: left;
@@ -321,7 +319,6 @@ textarea::placeholder {
   right: 20px;
   color: #6c6a66;
   font-size: 16px;
-  font-weight: 600;
   line-height: 16px;
   text-align: center;
   cursor: pointer;
@@ -420,7 +417,6 @@ button.subscribe-btn{
     background: transparent;
     color: #6c6a66;
     font-size: 16px;
-    font-weight: 600;
     line-height: 16px;
     text-align: center;
     cursor: pointer;
