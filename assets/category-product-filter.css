@@ -33,9 +33,7 @@
 
 .filter-popup a {
   display: inline-flex;
-  font-family: Proxima Nova;
   font-size: 16px;
-  font-weight: 600;
   line-height: 16px;
   padding: 15px 25px 15px 25px;
   gap: 10px;

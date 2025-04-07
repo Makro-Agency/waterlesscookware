@@ -138,9 +138,7 @@
   } */
 
 .choice-button a {
-  font-family: Proxima Nova;
   font-size: 12px;
-  font-weight: 600;
   line-height: 18px;
   padding: 1px 10px;
   border-radius: 100px;
@@ -157,9 +155,7 @@
   } */
 
 .sell-button a {
-  font-family: Proxima Nova;
   font-size: 12px;
-  font-weight: 600;
   line-height: 18px;
   padding: 1px 10px;
   border-radius: 100px;
@@ -201,7 +197,6 @@
 
 .catalog-button-container-btn {
   text-decoration: none;
-  font-family: Proxima Nova;
   font-size: 16px;
   line-height: 16px;
   text-align: center;
