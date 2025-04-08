@@ -157,8 +157,8 @@
      font-weight: 500; line-height: 100%; letter-spacing: 0.6px; text-transform: uppercase; }
 
 .product__info-container .product-form .product-form__submit:not([disabled]):hover {
-  background: #A6BB3A;
- color:#fff; }
+  background: #BD2129;
+ color:#fcfcfa; }
 .product__info-container .product-form .product-form__submit:not([disabled]):hover:after { 
   --border-offset: 0px; 
   }
@@ -273,9 +273,9 @@
   margin-top: 20px;
 }
 .cta-btn.show-more:hover {
-  background: #A6BB3A;
-  border-color: #A6BB3A;
-  color: #ffffff;
+  background: #BD2129;
+  border-color: #BD2129;
+  color: #fcfcfa;
 }
 
 .product__info-container .product__accordion .accordion-item { padding:0; }
@@ -1116,8 +1116,8 @@ display: none;
 .yotpo-new-review-btn-wrapper #yotpo-main-widget-btn:hover { 
   yotpo-empty-white: #7E0002;
   --primary-color: #7E0002; 
- background: #A6BB3A;
-    border-color: #A6BB3A;
+ background: #BD2129;
+    border-color: #BD2129;
 }
 
 

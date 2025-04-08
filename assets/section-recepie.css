@@ -38,10 +38,9 @@ li.blog-meta.Difficult:before{
 .template-article header ul.custom-meta li{ 
 color: #7E0002;
 /* Body Text Small / Medium */
-font-family: "Proxima Nova";
 font-size: 12px;
 font-style: normal;
-font-weight: 600;
+
 line-height: 150%; /* 18px */ }
 .template-article header ul{ padding-left:0;}
   .template-article header ul .blog-meta p{     margin-bottom: 0; margin-left:5px; 
@@ -80,10 +79,8 @@ background: var(--Secondary-Beige, #FAF5EB);
 .template-article .product-details .product-title{
   color: var(--Black, #0D0D0D);
     text-overflow: ellipsis;
-    font-family: "Proxima Nova";
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
     line-height: 150%;
     margin-bottom: 0px;
    letter-spacing:0; 
@@ -134,17 +131,14 @@ background: var(--Secondary-Beige, #FAF5EB);
 
 .template-article p.product-price {
     color: #000;
-    font-family: "Proxima Nova";
     font-size: 14px;
     font-style: normal;
-    font-weight: 600 !important;
     line-height: 150%;
 }
 
 .incrediant ul li{
   color: var(--Black, #0D0D0D);
 /* Body Text Large / Regular */
-font-family: "Proxima Nova";
 font-size: 16px;
 font-style: normal;
 font-weight: 400;

@@ -97,15 +97,13 @@ ajaxinate-loading .button:after { border-radius: 100px; }
   .header_riched_grid .facets-container::-webkit-scrollbar {
     width: 5px;
   }
-  .header_riched_grid .facets-container::-webkit-scrollbar-track {
-    /* background: #c3d957;  */
-  }
   .header_riched_grid .facets-container::-webkit-scrollbar-thumb {
     background: #7E0002; 
   }
   .header_riched_grid .facets-container::-webkit-scrollbar-thumb:hover {
-    background: #90a333; 
+    background: #BD2129; 
   }
+  
   
   .product-grid-container ul.grid { --grid-desktop-horizontal-spacing: 3.2rem; --grid-desktop-vertical-spacing: 3.2rem; }
 }

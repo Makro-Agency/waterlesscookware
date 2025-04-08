@@ -107,10 +107,8 @@ padding: 4px 12px 4px 10px;
   align-items: center;
 color:#7E0002;
 /* Body Text Small / Medium */
-font-family: "Proxima Nova";
 font-size: 12px;
 font-style: normal;
-font-weight: 600;
 line-height: 150%; /* 18px */
  border-radius:100px; 
 }

@@ -32,7 +32,7 @@ product-recommendations .cart-d-svg{ display: none; }
 .related-products .product-carousel-slider.swiper-initialized .grid__item { max-width: unset; }
 
 .related-products .swiper-initialized .nav-btn { border-radius: 100px; background-color: #7E0002; width: 5rem; height: 5rem; text-align: center; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; }
-.related-products .swiper-initialized .nav-btn:hover { background-color: #A6BB3A; }
+.related-products .swiper-initialized .nav-btn:hover { background-color:#BD2129; }
 .related-products .swiper-initialized .nav-btn.swiper-button-disabled { visibility: hidden; transition: visibility 0.0s 0.5s; }
 .related-products .swiper-initialized .nav-btn svg { width: 2rem; height: 2rem; }
 .related-products .swiper-initialized .nav-btn svg path[stroke] { color: currentColor; }

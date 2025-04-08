@@ -353,7 +353,7 @@ a.product-360-category-inner{
   /* color: #c3d957; */
 }
 a.product-360-category-inner:hover .product-360-link{
-  color: #c3d957;
+  color: #BD2129;
 }
 a.product-360-category-inner:hover .product-360-link{
   /* text-decoration:underline; */
@@ -401,10 +401,10 @@ a.product-360-category-inner:hover .product-360-link{
 }
 
 .header-shop-right span a:hover{
-  color:#c3d957;
+  color:#BD2129;
 }
 .image-width-text-header:hover .product-360-link a{
-  color:#c3d957;
+  color:#BD2129;
 }
 .image-width-text-header:hover .product-360-link a,.header-shop-right span a:hover{
   /* text-decoration:underline; */

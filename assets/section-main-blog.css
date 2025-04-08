@@ -13,7 +13,7 @@
 }
 
 .blog-articles__article:hover .card__content a{
-  color: #c3d957!important;
+  color: #BD2129 !important;
   font-weight: 600 !important;
   opacity:1;
 }
@@ -24,7 +24,7 @@
   height: max(94vh) !important;
 }
 #full-blend-hero-section-why1 .full-blend-hero-section-container-box-btn:hover{
-  background: #c3d957 !important;
+  background: #BD2129 !important;
   color: #fcfbf7 !important;
 }
 .main-blog-header {
@@ -164,10 +164,8 @@ letter-spacing: -0.48px;
  color: var(--Black, #0D0D0D);
 text-align: center;
 /* CTA/Standard */
-font-family: "Proxima Nova";
 font-size: 16px;
 font-style: normal;
-font-weight: 600;
 line-height: 100%; /* 16px */
 text-transform:capitalize; 
 }

@@ -440,9 +440,9 @@ input:checked + .slider-toggle:before {
   line-height: 18px;
   padding: 1px 10px;
   border-radius: 100px;
-  background: #a6bb3a;
+  background: #BD2129; 
   text-decoration: none;
-  color: #fcfbf7;
+  color: #fcfcfa; 
   display: inline-flex;
 }
 

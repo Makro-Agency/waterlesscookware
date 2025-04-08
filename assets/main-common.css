@@ -18,7 +18,7 @@ a:hover{
 
 /* menu */
 .cust-inner-menu li:hover a{
-  border-bottom: 1.5px solid #A6BB3A;
+  border-bottom: 1.5px solid #BD2129;
   width: fit-content;
 }
 .navabar-desktop .navbar_item .navbar_link:hover {
@@ -26,7 +26,7 @@ a:hover{
 }
 
 .card-wrapper .card--card:hover .card__heading a{
-    color: #c3d957 !important;
+    color: #BD2129 !important;
 }
 .link.makro--link{
     font-weight: 500;
@@ -52,11 +52,11 @@ a:hover{
 .pagination__list li:hover .link
 .header-shop-right .link
 .pagination__item:hover{
-  color:#c3d957 !important;
+  color:#BD2129 !important;
 }
-.banner-group .banner:hover .link { color: #c3d957; }
+.banner-group .banner:hover .link { color: #BD2129; }
 .social-icons a:hover svg path{
-   fill: #c3d957;
+   fill: #BD2129;
 }
 .navbar_item a{
   align-items: center;
@@ -66,7 +66,7 @@ a:hover{
    color:#7E0002; 
 }
 .service-content:hover .main_heading{
-     color:#c3d957 !important;
+     color:#BD2129 !important;
 }
 /* background box on hover */
 .image-width-text-header{
@@ -117,7 +117,7 @@ a:hover{
 .auther-content .right-arrow:hover,
 .swiper-button-div .swiper-button-prev:hover,
 .swiper-button-div .swiper-button-next:hover{
-  background: #c3d957;
+  background: #BD2129;
 }
 .slide-nav .nav-btn,
 .auther-content .right-arrow,
@@ -138,7 +138,7 @@ a:hover{
 	background:transparent; 
 }
 .template-cart .related-products .slide-nav .nav-btn:hover{
-	background:#c3d957; 
+	background:#BD2129; 
 }
 
 /* button hover and custome */
@@ -163,7 +163,7 @@ a:hover{
   min-width: fit-content;
 }
 .button.cta_button:hover {
-    background: #c3d957 !important;
+    background: #BD2129 !important;
     color: #fcfbf7 !important;
 }
 .button.cta_button::before,
@@ -175,18 +175,18 @@ a:hover{
       border: 1px solid;
 }
 .essentials-cookware-set .upgrade-button:hover{
-    background: #a6bb3a;
+    background: #BD2129; 
     color: #fff;
-    border-color: #a6bb3a;
+    border-color: #BD2129;
 }
 
 /* line */
 .banner-text-catalog-icon span a:hover{
-    border-color: #c3d957 !important;
+    border-color: #BD2129 !important;
 }
 
 .main_privacy a:hover,.main_copyright a:hover{
-  color:#c3d957;
+  color:#BD2129;
 }
 .video-group-wrapper .swiper-wrapper{
       align-items: flex-start;
