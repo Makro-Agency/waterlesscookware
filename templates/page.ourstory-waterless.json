@@ -66,7 +66,7 @@
         "text_Dd9anF"
       ],
       "settings": {
-        "sec_bg": "rgba(0,0,0,0)",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_d2f4_Waterless_Cooker_1909_1.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -96,7 +96,7 @@
         "text_W8g9At"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_51f3_KitchenTradition-BW.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -134,7 +134,7 @@
         "text_GFDjYg"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_fcc_Original_KC_Factory.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -172,7 +172,7 @@
         "text_AV7ft4"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_d126_1942_wartime_production_5b7f38a3-c79e-4706-b1d0-93cffb07fb13.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -226,7 +226,7 @@
         "text_zy8nWz"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_fbf_cookbook_with_bride.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -256,7 +256,7 @@
         "text_VNEFF8"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_ae2a_Dave_selling_Lustrecraft.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -294,7 +294,7 @@
         "text_i39kcp"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_3e49_Dave_in_Vietnam.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -396,7 +396,7 @@
         "text_fW7eDX"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_ed68_Front-of-Bldg.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -426,7 +426,7 @@
         "text_X4d4L9"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_13d3_Americraft-IMG_8869.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
