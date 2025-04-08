@@ -246,7 +246,7 @@ cart-drawer-items .routine-product-image-txt { gap: 2rem; }
 /* cartdarwer routine */
   
   
-  cart-drawer.drawer product-recommendations { padding: 2.4rem 4rem; background: #F7F6F2; display: block; }
+  cart-drawer.drawer product-recommendations { padding: 2.4rem 4rem; background: #EDEDE8;  display: block; }
   cart-drawer.drawer .sectio-header .main_heading { font-size: 16px; font-weight:500;  text-transform: none; letter-spacing: normal; }  
   
   cart-drawer.drawer product-recommendations .card .yotpo,
