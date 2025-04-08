@@ -118,12 +118,43 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "image_with_text_79NA64": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_GFDjYg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This was the first approach to cooking that managed to retain all of nature’s whole food nutrients in a meal while heating it. Truth be told, although the pair didn’t know it yet, their invention was also the first handmade “eco-friendly” cookware in America. They named their product Kitchen Craft. Shortly after its invention, production of this new innovation in food preparation began. With the lack of retail stores in rural America, the brothers chose to sell the miracle device through in-home demonstrations. Kitchen Craft’s success was so overwhelming they were joined by a team of investors, rented a button factory situated on the west bend of the Milwaukee River, and started America’s first waterless cookware manufacturing facility. They gave it a simple monicker— the West Bend Aluminum Company.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_GFDjYg"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_fcc_Original_KC_Factory.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
-    "039b79ec-24b4-4f50-b22e-06c26db54608"
+    "039b79ec-24b4-4f50-b22e-06c26db54608",
+    "image_with_text_79NA64"
   ]
 }
