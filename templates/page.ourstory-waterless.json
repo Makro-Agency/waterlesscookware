@@ -470,7 +470,7 @@
         "full_width": true,
         "full_width_content": false,
         "padding_top": 40,
-        "padding_bottom": 80
+        "padding_bottom": 40
       }
     },
     "rich_text_UrXCrJ": {
@@ -495,7 +495,7 @@
         "full_width": true,
         "full_width_content": false,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     },
     "rich_text_XdR67Q": {
@@ -519,7 +519,7 @@
         "full_width": true,
         "full_width_content": false,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     }
   },
