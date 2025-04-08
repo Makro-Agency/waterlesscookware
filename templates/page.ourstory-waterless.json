@@ -1,0 +1,438 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "OUR MISSION",
+            "heading_size": "h2"
+          }
+        },
+        "775c67d5-8d02-4bf2-a818-bb156a30840b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Follow us through our amazing American Waterless Cookware Journey starting from the creation in 1906!",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0",
+        "775c67d5-8d02-4bf2-a818-bb156a30840b"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    },
+    "97199040-bf2b-41c3-a062-7ff04d324137": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>1906</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Dd9anF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It was 1906. In a barn near the heartland community of West Bend, Wisconsin, USA, two American farmers, brothers skilled in the art of metal work, hand-crafted the world’s first known waterless cookware. They designed a water seal rim around the edge of the utensil, which would eventually change the way the health conscious cooks of America prepare meals for their families. The two-brother team engineered fasteners on the cover that would seal in the natural flavors and nutrients of the fresh, organic vegetables they grew on their farms.<br/><br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-0",
+        "text_Dd9anF"
+      ],
+      "settings": {
+        "sec_bg": "#fcfbf9",
+        "image": "shopify://shop_images/w1200_d2f4_Waterless_Cooker_1909_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "039b79ec-24b4-4f50-b22e-06c26db54608": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_W8g9At": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This was the first approach to cooking that managed to retain all of nature’s whole food nutrients in a meal while heating it. Truth be told, although the pair didn’t know it yet, their invention was also the first handmade “eco-friendly” cookware in America. They named their product Kitchen Craft. Shortly after its invention, production of this new innovation in food preparation began. With the lack of retail stores in rural America, the brothers chose to sell the miracle device through in-home demonstrations. Kitchen Craft’s success was so overwhelming they were joined by a team of investors, rented a button factory situated on the west bend of the Milwaukee River, and started America’s first waterless cookware manufacturing facility. They gave it a simple monicker— the West Bend Aluminum Company.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_W8g9At"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_51f3_KitchenTradition-BW.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_79NA64": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_LjeQpT": {
+          "type": "heading",
+          "settings": {
+            "heading": "1920",
+            "heading_size": "h1"
+          }
+        },
+        "text_GFDjYg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This was the first approach to cooking that managed to retain all of nature’s whole food nutrients in a meal while heating it. Truth be told, although the pair didn’t know it yet, their invention was also the first handmade “eco-friendly” cookware in America. They named their product Kitchen Craft. Shortly after its invention, production of this new innovation in food preparation began. With the lack of retail stores in rural America, the brothers chose to sell the miracle device through in-home demonstrations. Kitchen Craft’s success was so overwhelming they were joined by a team of investors, rented a button factory situated on the west bend of the Milwaukee River, and started America’s first waterless cookware manufacturing facility. They gave it a simple monicker— the West Bend Aluminum Company.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LjeQpT",
+        "text_GFDjYg"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_fcc_Original_KC_Factory.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_Ybt6NM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gGbp34": {
+          "type": "heading",
+          "settings": {
+            "heading": "1940",
+            "heading_size": "h1"
+          }
+        },
+        "text_AV7ft4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>During World War II, Germany invented a new method of merging metals. The technique, which combined zinc and chromium, made it economical enough to create another first—stainless steel cookware. Using this latest innovation in merging metals, the first stainless steel, three-ply, carbon core waterless cookware was created and sold under the name Lustre Craft. It was a huge success. However, as WWII waged on and the American military entered the fight, production of cookware came to a halt. All manufacturing facilities were repurposed to churn out supplies for the U.S. military. Meanwhile, the sale of the Lustre Craft and Kitchen Craft cookware continued to soar. The sales team had to tell customers, “You’ll receive your cookware when the war is over!” Most of these customers were from the abundance of single women now working in factories, supporting the war effort. When the war finally came to a close and the young soldiers returned home to marry their girls, their Kitchen Craft and Lustre Craft cookware were delivered! These high-quality, durable pots and pans remained with the couples throughout the years as children were born and their families grew. The West Bend Company also thrived, producing cookware that was now shipped throughout the world.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gGbp34",
+        "text_AV7ft4"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_d126_1942_wartime_production_5b7f38a3-c79e-4706-b1d0-93cffb07fb13.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "mothersday_banner_bDGzew": {
+      "type": "mothersday-banner",
+      "settings": {
+        "image": "shopify://shop_images/w1200_137_ticker-tape-parade.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_with_text_rahkDb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YAffLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>1968</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_zy8nWz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YAffLH",
+        "text_zy8nWz"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_fbf_cookbook_with_bride.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_QaEhzN": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_VNEFF8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_VNEFF8"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_ae2a_Dave_selling_Lustrecraft.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_HwCB7U": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_JAeTEC": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>1969</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_i39kcp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A believer in the cookware from the start, Dave asked if the Lustre Craft Company was hiring and he was told no 12 times before Mr. Featherstone finally agreed to let him try his hand at sales. (He knew he’d never be able to get ahead if he stayed at the rock quarry, working 40 hours a week at $2.05 an hour.) Dave’s only question was if he could work overtime. Mr. Featherstone replied, “You can work as much as you want. We pay you a commission, and you get $25 for every set you sell.” Dave didn’t know the meaning of the word commission, but after doing the math he figured with some effort he could easily earn more selling cookware than he would ever make down at the quarry.<br/><br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JAeTEC",
+        "text_i39kcp"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_3e49_Dave_in_Vietnam.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_qGGyjM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rc9y7d": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>1970s and Beyond</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_wtDrDx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Over the years, through countless trials and tribulations, Dave mastered the sales career. He eventually became the West Bend Company’s largest cookware distributor in the world. He hired thousands of college students to sell cookware to single girls for their hope chests and created a cooking demonstration that is still performed at over 3,000 events in America to this day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rc9y7d",
+        "text_wtDrDx"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_w87rfC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UwfLt9": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2003</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_8JWAHY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Unfortunately, in 2003 the West Bend Housewares Company (formerly West Bend Company) who manufactured the retail cookware and tabletop appliances Dave had known and trusted throughout his career, sold their name to an importing company. Hundreds of Americans lost their jobs, and all appliance manufacturing was outsourced to China.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UwfLt9",
+        "text_8JWAHY"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_gKKmRw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nGFNd8": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2004</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_fW7eDX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fearing the waterless cookware division was next to be outsourced, the Hurley family invested everything they had to build a new, state-of-the-art green manufacturing facility, located just one mile from the old factories in West Bend. Combining their appreciation for the American worker and the company’s rich history in cookware, they named this facility Americraft. Dave’s Son, Bryan Hurley, lead the manufacturing effort and re-hired the men and women who had lost their livelihoods after 30 years of loyalty to West Bend. Americraft celebrated these employees and their combined 600 years of manufacturing experience on the factory’s opening day, July 4th, 2004. This is the day that waterless cookware gained independence from encroaching foreign manufacturers.<br/><br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nGFNd8",
+        "text_fW7eDX"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_ed68_Front-of-Bldg.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea",
+    "97199040-bf2b-41c3-a062-7ff04d324137",
+    "039b79ec-24b4-4f50-b22e-06c26db54608",
+    "image_with_text_79NA64",
+    "image_with_text_Ybt6NM",
+    "mothersday_banner_bDGzew",
+    "image_with_text_rahkDb",
+    "image_with_text_QaEhzN",
+    "image_with_text_HwCB7U",
+    "rich_text_qGGyjM",
+    "rich_text_w87rfC",
+    "image_with_text_gKKmRw"
+  ]
+}
