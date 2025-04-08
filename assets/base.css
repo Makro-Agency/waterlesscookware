@@ -2401,7 +2401,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .header-wrapper--border-bottom {
   /* border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08); */
-  background: #FCFBF7;
+  background: #fcfcfa;
 
 }
 
@@ -3608,12 +3608,12 @@ details-disclosure > details {
   position: unset;
 }
 .main-register-form-life-warranty.color-background-1.gradient {
-  background: #fcfbf7;
+  background: #fcfcfa;
   width: 48%;
   margin: 0 auto;
 }
 .main-register-form-life-warranty .contact-page form .field .field__input {
-  background: #fcfbf7;
+  background: #fcfcfa;
   height: 30px;
   border-radius: 30px;
 }
@@ -3688,8 +3688,8 @@ details-disclosure > details {
 .pdp-subtitle{
     font-size: 16px;
 }
-.template-blog{ background-color: #fcfbf7;}
-.template-article{     background-color: #fcfbf7; }
+.template-blog{ background-color: #fcfcfa;}
+.template-article{     background-color: #fcfcfa; }
 div#enap-gallery li {list-style: none;}
 covet-pics-popup  .covet-branding{
   display:none !important;

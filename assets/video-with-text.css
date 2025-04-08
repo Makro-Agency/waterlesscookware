@@ -138,7 +138,7 @@
     padding: 15px 25px;
     border-radius: 100px;
     background-color: #7E0002;
-    color: #fcfbf7;
+    color: #fcfcfa;
     width: fit-content;
   }
   
@@ -199,7 +199,7 @@
     height: 40px;
     align-items: center;
   
-    background: #fcfbf7;
+    background: #fcfcfa;
     text-decoration: none;
   
     position: absolute;

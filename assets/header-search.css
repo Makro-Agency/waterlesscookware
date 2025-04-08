@@ -33,7 +33,7 @@
    border-bottom: 1px solid var(--gray-tones-black-20, rgba(0, 0, 0, 0.20));
 }
 .layout1-trans .header__icon--search{
-   border-bottom: 1px solid #FCFBF7;
+   border-bottom: 1px solid #fcfcfa;
 }
 
 
@@ -51,7 +51,7 @@
   padding-right: 0px;
   padding-top: 6px;
   border: none;
-  background: #fcfbf7;
+  background: #fcfcfa;
 }
 .field__input:focus ~ .field__label {
   display: none !important;

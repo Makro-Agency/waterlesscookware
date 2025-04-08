@@ -90,7 +90,7 @@ span.title_text {
 
 .need-help-box p {
   margin: 0;
-  color: #fcfbf7;
+  color:#fcfcfa;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -103,7 +103,7 @@ span.title_text {
   align-items: center;
   width: 142px;
   height: 40px;
-  background: #fcfbf7;
+  background: #fcfcfa;
   color: #7E0002;
   border-radius: 100px;
   font-size: 14px;
@@ -189,7 +189,7 @@ textarea::placeholder {
   font-size: 16px;
   line-height: 16px;
   text-align: center;
-  color: #fcfbf7;
+  color: #fcfcfa;
   margin-top: 30px;
   text-decoration: none;
   font-family: Manrope;

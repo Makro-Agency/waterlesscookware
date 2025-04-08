@@ -424,7 +424,7 @@ input:checked + .slider-toggle:before {
   border-radius: 100px;
   background: #e6a817;
   text-decoration: none;
-  color: #fcfbf7;
+  color: #fcfcfa;
   display: inline-flex;
 }
 /* .choice-button {
@@ -461,7 +461,7 @@ input:checked + .slider-toggle:before {
   border-radius: 100px;
   background: #7E0002;
   text-decoration: none;
-  color: #fcfbf7;
+  color: #fcfcfa; 
   display: inline-flex;
 }
 
@@ -500,7 +500,7 @@ input:checked + .slider-toggle:before {
   padding: 15px 25px;
   border-radius: 100px;
   background-color: #7E0002;
-  color: #fcfbf7;
+  color: #fcfcfa;
   width: 100%;
   margin-top: 40px;
 }

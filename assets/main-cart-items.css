@@ -939,7 +939,7 @@ gap: 10px;
   line-height: 150%;
 }
 .template-cart .cart__ctas .cart__checkout-button.button{
-  color: var(--White, #FCFBF7);
+  color: #fcfcfa;
   text-align: center;
   font-size: 16px;
   font-style: normal;

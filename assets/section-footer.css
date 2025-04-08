@@ -110,6 +110,7 @@ text-align: left;
    line-height: 150%;
    letter-spacing: 0;   
    text-align: left;
+   transition:all 0.3s linear; 
   display: block;
   padding-top:15px;
 
