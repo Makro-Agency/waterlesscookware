@@ -6,7 +6,7 @@
   border-width: var(--popup-border-width);
   border-style: solid;
   border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
-  background: #FCFBF7;
+  background: #fcfcfa;
   padding:40px;
   
   z-index: 3;

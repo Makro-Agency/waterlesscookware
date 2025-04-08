@@ -40,7 +40,7 @@
 
 #full-blend-hero-section-hero .full-blend-hero-section-container-box {
     padding: 40px;
-    background-color: #FCFBF7;
+    background-color: #fcfcfa;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -90,7 +90,7 @@
     padding: 15px 25px;
     border-radius: 100px;
     background-color: #7E0002;
-    color: #FCFBF7;
+    color: #fcfcfa;
     width: fit-content;
     display:inline-flex;
     align-items:center;

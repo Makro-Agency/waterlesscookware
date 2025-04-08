@@ -26,7 +26,7 @@
   .popup-box {
     display: flex;
     border: none;
-    background: #FCFBF7;
+    background: #fcfcfa;
     border-radius: 15px;
     overflow: hidden;
     align-items: self-end;

@@ -12,7 +12,7 @@
     src: url(https://cdn.shopify.com/s/files/1/0628/6960/2510/files/ProximaNova-Regular.woff?v=1722476969) format('woff');
 }
 .Terms-condition-container {
-  background: #fcfbf7;
+  background:#fcfcfa;
   width: 51%;
   margin: 0px auto;
   padding: 60px 38px;
@@ -44,7 +44,7 @@
 }
   @media only screen and (max-width: 767px) {
   .Terms-condition-container {
-      background:#fcfbf7;
+      background:#fcfcfa;
       width:100%;
       margin: 60px auto; 
       padding: 0px 29px;
