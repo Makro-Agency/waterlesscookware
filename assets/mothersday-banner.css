@@ -8,9 +8,31 @@
   .banner__box .banner__richtext.rte p { margin: 0.646em 0; }
   .banner__box .banner__richtext.rte p:first-child { margin-top: 0; }
   .banner__box .banner__richtext.rte p:last-child { margin-bottom: 0; }
-.banner__buttons .button { font-family: Jost; font-size: 1.372rem; font-style: normal; font-weight: 500; line-height: 1; letter-spacing: 0.05em; text-transform: uppercase; min-height: calc(5.486rem + var(--buttons-border-width) * 2); }
-  .banner__buttons .button .btnIcon { margin-left: 10px; }
+  .banner__buttons .button { font-style: normal;
+  background: #7E0002;
+  color: #FCFCFA;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 15px 25px;
+  border-radius: 100px;
+  height: 50px;
+  width: max-content;
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  min-height: auto;
+  max-width: fit-content;
+  min-width: fit-content; }
 
+  .banner__buttons .button .btnIcon { margin-left: 10px;display: none; }
+  .banner__buttons .button:hover {
+    background-color: #BD2129;
+    color: #fff;
+  }
 @media screen and (min-width: 1441px){
   .banner__content--middle-left.page-width { max-width: calc(86.111% + 10rem); width: 100%; }
 }

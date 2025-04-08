@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wkxnVU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Replacement Parts",
+            "heading_size": "h1"
+          }
+        },
+        "text_KbVTjG": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>Our warranty covers against defects in workmanship and materials for a lifetime on all cookware and bakeware products. All electrical components are warranted for 2 years, along with our mixing bowls and kitchen kutter. Our white mixing bowl is not covered under warranty. The warranty does not include abuse,accidents, or modification in any way, but if your cookware is damaged or destroyed by accident, fire,theft, or natural disaster, all original purchases may be replaced at 50% of the retail price at timeof replacement. <br/>A police/fire report or letter of explanation is required for replacement.If your cookware is in need of replacement parts due to accidents, normalwear and tear or aging you may purchase the kits at a reduced price below!<br/>If you feel that a part is defective in workmanship or materials please contact ourwarranty department at (262) 429-9972 or Warranty@Americraftcookware.com<br/>Please do not ship anything to our factory without contacting our office prior.We look forward to serving you!<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wkxnVU",
+        "text_KbVTjG"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_6rJxKt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_ec7D6B": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>18 different types of handles to choose from and 17 different types of knobs.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_ec7D6B"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_8aDm3y": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_TLxyHm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/swyd1-16ir4.jpg",
+            "title": "Replacement Handles",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/all-products"
+          }
+        },
+        "column_9T69Yt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/swyd1-16ir4.jpg",
+            "title": "Replacement Handles",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/all-products"
+          }
+        },
+        "column_6zcYLN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/swyd1-16ir4.jpg",
+            "title": "Replacement Handles",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/all-products"
+          }
+        }
+      },
+      "block_order": [
+        "column_TLxyHm",
+        "column_9T69Yt",
+        "column_6zcYLN"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "inverse",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea",
+    "rich_text_6rJxKt",
+    "multicolumn_8aDm3y"
+  ]
+}
