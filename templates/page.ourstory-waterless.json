@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "hide_title": true,
         "padding_top": 0,
@@ -20,14 +21,6 @@
     "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
       "type": "rich-text",
       "blocks": {
-        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "OUR MISSION",
-            "heading_size": "h2"
-          }
-        },
         "775c67d5-8d02-4bf2-a818-bb156a30840b": {
           "type": "heading",
           "settings": {
@@ -37,18 +30,17 @@
         }
       },
       "block_order": [
-        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0",
         "775c67d5-8d02-4bf2-a818-bb156a30840b"
       ],
       "settings": {
         "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "full_width": true,
         "full_width_content": false,
-        "padding_top": 80,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 60
       }
     },
     "97199040-bf2b-41c3-a062-7ff04d324137": {
@@ -58,7 +50,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>1906</strong>",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_Dd9anF": {
@@ -74,7 +66,7 @@
         "text_Dd9anF"
       ],
       "settings": {
-        "sec_bg": "#fcfbf9",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_d2f4_Waterless_Cooker_1909_1.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -82,11 +74,11 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "039b79ec-24b4-4f50-b22e-06c26db54608": {
@@ -104,19 +96,19 @@
         "text_W8g9At"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_51f3_KitchenTradition-BW.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "right",
         "content_layout": "no-overlap",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "image_with_text_79NA64": {
@@ -126,7 +118,7 @@
           "type": "heading",
           "settings": {
             "heading": "1920",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_GFDjYg": {
@@ -142,19 +134,19 @@
         "text_GFDjYg"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_fcc_Original_KC_Factory.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "image_with_text_Ybt6NM": {
@@ -164,7 +156,7 @@
           "type": "heading",
           "settings": {
             "heading": "1940",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_AV7ft4": {
@@ -180,23 +172,24 @@
         "text_AV7ft4"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_d126_1942_wartime_production_5b7f38a3-c79e-4706-b1d0-93cffb07fb13.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "right",
         "content_layout": "no-overlap",
         "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "mothersday_banner_bDGzew": {
       "type": "mothersday-banner",
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/w1200_137_ticker-tape-parade.jpg",
         "image_overlay_opacity": 0,
@@ -204,7 +197,7 @@
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
@@ -218,7 +211,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>1968</strong>",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_zy8nWz": {
@@ -234,19 +227,19 @@
         "text_zy8nWz"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_fbf_cookbook_with_bride.webp",
         "height": "adapt",
-        "desktop_image_width": "small",
+        "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "image_with_text_QaEhzN": {
@@ -255,7 +248,7 @@
         "text_VNEFF8": {
           "type": "text",
           "settings": {
-            "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
+            "text": "<p>One day a salesman named Richard Featherstone pulled into the couple’s driveway in a long white Cadillac. He knocked on the door with his sample case in hand, selling something called “waterless cookware,” branded Lustre Craft. In a home without even a kitchen sink, waterless cookware was an easy sell to the newlyweds. Plus, the cookware came with a lifetime guarantee. The couple were sold! They had to postdate the $38 down payment check on their new $400.00 set of beautiful, stainless steel, waterless Lustre Craft cookware, but they knew it was worth it.<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -264,7 +257,7 @@
         "text_VNEFF8"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_ae2a_Dave_selling_Lustrecraft.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -272,11 +265,11 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "right",
         "content_layout": "no-overlap",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "image_with_text_HwCB7U": {
@@ -302,7 +295,7 @@
         "text_i39kcp"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_3e49_Dave_in_Vietnam.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -310,11 +303,11 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "rich_text_qGGyjM": {
@@ -342,10 +335,10 @@
         "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "full_width": true,
         "full_width_content": false,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 52
       }
     },
@@ -374,11 +367,11 @@
         "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "full_width": true,
         "full_width_content": false,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 80
       }
     },
     "image_with_text_gKKmRw": {
@@ -404,7 +397,7 @@
         "text_fW7eDX"
       ],
       "settings": {
-        "sec_bg": "",
+        "sec_bg": "#ffffff",
         "image": "shopify://shop_images/w1200_ed68_Front-of-Bldg.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -412,11 +405,122 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "right",
         "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "image_with_text_KrNFKx": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_X4d4L9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This talented and seasoned team are the masters of the waterless cookware industry. They refurbished 250-ton presses that were used to make ammunitions during WWII. Their knowledge and skills are unmatched. Americraft capitalizes on their experience with every piece of cookware made.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_X4d4L9"
+      ],
+      "settings": {
+        "sec_bg": "#ffffff",
+        "image": "shopify://shop_images/w1200_13d3_Americraft-IMG_8869.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_czmkU4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3waKD7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2004</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_yDTr4C": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Does our cookware cost more? You bet, and it is well worth it! The quality is second to none. The craftsmen that perform the 61 hand-operated steps required to make the world’s finest cookware are the best in the industry and take great pride in every step. When the foreign made dot coms become dot gone and their phones are disconnected, this 110-year-old American manufacturing company will still be there to give you the security and service you deserve.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3waKD7",
+        "text_yDTr4C"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_UrXCrJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rWYmUg": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>“The Bitterness Of Poor Quality Remains Long After The Sweetness Of Low Prices Are Forgotten.” – Benjamin Franklin</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rWYmUg"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_XdR67Q": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Y8TrNT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dear Customer,<br/><br/>Please read the countless reviews from our valued customers and rest in the security that you’ve invested wisely. Know that you’ve supported an American owned and operated company. Including our suppliers, we have identified over 9,000 American families who have a job because you bought this cookware. Thank you from all of us! Know that should our country ever go to war again to defend our liberties and freedom, Americraft would readily do our part.<br/><br/>Our company proudly supports the men and women who defend America’s freedom and way of life, preserving the principles our forefathers fought and died for. This is not the land of the free and the home of the brave. This land is free because of the brave. How many of us were more patriotic on 9/11 than we were on 9/10? Let us not ever forget again.<br/><br/>Thank you from all of us who have a job…because you boughtKitchen Craft Cookware<br/><br/>Patriotically Yours,Dave and Bryan Hurley<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Y8TrNT"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
@@ -433,6 +537,10 @@
     "image_with_text_HwCB7U",
     "rich_text_qGGyjM",
     "rich_text_w87rfC",
-    "image_with_text_gKKmRw"
+    "image_with_text_gKKmRw",
+    "image_with_text_KrNFKx",
+    "rich_text_czmkU4",
+    "rich_text_UrXCrJ",
+    "rich_text_XdR67Q"
   ]
 }

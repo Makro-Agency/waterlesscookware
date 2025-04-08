@@ -414,12 +414,22 @@
 /* New CSS */
 .img-wth-text-main-box { width:100%; overflow:hidden; }
 
-.image-with-text__content .image-with-text__heading.h2 { color: #000; font-size: 36px; line-height: 110%; letter-spacing: -0.72px; text-transform:capitalize;
+.image-with-text__content .image-with-text__heading.h2 { 
+  color: #1a1a1a;
+  font-size: 36px; line-height: 110%; letter-spacing: -0.72px; text-transform:capitalize;
    margin:0 0 30px 0; }
 
 .image-with-text__content .image-with-text__text { margin:0; }
 .image-with-text__content .image-with-text__text,
-.image-with-text__content .image-with-text__text p { color: #000; font-size: 14px; font-weight: 300; line-height: 160%; }
+.image-with-text__content .image-with-text__text p { 
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  vertical-align: bottom;
+  color: #1a1a1a;
+}
 .image-with-text__content .image-with-text__text p:first-child { margin-top:0; }
 .image-with-text__content .image-with-text__text p:last-child { margin-bottom:0; }
 
