@@ -235,6 +235,40 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "newsletter_AEtzhr": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_crrXqT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h1",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<br/><br/></p>"
+          }
+        },
+        "paragraph_agTRVV": {
+          "type": "paragraph",
+          "settings": {
+            "text": ""
+          }
+        },
+        "email_form_eTWJVT": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_crrXqT",
+        "paragraph_agTRVV",
+        "email_form_eTWJVT"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -244,6 +278,7 @@
     "97199040-bf2b-41c3-a062-7ff04d324137",
     "image_with_text_VARTRN",
     "rich_text_MnAHMf",
-    "mothersday_banner_Reca4e"
+    "mothersday_banner_Reca4e",
+    "newsletter_AEtzhr"
   ]
 }
