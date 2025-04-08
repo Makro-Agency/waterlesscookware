@@ -50,14 +50,14 @@
           "type": "menu_block",
           "settings": {
             "menu_heading": "About Waterless cookware",
-            "navigation_menu": "footer-about"
+            "navigation_menu": "about-waterless-cookware"
           }
         },
         "menu_block_qDtnPC": {
           "type": "menu_block",
           "settings": {
             "menu_heading": "Shop Waterless Cookware",
-            "navigation_menu": "footer-shop"
+            "navigation_menu": "shop-waterless-cookware"
           }
         },
         "menu_block_gg6TzB": {
