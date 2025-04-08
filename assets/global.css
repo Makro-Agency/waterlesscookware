@@ -552,3 +552,12 @@ background-color: #fcfcfa;
 .template-page.warranty-parts .multicolumn-card__info .link .icon-wrap {
   display: none;
 }
+.template-page.warranty-parts .multicolumn-list {
+  --grid-desktop-vertical-spacing: 32px;
+    --grid-desktop-horizontal-spacing: 32px;
+    
+} 
+.template-page.warranty-parts .multicolumn-list.grid{
+  column-gap: var(--grid-desktop-horizontal-spacing);
+        row-gap: var(--grid-desktop-vertical-spacing);
+}
