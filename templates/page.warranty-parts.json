@@ -57,24 +57,35 @@
           "settings": {
             "image": "shopify://shop_images/swyd1-16ir4.jpg",
             "title": "Replacement Handles",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/all-products"
+          }
+        },
+        "column_9T69Yt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/swyd1-16ir4.jpg",
+            "title": "Replacement Handles",
+            "text": "",
             "link_label": "Shop Now",
             "link": "shopify://collections/all-products"
           }
         }
       },
       "block_order": [
-        "column_TLxyHm"
+        "column_TLxyHm",
+        "column_9T69Yt"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "color_scheme": "",
         "columns_mobile": "1",
