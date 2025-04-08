@@ -402,7 +402,7 @@ header .header__icons--localization{
     }
   } */
  .header__heading-link{ width:fit-content; }
-.header__heading{ width:100%; max-width:200px; }
+.header__heading{ width:100%; max-width:190px; }
 .header__heading-logo-wrapper.index-logo{ width:100%; display:flex; }
   .logo-container {
   position: relative;
@@ -457,8 +457,10 @@ display:none;
 {% if section.settings.enable_transparent_header  %}
  .shopify-section-header-sticky.scrolled-past-header .header.index-header img.header__heading-logo.motion-reduce.logo.first-logo{
   display:none; 
+ 
   }
-  .header.index-header img.header__heading-logo.motion-reduce.logo.second-logo{  transition: opacity 0.3s ease;   }
+
+  .shopify-section-header-sticky.scrolled-past-header .header.index-header img.header__heading-logo.motion-reduce.logo.second-logo{ animation: fadeInLogo 1.4s ease forwards; }
 .shopify-section-header-sticky.scrolled-past-header .header.index-header img.header__heading-logo.motion-reduce.logo.second-logo{
 display:block; 
 } 
@@ -466,6 +468,23 @@ display:block;
 .shopify-section-header-sticky.scrolled-past-header .header .header__icon input:placeholder{ color:#04232F; }
 .js .header__icons--localization .localization-form__select .icon.icon-caret:last-child path{ color: #04232F; stroke:#04232F; }
 .shopify-section-header-sticky.scrolled-past-header .header__icon--search{ border:none; }
+.header details[open]  .header__icon--search{ border-bottom:none !Important; }
+.header.index-header:hover details[open] .header__icon--search{  border-bottom:none !Important;  }
+  {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+.header #HeaderCountryForm .disclosure .icon.icon-caret{ right:-4px; }
+.js .header__icons--localization .localization-form__select{ padding:0 1.71428rem 0 0.5rem; }
+.header-row{ max-width:1400px; }
+{% endif %}
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 {%- endstyle -%}
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
@@ -548,7 +567,7 @@ display:block;
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width }}, {{ settings.logo_width  }}{% endcapture %}
 
             
-                {{ section.settings.logo1 | image_url: width: 200 | image_tag:
+                {{ section.settings.logo1 | image_url: width: 190 | image_tag:
                   class: 'header__heading-logo motion-reduce logo first-logo',
                   widths: widths,
                   height: logo_height,
