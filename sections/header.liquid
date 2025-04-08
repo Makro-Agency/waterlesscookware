@@ -402,7 +402,7 @@ header .header__icons--localization{
     }
   } */
  .header__heading-link{ width:fit-content; }
-.header__heading{ width:100%; max-width:200px; }
+.header__heading{ width:100%; max-width:190px; }
 .header__heading-logo-wrapper.index-logo{ width:100%; display:flex; }
   .logo-container {
   position: relative;
@@ -548,7 +548,7 @@ display:block;
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width }}, {{ settings.logo_width  }}{% endcapture %}
 
             
-                {{ section.settings.logo1 | image_url: width: 200 | image_tag:
+                {{ section.settings.logo1 | image_url: width: 190 | image_tag:
                   class: 'header__heading-logo motion-reduce logo first-logo',
                   widths: widths,
                   height: logo_height,
