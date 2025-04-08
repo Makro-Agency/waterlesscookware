@@ -39,8 +39,8 @@
         "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0",
         "775c67d5-8d02-4bf2-a818-bb156a30840b"
       ],
-      "disabled": true,
       "settings": {
+        "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "",
@@ -92,7 +92,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "#fcfbf9",
-        "image": "shopify://shop_images/about-1.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -149,7 +148,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-2.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -206,7 +204,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-3.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -263,7 +260,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-4.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
