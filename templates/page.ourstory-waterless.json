@@ -209,7 +209,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>1968</strong>",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_zy8nWz": {
@@ -237,7 +237,7 @@
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 80,
-        "padding_bottom": 36
+        "padding_bottom": 80
       }
     },
     "image_with_text_QaEhzN": {
@@ -246,7 +246,7 @@
         "text_VNEFF8": {
           "type": "text",
           "settings": {
-            "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
+            "text": "<p>One day a salesman named Richard Featherstone pulled into the couple’s driveway in a long white Cadillac. He knocked on the door with his sample case in hand, selling something called “waterless cookware,” branded Lustre Craft. In a home without even a kitchen sink, waterless cookware was an easy sell to the newlyweds. Plus, the cookware came with a lifetime guarantee. The couple were sold! They had to postdate the $38 down payment check on their new $400.00 set of beautiful, stainless steel, waterless Lustre Craft cookware, but they knew it was worth it.<br/><br/></p>",
             "text_style": "body"
           }
         }
