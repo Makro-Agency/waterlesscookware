@@ -217,7 +217,7 @@
         "heading_YAffLH": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "<strong>1968</strong>",
             "heading_size": "h1"
           }
         },
@@ -227,28 +227,19 @@
             "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
             "text_style": "body"
           }
-        },
-        "button_fH9CM6": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": "full_color"
-          }
         }
       },
       "block_order": [
         "heading_YAffLH",
-        "text_zy8nWz",
-        "button_fH9CM6"
+        "text_zy8nWz"
       ],
       "settings": {
         "sec_bg": "",
         "image": "shopify://shop_images/w1200_fbf_cookbook_with_bride.webp",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "",
