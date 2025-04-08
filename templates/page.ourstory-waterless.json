@@ -380,6 +380,44 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "image_with_text_gKKmRw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nGFNd8": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2004</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_fW7eDX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fearing the waterless cookware division was next to be outsourced, the Hurley family invested everything they had to build a new, state-of-the-art green manufacturing facility, located just one mile from the old factories in West Bend. Combining their appreciation for the American worker and the company’s rich history in cookware, they named this facility Americraft. Dave’s Son, Bryan Hurley, lead the manufacturing effort and re-hired the men and women who had lost their livelihoods after 30 years of loyalty to West Bend. Americraft celebrated these employees and their combined 600 years of manufacturing experience on the factory’s opening day, July 4th, 2004. This is the day that waterless cookware gained independence from encroaching foreign manufacturers.<br/><br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nGFNd8",
+        "text_fW7eDX"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_ed68_Front-of-Bldg.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -394,6 +432,7 @@
     "image_with_text_QaEhzN",
     "image_with_text_HwCB7U",
     "rich_text_qGGyjM",
-    "rich_text_w87rfC"
+    "rich_text_w87rfC",
+    "image_with_text_gKKmRw"
   ]
 }
