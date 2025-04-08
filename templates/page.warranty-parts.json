@@ -90,7 +90,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/swyd1-16ir4.jpg",
-            "title": "Replacement Handles",
+            "title": "Electric Cords",
             "text": "",
             "link_label": "Shop Now",
             "link": "shopify://collections/all-products"
@@ -99,11 +99,11 @@
         "column_6zcYLN": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/swyd1-16ir4.jpg",
-            "title": "Replacement Handles",
+            "image": "shopify://shop_images/401h0-l1qur.jpg",
+            "title": "Replacement Knobs",
             "text": "",
             "link_label": "Shop Now",
-            "link": "shopify://collections/all-products"
+            "link": "https://waterlesscookware.com/collections/warranty-handles"
           }
         }
       },
