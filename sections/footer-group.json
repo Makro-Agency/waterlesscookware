@@ -57,14 +57,14 @@
           "type": "menu_block",
           "settings": {
             "menu_heading": "Shop Waterless Cookware",
-            "navigation_menu": "resources"
+            "navigation_menu": "footer-shop"
           }
         },
         "menu_block_gg6TzB": {
           "type": "menu_block",
           "settings": {
             "menu_heading": "Policies",
-            "navigation_menu": "about-360"
+            "navigation_menu": "policies"
           }
         }
       },
