@@ -13,7 +13,7 @@
 }
 
 .blog-articles__article:hover .card__content a{
-  color: #c3d957!important;
+  color: #BD2129 !important;
   font-weight: 600 !important;
   opacity:1;
 }

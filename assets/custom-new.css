@@ -160,7 +160,7 @@ color:#1a1a1a;
 .service-content a:hover,
 .article-card-item:hover a,.ab-footer-linklist a:hover,#FacetFiltersForm .facet-checkbox__text:hover,
   .catalog-prduct-text-down-icon a:hover{
-    color:#c3d957 !important;
+    color:#BD2129 !important;
   }
   .service-content:hover a{
        /* color:#c3d957 !important; */
@@ -169,8 +169,8 @@ color:#1a1a1a;
        /* color:#c3d957 !important; */
   }
   .makro-resources-guide .contact-block .cta_button.btn-light:hover{
-    background: #c3d957;
-    color: #fcfbf7;
+    background: #BD2129;
+    color: #fcfcfa;
   }
 .template-collection .facets-vertical-form {
   display: flex;
@@ -227,8 +227,8 @@ body:not(.smart-cart--enabled) .product-form__submit {
 }
 
 .cart__ctas .cart__checkout-button.button:hover{
-  background:#c3d957;
-  color:#fff;
+  background:#BD2129;
+  color:#fcfcfa;
 }
 .cart__ctas .cart__checkout-button.button:after{
    display:none;
@@ -263,9 +263,9 @@ cart-drawer .drawer__inner{
   display:none !important;
 }
 .template-cart .related-products .quick-add button.quick-add__submit:hover {
-  border: 1px solid #c3d957;
-  background: #c3d957;
-  color: #fff;
+  border: 1px solid #BD2129;
+  background: #BD2129;
+  color: #fcfcfa;
 }
 .rotate-arrow {
   transition: transform 0.3s ease;
@@ -324,7 +324,7 @@ cart-drawer .drawer__inner{
   border-bottom: 2px solid transparent !important;
 }
 .megamenu-about-content-main .product-360-link a:hover{
-  color: #c3d957;
+  color: #BD2129;
   /* border-bottom: 2px solid #c3d957 !important; */
   display: inline-flex;
   align-items:center;
@@ -403,11 +403,11 @@ cart-drawer .drawer__inner{
 }
 /* .makro-product-carousel-wrapper .slide-nav .nav-btn:hover, */
 #catalog-product-slider .swiper-button-next:hover, #catalog-product-slider .swiper-button-prev:hover{
-  background:#c3d957;
+  background:#BD2129;
 }
 .catalog-product-grid-main:hover .catalog-prduct-text-down-header h4,
 .catalog-product-grid-main:hover .catalog-prduct-text-down-icon a{
-  color:#c3d957;
+  color:#BD2129;
 }
 /* rs css start */
 .cart-drawer-show cart-drawer.drawer.is-empty a.button:after,
@@ -432,19 +432,19 @@ cart-items.is-empty a.button {
 }
 .cart-drawer-show cart-drawer.drawer.is-empty  a.button:hover ,
 cart-items.is-empty a.button:hover {
-    background: #c3d957;
-    color: #fcfbf7;
+    background: #BD2129;
+    color: #fcfcfa;
 }
 .cart-drawer-show cart-drawer.drawer.is-empty  a.button:hover:after ,
 cart-items.is-empty a.button:hover:after {
     box-shadow: none;
 }
 .send-link:hover,#full-blend-hero-section-hero .full-blend-hero-section-container-box-btn:hover{
-  background:#c3d957;
+  background:#BD2129;
 }
 
 .header.index-header:hover .header__icon:hover svg{
-  color: #c3d957;
+  color: #BD2129;
 }
 #swell-popup,#swell-overlay {
   display: none !important;
