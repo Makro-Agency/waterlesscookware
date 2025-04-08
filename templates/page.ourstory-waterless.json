@@ -122,6 +122,13 @@
     "image_with_text_79NA64": {
       "type": "image-with-text",
       "blocks": {
+        "heading_LjeQpT": {
+          "type": "heading",
+          "settings": {
+            "heading": "1920",
+            "heading_size": "h1"
+          }
+        },
         "text_GFDjYg": {
           "type": "text",
           "settings": {
@@ -131,6 +138,7 @@
         }
       },
       "block_order": [
+        "heading_LjeQpT",
         "text_GFDjYg"
       ],
       "settings": {
@@ -148,6 +156,107 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "image_with_text_Ybt6NM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gGbp34": {
+          "type": "heading",
+          "settings": {
+            "heading": "1940",
+            "heading_size": "h1"
+          }
+        },
+        "text_AV7ft4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>During World War II, Germany invented a new method of merging metals. The technique, which combined zinc and chromium, made it economical enough to create another first—stainless steel cookware. Using this latest innovation in merging metals, the first stainless steel, three-ply, carbon core waterless cookware was created and sold under the name Lustre Craft. It was a huge success. However, as WWII waged on and the American military entered the fight, production of cookware came to a halt. All manufacturing facilities were repurposed to churn out supplies for the U.S. military. Meanwhile, the sale of the Lustre Craft and Kitchen Craft cookware continued to soar. The sales team had to tell customers, “You’ll receive your cookware when the war is over!” Most of these customers were from the abundance of single women now working in factories, supporting the war effort. When the war finally came to a close and the young soldiers returned home to marry their girls, their Kitchen Craft and Lustre Craft cookware were delivered! These high-quality, durable pots and pans remained with the couples throughout the years as children were born and their families grew. The West Bend Company also thrived, producing cookware that was now shipped throughout the world.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gGbp34",
+        "text_AV7ft4"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_d126_1942_wartime_production_5b7f38a3-c79e-4706-b1d0-93cffb07fb13.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "mothersday_banner_bDGzew": {
+      "type": "mothersday-banner",
+      "settings": {
+        "image": "shopify://shop_images/w1200_137_ticker-tape-parade.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_with_text_rahkDb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YAffLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_zy8nWz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 1968, a young man named Dave Hurley, who had dropped out of high school to serve his country in the Marine Corps, returned from Vietnam as a decorated soldier. He worked in a rock quarry in southern Illinois while living in an old farm house he rented for $30 a month. The house had no running water, no sink and no bathroom other than the outhouse in the backyard. He and his new wife, with no idea of how poor they really were, made the best of their humble start.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_fH9CM6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": "full_color"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YAffLH",
+        "text_zy8nWz",
+        "button_fH9CM6"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_fbf_cookbook_with_bride.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -155,6 +264,9 @@
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
     "039b79ec-24b4-4f50-b22e-06c26db54608",
-    "image_with_text_79NA64"
+    "image_with_text_79NA64",
+    "image_with_text_Ybt6NM",
+    "mothersday_banner_bDGzew",
+    "image_with_text_rahkDb"
   ]
 }
