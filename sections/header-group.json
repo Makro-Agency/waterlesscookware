@@ -219,7 +219,7 @@
       ],
       "settings": {
         "logo_position": "top-left",
-        "logo1": "shopify://shop_images/Logo_White.png",
+        "logo1": "shopify://shop_images/White_text_logo.png",
         "menu": "new-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
