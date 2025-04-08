@@ -198,6 +198,43 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "mothersday_banner_Reca4e": {
+      "type": "mothersday-banner",
+      "blocks": {
+        "heading_XDfnNb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bakeware Construction",
+            "heading_size": "h2"
+          }
+        },
+        "text_Xtqzx3": {
+          "type": "text",
+          "settings": {
+            "text": "3-ply, .07” thickness designed with T-304 surgical grade stainless steel, encompassing a heat-conducting aluminum core. Your food never comes into contact with soft metals such as aluminum,non-stick coatings, nor other potentially-hazardous elements.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XDfnNb",
+        "text_Xtqzx3"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/w1200_78a8__MG_1861_copy_2.webp",
+        "mobile_image": "shopify://shop_images/w1200_78a8__MG_1861_copy_2.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -206,6 +243,7 @@
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
     "image_with_text_VARTRN",
-    "rich_text_MnAHMf"
+    "rich_text_MnAHMf",
+    "mothersday_banner_Reca4e"
   ]
 }
