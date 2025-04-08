@@ -49,22 +49,22 @@
         "menu_block_r6WJiD": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "Help Center",
-            "navigation_menu": "help-center-policy-pages"
+            "menu_heading": "About Waterless cookware",
+            "navigation_menu": "about-waterless-cookware"
           }
         },
         "menu_block_qDtnPC": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "Resources",
-            "navigation_menu": "resources"
+            "menu_heading": "Shop Waterless Cookware",
+            "navigation_menu": "shop-waterless-cookware"
           }
         },
         "menu_block_gg6TzB": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "About 360",
-            "navigation_menu": "about-360"
+            "menu_heading": "Policies",
+            "navigation_menu": "policies"
           }
         }
       },
