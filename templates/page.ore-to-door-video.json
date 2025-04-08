@@ -21,7 +21,7 @@
       "type": "video",
       "settings": {
         "heading": "Ore to Door Video",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "enable_video_looping": false,
         "video_url": "https://youtu.be/zV81_wYt3Hg?si=Q5UXJaEDTydWnq2W",
         "cover_image": "shopify://shop_images/0.jpg",
@@ -29,7 +29,7 @@
         "full_width": false,
         "color_scheme": "",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 80
       }
     }
   },
