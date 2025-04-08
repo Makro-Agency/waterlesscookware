@@ -166,6 +166,38 @@
         "padding_top": 0,
         "padding_bottom": 80
       }
+    },
+    "rich_text_MnAHMf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_M4m33B": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cookware Construction",
+            "heading_size": "h1"
+          }
+        },
+        "text_97KUfz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kitchen Craft Cookware is made of three primary metals, with a .110 Gauge of thickness. The inside layer (what primarily touches your food) is T-316 Surgical Grade Stainless Steel. This is considered an 18/10 stainless steel which designates the target content of chromium and nickel in the metal.   In this case, it’s 18% chromium and 10% nickel. The acceptable range of chromium is 16.5% to 18.5% while the acceptable range of nickel is 10% to 13%. The outside layer (what touches the heat) is T-400 series stainless steel which has a lower nickel content and high carbon steel content to interact on induction cook tops. These two layers of stainless steel surround a layer of aluminum, which ensures superior heat conduction.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M4m33B",
+        "text_97KUfz"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -173,6 +205,7 @@
     "mothersday_banner_KzN8VH",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
-    "image_with_text_VARTRN"
+    "image_with_text_VARTRN",
+    "rich_text_MnAHMf"
   ]
 }
