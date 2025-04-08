@@ -41,6 +41,7 @@
       ],
       "disabled": true,
       "settings": {
+        "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "",
@@ -89,11 +90,10 @@
         "e367c330-f2c3-4c0b-899d-b197b67113cf",
         "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-2"
       ],
-      "disabled": true,
       "settings": {
         "sec_bg": "#fcfbf9",
-        "image": "shopify://shop_images/about-1.png",
-        "height": "large",
+        "image": "shopify://shop_images/w1200_d2f4_Waterless_Cooker_1909_7a26f468-8ed4-4fa9-927e-672bb5fcbde6.jpg",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
@@ -149,7 +149,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-2.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -206,7 +205,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-3.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -263,7 +261,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-4.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
