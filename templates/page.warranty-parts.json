@@ -49,6 +49,30 @@
         "padding_bottom": 100
       }
     },
+    "rich_text_6rJxKt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_ec7D6B": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>18 different types of handles to choose from and 17 different types of knobs.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_ec7D6B"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
     "multicolumn_8aDm3y": {
       "type": "multicolumn",
       "blocks": {
@@ -71,11 +95,22 @@
             "link_label": "Shop Now",
             "link": "shopify://collections/all-products"
           }
+        },
+        "column_6zcYLN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/swyd1-16ir4.jpg",
+            "title": "Replacement Handles",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/all-products"
+          }
         }
       },
       "block_order": [
         "column_TLxyHm",
-        "column_9T69Yt"
+        "column_9T69Yt",
+        "column_6zcYLN"
       ],
       "settings": {
         "title": "",
@@ -98,6 +133,7 @@
   "order": [
     "main",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
+    "rich_text_6rJxKt",
     "multicolumn_8aDm3y"
   ]
 }
