@@ -244,7 +244,7 @@
           "settings": {
             "heading": "Newsletter",
             "heading_size": "h1",
-            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<br/><br/></p>"
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
           }
         },
         "paragraph_agTRVV": {
@@ -267,7 +267,7 @@
         "color_scheme": "inverse",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     }
   },
