@@ -17,6 +17,55 @@
         "padding_bottom": 0
       }
     },
+    "mothersday_banner_KzN8VH": {
+      "type": "mothersday-banner",
+      "blocks": {
+        "heading_zqwCAz": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Why Waterless Cookware</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_jPUKQT": {
+          "type": "text",
+          "settings": {
+            "text": "Waterless Cookware Cooks Better Tasting, More Nutritional Food!",
+            "text_style": "body"
+          }
+        },
+        "buttons_LJtWWb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zqwCAz",
+        "text_jPUKQT",
+        "buttons_LJtWWb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/w1200_cb16_Cover---Pan-with-Chicken-REVISED.webp",
+        "mobile_image": "shopify://shop_images/w1200_cb16_Cover---Pan-with-Chicken-REVISED.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
       "type": "rich-text",
       "blocks": {
@@ -41,6 +90,7 @@
       ],
       "disabled": true,
       "settings": {
+        "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "",
@@ -92,7 +142,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "#fcfbf9",
-        "image": "shopify://shop_images/about-1.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -149,7 +198,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-2.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -206,7 +254,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-3.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -263,7 +310,6 @@
       "disabled": true,
       "settings": {
         "sec_bg": "",
-        "image": "shopify://shop_images/about-4.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -280,6 +326,7 @@
   },
   "order": [
     "main",
+    "mothersday_banner_KzN8VH",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
     "039b79ec-24b4-4f50-b22e-06c26db54608",
