@@ -49,21 +49,21 @@
         "menu_block_r6WJiD": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "Help Center",
+            "menu_heading": "About Waterless cookware",
             "navigation_menu": "help-center-policy-pages"
           }
         },
         "menu_block_qDtnPC": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "Resources",
+            "menu_heading": "Shop Waterless Cookware",
             "navigation_menu": "resources"
           }
         },
         "menu_block_gg6TzB": {
           "type": "menu_block",
           "settings": {
-            "menu_heading": "About 360",
+            "menu_heading": "Policies",
             "navigation_menu": "about-360"
           }
         }
