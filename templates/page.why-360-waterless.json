@@ -17,37 +17,78 @@
         "padding_bottom": 0
       }
     },
-    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
-      "type": "rich-text",
+    "mothersday_banner_KzN8VH": {
+      "type": "mothersday-banner",
       "blocks": {
-        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0": {
+        "heading_zqwCAz": {
           "type": "heading",
           "settings": {
-            "heading": "OUR MISSION",
+            "heading": "<strong>Why Waterless Cookware</strong>",
             "heading_size": "h2"
           }
         },
+        "text_jPUKQT": {
+          "type": "text",
+          "settings": {
+            "text": "Waterless Cookware Cooks Better Tasting, More Nutritional Food!",
+            "text_style": "body"
+          }
+        },
+        "buttons_LJtWWb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zqwCAz",
+        "text_jPUKQT",
+        "buttons_LJtWWb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/w1200_cb16_Cover---Pan-with-Chicken-REVISED.webp",
+        "mobile_image": "shopify://shop_images/w1200_cb16_Cover---Pan-with-Chicken-REVISED.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
+      "type": "rich-text",
+      "blocks": {
         "775c67d5-8d02-4bf2-a818-bb156a30840b": {
           "type": "heading",
           "settings": {
-            "heading": "Our mission is to help ease the hassle of shopping for South Asian Fashion.No more spending a whole weekend going from store to store hoping to find something you like",
+            "heading": "Kitchen Craft Cookware is handcrafted in the USA, which is manufactured in our Green Manufacturing facility in West Bend, Wisconsin.",
             "heading_size": "h1"
           }
         }
       },
       "block_order": [
-        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0",
         "775c67d5-8d02-4bf2-a818-bb156a30840b"
       ],
-      "disabled": true,
       "settings": {
+        "hide_class": false,
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
         "full_width_content": false,
         "padding_top": 80,
-        "padding_bottom": 100
+        "padding_bottom": 60
       }
     },
     "97199040-bf2b-41c3-a062-7ff04d324137": {
@@ -56,234 +97,188 @@
         "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-0": {
           "type": "heading",
           "settings": {
-            "heading": "Shop our new monthly drops from the comfort of your home with confidence:",
-            "heading_size": "h1"
+            "heading": "Inside Scoop On Waterless Cookware",
+            "heading_size": "h2"
           }
         },
-        "e367c330-f2c3-4c0b-899d-b197b67113cf": {
-          "type": "icon_with_text",
+        "text_TRWQJk": {
+          "type": "text",
           "settings": {
-            "img_icon_one": "shopify://shop_images/icon-1.svg",
-            "texts_one": "<p>99% 5 Star rating</p>",
-            "img_icon_two": "shopify://shop_images/icon-2.svg",
-            "texts_two": "<p>Over 10,000 customer</p>",
-            "img_icon_three": "shopify://shop_images/icon-3.svg",
-            "texts_three": "<p>15 Day Return & Exchange Policy</p>",
-            "img_icon_four": "",
-            "texts_four": "",
-            "img_icon_five": "",
-            "texts_five": ""
-          }
-        },
-        "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP BESTSELLERS",
-            "button_link": "#",
-            "button_style_secondary": "bordered"
+            "text": "<p>Kitchen Craft Cookware is unlike any cookware you’ve ever experienced. This energy efficient cooking system moves beyond traditional cooking and captures the magic of waterless cooking to heat your food quicker, at lower temperatures and without added fat or excess water, ensuring recipes stay nutritious, flavorful and appetizing.</p><p>Waterless cooking creates fast, even heat that gently surrounds your healthy recipes, from vegetables and meats to grains and baked goods. The lids are specially designed to create a Vapor Seal that captures heat and keeps it moving around your food, not escaping out the sides.<br/><br/></p>",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
         "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-0",
-        "e367c330-f2c3-4c0b-899d-b197b67113cf",
-        "template--14930103533633__97199040-bf2b-41c3-a062-7ff04d324137-1687770567891771a5-2"
+        "text_TRWQJk"
       ],
-      "disabled": true,
       "settings": {
-        "sec_bg": "#fcfbf9",
-        "image": "shopify://shop_images/about-1.png",
-        "height": "large",
+        "sec_bg": "#ffffff",
+        "image": "shopify://shop_images/w1200_39c0_ELI_7501_1.webp",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
-    "039b79ec-24b4-4f50-b22e-06c26db54608": {
+    "image_with_text_VARTRN": {
       "type": "image-with-text",
       "blocks": {
-        "31b610b9-5f78-4911-8fc4-eb5005cad309": {
-          "type": "caption",
-          "settings": {
-            "caption": "FOUNDER & CHIEF CREATIVE OFFICER",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-0": {
+        "heading_xP89QH": {
           "type": "heading",
           "settings": {
-            "heading": "meet sofi",
-            "heading_size": "h1"
+            "heading": "Best-In-Class Stainless Steel",
+            "heading_size": "h2"
           }
         },
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-1": {
+        "text_7QQCfH": {
           "type": "text",
           "settings": {
-            "text": "<p>In 2015, Sofi was fed up with the lack of modern / stylish options for South Asian clothing.</p><p><em>“I used to dread going to events because the process of shopping for an outfit was so tedious. Nothing was modern, and there was no reliability online to shop for South Asian Fashion. I didn't want to buy a drop shipped outfit knowing that it was final sale. Niether did I want to spend thousands on a designer outfit that I would only wear only once.”</em></p><p>So she decided to create a brand that would blend modernity, affordability and simplicity and make it accessible to all women. The Saree Room was born.</p>",
+            "text": "<p>Our stainless steel cookware is made with the highest quality stainless steel, so it is built to last. All of our products are backed by a lifetime warranty protecting you from any manufacturing defect in workmanship so, you can enjoy the energy saving benefits of green cooking and better tasting food as long as you’d like. </p>",
             "text_style": "body"
-          }
-        },
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Follow on Instagram",
-            "button_link": "#",
-            "button_style_secondary": "link"
           }
         }
       },
       "block_order": [
-        "31b610b9-5f78-4911-8fc4-eb5005cad309",
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-0",
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-1",
-        "template--14930103533633__039b79ec-24b4-4f50-b22e-06c26db54608-1687770567891771a5-2"
+        "heading_xP89QH",
+        "text_7QQCfH"
       ],
-      "disabled": true,
       "settings": {
-        "sec_bg": "",
-        "image": "shopify://shop_images/about-2.png",
-        "height": "large",
+        "sec_bg": "#ffffff",
+        "image": "shopify://shop_images/w1200_69ae_Americraft-August-Set-2-213.webp",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
-    "9b21fb92-1f78-4a48-b72a-20933e293c16": {
-      "type": "image-with-text",
+    "rich_text_MnAHMf": {
+      "type": "rich-text",
       "blocks": {
-        "a257afd8-c953-45e1-a2d2-fd74e87fa007": {
-          "type": "caption",
-          "settings": {
-            "caption": "INTRODUCING",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-0": {
+        "heading_M4m33B": {
           "type": "heading",
           "settings": {
-            "heading": "a modern experience",
+            "heading": "Cookware Construction",
             "heading_size": "h1"
           }
         },
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-1": {
+        "text_97KUfz": {
           "type": "text",
           "settings": {
-            "text": "<p>The shopping experience was an integral part of creation of The Saree Room. It wasn't enough to just create beautiful pieces, the shopping experience had to reflect the way women shop for any other types of clothing.</p><p>Our industry leading 15 Day Return Policy & FREE Exchanges provides everyone with the confidence to shop online that has been lacking in the industry.</p><p>All of our pieces are shipped from Toronto direct from our warehouse. We don't use 3rd parties to fulfill orders because we want to ensure the most seamless experience for you.</p><p>Need something quick? We offer optional Express Shipping for all those last minute plans.</p>",
-            "text_style": "body"
-          }
-        },
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop New Arrivals",
-            "button_link": "#",
-            "button_style_secondary": "bordered"
+            "text": "<p>Kitchen Craft Cookware is made of three primary metals, with a .110 Gauge of thickness. The inside layer (what primarily touches your food) is T-316 Surgical Grade Stainless Steel. This is considered an 18/10 stainless steel which designates the target content of chromium and nickel in the metal.   In this case, it’s 18% chromium and 10% nickel. The acceptable range of chromium is 16.5% to 18.5% while the acceptable range of nickel is 10% to 13%. The outside layer (what touches the heat) is T-400 series stainless steel which has a lower nickel content and high carbon steel content to interact on induction cook tops. These two layers of stainless steel surround a layer of aluminum, which ensures superior heat conduction.<br/><br/></p>"
           }
         }
       },
       "block_order": [
-        "a257afd8-c953-45e1-a2d2-fd74e87fa007",
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-0",
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-1",
-        "template--14930103533633__9b21fb92-1f78-4a48-b72a-20933e293c16-1687856035403b8b69-2"
+        "heading_M4m33B",
+        "text_97KUfz"
       ],
-      "disabled": true,
       "settings": {
-        "sec_bg": "",
-        "image": "shopify://shop_images/about-3.png",
-        "height": "large",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "f6be46da-e20e-4e12-834f-b38922f5a31c": {
-      "type": "image-with-text",
+    "mothersday_banner_Reca4e": {
+      "type": "mothersday-banner",
       "blocks": {
-        "2e6b9210-75ab-4bc9-ac3c-32809a1462f3": {
-          "type": "caption",
-          "settings": {
-            "caption": "THE IMPORTANCE OF",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-0": {
+        "heading_XDfnNb": {
           "type": "heading",
           "settings": {
-            "heading": "THE IMPORTANCE OF",
-            "heading_size": "h1"
+            "heading": "Bakeware Construction",
+            "heading_size": "h2"
           }
         },
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-1": {
+        "text_Xtqzx3": {
           "type": "text",
           "settings": {
-            "text": "<p>Since 2015 we have been fortunate enough to have created an amazing community of people who are passionate and appreciate the modern experience of shopping with The Saree Room.</p><p>As our brand continues to grow and expand globally, it was important for us to take a step back and evaluate our carbon footprint. Regardless of cost or additional time/effort required, our goal is to become 100% sustainable from our initial production to the point of you receiving your order.</p><p>Although we are still in the process of making this a reality, and by no means are we perfect, we believe it is important to transparently share our efforts with our community and show you the steps we are taking to achieve our goal of becoming 100% sustainable.</p>",
+            "text": "3-ply, .07” thickness designed with T-304 surgical grade stainless steel, encompassing a heat-conducting aluminum core. Your food never comes into contact with soft metals such as aluminum,non-stick coatings, nor other potentially-hazardous elements.",
             "text_style": "body"
-          }
-        },
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Learn More",
-            "button_link": "#",
-            "button_style_secondary": "link"
           }
         }
       },
       "block_order": [
-        "2e6b9210-75ab-4bc9-ac3c-32809a1462f3",
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-0",
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-1",
-        "template--14930103533633__f6be46da-e20e-4e12-834f-b38922f5a31c-1687856035403b8b69-2"
+        "heading_XDfnNb",
+        "text_Xtqzx3"
       ],
-      "disabled": true,
       "settings": {
-        "sec_bg": "",
-        "image": "shopify://shop_images/about-4.png",
-        "height": "large",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "image": "shopify://shop_images/w1200_78a8__MG_1861_copy_2.webp",
+        "mobile_image": "shopify://shop_images/w1200_78a8__MG_1861_copy_2.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 100
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "newsletter_AEtzhr": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_crrXqT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h1",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+          }
+        },
+        "paragraph_agTRVV": {
+          "type": "paragraph",
+          "settings": {
+            "text": ""
+          }
+        },
+        "email_form_eTWJVT": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_crrXqT",
+        "paragraph_agTRVV",
+        "email_form_eTWJVT"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
     "main",
+    "mothersday_banner_KzN8VH",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "97199040-bf2b-41c3-a062-7ff04d324137",
-    "039b79ec-24b4-4f50-b22e-06c26db54608",
-    "9b21fb92-1f78-4a48-b72a-20933e293c16",
-    "f6be46da-e20e-4e12-834f-b38922f5a31c"
+    "image_with_text_VARTRN",
+    "rich_text_MnAHMf",
+    "mothersday_banner_Reca4e",
+    "newsletter_AEtzhr"
   ]
 }
