@@ -422,13 +422,6 @@
     "image_with_text_KrNFKx": {
       "type": "image-with-text",
       "blocks": {
-        "heading_jrLrpT": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>2004</strong>",
-            "heading_size": "h2"
-          }
-        },
         "text_X4d4L9": {
           "type": "text",
           "settings": {
@@ -438,7 +431,6 @@
         }
       },
       "block_order": [
-        "heading_jrLrpT",
         "text_X4d4L9"
       ],
       "settings": {
@@ -448,13 +440,126 @@
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "right",
+        "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "rich_text_QXawry": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YjE9JR": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2004</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_JJN9w4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Does our cookware cost more? You bet, and it is well worth it! The quality is second to none. The craftsmen that perform the 61 hand-operated steps required to make the world’s finest cookware are the best in the industry and take great pride in every step. When the foreign made dot coms become dot gone and their phones are disconnected, this 110-year-old American manufacturing company will still be there to give you the security and service you deserve.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YjE9JR",
+        "text_JJN9w4"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_czmkU4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3waKD7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>2004</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_yDTr4C": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Does our cookware cost more? You bet, and it is well worth it! The quality is second to none. The craftsmen that perform the 61 hand-operated steps required to make the world’s finest cookware are the best in the industry and take great pride in every step. When the foreign made dot coms become dot gone and their phones are disconnected, this 110-year-old American manufacturing company will still be there to give you the security and service you deserve.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3waKD7",
+        "text_yDTr4C"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_UrXCrJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rWYmUg": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>“The Bitterness Of Poor Quality Remains Long After The Sweetness Of Low Prices Are Forgotten.” – Benjamin Franklin</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rWYmUg"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_XdR67Q": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Y8TrNT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dear Customer,<br/><br/>Please read the countless reviews from our valued customers and rest in the security that you’ve invested wisely. Know that you’ve supported an American owned and operated company. Including our suppliers, we have identified over 9,000 American families who have a job because you bought this cookware. Thank you from all of us! Know that should our country ever go to war again to defend our liberties and freedom, Americraft would readily do our part.<br/><br/>Our company proudly supports the men and women who defend America’s freedom and way of life, preserving the principles our forefathers fought and died for. This is not the land of the free and the home of the brave. This land is free because of the brave. How many of us were more patriotic on 9/11 than we were on 9/10? Let us not ever forget again.<br/><br/>Thank you from all of us who have a job…because you boughtKitchen Craft Cookware<br/><br/>Patriotically Yours,Dave and Bryan Hurley<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Y8TrNT"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -472,6 +577,10 @@
     "rich_text_qGGyjM",
     "rich_text_w87rfC",
     "image_with_text_gKKmRw",
-    "image_with_text_KrNFKx"
+    "image_with_text_KrNFKx",
+    "rich_text_QXawry",
+    "rich_text_czmkU4",
+    "rich_text_UrXCrJ",
+    "rich_text_XdR67Q"
   ]
 }
