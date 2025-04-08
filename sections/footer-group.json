@@ -50,7 +50,7 @@
           "type": "menu_block",
           "settings": {
             "menu_heading": "About Waterless cookware",
-            "navigation_menu": "help-center-policy-pages"
+            "navigation_menu": "footer-about"
           }
         },
         "menu_block_qDtnPC": {
