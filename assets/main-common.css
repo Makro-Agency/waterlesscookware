@@ -186,7 +186,7 @@ a:hover{
 }
 
 .main_privacy a:hover,.main_copyright a:hover{
-  color:#BD2129;
+  color:rgb(0,0,0, 0.8); 
 }
 .video-group-wrapper .swiper-wrapper{
       align-items: flex-start;
