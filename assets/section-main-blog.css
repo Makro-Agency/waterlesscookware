@@ -164,10 +164,8 @@ letter-spacing: -0.48px;
  color: var(--Black, #0D0D0D);
 text-align: center;
 /* CTA/Standard */
-font-family: "Proxima Nova";
 font-size: 16px;
 font-style: normal;
-font-weight: 600;
 line-height: 100%; /* 16px */
 text-transform:capitalize; 
 }
