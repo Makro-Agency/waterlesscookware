@@ -172,9 +172,9 @@ color:#FCFCFA;
     /* background: #ffffff; */
   }
      @media screen and (min-width: 1200px) {
-  details-modal.header__search{ margin-left:60px; } }
+  details-modal.header__search{ margin-left:30px; } }
      @media screen and (min-width: 1299px) {
-    .header__icon--search{ height:40px; min-width:297px;  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%} min-width:auto !Important; {% endif %} } }
+    .header__icon--search{ height:40px; min-width:250px;  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%} min-width:auto !Important; {% endif %} } }
     @media screen and (min-width: 1200px) and (max-width:1298px) {
   .header__icon--search{ min-width:auto; width:155px; height:40px;} }
     
@@ -402,7 +402,7 @@ header .header__icons--localization{
     }
   } */
  .header__heading-link{ width:fit-content; }
-.header__heading{ width:100%; max-width:99.89px; }
+.header__heading{ width:100%; max-width:200px; }
 .header__heading-logo-wrapper.index-logo{ width:100%; display:flex; }
   .logo-container {
   position: relative;
@@ -429,7 +429,8 @@ display:none;
  /* .header.index-header:hover .first-logo {
   display:none;
 } */
-  .header__heading-logo-wrapper img{ object-fit:contain; padding-right:0; height:56px; }
+
+  .header__heading-logo-wrapper img{ object-fit:contain; padding-right:0; height:50px; }
  .header.index-header:hover .second-logo {
   display:block;
 }
@@ -457,6 +458,7 @@ display:none;
  .shopify-section-header-sticky.scrolled-past-header .header.index-header img.header__heading-logo.motion-reduce.logo.first-logo{
   display:none; 
   }
+  .header.index-header img.header__heading-logo.motion-reduce.logo.second-logo{  transition: opacity 0.3s ease;   }
 .shopify-section-header-sticky.scrolled-past-header .header.index-header img.header__heading-logo.motion-reduce.logo.second-logo{
 display:block; 
 } 
@@ -542,11 +544,11 @@ display:block;
                   <div class="logo-container {% if section.settings.logo == blank %} first-logo {% endif %}">
                                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {% capture sizes %}(max-width: {{ settings.logo_width }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width }}, {{ settings.logo_width  }}{% endcapture %}
 
             
-                {{ section.settings.logo1 | image_url: width: 600 | image_tag:
+                {{ section.settings.logo1 | image_url: width: 200 | image_tag:
                   class: 'header__heading-logo motion-reduce logo first-logo',
                   widths: widths,
                   height: logo_height,

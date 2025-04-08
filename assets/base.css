@@ -2550,7 +2550,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 } */
 
 .header__heading-logo-wrapper img {
-  width: 99.99px;
+  width: 100%; 
 }
 
 @media screen and (max-width: 989px) {

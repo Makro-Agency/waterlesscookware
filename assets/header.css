@@ -13,7 +13,7 @@
 
 .header-logo-megamenu{
   display:flex;
-  gap:40px;
+  gap:20px;
   align-items: center;
 }
 .header-search-icons-header{
