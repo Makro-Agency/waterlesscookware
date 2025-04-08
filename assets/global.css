@@ -249,6 +249,16 @@ text-transform: uppercase;
 gap: 10px;
 text-decoration: none;
 }
+img.shogun-image {
+  margin-bottom: 20px !important  ;
+}
+#s-ec6eac2f-f5b7-40a2-bb83-0acf495a663a{
+  border-radius: 100px;
+}
+#s-ec6eac2f-f5b7-40a2-bb83-0acf495a663a:hover{
+  background-color: #BD2129;
+  color: #fff;
+}
 body .swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-title,
 body
 .swym-ui-component
@@ -515,4 +525,30 @@ background-color: #fcfcfa;
 .button.cta_button {
   width: 100%;
 }
+}
+.template-page.warranty-parts .multicolumn-card__info .link {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  background: #7e0002;
+  color: #fcfcfa;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 15px 25px;
+  border-radius: 100px;
+  height: 50px;
+  width: max-content;
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  min-height: auto;
+  max-width: fit-content;
+  min-width: fit-content;
+}
+.template-page.warranty-parts .multicolumn-card__info .link:hover{background-color: #BD2129;}
+.template-page.warranty-parts .multicolumn-card__info .link .icon-wrap {
+  display: none;
 }
