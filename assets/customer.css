@@ -872,10 +872,10 @@ margin-bottom: 0; }
   .login a.createAccount:hover,
   .customer a.createAccount:hover {
     /* color: #c3d957 !important; */
-    text-decoration-color:#c3d957;
+    text-decoration-color:#BD2129;
   }
 .customer a:hover{
-      text-decoration-color:#c3d957 !important;
+      text-decoration-color:#BD2129 !important;
 }
 .customer a.createAccount span {
    text-decoration-thickness: 0;
@@ -978,7 +978,7 @@ margin-top: 2.28571rem; }
   font-size: 1.6rem;
 font-weight: 600; line-height: 1; text-transform: capitalize; }
 .customer.addresses a:hover {
-  color: #c3d957;
+  color: #BD2129;
 }
 
 .customer .select:hover.select:after,

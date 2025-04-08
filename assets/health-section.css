@@ -60,7 +60,7 @@
   text-decoration: none;
 }
 .health-section-header-text a:hover{
-  border-color: #c3d957 !important;
+  border-color: #BD2129 !important;
   /* color: #c3d957 !important; */
 }
 .health-section-header-text a:hover svg path{

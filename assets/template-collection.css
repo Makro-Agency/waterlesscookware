@@ -104,6 +104,7 @@ ajaxinate-loading .button:after { border-radius: 100px; }
     background: #BD2129; 
   }
   
+  
   .product-grid-container ul.grid { --grid-desktop-horizontal-spacing: 3.2rem; --grid-desktop-vertical-spacing: 3.2rem; }
 }
 

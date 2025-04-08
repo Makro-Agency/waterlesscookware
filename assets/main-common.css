@@ -18,7 +18,7 @@ a:hover{
 
 /* menu */
 .cust-inner-menu li:hover a{
-  border-bottom: 1.5px solid #A6BB3A;
+  border-bottom: 1.5px solid #BD2129;
   width: fit-content;
 }
 .navabar-desktop .navbar_item .navbar_link:hover {
