@@ -272,6 +272,9 @@ textarea::placeholder {
   width: 100%;
   max-width: 426.67px;
 }
+div:empty{
+  display: none;
+}
 
 .join-first h3 {
   margin: 0;

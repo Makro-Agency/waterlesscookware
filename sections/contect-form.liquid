@@ -96,10 +96,11 @@
 
     
   </div>
+  {% if section.settings.enable_sub_input%}
   <div class="join-community">
     <div class="join-first">
-        <h3>{{ section.settings.community_title }}</h3>
-        <p>{{ section.settings.community_text }}</p>
+        {%if section.settings.community_title != blank %}<h3>{{ section.settings.community_title }}</h3> {% endif %}
+          {%if section.settings.community_text != blank %}<p>{{ section.settings.community_text }}</p>{% endif %}
     </div>
     <div class="join-second">
       {% comment %}
@@ -149,6 +150,7 @@
         {% endform %}
         {% endcomment %}
           {% assign klaviyoListId = section.settings.klaivyo %}
+        
           <form id="contact_page_form" class="subscribe-form _klaviyo_styling klaviyo_gdpr_embed_{{ klaviyoListId }} subscribe_form_div" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" _novalidate="novalidate" data-klaviyo-notify-form>
             <input type="hidden" name="g" value="{{ klaviyoListId }}">
             <input type="hidden" name="$fields" value="language">
@@ -168,7 +170,7 @@
               </div>
             </div>
           </form> 
-
+         
           <script>
             document.addEventListener("DOMContentLoaded", (event) => {
               let crLocation = window.location.href;
@@ -190,6 +192,7 @@
             });
           </script>
     </div>
+  {% endif %}
   </div>
 </div>
 
@@ -279,6 +282,12 @@
       "default": "Send us a message"
     },
     {
+      "type": "checkbox",
+      "id": "enable_sub_input",
+      "default": true,
+      "label": "Enable Newsletter form"
+    },
+    {
       "type": "text",
       "id": "community_title",
       "label": "Join Community Title (h3)",
@@ -295,6 +304,7 @@
       "id": "klaivyo",
       "label": "Klaviyo Id"
     }
+    
     
   ],
   "presets": [
