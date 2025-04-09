@@ -1,0 +1,23 @@
+<div class="custom-html page-width">
+    {{ section.settings.custom_html }}
+</div>
+
+
+{% schema %}
+    {
+      "name": "Custom Html",
+      "settings":[
+        {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Place Custom Html",
+      "default": "Place Custom html"
+      }
+    ],
+      "presets": [
+    {
+      "name" : "Custom Html"
+    }
+  ]
+}
+{% endschema %}
