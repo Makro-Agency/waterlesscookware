@@ -696,3 +696,16 @@ background-color: #fcfcfa;
 .yotpo .yotpo-pager .yotpo-page-element.yotpo-active {
   color: #bd2129 !important;
 }
+.template-page.warranty-parts .media.media--square {
+  padding-bottom: 50%;
+}
+.template-page.warranty-parts .media.media--square img{
+  object-fit: contain;
+}
+.wufoo-form-container{
+margin: 50px 0;
+}
+#yotpo-testimonials-custom-tab {
+  padding-top: 50px;
+  margin-top: 0 !important;
+}
