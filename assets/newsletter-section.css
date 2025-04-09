@@ -52,7 +52,7 @@
 .newsletter__wrapper .newsletter-form__field-wrapper{ border-radius:100px; }
 /* new */
 
-.newsletter__wrapper .h1 { color: #000; text-align: center;  line-height: 110%;  text-transform: capitalize; margin:0 0 15px 0; }
+.newsletter__wrapper .h1 {text-align: center;  line-height: 110%;  text-transform: capitalize; margin:0 0 15px 0; }
 
 .newsletter__wrapper .newsletter-form__field-wrapper { width:100%; max-width: 100%; }
 
@@ -61,7 +61,7 @@
 .newsletter__wrapper .newsletter__subheading p { color: #1a1a1a; text-align: center; font-size: 16px; font-weight: 300; line-height: 160%; }
 .newsletter__wrapper .newsletter-form .newsletter-form__button{ padding-right:15px; }
 .newsletter__wrapper .newsletter-form {  width:100%; max-width: 430px; }
-.newsletter__wrapper .newsletter-form .field { margin-bottom:0; }
+.newsletter__wrapper .newsletter-form .field { margin-bottom:0; border-bottom: 0;}
 .newsletter__wrapper .newsletter-form .field .field__input { border:none; padding:15px 90px 15px 10px; height: 50px;    background: none; }
 .newsletter__wrapper .newsletter-form .field .field__input:focus,
 .newsletter__wrapper .newsletter-form .field .field__input:focus-within { box-shadow:none; }
@@ -74,13 +74,12 @@
 .newsletter__wrapper .newsletter-form .field__input:not(:placeholder-shown)~.field__label {
   opacity: 0; }
 .newsletter__wrapper .newsletter-form .newsletter-form__button { height: auto; width: auto; top: 50%; right: 10px; left:auto; transform: translate(0, -50%);
-    color: var(--Black, #0D0D0D);
 text-align: center;
 /* CTA/Standard */
-font-family: "Proxima Nova";
 font-size: 16px;
 font-style: normal;
-font-weight: 600;
+font-family: "Manrope";
+font-weight: 400;
 line-height: 100%; /* 16px */                                                            
   }
 

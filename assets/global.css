@@ -582,7 +582,11 @@ background-color: #fcfcfa;
   max-width: fit-content;
   min-width: fit-content;
 }
-.template-page.waterless-careers .rich-text__buttons .button{
+.template-page.waterless-careers .rich-text__buttons .button:hover{
   background: #bd2129 !important;
     color: #fcfbf7 !important;
+}
+.template-page.why-360-waterless .banner__box.gradient {
+  background-color: transparent;
+  color: white;
 }
