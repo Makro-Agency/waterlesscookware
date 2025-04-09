@@ -165,6 +165,64 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "rich_text_LbnWx7": {
+      "type": "rich-text",
+      "blocks": {
+        "text_cc9tEc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Today, the Kitchen Craft waterless cookware is hand crafted in anenvironmentally safe facility in West Bend Wisconsin. Yes,Kitchen Craft cookware is hand crafted in America! The new 110 gagethermal ply construction now allows for waterless and greaseless cookingand is changing the health of families throughout the world.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_cc9tEc"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_GHt8nT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_JQD8w4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Front-of-Bldg-0_240x240_e9cc1c6b-af53-4302-b656-d72de4bc37ef.jpg",
+            "title": "",
+            "text": "<p><a href=\"https://waterlesscookware.com/pages/write-reviews\">When you read our thousands of five star reviews</a>, you will understandwhy the health conscious families of the world are investing in the“ last set of cookware they will ever buy\", not the next one that ends up in thelandfill a year later with toxic non stick chemicals leaching into our bodies.“where would we be financially, if every major purchase in our life hadthe same lifetime warranty as Kitchen Craft Waterless cookware?”<strong>Invest in the BEST!</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_JQD8w4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -172,6 +230,8 @@
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
     "multicolumn_N88ncb",
     "rich_text_R8DeEp",
-    "multicolumn_QibnTD"
+    "multicolumn_QibnTD",
+    "rich_text_LbnWx7",
+    "multicolumn_GHt8nT"
   ]
 }
