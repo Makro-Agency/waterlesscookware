@@ -57,7 +57,7 @@
         "mobile_image": "shopify://shop_images/w1200_cb16_Cover---Pan-with-Chicken-REVISED.webp",
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": true,
         "desktop_content_alignment": "left",
         "color_scheme": "inverse",
