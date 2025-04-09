@@ -248,11 +248,10 @@
 }
 
 .product-360-link a {
-  font-family: Proxima Nova;
   font-size: 16px;
-  font-weight: 600;
   line-height: 16px;
-  color: #0d0d0d;
+  font-weight:500; 
+  color: #1a1a1a;
   display: flex;
   gap: 5px;
 }
