@@ -102,11 +102,11 @@ span.title_text {
   justify-content: center;
   align-items: center;
   width: 142px;
-  height: 40px;
+  height: 50px;
   background: #fcfcfa;
   color: #7E0002;
   border-radius: 100px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 14px;
   margin-top: 25px;
   text-decoration: none;
@@ -139,7 +139,7 @@ span.title_text {
 
 .form-first-last {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
 }
 
