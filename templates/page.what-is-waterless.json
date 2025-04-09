@@ -42,8 +42,43 @@
         "padding_bottom": 52
       }
     },
+    "multirow_4xxGBh": {
+      "type": "multirow",
+      "blocks": {
+        "row_CymXcW": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/RANGE_with_THERMAL_CORE_600x600_74491ac5-fef7-4882-b37f-73863fe5b24f.webp",
+            "caption": "HOW DOES IT WORK?",
+            "heading": "",
+            "text": "<p>By merging several heat-conducting metals together and creating a thermal core, waterless cookware distributes the heat from the bottom up, the sides in and the top down, just like the oven that requires no grease or water.<br/><br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_CymXcW"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "small",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "align-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "custom_html_NYkRzt": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "custom_html": "<div style=\"text-align: center;\"></div>\n<table width=\"100%\">\n<tbody>\n<tr>\n<td style=\"width: 32.967%;\">\n<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0317/1457/4471/files/RANGE_with_THERMAL_CORE_600x600.jpg?v=1612285753\" style=\"float: none;\" width=\"600x600\" height=\"600x600\"></div>\n</td>\n<td style=\"width: 279.945%;\">\n<div><meta charset=\"utf-8\"></div>\n<strong>HOW DOES IT WORK?</strong><span></span><br><span>By merging several heat-conducting metals together and creating a thermal core, waterless cookware distributes the heat from the bottom up, the sides in and the top down, just like the oven that requires no grease or water.</span>\n</td>\n<td style=\"width: 10%;\"></td>\n</tr>\n</tbody>\n</table>"
       }
@@ -133,6 +168,7 @@
   "order": [
     "main",
     "rich_text_RAGxbe",
+    "multirow_4xxGBh",
     "custom_html_NYkRzt",
     "image_with_text_Xa4LfT",
     "multicolumn_drWhyA"
