@@ -126,11 +126,166 @@
         "padding_top": 0,
         "padding_bottom": 36
       }
+    },
+    "rich_text_k7GgKM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dGmTaF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Where Do You Start?</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_6EdKAN": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Our team assists you in ongoing training to help you schedule cooking classes and local events. We even provide the pop up display that you may borrow or purchase while we train you to market and promote your business in the community. Each Cooking Coach is provided with an advertising allowance to get you started, which can be used for local ads, trade shows and events in your area.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dGmTaF",
+        "text_6EdKAN"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 20,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_YDgMiA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bFxwxG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Examples",
+            "heading_size": "h1"
+          }
+        },
+        "text_tdGcfx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get started with cooking demonstrations for your friends and their family. We provide training to assist you in learning how to reach people through social media and local events.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bFxwxG",
+        "text_tdGcfx"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_rXmp7C": {
+      "type": "rich-text",
+      "blocks": {
+        "text_97MqNL": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Reach out to new customers at local events such as:</strong></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "text_97MqNL"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_XdPdmd": {
+      "type": "rich-text",
+      "blocks": {
+        "text_LJgqxm": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local health events:</strong></h3>"
+          }
+        },
+        "text_LWNNbW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Set up a display and have a captured audience of health-conscious people who realize “we are what we eat drink and breathe “.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_LJgqxm",
+        "text_LWNNbW"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_yTTHND": {
+      "type": "rich-text",
+      "blocks": {
+        "text_TfgTDb": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local fitness centers:</strong></h3>"
+          }
+        },
+        "text_ATPd6e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“Eat in and stay thin” is our motto at a Gyms, Curves, LA fitness etc. these are the people who eat at the best restaurant in town; their Kitchen!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_TfgTDb",
+        "text_ATPd6e"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
     "6c988477-1726-4ba7-9eb6-33d5e71413ea",
-    "multicolumn_XgYyQG"
+    "multicolumn_XgYyQG",
+    "rich_text_k7GgKM",
+    "rich_text_YDgMiA",
+    "rich_text_rXmp7C",
+    "rich_text_XdPdmd",
+    "rich_text_yTTHND"
   ]
 }
