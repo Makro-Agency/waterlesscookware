@@ -17,6 +17,37 @@
         "padding_bottom": 0
       }
     },
+    "rich_text_RAGxbe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Cmqy8A": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Healthiest Alternative To Boiling And Deep Frying Ever That Has Changed The Lives Of Millions For Over 100 Years.",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Cmqy8A"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_html_NYkRzt": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<div style=\"text-align: center;\"></div>\n<table width=\"100%\">\n<tbody>\n<tr>\n<td style=\"width: 32.967%;\">\n<div style=\"text-align: center;\"><img src=\"https://cdn.shopify.com/s/files/1/0317/1457/4471/files/RANGE_with_THERMAL_CORE_600x600.jpg?v=1612285753\" style=\"float: none;\" width=\"600x600\" height=\"600x600\"></div>\n</td>\n<td style=\"width: 279.945%;\">\n<div><meta charset=\"utf-8\"></div>\n<strong>HOW DOES IT WORK?</strong><span></span><br><span>By merging several heat-conducting metals together and creating a thermal core, waterless cookware distributes the heat from the bottom up, the sides in and the top down, just like the oven that requires no grease or water.</span>\n</td>\n<td style=\"width: 10%;\"></td>\n</tr>\n</tbody>\n</table>"
+      }
+    },
     "image_with_text_Xa4LfT": {
       "type": "image-with-text",
       "blocks": {
@@ -60,7 +91,7 @@
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
+        "padding_top": 80,
         "padding_bottom": 80
       }
     },
@@ -101,6 +132,8 @@
   },
   "order": [
     "main",
+    "rich_text_RAGxbe",
+    "custom_html_NYkRzt",
     "image_with_text_Xa4LfT",
     "multicolumn_drWhyA"
   ]
