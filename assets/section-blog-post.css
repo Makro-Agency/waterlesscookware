@@ -195,10 +195,8 @@
     .article-template header span {
       font-size: 12px; letter-spacing: 0.05em; line-height: 1; text-transform: uppercase; font-weight: 600; font-family: Jost; }
       .article-template header .article-template__title {
-        font-family: Cellofy;
    font-size: 40px;
    font-style: normal;
-   font-weight: 600;
    line-height: 100%; /* 40px */
    letter-spacing: -0.8px; 
       margin-top: 30px; }

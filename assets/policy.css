@@ -259,7 +259,7 @@
           font-size: 60px;
         }
           .Affiliate-program-container {
-           background: #fcfcfa;
+           /* background: #fcfcfa; */
             width: 51%;
             margin: 0px auto;
             padding: 60px 38px;
@@ -330,7 +330,7 @@
   
           .accessibility-statement-container h2 {
               font-size:24px;
-              color: #000000;
+              color: #04232F;
               padding-bottom: 10px;
               margin-bottom: 10px;
               padding-top: 10px;
@@ -338,7 +338,7 @@
           }
            .accessibility-statement-container h4 {
             font-size:16px;
-               color: #000000;          
+               color: #04232F;         
           }
   
   

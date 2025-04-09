@@ -3677,7 +3677,7 @@ details-disclosure > details {
 .yotpo.bottomLine{ font-size:14px; }
 .product--left .price__regular span.buy-now{
   text-transform:capitalize;
-  color: var(--Black, #0D0D0D);
+  color: #1a1a1a; 
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
