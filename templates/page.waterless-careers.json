@@ -283,19 +283,143 @@
         "text_mmq4JG": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Local fitness centers:</strong></h3>"
+            "text": "<h3><strong>Fresh Farmers markets:</strong></h3>"
           }
         },
         "text_FpNNER": {
           "type": "text",
           "settings": {
-            "text": "<p>“Eat in and stay thin” is our motto at a Gyms, Curves, LA fitness etc. these are the people who eat at the best restaurant in town; their Kitchen!</p>"
+            "text": "<p>One of our consultants in Arizona sells over $500,000.00 every year at a farmer’s market. He’s been there 20 years and only works weekends. This is where health conscious people buy their produce.</p>"
           }
         }
       },
       "block_order": [
         "text_mmq4JG",
         "text_FpNNER"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_4EaWVb": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MY8hr6": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Senior communities in their event centers:</strong></h3>"
+          }
+        },
+        "text_Heh8Qa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our average buyer is 50 to 70 years old. Their health is their greatest asset at this point in their lives.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MY8hr6",
+        "text_Heh8Qa"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_gp8V9r": {
+      "type": "rich-text",
+      "blocks": {
+        "text_KzMPNn": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Military base PX and BX exchanges:</strong></h3>"
+          }
+        },
+        "text_K6XHqk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The military is on a huge health movement and with our American made label they’ve asked us to do presentations at every base in the world. We also give them additional hardware for their cookware that has the ensign is of their branch. The same for police and fire.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KzMPNn",
+        "text_K6XHqk"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_xxwPRY": {
+      "type": "rich-text",
+      "blocks": {
+        "text_c8dKD3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Fire houses:</strong></h3>"
+          }
+        },
+        "text_QfT6WW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Some of the best cooks in your community are firemen and their health is crucial to their career.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_c8dKD3",
+        "text_QfT6WW"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_YJr6NE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_bYNRGq": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Local grocery providers:</strong></p>"
+          }
+        },
+        "text_pUYhiG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Some of the best cooks in your community are firemen and their health is crucial to their career.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bYNRGq",
+        "text_pUYhiG"
       ],
       "settings": {
         "hide_class": false,
@@ -318,6 +442,10 @@
     "rich_text_rXmp7C",
     "rich_text_XdPdmd",
     "rich_text_yTTHND",
-    "rich_text_QCPhwt"
+    "rich_text_QCPhwt",
+    "rich_text_4EaWVb",
+    "rich_text_gp8V9r",
+    "rich_text_xxwPRY",
+    "rich_text_YJr6NE"
   ]
 }
