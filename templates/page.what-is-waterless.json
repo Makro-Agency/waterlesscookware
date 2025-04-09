@@ -38,7 +38,7 @@
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": "",
+            "button_link": "shopify://pages/what-is-waterless-and-greaseless-cooking",
             "button_style_secondary": "link"
           }
         }
@@ -54,7 +54,7 @@
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "center",
         "content_layout": "no-overlap",
         "color_scheme": "",
