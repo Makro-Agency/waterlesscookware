@@ -1,0 +1,527 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7HTCPJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Now Hiring",
+            "heading_size": "h0"
+          }
+        },
+        "heading_dJYeC8": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Thank you for your continued interest in a business career as a Kitchen Craft Consultant.</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_kXaWEW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If approved, you would be joining a very elite team of independent business owners that teach Health and Wellness to the family’s, businesses and organizations in your own community.</p>"
+          }
+        },
+        "text_x7P3RK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We train you to be the local “Mom and Pop” consultant that conducts health and wellness cooking classes, establishes new customers and services an American made cooking system that began in West Bend Wisconsin in 190</p>"
+          }
+        },
+        "text_AGN8cF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The waterless cooking concept that we introduce, requires live or virtual demonstrations to be understood, and that is your job and business. Our huge advantage over retail and on line stores is that we show them how it works, explain the endless health and savings advantages, offer impeccable personalized customer service including ongoing customer training programs through cooking classes that you would be trained to conduct. This is what today’s customers want and what you would provide, personal service.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7HTCPJ",
+        "heading_dJYeC8",
+        "text_kXaWEW",
+        "text_x7P3RK",
+        "text_AGN8cF"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    },
+    "multicolumn_XgYyQG": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_KAJ6yk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/w1200_7ebb_Tonya-New-Booth-Grocery-Store.webp",
+            "title": "<strong>Cooking Coach</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_F6zfEm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/w1200_ec3f_Tim_New_Booth_Grocery_Store.webp",
+            "title": "<strong>Local Venues</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HNqkne": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/w1200_7ebb_Tonya-New-Booth-Grocery-Store.webp",
+            "title": "<strong>Local Events</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_KAJ6yk",
+        "column_F6zfEm",
+        "column_HNqkne"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "inverse",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_k7GgKM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dGmTaF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Where Do You Start?</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_6EdKAN": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Our team assists you in ongoing training to help you schedule cooking classes and local events. We even provide the pop up display that you may borrow or purchase while we train you to market and promote your business in the community. Each Cooking Coach is provided with an advertising allowance to get you started, which can be used for local ads, trade shows and events in your area.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dGmTaF",
+        "text_6EdKAN"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 20,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_YDgMiA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bFxwxG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Examples",
+            "heading_size": "h1"
+          }
+        },
+        "text_tdGcfx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get started with cooking demonstrations for your friends and their family. We provide training to assist you in learning how to reach people through social media and local events.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bFxwxG",
+        "text_tdGcfx"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_rXmp7C": {
+      "type": "rich-text",
+      "blocks": {
+        "text_97MqNL": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Reach out to new customers at local events such as:</strong></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "text_97MqNL"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_XdPdmd": {
+      "type": "rich-text",
+      "blocks": {
+        "text_LJgqxm": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local health events:</strong></h3>"
+          }
+        },
+        "text_LWNNbW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Set up a display and have a captured audience of health-conscious people who realize “we are what we eat drink and breathe “.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_LJgqxm",
+        "text_LWNNbW"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_yTTHND": {
+      "type": "rich-text",
+      "blocks": {
+        "text_TfgTDb": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local fitness centers:</strong></h3>"
+          }
+        },
+        "text_ATPd6e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“Eat in and stay thin” is our motto at a Gyms, Curves, LA fitness etc. these are the people who eat at the best restaurant in town; their Kitchen!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_TfgTDb",
+        "text_ATPd6e"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_QCPhwt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_mmq4JG": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Fresh Farmers markets:</strong></h3>"
+          }
+        },
+        "text_FpNNER": {
+          "type": "text",
+          "settings": {
+            "text": "<p>One of our consultants in Arizona sells over $500,000.00 every year at a farmer’s market. He’s been there 20 years and only works weekends. This is where health conscious people buy their produce.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_mmq4JG",
+        "text_FpNNER"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_4EaWVb": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MY8hr6": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Senior communities in their event centers:</strong></h3>"
+          }
+        },
+        "text_Heh8Qa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our average buyer is 50 to 70 years old. Their health is their greatest asset at this point in their lives.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MY8hr6",
+        "text_Heh8Qa"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_gp8V9r": {
+      "type": "rich-text",
+      "blocks": {
+        "text_KzMPNn": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Military base PX and BX exchanges:</strong></h3>"
+          }
+        },
+        "text_K6XHqk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The military is on a huge health movement and with our American made label they’ve asked us to do presentations at every base in the world. We also give them additional hardware for their cookware that has the ensign is of their branch. The same for police and fire.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KzMPNn",
+        "text_K6XHqk"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_xxwPRY": {
+      "type": "rich-text",
+      "blocks": {
+        "text_c8dKD3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Fire houses:</strong></h3>"
+          }
+        },
+        "text_QfT6WW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Some of the best cooks in your community are firemen and their health is crucial to their career.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_c8dKD3",
+        "text_QfT6WW"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_YJr6NE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_bYNRGq": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local grocery providers:</strong></h3>"
+          }
+        },
+        "text_pUYhiG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whole Foods, Albertsons, Kroger’s etc. they love outside vendors.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bYNRGq",
+        "text_pUYhiG"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_Q7BdjD": {
+      "type": "rich-text",
+      "blocks": {
+        "text_rceJwe": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>RV resorts:</strong></h3>"
+          }
+        },
+        "text_8QGc8T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whole Foods, Albertsons, Kroger’s etc. they love outside vendors.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_rceJwe",
+        "text_8QGc8T"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_XXpxdD": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Gdytd3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Festivals:</strong></h3>"
+          }
+        },
+        "text_D7Axjq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Food and Wine, Strawberry, Avocado, Art, your local festival is the new “trade show”. Cooking at home is the “new norm” and foodies want quality cookware.</p>"
+          }
+        },
+        "button_c77zJj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply Now",
+            "button_link": "https://cookingcoach.us/application-virtual",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_Gdytd3",
+        "text_D7Axjq",
+        "button_c77zJj"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea",
+    "multicolumn_XgYyQG",
+    "rich_text_k7GgKM",
+    "rich_text_YDgMiA",
+    "rich_text_rXmp7C",
+    "rich_text_XdPdmd",
+    "rich_text_yTTHND",
+    "rich_text_QCPhwt",
+    "rich_text_4EaWVb",
+    "rich_text_gp8V9r",
+    "rich_text_xxwPRY",
+    "rich_text_YJr6NE",
+    "rich_text_Q7BdjD",
+    "rich_text_XXpxdD"
+  ]
+}

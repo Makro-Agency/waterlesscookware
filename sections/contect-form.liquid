@@ -54,10 +54,15 @@
               <div class="form-email common-form">
                   <input type="email" id="email" name="contact[email]" placeholder="Email" required>
               </div>
+              <div class="form-phone common-form">
+                <input type="number" id="phone_no" name="contact[phone]" placeholder="Phone number" required>
+              </div>
               <div class="form-textarea">
                   <textarea id="message" name="contact[body]" placeholder="Message" required></textarea>
               </div>
-              <div class="select-form">
+            
+              {% comment %}
+                              <div class="select-form">
                   <span class="title_text">How did you hear about us?</span>
                   <input type="hidden" id="hear-about" name="contact[how_hear_about_us]">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,12 +83,16 @@
                       </div>
                   </div>
               </div>
+              {% endcomment %}
+
               <div class="row">
                   <button type="submit" class="send-link">Send Message</button>
               </div>
           {%- endform -%}
         </div>
     </div>
+
+    
   </div>
   <div class="join-community">
     <div class="join-first">

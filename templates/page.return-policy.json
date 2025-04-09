@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Return Policy</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_QeQ7yj": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>Unused cookware can be returned within 30 days of purchase for a full refund, minus a 5% restocking fee may apply. Customer is responsible for return shipping. Cookware must be returned in the same packaging and condition it was originally delivered in. Please ensure safe packing as we cannot offer refunds on cookware that is damaged from shipping. If the customer chooses to exchange an item for one of lesser value, we will refund the difference. The customer must speak with a customer service representative before they can return any cookware. Unsolicited shipments will be refused and returned to sender.</p><p>No Returns are allowed on Factory Second items, Overstock Sale Items, Friends and Family, and other sales where the discount is 30% or greater. </p><p>Please contact us by email: <a href=\"mailto:Help@Waterlesscookware.com\">Help@Waterlesscookware.com</a><br/>or <a href=\"https://waterlesscookware.myshopify.com/pages/contact-us\">Click Here.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14930103533633__6c988477-1726-4ba7-9eb6-33d5e71413ea-16877707810afab265-0",
+        "text_QeQ7yj"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea"
+  ]
+}
