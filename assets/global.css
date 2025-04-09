@@ -712,3 +712,27 @@ margin: 50px 0;
 .custom-html table:not([class]) td, .custom-html table:not([class]) th {
 border-color: transparent;
 }
+.template-page.what-is-waterless .multicolumn.background-primary .multicolumn-card {
+  background-color: transparent;
+  background: transparent;
+}
+.sim-link{
+  font-weight: 500;
+  line-height: 100%;
+  margin-top: 10px;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  gap: 5px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.sim-link:hover{
+  color: #bd2129 !important;
+}
+.sim-link svg {
+  width: 16px;
+  height: 10px;
+}
