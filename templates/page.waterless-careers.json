@@ -477,11 +477,23 @@
           "settings": {
             "text": "<p>Food and Wine, Strawberry, Avocado, Art, your local festival is the new “trade show”. Cooking at home is the “new norm” and foodies want quality cookware.</p>"
           }
+        },
+        "button_c77zJj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply Now",
+            "button_link": "https://cookingcoach.us/application-virtual",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "text_Gdytd3",
-        "text_D7Axjq"
+        "text_D7Axjq",
+        "button_c77zJj"
       ],
       "settings": {
         "hide_class": false,
