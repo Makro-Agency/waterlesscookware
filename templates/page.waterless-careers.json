@@ -276,6 +276,37 @@
         "padding_top": 0,
         "padding_bottom": 40
       }
+    },
+    "rich_text_QCPhwt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_mmq4JG": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Local fitness centers:</strong></h3>"
+          }
+        },
+        "text_FpNNER": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“Eat in and stay thin” is our motto at a Gyms, Curves, LA fitness etc. these are the people who eat at the best restaurant in town; their Kitchen!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_mmq4JG",
+        "text_FpNNER"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -286,6 +317,7 @@
     "rich_text_YDgMiA",
     "rich_text_rXmp7C",
     "rich_text_XdPdmd",
-    "rich_text_yTTHND"
+    "rich_text_yTTHND",
+    "rich_text_QCPhwt"
   ]
 }
