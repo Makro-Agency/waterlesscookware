@@ -61,7 +61,7 @@
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_width": "full",
+        "image_width": "half",
         "image_ratio": "square",
         "columns_desktop": 3,
         "column_alignment": "center",
@@ -210,7 +210,7 @@
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_width": "full",
+        "image_width": "half",
         "image_ratio": "square",
         "columns_desktop": 3,
         "column_alignment": "center",
@@ -221,7 +221,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     }
   },
