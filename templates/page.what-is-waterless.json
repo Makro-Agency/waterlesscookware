@@ -17,6 +17,38 @@
         "padding_bottom": 0
       }
     },
+    "rich_text_wmzGGT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ye8MWp": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE HEALTHIEST ALTERNATIVE TO BOILING AND DEEP FRYING EVER THAT HAS CHANGED THE LIVES OF MILLIONS FOR OVER 100 YEARS.",
+            "heading_size": "h2"
+          }
+        },
+        "text_3eRHkH": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ye8MWp",
+        "text_3eRHkH"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "image_with_text_Xa4LfT": {
       "type": "image-with-text",
       "blocks": {
@@ -101,6 +133,7 @@
   },
   "order": [
     "main",
+    "rich_text_wmzGGT",
     "image_with_text_Xa4LfT",
     "multicolumn_drWhyA"
   ]
