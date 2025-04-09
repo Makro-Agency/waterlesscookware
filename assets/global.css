@@ -764,7 +764,12 @@ border-color: transparent;
 background-color: transparent;
 background: transparent;
 }
-.template-page.greaseless-cooking .multicolumn-list {
+.template-page.greaseless-cooking .multicolumn-card-spacing {
+  padding-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* .template-page.greaseless-cooking .multicolumn-list {
   --grid-desktop-vertical-spacing: 50px;
     --grid-desktop-horizontal-spacing: 50px;
     
@@ -772,4 +777,4 @@ background: transparent;
 .template-page.greaseless-cooking .multicolumn-list.grid{
   column-gap: var(--grid-desktop-horizontal-spacing);
         row-gap: var(--grid-desktop-vertical-spacing);
-}
+} */
