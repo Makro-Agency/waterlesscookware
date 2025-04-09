@@ -40,10 +40,138 @@
         "padding_top": 80,
         "padding_bottom": 100
       }
+    },
+    "multicolumn_N88ncb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_KzD7W8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/imvap-x5e53.jpg",
+            "title": "",
+            "text": "<p>The multi layer construction allowed the heat from the burner to transferacross the bottom, up the side walls and to the top creating a lowtemperature thermal cooking method, like an oven that would be ownedand loved by millions throughout the world.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_KzD7W8"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_R8DeEp": {
+      "type": "rich-text",
+      "blocks": {
+        "text_TTMcw6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Waterless cooker was so unique that it had to be personallydemonstrated to understand how much better the food tasted and theincredible health benefits to the families.</p><p>In 1945, Kitchen Craft developed a way of bonding safe and sanitary stainless steel to carbon steel and created multi ply Stainless Steel waterless cookware that lasted forever and came with a lifetime warranty and a cost of about $500.00 a set. Seemed expensive, but it lasted forever and they never had to replace it!<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_TTMcw6"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_QibnTD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MeLjyb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b0nb6-e851q.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4WqAUH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b0nb6-e851q.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Qkdf4K": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b0nb6-e851q.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WbDnDt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/b0nb6-e851q.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MeLjyb",
+        "column_4WqAUH",
+        "column_Qkdf4K",
+        "column_WbDnDt"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "6c988477-1726-4ba7-9eb6-33d5e71413ea"
+    "6c988477-1726-4ba7-9eb6-33d5e71413ea",
+    "multicolumn_N88ncb",
+    "rich_text_R8DeEp",
+    "multicolumn_QibnTD"
   ]
 }
