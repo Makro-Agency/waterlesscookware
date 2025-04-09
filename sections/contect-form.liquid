@@ -45,11 +45,13 @@
              {%- endif -%}
               <div class="form-first-last">
                   <div class="form-first_name common-form">
-                      <input type="text" id="first_name" name="contact[first_name]" placeholder="First Name" required>
+                      <input type="text" id="first_name" name="contact[first_name]" placeholder="Name" required>
                   </div>
+                  {%  comment  %}  
                   <div class="form-second_name common-form">
                       <input type="text" id="last_name" name="contact[last_name]" placeholder="Last Name" required>
                   </div>
+                  {% endcomment %}
               </div>
               <div class="form-email common-form">
                   <input type="email" id="email" name="contact[email]" placeholder="Email" required>

@@ -616,3 +616,76 @@ background-color: #fcfcfa;
   background: #bd2129 !important;
     color: #fcfbf7 !important;
 }
+.use-care-container .heading-font {
+  font-family: IBM Plex Serif !important;
+  font-weight: 400 !important;
+}
+.enap-gallery .enap-gallery-img{
+  list-style: none;
+  padding: 15px;
+}
+.enrm-gallery-container,
+.enap-gallery {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+.breadcrumbs {
+  display: none !important;
+}
+.enrm-loading-wrapper {
+  margin-bottom: 50px;
+}
+.enrm-loading-wrapper a {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  background: #7e0002 !important;
+  color: #fcfcfa;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 15px 25px !important;
+  border-radius: 100px !important;
+  height: 50px;
+  width: max-content;
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  min-height: auto;
+  max-width: fit-content;
+  min-width: fit-content;
+}
+.enrm-loading-wrapper a:hover{
+  text-align: center;
+  padding: 15px 25px !important;
+  border-radius: 100px !important;
+  height: 50px;
+  width: max-content;
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  min-height: auto;
+  max-width: fit-content;
+  min-width: fit-content;
+  background-color: #bd2129 !important;
+}
+.enrm-gallery-container .enrm-video-title {
+  font-size: 16px !important;
+}
+.yotpo div, .yotpo span, .yotpo p, .yotpo a, .yotpo img, .yotpo i, .yotpo strong, .yotpo sup, .yotpo ul, .yotpo li, .yotpo form, .yotpo label {
+  font-family: "Manrope" !important;
+    font-size: 16px !important;
+}
+.yotpo .yotpo-nav ul .yotpo-nav-tab.yotpo-active .yotpo-nav-wrapper {
+  border-color: #1A1A1A !important;
+}
+.yotpo .y-label, .yotpo span.y-label,
+.yotpo .yotpo-review .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-comment .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-question .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
+#yotpo-testimonials-custom-tab .yotpo-main .product-link,
+#yotpo-testimonials-custom-tab .yotpo-review .yotpo-main .content-review,
+#yotpo-testimonials-custom-tab .yotpo-review .yotpo-main .content-title,
+#yotpo-testimonials-custom-tab .yotpo-nav-tab span {
+  color: #1A1A1A !important;
+}
