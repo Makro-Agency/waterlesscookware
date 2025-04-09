@@ -553,14 +553,18 @@ background-color: #fcfcfa;
   display: none;
 }
 .template-page.warranty-parts .multicolumn-list {
-  --grid-desktop-vertical-spacing: 32px;
-    --grid-desktop-horizontal-spacing: 32px;
+  --grid-desktop-vertical-spacing: 50px;
+    --grid-desktop-horizontal-spacing: 50px;
     
 } 
 .template-page.warranty-parts .multicolumn-list.grid{
   column-gap: var(--grid-desktop-horizontal-spacing);
         row-gap: var(--grid-desktop-vertical-spacing);
 }
+.template-page.warranty-parts .multicolumn.background-primary .multicolumn-card {
+  background-color: transparent;
+  background: transparent;
+} 
 .template-page.waterless-careers .rich-text__buttons .button{
   background: #7e0002;
   color: #fcfcfa;
@@ -575,8 +579,7 @@ background-color: #fcfcfa;
   height: 50px;
   width: max-content;
   align-items: center;
-  display: inline-flex
-;
+  display: inline-flex;
   gap: 10px;
   min-height: auto;
   max-width: fit-content;
