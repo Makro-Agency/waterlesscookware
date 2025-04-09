@@ -87,8 +87,8 @@
         "column_F6zfEm": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/w1200_7ebb_Tonya-New-Booth-Grocery-Store.webp",
-            "title": "<strong>Cooking Coach</strong>",
+            "image": "shopify://shop_images/w1200_ec3f_Tim_New_Booth_Grocery_Store.webp",
+            "title": "<strong>Local Venues</strong>",
             "text": "",
             "link_label": "",
             "link": ""
@@ -98,7 +98,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/w1200_7ebb_Tonya-New-Booth-Grocery-Store.webp",
-            "title": "<strong>Cooking Coach</strong>",
+            "title": "<strong>Local Events</strong>",
             "text": "",
             "link_label": "",
             "link": ""
