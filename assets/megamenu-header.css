@@ -45,7 +45,7 @@
   display: inline-block;
   transition: transform 0.3s ease;
 }
-.common-h5.product-360-header a h5{ margin-bottom:10px; }
+.common-h5.product-360-header a h5{ margin-bottom:10px; font-weight:400; letter-spacing:0; color:#1a1a1a;  }
 .dropdown_menu {
     display: none;
     position: absolute;
