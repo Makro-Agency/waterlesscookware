@@ -736,3 +736,24 @@ border-color: transparent;
   width: 16px;
   height: 10px;
 }
+
+/* new */
+.warranty-parts .rich-text__blocks{
+  max-width:100%;
+}
+.warranty-parts .multicolumn-card__info{
+  text-align: center;
+}
+
+.why-360-waterless .new-newsletter {
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+.why-360-waterless .rich-text__wrapper .rich-text__heading.h1{
+  margin-top:0;
+}
+.contact #contect-form{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
