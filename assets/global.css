@@ -681,11 +681,18 @@ background-color: #fcfcfa;
 .yotpo .yotpo-nav ul .yotpo-nav-tab.yotpo-active .yotpo-nav-wrapper {
   border-color: #1A1A1A !important;
 }
-.yotpo .y-label, .yotpo span.y-label,
+.yotpo .yotpo-pager .yotpo-page-element,
+.yotpo .y-label, .yotpo span.y-label,g
 .yotpo .yotpo-review .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-comment .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-question .yotpo-header .yotpo-header-element .y-label.yotpo-user-name, .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
 #yotpo-testimonials-custom-tab .yotpo-main .product-link,
 #yotpo-testimonials-custom-tab .yotpo-review .yotpo-main .content-review,
 #yotpo-testimonials-custom-tab .yotpo-review .yotpo-main .content-title,
 #yotpo-testimonials-custom-tab .yotpo-nav-tab span {
   color: #1A1A1A !important;
+}
+.yotpo .yotpo-popup-box-large {
+  margin-bottom: 50px;
+}
+.yotpo .yotpo-pager .yotpo-page-element.yotpo-active {
+  color: #bd2129 !important;
 }
