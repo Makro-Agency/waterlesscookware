@@ -184,10 +184,12 @@ a:hover{
 .banner-text-catalog-icon span a:hover{
     border-color: #BD2129 !important;
 }
-
+.access_link a, .privacy_policy_sec a{ transition:all 0.3s linear; }
+.access_link a:hover{ color:#BD2129;  }
 .main_privacy a:hover,.main_copyright a:hover{
-  color:rgb(0,0,0, 0.8); 
+  color:#BD2129;
 }
+.social-icons a svg path{ transition:all 0.3s linear; }
 .video-group-wrapper .swiper-wrapper{
       align-items: flex-start;
 }
