@@ -61,12 +61,47 @@
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 80
+      }
+    },
+    "multicolumn_drWhyA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xyN47n": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/7xhnu-ao93w.jpg",
+            "title": "",
+            "text": "<p><a href=\"https://youtu.be/6lj3MFNNks8\">“I lost 170 lbs. using Kitchen Craft Cookware! Very healthy cooking.<br/>Beats any kind of diet!” Joan from Canada</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xyN47n"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "main",
-    "image_with_text_Xa4LfT"
+    "image_with_text_Xa4LfT",
+    "multicolumn_drWhyA"
   ]
 }
