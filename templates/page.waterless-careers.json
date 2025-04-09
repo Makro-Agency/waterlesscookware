@@ -407,19 +407,81 @@
         "text_bYNRGq": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Local grocery providers:</strong></p>"
+            "text": "<h3><strong>Local grocery providers:</strong></h3>"
           }
         },
         "text_pUYhiG": {
           "type": "text",
           "settings": {
-            "text": "<p>Some of the best cooks in your community are firemen and their health is crucial to their career.</p>"
+            "text": "<p>Whole Foods, Albertsons, Kroger’s etc. they love outside vendors.</p>"
           }
         }
       },
       "block_order": [
         "text_bYNRGq",
         "text_pUYhiG"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_Q7BdjD": {
+      "type": "rich-text",
+      "blocks": {
+        "text_rceJwe": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>RV resorts:</strong></h3>"
+          }
+        },
+        "text_8QGc8T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whole Foods, Albertsons, Kroger’s etc. they love outside vendors.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_rceJwe",
+        "text_8QGc8T"
+      ],
+      "settings": {
+        "hide_class": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "full_width_content": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_XXpxdD": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Gdytd3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Festivals:</strong></h3>"
+          }
+        },
+        "text_D7Axjq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Food and Wine, Strawberry, Avocado, Art, your local festival is the new “trade show”. Cooking at home is the “new norm” and foodies want quality cookware.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Gdytd3",
+        "text_D7Axjq"
       ],
       "settings": {
         "hide_class": false,
@@ -446,6 +508,8 @@
     "rich_text_4EaWVb",
     "rich_text_gp8V9r",
     "rich_text_xxwPRY",
-    "rich_text_YJr6NE"
+    "rich_text_YJr6NE",
+    "rich_text_Q7BdjD",
+    "rich_text_XXpxdD"
   ]
 }
