@@ -782,3 +782,44 @@ background: transparent;
 .wufoo label.desc, .wufoo legend.desc, .likert caption{
   font-family: IBM Plex serif !important;
 }
+
+.enrm-video-wrapper{
+  border-radius: 15px;
+}
+
+.template-page .enap-gallery-img:hover .enap-overlay,.template-page .enap-img,.template-page .en_gallery_link{
+  border-radius: 15px;
+}
+
+.return-policy .rich-text__heading strong,
+.waterless-careers .rich-text__heading strong,
+.waterless-careers h2.rich-text__heading{
+  font-weight: 400;
+} 
+
+body.what-is-waterless .image-with-text__media > img,
+.image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__grid--reverse .image-with-text__media{
+  border-radius: 15px !important;
+}
+
+.waterless-careers .multicolumn.background-primary .multicolumn-card,.waterless-careers img{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.waterless-careers .multicolumn.background-primary .multicolumn-card img{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.waterless-careers .multicolumn-card__info strong{
+  font-weight: 400;
+}
+.waterless-careers .rich-text__blocks strong{
+  font-weight: 400;
+  color:#000;
+}
+.ourstory-waterless .image-with-text__media img{
+  border-radius: 15px !important;
+}
+.why-360-waterless .image-with-text__media img{
+  border-radius: 15px;
+}
