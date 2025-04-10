@@ -778,3 +778,7 @@ background: transparent;
   column-gap: var(--grid-desktop-horizontal-spacing);
         row-gap: var(--grid-desktop-vertical-spacing);
 } */
+
+.wufoo label.desc, .wufoo legend.desc, .likert caption{
+  font-family: IBM Plex serif !important;
+}

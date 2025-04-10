@@ -3689,6 +3689,7 @@ details-disclosure > details {
 .pdp-subtitle{
     font-size: 16px;
 }
+.template-page.warranty-parts .rich-text__wrapper h4{ letter-spacing:0; }
 .template-blog{ background-color: #fcfcfa;}
 .template-article{     background-color: #fcfcfa; }
 div#enap-gallery li {list-style: none;}
