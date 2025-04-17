@@ -12,7 +12,7 @@ a:hover{
 .template-page .html-data a:hover{
   color:#bd2129;
 }
-.template-page #MainContent.use-care-guide{
+#MainContent.use-care-guide{
   background-color:#fcfcfa ;
  }
 /* breadcrumb */
