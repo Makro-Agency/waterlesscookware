@@ -532,8 +532,8 @@
     "makro_title_product_carousel_paXJVE": {
       "type": "makro-title-product-carousel",
       "settings": {
-        "title": "360 Bestsellers",
-        "description": "Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.",
+        "title": "Bestsellers",
+        "description": "",
         "collection": "whats-new",
         "button_text": "Shop All Bestsellers",
         "button_link": "shopify://collections/best-sellers",
