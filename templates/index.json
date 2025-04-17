@@ -473,11 +473,23 @@
           "type": "image-with-text",
           "settings": {
             "image": "shopify://shop_images/Image-1.png",
+            "title": "Gourmet Slow Cooker",
+            "text": "",
+            "link": "shopify://collections/gourmet-slow-cooker",
+            "link_text": "Shop  Slow Cooker",
+            "mobile_link": "#",
+            "mobile_link_text": "Shop Now"
+          }
+        },
+        "image_with_text_dVz69Q": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2394_4e7bebb8-ce98-4c72-86e8-b7af47715fde.png",
             "title": "Accessories",
             "text": "",
             "link": "shopify://collections/accessories",
             "link_text": "Shop Accessories",
-            "mobile_link": "#",
+            "mobile_link": "shopify://collections/accessories",
             "mobile_link_text": "Shop Now"
           }
         }
@@ -485,7 +497,8 @@
       "block_order": [
         "image_with_text_YbYCbe",
         "image_with_text_MqF7KK",
-        "image_with_text_JFAVYi"
+        "image_with_text_JFAVYi",
+        "image_with_text_dVz69Q"
       ],
       "settings": {
         "heading": "Shop our Top Categories",
