@@ -30,7 +30,7 @@
         "text_QeQ7yj": {
           "type": "text",
           "settings": {
-            "text": "<p><br/>Unused cookware can be returned within 30 days of purchase for a full refund, minus a 5% restocking fee may apply. Customer is responsible for return shipping. Cookware must be returned in the same packaging and condition it was originally delivered in. Please ensure safe packing as we cannot offer refunds on cookware that is damaged from shipping. If the customer chooses to exchange an item for one of lesser value, we will refund the difference. The customer must speak with a customer service representative before they can return any cookware. Unsolicited shipments will be refused and returned to sender.</p><p>No Returns are allowed on Factory Second items, Overstock Sale Items, Friends and Family, and other sales where the discount is 30% or greater. </p><p>Please contact us by email: <a href=\"mailto:Help@Waterlesscookware.com\">Help@Waterlesscookware.com</a><br/>or <a href=\"https://waterlesscookware.myshopify.com/pages/contact-us\">Click Here.</a></p>"
+            "text": "<p>Unused cookware can be returned within 30 days of purchase for a full refund, minus a 5% restocking fee may apply. Customer is responsible for return shipping. Cookware must be returned in the same packaging and condition it was originally delivered in. Please ensure safe packing as we cannot offer refunds on cookware that is damaged from shipping. If the customer chooses to exchange an item for one of lesser value, we will refund the difference. The customer must speak with a customer service representative before they can return any cookware. Unsolicited shipments will be refused and returned to sender.</p><p>No Returns are allowed on Factory Second items, Overstock Sale Items, Friends and Family, and other sales where the discount is 30% or greater. </p><p>Please contact us by email: <a href=\"mailto:Help@Waterlesscookware.com\">Help@Waterlesscookware.com</a><br/>or <a href=\"https://waterlesscookware.myshopify.com/pages/contact-us\">Click Here.</a></p>"
           }
         }
       },
@@ -40,8 +40,8 @@
       ],
       "settings": {
         "hide_class": false,
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "full_width_content": true,
