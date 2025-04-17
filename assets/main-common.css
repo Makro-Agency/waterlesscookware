@@ -12,6 +12,9 @@ a:hover{
 .template-page .html-data a:hover{
   color:#bd2129;
 }
+.template-page #MainContent.use{
+  background-color:#fcfcfa ;
+ }
 /* breadcrumb */
 .breadcrumbs-item a,
 .breadcrumb-item a,
