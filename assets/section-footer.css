@@ -8,7 +8,9 @@ line-height: 24px;
 text-align: left;
 
 }
-
+.template-page.Help-center #contact_page_form .footer-input::placeholder{
+  color: #6c6a66;
+}
 .full_footer {
   margin: 0;
   background-color: #7E0002; 
@@ -601,6 +603,14 @@ order: -1;
   line-height: 150%;
   letter-spacing: 0%; }
   .main_access .access_link {  margin:0; }
+  @media screen and (max-width: 989px){
+
+      .template-page.Help-center #contact_page_form {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: flex-start;
+      }
+  }
 @media screen and (max-width: 749px){
 
   .desktop-localization-wrapper.footer-localization {
