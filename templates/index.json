@@ -14,6 +14,7 @@
       "blocks": {
         "block_AbGEEH": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "slide_heading": "",
             "slide_subtext": "",
@@ -23,6 +24,7 @@
         },
         "block_jQ4TBY": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "slide_heading": "",
             "slide_subtext": "",
@@ -32,6 +34,7 @@
         },
         "block_tMqqNH": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/hero-section-layout-first.webp",
             "mobile_image": "shopify://shop_images/hero-section-layout-first.webp",
@@ -43,6 +46,7 @@
         },
         "block_8nGQLB": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "slide_heading": "",
             "slide_subtext": "",
@@ -52,6 +56,7 @@
         },
         "block_n9wqjx": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/hero-section-layout-first.webp",
             "mobile_image": "shopify://shop_images/hero-section-layout42.webp",
@@ -63,6 +68,7 @@
         },
         "block_47rfpG": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/hero-section-layout42.webp",
             "mobile_image": "shopify://shop_images/hero-section-layout42.webp",
@@ -74,6 +80,7 @@
         },
         "block_8qMBy8": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/hero-section-layout42.webp",
             "mobile_image": "shopify://shop_images/hero-section-layout42.webp",
@@ -97,17 +104,17 @@
         "layout": "layout_1",
         "has_first_section": true,
         "videowise": "",
-        "hero_image": "shopify://shop_images/Full_Bleed_Image_Hero_6.png",
-        "hero_image_mobile": "shopify://shop_images/Frame_6123_2.png",
+        "hero_image": "shopify://shop_images/EAT_8004_0f29aec0-4d72-4f51-8bbf-d8b114090afe.jpg",
+        "hero_image_mobile": "shopify://shop_images/EAT_8004_0f29aec0-4d72-4f51-8bbf-d8b114090afe.jpg",
         "hero_image_alt": "hero_image_alt",
-        "heading": "Discover the chef within you with 360 Cookware",
-        "subtext": "Just like the over 70,000 kitchens we've already transformed, we believe in the power of quality tools to turn your home into the best seat in town.",
-        "button_link": "shopify://collections/sets-1",
-        "button_text": "Shop Now",
-        "layout_2_image_desktop": "shopify://shop_images/hero-section-layout-first.webp",
-        "layout_2_image_mobile": "shopify://shop_images/hero-section-layout-first.webp",
+        "heading": "Cook Healthier Meals with Waterless Cookware",
+        "subtext": "Preserve nutrients and flavor with our innovative, no-water, no-fat cooking technology and enjoy the benefits of our premium, lifetime-warranty waterless cookware.",
+        "button_link": "shopify://collections/all",
+        "button_text": "Shop all",
+        "layout_2_image_desktop": "shopify://shop_images/EAT_8004_0f29aec0-4d72-4f51-8bbf-d8b114090afe.jpg",
+        "layout_2_image_mobile": "shopify://shop_images/EAT_8004_0f29aec0-4d72-4f51-8bbf-d8b114090afe.jpg",
         "layout_4_image_desktop_1": "shopify://shop_images/hero-section-layout41.webp",
-        "layout_4_image_desktop_2": "shopify://shop_images/hero-section-layout42.webp",
+        "layout_4_image_desktop_2": "shopify://shop_images/EAT_8004_0f29aec0-4d72-4f51-8bbf-d8b114090afe.jpg",
         "layout_4_heading": "Welcome to 360 Cookware, where every dish is a masterpiece",
         "layout_4_subtext": "Just like the over 60,000 kitchens we've already transformed, we believe in the power of quality tools to turn your home into the best seat in town.",
         "layout_4_button_link": "shopify://pages/catalog",
@@ -122,8 +129,8 @@
           "settings": {
             "benefits_image": "shopify://shop_images/benefit_img_1_83038bb1-3a45-4f94-a976-b7285fa54538.webp",
             "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#5F0001\"></rect>\n<path d=\"M25 27.8125C21.8934 27.8125 19.375 25.2941 19.375 22.1875V16.9792C19.375 16.5912 19.375 16.3972 19.4315 16.2419C19.5263 15.9815 19.7315 15.7763 19.9919 15.6815C20.1472 15.625 20.3412 15.625 20.7292 15.625H29.2708C29.6588 15.625 29.8528 15.625 30.0081 15.6815C30.2685 15.7763 30.4737 15.9815 30.5685 16.2419C30.625 16.3972 30.625 16.5912 30.625 16.9792V22.1875C30.625 25.2941 28.1066 27.8125 25 27.8125ZM25 27.8125V30.625M30.625 17.5H32.9688C33.4056 17.5 33.624 17.5 33.7963 17.5714C34.026 17.6665 34.2085 17.849 34.3036 18.0787C34.375 18.251 34.375 18.4694 34.375 18.9062V19.375C34.375 20.2468 34.375 20.6828 34.2792 21.0404C34.0191 22.011 33.261 22.7691 32.2904 23.0292C31.9328 23.125 31.4968 23.125 30.625 23.125M19.375 17.5H17.0312C16.5944 17.5 16.376 17.5 16.2037 17.5714C15.974 17.6665 15.7915 17.849 15.6964 18.0787C15.625 18.251 15.625 18.4694 15.625 18.9062V19.375C15.625 20.2468 15.625 20.6828 15.7208 21.0404C15.9809 22.011 16.739 22.7691 17.7096 23.0292C18.0672 23.125 18.5032 23.125 19.375 23.125M20.7292 34.375H29.2708C29.501 34.375 29.6875 34.1885 29.6875 33.9583C29.6875 32.1174 28.1951 30.625 26.3542 30.625H23.6458C21.8049 30.625 20.3125 32.1174 20.3125 33.9583C20.3125 34.1885 20.499 34.375 20.7292 34.375Z\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Lifetime-Long Durability",
-            "details": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+            "title": "Built to Last a Lifetime",
+            "details": "Our stainless steel cookware is made with the highest quality stainless steel, so it is built to last."
           }
         },
         "cookware_benefits_FTnTfj": {
@@ -529,7 +536,7 @@
         "description": "Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.",
         "collection": "whats-new",
         "button_text": "Shop All Bestsellers",
-        "button_link": "shopify://collections/360s-essentials",
+        "button_link": "shopify://collections/best-sellers",
         "button_enable": false,
         "noOfProduct": 25,
         "custom_class": ""
