@@ -1748,6 +1748,16 @@ details[open] > .share-button__fallback {
   outline: 0;
   border-radius: var(--inputs-radius);
 }
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+  border-radius: var(--inputs-radius);
+}
+input:-webkit-autofill {
+  background-color: transparent !important;
+  border-radius: var(--inputs-radius) !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+}
 
 .localization-form__select:focus {
   outline: 0;

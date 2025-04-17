@@ -518,6 +518,10 @@ background-color: #fcfcfa;
 /* template-page gift-guide */
 }
 @media screen and (max-width: 749px) {
+  .template-page.why-360-waterless .banner__box.gradient {
+    background-color: transparent;
+    color: #1a1a1a !important;
+  }
 .section-padding {
   padding-top: 80px;
   padding-bottom: 80px;
