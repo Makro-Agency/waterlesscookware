@@ -12,7 +12,7 @@ a:hover{
 .template-page .html-data a:hover{
   color:#bd2129;
 }
-.template-page #MainContent.use{
+.template-page #MainContent.use-care-guide{
   background-color:#fcfcfa ;
  }
 /* breadcrumb */
@@ -91,11 +91,26 @@ a:hover{
     padding: 5px;
     margin-bottom: 10px;
 }
+.template-page h1.main-page-title.page-title{
+  font-size: 50px;
+  padding-top: 2rem;
+  margin-bottom: 0;
+}
+@media(max-width:768px){
+  .template-page h1.main-page-title.page-title{
+    font-size: 40px;
+  }
+}
+
+
 @media screen and (min-width:768px){
   .cmn-menu-product:hover
   {
     background:#EDEDE8;
     color: #1a1a1a;
+  }
+  h3.hypervisual__text_line_one.hypervisual__text-large,.hypervisual__text_line_two.hypervisual__text-medium {
+    text-align: left !important;
   }
 }
 .makro-product-carousel-wrapper .card-descc{
