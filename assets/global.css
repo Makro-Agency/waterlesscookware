@@ -517,6 +517,15 @@ background-color: #fcfcfa;
 }
 /* template-page gift-guide */
 }
+.enrm-gallery-container,
+.enap-gallery {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+.contact #contect-form{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 @media screen and (max-width: 749px) {
   .template-page.why-360-waterless .banner__box.gradient {
     background-color: transparent;
@@ -528,6 +537,24 @@ background-color: #fcfcfa;
 }
 .button.cta_button {
   width: 100%;
+}
+.enrm-col-4 {
+  width: 100%!important;
+  -ms-flex: 0 0 100%!important;
+        flex: 0 0 100%!important;
+        max-width: 100%!important;
+}
+.rte ul, .rte ol {
+  list-style-position: inside;
+  padding-left: 0rem;
+}
+.enrm-gallery-container, .enap-gallery {
+  margin-top: 0px !important;
+    margin-bottom: 20px !important;
+}
+.contact #contect-form {
+  padding-top: 20px;
+  padding-bottom: 70px;
 }
 }
 .template-page.warranty-parts .multicolumn-card__info .link {
@@ -628,11 +655,7 @@ background-color: #fcfcfa;
   list-style: none;
   padding: 15px;
 }
-.enrm-gallery-container,
-.enap-gallery {
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
-}
+
 .breadcrumbs {
   display: none !important;
 }
@@ -678,6 +701,7 @@ background-color: #fcfcfa;
 .enrm-gallery-container .enrm-video-title {
   font-size: 16px !important;
 }
+
 .yotpo div, .yotpo span, .yotpo p, .yotpo a, .yotpo img, .yotpo i, .yotpo strong, .yotpo sup, .yotpo ul, .yotpo li, .yotpo form, .yotpo label {
   font-family: "Manrope" !important;
     font-size: 16px !important;
@@ -757,10 +781,7 @@ border-color: transparent;
 .why-360-waterless .rich-text__wrapper .rich-text__heading.h1{
   margin-top:0;
 }
-.contact #contect-form{
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
+
 .multicolumn-card__info:empty {
   display: none;
 }
