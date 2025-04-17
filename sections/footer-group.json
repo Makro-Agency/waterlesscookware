@@ -90,7 +90,7 @@
         "show_social": true,
         "enable_country_selector": true,
         "enable_language_selector": true,
-        "payment_enable": false,
+        "payment_enable": true,
         "show_policy": false,
         "heading_text": "Newsletter",
         "paragraph_text": "Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.",
