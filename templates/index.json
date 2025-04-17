@@ -422,6 +422,7 @@
         },
         "image_with_text_DgJVkn": {
           "type": "image-with-text",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Food-0005_1.png",
             "title": "Save on Sets",
@@ -440,8 +441,8 @@
         "image_with_text_DgJVkn"
       ],
       "settings": {
-        "heading": "Get Started with 360",
-        "description": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+        "heading": "Shop our Top Categories",
+        "description": ""
       }
     },
     "slider_hero_01_gwX7eN": {
