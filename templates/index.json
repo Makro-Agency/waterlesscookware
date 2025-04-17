@@ -356,7 +356,6 @@
     },
     "stainless_steel_pan_CcPLF7": {
       "type": "stainless-steel-pan",
-      "disabled": true,
       "settings": {
         "desktop_image": "shopify://shop_images/15_piece_set_1_3.png",
         "mobile_image": "shopify://shop_images/15_piece_set_1_1.png",
