@@ -356,6 +356,7 @@
     },
     "stainless_steel_pan_CcPLF7": {
       "type": "stainless-steel-pan",
+      "disabled": true,
       "settings": {
         "desktop_image": "shopify://shop_images/15_piece_set_1_3.png",
         "mobile_image": "shopify://shop_images/15_piece_set_1_1.png",
@@ -381,16 +382,76 @@
         "button_url": "#"
       }
     },
+    "image_with_text_NX7CrV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6KEjWr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Mission",
+            "heading_size": "h1"
+          }
+        },
+        "text_QM7yCz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe that healthy families grow around the kitchen table. Our collections are timeless heirlooms that are handcrafted in our historic West Bend, Wisconsin factory to feed your family for generations. We want you to harness the power of waterless cookware designed to help you transform the way you and your loved ones cook and feel.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_pqKE6Y": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": "full_color"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6KEjWr",
+        "text_QM7yCz",
+        "button_pqKE6Y"
+      ],
+      "settings": {
+        "sec_bg": "",
+        "image": "shopify://shop_images/w1200_69ae_Americraft-August-Set-2-213.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "makro_title_product_carousel_paXJVE": {
+      "type": "makro-title-product-carousel",
+      "settings": {
+        "title": "Bestsellers",
+        "description": "",
+        "collection": "whats-new",
+        "button_text": "Shop All Bestsellers",
+        "button_link": "shopify://collections/best-sellers",
+        "button_enable": false,
+        "noOfProduct": 25,
+        "custom_class": ""
+      }
+    },
     "get_started_360_RpME7J": {
       "type": "get-started-360",
       "blocks": {
         "image_with_text_YbYCbe": {
           "type": "image-with-text",
           "settings": {
-            "image": "shopify://shop_images/Image_3_f42ece0d-4aae-4f1e-a9e1-02198441171e.png",
+            "image": "shopify://shop_images/IMG_2394_84a24d1b-bee1-4ac1-94ee-be2434d8413c.png",
             "title": "Cookware",
-            "text": "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "link": "shopify://collections/360-cookware",
+            "text": "",
+            "link": "shopify://collections/cookware",
             "link_text": "Shop Cookware",
             "mobile_link": "#",
             "mobile_link_text": "Shop Now"
@@ -399,10 +460,10 @@
         "image_with_text_MqF7KK": {
           "type": "image-with-text",
           "settings": {
-            "image": "shopify://shop_images/IMG_2394.png",
+            "image": "shopify://shop_images/Image.png",
             "title": "Bakeware",
-            "text": "Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-            "link": "shopify://collections/360-bakeware",
+            "text": "",
+            "link": "shopify://collections/bakeware",
             "link_text": "Shop Bakeware",
             "mobile_link": "#",
             "mobile_link_text": "Shop Now"
@@ -411,24 +472,11 @@
         "image_with_text_JFAVYi": {
           "type": "image-with-text",
           "settings": {
-            "image": "shopify://shop_images/Image_4_50f5861a-ff07-4730-813a-8908cbc3d32c.png",
-            "title": "Tools & Accessories",
-            "text": "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "shopify://shop_images/Image-1.png",
+            "title": "Accessories",
+            "text": "",
             "link": "shopify://collections/accessories",
-            "link_text": "Shop Tools & Accessories",
-            "mobile_link": "#",
-            "mobile_link_text": "Shop Now"
-          }
-        },
-        "image_with_text_DgJVkn": {
-          "type": "image-with-text",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Food-0005_1.png",
-            "title": "Save on Sets",
-            "text": "Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-            "link": "shopify://collections/sets-1",
-            "link_text": "Shop Sets",
+            "link_text": "Shop Accessories",
             "mobile_link": "#",
             "mobile_link_text": "Shop Now"
           }
@@ -437,8 +485,7 @@
       "block_order": [
         "image_with_text_YbYCbe",
         "image_with_text_MqF7KK",
-        "image_with_text_JFAVYi",
-        "image_with_text_DgJVkn"
+        "image_with_text_JFAVYi"
       ],
       "settings": {
         "heading": "Shop our Top Categories",
@@ -519,28 +566,15 @@
     "makro_text_banner_KBAPgt": {
       "type": "makro-text-banner",
       "settings": {
-        "image": "shopify://shop_images/banner-bg-desk.png",
+        "image": "shopify://shop_images/Frame_5643_1.png",
         "image_mobile": "shopify://shop_images/Image_72.png",
-        "title": "Unleash Your Inner Chef",
-        "description": "<p>Transform every home-cooked meal into a gourmet experience with 360 Cookware. Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.</p>",
+        "title": "How it Works",
+        "description": "<p>Waterless Cookware creates fast, even heat that gently surrounds your healthy recipes, from vegetables and meats to grains and baked goods. The lids are specially designed to create a Vapor® Seal that captures heat and keeps it moving around your food, not escaping out the sides. You can also use our cookware for traditional cooking style.</p>",
         "btn_text": "Shop Now",
-        "url": "#",
+        "url": "shopify://collections/all",
         "BG_color": "#620606",
         "text_color": "#000000",
         "overlay_opacity": 0
-      }
-    },
-    "makro_title_product_carousel_paXJVE": {
-      "type": "makro-title-product-carousel",
-      "settings": {
-        "title": "Bestsellers",
-        "description": "",
-        "collection": "whats-new",
-        "button_text": "Shop All Bestsellers",
-        "button_link": "shopify://collections/best-sellers",
-        "button_enable": false,
-        "noOfProduct": 25,
-        "custom_class": ""
       }
     },
     "makro_title_product_grid_rDtEYQ": {
@@ -586,6 +620,19 @@
       "disabled": true,
       "settings": {
         "title": "shop by collection"
+      }
+    },
+    "makro_title_product_carousel_dMwD9r": {
+      "type": "makro-title-product-carousel",
+      "settings": {
+        "title": "New Arrivals",
+        "description": "",
+        "collection": "whats-new",
+        "button_text": "Shop All New Arrivals",
+        "button_link": "shopify://collections/whats-new",
+        "button_enable": false,
+        "noOfProduct": 25,
+        "custom_class": ""
       }
     },
     "resources_guides_iY6RYJ": {
@@ -663,6 +710,7 @@
         "bottom_block_tYrWFy",
         "bottom_block_fUtX9T"
       ],
+      "disabled": true,
       "settings": {
         "title": "Resources & Help",
         "des": "Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Class aptent taciti sociosqu ad litora.",
@@ -781,12 +829,35 @@
         "show_author": false
       }
     },
+    "makro_text_banner_xYQYC6": {
+      "type": "makro-text-banner",
+      "settings": {
+        "image": "shopify://shop_images/1600x700-Hero_eef87e5e-9d43-405f-8594-a31057be3c61.jpg",
+        "title": "Healthier and Better",
+        "description": "<p>Frying without grease reduces calories,cholesterol and artery clogging plaque.The waterless and greaseless method isthe healthiest method of cooking ever because the cookware’s even heat distribution does the cookinginstead of the water and grease distributing the heat.</p>",
+        "btn_text": "Shop Now",
+        "url": "shopify://collections/all",
+        "BG_color": "#620606",
+        "text_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "custom_liquid_bizHhW": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
     "instafeed_WwCYTy": {
       "type": "instafeed",
       "settings": {
         "text_alignment": "center",
-        "heading": "Join 360 Chefs Community",
-        "description": "<p>Tag <a href=\"https://www.instagram.com/360cookware/\" target=\"_blank\" title=\"https://www.instagram.com/360cookware/\">@360cookware</a> to be featured</p>"
+        "heading": "Join kitchencraftcookware Community",
+        "description": "<p>Tag <a href=\"https://www.instagram.com/kitchencraftcookware/\" target=\"_blank\" title=\"@kitchencraftcookware\">@kitchencraftcookware</a> to be featured</p>"
       }
     }
   },
@@ -799,16 +870,20 @@
     "cookware_ugc_section_WQLULK",
     "home_cookware_ugc_section_BiUqxM",
     "stainless_steel_pan_CcPLF7",
+    "image_with_text_NX7CrV",
+    "makro_title_product_carousel_paXJVE",
     "get_started_360_RpME7J",
     "slider_hero_01_gwX7eN",
     "hero_second_47HR7R",
     "makro_text_banner_KBAPgt",
-    "makro_title_product_carousel_paXJVE",
     "makro_title_product_grid_rDtEYQ",
     "makro_title_carousel_6mChJp",
+    "makro_title_product_carousel_dMwD9r",
     "resources_guides_iY6RYJ",
     "blog_posts_WbkfqV",
     "home_blog_post_6MpXUt",
+    "makro_text_banner_xYQYC6",
+    "custom_liquid_bizHhW",
     "instafeed_WwCYTy"
   ]
 }
