@@ -590,6 +590,73 @@
         "overlay_opacity": 0
       }
     },
+    "why_review_slider_GRdB97": {
+      "type": "why-review-slider",
+      "blocks": {
+        "icon_text_cVxB7J": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify://shop_images/coupon-02_2_3.svg",
+            "text": "Lifetime Warranty"
+          }
+        },
+        "icon_text_DfTQ3j": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify://shop_images/trophy_2_2.svg",
+            "text": "Top-Quality Cookware"
+          }
+        },
+        "review_pGXEiK": {
+          "type": "review",
+          "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
+            "review_text": "I am so happy I invested in this set of pots and pans! I am able to cook my food quickly, keeping the flavors etc. AND they clean up easily!",
+            "client_name": "",
+            "reviewby": ""
+          }
+        },
+        "review_djnPT7": {
+          "type": "review",
+          "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
+            "review_text": "I’ve had the pots and pans for about 27 years still look almost new.",
+            "client_name": "",
+            "reviewby": ""
+          }
+        },
+        "review_kWPg8K": {
+          "type": "review",
+          "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
+            "review_text": "We have had this 2 quart sauce pan since 1963. The weld on the handle broke. The staff went far above my expectations in explaining what I needed to do.",
+            "client_name": "",
+            "reviewby": ""
+          }
+        },
+        "review_Lt7J4b": {
+          "type": "review",
+          "settings": {
+            "stars": "shopify://shop_images/Frame_6176_d990e61b-e37b-4b8a-8eb2-413a26092906_1.svg",
+            "review_text": "The quality of the cookware is phenomenal. I loved the easy pay options, and shipping was super fast and easy.",
+            "client_name": "",
+            "reviewby": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_cVxB7J",
+        "icon_text_DfTQ3j",
+        "review_pGXEiK",
+        "review_djnPT7",
+        "review_kWPg8K",
+        "review_Lt7J4b"
+      ],
+      "settings": {
+        "heading": "Our Customers Love Us",
+        "description": ""
+      }
+    },
     "makro_title_product_grid_rDtEYQ": {
       "type": "makro-title-product-grid",
       "blocks": {
@@ -933,6 +1000,7 @@
     "slider_hero_01_gwX7eN",
     "hero_second_47HR7R",
     "makro_text_banner_KBAPgt",
+    "why_review_slider_GRdB97",
     "makro_title_product_grid_rDtEYQ",
     "makro_title_carousel_6mChJp",
     "makro_title_product_carousel_dMwD9r",
