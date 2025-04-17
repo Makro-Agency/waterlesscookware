@@ -4,6 +4,14 @@ a{
 a:hover{
   /* color: #A6BB3A; */
 }
+
+.template-page .html-data a{
+  font-weight: 600;
+  color:#7E0002;
+}
+.template-page .html-data a:hover{
+  color:#bd2129;
+}
 /* breadcrumb */
 .breadcrumbs-item a,
 .breadcrumb-item a,
