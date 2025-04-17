@@ -848,3 +848,6 @@ body.what-is-waterless .image-with-text__media > img,
 .why-360-waterless .image-with-text__media img{
   border-radius: 15px;
 }
+.template-page.Help-center .contact_page_form .footer-input::placeholder{
+  color: #6c6a66;
+}
