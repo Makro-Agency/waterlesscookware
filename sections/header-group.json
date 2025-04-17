@@ -36,7 +36,7 @@
           "settings": {
             "announcement_message": "Welcome to our Store",
             "countdown_end_date": "",
-            "cta_text": "Shop now",
+            "cta_text": "",
             "cta_link": "",
             "cta_color": "#ffffff"
           }
@@ -63,7 +63,7 @@
             "announcement_message": "THE ORIGINAL WATERLESS COOKWARE | SINCE 1906",
             "cta_text": "",
             "cta_link": "",
-            "cta_color": "#ffffff",
+            "cta_color": "rgba(0,0,0,0)",
             "announcement_message_2": "",
             "cta_text_2": "",
             "cta_link_2": "",
