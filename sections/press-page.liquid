@@ -40,16 +40,19 @@
         }
 
         .press-page-container .press-item-image h3 {
-             margin: 10px 0;
-              font-size: 24px;
-              letter-spacing:0; 
-              color:#1a1a1a; 
+            margin: 10px 0;
+            font-family: IBM Plex Serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 120%;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
         }
 
         .press-page-container .press-item-image p {
             margin: 10px 0;
             font-size: 16px;
-            color: #0D0D0D;
+            color: #1A1A1A;
         }
 
         .influencer-text-center {
@@ -64,8 +67,8 @@
         }
 
         .readmore-underline {
-            font-weight: 600;
-            color: #0D0D0D;
+            /* font-weight: 600; */
+            color: #1a1a1a;
             text-decoration: none;
             margin: 0px;
             padding: 0px;
@@ -74,8 +77,16 @@
             font-size: 16px;
             width: fit-content;
             font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-
+        .readmore-underline span {
+          display: inline-flex;
+        }
+        .readmore-underline span path {
+          stroke: currentColor;
+        }
         .readmore-underline::after {
             content: "";
             width: 100%;
@@ -84,7 +95,11 @@
             position: absolute;
             bottom: -3px;
             left: 0;
+            opacity: 0;
         }
+        .readmore-underline:hover{
+            color: #BD2129 !important;
+          }
         .press-item-image svg {
             vertical-align: text-bottom;
         }
