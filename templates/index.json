@@ -136,7 +136,7 @@
         "cookware_benefits_FTnTfj": {
           "type": "CookwareBenefits",
           "settings": {
-            "benefits_image": "shopify://shop_images/benefit_img_2_ddf78cc6-1fc3-46cc-acab-d72f16e8c587.webp",
+            "benefits_image": "shopify://shop_images/image_12.png",
             "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#5F0001\"></rect>\n<path d=\"M18.8868 30.2177L31.281 30.2083M24.9996 15.625C27.0076 15.625 28.6847 17.0313 29.093 18.9073C30.1651 18.6186 31.3086 18.7655 32.2719 19.3157C33.2352 19.8659 33.9394 20.7743 34.2296 21.8411C34.5197 22.908 34.3721 24.0457 33.8191 25.0042C33.2661 25.9627 32.3532 26.6634 31.281 26.9521V34.375H18.7182V26.9521C18.1873 26.809 17.69 26.5633 17.2546 26.2289C16.8191 25.8946 16.4541 25.4782 16.1804 25.0035C15.9067 24.5288 15.7297 24.0051 15.6594 23.4623C15.5891 22.9196 15.6269 22.3683 15.7707 21.8401C15.9145 21.3119 16.1615 20.817 16.4975 20.3837C16.8335 19.9505 17.252 19.5873 17.7291 19.315C18.2061 19.0426 18.7324 18.8665 19.2779 18.7965C19.8234 18.7266 20.3775 18.7642 20.9083 18.9073C21.1113 17.9777 21.6278 17.1451 22.3721 16.548C23.1163 15.9509 24.0435 15.6252 24.9996 15.625Z\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
             "title": "Better Tasting Food",
             "details": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
