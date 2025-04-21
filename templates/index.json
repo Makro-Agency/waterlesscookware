@@ -145,7 +145,7 @@
         "cookware_benefits_TEpGWg": {
           "type": "CookwareBenefits",
           "settings": {
-            "benefits_image": "shopify://shop_images/9_Piece_Bridal-0048.png",
+            "benefits_image": "shopify://shop_images/image_13.png",
             "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#7E0002\"></rect>\n<path d=\"M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path>\n</svg>",
             "title": "Versatile & Easy to Clean",
             "details": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
