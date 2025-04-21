@@ -133,8 +133,8 @@
           "type": "about",
           "settings": {
             "menu": "About Us",
-            "desktop_images_1": "shopify://shop_images/w1200_13d3_Americraft-IMG_8869.webp",
-            "mobile_images_1": "shopify://shop_images/w1200_13d3_Americraft-IMG_8869.webp",
+            "desktop_images_1": "shopify://shop_images/Image_3.png",
+            "mobile_images_1": "shopify://shop_images/Image_3.png",
             "header_text_1": "Out Story",
             "paragraph_text_1": "Discover how it all started and what our journey has been like",
             "cta_link_1": "shopify://pages/our-story",
