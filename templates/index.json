@@ -124,6 +124,15 @@
     "cookware_benefits_4474CW": {
       "type": "cookware-benefits",
       "blocks": {
+        "cookware_benefits_zXNNi6": {
+          "type": "CookwareBenefits",
+          "settings": {
+            "benefits_image": "shopify://shop_images/image_12.png",
+            "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#7E0002\"></rect>\n<path d=\"M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path>\n</svg>",
+            "title": "Handcrafted in America",
+            "details": "Kitchen Craft Cookware is handcrafted in America, which is manufactured  in West Bend, Wisconsin."
+          }
+        },
         "cookware_benefits_drLYXT": {
           "type": "CookwareBenefits",
           "settings": {
@@ -138,12 +147,13 @@
           "settings": {
             "benefits_image": "shopify://shop_images/image_12.png",
             "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#5F0001\"></rect>\n<path d=\"M18.8868 30.2177L31.281 30.2083M24.9996 15.625C27.0076 15.625 28.6847 17.0313 29.093 18.9073C30.1651 18.6186 31.3086 18.7655 32.2719 19.3157C33.2352 19.8659 33.9394 20.7743 34.2296 21.8411C34.5197 22.908 34.3721 24.0457 33.8191 25.0042C33.2661 25.9627 32.3532 26.6634 31.281 26.9521V34.375H18.7182V26.9521C18.1873 26.809 17.69 26.5633 17.2546 26.2289C16.8191 25.8946 16.4541 25.4782 16.1804 25.0035C15.9067 24.5288 15.7297 24.0051 15.6594 23.4623C15.5891 22.9196 15.6269 22.3683 15.7707 21.8401C15.9145 21.3119 16.1615 20.817 16.4975 20.3837C16.8335 19.9505 17.252 19.5873 17.7291 19.315C18.2061 19.0426 18.7324 18.8665 19.2779 18.7965C19.8234 18.7266 20.3775 18.7642 20.9083 18.9073C21.1113 17.9777 21.6278 17.1451 22.3721 16.548C23.1163 15.9509 24.0435 15.6252 24.9996 15.625Z\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Better Tasting Food",
-            "details": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate consectetur libero et velit um interdum, ac aliquet."
+            "title": "Lifetime Warranty",
+            "details": "All of our products come with a lifetime warranty so you can enjoy the energy saving benefits of green cooking and better tasting food as long as you’d like."
           }
         },
         "cookware_benefits_TEpGWg": {
           "type": "CookwareBenefits",
+          "disabled": true,
           "settings": {
             "benefits_image": "shopify://shop_images/image_13.png",
             "icon_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewbox=\"0 0 50 50\" fill=\"none\">\n<rect width=\"50\" height=\"50\" rx=\"25\" fill=\"#7E0002\"></rect>\n<path d=\"M14.5 22.9H35.5M16.6 22.9L17.1291 28.7204C17.3765 31.4416 17.5002 32.8021 18.4025 33.6261C19.3047 34.45 20.6709 34.45 23.4033 34.45H26.5967C29.329 34.45 30.6953 34.45 31.5976 33.6261C32.4998 32.8021 32.6235 31.4416 32.8709 28.7204L33.4 22.9M16.6 20.8L21.85 19.3821M21.85 19.3821L28.15 17.6805M21.85 19.3821L22.0659 17.5574C22.1449 16.8901 22.6189 16.3384 23.263 16.1645L25.3303 15.6061C25.9743 15.4322 26.6586 15.671 27.0579 16.2091L28.15 17.6805M28.15 17.6805L33.4 16.2625\" stroke=\"#FCFCFA\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path>\n</svg>",
@@ -153,16 +163,17 @@
         }
       },
       "block_order": [
+        "cookware_benefits_zXNNi6",
         "cookware_benefits_drLYXT",
         "cookware_benefits_FTnTfj",
         "cookware_benefits_TEpGWg"
       ],
       "settings": {
-        "subtitle_text": "Trusted in over 70,000 kitchens",
+        "subtitle_text": "",
         "main_heading_text": "One Pan,<br>\nLots of Benefits.",
-        "button_link": "#",
+        "button_link": "shopify://collections/all",
         "button_text": "Shop Now",
-        "review_badge_text": "7.000+ 5-Star Reviews",
+        "review_badge_text": "3416 + 5-Star Reviews",
         "button_text_2": "Shop Now",
         "button_link_2": "#"
       }
@@ -363,22 +374,22 @@
         "image_alt_text": "",
         "subtitle_text": "Cook confidently for years to come",
         "review_image": "shopify://shop_images/Frame_6176_3.png",
-        "review_message": "Great cookware, makes the food amazing! Easy to clean! Love it!",
+        "review_message": "Obtained my original set of waterless cookware back ’77 and all pieces are still wonderful. My husband and I decided we needed a smaller pan with a lid and purchased the All In One Pan. It is equally as good as my original set! Lovin’ it!",
         "author_image": "shopify://shop_images/photo_middle_age_woman_avatar_8.png",
-        "author_name": "Eileen M.",
+        "author_name": "Ruth R.",
         "verification_text": "Verified Buyer",
-        "custom_heading_text": "Fabulous company that stands behind its products. We have purchased a couple of pans and will be getting more!",
+        "custom_heading_text": "“Purchased replacement handles for pans that I purchased in 1983. Perfect fit. I actually like them better than the original handles.",
         "author_image_2": "shopify://shop_images/auther-image2_e70531dc-ab78-41fe-bd8e-635ecbb63a0b.webp",
-        "author_name_2": "Alan B.",
-        "verification_text_2": "Professional Chef",
-        "testimonial_text": "“Easy to clean. Faster cooking. Tremendous American quality!”",
-        "reviews_number": "7,000+",
+        "author_name_2": "Darlene C.",
+        "verification_text_2": "Verified buyer",
+        "testimonial_text": "I had such a wonderful experience with professional help getting the exact part that I needed for my vintage waterless cookware that I still love! Thank you for having such wonderful customer service!",
+        "reviews_number": "3000+",
         "reviews_heading": "5-Star Reviews",
         "main_heading_text": "Meet Best in Class Stainless Steel Pan",
         "paragraph_description": "Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per aliquet odio conubia nostra.",
         "paragraph_description_2": "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent.",
         "button_text": "Shop Now",
-        "button_url": "#"
+        "button_url": "shopify://collections/all"
       }
     },
     "image_with_text_NX7CrV": {
