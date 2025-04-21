@@ -210,10 +210,10 @@
         "promotion_images_d8gDzL": {
           "type": "promotion-images",
           "settings": {
-            "menu": "",
-            "menu_heading": "Menu Name",
+            "menu": "Warranty Parts",
+            "menu_heading": "",
             "inner_menu": "warranty-parts",
-            "link_text_1": "Shop All Bakeware",
+            "link_text_1": "",
             "link_url_1": "",
             "header_text": "Bakeware Bestsellers",
             "header_text_1": "Summer Sale Up to 25%",
