@@ -501,6 +501,9 @@ a.product-360-category-inner:hover .product-360-link{
     border-radius: 15px;
     object-position: bottom;
   }
+  .product-360-text-area{
+    margin-top:20px;
+  }
 }
 @media only screen and (max-width: 575px) {
    .megamenu-about-content{
