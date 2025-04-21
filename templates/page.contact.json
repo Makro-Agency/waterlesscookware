@@ -27,10 +27,10 @@
       "type": "contect-form",
       "settings": {
         "contact_title": "Contact us",
-        "contact_email": "Customer_Inquiries@360Cookware.com",
+        "contact_email": "CustomerService@Cookforlife.com",
         "contact_hours": "Monday- Friday from 8am-5pm est.",
         "need_help_title": "Need Help?",
-        "need_help_text": "Horem ipsum dolor sit amet, consectetur adipiscing eli consectetur libero.",
+        "need_help_text": "Questions or comments? Get in touch and we'll be happy to help.",
         "live_chat_text": "Start Live Chat",
         "live_chat_link": "",
         "heading": "",
