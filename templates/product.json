@@ -334,20 +334,12 @@
             "que": "Is Waterless Cookware Built To Last?",
             "ans": "<p>Absolutely!  Waterless Cookware comes with a <a href=\"/pages/lifetime-warranty\" title=\"Lifetime Warranty\"><span style=\"text-decoration:underline\">lifetime warranty</span></a>. While standard cookware may wear out in about 10 years, we commonly receive letters from happy customers who have been using their cookware daily for 40 years or more.</p>"
           }
-        },
-        "faq_xqTWgE": {
-          "type": "faq",
-          "settings": {
-            "que": "Dolor sit amet, consectetur elit?",
-            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
-          }
         }
       },
       "block_order": [
         "faq_LDwKKe",
         "faq_cDPzgh",
-        "faq_jDHddX",
-        "faq_xqTWgE"
+        "faq_jDHddX"
       ],
       "settings": {
         "bgcolor": "#edede8",
