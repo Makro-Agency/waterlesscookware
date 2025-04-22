@@ -208,6 +208,7 @@
       "block_order": [
         "slide_GGNQYj"
       ],
+      "disabled": true,
       "settings": {
         "heading": "One Tool, Lots of Benefits.",
         "subheading": "Trusted in over <br>60,000 kitchens",
@@ -301,6 +302,7 @@
         "video_block_izbyaz",
         "video_block_nrhPX9"
       ],
+      "disabled": true,
       "settings": {
         "background_color": "#edede8",
         "main_heading": "Chef Creations Cooked with 360",
@@ -315,22 +317,22 @@
         "faq_LDwKKe": {
           "type": "faq",
           "settings": {
-            "que": "Is your cookware safe and non-toxic?",
+            "que": "Is your Waterless Cookware safe and non-toxic?",
             "ans": "<p>Absolutely. Our cookware is crafted from surgical-grade stainless steel, which is 100% non-toxic and free from harmful chemicals or coatings. This means you can cook with confidence, knowing that no unwanted substances will leach into your food, even at high temperatures. </p><p>We prioritize your health and safety. Our commitment to using only the highest quality materials extends beyond performance to ensure that every meal you prepare is as safe as it is delicious. This dedication to non-toxic cooking aligns with our mission to provide cookware that contributes to a healthier lifestyle for you and your family.</p>"
           }
         },
         "faq_cDPzgh": {
           "type": "faq",
           "settings": {
-            "que": "Class aptent taciti sociosqu?",
-            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
+            "que": "Will Your Cookware Work On Induction Stovetops?",
+            "ans": "<p>Yes, all our cookware will work on induction stovetops. Our bakeware will not though.</p>"
           }
         },
         "faq_jDHddX": {
           "type": "faq",
           "settings": {
-            "que": "Korem ipsum dolor sit amet, consectetur adipiscing elit?",
-            "ans": "<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.</p>"
+            "que": "Is Waterless Cookware Built To Last?",
+            "ans": "<p>Absolutely!  Waterless Cookware comes with a <a href=\"/pages/lifetime-warranty\" title=\"Lifetime Warranty\"><span style=\"text-decoration:underline\">lifetime warranty</span></a>. While standard cookware may wear out in about 10 years, we commonly receive letters from happy customers who have been using their cookware daily for 40 years or more.</p>"
           }
         },
         "faq_xqTWgE": {
@@ -350,7 +352,7 @@
       "settings": {
         "bgcolor": "#edede8",
         "title": "Your Guide to Culinary Confidence",
-        "des": "Find answers, explore tips, and discover the full potential of your Cookware.",
+        "des": "Find answers, explore tips, and discover the full potential of your Waterless Cookware.",
         "padding_top": 100,
         "padding_bottom": 52
       }
