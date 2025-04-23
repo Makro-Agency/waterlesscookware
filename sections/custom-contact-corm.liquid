@@ -127,7 +127,11 @@
         <div class="need-help-box">
             <h3>{{ section.settings.need_help_title }}</h3>
             <p>{{ section.settings.need_help_text }}</p>
-            <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="start-live-link">{{ section.settings.live_chat_text }}</a>
+            {% if section.settings.live_chat_text != blank %} 
+              <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="start-live-link">
+                {{ section.settings.live_chat_text }}
+              </a>
+            {% endif %}
         </div>
     </div>
     <div class="contect-form-column-second">

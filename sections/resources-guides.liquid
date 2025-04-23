@@ -46,7 +46,11 @@
       <div class="contact-block small-hide">
         <h2 class="main_heading h2">{{ section.settings.heading }}</h2>
         <p class="desc">{{ section.settings.description }}</p>
-        <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="button cta_button btn-light">{{ section.settings.button_text }}</a>
+        {% if section.settings.button_text != blank %} 
+          <a onclick="GorgiasChat.open();" href="javascript:void(0);" class="button cta_button btn-light">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
       </div>
     </div>
     {% endif %}
