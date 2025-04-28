@@ -965,11 +965,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "13027630495364635475": {
-        "type": "shopify://apps/discount-ninja/blocks/la-dn-app-embed-core-v5-assetless/b9a933ba-e276-459f-a4bf-3571d5a1e81c",
-        "disabled": false,
-        "settings": {}
-      },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
