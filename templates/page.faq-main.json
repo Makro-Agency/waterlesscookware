@@ -21,6 +21,12 @@
     "custom_help_faq_64wfPz": {
       "type": "custom-help-faq",
       "blocks": {
+        "title_TEiPJQ": {
+          "type": "title",
+          "settings": {
+            "title": "Use and Care"
+          }
+        },
         "question_answer_3PVW3g": {
           "type": "question_answer",
           "settings": {
@@ -126,6 +132,7 @@
         }
       },
       "block_order": [
+        "title_TEiPJQ",
         "question_answer_3PVW3g",
         "question_answer_PCgX7F",
         "question_answer_HTXJmG",
