@@ -357,56 +357,49 @@
           "type": "faq",
           "settings": {
             "que": "AreYour Products Made In America?",
-            "ans": "<p>Our<br/>cookware and bakeware is made from metal sourced from South Korea as there is<br/>not an American manufacturer for the unique Stainless-Steel, we use. They are<br/>however made in Wisconsin, only the metal comes from South Korea. The only part<br/>of the cookware that is not made in America are the long handles. We are<br/>actively searching for suppliers to transition back to 100% sourced and made in<br/>America as we prefer it.</p>"
+            "ans": "<p>Ourcookware and bakeware is made from metal sourced from South Korea as there is not an American manufacturer for the unique Stainless-Steel, we use. They are however made in Wisconsin, only the metal comes from South Korea. The only part of the cookware that is not made in America are the long handles. We are actively searching for suppliers to transition back to 100% sourced and made in America as we prefer it.</p>"
           }
         },
         "faq_qC6HBi": {
           "type": "faq",
           "settings": {
             "que": "IsKitchen Craft Cookware Built To Last?",
-            "ans": "<p>Absolutely!<br/>Kitchen Craft Cookware comes with a lifetime warranty. While standard cookware<br/>may wear out in about 10 years, we commonly receive letters from happy<br/>customers who have been using their cookware daily for 40 years or more.</p>"
+            "ans": "<p>Absolutely! Kitchen Craft Cookware comes with a lifetime warranty. While standard cookware may wear out in about 10 years, we commonly receive letters from happy customers who have been using their cookware daily for 40 years or more.</p>"
           }
         },
         "faq_T8zQfa": {
           "type": "faq",
           "settings": {
             "que": "DoesKitchen Craft Cookware Have Any Perfluoroalkyl, Polyfluoroalkyl Substances, OrPFAS In Them?",
-            "ans": "<p>No,<br/>Kitchen Craft Cookware and Bakeware are free from any teflon coatings or<br/>chemicals such as PFAS, PFOS, PFOA and PTFE.</p>"
+            "ans": "<p>No,Kitchen Craft Cookware and Bakeware are free from any teflon coatings or chemicals such as PFAS, PFOS, PFOA and PTFE.</p>"
           }
         },
         "faq_RKhPhR": {
           "type": "faq",
           "settings": {
             "que": "DoYour Products Contain Lead Or Cadmium?",
-            "ans": "<p>No,<br/>Our products are made from T-304, T316 and T400 Stainless Steel. They do not<br/>contain lead, or cadmium.</p>"
+            "ans": "<p>No,Our products are made from T-304, T316 and T400 Stainless Steel. They do not contain lead, or cadmium.</p>"
           }
         },
         "faq_X77nDw": {
           "type": "faq",
           "settings": {
             "que": "WillYour Cookware Work On Induction Stovetops?",
-            "ans": "<p>Yes,<br/>all our cookware will work on induction stovetops. Our bakeware will not<br/>though.</p>"
-          }
-        },
-        "faq_kPm8Q6": {
-          "type": "faq",
-          "settings": {
-            "que": "",
-            "ans": ""
+            "ans": "<p>Yes, all our cookware will work on induction stovetops. Our bakeware will not though.</p>"
           }
         },
         "faq_JgkhFy": {
           "type": "faq",
           "settings": {
             "que": "CanI Put Kitchen Craft Stainless Steel Cookware In The Oven?",
-            "ans": "<p>Kitchen<br/>Craft Cookware is oven safe up to 350º.</p>"
+            "ans": "<p>Kitchen Craft Cookware is oven safe up to 350º.</p>"
           }
         },
         "faq_r6MT9P": {
           "type": "faq",
           "settings": {
             "que": "WhatAre Factory Seconds?",
-            "ans": "<p>Cookware<br/>or bakeware that contains slight blemishes that don’t allow them to be sold as<br/>First-Quality. Close to 90% of the cookware’s imperfections are due to slight<br/>cosmetic blemishes such as scratches, nicks, or imperfections</p>"
+            "ans": "<p>Cookware or bakeware that contains slight blemishes that don’t allow them to be sold as First-Quality. Close to 90% of the cookware’s imperfections are due to slight cosmetic blemishes such as scratches, nicks, or imperfections</p>"
           }
         },
         "faq_7AHBNJ": {
@@ -437,7 +430,6 @@
         "faq_T8zQfa",
         "faq_RKhPhR",
         "faq_X77nDw",
-        "faq_kPm8Q6",
         "faq_JgkhFy",
         "faq_r6MT9P",
         "faq_7AHBNJ",
