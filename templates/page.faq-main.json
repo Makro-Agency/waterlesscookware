@@ -48,13 +48,75 @@
             "question": "<p>What Is On My Pan?</p>",
             "answer": "White Spots- These are salt deposits that can form when using salt in cooking or salt water, they can be removed with a paste of vinegar and stainless steel cleaner.<br>\nRainbow Discoloration- This is most often caused by overheating the cookware or bakeware. It can be removed by either using some baking soda and a scrubber or stainless steel cleaner. To avoid this, reduce the cooking temperature.<br>\t\nCloudy Discoloration- This is caused by hard water used during cooking. It can be removed with baking soda and a scrubber or some stainless steel cleaner. To avoid this, in the future a water softening system will help."
           }
+        },
+        "question_answer_P6xAC6": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>How To Get My Lid Unstuck?</p>",
+            "answer": "A stuck lid is caused by a vacuum inside the pot. The best way to solve this issue is to let the pot cool down. Another option is to place a hot towel on the lid for a few minutes to get the lid unstuck. If becoming room temperature or a hot towel does not allow the lid to be removed try putting the pot in the fridge or freezer to further loosen the vacuum suction."
+          }
+        },
+        "title_4gdi44": {
+          "type": "title",
+          "settings": {
+            "title": "Discounts"
+          }
+        },
+        "question_answer_eCKLkP": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Can I use Multiple Discounts?</p>",
+            "answer": "Unfortunately, no we are unable to combine discounts. We suggest using whichever discount is greater."
+          }
+        },
+        "question_answer_qUXpBD": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Do You Have A Military Discount?</p>",
+            "answer": "Yes, we use a third party service called IDME to verify IDs. When you check out on our site there is a button under the coupon code box that will allow you to verify your ID and get 26% off."
+          }
+        },
+        "title_YkGENx": {
+          "type": "title",
+          "settings": {
+            "title": "Cooking Tips"
+          }
+        },
+        "question_answer_nECUxL": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>I’m Cooking On Low Heat But My food Is Still Burning. How Low Do I Have To Go?</p>",
+            "answer": "Some stovetops run hotter than others no matter how low you go. We recommend purchasing an inexpensive flame tamer or cooking on one of the rear burners which typically use fewer BTUs."
+          }
+        },
+        "question_answer_kJVMEy": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Is Vapor® Cooking Suitable For Frying Or Boiling An Egg?</p>",
+            "answer": "Absolutely. To fry, simply preheat your empty skillet on medium-low. Since eggs don’t release moisture or fat, after preheating you will add a small amount of butter, oil or cooking spray and fry as usual.\n<br>\nTo boil an egg without water, place a wet paper towel in the bottom of a small pan. Insert 3 eggs (for starters) and place the lid on the unit. Cook on medium heat until a vapor seal is formed and the lid spins, then turn to low. With the cover on, cook for 13 - 15 minutes for hard eggs, 7 - 8 minutes for medium, and 5 minutes for soft. Remove the paper towel and pour cold water over eggs. Replace the cover and shake to crack the shells. Peel and serve. A special bonus – no greenish ring around the yoke!"
+          }
+        },
+        "question_answer_J9yER7": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What is the question?</p>",
+            "answer": "This is the answer to the question."
+          }
         }
       },
       "block_order": [
         "question_answer_3PVW3g",
         "question_answer_PCgX7F",
         "question_answer_HTXJmG",
-        "question_answer_WMqQia"
+        "question_answer_WMqQia",
+        "question_answer_P6xAC6",
+        "title_4gdi44",
+        "question_answer_eCKLkP",
+        "question_answer_qUXpBD",
+        "title_YkGENx",
+        "question_answer_nECUxL",
+        "question_answer_kJVMEy",
+        "question_answer_J9yER7"
       ],
       "name": "Help FAQ",
       "settings": {
