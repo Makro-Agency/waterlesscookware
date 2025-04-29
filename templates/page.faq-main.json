@@ -21,6 +21,82 @@
     "custom_help_faq_64wfPz": {
       "type": "custom-help-faq",
       "blocks": {
+        "title_TiVwjp": {
+          "type": "title",
+          "settings": {
+            "title": "Product Details "
+          }
+        },
+        "question_answer_7NkRBq": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Are Your Products Made In America?</p>",
+            "answer": "Our cookware and bakeware is made from metal sourced from South Korea as there is not an American manufacturer for the unique Stainless-Steel, we use. They are however made in Wisconsin, only the metal comes from South Korea. The only part of the cookware that is not made in America are the long handles. We are actively searching for suppliers to transition back to 100% sourced and made in America as we prefer it."
+          }
+        },
+        "question_answer_Kt6Hk7": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Is Kitchen Craft Cookware Built To Last? </p>",
+            "answer": "Absolutely! Kitchen Craft Cookware comes with a lifetime warranty. While standard cookware may wear out in about 10 years, we commonly receive letters from happy customers who have been using their cookware daily for 40 years or more."
+          }
+        },
+        "question_answer_C9xUPx": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Doe Kitchen Craft Cookware Have Any Perfluoroalkyl, Polyfluoroalkyl Substances, Or PFAS In Them?</p>",
+            "answer": "No, Kitchen Craft Cookware and Bakeware are free from any teflon coatings or chemicals such as PFAS, PFOS, PFOA and PTFE."
+          }
+        },
+        "question_answer_7Y9r3D": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Do Your Products Contain Lead Or Cadmium?</p>",
+            "answer": "No, Our products are made from T-304, T316 and T400 Stainless Steel. They do not contain lead, or cadmium."
+          }
+        },
+        "question_answer_qN7gDQ": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Will Your Cookware Work On Induction Stovetops?</p>",
+            "answer": "Yes, all our cookware will work on induction stovetops. Our bakeware will not though."
+          }
+        },
+        "question_answer_4ikpDi": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Can I Put Kitchen Craft Stainless Steel Cookware In The Oven?</p>",
+            "answer": "Kitchen Craft Cookware is oven safe up to 350º."
+          }
+        },
+        "question_answer_rRe6kQ": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What Are Factory Seconds?</p>",
+            "answer": "Cookware or bakeware that contains slight blemishes that don’t allow them to be sold as First-Quality. Close to 90% of the cookware’s imperfections are due to slight cosmetic blemishes such as scratches, nicks, or imperfections"
+          }
+        },
+        "question_answer_pKfhGY": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What Is In Your Stainless Steel Cleaner?</p>",
+            "answer": "The ingredients are feldspar, linear sodium dodecyl benzene sulfonate (DDBSA) and oxalic acid."
+          }
+        },
+        "question_answer_twabkP": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Can The Slow Cooker Base Be Used With Other Cookware Brands?</p>",
+            "answer": "If the base of the pots is narrower than the slow cooker, yes. But we don’t recommend it as our cookware is designed to fit the base nicely and securely whereas other brands might be more unstable."
+          }
+        },
+        "question_answer_LQ37A8": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What Are The Power Settings For The Slow Cooker Base? </p>",
+            "answer": "The maximum output is 200 watts.\n\nIt is designed to run on standard US plugs, international power outlets will need a converter.\n<br>\nTemperature Range is 155 degrees to 255 degrees.\n<br>\nSetting #1 155 degrees to 165 degrees\n<br>\nSetting #2 170 degrees to 180 degrees\n<br>\nSetting #3 200 degrees to 212 degrees \n<br>\nSetting #4 245 degrees to 255 degrees"
+          }
+        },
         "title_TEiPJQ": {
           "type": "title",
           "settings": {
@@ -132,6 +208,17 @@
         }
       },
       "block_order": [
+        "title_TiVwjp",
+        "question_answer_7NkRBq",
+        "question_answer_Kt6Hk7",
+        "question_answer_C9xUPx",
+        "question_answer_7Y9r3D",
+        "question_answer_qN7gDQ",
+        "question_answer_4ikpDi",
+        "question_answer_rRe6kQ",
+        "question_answer_pKfhGY",
+        "question_answer_twabkP",
+        "question_answer_LQ37A8",
         "title_TEiPJQ",
         "question_answer_3PVW3g",
         "question_answer_PCgX7F",
