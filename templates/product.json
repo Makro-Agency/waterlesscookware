@@ -341,6 +341,7 @@
         "faq_cDPzgh",
         "faq_jDHddX"
       ],
+      "disabled": true,
       "settings": {
         "bgcolor": "#edede8",
         "title": "Your Guide to Culinary Confidence",
@@ -489,6 +490,7 @@
         "faq_fbjtX8",
         "faq_fetbBr"
       ],
+      "disabled": true,
       "settings": {
         "bgcolor": "#edede8",
         "title": "FAQ's",
