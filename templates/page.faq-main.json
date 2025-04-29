@@ -21,23 +21,40 @@
     "custom_help_faq_64wfPz": {
       "type": "custom-help-faq",
       "blocks": {
-        "title_Yzm7Nc": {
-          "type": "title",
-          "settings": {
-            "title": "Default Title"
-          }
-        },
         "question_answer_3PVW3g": {
           "type": "question_answer",
           "settings": {
             "question": "<p>Is Your Cookware Dishwasher Safe? </p>",
             "answer": "We do not suggest dishwashing our products, harsh chemical can damage the pans. We highly suggest handwashing for the best results and longevity of the pan. Using a dishwasher can void the warranty of certain products."
           }
+        },
+        "question_answer_PCgX7F": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What Is The Water Droplet Test?</p>",
+            "answer": "This is a process to ensure when you are cooking on a stovetop, you are getting the cookware to the correct temperature, for the best cooking results and the least sticking. Here is a useful video demonstrating how it is performed."
+          }
+        },
+        "question_answer_HTXJmG": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>How Do I Clean Burnt-on Foods?</p>",
+            "answer": "Thanks to the highest-quality, American-made, T316 surgical stainless steel we use to line all our cookware, Kitchen Craft Cookware is amazingly easy to clean — no matter how burnt-on foods appear to be. A soapy scrubber sponge is usually sufficient but if your mess is particularly stubborn, pour ¼ cup of water in the pan and heat it over medium heat, stirring up the burnt bits with a wooden spoon. Pour off the hot water then use a wet sponge and very thick paste of water and Americraft Stainless Steel Cleaner, baking soda or your favorite stainless steel cleanser."
+          }
+        },
+        "question_answer_WMqQia": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>What Is On My Pan?</p>",
+            "answer": "White Spots- These are salt deposits that can form when using salt in cooking or salt water, they can be removed with a paste of vinegar and stainless steel cleaner. \nRainbow Discoloration- This is most often caused by overheating the cookware or bakeware. It can be removed by either using some baking soda and a scrubber or stainless steel cleaner. To avoid this, reduce the cooking temperature.\t\nCloudy Discoloration- This is caused by hard water used during cooking. It can be removed with baking soda and a scrubber or some stainless steel cleaner. To avoid this, in the future a water softening system will help."
+          }
         }
       },
       "block_order": [
-        "title_Yzm7Nc",
-        "question_answer_3PVW3g"
+        "question_answer_3PVW3g",
+        "question_answer_PCgX7F",
+        "question_answer_HTXJmG",
+        "question_answer_WMqQia"
       ],
       "name": "Help FAQ",
       "settings": {
