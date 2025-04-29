@@ -349,6 +349,154 @@
         "padding_bottom": 52
       }
     },
+    "pdp_second_faq_m9eGii": {
+      "type": "pdp-second-faq",
+      "blocks": {
+        "faq_UyMgVD": {
+          "type": "faq",
+          "settings": {
+            "que": "AreYour Products Made In America?",
+            "ans": "<p>Our<br/>cookware and bakeware is made from metal sourced from South Korea as there is<br/>not an American manufacturer for the unique Stainless-Steel, we use. They are<br/>however made in Wisconsin, only the metal comes from South Korea. The only part<br/>of the cookware that is not made in America are the long handles. We are<br/>actively searching for suppliers to transition back to 100% sourced and made in<br/>America as we prefer it.</p>"
+          }
+        },
+        "faq_qC6HBi": {
+          "type": "faq",
+          "settings": {
+            "que": "IsKitchen Craft Cookware Built To Last?",
+            "ans": "<p>Absolutely!<br/>Kitchen Craft Cookware comes with a lifetime warranty. While standard cookware<br/>may wear out in about 10 years, we commonly receive letters from happy<br/>customers who have been using their cookware daily for 40 years or more.</p>"
+          }
+        },
+        "faq_T8zQfa": {
+          "type": "faq",
+          "settings": {
+            "que": "DoesKitchen Craft Cookware Have Any Perfluoroalkyl, Polyfluoroalkyl Substances, OrPFAS In Them?",
+            "ans": "<p>No,<br/>Kitchen Craft Cookware and Bakeware are free from any teflon coatings or<br/>chemicals such as PFAS, PFOS, PFOA and PTFE.</p>"
+          }
+        },
+        "faq_RKhPhR": {
+          "type": "faq",
+          "settings": {
+            "que": "DoYour Products Contain Lead Or Cadmium?",
+            "ans": "<p>No,<br/>Our products are made from T-304, T316 and T400 Stainless Steel. They do not<br/>contain lead, or cadmium.</p>"
+          }
+        },
+        "faq_X77nDw": {
+          "type": "faq",
+          "settings": {
+            "que": "WillYour Cookware Work On Induction Stovetops?",
+            "ans": "<p>Yes,<br/>all our cookware will work on induction stovetops. Our bakeware will not<br/>though.</p>"
+          }
+        },
+        "faq_kPm8Q6": {
+          "type": "faq",
+          "settings": {
+            "que": "",
+            "ans": ""
+          }
+        },
+        "faq_JgkhFy": {
+          "type": "faq",
+          "settings": {
+            "que": "CanI Put Kitchen Craft Stainless Steel Cookware In The Oven?",
+            "ans": "<p>Kitchen<br/>Craft Cookware is oven safe up to 350º.</p>"
+          }
+        },
+        "faq_r6MT9P": {
+          "type": "faq",
+          "settings": {
+            "que": "WhatAre Factory Seconds?",
+            "ans": "<p>Cookware<br/>or bakeware that contains slight blemishes that don’t allow them to be sold as<br/>First-Quality. Close to 90% of the cookware’s imperfections are due to slight<br/>cosmetic blemishes such as scratches, nicks, or imperfections</p>"
+          }
+        },
+        "faq_7AHBNJ": {
+          "type": "faq",
+          "settings": {
+            "que": "WhatIs In Your Stainless Steel Cleaner?",
+            "ans": "<p>The<br/>ingredients are feldspar, linear sodium dodecyl benzene sulfonate (DDBSA) and<br/>oxalic acid.</p>"
+          }
+        },
+        "faq_TXQbTB": {
+          "type": "faq",
+          "settings": {
+            "que": "CanThe Slow Cooker Base Be Used With Other Cookware Brands?",
+            "ans": "<p>If the base of the pots is narrower than the slow cooker, yes. But we don’t<br/>recommend it as our cookware is designed to fit the base nicely and securely<br/>whereas other brands might be more unstable.</p>"
+          }
+        },
+        "faq_KrA6kt": {
+          "type": "faq",
+          "settings": {
+            "que": "WhatAre The Power Settings For The Slow Cooker Base?",
+            "ans": "<p>The maximum output is 200 watts.<br/>It is designed to run on standard US plugs, international power outlets will need a converter.<br/>Temperature Range is 155 degrees to 255 degrees.<br/>Setting #1 155 degrees to 165 degrees<br/>Setting #2 170 degrees to 180 degrees<br/>Setting #3 200 degrees to 212 degrees Setting #4 245 degrees to 255 degrees</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_UyMgVD",
+        "faq_qC6HBi",
+        "faq_T8zQfa",
+        "faq_RKhPhR",
+        "faq_X77nDw",
+        "faq_kPm8Q6",
+        "faq_JgkhFy",
+        "faq_r6MT9P",
+        "faq_7AHBNJ",
+        "faq_TXQbTB",
+        "faq_KrA6kt"
+      ],
+      "settings": {
+        "bgcolor": "#edede8",
+        "title": "Product Details",
+        "des": "Find answers, explore tips, and discover the full potential of your Waterless Cookware.",
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "pdp_second_faq_TFrqeK": {
+      "type": "pdp-second-faq",
+      "blocks": {
+        "faq_jaPyP4": {
+          "type": "faq",
+          "settings": {
+            "que": "IsYour Cookware Dishwasher Safe?",
+            "ans": "<p>We do not suggest dishwashing our products, harsh chemical can damage the pans. We highly suggest handwashing for the best results and longevity of the pan. Using a dishwasher can void the warranty of certain products.</p>"
+          }
+        },
+        "faq_WbWK3d": {
+          "type": "faq",
+          "settings": {
+            "que": "WhatIs The Water Droplet Test?",
+            "ans": "<p>This is a process to ensure when you are cooking on a stovetop, you are getting the<br/>cookware to the correct temperature, for the best cooking results and the least<br/>sticking. Here is a useful video demonstrating how it is performed.</p>"
+          }
+        },
+        "faq_fbjtX8": {
+          "type": "faq",
+          "settings": {
+            "que": "How Do I Clean Burnt-on Foods?",
+            "ans": "<p>Thanks to the highest-quality, American-made, T316 surgical stainless steel we use to<br/>line all our cookware, Kitchen Craft Cookware is amazingly easy to clean — no matter how burnt-on foods appear to be. A soapy scrubber sponge is usually<br/>sufficient but if your mess is particularly stubborn, pour ¼ cup of water in<br/>the pan and heat it over medium heat, stirring up the burnt bits with a wooden<br/>spoon. Pour off the hot water then use a wet sponge and very thick paste of<br/>water and Americraft Stainless Steel Cleaner, baking soda or your favorite<br/>stainless steel cleanser.</p>"
+          }
+        },
+        "faq_fetbBr": {
+          "type": "faq",
+          "settings": {
+            "que": "What Is On My Pan?",
+            "ans": "<p><strong>White Spots-</strong> These are salt deposits that can form when using salt in cooking or salt water, they can be removed with a paste of vinegar and stainless steel cleaner.<br/><strong>Rainbow Discoloration</strong>- This is most often caused by overheating the cookware or bakeware. It can be removed by either using some baking soda and a scrubber or stainless steel cleaner. To avoid this, reduce the cooking temperature.<br/><strong>Cloudy Discoloration- </strong>This is caused by hard water used during cooking. It can be removed with baking soda and a scrubber or some stainless steel cleaner. To avoid this, in the future a water softening system will help. <br/><strong>Bronze Discoloration- </strong>This is most oftencaused by overheating the cookware or bakeware. It can be removed by either<br/>using some baking soda and a scrubber or stainless steel cleaner. To avoid this, reduce the cooking temperature.<br/><br/><br/><br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jaPyP4",
+        "faq_WbWK3d",
+        "faq_fbjtX8",
+        "faq_fetbBr"
+      ],
+      "settings": {
+        "bgcolor": "#edede8",
+        "title": "FAQ's",
+        "des": "Find answers, explore tips, and discover the full potential of your Waterless Cookware.",
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
     "pdp_guide_VhfYGR": {
       "type": "pdp-guide",
       "blocks": {
@@ -456,6 +604,8 @@
     "1726589780a38322d3",
     "product_chef_creations_eDUydU",
     "pdp_second_faq_UB7EQD",
+    "pdp_second_faq_m9eGii",
+    "pdp_second_faq_TFrqeK",
     "pdp_guide_VhfYGR",
     "172500374596313ea4",
     "related-products",
