@@ -102,6 +102,27 @@
             "question": "<p>What About Cooking Meats?</p>",
             "answer": "Burgers, steaks, or pork chops come out moist and tasty using the same easy procedure as chicken.\nFor seafood recipes, use the same technique with a little less heat. If desired, add a little butter or extra virgin olive oil to taste. Fish dishes will cook up moist, flaky and tender every time.\n<br>\nFor beef or pork roasts and wild game, preheat the pan on medium heat. Sear and brown on one side for 10 minutes with the cover off. Then add thickly sliced onions and/or other vegetables beneath the roast, cover with a lid and cook on low for 40-50 minutes.\n<br>\nAny meat entrée recipe will turn out moist and delicious in a fraction of the cooking time of conventional cookware – all without added oil, lard, or shortening!"
           }
+        },
+        "question_answer_r3cQC6": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Can I Use Vapor® Cooking Technology To Cook Rice, Pasta, Vegetables, And Beans?</p>",
+            "answer": "Kitchen Craft Cookware makes cooking these foods easier than ever!\n<br>\nFor rice, pour 1 3/4 cups of water and 1 cup of rice into a utensil - no need to bring water to a boil first. Place the utensil on medium heat and cover. When you see vapor escaping from the lid, turn to low and cook for 8 minutes, then remove from heat. Let utensils stand covered for 25-30 minutes. The rice will not overcook, and will turn out tender and fluffy every time! Tip: Add raisins and serve with milk and honey for a delicious and healthy breakfast."
+          }
+        },
+        "question_answer_VfcP4f": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>Can I Cook My Food With Butter Or Oil?</p>",
+            "answer": "Yes. With Vapor® Cooking, you won’t need it (except for stovetop baking, frying eggs, or searing fish), but if you want it you’ll find you need much less than you normally use. Begin with half the amount of oil or butter you usually cook with, or, try drizzling a robust extra virgin olive oil and a little fresh lemon juice over some just-cooked fish or chicken to “finish” your dish."
+          }
+        },
+        "question_answer_Hyq4ch": {
+          "type": "question_answer",
+          "settings": {
+            "question": "<p>How Do I Make Pancakes, French Toast, Grilled Cheese Or Any Other Breaded Food?</p>",
+            "answer": "Preheat your unit on medium heat for one to two minutes.  Dance a bead of water on it. When it evaporates add oil or butter.  Fry as usual."
+          }
         }
       },
       "block_order": [
@@ -116,7 +137,10 @@
         "title_YkGENx",
         "question_answer_nECUxL",
         "question_answer_kJVMEy",
-        "question_answer_J9yER7"
+        "question_answer_J9yER7",
+        "question_answer_r3cQC6",
+        "question_answer_VfcP4f",
+        "question_answer_Hyq4ch"
       ],
       "name": "Help FAQ",
       "settings": {
