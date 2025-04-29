@@ -894,10 +894,10 @@
           "065552a9-1bb8-4e49-83a7-c149839fe0cc"
         ],
         "settings": {
-          "sidebar": true,
-          "searchbar": true,
+          "sidebar": false,
+          "searchbar": false,
           "title": "Help Center",
-          "contact_bar_enable": true,
+          "contact_bar_enable": false,
           "contact_title": "Have additional questions?",
           "contact_text": "<p>Customer Service Hours:</p><p>Monday - Friday / 9 AM - 5 PM EST.</p>",
           "contact_text_misc": "Customer Service Rating: 98.57%",
