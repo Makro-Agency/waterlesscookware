@@ -23,7 +23,7 @@
       "settings": {
         "bgimage": "shopify://shop_images/Collection-Large-Image_1_2.png",
         "imagemobile": "shopify://shop_images/catalog-hero-mobile.png",
-        "title": "The 360 Collections",
+        "title": "The Waterless Collections",
         "details": "Elevate your culinary experience with our premium, American-made cookware.",
         "padding_top": 36,
         "padding_bottom": 36
@@ -158,7 +158,7 @@
         "image_text_R49VJk"
       ],
       "settings": {
-        "title": "Explore 360 Catalog",
+        "title": "Explore Waterless Catalog",
         "details": "Our high-quality tools empower you to reach your culinary potential and delight your loved ones with flawless dishes.",
         "padding_top": 76,
         "padding_bottom": 76
