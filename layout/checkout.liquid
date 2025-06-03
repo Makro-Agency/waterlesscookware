@@ -1,3 +1,4 @@
+{% include 'shogun-content-handler' %}
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
   <head>
@@ -58,10 +59,11 @@
         .custom-shipping-wrap .tooltip-icon-wrap:not(:hover) .tooltip-icon:before {opacity: 0; visibility: hidden;}
         .custom-shipping-wrap .tooltip-content {width: calc(100% - 30px); transform: none; left: 0; margin-top: -3px;}
         .custom-shipping-wrap .tooltip-content:before {display: none;}
-      } 
-      h2#checkout-main-header{ font-weight:400; }     
+      }      
     </style>
-  </head>
+  
+  {% render 'shogun-head' %}
+</head>
   <body>
     {{ skip_to_content_link }}
 
