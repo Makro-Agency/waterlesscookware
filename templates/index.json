@@ -986,6 +986,7 @@
     },
     "instafeed_WwCYTy": {
       "type": "instafeed",
+      "disabled": true,
       "settings": {
         "text_alignment": "center",
         "heading": "Join kitchencraftcookware Community",
