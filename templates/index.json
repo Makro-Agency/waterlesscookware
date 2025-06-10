@@ -988,7 +988,7 @@
       "type": "instafeed",
       "disabled": true,
       "settings": {
-        "text_alignment": "center",
+        "text_alignment": "left",
         "heading": "Join kitchencraftcookware Community",
         "description": "<p>Tag <a href=\"https://www.instagram.com/kitchencraftcookware/\" target=\"_blank\" title=\"@kitchencraftcookware\">@kitchencraftcookware</a> to be featured</p>"
       }
