@@ -130,7 +130,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "accessories",
-    "cart_drawer_progress_bar_show": true,
+    "cart_drawer_progress_bar_show": false,
     "cart_drawer_progress_threshold": "100",
     "cart_drawer_routine_show": true,
     "cart_drawer_Recommend_show": true,
