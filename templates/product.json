@@ -87,6 +87,7 @@
         },
         "sales_point_CdyhdB": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "exchange",
             "text": "Free Shipping"
