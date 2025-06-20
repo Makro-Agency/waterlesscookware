@@ -273,6 +273,23 @@
         "padding_top": 0,
         "padding_bottom": 100
       }
+    },
+    "1750426223a2d9f2e0": {
+      "type": "apps",
+      "blocks": {
+        "videowise_video_commerce_videowise_page_widgets_8eAmWJ": {
+          "type": "shopify://apps/videowise-video-commerce/blocks/videowise-page-widgets/b48d6c0c-3e3f-4791-a9ab-a5ab7ec82f4d",
+          "settings": {
+            "videowise_embed": "<link rel=\"preload\" href=\"https://assets.videowise.com/videowise-live-streaming-channel-embed.js\" as=\"script\">\n  <script src=\"https://assets.videowise.com/videowise-live-streaming-channel-embed.js\"></script>\n  <div id=\"videowise_stream_channel\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "videowise_video_commerce_videowise_page_widgets_8eAmWJ"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -281,6 +298,7 @@
     "97199040-bf2b-41c3-a062-7ff04d324137",
     "039b79ec-24b4-4f50-b22e-06c26db54608",
     "9b21fb92-1f78-4a48-b72a-20933e293c16",
-    "f6be46da-e20e-4e12-834f-b38922f5a31c"
+    "f6be46da-e20e-4e12-834f-b38922f5a31c",
+    "1750426223a2d9f2e0"
   ]
 }
