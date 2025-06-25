@@ -16,6 +16,7 @@
       "blocks": {
         "simple_6pFHip": {
           "type": "simple",
+          "disabled": true,
           "settings": {
             "announcement_message": "FRIEND AND FAMILY SALE! USE CODE F&F30 FOR 30% COOKWARE AND BAKEWARE",
             "cta_text": "Shop Now",
@@ -58,7 +59,6 @@
         },
         "simple_hFAdXp": {
           "type": "simple",
-          "disabled": true,
           "settings": {
             "announcement_message": "THE ORIGINAL WATERLESS COOKWARE | SINCE 1906",
             "cta_text": "",
