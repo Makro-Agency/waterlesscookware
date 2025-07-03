@@ -291,6 +291,16 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "custom_liquid_gVg6pr": {
+      "type": "custom-liquid",
+      "name": "Monkedia Tracking Snippet",
+      "settings": {
+        "custom_liquid": "<!--- Start Monkedia Conversion Tracking -->\n<script>\n  document.addEventListener('DOMContentLoaded', () => {\n    const notifyFirstName = document.querySelector('#remind-me-first-name');\n    const notifyLastName = document.querySelector('#remind-me-last-name');\n    const notifyPrefix = document.querySelector('#remind-me-prefix');\n    const notifyPhone = document.querySelector('#remind-me-phone-number');\n    const notifyEmail = document.querySelector('#remind-me-email');\n    const notifyButton = document.querySelector('#vw--rsvp-ls--reminder--content > button');\n    if (notifyButton) {\n      notifyButton.addEventListener('click', () => {\n        Shopify.analytics.publish(\"notify_me_live_shopping\", {\n          email: notifyEmail.value,\n          phone: notifyPrefix.value + notifyPhone.value,\n          firstName: notifyFirstName.value,\n          lastName: notifyLastName.value,\n        });\n      });\n    }\n  });\n</script>\n<!--- End Monkedia Conversion Tracking -->",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -300,6 +310,7 @@
     "039b79ec-24b4-4f50-b22e-06c26db54608",
     "9b21fb92-1f78-4a48-b72a-20933e293c16",
     "f6be46da-e20e-4e12-834f-b38922f5a31c",
-    "1750426223a2d9f2e0"
+    "1750426223a2d9f2e0",
+    "custom_liquid_gVg6pr"
   ]
 }
