@@ -542,7 +542,7 @@
         "yotpo_product_reviews_ugc_reviews_VnVzGk": {
           "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
-            "product": "{{product}}"
+            "product": ""
           }
         }
       },
