@@ -1001,6 +1001,11 @@
         "type": "shopify://apps/videowise-video-commerce/blocks/script_embed/b48d6c0c-3e3f-4791-a9ab-a5ab7ec82f4d",
         "disabled": false,
         "settings": {}
+      },
+      "14082181514032464150": {
+        "type": "shopify://apps/q-request-a-quote/blocks/omgrfq_script/5f4ac0e6-8a57-4f3d-853e-0194eab86273",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
