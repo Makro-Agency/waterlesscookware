@@ -102,6 +102,7 @@
         },
         "feature_media_Cwg4ij": {
           "type": "feature-media",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/microwave_1.svg",
             "title": "Oven Safe Up To 300°",
@@ -110,6 +111,7 @@
         },
         "feature_media_B8QzPA": {
           "type": "feature-media",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/cold_1.svg",
             "title": "Stay Cool Long Handle",
