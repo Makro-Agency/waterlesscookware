@@ -153,6 +153,7 @@
         },
         "question_answer_qUXpBD": {
           "type": "question_answer",
+          "disabled": true,
           "settings": {
             "question": "<p>Do You Have A Military Discount?</p>",
             "answer": "Yes, we use a third party service called IDME to verify IDs. When you check out on our site there is a button under the coupon code box that will allow you to verify your ID and get 26% off."
